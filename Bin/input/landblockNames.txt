@@ -1,0 +1,2615 @@
+00010000	Mhoire Armory
+00020000	Viamontian Garrison
+00030000	Niffis Fighting Pits
+00040000	Northern Power Forge
+00050000	Southern Power Forge
+00060000	Western Power Forge
+00070000	Town Network
+00080000	Defiled Temple Lower Wing
+00090000	Defiled Temple Upper Wing
+000A0000	Defiled Temple Asylum
+000B0000	Banderling Shrine
+000C0000	Weakened Vault Sewers
+000D0000	Secured Vault Sewers
+000E0000	Reinforced Vault Sewers
+000F0000	Fortified Vault Sewers
+00100000	War Room
+00110000	Weakened Royal Vault
+00120000	Secured Royal Vault
+00130000	Reinforced Royal Vault
+00140000	Fortified Royal Vault
+00150000	Banished Assembly
+00160000	Ravaged Cathedral
+00170000	Vile Sanctuary
+00180000	Copper Legion Keep
+00190000	Gold Legion Keep
+001A0000	Platinum Legion Keep
+001B0000	Silver Legion Keep
+001C0000	Lugian Ice Tunnels
+001D0000	Ruschk Icehold
+001E0000	Viamontian Royal Prison
+001F0000	Eater Pit
+00200000	Heart of Madness
+00210000	Hall of Karlun
+00220000	Cannibal Caverns
+00230000	Sezzherei's Lair
+00240000	Mausoleum of Hate, Bitterness #1
+00250000	Mausoleum of Hate, Bitterness #2
+00260000	Mausoleum of Hate, Anger
+00270000	Mausoleum of Hate, Cruelty
+00280000	Mausoleum of Hate, Slaughter
+00290000	Thrungus Hole
+002A0000	Path of the Blind (Main)
+002B0000	Egg Orchard (Main)
+002C0000	Forgotten Chasm
+002D0000	Dark Design
+002E0000	Feeding Tubes
+002F0000	Tursh Dungeon
+00300000	Renegade Incursion
+00310000	Creepy Canyons
+00320000	Tunnel of Love
+00330000	Coral Caves - Icy Hideout
+00340000	The Fazenda Caves
+00350000	Lost Coastal Archive
+00360000	Lost Desert Archive
+00370000	Frozen Cenotaph
+00380000	Font of the Eternal Harvester
+00390000	Hagra's Holdfast
+003A0000	Corrupted Falatacot Temple
+003B0000	Gateway to the Deep Part 4
+003C0000	Abandoned Mines Mirror
+003D0000	Devastated Falatacot Temple
+003E0000	Breached Hive
+00400000	Master Alizari's Dig
+00410000	Mistress Halmera's Dig
+00420000	Mistress Gabille's Dig
+00430000	Master Vaserio's Dig
+00440000	Collegium Occultus Anteroom
+00450000	Temple of Stirring Shadows (South Wing)
+00460000	Yanshi Upper Undermine
+00470000	Repository
+00480000	Viamontian Esper Mine
+00490000	Camp Entemarre
+004A0000	Creepy Chambers
+004B0000	Path of the Blind (West)
+004C0000	Mukkir Nest
+004D0000	Western Temple Catacombs
+004E0000	Vault of Eternal Slumber
+004F0000	Temple of the Black Spear
+00500000	Realaidain Western Vault
+00510000	Eastern Pedestal Dungeon
+00520000	Silyun Chapterhouse
+00530000	Shade Iron Mine
+00540000	Deep Mukkir Nest
+00550000	Back Tunnels
+00560000	Augmentation Realm Main Level (Entrance 6)
+00570000	Tanada House of Stone
+00580000	Viamontian Staging Portal (Low)
+00590000	Viamontian Staging Portal (Mid)
+005A0000	Viamontian Staging Portal (High)
+005B0000	Ulgrim's Bookcase
+005C0000	Ulgrim's Mysterious Hatch
+005D0000	Harbinger's Lair
+005E0000	Tunnels to the Harbinger (Issk) (Weakened)
+005F0000	Tanada House of Pancakes
+00600000	Harraag's Lair
+00610000	Western Pedestal Dungeon
+00620000	Ley Line Cavern
+00630000	Northern Pedestal Dungeon
+00640000	Egg Orchard (East)
+00650000	Thrungal Den
+00660000	PK Arena (Entrance 5)
+00670000	PKL Arena (Entrance 5)
+00680000	Viamontian Laboratory
+00690000	Carraida's Avenger Event Dungeon
+006A0000	Carraida's Avenger Event Dungeon
+006B0000	Carraida's Avenger Event Dungeon
+006C0000	Lower Catacomb
+006D0000	Augmentation Realm Upper Level
+006E0000	Empyrean Workshop
+006F0000	Shield of Isin Dule Spire
+00700000	Harbinger's Lair
+00710000	Dericost Vault
+00720000	Falatacot Vault
+00730000	Black Ferah's Vault
+00740000	Black Spear Temple (Trophy Room)
+00750000	Shadow-Infested Black Spear Temple (Trophy Room)
+00760000	Mukkir Infested Black Spear Temple (Trophy Room)
+00770000	Muggy Guruk Caverns
+00780000	Humid Guruk Caverns
+00790000	Steamy Guruk Caverns
+007A0000	Deep Guruk Caverns
+007B0000	Tanada House of Wind
+007C0000	Soul Hunter's Lair
+007D0000	Augmentation Realm Lower Level
+007E0000	Black Spear Temple Upper Levels (Upper)
+007F0000	Dardante's Workshop (Summoning Chamber)
+00800000	Rossu Morta Chapterhouse
+00810000	Whispering Blade Chapterhouse
+00820000	Assassins' Hideout
+00830000	Pheraion's Sanctum
+00840000	Black Spear Summoning Chamber (Entrance)
+00850000	Altar Nest
+00860000	Strange Swamp Temple
+00870000	Ikzisik Tika Ri Zikma
+00880000	Deeper Catacombs (Paradox)
+00890000	Cells of the Black Book (Entrance 4)
+008A0000	Dark Monolith Caverns
+008B0000	Ancient Masonry
+008C0000	Essence Chambers
+008D0000	Shadow Breach (Entrance 3)
+008E0000	Grael's Forces Attack Live Event Dungeon
+008F0000	Grael's Forces Attack Live Event Dungeon
+00900000	Grael's Forces Attack Live Event Dungeon
+00910000	Grael's Forces Attack Live Event Dungeon
+00920000	Grael's Forces Attack Live Event Dungeon
+00930000	Grael's Forces Attack Live Event Dungeon
+00940000	Grael's Forces Attack Live Event Dungeon
+00950000	Lord Mhoire's Tomb
+00960000	Insatiable Vault
+00970000	Son of Pooky's Den
+00980000	Abyssal Totem Temple
+00990000	Black Totem Temple
+009A0000	White Totem Temple
+009B0000	Crypt of Crimson Night
+009C0000	Kor-Gursha
+009D0000	Swamp Cavern
+009E0000	Tanada House of Water
+009F0000	Secret Chamber of Kresovus (Part 5 Final Boss)
+00A00000	Monouga Laboratory (80+)
+00A10000	Monouga Laboratory (120+)
+00A20000	Monouga Laboratory (150+)
+00A30000	Claude's Mind (Whitnessing History)
+00A40000	Hidden Laboratory
+00A50000	Lonely Fortress
+00A60000	Tanada Battle Burrows
+00A70000	Ithaenc Quiddity Seed Part 2
+00A80000	Roots of the Deru Tree
+00A90000	Trial of the Deep
+00AA0000	Olthoi Sanctuary
+00AB0000	Derethian Combat Arena (Entrance 5)
+00AC0000	Derethian Combat Pit (Entrance 9)
+00AE0000	Messenger's Sanctuary
+00AF0000	Very Mad Cow Mini-Boss Room
+00B00000	Colosseum 1 Stage 9
+00B10000	Colosseum 2 Stage 9
+00B20000	Colosseum 3 Stage 9
+00B30000	Colosseum 4 Stage 9
+00B40000	Colosseum 5 Stage 9
+00B50000	Mosswart Worship Cavern
+00B60000	The Master
+00B70000	Celestial Hand Stronghold
+00B80000	Eldrytch Web Stronghold
+00B90000	Radiant Blood Stronghold
+00BA0000	Corrupted Catacombs
+00BB0000	Catacombs of Tar'Kelyn
+00BC0000	Prodigal Harbinger's Antechamber (Entrance 4)
+00BD0000	North Gate (Aerbax Live Event)
+00BE0000	West Gate (Aerbax Live Event)
+00BF0000	East Gate (Aerbax Live Event)
+00C00000	South Gate (Device Room)
+00C10000	Blighted Rank Moarsman Tunnels
+00C20000	Blighted Disgusting Moarsman Tunnels
+00C30000	Blighted Putrid Moarsman Tunnels
+00C40000	Blighted Desolation Moarsman Tunnels
+00C50000	Blighted Grimy Moarsman Tunnels
+00C60000	Blighted Verdant Moarsman Tunnels
+00C70000	Crystalline Portal (Level 70)
+00C80000	Egg Orchard (West)
+00C90000	Chamber of Scrolls (Water)
+00CA0000	Mar'uun (Mirror)
+00CB0000	Pyramid (Nivinizk)
+00CC0000	Renegade Fortress (120+)
+00CD0000	Tanada Temple of Black Water (Part 2)
+00CE0000	Upper Catacombs
+00CF0000	The Dark Spiral
+00D00000	Sawato Bandit's Hideout
+00D10000	Deepest Caves
+00D20000	Northern Catacombs
+00D30000	Eastern Catacombs
+00D40000	Southern Catacombs
+00D50000	Claude's Mind (mirror)
+00D60000	Collegium Planar Abstraction (Virindi Portal)
+00D70000	Jester's Prison (Pyramid Hallway)
+00D80000	Lord Rytheran's Private Sanctum
+00D90000	Blightfinger's Warrens
+00DA0000	Falatacot Visitor's Alcove (Part 3)
+00DB0000	Claude's Mind (mirror)
+00DC0000	Moarsmen Priory
+00DD0000	Chamber of the High Priest's Third
+00DE0000	Temple Door
+00DF0000	Temple of Tthuun
+00E00000	Rogue Delvings
+00E10000	Path of the Blind (East)
+00E20000	Ruschk Burial Mound
+00E30000	Sclavus Umbral Forge
+00E40000	Temple of the Three, Ritual Chambers
+00E50000	Temple of the Three
+00E60000	Prodigal Shadow Child's Lair
+00E70000	Gardens of Menilesh
+00E80000	Tactical Arena (Radiant Blood)
+00E90000	Claude's Mind (mirror)
+00EA0000	Mhoire Armory
+00EB0000	Ancient Cloister
+00EC0000	Southern Resonating Crystal
+00ED0000	Artifex Collegium
+00EE0000	Under Drudge Fort
+00EF0000	Temple Entrance
+00F00000	Temple of Xik Minru (Entrance)
+00F10000	Nightmare Gate
+00F20000	Qin Xikit's Hidden Crown
+00F30000	Qin Xikit's Tomb
+00F40000	Rehir Stomach
+00F50000	Reeshan Stomach
+00F60000	Kiree Stomach
+00F70000	Keerik Stomach
+00F80000	Center of Liazk Itzi's Temple
+00F90000	Qin Xikit's Antechamber
+00FA0000	Depth's of Kivik Lir's Temple
+00FB0000	Depth's of Izji Qo's Temple
+00FC0000	Depth's of Ixir Zi's Temple
+00FD0000	Depth's of Hizk Ri's Temple
+00FE0000	Depth's of Liazk Itzi's Temple
+01000000	Murk Warrens (Baishi)
+01010000	Murk Warrens (Zaikhal)
+01020000	Murk Warrens (Stonehold)
+01030000	Black Spawn Den (Teth)
+01040000	Black Spawn Den (Wai Jhou)
+01050000	Black Spawn Den (Ayan Baqur)
+01060000	Setab's Barracks
+01070000	Nor's Folly
+01080000	Cursed Swamp
+01090000	Dungeon of Corpses
+010A0000	Black Dominion
+010B0000	Asuger Temple
+010C0000	Mysterious Tunnels
+010D0000	Time Out Room 1
+010E0000	Time Out Room 2
+010F0000	Time Out Room 3
+01100000	Nexus
+01110000	Sentinel Storage
+01120000	Lyceum Training Grounds
+01130000	Amiantos Bethel
+01140000	Sultry Hovel
+01150000	Wedding Hall
+01160000	Tenkarrdun Foundry
+01170000	Serac Vault
+01180000	Drudge Hovel
+01190000	Amperehelion Vault
+011A0000	Incunabula Vault
+011B0000	Jahannan Vault
+011C0000	Mountain Fortress
+011D0000	Meeting Hall (Al-Arqas)
+011E0000	Meeting Hall (Al-Jalima)
+011F0000	Meeting Hall (Arwic)
+01200000	Meeting Hall (Baishi)
+01210000	Meeting Hall (Cragstone)
+01220000	Meeting Hall (Eastham)
+01230000	Meeting Hall (Glenden Wood)
+01240000	Meeting Hall (Hebian-to)
+01250000	Meeting Hall (Holtburg)
+01260000	Meeting Hall (Khayyaban)
+01270000	Meeting Hall (Lin)
+01280000	Meeting Hall (Lytelthorpe)
+01290000	Meeting Hall (Mayoi)
+012A0000	Meeting Hall (Nanto)
+012B0000	Meeting Hall (Qalaba'r)
+012C0000	Meeting Hall (Rithwic)
+012D0000	Meeting Hall (Samsur)
+012E0000	Meeting Hall (Sawato)
+012F0000	Meeting Hall (Shoushi)
+01300000	Meeting Hall (Tou-Tou)
+01310000	Meeting Hall (Tufa)
+01320000	Meeting Hall (Uziz)
+01330000	Meeting Hall (Yanshi)
+01340000	Meeting Hall (Yaraq)
+01350000	Meeting Hall(Zaikhal)
+01360000	Empyrean Foundry
+01370000	Artifex Vault
+01380000	Lost City of Frore
+01390000	Mage Academy
+013A0000	Admin Night Club
+013B0000	Folthid Cellar
+013C0000	Underground Forest
+013D0000	Forbidden Crypts
+013E0000	Burial Temple
+013F0000	Saadia's Retreat
+01400000	Virindi Fort
+01410000	Enkindled Souls
+01420000	Recovered Temple
+01430000	Phyntos Menace
+01440000	Darkened Halls
+01450000	Bone Lair
+01460000	Mount Lethe Magma Tubes
+01470000	Mount Naipenset Caverns
+01480000	A Small Ruin
+01490000	Thieves' Galleries
+014A0000	Mysterious Cave
+014B0000	Winthura's Garden
+014C0000	Nevius Passage
+014D0000	Damp Caverns
+014E0000	Smugglers Hideaway
+014F0000	Dungeon Maggreth
+01500000	Filos' Doom
+01510000	Forgotten Temple
+01520000	Ruined Cave Outpost
+01530000	Shreth Hive
+01540000	Stone Cathedral
+01550000	Musansayn's Vaults
+01560000	Sea Temple Catacombs
+01570000	Under Cove Crypt
+01580000	Lytaway Dungeon
+01590000	Abandoned Shops
+015A0000	Dry Well
+015B0000	Unfinished Temple
+015C0000	Nanto Rat Lair
+015D0000	Mountain Cavern (Magical Portal 3)
+015E0000	Impious Temple
+015F0000	Dericost Ruin
+01600000	Secrets of Qin Xikit's Temple
+01610000	Empyrean Garrison
+01620000	Cave of Alabree
+01630000	Holtburg Redoubt
+01640000	Lost Distillery
+01650000	Old Warehouse
+01660000	Deserted Ruin
+01670000	Desert Ruin
+01680000	Water Temple
+01690000	Mattekar Cave
+016A0000	Izji Qo's Temple
+016B0000	Ixir Zi's Temple
+016C0000	Marketplace
+016D0000	Izji Qo's Temple (Entrance)
+016E0000	Izji Qo's Trials
+016F0000	Izji Qo's Trials
+01700000	Izji Qo's Trials
+01710000	Izji Qo's Defenders
+01720000	Izji Qo's Defenders
+01730000	Izji Qo's Defenders
+01750000	Muggy Font
+01760000	Humid Font
+01770000	Mossy Cave (Yanshi)
+01780000	Dark Mosswart Halls
+01790000	Umbral Hall
+017A0000	Banderling Hovel
+017B0000	Watery Grotto
+017C0000	King Toad Idol (Dungeon)
+017D0000	Hidden Entrance
+017E0000	Underway
+017F0000	Halls
+01800000	Tunnels
+01810000	Dungeon Nye
+01820000	Desert Mine
+01830000	Dungeon Binar
+01840000	Dungeon Mei
+01850000	Daiklos Dungeon
+01860000	Sclavus Keep
+01870000	A Ruin (Arwic)
+01880000	Mines of Despair
+01890000	Grievous Vault
+018A0000	Hotel Swank (Skill Adjustment Room 2)
+018B0000	A Cave
+018C0000	Crater Lair
+018D0000	Olthoi Tunnels
+018E0000	Abayar's Laboratory
+018F0000	Carved Cave
+01900000	Old Mine
+01910000	Mountain Sewer
+01920000	Mountain Halls
+01930000	K'nath Lair
+01940000	Ruined Empyrean Vault
+01950000	Xi Ru's Library
+01960000	Xi Ru's Rememberance
+01970000	Marauder's Lair
+01980000	Steamy Font
+01990000	Abayar's Study
+019A0000	Crater Caves Dungeon
+019B0000	Lightless Catacombs
+019C0000	Swamp Temple (Wai Jhou)
+019D0000	Simple Tower
+019E0000	Drudge Hideout
+019F0000	Tumerok Post
+01A00000	Tumerok Dungeon
+01A10000	Tumerok Base
+01A20000	Swamp Temple (Yanshi)
+01A30000	The Pit
+01A40000	Mite Tunnels
+01A50000	Inner Dungeon
+01A60000	Disaster Maze
+01A70000	Crater Pathway (Main Entrance)
+01A80000	Abandoned Arena
+01A90000	Ancient Lighthouse
+01AA0000	Lair of Death
+01AB0000	Forking Trail
+01AC0000	Adventurer's Haven
+01AD0000	Dungeon Gallery Tower
+01AE0000	Colier Mine
+01AF0000	Lakeside Lair
+01B00000	Seaside Lair
+01B10000	Lost Garden Ruins
+01B20000	Web Maze
+01B30000	Dungeon Fern (Dungeon)
+01B40000	Golem Burial Ground
+01B50000	Rocky Crypt
+01B60000	Dungeon Muddy
+01B70000	Braid Mansion Ruin
+01B80000	A Ruin (Rithwic)
+01B90000	A Ruin (Samsur)
+01BA0000	Dungeon of Tatters
+01BB0000	Thief Trail
+01BC0000	Tumerok Chamber
+01BD0000	Cave (Ayan Baqur)
+01BE0000	Tumerok Fortress
+01BF0000	Tumerok Outpost
+01C00000	Small Complex
+01C10000	Tumerok Mine
+01C20000	Witshire Dungeon
+01C30000	Trialos
+01C40000	Thasali
+01C50000	Swamp Ruin
+01C60000	Hunter's Leap
+01C70000	Lugian Outpost
+01C80000	Lugian Post
+01C90000	Abandoned Mine
+01CA0000	Hebian-to Sewers
+01CB0000	Penguin Cave Hatchery
+01CC0000	Halls of the Helm
+01CD0000	Rithwic Crypt
+01CE0000	Halls of the Lost Light
+01CF0000	Eastham Sewer
+01D00000	Yanshi Tunnels
+01D10000	Balmy Font
+01D20000	Mountain Keep
+01D30000	Zabool Tower (Top)
+01D40000	Bellig Tower (Top)
+01D50000	Syliph Tower
+01D60000	Alfreth Dungeon
+01D70000	Sylsfear Dungeon
+01D80000	A Drudge Nest (Rithwic)
+01D90000	A Red Rat Lair
+01DA0000	A Ruin (Yanshi)
+01DB0000	Moss Chamber
+01DC0000	A Drudge Nest (Hebian-To)
+01DD0000	A White Rat Nest
+01DE0000	A Ruin (Mayoi)
+01DF0000	A Mosswart Nest
+01E00000	Banderling Ruin
+01E10000	Thieves' Den
+01E20000	Bandit Castle Prison
+01E30000	Glenden Wood Dungeon
+01E40000	North Glenden Prison
+01E50000	Green Mire Grave
+01E60000	Small Icecave
+01E70000	A Small Cave
+01E80000	Dungeon Manor
+01E90000	Underground City
+01EA0000	Old Talisman
+01EB0000	Lola's Den (O)
+01EC0000	Defiled Temple Middle Wing
+01ED0000	Dungeon of Shadows
+01EE0000	Black Death Catacombs Quiddity Seed
+01EF0000	Arwic Mines
+01F00000	Hizk Ri's Temple
+01F10000	Cave (Eastham)
+01F20000	Kivik Lir's Temple
+01F30000	Tomb of the Dead
+01F40000	Lyceum Training Grounds
+01F50000	Aerfalle Keep
+01F60000	Holtburg Dungeon
+01F70000	Shoushi Grotto
+01F80000	Mite Maze
+01F90000	Accursed Halls
+01FA0000	Crypt of Ashen Tears
+01FB0000	Yaraq Tunnels
+01FC0000	ReedShark Lair
+01FD0000	Trothyr's Rest
+01FE0000	Small Empyrean Vault
+02000000	Mansion
+02010000	Mansion
+02020000	Mansion
+02030000	Mansion
+02040000	Mansion
+02050000	Mansion
+02060000	Mansion
+02070000	Mansion
+02080000	Mansion
+02090000	Mansion
+020A0000	Mansion
+020B0000	Mansion
+020C0000	Mansion
+020D0000	Mansion
+020E0000	Mansion
+020F0000	Mansion
+02100000	Mansion
+02110000	Mansion
+02120000	Mansion
+02130000	Mansion
+02140000	Mansion
+02150000	Mansion
+02160000	Mansion
+02170000	Mansion
+02180000	Mansion
+02190000	Mansion
+021A0000	Mansion
+021B0000	Mansion
+021C0000	Mansion
+021D0000	Mansion
+021E0000	Villa
+021F0000	Villa
+02200000	Villa
+02210000	Villa
+02220000	Villa
+02230000	Villa
+02240000	Villa
+02250000	Villa
+02260000	Villa
+02270000	Villa
+02280000	Villa
+02290000	Villa
+022A0000	Villa
+022B0000	Villa
+022C0000	Villa
+022D0000	Villa
+022E0000	Villa
+022F0000	Villa
+02300000	Villa
+02310000	Villa
+02320000	Villa
+02330000	Villa
+02340000	Villa
+02350000	Villa
+02360000	Villa
+02370000	Villa
+02380000	Villa
+02390000	Villa
+023A0000	Villa
+023B0000	Villa
+023C0000	Villa
+023D0000	Villa
+023E0000	Villa
+023F0000	Villa
+02400000	Villa
+02410000	Villa
+02420000	Villa
+02430000	Villa
+02440000	Villa
+02450000	Villa
+02460000	Villa
+02470000	Villa
+02480000	Villa
+02490000	Villa
+024A0000	Villa
+024B0000	Villa
+024C0000	Villa
+024D0000	Villa
+024E0000	Villa
+024F0000	Villa
+02500000	Villa
+02510000	Villa
+02520000	Villa
+02530000	Villa
+02540000	Villa
+02550000	Villa
+02560000	Villa
+02570000	Villa
+02580000	Villa
+02590000	Villa
+025A0000	Villa
+025B0000	Villa
+025C0000	Villa
+025D0000	Villa
+025E0000	Villa
+025F0000	Villa
+02600000	Villa
+02610000	Villa
+02620000	Villa
+02630000	Villa
+02640000	Villa
+02650000	Villa
+02660000	Villa
+02670000	Villa
+02680000	Villa
+02690000	Villa
+026A0000	Villa
+026B0000	Villa
+026C0000	Villa
+026D0000	Villa
+026E0000	Villa
+026F0000	Villa
+02700000	Villa
+02710000	Villa
+02720000	Temple of Kivik Lir
+02730000	Haven of Kivik Lir
+02740000	Haven of Kivik Lir
+02750000	Haven of Kivik Lir
+02760000	Trials of Kivik Lir
+02770000	Gallery of Kivik Lir
+02780000	Burun Fortress Central Mound
+02790000	Burun Fortress SW Mound
+027A0000	Burun Fortress NE Mound
+027B0000	Burun Fortress NW Mound
+027C0000	Ancient Empyrean Grotto
+027D0000	Lair of the Eviscerators
+027E0000	Martinate Holding
+027F0000	East Fork Damn Hive
+02800000	Burun Fortress SE Mound
+02810000	Hidden Chamber
+02820000	An Olthoi Soldier Nest
+02830000	The Dark Lair
+02840000	Abandoned Tumerok Site
+02850000	Wasteland Hive
+02860000	Tumerok Cave
+02870000	Aun Papileona's Shrine to Raeta
+02880000	Royal Hive
+02890000	Tiny Hive
+028A0000	Small Hive
+028B0000	Simple Hive
+028C0000	Shallow Hive
+028D0000	New Hive
+028E0000	Palenqual's Cavern
+028F0000	Swamp Gardens
+02900000	Stable Rift
+02910000	Singularity Bore
+02920000	Tumerok Cavern
+02930000	Habitat
+02940000	Land Bridge Staging Complex Director's Private Chambers
+02950000	Inculcation Cells
+02960000	Southern Black Claw Dungeon
+02970000	Northern Black Claw Dungeon
+02980000	Land Bridge Staging Complex Main
+02990000	Larry's Garden
+029A0000	The Envoy's Chamber
+029B0000	Gredaline Consulate
+029C0000	Linvak Tukal Entryway
+029D0000	Mnemosyne Collection Site (Tiny)
+029E0000	Aerbax Laboratory (Main)
+029F0000	Aerbax Laboratory (Haven)
+02A00000	Sand Shallow
+02A10000	Panopticon
+02A20000	Lyceum Training Grounds
+02A30000	Moss Chamber (NPC Room)
+02A40000	South Tumerok Vanguard Outpost
+02A50000	Northern Tumerok Vanguard Outpost
+02A60000	Lyceum Training Grounds
+02A70000	Lyceum Training Grounds
+02A80000	Lyceum Training Grounds
+02A90000	Hieromancers' Halls
+02AA0000	Desert March
+02AB0000	Beyond the Mines of Despair
+02AC0000	Upper Empyrean Mausoleum
+02AD0000	Empyrean Cloister
+02AE0000	Chakron Gate
+02AF0000	Upper Chakron Flux
+02B00000	Sepulcher of the Hopeslayer
+02B10000	Upper Shade Stronghold
+02B20000	Heart of Darkness (Upper)
+02B30000	Moars Laboratory
+02B40000	A Mosswart Hideout
+02B50000	Moarsmen Spawning Grounds
+02B60000	Idol Spawning Grounds
+02B70000	Catacombs of Ithaenc
+02B80000	Rumuba's Hidey-Hole
+02B90000	Moist Hovel
+02BA0000	Moars (Dungeon)
+02BB0000	Jungle Shadows
+02BC0000	Mosswart Nest
+02BD0000	Small Ruin
+02BE0000	Small Temple
+02BF0000	Small Temple
+02C00000	Small Temple
+02C10000	Mud Cave
+02C20000	Moarsmen Muck
+02C30000	Slithis Pit
+02C40000	Moarsmen Hideout
+02C50000	Treacherous Tunnels
+02C60000	Lightless Tunnels
+02C70000	Tumideon Fortress
+02C80000	Banderling Conquest Dungeon
+02C90000	Sotiris Dungeon
+02CA0000	Mosswart Maze
+02CB0000	The Floating City (Bar)
+02CC0000	The Floating City (Museum)
+02CD0000	The Floating City (Tunnels)
+02CE0000	The Floating City (Construction Area)
+02CF0000	The Floating City (Skyway)
+02D00000	The Floating City (Lost Chamber)
+02D10000	The Floating City (Banderling Area)
+02D20000	Uninhabited Area
+02D30000	Xarabydun Lifestone
+02D40000	Abhorrent Vault
+02D50000	Waterfall Cave
+02D60000	Hidden City
+02D70000	Shendolain Chamber
+02D80000	Qin Xikit's Temple
+02D90000	Liazk Itzi's Temple
+02DA0000	Fenmalain Chamber
+02DB0000	Fenmalain Vestibule
+02DC0000	Caulnalain Vestibule
+02DD0000	Penguin Den
+02DE0000	Ruschk Iceberg
+02DF0000	Caulnalain Chamber
+02E00000	Shendolain Vestibule
+02E10000	Golem Sanctum
+02E20000	Arena
+02E30000	Arena (PK)
+02E40000	Humid Hovel
+02E50000	Krau Li's Labyrinth
+02E60000	Catacombs of the Forgotten
+02E70000	Lugian Excavations
+02E80000	Lugian Quarry
+02E90000	Lugian Mines
+02EA0000	Ishaq's Cellar
+02EB0000	Viamontian Torture Chamber
+02EC0000	Coral Tunnels (West)
+02ED0000	Aerlinthe Lower Reservoir
+02EE0000	Aerlinthe Reservoir
+02EF0000	Acolyte Towers (Treasure Room)
+02F00000	Hills Citadel
+02F10000	Ridge Citadel
+02F20000	Wilderness Citadel
+02F30000	Halls of Metos (Tufa)
+02F40000	Halls of Metos (Ayan Baqur)
+02F50000	Halls of Metos (Wai Jhou)
+02F60000	Sclavus Cathedral (Ayan Baqur)
+02F70000	Sclavus Cathedral (West Dires)
+02F80000	Burun Cathedral
+02F90000	Time Out Room 4
+02FA0000	Time Out Room 5
+02FB0000	Olthoi Horde Nest (Colier)
+02FC0000	Olthoi Horde Nest (Mountain Retreat)
+02FD0000	Olthoi Horde Nest (Bandit Castle)
+02FE0000	Frozen Library
+030F0000	Villa
+03100000	Villa
+03110000	Villa
+03120000	Villa
+03130000	Villa
+03140000	Villa
+03150000	Villa
+03160000	Villa
+03170000	Villa
+03180000	Villa
+03190000	Villa
+031A0000	Villa
+031B0000	Villa
+031C0000	Villa
+031D0000	Villa
+031E0000	Villa
+031F0000	Villa
+03200000	Villa
+03210000	Villa
+03220000	Villa
+03230000	Villa
+03240000	Villa
+03250000	Villa
+03260000	Villa
+03270000	Villa
+03280000	Villa
+03290000	Villa
+032A0000	Villa
+032B0000	Villa
+032C0000	Villa
+032D0000	Villa
+032E0000	Villa
+032F0000	Villa
+03300000	Villa
+03310000	Villa
+03320000	Villa
+03330000	Villa
+03340000	Villa
+03350000	Villa
+03360000	Villa
+03370000	Villa
+03380000	Villa
+03390000	Villa
+033A0000	Villa
+033B0000	Villa
+033C0000	Villa
+033D0000	Villa
+033E0000	Villa
+033F0000	Villa
+03400000	Villa
+03410000	Villa
+03420000	Villa
+03430000	Villa
+03440000	Villa
+03450000	Villa
+03460000	Villa
+03470000	Villa
+03480000	Villa
+03490000	Villa
+034A0000	Villa
+034B0000	Villa
+034C0000	Villa
+034D0000	Villa
+034E0000	Villa
+034F0000	Villa
+03500000	Villa
+03510000	Villa
+03520000	Villa
+03530000	Villa
+03540000	Villa
+03550000	Villa
+03560000	Villa
+03570000	Villa
+03580000	Villa
+03590000	Villa
+035A0000	Villa
+035B0000	Villa
+035C0000	Villa
+035D0000	Villa
+035E0000	Villa
+035F0000	Villa
+03600000	Villa
+03610000	Villa
+03620000	Villa
+03690000	Mansion
+036A0000	Mansion
+036B0000	Mansion
+036C0000	Mansion
+036D0000	Mansion
+036E0000	Mansion
+036F0000	Mansion
+03700000	Mansion
+03710000	Mansion
+03720000	Mansion
+03730000	Villa
+03740000	Villa
+03750000	Villa
+03760000	Villa
+03770000	Villa
+03780000	Villa
+03790000	Villa
+037A0000	Villa
+037B0000	Villa
+037C0000	Villa
+037D0000	Villa
+037E0000	Villa
+037F0000	Villa
+03800000	Villa
+03810000	Villa
+03820000	Villa
+03830000	Villa
+03840000	Villa
+03850000	Villa
+03860000	Villa
+03870000	Villa
+03880000	Villa
+03890000	Villa
+038A0000	Villa
+038B0000	Villa
+038C0000	Villa
+038D0000	Villa
+038E0000	Villa
+038F0000	Villa
+03900000	Villa
+03910000	Villa
+03920000	Villa
+03930000	Villa
+03940000	Villa
+03950000	Villa
+03960000	Villa
+03970000	Villa
+03980000	Villa
+03990000	Villa
+039A0000	Villa
+039B0000	Steaming Hovel
+039C0000	Hollow Lair near Lytelthorpe
+039D0000	Ravenous Vault
+039E0000	Seat of the New Singularity
+039F0000	Singular Obsidian Repository
+03A00000	Singular Chorizite Repository
+03A10000	Singular Pyreal Repository
+03A20000	Southern Infiltrator Keep
+03A30000	Northern Infiltrator Keep
+03A40000	The Asteliary
+03A50000	Undead Temple
+03A60000	North Fork Damn Hive
+03A70000	Mount Elyrii Hive
+03A80000	Villa
+03A90000	Villa
+03AA0000	Villa
+03AB0000	Villa
+03AC0000	Villa
+03AD0000	Villa
+03AE0000	Villa
+03AF0000	Villa
+03B00000	Villa
+03B10000	Villa
+03B20000	Villa
+03B30000	Villa
+03B40000	Villa
+03B50000	Villa
+03B60000	Villa
+03B70000	Villa
+03B80000	Villa
+03B90000	Villa
+03BA0000	Villa
+03BB0000	Villa
+03BC0000	Villa
+03BD0000	Villa
+03BE0000	Villa
+03BF0000	Villa
+03C00000	Villa
+03C10000	Villa
+03C20000	Villa
+03C30000	Villa
+03C40000	Villa
+03C50000	Villa
+03C60000	Villa
+03C70000	Villa
+03C80000	Villa
+03C90000	Villa
+03CA0000	Villa
+03CB0000	Villa
+03CC0000	Villa
+03CD0000	Villa
+03CE0000	Villa
+03CF0000	Villa
+03D00000	Villa
+03D10000	Villa
+03D20000	Villa
+03D30000	Villa
+03D40000	Villa
+03D50000	Villa
+03D60000	Villa
+03D70000	Villa
+03D80000	Villa
+03D90000	Villa
+03DA0000	Villa
+03DB0000	Villa
+03DC0000	Villa
+03DD0000	Villa
+03DE0000	Villa
+03DF0000	Villa
+03E00000	Villa
+03E10000	Villa
+03E20000	Villa
+03E30000	Villa
+03E40000	Villa
+03E50000	Villa
+03E60000	Villa
+03E70000	Villa
+03E80000	Villa
+03E90000	Villa
+03EA0000	Villa
+03EB0000	Villa
+03EC0000	Villa
+03ED0000	Villa
+03EE0000	Villa
+03EF0000	Villa
+03F00000	Villa
+03F10000	Villa
+03F20000	Villa
+03F30000	Villa
+03F40000	Villa
+03F50000	Villa
+03F60000	Villa
+03F70000	Villa
+03F80000	Villa
+03F90000	Villa
+03FA0000	Villa
+03FB0000	Villa
+03FC0000	Villa
+03FD0000	Villa
+03FE0000	Mossy Cave (Shoushi)
+09040000	Singularity Caul
+0D860000	Direlands Northwest Shore
+0E340000	Darktide Festival Stone
+0F380000	Blightfinger's Warrens
+0F390000	Halls of Metos (Ayan Baqur) Surface
+0FB90000	Ahurenga
+11330000	Ayan Baqur (WB Chapterhouse)
+12860000	Northwest Direlands
+13380000	Black Spawn Den (Ayan Baqur) Surface
+13C00000	Northern Ahurenga Plains
+14550000	Mt. Lethe Magma Tubes Surface (Upper)
+147C0000	Old Talisman Surface
+15530000	Mt. Lethe Magma Tubes Surface (Lower)
+15680000	Direlands Subway
+15790000	Humming Crystal Surface
+16350000	Panopticon Surface
+16430000	Cave (Ayan Baqur) Surface
+177B0000	Humming Crystal
+17B20000	Redspire
+18B40000	Olthoi Tunnel
+19360000	Archive (Dungeon)
+19790000	Humming Crystal Surface
+1A730000	Monouga Feeding Pits
+1A8E0000	Shadow Lugian Stronghold
+1B120000	Banished Assembly Surface
+1B130000	Direlands Southwest Shore
+1B550000	Sclavus Cathedral (Ayan Baqur) Surface
+1B7E0000	Slaughterhouse
+1B900000	Black Spawn Den (Fort Tethana) Surface
+1C4D0000	Nexus Surface
+1DB60000	Timaru (Plateau)
+1EAF0000	Karab Delta
+1EB30000	Base of the Cliffs
+1EB40000	Marescent Plateau
+1FC20000	Lair of the Eviscerators Surface
+200F0000	Withered Atoll Lugian Mine
+211F0000	Halls of the Lost Light Surface
+21760000	Gear Hunter Dungeon
+21B00000	Bluespire
+21C50000	Central Tuatara Plains
+22640000	Walled Portals
+231D0000	Direlands Desert Edge
+23840000	Lighthouse
+23B60000	Rebel Hideout
+23DA0000	Westwatch
+24380000	Amperhelion Vault Surface
+24840000	Lighthouse Surface
+24C00000	Roots of Skuld, Urd, and Verdandi
+26810000	Fort Tethana
+26EC0000	Silyun
+28420000	Apostate Citadel Mines
+287A0000	The Floating Spire
+2A8E0000	Tumerok Post Surface
+2AB90000	Crumbling Empyrean Mansion
+2ABE0000	Northern Manumet Plains
+2AE20000	Beacon Tower
+2AEE0000	Karlun's Fort
+2B110000	Ground (Candeth Tree)
+2B120000	Candeth Keep
+2B200000	KEEP OUT!
+2BB50000	Greenspire
+2C300000	Platforms of Rage
+2C510000	Mid Direlands
+2D2F0000	Obsidian Plains
+2D6B0000	Facility
+2D8A0000	Tumerok Base Surface
+2E110000	Direlands Midlands
+2E430000	Singularity Bore Surface
+2E6C0000	Crystalline Portal (120+)
+2E820000	North Direlands Valley Junction
+30490000	Direlands Valley
+30730000	Tumerok Dungeon Surface
+313D0000	Chakron Flux Suface
+31500000	Adrenkus Cave
+33390000	Tumideon Fortress Surface
+33890000	Tumerok Mine
+33D90000	Sanamar
+33F40000	Frozen Cave
+344F0000	Precarious Sojourn
+34E00000	Fledgemaster's Camp
+35180000	Direlands Desert Northeast
+36940000	Direlands North Landbridge
+37340000	Black Spawn Den (Wai Jhou) Surface
+37610000	Outside Accursed Halls
+37E40000	80.8N, 57.4W - Penguin Rookery
+388C0000	Mountain Halls Surface
+38F70000	Fiun Outpost
+39410000	Knath Lair Surface
+39600000	Apostate Excavation
+3B320000	Virindi Fort Surface
+3B4D0000	East Direlands Swamp
+3B9C0000	Dire's Edge
+3C4E0000	Small Complex Surface
+3C9D0000	North Direlands
+3D4A0000	Burun Cathedral Surface
+3DC70000	Adams' Beach
+3E310000	Black Hill
+3EC50000	River Mouth
+3ECC0000	Westshore Cottages
+3EEB0000	Olthoi Tunnel
+3F320000	Disaster Maze Surface
+3FB10000	Reaving Facility
+3FF00000	Plains of Ruin
+400A0000	Olthoi Tunnel
+40310000	Small Hill Base
+40BF0000	Rivermouth Villas
+40D80000	Cave of the Escaped Thief
+41390000	Dungeon of Corpses Surface
+419C0000	Peril's Edge Cottages
+41C40000	Caerlin Cottages
+42AA0000	Sliver-of-BlueCottages
+42AE0000	Wilomine Villas
+42DE0000	Beach Fort
+44520000	Incunabula Vault Surface
+45320000	Halls of Metos (Wai Jhou) Surface
+45500000	Swamp Temple (Wai Jhou) Surface
+459C0000	Last-Stop-Before-Dires Villas
+45DC0000	Lady Maila Estates
+46A00000	Artifex Vault Surface
+46A50000	Hero's Vale
+46C00000	Auralla Settlement
+472C0000	Seat of the New Singularity (Mirror)
+472D0000	Wight Barrow
+48B80000	Plateau Base
+48BC0000	Fadsahil Settlement
+48E00000	Woodshore Cottages
+492D0000	Down to Surface
+49B60000	Plateau Top
+49B70000	Plateau Village
+49E60000	Desolation Beach
+49F00000	Eastwatch
+4A9C0000	Mirthless Dale
+4ADB0000	Brazenn Domain
+4BC80000	Pine Deep
+4CA50000	Axefall Glen
+4DC00000	Rahvard Square
+4DE70000	Empyrean Shore Villas
+4E320000	Shendolain Vestibule Surface
+4EAC0000	Plateau Hollow Settlement
+4EBA0000	Rhynntal Cottages
+50430000	Villa
+50440000	Villa
+50450000	Villa
+50460000	Villa
+50470000	Villa
+50480000	Villa
+50490000	Villa
+504A0000	Villa
+504B0000	Villa
+504C0000	Villa
+504D0000	Villa
+504E0000	Villa
+504F0000	Villa
+50500000	Villa
+50510000	Villa
+50520000	Villa
+50530000	Villa
+50540000	Villa
+50550000	Villa
+50560000	Villa
+50570000	Villa
+50580000	Villa
+50590000	Villa
+505A0000	Villa
+505B0000	Villa
+505C0000	Villa
+505D0000	Villa
+505E0000	Villa
+505F0000	Villa
+50600000	Villa
+50610000	Villa
+50620000	Villa
+50630000	Villa
+50640000	Villa
+50650000	Villa
+50660000	Villa
+50670000	Villa
+50680000	Villa
+50690000	Villa
+506A0000	Villa
+506B0000	Mansion
+506C0000	Mansion
+506D0000	Mansion
+506E0000	Mansion
+506F0000	Mansion
+50700000	Mansion
+50710000	Mansion
+50720000	Mansion
+50730000	Mansion
+50740000	Mansion
+50750000	Villa
+50760000	Villa
+50770000	Villa
+50780000	Villa
+50790000	Villa
+507A0000	Villa
+51190000	Tumerok Chamber Surface
+51430000	Mansion
+51440000	Mansion
+51450000	Mansion
+51460000	Mansion
+51470000	Mansion
+51480000	Mansion
+51490000	Villa
+514A0000	Villa
+514B0000	Villa
+514C0000	Villa
+514D0000	Villa
+514E0000	Villa
+514F0000	Villa
+51500000	Villa
+51510000	Villa
+51520000	Villa
+51530000	Villa
+51540000	Villa
+51550000	Villa
+51560000	Villa
+51570000	Villa
+51580000	Villa
+51590000	Villa
+515A0000	Villa
+515B0000	Villa
+515C0000	Villa
+515D0000	Villa
+515E0000	Villa
+515F0000	Villa
+51600000	Villa
+51610000	Villa
+51620000	Villa
+51630000	Villa
+51640000	Villa
+51650000	Villa
+51660000	Villa
+51670000	Villa
+51680000	Villa
+51690000	Villa
+516A0000	Villa
+516B0000	Villa
+516C0000	Villa
+516D0000	Villa
+516E0000	Villa
+516F0000	Villa
+51700000	Villa
+51710000	Villa
+51720000	Villa
+51730000	Villa
+51740000	Villa
+51750000	Villa
+51760000	Villa
+51770000	Villa
+51780000	Villa
+51790000	Villa
+517A0000	Villa
+519D0000	Tumerok Outpost Surface
+51A00000	Merak
+51A30000	Adept's Domain
+52260000	Direlands Southeast Shore
+52430000	Villa
+52440000	Villa
+52450000	Villa
+52460000	Villa
+52470000	Villa
+52480000	Villa
+52490000	Villa
+524A0000	Villa
+524B0000	Villa
+524C0000	Villa
+524D0000	Villa
+524E0000	Villa
+524F0000	Villa
+52500000	Villa
+52510000	Villa
+52520000	Villa
+52530000	Villa
+52540000	Villa
+52550000	Villa
+52560000	Villa
+52570000	Villa
+52580000	Villa
+52590000	Villa
+525A0000	Villa
+525B0000	Villa
+525C0000	Villa
+525D0000	Villa
+525E0000	Villa
+525F0000	Villa
+52600000	Villa
+52610000	Villa
+52620000	Villa
+52630000	Villa
+52640000	Villa
+52650000	Villa
+52660000	Villa
+52670000	Villa
+52680000	Villa
+52690000	Wedding Trials Dungeon
+526A0000	Entrance to Portal Space (Final)
+526B0000	Entrance to Portal Space (Mid)
+526C0000	Entrance to Portal Space (Start)
+526D0000	Upper Empyrean Acid Cistern
+526E0000	Empyrean Acid Propylaeum
+526F0000	Upper Empyrean Fire Cistern
+52700000	Empyrean Fire Propylaeum
+52710000	Upper Empyrean Ice Cistern
+52720000	Empyrean Ice Propylaeum
+52730000	Upper Empyrean Lightning Cistern
+52740000	Empyrean Lightning Propylaeum
+52750000	Farmer's Basement
+52760000	Hall of Hollows
+52770000	Mansion
+52780000	Mansion
+52790000	Mansion
+527A0000	Mansion
+52AB0000	Yee Villas
+52B80000	Rytheran Dale
+52C10000	Lithaenean Cottages
+52DF0000	Sonel
+53180000	Lightless Catacombs Surface
+53430000	Villa
+53440000	Villa
+53450000	Villa
+53460000	Villa
+53470000	Villa
+53480000	Villa
+53490000	Villa
+534A0000	Villa
+534B0000	Villa
+534C0000	Villa
+534D0000	Villa
+534E0000	Villa
+534F0000	Villa
+53500000	Villa
+53510000	Villa
+53520000	Villa
+53530000	Villa
+53540000	Villa
+53550000	Villa
+53560000	Villa
+53570000	Villa
+53580000	Villa
+53590000	Villa
+535A0000	Villa
+535B0000	Villa
+535C0000	Villa
+535D0000	Villa
+535E0000	Villa
+535F0000	Villa
+53600000	Sanctum Residential Halls
+53610000	Sanctum Residential Halls
+53620000	Sanctum Residential Halls
+53630000	Sanctum Residential Halls
+53640000	Sanctum Residential Halls
+53650000	Sanctum Residential Halls
+53660000	Sanctum Residential Halls
+53670000	Sanctum Residential Halls
+53680000	Sanctum Residential Halls
+53690000	Sanctum Residential Halls
+536A0000	Hidden Dungeon
+536B0000	Convergent Median
+536C0000	Malignant Tabernacle
+536D0000	Nuhmudira's Dungeon (Nuhmudira's Mansion Basement)
+536E0000	Venemous Nidus
+536F0000	Mansion
+53700000	Mansion
+53710000	Mansion
+53720000	Mansion
+53730000	Mansion
+53740000	Mansion
+53750000	Mansion
+53760000	Mansion
+53770000	Mansion
+53780000	Mansion
+53790000	Villa
+537A0000	Villa
+53C50000	Stormtree Villas
+53E40000	Sweet Maple Cottages
+54160000	South Direlands
+54430000	Villa
+54440000	Villa
+54450000	Villa
+54460000	Villa
+54470000	Villa
+54480000	Villa
+54490000	Villa
+544A0000	Villa
+544B0000	Villa
+544C0000	Villa
+544D0000	Villa
+544E0000	Villa
+544F0000	Villa
+54500000	Villa
+54510000	Villa
+54520000	Villa
+54530000	Villa
+54540000	Villa
+54550000	Villa
+54560000	Grievver Caves
+54570000	Colossus Foundry
+54580000	Mammet Foundry
+54590000	Mammet Foundry
+545A0000	Mannikin Foundry
+545B0000	Arcanum Research Facility
+545C0000	Arcanum Storehouse
+545D0000	The Callous Heart (Right Wing)
+545E0000	Fathomless Chasm Devex
+545F0000	Fathomless Chasm Plummet
+54600000	Mammet Foundry
+54610000	Mammet Foundry
+54620000	Oubliette (Labyrinth)
+54630000	Mammet Foundry
+54640000	Mammet Foundry
+54650000	Mammet Foundry
+54660000	Mammet Foundry
+54670000	Villa
+54680000	Villa
+54690000	Villa
+546A0000	Villa
+546B0000	Villa
+546C0000	Villa
+546D0000	Villa
+546E0000	Villa
+546F0000	Villa
+54700000	Villa
+54710000	Villa
+54720000	Villa
+54730000	Villa
+54740000	Villa
+54750000	Villa
+54760000	Villa
+54770000	Villa
+54780000	Villa
+54790000	Villa
+547A0000	Villa
+54A80000	Hopevale
+55430000	Villa
+55440000	Villa
+55450000	Villa
+55460000	Villa
+55470000	Villa
+55480000	Villa
+55490000	Villa
+554A0000	Villa
+554B0000	Villa
+554C0000	Villa
+554D0000	Villa
+554E0000	Villa
+554F0000	Villa
+55500000	Villa
+55510000	Villa
+55520000	Mansion
+55530000	Mansion
+55540000	Mansion
+55550000	Mansion
+55560000	Mansion
+55570000	Mansion
+55580000	Mansion
+55590000	Mansion
+555A0000	Mansion
+555B0000	Mansion
+555C0000	Villa
+555D0000	Villa
+555E0000	Villa
+555F0000	Villa
+55600000	Villa
+55610000	Villa
+55620000	Villa
+55630000	Villa
+55640000	Villa
+55650000	Villa
+55660000	Villa
+55670000	Villa
+55680000	Villa
+55690000	Villa
+556A0000	Villa
+556B0000	Villa
+556C0000	Villa
+556D0000	Villa
+556E0000	Villa
+556F0000	Villa
+55700000	Villa
+55710000	Villa
+55720000	Villa
+55730000	Villa
+55740000	Villa
+55750000	Villa
+55760000	Villa
+55770000	Villa
+55780000	Villa
+55790000	Villa
+557A0000	Villa
+55A00000	Inquisitor's Dale Cottages
+55A40000	Shield of Valor Cottages
+56430000	Gromnie Clan Training Camp
+56440000	Mask Clan Training Camp
+56450000	Abandoned Armory
+56460000	An Archive
+56470000	Tower Base Dungeon
+56480000	Misty Mine
+56490000	Dark Tree Crystal Mine
+564A0000	Spirit Cell
+564B0000	Crystal Mine Extreme
+564C0000	Crystal Mine High
+564D0000	Crystal Mine Mid
+564E0000	Crystal Mine Low
+564F0000	Crystal Mine New Isparians
+56500000	Victory Residential Halls
+56510000	Frest Greevling's Dungeon
+56520000	Warded Dungeon Passage
+56530000	Citadel Library
+56540000	Gaerlan's Inner Sanctum (Entrance 4)
+56550000	Virindi Research Facility
+56560000	Haven Residential Halls
+565E0000	Oriel Residential Halls
+56600000	Martine's Throne Room
+56610000	Atrium Residential Halls
+56620000	Villa
+56630000	Villa
+56640000	Villa
+56650000	Villa
+56660000	Villa
+56670000	Villa
+56680000	Villa
+56690000	Villa
+566A0000	Villa
+566B0000	Villa
+566C0000	Villa
+566D0000	Villa
+566E0000	Villa
+566F0000	Villa
+56700000	Villa
+56710000	Villa
+56720000	Villa
+56730000	Villa
+56740000	Villa
+56750000	Villa
+56760000	Villa
+56770000	Villa
+56780000	Villa
+56790000	Villa
+567A0000	Villa
+56AC0000	Stone Scythe Stronghold
+56B00000	Two Hills Cottages
+57430000	Frost Guardian Lair
+57440000	Proving Grounds Low (Stage 4)
+57450000	Icy Demise
+57460000	Lightning Ziggurat
+57480000	Tusker Burrow
+57490000	Tusker Lodge
+574A0000	Warehouse
+574B0000	Warehouse (ransacked)
+574C0000	Warehouse Annex Mine
+574D0000	Deeper Catacombs (Black Death Catacombs)
+574E0000	Deeper Catacombs (Bandit Castle OHN)
+574F0000	Deeper Catacombs (Mountain Retreat OHN)
+57500000	Tusker Lodge
+57510000	Deeper Catacombs (Crater Lair)
+57520000	Deeper Catacombs (Olthoi Tunnels)
+57530000	Deeper Catacombs (Lair of Death)
+57540000	Catacombs (20.7S, 7.6E)
+57560000	Temple
+575E0000	Summoning Cave (Ler Rhan Version)
+57600000	Slave Master Sand Caves (Entrance 3)
+57610000	Summoning Cave (Isin Dule Version)
+57620000	Shadow Vortex Dungeon
+57630000	Shadow Vortex Dungeon (Mirror)
+57640000	Oubliette of Mhoire Castle Part 6
+57650000	Lost Ruins
+57660000	Nanjou Shou-jen Academy
+57680000	Sclavus Santa's House
+57690000	Fiery Refuge
+576A0000	Charged Refuge
+576B0000	Unused/Live Event PVP Arena
+576C0000	Acidic Refuge
+576D0000	Cavernous Refuge
+576E0000	Shadowy Refuge
+576F0000	Twisted Refuge
+57700000	Frozen Refuge
+57710000	Venerable Mausoleum
+57720000	Venerable Mausoleum
+57730000	Venerable Mausoleum
+57740000	Venerable Mausoleum
+57750000	Secret Putiputi Place (Part 3)
+57760000	Secret Putiputi Place (Part 4)
+57770000	Falcon Clan Training Camp
+57780000	Serpent Clan Training Camp
+57790000	Shreth Clan Training Camp
+577A0000	Reedshark Clan Training Camp
+58430000	Fire Guardian Lair
+58440000	Proving Grounds Mid (Stage 4)
+58450000	Fiery Consumption
+58460000	Acid Ziggurat
+58480000	Tusker Freehold
+58490000	Tusker Assault
+584A0000	Tusker Shrine
+584B0000	Olthoi Brood Hive (80+)
+584C0000	Olthoi Brood Hive (80+)
+584D0000	Frigid Grotto
+584E0000	Serpent Burial Grounds
+584F0000	Nanjou Prison
+58500000	Prismatic Guardian Lair
+58510000	Prismatic Ziggurat
+58520000	Proving Grounds Uber (Stage 4)
+58530000	Prismatic Devastation
+58540000	Gaerlan's Inner Sanctum (Entrance 4)
+58560000	Foundry of Izexi
+585E0000	Falatacot Depot
+58600000	Colton Reeyan's Sanctuary
+58610000	Crystal Core
+58620000	Count Phainor's Tomb
+58630000	Desert Dwelling
+58640000	Samurai Hausu
+58650000	Stinging Corner
+58660000	Sanctuary of the Recluse
+58670000	Virinid Edifice
+58680000	Chiming Portal
+58690000	West Fork Dam Hive
+586A0000	Western Royal Hive (Virindi Test)
+586B0000	Queen's Treasury
+586C0000	Masked Preface Rewards Room
+586D0000	Hive Eviscerator Burrow
+586E0000	Hive Warrior Mound
+586F0000	Tusker Den
+58700000	Curator of Torment's Study (Private Chamber)
+58710000	Seed of Hatred
+58720000	Seed of Misery
+58730000	Seed of Anger
+58740000	Rynthid Crystal Access (Puzzle Failure Drop)
+58750000	Rynthid Genesis Treasury
+58760000	Rynthid Foundry
+58770000	Fear Factory
+58780000	Spirited Halls (Part 4)
+58790000	Path of Torment
+587A0000	Rynthid Training Facility
+58E80000	Azaroth Cottages
+59430000	Acid Guardian Lair
+59440000	Proving Grounds High
+59450000	Entropic Decay
+59460000	Fire Ziggurat
+59480000	Tusker Armory
+59490000	Tusker Lacuna
+594A0000	Chapel of Mowen
+594B0000	Aerbax's Holding
+594C0000	Gerent's Compound
+594D0000	Ancient Temple
+594E0000	Temple Trial
+594F0000	Testing Grounds
+59500000	Testing Grounds (Mirror)
+59510000	Presk's Treasury
+59520000	Corrupted Energy Drop
+59530000	Rynthid Training Facility (Rock-Portal Jumping Test)
+59540000	Inner Sanctum
+59560000	Fowl Basement (Seasonal)
+595E0000	Frozen Recess
+59600000	Gauntlet Stage 5b (Celestial Hand)
+59610000	Gauntlet Stage 5b (Celestial Hand 2)
+59620000	Gauntlet Stage 5b (Eldritch Web)
+59630000	Gauntlet Stage 5b (Eldritch Web 2)
+59640000	Gauntlet Stage 5b (Radiant Blood)
+59650000	Gauntlet Stage 5b (Radiant Blood 2)
+59660000	Viridian Root (Entrance 5)
+59670000	Tremb'Orh (Celestial Hand)
+59680000	Tremb'Orh (Eldrytch Web)
+59690000	Tremb'Orh (Radiant Blood)
+596A0000	Fowl Basement
+596B0000	Temple of the Font
+5A430000	Lightning Guardian Lair
+5A440000	Proving Grounds Extreme (Stage 4)
+5A450000	Electric Destruction
+5A460000	Frost Ziggurat
+5A480000	Tusker Barracks
+5A490000	Tusker Honeycombs
+5A4A0000	Tusker Pits
+5A9C0000	Danby's Outpost
+5AB00000	Rending Talon Cottages
+5AB40000	Tyrrin Cottages
+5AD80000	Westward
+5B430000	Olthoi Arcade
+5B440000	Olthoi Arcade Central
+5B450000	Virindi Complex Portal Puzzle
+5B460000	Tusker Cave
+5B470000	Tusker Habitat
+5B480000	Tusker Holding
+5B490000	Plated Rifts
+5B4A0000	Tusker Quarters
+5BA20000	Tia-Leh Homestead
+5BA60000	Wolfenvale
+5C430000	Tusker Cavern
+5C440000	Tusker Encampment
+5C450000	Tusker Abode
+5C460000	Tusker Gauntlet
+5C470000	Tusker Grotto
+5C480000	Rampage Bluff
+5C490000	Tusker Retreat
+5C4A0000	Tusker Temple (0.7N 68.1W)
+5C4B0000	Virindi Complex Part 2
+5C4C0000	Hizk Ri's Temple Entrance
+5C4D0000	Hizk Ri's Well of Tears Dungeon
+5C4E0000	Hizk Ri's Well of Tears Dungeon
+5C4F0000	Hizk Ri's Well of Tears Dungeon
+5CE70000	Northfire Estates
+5D430000	Tusker Temple (59.8N 28.4E)
+5D440000	Tusker Temple (10.5S 65.6E)
+5D450000	Tusker Tunnels
+5D460000	Vengeance Caverns
+5D470000	Temple of Enlightenment (Inner Sanctum)
+5D480000	Temple of Forgetfulness (Inner Sanctum)
+5D490000	Olthoi Arcade
+5D4A0000	Olthoi Chasm
+5D4B0000	Shallow Olthoi Chasm
+5D4C0000	Deep Olthoi Chasm
+5D4D0000	Cavernous Olthoi Chasm
+5D4E0000	Abyssal Olthoi Chasm
+5DC60000	Asandra Cottages
+5E430000	Arena of the Tusker Hero (Mowen Udaun)
+5E440000	Tusker Food Storage
+5E450000	Black Death Catacombs
+5E460000	Catacombs of Opposition
+5E470000	Asheron's Sanctum
+5E480000	Olthoi Brood Hive (60+)
+5E490000	Olthoi Brood Hive (40+)
+5E4A0000	Olthoi Brood Hive (60+)
+5E4B0000	Olthoi Brood Hive (40+)
+5E4C0000	Bandit Hideout
+5E4D0000	Bandit Hideout Prison
+5EAF0000	Firesong Cottages
+5EB40000	Dame Tolani Villas
+5EBE0000	Aloria
+5ED20000	Stonehold Valley
+5F100000	Black Dominion Surface
+5F430000	Legend of the Tusker King
+5F440000	Throne of the Tusker King
+5F450000	Fir Tree
+5F460000	Heart of Innocence (Unused End)
+5F470000	Elemental Caverns
+5F480000	Hidden Cavern
+5F490000	Hizk Ri's Test
+5F4A0000	Hizk Ri's Test
+5F4B0000	Hizk Ri's Test
+5F4C0000	Hizk Ri's Sewers
+5F4D0000	Hizk Ri's Sewers
+5F4E0000	Hizk Ri's Sewers
+5F4F0000	Hizk Ri Boss Dungeon
+5F500000	Hizk Ri Boss Dungeon
+5F510000	Hizk Ri Boss Dungeon
+5FA20000	Tarn Vinara Villas
+5FA60000	Nalib Cavana Settlement
+60430000	Tusker Warrior's Lair
+60440000	Behind the Waterfall
+60450000	Caul Asylum
+60460000	Caul Athenaeum
+60470000	Caul Sanitorium
+60480000	Aerbax's Antechamber
+60490000	Renegade Garrison
+604A0000	Sclavus Temple
+604B0000	Forbidden Catacombs
+61430000	Ulgrim's Basement
+61440000	Lower Corridor (From Black Death Catacombs)
+61450000	Matron Hive West
+61460000	Matron Hive East
+61470000	Mountain Citadel
+61480000	Desert Citadel
+61490000	Crystal Mine
+614A0000	Lair of the Ancient Queen
+614B0000	Drudge Fight (Dungeon)
+614C0000	Resting Place
+619E0000	East Danby
+61AC0000	Deepvale Cottages
+61CA0000	Verena
+62430000	Lair of Liazk Itzi
+62440000	Liazk Itzi Offering Room
+62450000	Liazk Itzi Offering Room
+62460000	Liazk Itzi's Crypt
+62470000	Burun Burrow
+62480000	Renegade Fortress (60+)
+62490000	Renegade Stronghold (Lytelthorpe)
+624A0000	Burun Cavern
+62CF0000	The Pit Dungeon Surface
+63430000	Barracks
+63440000	Knorr Trials (Interior Gates 3)
+63450000	Subterannean Farm
+63460000	Matron Hive South
+63470000	Matron Hive North
+63480000	Caliginous Bethel
+63490000	Oubliette
+634A0000	Lair of The Homunculus
+634B0000	Sunken Mere (80+)
+634C0000	Tainted Grotto
+63A20000	Harmonious Blade Cottages
+63A80000	Direvale Villas
+63B00000	Majestic Saddle Cottages
+64430000	Research Chamber
+64440000	Seat of Knorr
+64450000	Forge
+64460000	Tunnels of the Harbinger (Vincadi) (Weakened)
+64470000	Tunnels of the Harbinger (Vincadi) (Empowered-Prodigal)
+64480000	Mount Ingot
+64490000	Unicorn's Grace
+644A0000	Decrepit Tower
+64D50000	Stonehold
+65430000	Lesser Battle Dungeon
+65440000	Greater Battle Dungeon
+65450000	Tomb of Ixir Zi
+65460000	Hall of the Arbiter
+65470000	Hall of the Temple Guardians
+65480000	The Orphanage
+65490000	Renegade Stronghold (Stonehold)
+654A0000	Renegade Stronghold (Tufa)
+654B0000	Renegade Stronghold (Shoushi)
+654C0000	Neftet Treasury
+654D0000	Private Quarters
+65E50000	Thyrinn Cant Cottages
+66510000	Hoshino Tower
+665E0000	Falatacot Temple (Part 2)
+66780000	Olthoi Warrior Nest
+66790000	Crumbling Empyrean Mansion
+667A0000	Mutilator Tunnels
+66C30000	Regina Cottages
+66D40000	Phyntos Menace Surface
+67170000	Direlands South Landbridge
+67570000	Tanada Toresen Temple
+679D0000	Fearnot Valley Cottages
+67C90000	Hidden Valley
+68970000	Sanai
+68A10000	Embara
+68A50000	Rethux Vale
+69920000	Nidal-Taraq Villas
+69E50000	Lightbringer Dale Cottages
+6ACF0000	Ice's Edge Cottages
+6AD30000	Laiti's Villa
+6AE10000	Dires' Door Estates
+6B8E0000	Shore Vista Cottages
+6CA70000	Morntide Ascent Cottages
+6CAB0000	East Morntide Settlement
+6EED0000	Seaview Ridge Cottages
+6F8B0000	Loredane Villas
+6F950000	Gharu'n Victory Villas
+6FAF0000	East Morntide Villas
+6FBC0000	Olthoi Horde Nest (Mountain Retreat) Surface
+70A60000	Sanam Batal Villas
+70AA0000	Genem Causland
+71E40000	Lord Cambarth Villas
+72000000	Atrium Residential Halls
+72020000	Training Academy
+72030000	Training Academy
+72040000	Training Academy
+72110000	Acolyte Towers Surface
+72C80000	Patriarch's Valley
+73000000	Atrium Residential Halls
+73020000	Training Academy
+73030000	Training Academy
+73040000	Training Academy
+73940000	West Zaikhal Freehold
+73AF0000	Amarand Villas
+74000000	Atrium Residential Halls
+74020000	Training Academy
+74030000	Training Academy
+74040000	Training Academy
+74880000	Desert Boundary Cottages
+74AB0000	Darasa Villas
+74EA0000	Snowy Valley
+75000000	Atrium Residential Halls
+75020000	Training Academy
+75030000	Training Academy
+75040000	Training Academy
+75D70000	Access to Crystal Mines
+76000000	Atrium Residential Halls
+76020000	Training Academy
+76030000	Training Academy
+76040000	Training Academy
+77000000	Atrium Residential Halls
+77020000	Training Academy
+77030000	Training Academy
+77040000	Training Academy
+77920000	Sharvale
+77E70000	Frozen Tomb
+78000000	Atrium Residential Halls
+78020000	Training Academy
+78030000	Training Academy
+78040000	Training Academy
+78B20000	Tiofor Deeps
+78F40000	Northwater Cottages
+79000000	Atrium Residential Halls
+79020000	Training Academy
+79030000	Training Academy
+79040000	Training Academy
+79110000	Gatekeepers
+79660000	Sea Temple Catacombs Surface
+79810000	Bay of Sands
+79E90000	Lord Kastellar's Lab
+7A000000	Atrium Residential Halls
+7A020000	Training Academy
+7A030000	Training Academy
+7A040000	Training Academy
+7A640000	Under-Cove Crypt Surface
+7A870000	Desert March Surface
+7A9E0000	Mimiana Villas
+7AA20000	Blazing Wand Villas
+7AD60000	Anadil
+7B000000	Atrium Residential Halls
+7B020000	Training Academy
+7B030000	Training Academy
+7B040000	Training Academy
+7B790000	North Desert Edge
+7C000000	Oriel Residential Halls
+7C020000	Training Academy
+7C030000	Training Academy
+7C040000	Training Academy
+7C640000	A Red Rat Lair Surface
+7C6C0000	North Yaraq Villas
+7C700000	Al-Arqis Cottages
+7C760000	Aqalah
+7CF30000	Far Horizon Cottages
+7D000000	Oriel Residential Halls
+7D020000	Training Academy
+7D030000	Training Academy
+7D040000	Training Academy
+7D600000	Yaraq Tunnels Surface
+7D640000	Yaraq
+7D7E0000	Midsong Cottages
+7D870000	Recovered Temple Surface
+7DE80000	Wisp Lake Cottages
+7E000000	Oriel Residential Halls
+7E020000	The Shadows
+7E030000	Dark Cavern (Portal Puzzle)
+7E040000	Thug Hideout
+7E640000	Yaraq
+7E790000	Halls of Metos (Tufa) Surface
+7E910000	Moss Chamber Surface
+7E9F0000	Bright Blade Cottages
+7EC80000	Mountain Retreat Cottages
+7F000000	Oriel Residential Halls
+7F020000	Apostate Nexus
+7F030000	Training Academy
+7F040000	Training Academy
+7F150000	Inner Sanctum (Fake)
+7F660000	Small Fledgling Mukkir Nest
+7F7F0000	Sepulcher of the Hopeslayer Surface
+7F8F0000	Olthoi Tunnel
+7F900000	Seat of the New Singularity (Surface)
+7FCD0000	Lake Nemuel Settlement
+7FDB0000	Shade Stronghold Surface
+7FEE0000	Inner Sanctum (Fake)
+80000000	Oriel Residential Halls
+80020000	Training Academy
+80030000	Training Academy
+80040000	Training Academy
+80650000	Darkened Halls Surface
+806F0000	Sand Shallow Cottages
+80710000	Sand Shallow Surface
+80880000	Carved Cave Surface
+80900000	Zaikhal
+809B0000	Helms Villas
+80AA0000	Reviled Maw Cottages
+80AE0000	Lanadryll Cottages
+80E10000	Stone Triad Dell
+81000000	Oriel Residential Halls
+81020000	Training Academy
+81030000	Training Academy
+81040000	Training Academy
+815E0000	South Yaraq Cottages
+81960000	Halls of the Helm Surface
+81A00000	Murk Warrens (Zaikhal) Surface
+81E90000	Midhill Cottages
+82000000	Oriel Residential Halls
+82020000	Training Academy
+82030000	Training Academy
+82040000	Training Academy
+828E0000	Four Towers Surface
+82C70000	Defiant Prey Cottages
+83000000	Oriel Residential Halls
+83020000	Training Academy
+83030000	Training Academy
+83040000	Training Academy
+83120000	Land Bridge Villas
+83870000	Forbidden Crypts Surface
+83910000	Crypt of Ashen Tears Surface
+83CD0000	Windrune Cottages
+84000000	Oriel Residential Halls
+84020000	Training Academy
+84030000	Training Academy
+84040000	Training Academy
+84770000	Return of Mumiyah Cottages
+84940000	Suntik
+84960000	New Suntik
+84AC0000	Tusker Notch
+84B00000	Charnhold
+85000000	Oriel Residential Halls
+85020000	Training Academy
+85030000	Training Academy
+85040000	Training Academy
+85560000	Ijaniya
+85730000	Arrak
+85880000	Al-Jalima
+85B40000	Durglen
+85C40000	North Pass Hollow Cottages
+86000000	Haven Residential Halls
+86020000	Training Academy
+86030000	Training Academy
+86040000	Deprecated Twisting Tower
+86620000	Empyrean Mausoleum Surface
+868E0000	Four Towers Settlement
+86C00000	Ianna
+86CD0000	Mountain Cavern Surface
+86D50000	Caulnalain Vestibule Surface
+86F10000	Tharesun
+87000000	Haven Residential Halls
+87020000	Training Academy
+87030000	Training Academy
+87040000	Crystalline Portal (90+)
+876C0000	Tufa
+87890000	Mysterious Cave Surface
+87E00000	Frosty Dale Cottages
+88000000	Haven Residential Halls
+88020000	Roost Dungeon
+88030000	Crystalline Portal (110+)
+88040000	Mar'uun (Test Portal) (Mirror)
+88500000	Gearknight Lord's Tower
+88520000	Gear Knight Excavation
+885A0000	Bone Lair Surface
+88F70000	Point Tremblant
+89000000	Haven Residential Halls
+89020000	Mar'uun (Test Portal) (Mirror)
+89030000	Frost Elemental Plane
+89040000	Empyrean Facility Upper Level
+89540000	Temple of Twilight
+89C90000	Stonerune Cottages
+89CD0000	Shaky Ledge Cottages
+89F40000	Northern Point
+8A000000	Haven Residential Halls
+8A020000	Facility Hub (Entrance)
+8A030000	Society Infiltration (Radiant Blood)
+8A040000	Night Club
+8A480000	Pillars-on-the-Sea Cottages
+8A590000	Unfinished Temple Surface
+8A630000	Temple of Mornings (Part 2)
+8A7F0000	Jackcat Canyon
+8AA60000	Majestic Hill Cottages
+8B000000	Haven Residential Halls
+8B020000	Forgotten Tunnels (Entrance 3)
+8B030000	Mysterious Portal
+8B040000	Frozen Wight Lair
+8B550000	Al-Kasan Settlement
+8B680000	Tomb of the Dead Surface
+8B6D0000	Bleached Skull Wastes Settlement
+8BF20000	Celcynd Cottages
+8C000000	Haven Residential Halls
+8C020000	Training Academy
+8C030000	Mhoire Castle Great Hall
+8C040000	Training Academy
+8C5F0000	Wi Badlands Settlement
+8C980000	Alfreth Ridge Cottages
+8C9D0000	Dovetail Valley Villas
+8CB90000	Firedew
+8CC20000	New Nesortania
+8D000000	Haven Residential Halls
+8D020000	Training Academy
+8D030000	Training Academy
+8D040000	Training Academy
+8D630000	Djinaya Wind Cottages
+8D730000	Naqut Dreams Villas
+8D8E0000	Top of Mt. Syliph
+8DE30000	Greenvale Settlement
+8E000000	Haven Residential Halls
+8E020000	Training Academy
+8E030000	Training Academy
+8E040000	Training Academy
+8E400000	Serpent Hills Settlement
+8E480000	Desert Vanguard Cottages
+8E560000	Nor's Folly Surface
+8E840000	Musansayn
+8E8D0000	Mt. Syliph Plain
+8E8E0000	Syliph Base Surface
+8E8F0000	North Syliph
+8F000000	Haven Residential Halls
+8F020000	Training Academy
+8F030000	Training Academy
+8F040000	Training Academy
+8F150000	Artifice Cottages
+8F560000	Abandoned Shops Surface
+8F580000	Al-Arqas
+8F910000	South Dalt
+8F990000	Alfreth Surface
+8FC60000	Southern Mt. Esper
+8FD20000	Crater Caves Dungeon Surface
+8FD80000	Crater Lair Surface
+90000000	Haven Residential Halls
+90020000	Training Academy
+90030000	Training Academy
+90040000	Training Academy
+906C0000	Desert Mirage Cottages
+90AA0000	Whispering Pines Cottages
+90D00000	Crater Village
+91000000	Victory Residential Halls
+91020000	Training Academy
+91030000	Training Academy
+91040000	Training Academy
+912A0000	Qalaba'r Seaside Villas
+91320000	Ebbing Tide Villas
+91460000	South Tumerok Vanguard Outpost Surface
+91700000	Al-Nosaj
+918D0000	Sylsfear Surface
+91930000	South Gemm
+91A50000	Mistdweller Villas
+91B80000	Pine Hillock Settlement
+91EC0000	Pavanne Vale Freehold
+92000000	Victory Residential Halls
+92020000	Training Academy
+92030000	Training Academy
+92040000	Training Academy
+923B0000	Mahara Cottages
+92570000	Desert Ruin Surface
+92600000	Arqasanti
+92640000	Hamud Cottages
+92770000	Samsur Butte Cottages
+929E0000	Soltan Villas
+92B30000	Bucolic Villas
+92D30000	Jahannan Vault Surface
+93000000	Victory Residential Halls
+93020000	Geraine's Study
+934B0000	Xarabydun Cave
+93500000	Monument Sands Settlement
+937C0000	Mnemosyne Collection Site Surface
+93850000	Stone Scar Settlement
+93900000	Unified Heart Villas
+93950000	Bellig Tower Base
+93980000	Mt. Alphus Valley
+93CB0000	Crater Pathway Surface (Bottom)
+94000000	Victory Residential Halls
+94140000	Stormbrow
+94190000	Simda'r Villas
+94440000	Al-Mar Oasis
+94970000	Base of Mt. Alphus
+94CE0000	Highland Manors
+94D10000	Mattekar Cave Surface
+95000000	Victory Residential Halls
+956E0000	Sand Kings Cottages
+957A0000	A Small Cave Surface
+95890000	East Al-Jalima Villas
+95980000	Mount Alphus
+95A30000	Howling Wolf Villas
+95D60000	Neydissa Castle
+96000000	Victory Residential Halls
+961A0000	Lugian Outpost Surface
+96330000	Villalabar
+96540000	Al-Hatar Settlement
+965A0000	Dry Bone Manors
+96640000	Ahr-Zona
+967E0000	Musansayn's Vaults Surface
+96990000	South Zabool
+96A80000	Eaves of Tiofor Settlement
+96B60000	Woodsbane Cottages
+96D60000	Olthoi Tunnel
+96DC0000	Mage Academy Surface
+97000000	Victory Residential Halls
+97220000	Qalaba'r
+97260000	Lugian Post Surface
+975F0000	Mosswart Maze Surface
+977B0000	Samsur
+977C0000	Dungeon Manor Surface
+97910000	Bellig Mesa Cottages
+97950000	Desert Northern Edge Portal
+979A0000	Base of Mt. Zabool
+97CB0000	Songview
+98000000	Victory Residential Halls
+98170000	Mountain Fortress Surface
+98440000	Dunes End Cottages
+98770000	Dungeon Binar Surface
+98C60000	Prosper River Headwaters
+99000000	Victory Residential Halls
+99380000	Avatania Cottages
+995B0000	Thasali Cottages
+99790000	Dry Well Surface
+99850000	Nal Wadi Cottages
+99A60000	Underground Forest Surface
+9A2C0000	Qalabar Oasis Settlement
+9A6B0000	Djebel al-Nar Cottages
+9A810000	Stone Face Oasis Villas
+9B5F0000	West Uziz Settlement
+9B760000	Janaa Ridge Settlement
+9B910000	Stonebend Cottages
+9B960000	Redrock Cottages
+9B9B0000	Zabool Overlook Settlement
+9BAA0000	Mountain Ridge Abodes
+9C4D0000	Sands-of-the-Skull Cottages
+9C700000	Yushad Ridge Cottages
+9C8D0000	Dillo Butte Settlement
+9CD80000	Neydisa Village
+9D270000	Ridge Citadel Surface
+9D490000	Winthura's Garden Portal
+9D530000	Krau Li's Labyrinth Surface
+9E330000	Brigand Sands Cottages
+9E5A0000	Thasali Surface
+9E740000	Cactus Acres
+9E880000	Greenswath
+9EB60000	Banderling Camp
+9EE50000	Northwatch Castle Black Market
+9F440000	Khayyaban
+9FA70000	North Glenden Prison Surface
+A04B0000	Bhah Dhah Villas
+A05B0000	Old Scratchy's Cave
+A06E0000	Vulture's Eye Villas
+A0790000	Desert Mine Surface
+A08D0000	Palm-of-Stone Villas
+A0920000	Maythen Geroyu Villas
+A0970000	Lost Realm Cottages
+A09C0000	Auroch Pasture Estates
+A0A40000	Glenden Wood
+A0AB0000	Glenden Hills North Settlement
+A11C0000	Old Mine Surface
+A1410000	Enkindled Souls Surface
+A15F0000	Grievous Vault Surface
+A1A30000	Cavern
+A1DD0000	Patron's Honor Cottages
+A21E0000	Linvak Tukal
+A2200000	Outside Linvak Tukal
+A23D0000	South Khayyaban Cottages
+A2600000	Uziz
+A2740000	Drytree Settlement
+A2C10000	Ispan Hill
+A2DA0000	East Esper Valley
+A3200000	Serac Vault Surface
+A3A90000	Daiklos Dungeon Surface
+A3BB0000	Lilyglen Cottages
+A3E70000	Dagger Vale
+A4320000	Gredaline Consulate Surface
+A4540000	South Uziz Villas
+A4640000	North Uziz Settlement
+A49F0000	Iceea Hills Estates
+A4CF0000	Glystaene Cottages
+A4EB0000	Celdiseth's Beach Settlement
+A5290000	Mattekar Slopes Cottages
+A57F0000	Charbone Ridge
+A5860000	Sand's Edge
+A5910000	Hermit Hill Cottages
+A5B70000	Asuger Temple Surface
+A5D30000	Portal Summoning Site
+A60F0000	Brigands Bay Settlement
+A6180000	Linvak Tukal Foothills Settlement
+A6A70000	Glenden Hills East Settlement
+A6CB0000	New Colier
+A7340000	Gredaline Villas
+A7380000	Plainsview Cottages
+A78A0000	Demonsbane Cottages
+A7B30000	Cave of Alabree Surface
+A84D0000	Ardent Realm
+A8670000	Narziz Cottages
+A8950000	Catacombs of the Forgotten Surface
+A8AC0000	Hunter's Leap Surface
+A8B10000	A White Rat Nest Surface
+A8B50000	Holtburg Dungeon Surface
+A8C30000	Mountain Keep Surface
+A9730000	Yinar
+A97D0000	Devana
+A9980000	Solstice Hill
+A9B20000	Holtburg Casino VIP Portal
+A9B30000	Holtburg
+A9B40000	Holtburg
+AA870000	Dungeon Nye Surface
+AAA80000	Hilltop
+AAB10000	Holtburg Redoubt Surface
+AAB40000	Holtburg
+AB300000	Ro-Nan
+AB340000	Ikama Cottages
+AB380000	Erevana Villas
+AB480000	Sonpay
+AB6B0000	Amiantos Bethel Surface
+AB840000	Adventurer's Haven Surface
+ABBE0000	Mountain Keep Cottages
+ABDE0000	Zatara
+ABE70000	Northreach
+AC3F0000	Kanasa
+AC4D0000	Shield of Ispar Villas
+AC810000	Adventurer's Haven Cottages
+AC950000	Tinkelo Hold Villas
+ACA60000	Taralla
+ACB50000	Small Fledgling Mukkir Nest
+AD200000	Southern Park
+AD620000	Arida Butte
+AD6A0000	Broken Sword Bethel Settlement
+AD860000	Enchanter's Meadow
+AD8B0000	King Pwyll Square
+AD9B0000	Heartland
+ADB50000	Dungeon Fern Surface
+ADD40000	Bretslef Cottages
+AE130000	Scimitar Lake Cottages
+AE710000	Abandoned Arena Surface
+AE910000	Forgotten Hills
+AE9E0000	Witshire Dungeon Surface
+AEC60000	Colier
+AED00000	Baron's Domain
+AFC60000	Colier Mine Surface
+B0130000	South Shore Heights
+B0230000	Lugian Mines Surface
+B04F0000	Taklihuan Settlement
+B0700000	Granite Quarry
+B0980000	Meerthus Square
+B1320000	Ancient Town
+B13B0000	Spire Hills Settlement
+B1410000	Oboro
+B1780000	Desert Ridge Border
+B17E0000	Asbel Domain
+B1AC0000	Banderling Ruin Surface
+B1DD0000	West Norstead
+B2520000	Kuyiza
+B2640000	West Yanshi Namoon
+B26C0000	Faranar Foothills
+B2860000	Osric Cottages
+B28B0000	Darawyll Village
+B2B30000	Evensong Settlement
+B2B90000	West Holtburg Villas
+B2C90000	Colier View Hill
+B2D40000	Alvador
+B3450000	Kelnen Village
+B36F0000	Gazebo
+B3740000	Liang Chi Settlement
+B3810000	Larry's Garden Surface
+B3C20000	Bleak Valley
+B4250000	Lake Thrasyl Cottages
+B46F0000	Yanshi
+B4AA0000	Obsidian Span
+B4EE0000	Tenkarrdun Foundry Surface
+B53B0000	Shara
+B54F0000	Empyrean Fields Cottages
+B55D0000	Jinianshi
+B56D0000	Olthoi Tunnel
+B5980000	Cragstone Farms
+B59D0000	Dangerous Cave
+B5F00000	Aerfalle's Sanctum
+B6340000	Tattered Ridge
+B6610000	Swamp Temple Place
+B6670000	Yanshi Namoon North
+B6860000	Haunted Mansion
+B69A0000	Dungeon of Shadows Surface
+B6D80000	Bandit Road Villas
+B6EA0000	Aerlinthe Reservoir Surface
+B6EB0000	Aerlinthe Reservoir Surface
+B7790000	Jenshi Cottages
+B7EB0000	Aerfalle Keep Surface
+B8700000	Yanshi Tunnel Surface
+B8E80000	Western Aerlinthe Island
+B9530000	Zin-Dai
+B9570000	Li-Po Cottages
+B95C0000	Blackmire Edge Cottages
+B95F0000	Burun Fortress
+B96F0000	A Small Dark Place
+B9720000	Deprecated Tent (Yanshi) 9
+BA110000	Mainland
+BA170000	Kara
+BA250000	Yukikaze
+BA6B0000	Deserted Ruin Surface
+BA6F0000	Northern Black Claw Dungeon Surface
+BAA10000	River Bridge
+BAB20000	Holtburg Wilderness Settlement
+BAC60000	Citadel Apex
+BAE80000	Eastern Aerlinthe Island
+BB620000	Swamp Temple (Yanshi) Surface
+BB700000	Reedshark Lair Surface
+BB790000	North Yanshi Plains Settlement
+BB820000	Ruined Cave Outpost Surface
+BB8E0000	West Rithwic Estates
+BB9F0000	Cragstone
+BBA80000	East Span Way Settlement
+BBC60000	Citadel Valley
+BBF00000	Tenkarrdun Foundry Surface
+BC110000	Lyceum Training Grounds Surface
+BC870000	North Lytelthorpe Villas
+BC950000	South Victory Harbor
+BC970000	Lakeside Lair Surface
+BD470000	Jasmine Meadow
+BDAF0000	Mite Tunnels Surface
+BDD00000	Bandit Castle
+BDD20000	Bandit Castle Prison Surface
+BE5B0000	Banderling Conquest Surface
+BED30000	Small Icecave Surface
+BF150000	Ishilai Inlet Villas
+BF190000	Ishilai Inlet Settlement
+BF430000	Ring of Crystals Estates
+BF7E0000	Lost Distillery Surface
+C0600000	Swamp Ruin Surface
+C0800000	Lytelthorpe
+C0810000	Undisclosed Location
+C09B0000	Isle of Tears
+C0D90000	Norvale
+C0DD0000	Norstead
+C13D0000	Mage's Pass
+C1540000	Lo-Han
+C1740000	Folthid Cellar Surface
+C1840000	Dungeon Maggreth Surface
+C18F0000	Leafdawning Settlement
+C1BB0000	Olthoi Tunnels Surface
+C1CF0000	Olthoi Horde Nest (Bandit Castle) Surface
+C2200000	North Adjamaer Cottages
+C2580000	West Sawato Cottages
+C2740000	Folthid Estate
+C27C0000	South Lytelthorpe
+C2820000	Setab's Barracks Surface
+C29A0000	Underground City Surface
+C3600000	Empyrean Foundry Surface
+C3870000	Meridian Cottages
+C3AB0000	Abandoned Mine Surface
+C3E30000	Temple of N'cthail
+C42E0000	Lugian Quarry Surface
+C4360000	Trialos Surface
+C4440000	Fenmalain Vestibule Surface
+C44E0000	Ayn Tayan
+C46C0000	Snakehead
+C48D0000	A Ruin (Rithwic) Surface
+C4A80000	A Ruin (Arwic) Surface
+C4B50000	Empty Paradox Olthoi Cave
+C4D90000	Broken Haft Vale
+C4F20000	Sclavus Tunnels
+C51A0000	South Adjamaer Cottages
+C5660000	North Sawato Villas
+C5800000	Forgotten Temple Surface
+C58C0000	Trothyr's Rest Surface
+C5A70000	Olthoi Tunnel
+C5B20000	Mountain Shortcut
+C6410000	West Baishi Settlement
+C6610000	Unknown
+C6760000	Neu Gerz Villas
+C68C0000	Dungeon Gallery Tower Surface
+C6A90000	Arwic
+C6B20000	Mite Maze
+C7210000	Mines of Despair Surface
+C77F0000	East Lytelthorpe Settlement
+C78D0000	A Drudge Nest (Rithwic) Surface
+C7940000	Lake Blessed Cottages
+C7980000	Strathelar's Watch Cottages
+C7B20000	Mite Maze Surface
+C7B70000	Sealed Olthoi Passage
+C7D20000	New Cannthalo
+C88A0000	Old Warehouse Surface
+C8B30000	Lair of Death Surface
+C8E20000	Vissidal Island
+C8E90000	Dark Isle
+C92D0000	Lost Garden Ruins Surface
+C9460000	Jai-Tan Dale
+C9580000	Sawato
+C98C0000	Rithwic
+C9900000	Rithwic Crypt Surface
+C9C30000	Far Claw Villas
+CA1D0000	Xinh
+CA2D0000	High Mountain Valley
+CA830000	Slinker Meadows
+CA9C0000	North Eastham Meadow
+CAA30000	Southeast Arwic Settlement
+CAEC0000	Vaeshok's Cave
+CB3D0000	Ridge Tower
+CB640000	Mire Hill
+CB6B0000	Imuth Maer Cottages
+CB760000	Jin-Lai Stronghold
+CBB20000	Eotensfang Cottages
+CBD60000	P'rnelle Acres
+CBDA0000	Haliana
+CC520000	A Mosswart Nest Surface
+CD2A0000	Wilderness Citadel Surface
+CD8E0000	Filos' Doom Surface
+CD950000	Simple Tower Surface
+CD960000	Cave (Eastham) Surface
+CE410000	Baishi
+CE470000	North Baishi Cottages
+CE570000	Sawato Foothills Settlement
+CE680000	Village Quan
+CE700000	Broadacre Cottages
+CE7C0000	Riverbend
+CE870000	Gaerwel Edge Settlement
+CE900000	Filos' Font Cottages
+CE940000	Eastham
+CE960000	Eastham Sewers Surface
+CE9C0000	Beachside
+CEB10000	Lost Wish Cottages
+CF1F0000	Lugian Excavations Surface
+CF5C0000	East Sawato Settlement
+CFC00000	Sennon Valley Retreat
+D0740000	Maedew
+D07B0000	Riverbend Cottages
+D0950000	Thieves' Den Surface
+D1220000	Lugian Meadows Settlement
+D1640000	Sclavavania
+D1830000	Siege Road Villas
+D1960000	Eastham Beach Portal
+D1A50000	Cape Feirgard Cottages
+D1AB0000	Beach Pass Villas
+D1CC0000	Explorer's Villas
+D1D00000	Isparian Flame Estates
+D26D0000	Crescent Lane Cottages
+D28C0000	East Rithwic Estates
+D2A70000	Skeleton Fort
+D2D40000	Targor's Cave
+D3380000	Hills Citadel Surface
+D33D0000	South Osteth Peak
+D33F0000	Golem Burial Ground Surface
+D3460000	Tanshi
+D3490000	Murk Warrens (Baishi) Surface
+D3C00000	Secluded Valley Cottages
+D45C0000	Sho Roadside
+D47E0000	Siege Road Settlement
+D5310000	Font Alpa
+D53F0000	The Lee Side of The Mountain
+D5510000	Shou-Zin
+D55D0000	Cursed Swamp Surface
+D5630000	San-Chin
+D59A0000	Asheron's Castle
+D5DA0000	Southern Courtyard
+D63F0000	Rocky Crypt Surface
+D6420000	Lin Kiln Park
+D64C0000	South Shoushi Villas
+D65A0000	Chi Zou Cottages
+D6930000	Asheron's Island
+D6BE0000	Hand-on-Sword Cottages
+D73C0000	A Small Ruin Surface
+D7510000	Dungeon Mei Surface
+D7560000	Rat King's Cave
+D75D0000	Mosswart Camp
+D7C20000	Jeweled Thorn Estates
+D8540000	Stone Cathedral Surface
+D8560000	Shreth Hive Surface
+D85C0000	Greenmire Grave Surface
+D85D0000	Dungeon Muddy Surface
+D8CA0000	Black Death Catacombs Surface
+D9540000	Braid Mansion Ruin Surface
+D9550000	Shoushi
+D9D00000	Arrowdale Cottages
+DA540000	Shoushi
+DA550000	Shoushi
+DA6B0000	Narsys
+DA6F0000	South Siege Villas
+DA750000	Dryreach
+DB330000	West Mayoi Mountain Villas
+DB540000	Shoushi Casino VIP Portal
+DB630000	Mosswart Place Cottages
+DB740000	Dryreach (Facility Hub)
+DC370000	Thieves' Galleries Surface
+DC3C0000	Lin
+DC580000	Small Fledgling Mukkir Nest (Shoushi)
+DD470000	Sai-Nan
+DD5C0000	Aimaru Plains Cottages
+DE7A0000	Dryreach Beach Manors
+DF3C0000	Saadia's Retreat Surface
+DF4C0000	Shian-To Cottages
+DF600000	Castle of Baron Nuvillus
+DF6A0000	Ariake
+DF6F0000	Dryreach Beach Cottages
+E02A0000	Vesayan Overlook
+E0320000	Southern Black Claw Dungeon Surface
+E1660000	Bluewater Cottages
+E23B0000	Nanto Rat Lair Surface
+E25F0000	Stoneport Villas
+E33E0000	Water Temple Surface
+E3480000	South Hebian-To Cottages
+E3D20000	Queen's Burrow
+E3D30000	Queen's Burrow
+E5240000	Vesayen Isles
+E5310000	A Ruin (Mayoi) Surface
+E5330000	Mountain Sewer
+E53B0000	Empyrean Garrison Surface
+E54D0000	Thief Trail Surface
+E5CE0000	Olthoi Tunnel
+E5D00000	Olthoi Tunnel
+E5D30000	Queen's Burrow
+E5D40000	Queen's Burrow
+E6320000	Mayoi
+E6330000	Mayoi Beach Portal
+E63E0000	Nanto
+E64E0000	Hebian-to
+E6CE0000	Queen's Burrow
+E6D10000	Queen's Burrow
+E6D30000	Hidden Olthoi Portal Bunker
+E73D0000	Mysterious Tunnels Surface
+E7460000	South Hebian-To Estates
+E74C0000	A Drudge Nest (Hebian-to) Surface
+E74D0000	Hebian-to Sewers Surface
+E8220000	Kryst
+E9410000	Meditation Meadow
+EA6C0000	Whispering Caverns
+EB1D0000	Mosswart Holding
+EB3D0000	Lytaway Surface
+EC0D0000	Nuhmudira's Island
+EC250000	Idol Spawning Grounds Surface
+EC450000	Ong-Hau Village
+EC490000	Southwest Hebian-To Settlement
+ED1E0000	Mosswart Nest
+EE180000	Ithaenc Archipelago
+EE200000	Rumuba's Hidey Hole Surface
+EE420000	Nan-Zari
+EF280000	Morasmen Hideout Surface
+F0210000	Treacherous Tunnels Surface
+F0240000	A Mosswart Hideout Surface
+F11E0000	Moarsmen Muck Surface
+F1270000	Small Ruin
+F14A0000	Tou-Tou Road Villas
+F15A0000	Smugglers Fort
+F2240000	MacNiall's Freehold
+F24F0000	Tou-Tou Penninsula Cottages
+F25B0000	Smuggler's Fort Surface
+F3270000	Moars Surface
+F35B0000	Deprecated Moarsman Fort
+F4180000	Cathedral Ruins Portal
+F4260000	Treacherous Tunnels (Surface)
+F4280000	Small Temple
+F45A0000	Mountain Sewer Surface
+F5280000	Jungle Shadows Surface
+F5290000	Moars Laboratory Surface
+F5590000	Tou-Tou
+F65D0000	Unknown
+F6820000	Oolutanga's Refuge
+F7300000	Olthoi Tunnel
+F7570000	Damp Caverns Surface
+F75D0000	Tou-Tou
+F7840000	Tusker Emporium
+F81E0000	Blessed Cave Dungeon
+F8270000	Moarsmen Spawning Grounds Surface
+F8380000	Moarsman Prison Cell Block Exit 2
+F83B0000	Bandit Magma Tubes
+F85C0000	Unknown
+F85D0000	Tou-Tou
+F9210000	Small Temple
+F92F0000	Freebooter Keep Black Market
+F9300000	Freebooter Phyntos Wasp Hive
+F93B0000	Empyrean Rescue Dungeon

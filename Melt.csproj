@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ABE4E94F-C85F-492F-9C1C-494720607185}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Melt</RootNamespace>
+    <AssemblyName>Melt</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ManagedSquish, Version=2.0.0.0, Culture=neutral, PublicKeyToken=fac8b2bfeda84eab, processorArchitecture=MSIL">
+      <HintPath>Packages\ManagedSquish.2.0.0.0\lib\net40\ManagedSquish.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>Packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Source\aceMutationScripts.cs" />
+    <Compile Include="Source\datFile\btree\BTree.cs" />
+    <Compile Include="Source\datFile\btree\Node.cs" />
+    <Compile Include="Source\datFile\cellDat\cellLandblock.cs" />
+    <Compile Include="Source\datFile\cellDat\envCell.cs" />
+    <Compile Include="Source\datFile\cellDat\validPortalDatEntries.cs" />
+    <Compile Include="Source\datFile\cellDat\mapDrawer.cs" />
+    <Compile Include="Source\datFile\cellDat\landBlockInfo.cs" />
+    <Compile Include="Source\datFile\cellDat\cellDat.cs" />
+    <Compile Include="Source\datFile\datFileManipulation.cs" />
+    <Compile Include="Source\datFile\datFileUtilities.cs" />
+    <Compile Include="Source\datFile\datFileBlockCache.cs" />
+    <Compile Include="Source\datFile\datFileBlock.cs" />
+    <Compile Include="Source\datFile\datFileEntry.cs" />
+    <Compile Include="Source\datFile\datFileNode.cs" />
+    <Compile Include="Source\datFile\datFileConverter.cs" />
+    <Compile Include="Source\datFile\datFile.cs" />
+    <Compile Include="Source\random\randomRange.cs" />
+    <Compile Include="Source\classNameConverter.cs" />
+    <Compile Include="Source\random\randomUtils.cs" />
+    <Compile Include="Source\extensions\ObjectExtensions.cs" />
+    <Compile Include="Source\charGen.cs" />
+    <Compile Include="Source\skillTable.cs" />
+    <Compile Include="Source\TextureHeader.cs" />
+    <Compile Include="Source\weenies\cache4Converter.cs" />
+    <Compile Include="Source\weenies\cache8Converter.cs" />
+    <Compile Include="Source\weenies\cache6Converter.cs" />
+    <Compile Include="Source\weenies\cache2Converter.cs" />
+    <Compile Include="Source\weenies\possibleEnums.cs" />
+    <Compile Include="Source\weenies\itemCreator.cs" />
+    <Compile Include="Source\weenies\data\objDesc.cs" />
+    <Compile Include="Source\weenies\data\pageDataList.cs" />
+    <Compile Include="Source\weenies\data\generatorTable.cs" />
+    <Compile Include="Source\weenies\data\emoteTable.cs" />
+    <Compile Include="Source\weenies\data\eventFilter.cs" />
+    <Compile Include="Source\weenies\data\createList.cs" />
+    <Compile Include="Source\weenies\data\spellbook.cs" />
+    <Compile Include="Source\weenies\data\body.cs" />
+    <Compile Include="Source\weenies\data\skills.cs" />
+    <Compile Include="Source\weenies\data\attributes.cs" />
+    <Compile Include="Source\weenies\stats\int64Stat.cs" />
+    <Compile Include="Source\weenies\stats\intStat.cs" />
+    <Compile Include="Source\weenies\stats\boolStat.cs" />
+    <Compile Include="Source\weenies\stats\stringStat.cs" />
+    <Compile Include="Source\weenies\stats\floatStat.cs" />
+    <Compile Include="Source\weenies\stats\didStat.cs" />
+    <Compile Include="Source\weenies\stats\iidStat.cs" />
+    <Compile Include="Source\weenies\stats\posStat.cs" />
+    <Compile Include="Source\weenies\clothingTable.cs" />
+    <Compile Include="Source\weenies\weenie.cs" />
+    <Compile Include="Source\weenies\cache9Converter.cs" />
+    <Compile Include="Source\weenies\landblockNames.cs" />
+    <Compile Include="Source\weenies\weenieClassNameList.cs" />
+    <Compile Include="Source\weenies\spellInfoList.cs" />
+    <Compile Include="Source\weenies\enums.cs" />
+    <Compile Include="Source\DMtoToD.cs" />
+    <Compile Include="Source\RegionComparer.cs" />
+    <Compile Include="Source\TextureIdDictionary.cs" />
+    <Compile Include="Source\RegionConverter DM.cs" />
+    <Compile Include="Source\RegionConverter.cs" />
+    <Compile Include="Source\Diff.cs" />
+    <Compile Include="Source\Utils.cs" />
+    <Compile Include="Source\TextureConverter.cs" />
+    <Compile Include="Source\SpellsConverter.cs" />
+    <Compile Include="Source\Patcher.cs" />
+    <Compile Include="Source\Program.cs" />
+    <Compile Include="Source\Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
