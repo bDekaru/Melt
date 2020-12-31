@@ -45,6 +45,19 @@ namespace Melt
         Tier8,
     }
 
+    public enum ArmorBonus
+    {
+        Invalid = -1,
+        Tier1,
+        Tier2,
+        Tier3,
+        Tier4,
+        Tier5,
+        Tier6,
+        Tier7,
+        Tier8,
+    }
+
     public struct ChanceEntry
     {
         public float Chance;
@@ -69,7 +82,7 @@ namespace Melt
     {
         public string WeaponName;
         public float BestDamageVariance; // MinDamage = MaxDamage * (1.0f - Variance)
-        public float VarianceSpread; // The worst variance will be this much worse than the best.
+        public float WorstDamageVariance;
         public ChanceEntry[] Variances;
         public int[] DamageTier;
         public TierData[] Tiers =
@@ -84,11 +97,11 @@ namespace Melt
             new TierData("RawSkill", "WeaponSkill"),
          };
 
-        public WeaponProfile(string weaponName, float bestDamageVariance, float varianceSpread)
+        public WeaponProfile(string weaponName, float bestDamageVariance, float worstDamageVariance)
         {
             WeaponName = weaponName;
             BestDamageVariance = bestDamageVariance;
-            VarianceSpread = varianceSpread;
+            WorstDamageVariance = worstDamageVariance;
         }
 
         public void SetDamageTiers(int tier1, int tier2, int tier3, int tier4, int tier5, int tier6, int tier7, int tier8)
@@ -109,7 +122,8 @@ namespace Melt
     {
         public string ArmorName;
         public ChanceEntry[] ArmorBonus;
-        public int[] ArmorTier;
+        public int[] MinArmorTier;
+        public int[] MaxArmorTier;
         public TierData[] Tiers =
         {
             new TierData("Level", "1"),
@@ -127,17 +141,30 @@ namespace Melt
             ArmorName = armorName;
         }
 
-        public void SetArmorTiers(int tier1, int tier2, int tier3, int tier4, int tier5, int tier6, int tier7, int tier8)
+        public void SetMinArmorTiers(int tier1, int tier2, int tier3, int tier4, int tier5, int tier6, int tier7, int tier8)
         {
-            ArmorTier = new int[8];
-            ArmorTier[0] = tier1;
-            ArmorTier[1] = tier2;
-            ArmorTier[2] = tier3;
-            ArmorTier[3] = tier4;
-            ArmorTier[4] = tier5;
-            ArmorTier[5] = tier6;
-            ArmorTier[6] = tier7;
-            ArmorTier[7] = tier8;
+            MinArmorTier = new int[8];
+            MinArmorTier[0] = tier1;
+            MinArmorTier[1] = tier2;
+            MinArmorTier[2] = tier3;
+            MinArmorTier[3] = tier4;
+            MinArmorTier[4] = tier5;
+            MinArmorTier[5] = tier6;
+            MinArmorTier[6] = tier7;
+            MinArmorTier[7] = tier8;
+        }
+
+        public void SetMaxArmorTiers(int tier1, int tier2, int tier3, int tier4, int tier5, int tier6, int tier7, int tier8)
+        {
+            MaxArmorTier = new int[8];
+            MaxArmorTier[0] = tier1;
+            MaxArmorTier[1] = tier2;
+            MaxArmorTier[2] = tier3;
+            MaxArmorTier[3] = tier4;
+            MaxArmorTier[4] = tier5;
+            MaxArmorTier[5] = tier6;
+            MaxArmorTier[6] = tier7;
+            MaxArmorTier[7] = tier8;
         }
     }
 
@@ -155,194 +182,141 @@ namespace Melt
         WeaponProfile Sword;
         WeaponProfile SwordMS;
         WeaponProfile Unarmed;
-        float GenericVarianceSpread = 0.25f; // Using a made up value as I couldn't find data.
 
-        ArmorProfile Non_Extremity;
-        ArmorProfile Extremity;
+        ArmorProfile Armor;
         ArmorProfile Shield;
 
         public AceMutationScripts()
         {
             Console.WriteLine($"Creating ACEmulator Mutation Scripts...");
 
-            Non_Extremity = new ArmorProfile("non_extremity");
-            Extremity = new ArmorProfile("extremity");
-            Shield = new ArmorProfile("shield");
+            Armor = new ArmorProfile("Armor");
+            Shield = new ArmorProfile("Shield");
 
-            Non_Extremity.SetArmorTiers( 25, 50, 75, 100, 125, 150, 160, 170);
-            Extremity.SetArmorTiers(     25, 50, 75, 100, 125, 150, 160, 170);
-            Shield.SetArmorTiers(        20, 40, 60,  80, 100, 120, 130, 140);
+            //Armor.SetArmorTiers(  25, 50, 75, 100, 125, 150, 160, 170);
+            //Shield.SetArmorTiers( 20, 40, 60,  80, 100, 120, 130, 140);
 
-            BuildArmorTier(Non_Extremity, Tier.Tier1, MinDamage.Zero,  MaxDamage.Tier1,   0, eRandomFormula.favorMid);
-            BuildArmorTier(Non_Extremity, Tier.Tier2, MinDamage.Tier1, MaxDamage.Tier2,   0, eRandomFormula.favorMid);
-            BuildArmorTier(Non_Extremity, Tier.Tier3, MinDamage.Tier2, MaxDamage.Tier3,   0, eRandomFormula.favorMid);
-            BuildArmorTier(Non_Extremity, Tier.Tier4, MinDamage.Tier3, MaxDamage.Tier4,   0, eRandomFormula.favorMid);
-            BuildArmorTier(Non_Extremity, Tier.Tier5, MinDamage.Tier4, MaxDamage.Tier5,   0, eRandomFormula.favorMid);
-            BuildArmorTier(Non_Extremity, Tier.Tier6, MinDamage.Tier5, MaxDamage.Tier6,   0, eRandomFormula.favorMid);
-            BuildArmorTier(Non_Extremity, Tier.Tier7, MinDamage.Tier6, MaxDamage.Tier7, 150, eRandomFormula.favorLow);
-            BuildArmorTier(Non_Extremity, Tier.Tier8, MinDamage.Tier6, MaxDamage.Tier8, 180, eRandomFormula.favorLow);
+            // The last 2 tiers are made up for forward compatibility with loot tiers 7 and 8
+            Armor.SetMinArmorTiers(10, 40, 70, 90, 100, 100, 110, 120);
+            Armor.SetMaxArmorTiers(70, 100, 130, 150, 160, 160, 170, 180);
 
-            BuildArmorTier(Extremity, Tier.Tier1, MinDamage.Zero,  MaxDamage.Tier1,   0, eRandomFormula.favorMid);
-            BuildArmorTier(Extremity, Tier.Tier2, MinDamage.Tier1, MaxDamage.Tier2,   0, eRandomFormula.favorMid);
-            BuildArmorTier(Extremity, Tier.Tier3, MinDamage.Tier2, MaxDamage.Tier3,   0, eRandomFormula.favorMid);
-            BuildArmorTier(Extremity, Tier.Tier4, MinDamage.Tier3, MaxDamage.Tier4,   0, eRandomFormula.favorMid);
-            BuildArmorTier(Extremity, Tier.Tier5, MinDamage.Tier4, MaxDamage.Tier5,   0, eRandomFormula.favorMid);
-            BuildArmorTier(Extremity, Tier.Tier6, MinDamage.Tier5, MaxDamage.Tier6,   0, eRandomFormula.favorMid);
-            BuildArmorTier(Extremity, Tier.Tier7, MinDamage.Tier6, MaxDamage.Tier7, 150, eRandomFormula.favorLow);
-            BuildArmorTier(Extremity, Tier.Tier8, MinDamage.Tier6, MaxDamage.Tier8, 180, eRandomFormula.favorLow);
+            Shield.SetMinArmorTiers(10, 20, 30, 40, 50, 60, 70, 80);
+            Shield.SetMaxArmorTiers(50, 80, 90, 100, 110, 120, 130, 140);
 
-            BuildArmorTier(Shield, Tier.Tier1, MinDamage.Zero,  MaxDamage.Tier1,   0, eRandomFormula.favorMid);
-            BuildArmorTier(Shield, Tier.Tier2, MinDamage.Tier1, MaxDamage.Tier2,   0, eRandomFormula.favorMid);
-            BuildArmorTier(Shield, Tier.Tier3, MinDamage.Tier2, MaxDamage.Tier3,   0, eRandomFormula.favorMid);
-            BuildArmorTier(Shield, Tier.Tier4, MinDamage.Tier3, MaxDamage.Tier4,   0, eRandomFormula.favorMid);
-            BuildArmorTier(Shield, Tier.Tier5, MinDamage.Tier4, MaxDamage.Tier5,   0, eRandomFormula.favorMid);
-            BuildArmorTier(Shield, Tier.Tier6, MinDamage.Tier5, MaxDamage.Tier6,   0, eRandomFormula.favorMid);
-            BuildArmorTier(Shield, Tier.Tier7, MinDamage.Tier6, MaxDamage.Tier7, 150, eRandomFormula.favorLow);
-            BuildArmorTier(Shield, Tier.Tier8, MinDamage.Tier6, MaxDamage.Tier8, 180, eRandomFormula.favorLow);
+            BuildArmor(Armor);
+            BuildArmor(Shield);
 
-            WriteFile(Non_Extremity);
-            WriteFile(Extremity);
-            WriteFile(Shield);
+            WriteFile(Armor, 6);
+            WriteFile(Shield, 6);
 
-            //Axe = new WeaponProfile(             "Axe", 0.40f, GenericVarianceSpread);
-            //Dagger = new WeaponProfile(       "Dagger", 0.70f, GenericVarianceSpread);
-            //DaggerMS = new WeaponProfile(   "DaggerMS", 0.71f, GenericVarianceSpread);
-            //Mace = new WeaponProfile(           "Mace", 0.25f, GenericVarianceSpread);
-            //MaceJitte = new WeaponProfile( "MaceJitte", 0.25f, GenericVarianceSpread);
-            //Spear = new WeaponProfile(         "Spear", 0.45f, GenericVarianceSpread);
-            //Staff = new WeaponProfile(         "Staff", 0.25f, GenericVarianceSpread);
-            //Sword = new WeaponProfile(         "Sword", 0.40f, GenericVarianceSpread);
-            //SwordMS = new WeaponProfile(     "SwordMS", 0.50f, GenericVarianceSpread);
-            //Unarmed = new WeaponProfile(     "Unarmed", 0.50f, GenericVarianceSpread);
+            Axe = new WeaponProfile("Axe", 0.40f, 0.50f);
+            Dagger = new WeaponProfile("Dagger", 0.30f, 0.75f);
+            Mace = new WeaponProfile("Mace", 0.25f, 0.50f);
+            Spear = new WeaponProfile("Spear", 0.45f, 0.75f);
+            Staff = new WeaponProfile("Staff", 0.25f, 0.50f);
+            Sword = new WeaponProfile("Sword", 0.40f, 0.50f);
+            Unarmed = new WeaponProfile("Unarmed", 0.50f, 0.75f);
 
-            //Axe.SetDamageTiers      ( 8, 17, 21, 25, 27, 31, 35, 39);
-            //Dagger.SetDamageTiers   ( 5,  7,  9, 11, 13, 17, 19, 21);
-            //DaggerMS.SetDamageTiers ( 3,  0,  0,  0,  0,  0,  0,  0);
-            //Mace.SetDamageTiers     ( 8, 16, 20, 24, 26, 28, 32, 36);
-            //MaceJitte.SetDamageTiers( 8, 16, 20, 24, 26, 28, 32, 36);
-            //Spear.SetDamageTiers    ( 8, 15, 17, 19, 23, 27, 31, 35);
-            //Staff.SetDamageTiers    ( 5,  7,  9, 11, 13, 17, 19, 21);
-            //Sword.SetDamageTiers    (10, 20, 25, 30, 35, 40, 45, 50);
-            //SwordMS.SetDamageTiers  ( 5,  0,  0,  0,  0,  6, 16, 17);
-            //Unarmed.SetDamageTiers  ( 4,  7,  9, 12, 16, 18, 22, 24);
+            DaggerMS = new WeaponProfile("DaggerMS", 0.71f, 0.75f);
+            SwordMS = new WeaponProfile("SwordMS", 0.40f, 0.50f);
+            MaceJitte = new WeaponProfile("MaceJitte", 0.25f, 0.50f);
 
-            //BuildTier(Axe, Tier.Tier1, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid);
-            //BuildTier(Axe, Tier.Tier2, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid, MinDamage.Tier1, MaxDamage.Tier2, 250, eRandomFormula.favorMid);
-            //BuildTier(Axe, Tier.Tier3, MinDamage.Tier1, MaxDamage.Tier2, 250, eRandomFormula.favorHigh, MinDamage.Tier2, MaxDamage.Tier3, 300, eRandomFormula.favorLow);
-            //BuildTier(Axe, Tier.Tier4, MinDamage.Tier2, MaxDamage.Tier3, 300, eRandomFormula.favorLow, MinDamage.Tier3, MaxDamage.Tier4, 325, eRandomFormula.favorLow);
-            //BuildTier(Axe, Tier.Tier5, MinDamage.Tier3, MaxDamage.Tier4, 325, eRandomFormula.favorLow, MinDamage.Tier4, MaxDamage.Tier5, 350, eRandomFormula.favorLow);
-            //BuildTier(Axe, Tier.Tier6, MinDamage.Tier4, MaxDamage.Tier5, 350, eRandomFormula.favorLow, MinDamage.Tier5, MaxDamage.Tier6, 370, eRandomFormula.favorLow, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorLow);
-            //BuildTier(Axe, Tier.Tier7, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorMid, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
-            //BuildTier(Axe, Tier.Tier8, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorHigh, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
-            //BuildVariances(Axe);
-            //WriteFile(Axe);
+            // The last 1 tier is made up for forward compatibility with loot tiers 7 and 8
+            Axe.SetDamageTiers(8, 17, 21, 25, 27, 31, 35, 39);
+            Dagger.SetDamageTiers(5, 7, 9, 11, 13, 17, 19, 21);
+            Mace.SetDamageTiers(8, 16, 20, 24, 26, 28, 32, 36);
+            Spear.SetDamageTiers(7, 14, 16, 18, 22, 26, 30, 34);
+            Staff.SetDamageTiers(5, 7, 9, 11, 13, 17, 19, 21);
+            Sword.SetDamageTiers(10, 20, 25, 30, 35, 40, 45, 50);
+            Unarmed.SetDamageTiers(4, 7, 9, 12, 16, 18, 22, 24);
 
-            //BuildTier(Dagger, Tier.Tier1, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid);
-            //BuildTier(Dagger, Tier.Tier2, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid, MinDamage.Tier1, MaxDamage.Tier2, 250, eRandomFormula.favorMid);
-            //BuildTier(Dagger, Tier.Tier3, MinDamage.Tier1, MaxDamage.Tier2, 250, eRandomFormula.favorHigh, MinDamage.Tier2, MaxDamage.Tier3, 300, eRandomFormula.favorLow);
-            //BuildTier(Dagger, Tier.Tier4, MinDamage.Tier2, MaxDamage.Tier3, 300, eRandomFormula.favorLow, MinDamage.Tier3, MaxDamage.Tier4, 325, eRandomFormula.favorLow);
-            //BuildTier(Dagger, Tier.Tier5, MinDamage.Tier3, MaxDamage.Tier4, 325, eRandomFormula.favorLow, MinDamage.Tier4, MaxDamage.Tier5, 350, eRandomFormula.favorLow);
-            //BuildTier(Dagger, Tier.Tier6, MinDamage.Tier4, MaxDamage.Tier5, 350, eRandomFormula.favorLow, MinDamage.Tier5, MaxDamage.Tier6, 370, eRandomFormula.favorLow, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorLow);
-            //BuildTier(Dagger, Tier.Tier7, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorMid, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
-            //BuildTier(Dagger, Tier.Tier8, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorHigh, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
-            //BuildVariances(Dagger);
-            //WriteFile(Dagger);
+            DaggerMS.SetDamageTiers(3, 0, 0, 0, 0, 0, 0, 0);
+            SwordMS.SetDamageTiers(5, 0, 0, 0, 0, 6, 16, 17);
+            MaceJitte.SetDamageTiers(8, 16, 20, 24, 26, 28, 32, 36);
 
-            //BuildTier(DaggerMS, Tier.Tier1, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid);
-            //BuildTier(DaggerMS, Tier.Tier2, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid);
-            //BuildTier(DaggerMS, Tier.Tier3, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
-            //BuildTier(DaggerMS, Tier.Tier4, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
-            //BuildTier(DaggerMS, Tier.Tier5, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
-            //BuildTier(DaggerMS, Tier.Tier6, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
-            //BuildTier(DaggerMS, Tier.Tier7, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
-            //BuildTier(DaggerMS, Tier.Tier8, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
-            //BuildVariances(DaggerMS);
-            //WriteFile(DaggerMS);
+            BuildWeapon(Axe);
+            BuildWeapon(Dagger);
+            BuildWeapon(Mace);
+            BuildWeapon(Spear);
+            BuildWeapon(Staff);
+            BuildWeapon(Sword);
+            BuildWeapon(Unarmed);
 
-            //BuildTier(Mace, Tier.Tier1, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid);
-            //BuildTier(Mace, Tier.Tier2, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid, MinDamage.Tier1, MaxDamage.Tier2, 250, eRandomFormula.favorMid);
-            //BuildTier(Mace, Tier.Tier3, MinDamage.Tier1, MaxDamage.Tier2, 250, eRandomFormula.favorHigh, MinDamage.Tier2, MaxDamage.Tier3, 300, eRandomFormula.favorLow);
-            //BuildTier(Mace, Tier.Tier4, MinDamage.Tier2, MaxDamage.Tier3, 300, eRandomFormula.favorLow, MinDamage.Tier3, MaxDamage.Tier4, 325, eRandomFormula.favorLow);
-            //BuildTier(Mace, Tier.Tier5, MinDamage.Tier3, MaxDamage.Tier4, 325, eRandomFormula.favorLow, MinDamage.Tier4, MaxDamage.Tier5, 350, eRandomFormula.favorLow);
-            //BuildTier(Mace, Tier.Tier6, MinDamage.Tier4, MaxDamage.Tier5, 350, eRandomFormula.favorLow, MinDamage.Tier5, MaxDamage.Tier6, 370, eRandomFormula.favorLow, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorLow);
-            //BuildTier(Mace, Tier.Tier7, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorMid, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
-            //BuildTier(Mace, Tier.Tier8, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorHigh, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
-            //BuildVariances(Mace);
-            //WriteFile(Mace);
+            BuildWeapon(DaggerMS);
+            BuildWeapon(SwordMS);
+            BuildWeapon(MaceJitte);
 
-            //BuildTier(MaceJitte, Tier.Tier1, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid);
-            //BuildTier(MaceJitte, Tier.Tier2, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid, MinDamage.Tier1, MaxDamage.Tier2, 250, eRandomFormula.favorMid);
-            //BuildTier(MaceJitte, Tier.Tier3, MinDamage.Tier1, MaxDamage.Tier2, 250, eRandomFormula.favorHigh, MinDamage.Tier2, MaxDamage.Tier3, 300, eRandomFormula.favorLow);
-            //BuildTier(MaceJitte, Tier.Tier4, MinDamage.Tier2, MaxDamage.Tier3, 300, eRandomFormula.favorLow, MinDamage.Tier3, MaxDamage.Tier4, 325, eRandomFormula.favorLow);
-            //BuildTier(MaceJitte, Tier.Tier5, MinDamage.Tier3, MaxDamage.Tier4, 325, eRandomFormula.favorLow, MinDamage.Tier4, MaxDamage.Tier5, 350, eRandomFormula.favorLow);
-            //BuildTier(MaceJitte, Tier.Tier6, MinDamage.Tier4, MaxDamage.Tier5, 350, eRandomFormula.favorLow, MinDamage.Tier5, MaxDamage.Tier6, 370, eRandomFormula.favorLow, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorLow);
-            //BuildTier(MaceJitte, Tier.Tier7, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorMid, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
-            //BuildTier(MaceJitte, Tier.Tier8, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorHigh, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
-            //BuildVariances(MaceJitte);
-            //WriteFile(MaceJitte);
+            WriteFile(Axe, 6);
+            WriteFile(Dagger, 6);
+            WriteFile(Mace, 6);
+            WriteFile(Spear, 6);
+            WriteFile(Staff, 6);
+            WriteFile(Sword, 6);
+            WriteFile(Unarmed, 6);
 
-            //BuildTier(Spear, Tier.Tier1, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid);
-            //BuildTier(Spear, Tier.Tier2, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid, MinDamage.Tier1, MaxDamage.Tier2, 250, eRandomFormula.favorMid);
-            //BuildTier(Spear, Tier.Tier3, MinDamage.Tier1, MaxDamage.Tier2, 250, eRandomFormula.favorHigh, MinDamage.Tier2, MaxDamage.Tier3, 300, eRandomFormula.favorLow);
-            //BuildTier(Spear, Tier.Tier4, MinDamage.Tier2, MaxDamage.Tier3, 300, eRandomFormula.favorLow, MinDamage.Tier3, MaxDamage.Tier4, 325, eRandomFormula.favorLow);
-            //BuildTier(Spear, Tier.Tier5, MinDamage.Tier3, MaxDamage.Tier4, 325, eRandomFormula.favorLow, MinDamage.Tier4, MaxDamage.Tier5, 350, eRandomFormula.favorLow);
-            //BuildTier(Spear, Tier.Tier6, MinDamage.Tier4, MaxDamage.Tier5, 350, eRandomFormula.favorLow, MinDamage.Tier5, MaxDamage.Tier6, 370, eRandomFormula.favorLow, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorLow);
-            //BuildTier(Spear, Tier.Tier7, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorMid, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
-            //BuildTier(Spear, Tier.Tier8, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorHigh, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
-            //BuildVariances(Spear);
-            //WriteFile(Spear);
-
-            //BuildTier(Staff, Tier.Tier1, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid);
-            //BuildTier(Staff, Tier.Tier2, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid, MinDamage.Tier1, MaxDamage.Tier2, 250, eRandomFormula.favorMid);
-            //BuildTier(Staff, Tier.Tier3, MinDamage.Tier1, MaxDamage.Tier2, 250, eRandomFormula.favorHigh, MinDamage.Tier2, MaxDamage.Tier3, 300, eRandomFormula.favorLow);
-            //BuildTier(Staff, Tier.Tier4, MinDamage.Tier2, MaxDamage.Tier3, 300, eRandomFormula.favorLow, MinDamage.Tier3, MaxDamage.Tier4, 325, eRandomFormula.favorLow);
-            //BuildTier(Staff, Tier.Tier5, MinDamage.Tier3, MaxDamage.Tier4, 325, eRandomFormula.favorLow, MinDamage.Tier4, MaxDamage.Tier5, 350, eRandomFormula.favorLow);
-            //BuildTier(Staff, Tier.Tier6, MinDamage.Tier4, MaxDamage.Tier5, 350, eRandomFormula.favorLow, MinDamage.Tier5, MaxDamage.Tier6, 370, eRandomFormula.favorLow, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorLow);
-            //BuildTier(Staff, Tier.Tier7, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorMid, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
-            //BuildTier(Staff, Tier.Tier8, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorHigh, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
-            //BuildVariances(Staff);
-            //WriteFile(Staff);
-
-            //BuildTier(Sword, Tier.Tier1, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid);
-            //BuildTier(Sword, Tier.Tier2, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid, MinDamage.Tier1, MaxDamage.Tier2, 250, eRandomFormula.favorMid);
-            //BuildTier(Sword, Tier.Tier3, MinDamage.Tier1, MaxDamage.Tier2, 250, eRandomFormula.favorHigh, MinDamage.Tier2, MaxDamage.Tier3, 300, eRandomFormula.favorLow);
-            //BuildTier(Sword, Tier.Tier4, MinDamage.Tier2, MaxDamage.Tier3, 300, eRandomFormula.favorLow, MinDamage.Tier3, MaxDamage.Tier4, 325, eRandomFormula.favorLow);
-            //BuildTier(Sword, Tier.Tier5, MinDamage.Tier3, MaxDamage.Tier4, 325, eRandomFormula.favorLow, MinDamage.Tier4, MaxDamage.Tier5, 350, eRandomFormula.favorLow);
-            //BuildTier(Sword, Tier.Tier6, MinDamage.Tier4, MaxDamage.Tier5, 350, eRandomFormula.favorLow, MinDamage.Tier5, MaxDamage.Tier6, 370, eRandomFormula.favorLow, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorLow);
-            //BuildTier(Sword, Tier.Tier7, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorMid, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
-            //BuildTier(Sword, Tier.Tier8, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorHigh, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
-            //BuildVariances(Sword);
-            //WriteFile(Sword);
-
-            //BuildTier(SwordMS, Tier.Tier1, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid);
-            //BuildTier(SwordMS, Tier.Tier2, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid);
-            //BuildTier(SwordMS, Tier.Tier3, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
-            //BuildTier(SwordMS, Tier.Tier4, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
-            //BuildTier(SwordMS, Tier.Tier5, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
-            //BuildTier(SwordMS, Tier.Tier6, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh, MinDamage.Tier5, MaxDamage.Tier6, 370, eRandomFormula.favorLow, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorLow);
-            //BuildTier(SwordMS, Tier.Tier7, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorMid, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
-            //BuildTier(SwordMS, Tier.Tier8, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorHigh, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
-            //BuildVariances(SwordMS);
-            //WriteFile(SwordMS);
-
-            //BuildTier(Unarmed, Tier.Tier1, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid);
-            //BuildTier(Unarmed, Tier.Tier2, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid, MinDamage.Tier1, MaxDamage.Tier2, 250, eRandomFormula.favorMid);
-            //BuildTier(Unarmed, Tier.Tier3, MinDamage.Tier1, MaxDamage.Tier2, 250, eRandomFormula.favorHigh, MinDamage.Tier2, MaxDamage.Tier3, 300, eRandomFormula.favorLow);
-            //BuildTier(Unarmed, Tier.Tier4, MinDamage.Tier2, MaxDamage.Tier3, 300, eRandomFormula.favorLow, MinDamage.Tier3, MaxDamage.Tier4, 325, eRandomFormula.favorLow);
-            //BuildTier(Unarmed, Tier.Tier5, MinDamage.Tier3, MaxDamage.Tier4, 325, eRandomFormula.favorLow, MinDamage.Tier4, MaxDamage.Tier5, 350, eRandomFormula.favorLow);
-            //BuildTier(Unarmed, Tier.Tier6, MinDamage.Tier4, MaxDamage.Tier5, 350, eRandomFormula.favorLow, MinDamage.Tier5, MaxDamage.Tier6, 370, eRandomFormula.favorLow, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorLow);
-            //BuildTier(Unarmed, Tier.Tier7, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorMid, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
-            //BuildTier(Unarmed, Tier.Tier8, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorHigh, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
-            //BuildVariances(Unarmed);
-            //WriteFile(Unarmed);
+            WriteFile(DaggerMS, 6);
+            WriteFile(SwordMS, 6);
+            WriteFile(MaceJitte, 6);
 
             Console.WriteLine($"Done");
+        }
+
+        public void BuildArmor(ArmorProfile armor)
+        {
+            BuildArmorTier(armor, Tier.Tier1, ArmorBonus.Tier1, 0, eRandomFormula.favorMid);
+            BuildArmorTier(armor, Tier.Tier2, ArmorBonus.Tier2, 0, eRandomFormula.favorMid);
+            BuildArmorTier(armor, Tier.Tier3, ArmorBonus.Tier3, 0, eRandomFormula.favorMid);
+            BuildArmorTier(armor, Tier.Tier4, ArmorBonus.Tier4, 0, eRandomFormula.favorMid);
+            BuildArmorTier(armor, Tier.Tier5, ArmorBonus.Tier5, 0, eRandomFormula.favorMid);
+            BuildArmorTier(armor, Tier.Tier6, ArmorBonus.Tier6, 0, eRandomFormula.favorMid);
+            BuildArmorTier(armor, Tier.Tier7, ArmorBonus.Tier7, 150, eRandomFormula.favorLow);
+            BuildArmorTier(armor, Tier.Tier8, ArmorBonus.Tier8, 180, eRandomFormula.favorLow);
+        }
+
+        public void BuildWeapon(WeaponProfile weapon)
+        {
+            if (weapon.WeaponName == "DaggerMS")
+            {
+                BuildWeaponTier(weapon, Tier.Tier1, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid);
+                BuildWeaponTier(weapon, Tier.Tier2, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid);
+                BuildWeaponTier(weapon, Tier.Tier3, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
+                BuildWeaponTier(weapon, Tier.Tier4, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
+                BuildWeaponTier(weapon, Tier.Tier5, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
+                BuildWeaponTier(weapon, Tier.Tier6, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
+                BuildWeaponTier(weapon, Tier.Tier7, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
+                BuildWeaponTier(weapon, Tier.Tier8, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
+                BuildVariances(weapon);
+            }
+            else if (weapon.WeaponName == "SwordMS")
+            {
+                BuildWeaponTier(weapon, Tier.Tier1, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid);
+                BuildWeaponTier(weapon, Tier.Tier2, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid);
+                BuildWeaponTier(weapon, Tier.Tier3, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
+                BuildWeaponTier(weapon, Tier.Tier4, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
+                BuildWeaponTier(weapon, Tier.Tier5, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
+                BuildWeaponTier(weapon, Tier.Tier6, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh, MinDamage.Tier5, MaxDamage.Tier6, 370, eRandomFormula.favorLow, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorLow);
+                BuildWeaponTier(weapon, Tier.Tier7, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorMid, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
+                BuildWeaponTier(weapon, Tier.Tier8, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorHigh, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
+                BuildVariances(weapon);
+            }
+            else
+            {
+                BuildWeaponTier(weapon, Tier.Tier1, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid);
+                BuildWeaponTier(weapon, Tier.Tier2, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid, MinDamage.Tier1, MaxDamage.Tier2, 250, eRandomFormula.favorMid);
+                BuildWeaponTier(weapon, Tier.Tier3, MinDamage.Tier1, MaxDamage.Tier2, 250, eRandomFormula.favorHigh, MinDamage.Tier2, MaxDamage.Tier3, 300, eRandomFormula.favorLow);
+                BuildWeaponTier(weapon, Tier.Tier4, MinDamage.Tier2, MaxDamage.Tier3, 300, eRandomFormula.favorLow, MinDamage.Tier3, MaxDamage.Tier4, 325, eRandomFormula.favorLow);
+                BuildWeaponTier(weapon, Tier.Tier5, MinDamage.Tier3, MaxDamage.Tier4, 325, eRandomFormula.favorLow, MinDamage.Tier4, MaxDamage.Tier5, 350, eRandomFormula.favorLow);
+                BuildWeaponTier(weapon, Tier.Tier6, MinDamage.Tier4, MaxDamage.Tier5, 350, eRandomFormula.favorLow, MinDamage.Tier5, MaxDamage.Tier6, 370, eRandomFormula.favorLow, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorLow);
+                BuildWeaponTier(weapon, Tier.Tier7, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorMid, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
+                BuildWeaponTier(weapon, Tier.Tier8, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorHigh, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
+                BuildVariances(weapon);
+            }
         }
 
         public void BuildVariances(WeaponProfile weapon)
         {
             int bestVariance = (int)Math.Round(weapon.BestDamageVariance * 100);
-            int worstVariance = bestVariance + (int)Math.Round(weapon.BestDamageVariance * weapon.VarianceSpread * 100);
+            int worstVariance = (int)Math.Round(weapon.WorstDamageVariance * 100);
             int numberOfEntries = DetermineNumberOfEntries(bestVariance, worstVariance);
 
             weapon.Variances = new ChanceEntry[numberOfEntries];
@@ -486,12 +460,12 @@ namespace Melt
             }
         }
 
-        public void BuildTier(WeaponProfile weapon, Tier tier, MinDamage minDamageTierA, MaxDamage maxDamageTierA, int wieldDifficultyA, eRandomFormula distributionA, MinDamage minDamageTierB = MinDamage.Invalid, MaxDamage maxDamageTierB = MaxDamage.Invalid, int wieldDifficultyB = -1, eRandomFormula distributionB = eRandomFormula.favorMid, MinDamage minDamageTierC = MinDamage.Invalid, MaxDamage maxDamageTierC = MaxDamage.Invalid, int wieldDifficultyC = -1, eRandomFormula distributionC = eRandomFormula.favorMid)
+        public void BuildWeaponTier(WeaponProfile weapon, Tier tier, MinDamage minDamageTierA, MaxDamage maxDamageTierA, int wieldDifficultyA, eRandomFormula distributionA, MinDamage minDamageTierB = MinDamage.Invalid, MaxDamage maxDamageTierB = MaxDamage.Invalid, int wieldDifficultyB = -1, eRandomFormula distributionB = eRandomFormula.favorMid, MinDamage minDamageTierC = MinDamage.Invalid, MaxDamage maxDamageTierC = MaxDamage.Invalid, int wieldDifficultyC = -1, eRandomFormula distributionC = eRandomFormula.favorMid)
         {
             int totalNumberOfEntries = 0;
             int numOfRollsDivider = 1;
 
-            int minDamageA = minDamageTierA == MinDamage.Zero ? 0 : weapon.DamageTier[(int)minDamageTierA - 1];
+            int minDamageA = minDamageTierA == MinDamage.Zero ? 0 : weapon.DamageTier[(int)minDamageTierA - 1] + 1;
             int maxDamageA = maxDamageTierA == MaxDamage.Zero ? 0 : weapon.DamageTier[(int)maxDamageTierA - 1];
             int minDamageB = 0;
             int maxDamageB = 0;
@@ -502,7 +476,7 @@ namespace Melt
             int numberOfEntriesB = 0;
             if (minDamageTierB != MinDamage.Invalid && maxDamageTierB != MaxDamage.Invalid)
             {
-                minDamageB = minDamageTierB == MinDamage.Zero ? 0 : weapon.DamageTier[(int)minDamageTierB - 1];
+                minDamageB = minDamageTierB == MinDamage.Zero ? 0 : weapon.DamageTier[(int)minDamageTierB - 1] + 1;
                 maxDamageB = maxDamageTierB == MaxDamage.Zero ? 0 : weapon.DamageTier[(int)maxDamageTierB - 1];
                 numberOfEntriesB = DetermineNumberOfEntries(minDamageB, maxDamageB);
                 numOfRollsDivider++;
@@ -511,7 +485,7 @@ namespace Melt
             int numberOfEntriesC = 0;
             if (minDamageTierC != MinDamage.Invalid && maxDamageTierC != MaxDamage.Invalid)
             {
-                minDamageC = minDamageTierC == MinDamage.Zero ? 0 : weapon.DamageTier[(int)minDamageTierC - 1];
+                minDamageC = minDamageTierC == MinDamage.Zero ? 0 : weapon.DamageTier[(int)minDamageTierC - 1] + 1;
                 maxDamageC = maxDamageTierC == MaxDamage.Zero ? 0 : weapon.DamageTier[(int)maxDamageTierC - 1];
                 numberOfEntriesC = DetermineNumberOfEntries(minDamageC, maxDamageC);
                 numOfRollsDivider++;
@@ -574,10 +548,10 @@ namespace Melt
             //}
         }
 
-        public void BuildArmorTier(ArmorProfile armor, Tier tier, MinDamage minArmorBonus, MaxDamage maxArmorBonus, int wieldDifficulty, eRandomFormula distribution)
+        public void BuildArmorTier(ArmorProfile armor, Tier tier, ArmorBonus armorBonus, int wieldDifficulty, eRandomFormula distribution)
         {
-            int minArmor = minArmorBonus == MinDamage.Zero ? 0 : armor.ArmorTier[(int)minArmorBonus - 1];
-            int maxArmor = maxArmorBonus == MaxDamage.Zero ? 0 : armor.ArmorTier[(int)maxArmorBonus - 1];
+            int minArmor = armor.MinArmorTier[(int)armorBonus];
+            int maxArmor = armor.MaxArmorTier[(int)armorBonus];
 
             int numberOfEntries = DetermineNumberOfEntries(minArmor, maxArmor);
 
@@ -817,7 +791,7 @@ namespace Melt
             return numberOfEntries;
         }
 
-        public void WriteFile(WeaponProfile weapon)
+        public void WriteFile(WeaponProfile weapon, int maxLootTier = 6)
         {
             string convertedWeaponName = weapon.WeaponName.ToLower();
             if (convertedWeaponName == "daggerms")
@@ -840,13 +814,23 @@ namespace Melt
 
             int mutationCounter = 0;
 
-            // Damage and wield requirements
-            for (int i = 0; i < weapon.Tiers.Length; i++)
+            maxLootTier = Math.Min(weapon.Tiers.Length, maxLootTier);
+            for (int i = 0; i < maxLootTier; i++)
             {
+                // Damage and wield requirements
                 mutationCounter++;
                 outputFile.WriteLine($"{weapon.WeaponName} Mutation #{mutationCounter}:");
                 outputFile.WriteLine();
-                outputFile.WriteLine($"Tier Chances: {(i == 0 ? 1 : 0)}, {(i == 1 ? 1 : 0)}, {(i == 2 ? 1 : 0)}, {(i == 3 ? 1 : 0)}, {(i == 4 ? 1 : 0)}, {(i == 5 ? 1 : 0)}, {(i == 6 ? 1 : 0)}, {(i == 7 ? 1 : 0)}");
+                outputFile.Write("Tier Chances: ");
+                for (int tier = 0; tier < maxLootTier; tier++)
+                {
+                    outputFile.Write(i == tier ? 1 : 0);
+                    if (tier + 1 < maxLootTier)
+                        outputFile.Write(", ");
+                    else
+                        outputFile.Write("\n");
+                }
+                //outputFile.WriteLine($"Tier Chances: {(i == 0 ? 1 : 0)}, {(i == 1 ? 1 : 0)}, {(i == 2 ? 1 : 0)}, {(i == 3 ? 1 : 0)}, {(i == 4 ? 1 : 0)}, {(i == 5 ? 1 : 0)}, {(i == 6 ? 1 : 0)}, {(i == 7 ? 1 : 0)}");
                 outputFile.WriteLine();
 
                 for (int j = 0; j < weapon.Tiers[i].Bonus.Length; j++)
@@ -870,7 +854,16 @@ namespace Melt
             mutationCounter++;
             outputFile.WriteLine($"{weapon.WeaponName} Mutation #{mutationCounter}:");
             outputFile.WriteLine();
-            outputFile.WriteLine($"Tier chances: 1, 1, 1, 1, 1, 1, 1, 1");
+            outputFile.Write("Tier Chances: ");
+            for (int tier = 0; tier < maxLootTier; tier++)
+            {
+                outputFile.Write(1);
+                if (tier + 1 < maxLootTier)
+                    outputFile.Write(", ");
+                else
+                    outputFile.Write("\n");
+            }
+            //outputFile.WriteLine($"Tier chances: 1, 1, 1, 1, 1, 1, 1, 1");
             outputFile.WriteLine();
 
             for (int i = 0; i < weapon.Variances.Length; i++)
@@ -885,23 +878,16 @@ namespace Melt
             outputFile.Close();
         }
 
-        public void WriteFile(ArmorProfile armor)
+        public void WriteFile(ArmorProfile armor, int maxLootTier = 6)
         {
             string armorString = armor.ArmorName.ToLower();
             string convertedArmorName = armorString;
-            if (armorString == "non_extremity")
+            if (armorString == "armor")
             {
-                armorString = "Armor";
-                convertedArmorName = "armor_level_extremity";
-            }
-            else if (armorString == "extremity")
-            {
-                armorString = "Armor";
-                convertedArmorName = "armor_level_non_extremity";
+                convertedArmorName = "armor_level";
             }
             else if (armorString == "shield")
             {
-                armorString = "Shield";
                 convertedArmorName = "shield_level";
             }
 
@@ -918,12 +904,22 @@ namespace Melt
 
             int mutationCounter = 0;
 
-            for (int i = 0; i < armor.Tiers.Length; i++)
+            maxLootTier = Math.Min(armor.Tiers.Length, maxLootTier);
+            for (int i = 0; i < maxLootTier; i++)
             {
                 mutationCounter++;
                 outputFile.WriteLine($"{armorString} Mutation #{mutationCounter}:");
                 outputFile.WriteLine();
-                outputFile.WriteLine($"Tier Chances: {(i == 0 ? 1 : 0)}, {(i == 1 ? 1 : 0)}, {(i == 2 ? 1 : 0)}, {(i == 3 ? 1 : 0)}, {(i == 4 ? 1 : 0)}, {(i == 5 ? 1 : 0)}, {(i == 6 ? 1 : 0)}, {(i == 7 ? 1 : 0)}");
+                outputFile.Write("Tier Chances: ");
+                for (int tier = 0; i < maxLootTier; i++)
+                {
+                    outputFile.Write(i == 0 ? 1 : 0);
+                    if(tier + 1 < maxLootTier)
+                        outputFile.Write(", ");
+                    else
+                        outputFile.Write("\n");
+                }
+                //outputFile.WriteLine($"Tier Chances: {(i == 0 ? 1 : 0)}, {(i == 1 ? 1 : 0)}, {(i == 2 ? 1 : 0)}, {(i == 3 ? 1 : 0)}, {(i == 4 ? 1 : 0)}, {(i == 5 ? 1 : 0)}, {(i == 6 ? 1 : 0)}, {(i == 7 ? 1 : 0)}");
                 outputFile.WriteLine();
 
                 for (int j = 0; j < armor.Tiers[i].Bonus.Length; j++)
@@ -944,7 +940,7 @@ namespace Melt
 
             // Extra armor roll
             mutationCounter++;
-            outputFile.WriteLine($"{armorString} Mutation #{mutationCounter}:");
+            outputFile.WriteLine($"{armor.ArmorName} Mutation #{mutationCounter}:");
             outputFile.WriteLine();
             outputFile.WriteLine($"Tier chances: 1, 1, 1, 1, 1, 1, 1, 1");
             outputFile.WriteLine();

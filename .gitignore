@@ -10,6 +10,7 @@
 Bin/intermediate
 Bin/misc
 Bin/output
+Bin/ACEmulator Mutations
 ManagedSquish.xml
 Melt.exe.config
 Newtonsoft.Json.xml
