@@ -12,18 +12,17 @@ namespace Melt
             cDatFileEntry iterationFile;
             if (fileCache.TryGetValue(0xFFFF0001, out iterationFile))
             {
-                byte[] buffer = new byte[1024];
                 StreamReader reader = new StreamReader(iterationFile.fileContent);
 
                 List<int> ints = new List<int>();
                 bool sorted;
 
-                ints.Add(Utils.ReadInt32(buffer, reader));
-                ints.Add(Utils.ReadInt32(buffer, reader));
+                ints.Add(Utils.readInt32(reader));
+                ints.Add(Utils.readInt32(reader));
 
-                sorted = Utils.ReadBool(buffer, reader);
+                sorted = Utils.readBool(reader);
 
-                Utils.Align(reader);
+                Utils.align(reader);
 
                 return ints[0];
             }
@@ -43,41 +42,13 @@ namespace Melt
             else
                 Utils.writeInt32((int)(0xffffffff - iteration + 1), outputStream);
             Utils.writeBool(true, outputStream);
-            Utils.Align(outputStream);
+            Utils.align(outputStream);
             outputStream.Flush();
 
             iterationFile.fileContent.Seek(0, SeekOrigin.Begin);
             iterationFile.fileSize = (int)iterationFile.fileContent.Length;
 
             fileCache[0xFFFF0001] = iterationFile;
-        }
-
-        public bool clearLandblock(uint cellIdInLandblock, int verboseLevel = 6)
-        {
-            if (verboseLevel > 5)
-                Console.WriteLine("Clearing landblock...");
-            Stopwatch timer = new Stopwatch();
-            timer.Start();
-
-            uint landblockId = cellIdInLandblock & 0xFFFF0000 | 0x0000FFFF;
-
-            int removedCounter = 0;
-            for (uint i = 0; i <= 0xFFFF; i++)
-            {
-                uint id = i | (landblockId & 0xFFFF0000);
-
-                cDatFileEntry entry;
-                if (fileCache.TryGetValue(id, out entry))
-                {
-                    fileCache.Remove(id);
-                    removedCounter++;
-                }
-            }
-
-            timer.Stop();
-            if (verboseLevel > 5)
-                Console.WriteLine("Landblock cleared in {0} seconds. {1} files deleted.", timer.ElapsedMilliseconds / 1000f, removedCounter);
-            return true;
         }
 
         public bool convertLandblock(uint cellIdInLandblock, int verboseLevel = 6)
@@ -95,9 +66,7 @@ namespace Melt
             cDatFileEntry landblockFile;
             if (fileCache.TryGetValue(landblockId, out landblockFile))
             {
-                byte[] buffer = new byte[1024];
-                StreamReader reader = new StreamReader(landblockFile.fileContent);
-                cCellLandblock landblock = new cCellLandblock(buffer, reader);
+                cCellLandblock landblock = new cCellLandblock(landblockFile);
 
                 landblock.updateFileContent(landblockFile);
             }
@@ -106,9 +75,7 @@ namespace Melt
             cDatFileEntry landblockInfoFile;
             if (fileCache.TryGetValue(landblockInfoId, out landblockInfoFile))
             {
-                byte[] buffer = new byte[1024];
-                StreamReader readerFrom = new StreamReader(landblockInfoFile.fileContent);
-                cLandblockInfo landblockInfo = new cLandblockInfo(buffer, readerFrom, landblockInfoFile.fileFormat);
+                cLandblockInfo landblockInfo = new cLandblockInfo(landblockInfoFile);
 
                 int cellsWritten = 0;
                 uint startCellId;
@@ -179,9 +146,7 @@ namespace Melt
             cDatFileEntry fromLandblockFile;
             if (fromDat.fileCache.TryGetValue(landblockId, out fromLandblockFile))
             {
-                byte[] bufferFrom = new byte[1024];
-                StreamReader readerFrom = new StreamReader(fromLandblockFile.fileContent);
-                cCellLandblock landblockFrom = new cCellLandblock(bufferFrom, readerFrom);
+                cCellLandblock landblockFrom = new cCellLandblock(fromLandblockFile);
                 cCellLandblock landblockInfoTo;
 
                 bool existsOnDestination = toDat.fileCache.TryGetValue(landblockId, out toLandBlockFile);
@@ -191,9 +156,7 @@ namespace Melt
                     if (existsOnDestination)
                     {
                         //cCellLandblock exists on origin and destination, replace.
-                        //byte[] bufferTo = new byte[1024];
-                        //StreamReader readerTo = new StreamReader(toLandBlockFile.fileContent);
-                        //landblockInfoTo = new cCellLandblock(bufferTo, readerTo);
+                        //landblockInfoTo = new cCellLandblock(toLandBlockFile);
 
                         // Here is where we would manipulate the origin files before copying them over, nothing for now.
 
@@ -233,12 +196,7 @@ namespace Melt
             cDatFileEntry fromLandblockInfoFile;
             if (fromDat.fileCache.TryGetValue(landblockInfoId, out fromLandblockInfoFile))
             {
-                byte[] bufferFrom = new byte[1024];
-                StreamReader readerFrom = new StreamReader(fromLandblockInfoFile.fileContent);
-                cLandblockInfo landblockInfoFrom = new cLandblockInfo(bufferFrom, readerFrom, fromLandblockInfoFile.fileFormat);
-
-                byte[] bufferTo = new byte[1024];
-                StreamReader readerTo;
+                cLandblockInfo landblockInfoFrom = new cLandblockInfo(fromLandblockInfoFile);
                 cLandblockInfo landblockInfoTo;
 
                 bool existsOnDestination = toDat.fileCache.TryGetValue(landblockInfoId, out toLandblockInfoFile);
@@ -247,8 +205,7 @@ namespace Melt
                     if (existsOnDestination)
                     {
                         //cLandblockInfo exists on origin and destination, replace.
-                        readerTo = new StreamReader(toLandblockInfoFile.fileContent);
-                        landblockInfoTo = new cLandblockInfo(bufferTo, readerTo, toLandblockInfoFile.fileFormat);
+                        landblockInfoTo = new cLandblockInfo(toLandblockInfoFile);
 
                         for (uint i = 0; i < 0xFFFE; i++)
                         {
@@ -323,9 +280,7 @@ namespace Melt
                     //cLandblockInfo exists on destination but not on origin, delete.
                     if (!createOnly)
                     {
-                        //byte[] bufferTo = new byte[1024];
-                        //StreamReader readerTo = new StreamReader(toLandblockInfoFile.fileContent);
-                        //cLandblockInfo landblockInfoTo = new cLandblockInfo(bufferTo, readerTo, toLandblockInfoFile.fileFormat);
+                        //cLandblockInfo landblockInfoTo = new cLandblockInfo(toLandblockInfoFile);
 
                         toDat.fileCache.Remove(landblockInfoId);
 
@@ -374,8 +329,7 @@ namespace Melt
             cDatFileEntry file;
             if (fromDat.fileCache.TryGetValue(cellId, out file))
             {
-                StreamReader reader = new StreamReader(file.fileContent);
-                cEnvCell eEnvCell = new cEnvCell(new byte[1024], reader, file.fileFormat);
+                cEnvCell eEnvCell = new cEnvCell(file);
 
                 if (file.fileFormat == eDatFormat.retail && building != null)
                 {
@@ -454,8 +408,7 @@ namespace Melt
 
                 if (recurse)
                 {
-                    StreamReader reader = new StreamReader(file.fileContent);
-                    cEnvCell eEnvCell = new cEnvCell(new byte[1024], reader, file.fileFormat);
+                    cEnvCell eEnvCell = new cEnvCell(file);
 
                     foreach (ushort connectedCell in eEnvCell.Cells)
                     {
@@ -485,9 +438,7 @@ namespace Melt
             cDatFileEntry file;
             if (fileCache.TryGetValue(landblockId, out file))
             {
-                byte[] buffer = new byte[1024];
-                StreamReader reader = new StreamReader(file.fileContent);
-                cLandblockInfo landblockInfo = new cLandblockInfo(buffer, reader, file.fileFormat);
+                cLandblockInfo landblockInfo = new cLandblockInfo(file);
 
                 foreach (var building in landblockInfo.Buildings)
                 {
@@ -513,9 +464,7 @@ namespace Melt
             cDatFileEntry file;
             if (fileCache.TryGetValue(landblockId, out file))
             {
-                byte[] buffer = new byte[1024];
-                StreamReader reader = new StreamReader(file.fileContent);
-                cLandblockInfo landblockInfo = new cLandblockInfo(buffer, reader, file.fileFormat);
+                cLandblockInfo landblockInfo = new cLandblockInfo(file);
 
                 for (int i = 0; i < landblockInfo.Buildings.Count; i++)
                 {
@@ -786,9 +735,7 @@ namespace Melt
                         cDatFileEntry file;
                         if (fileCache.TryGetValue(entry.Key, out file))
                         {
-                            byte[] buffer = new byte[1024];
-                            StreamReader reader = new StreamReader(file.fileContent);
-                            cEnvCell parentCell = new cEnvCell(buffer, reader, file.fileFormat);
+                            cEnvCell parentCell = new cEnvCell(file);
                             foreach (var missingCell in entry.Value)
                             {
                                 ushort localId = (ushort)missingCell;
@@ -820,39 +767,6 @@ namespace Melt
             Console.WriteLine($"Removed {removedCounter} references to these entries, {totalAmount - removedCounter} missing references remain.");
         }
 
-        public void clearAllLandblocks(int verboseLevel = 5)
-        {
-            if (verboseLevel > 1)
-                Console.WriteLine("Clearing all landblocks...");
-            Stopwatch timer = new Stopwatch();
-            timer.Start();
-
-            int landblocksCounter = 0;
-
-            List<uint> landblockIds = new List<uint>();
-            foreach(var file in fileCache)
-            {
-                if ((file.Key & 0x0000FFFF) == 0x0000FFFF)
-                    landblockIds.Add(file.Key);
-            }
-
-            foreach(var landblockId in landblockIds)
-            {
-                if (clearLandblock(landblockId, verboseLevel))
-                    landblocksCounter++;
-            }
-
-            //for (uint landblockId = 0x00000000; landblockId < 0xFFFF0000; landblockId += 0x00010000)
-            //{
-            //    if (clearLandblock(landblockId, verboseLevel))
-            //        landblocksCounter++;
-            //}
-
-            timer.Stop();
-            if (verboseLevel > 1)
-                Console.WriteLine("{0} landblocks cleared in {1} seconds.", landblocksCounter, timer.ElapsedMilliseconds / 1000f);
-        }
-
         public void convertRetailToToD(int iteration = 4, int verboseLevel = 5)
         {
             if (fileFormat == eDatFormat.ToD)
@@ -876,20 +790,14 @@ namespace Melt
 
             int landblocksCounter = 0;
 
-            //List<uint> landblockIds = new List<uint>();
-            //foreach (var file in fileCache)
-            //{
-            //    if ((file.Key & 0x0000FFFF) == 0x0000FFFF)
-            //        landblockIds.Add(file.Key);
-            //}
+            List<uint> landblockIds = new List<uint>();
+            foreach (var file in fileCache)
+            {
+                if ((file.Key & 0x0000FFFF) == 0x0000FFFF)
+                    landblockIds.Add(file.Key);
+            }
 
-            //foreach (var landblockId in landblockIds)
-            //{
-            //    if (convertLandblock(landblockId, verboseLevel))
-            //        landblocksCounter++;
-            //}
-
-            for (uint landblockId = 0x00000000; landblockId < 0xFFFF0000; landblockId += 0x00010000)
+            foreach (var landblockId in landblockIds)
             {
                 if (convertLandblock(landblockId, verboseLevel))
                     landblocksCounter++;
@@ -909,24 +817,11 @@ namespace Melt
 
             int landblocksCounter = 0;
 
-            List<uint> landblockIds = new List<uint>();
-            foreach (var file in fileCache)
-            {
-                if ((file.Key & 0x0000FFFF) == 0x0000FFFF)
-                    landblockIds.Add(file.Key);
-            }
-
-            foreach (var landblockId in landblockIds)
+            for (uint landblockId = 0x00000000; landblockId < 0xFFFF0000; landblockId += 0x00010000)
             {
                 if (replaceLandblock(landblockId, fromDat, createOnly, verboseLevel))
                     landblocksCounter++;
             }
-
-            //for (uint landblockId = 0x00000000; landblockId < 0xFFFF0000; landblockId+= 0x00010000)
-            //{
-            //    if (replaceLandblock(landblockId, fromDat, createOnly, verboseLevel))
-            //        landblocksCounter++;
-            //}
 
             timer.Stop();
             if (verboseLevel > 1)

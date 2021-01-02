@@ -15,28 +15,28 @@ namespace Melt
         public int ignoreAuthor;
         public string pageText;
 
-        public sPage(byte[] buffer, StreamReader inputFile)
+        public sPage(StreamReader inputFile)
         {
-            authorID = Utils.ReadUInt32(buffer, inputFile);
-            authorName = Utils.ReadStringAndReplaceSpecialCharacters(buffer, inputFile);
-            authorAccount = Utils.ReadStringAndReplaceSpecialCharacters(buffer, inputFile);
-            unknownBookValue1 = Utils.ReadInt16(buffer, inputFile);//not used by PhatAC
-            unknownBookValue2 = Utils.ReadInt16(buffer, inputFile);//not used by PhatAC
-            unknownBookValue3 = Utils.ReadInt32(buffer, inputFile);//not used by PhatAC
-            ignoreAuthor = Utils.ReadInt32(buffer, inputFile);
-            pageText = Utils.ReadStringAndReplaceSpecialCharacters(buffer, inputFile);
+            authorID = Utils.readUInt32(inputFile);
+            authorName = Utils.readStringAndReplaceSpecialCharacters(inputFile);
+            authorAccount = Utils.readStringAndReplaceSpecialCharacters(inputFile);
+            unknownBookValue1 = Utils.readInt16(inputFile);//not used by PhatAC
+            unknownBookValue2 = Utils.readInt16(inputFile);//not used by PhatAC
+            unknownBookValue3 = Utils.readInt32(inputFile);//not used by PhatAC
+            ignoreAuthor = Utils.readInt32(inputFile);
+            pageText = Utils.readStringAndReplaceSpecialCharacters(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
         {
             Utils.writeUInt32(authorID, outputStream);
-            Utils.writeString(Utils.RestoreStringSpecialCharacters(authorName), outputStream);
-            Utils.writeString(Utils.RestoreStringSpecialCharacters(authorAccount), outputStream);
+            Utils.writeString(Utils.restoreStringSpecialCharacters(authorName), outputStream);
+            Utils.writeString(Utils.restoreStringSpecialCharacters(authorAccount), outputStream);
             Utils.writeInt16(unknownBookValue1, outputStream);
             Utils.writeInt16(unknownBookValue2, outputStream);
             Utils.writeInt32(unknownBookValue3, outputStream);
             Utils.writeInt32(ignoreAuthor, outputStream);
-            Utils.writeString(Utils.RestoreStringSpecialCharacters(pageText), outputStream);
+            Utils.writeString(Utils.restoreStringSpecialCharacters(pageText), outputStream);
         }
 
         public void writeJson(StreamWriter outputStream, string tab, bool isFirst)
@@ -62,16 +62,16 @@ namespace Melt
         public int maxNumCharsPerPage;
         public List<sPage> pages;
 
-        public sPageDataList(byte[] buffer, StreamReader inputFile)
+        public sPageDataList(StreamReader inputFile)
         {
-            maxNumPages = Utils.ReadInt32(buffer, inputFile);
-            maxNumCharsPerPage = Utils.ReadInt32(buffer, inputFile);
+            maxNumPages = Utils.readInt32(inputFile);
+            maxNumCharsPerPage = Utils.readInt32(inputFile);
 
-            int pageCount = Utils.ReadInt32(buffer, inputFile);
+            int pageCount = Utils.readInt32(inputFile);
             pages = new List<sPage>();
             for (int i = 0; i < pageCount; i++)
             {
-                pages.Add(new sPage(buffer, inputFile));
+                pages.Add(new sPage(inputFile));
             }
         }
 

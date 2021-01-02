@@ -34,7 +34,7 @@ namespace Melt
             subFolders = new List<cDatFileNode>();
         }
 
-        public cDatFileNode(byte[] buffer, StreamReader inputFile, cDatFileBlockCache blockCache, uint startBlockOffset, int blockSize, eDatFormat fileFormat)
+        public cDatFileNode(StreamReader inputFile, cDatFileBlockCache blockCache, uint startBlockOffset, int blockSize, eDatFormat fileFormat)
         {
             this.startBlockOffset = startBlockOffset;
             this.blockSize = blockSize;
@@ -56,22 +56,22 @@ namespace Melt
             List<uint> subFolderOffsets = new List<uint>();
 
             for (int i = 0; i < 62; i++)
-                subFolderOffsets.Add(Utils.ReadUInt32(buffer, reader));
-            uint entryCount = Utils.ReadUInt32(buffer, reader);
+                subFolderOffsets.Add(Utils.readUInt32(reader));
+            uint entryCount = Utils.readUInt32(reader);
 
             // folder is allowed to have (files + 1) subfolders
             if (subFolderOffsets[0] != 0)
             {
                 for (int i = 0; i < entryCount + 1; i++)
                 {
-                    cDatFileNode newDirectory = new cDatFileNode(buffer, inputFile, blockCache, subFolderOffsets[i], blockSize, fileFormat);
+                    cDatFileNode newDirectory = new cDatFileNode(inputFile, blockCache, subFolderOffsets[i], blockSize, fileFormat);
                     subFolders.Add(newDirectory);
                 }
             }
 
             for (uint i = 0; i < entryCount; i++)
             {
-                cDatFileEntry file = new cDatFileEntry(buffer, reader, fileFormat);
+                cDatFileEntry file = new cDatFileEntry(reader, fileFormat);
                 files.Add(file.fileId, file);
             }
         }

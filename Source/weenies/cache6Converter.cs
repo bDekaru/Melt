@@ -17,11 +17,11 @@ namespace Melt
         public int wcid;
         public sPosition pos;
 
-        public sLandblockWeenie(byte[] buffer, StreamReader inputFile)
+        public sLandblockWeenie(StreamReader inputFile)
         {
-            wcid = Utils.ReadInt32(buffer, inputFile);
-            pos = new sPosition(buffer, inputFile);
-            id = Utils.ReadInt32(buffer, inputFile);
+            wcid = Utils.readInt32(inputFile);
+            pos = new sPosition(inputFile);
+            id = Utils.readInt32(inputFile);
 
             comment = Program.cache9Converter.buildWeenieName(wcid);
         }
@@ -33,11 +33,11 @@ namespace Melt
         public int source;
         public int target;
 
-        public sLandblockLink(byte[] buffer, StreamReader inputFile)
+        public sLandblockLink(StreamReader inputFile)
         {
             comment = "";
-            source = Utils.ReadInt32(buffer, inputFile);
-            target = Utils.ReadInt32(buffer, inputFile);
+            source = Utils.readInt32(inputFile);
+            target = Utils.readInt32(inputFile);
         }
     }
 
@@ -69,12 +69,12 @@ namespace Melt
             links = new List<sLandblockLink>();
         }
 
-        public cLandblock(byte[] buffer, StreamReader inputFile)
+        public cLandblock(StreamReader inputFile)
         {
             weenies = new List<sLandblockWeenie>();
             links = new List<sLandblockLink>();
 
-            key = Utils.ReadUInt32(buffer, inputFile);
+            key = Utils.readUInt32(inputFile);
 
             friendlyName = landblockNames.geLandblockName(key);
             if (friendlyName.Length == 0)
@@ -88,17 +88,17 @@ namespace Melt
                 friendlyName = friendlyName.Replace("0000)", ")");
             }
 
-            int weeniesCount = Utils.ReadInt32(buffer, inputFile);
+            int weeniesCount = Utils.readInt32(inputFile);
             for (int i = 0; i < weeniesCount; i++)
             {
-                sLandblockWeenie landBlockWeenie = new sLandblockWeenie(buffer, inputFile);
+                sLandblockWeenie landBlockWeenie = new sLandblockWeenie(inputFile);
                 weenies.Add(landBlockWeenie);
             }
 
-            int linksCount = Utils.ReadInt32(buffer, inputFile);
+            int linksCount = Utils.readInt32(inputFile);
             for (int i = 0; i < linksCount; i++)
             {
-                sLandblockLink landBlockLink = new sLandblockLink(buffer, inputFile);
+                sLandblockLink landBlockLink = new sLandblockLink(inputFile);
 
                 int sourceWcid = getWcidFromId(landBlockLink.source);
                 int targetWcid = getWcidFromId(landBlockLink.target);
@@ -127,7 +127,6 @@ namespace Melt
     public class cCache6Converter
     {
         Dictionary<uint, cLandblock> landblocks;
-        byte[] buffer = new byte[4096];
 
         public cCache6Converter()
         {
@@ -140,14 +139,14 @@ namespace Melt
             Stopwatch timer = new Stopwatch();
             timer.Start();
 
-            short totalLandblocks = Utils.ReadInt16(buffer, inputFile);
-            short landscapeGeneratorsCount = Utils.ReadInt16(buffer, inputFile);
+            short totalLandblocks = Utils.readInt16(inputFile);
+            short landscapeGeneratorsCount = Utils.readInt16(inputFile);
             landblocks = new Dictionary<uint, cLandblock>();
 
             short landblockCount;
             for (landblockCount = 0; landblockCount < totalLandblocks; landblockCount++)
             {
-                cLandblock landblock = new cLandblock(buffer, inputFile);
+                cLandblock landblock = new cLandblock(inputFile);
                 landblocks.Add(landblock.key, landblock);
             }
 

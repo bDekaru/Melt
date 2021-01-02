@@ -16,17 +16,17 @@ namespace Melt
         public int armor_vs_electric;
         public int armor_vs_nether;
 
-        public sAcache(byte[] buffer, StreamReader inputFile)
+        public sAcache(StreamReader inputFile)
         {
-            base_armor = Utils.ReadInt32(buffer, inputFile);
-            armor_vs_slash = Utils.ReadInt32(buffer, inputFile);
-            armor_vs_pierce = Utils.ReadInt32(buffer, inputFile);
-            armor_vs_bludgeon = Utils.ReadInt32(buffer, inputFile);
-            armor_vs_cold = Utils.ReadInt32(buffer, inputFile);
-            armor_vs_fire = Utils.ReadInt32(buffer, inputFile);
-            armor_vs_acid = Utils.ReadInt32(buffer, inputFile);
-            armor_vs_electric = Utils.ReadInt32(buffer, inputFile);
-            armor_vs_nether = Utils.ReadInt32(buffer, inputFile);
+            base_armor = Utils.readInt32(inputFile);
+            armor_vs_slash = Utils.readInt32(inputFile);
+            armor_vs_pierce = Utils.readInt32(inputFile);
+            armor_vs_bludgeon = Utils.readInt32(inputFile);
+            armor_vs_cold = Utils.readInt32(inputFile);
+            armor_vs_fire = Utils.readInt32(inputFile);
+            armor_vs_acid = Utils.readInt32(inputFile);
+            armor_vs_electric = Utils.readInt32(inputFile);
+            armor_vs_nether = Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -76,20 +76,20 @@ namespace Melt
         public Single MRB;
         public Single LRB;
 
-        public sBpsd(byte[] buffer, StreamReader inputFile)
+        public sBpsd(StreamReader inputFile)
         {
-            HLF = Utils.ReadSingle(buffer, inputFile);
-            MLF = Utils.ReadSingle(buffer, inputFile);
-            LLF = Utils.ReadSingle(buffer, inputFile);
-            HRF = Utils.ReadSingle(buffer, inputFile);
-            MRF = Utils.ReadSingle(buffer, inputFile);
-            LRF = Utils.ReadSingle(buffer, inputFile);
-            HLB = Utils.ReadSingle(buffer, inputFile);
-            MLB = Utils.ReadSingle(buffer, inputFile);
-            LLB = Utils.ReadSingle(buffer, inputFile);
-            HRB = Utils.ReadSingle(buffer, inputFile);
-            MRB = Utils.ReadSingle(buffer, inputFile);
-            LRB = Utils.ReadSingle(buffer, inputFile);
+            HLF = Utils.readSingle(inputFile);
+            MLF = Utils.readSingle(inputFile);
+            LLF = Utils.readSingle(inputFile);
+            HRF = Utils.readSingle(inputFile);
+            MRF = Utils.readSingle(inputFile);
+            LRF = Utils.readSingle(inputFile);
+            HLB = Utils.readSingle(inputFile);
+            MLB = Utils.readSingle(inputFile);
+            LLB = Utils.readSingle(inputFile);
+            HRB = Utils.readSingle(inputFile);
+            MRB = Utils.readSingle(inputFile);
+            LRB = Utils.readSingle(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -141,16 +141,16 @@ namespace Melt
         public eBodyHeight bh;
         public sBpsd bpsd;
 
-        public sBodyData(byte[] buffer, StreamReader inputFile)
+        public sBodyData(StreamReader inputFile)
         {
-            key = Utils.ReadInt32(buffer, inputFile);
-            unknownBodyValue = Utils.ReadInt32(buffer, inputFile);
-            dtype = (eDamageType)Utils.ReadInt32(buffer, inputFile);
-            dval = Utils.ReadInt32(buffer, inputFile);
-            dvar = Utils.ReadSingle(buffer, inputFile);
-            acache = new sAcache(buffer, inputFile);
-            bh = (eBodyHeight)Utils.ReadInt32(buffer, inputFile);
-            bpsd = new sBpsd(buffer, inputFile);
+            key = Utils.readInt32(inputFile);
+            unknownBodyValue = Utils.readInt32(inputFile);
+            dtype = (eDamageType)Utils.readInt32(inputFile);
+            dval = Utils.readInt32(inputFile);
+            dvar = Utils.readSingle(inputFile);
+            acache = new sAcache(inputFile);
+            bh = (eBodyHeight)Utils.readInt32(inputFile);
+            bpsd = new sBpsd(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -193,18 +193,18 @@ namespace Melt
     {
         public List<sBodyData> entries;
 
-        public sBody(byte[] buffer, StreamReader inputFile)
+        public sBody(StreamReader inputFile)
         {
             entries = new List<sBodyData>();
 
             short amount = 0;
-            int sectionHeader = Utils.ReadInt32(buffer, inputFile);
+            int sectionHeader = Utils.readInt32(inputFile);
             if (sectionHeader >> 16 == 0x40)
             {
                 amount = (short)sectionHeader;
                 for (int i = 0; i < amount; i++)
                 {
-                    entries.Add(new sBodyData(buffer, inputFile));
+                    entries.Add(new sBodyData(inputFile));
                 }
             }
         }

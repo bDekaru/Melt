@@ -47,9 +47,8 @@ namespace Melt
         {
             StreamReader inputFile = new StreamReader(new FileStream(filename, FileMode.Open, FileAccess.Read));
 
-            byte[] buffer = new byte[1024];
-            uint fileHeader = Utils.ReadUInt32(buffer, inputFile);
-            uint textureId = Utils.ReadUInt32(buffer, inputFile);
+            uint fileHeader = Utils.readUInt32(inputFile);
+            uint textureId = Utils.readUInt32(inputFile);
             return textureId;
         }
     }

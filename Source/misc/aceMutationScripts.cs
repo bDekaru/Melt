@@ -188,6 +188,10 @@ namespace Melt
 
         public AceMutationScripts()
         {
+        }
+
+        public void BuildScripts()
+        {
             Console.WriteLine($"Creating ACEmulator Mutation Scripts...");
 
             Armor = new ArmorProfile("Armor");
@@ -197,8 +201,11 @@ namespace Melt
             //Shield.SetArmorTiers( 20, 40, 60,  80, 100, 120, 130, 140);
 
             // The last 2 tiers are made up for forward compatibility with loot tiers 7 and 8
-            Armor.SetMinArmorTiers(10, 40, 70, 90, 100, 100, 110, 120);
-            Armor.SetMaxArmorTiers(70, 100, 130, 150, 160, 160, 170, 180);
+            //Armor.SetMinArmorTiers(10, 40, 70, 90, 100, 100, 110, 120);
+            //Armor.SetMaxArmorTiers(70, 100, 130, 150, 160, 160, 170, 180);
+            // Adjusted for better low tier balance?
+            Armor.SetMinArmorTiers( 0, 10,  40,  70,  90, 100, 110, 120);
+            Armor.SetMaxArmorTiers(30, 70, 100, 130, 150, 160, 170, 180);
 
             Shield.SetMinArmorTiers(10, 20, 30, 40, 50, 60, 70, 80);
             Shield.SetMaxArmorTiers(50, 80, 90, 100, 110, 120, 130, 140);
@@ -221,7 +228,7 @@ namespace Melt
             SwordMS = new WeaponProfile("SwordMS", 0.40f, 0.50f);
             MaceJitte = new WeaponProfile("MaceJitte", 0.25f, 0.50f);
 
-            // The last 1 tier is made up for forward compatibility with loot tiers 7 and 8
+            // The last tier is made up for forward compatibility with loot tiers 7 and 8
             Axe.SetDamageTiers(8, 17, 21, 25, 27, 31, 35, 39);
             Dagger.SetDamageTiers(5, 7, 9, 11, 13, 17, 19, 21);
             Mace.SetDamageTiers(8, 16, 20, 24, 26, 28, 32, 36);
@@ -231,7 +238,7 @@ namespace Melt
             Unarmed.SetDamageTiers(4, 7, 9, 12, 16, 18, 22, 24);
 
             DaggerMS.SetDamageTiers(3, 0, 0, 0, 0, 0, 0, 0);
-            SwordMS.SetDamageTiers(5, 0, 0, 0, 0, 6, 16, 17);
+            SwordMS.SetDamageTiers(5, 0, 0, 0, 0, 0, 0, 0);
             MaceJitte.SetDamageTiers(8, 16, 20, 24, 26, 28, 32, 36);
 
             BuildWeapon(Axe);
@@ -257,8 +264,6 @@ namespace Melt
             WriteFile(DaggerMS, 6);
             WriteFile(SwordMS, 6);
             WriteFile(MaceJitte, 6);
-
-            Console.WriteLine($"Done");
         }
 
         public void BuildArmor(ArmorProfile armor)
@@ -294,9 +299,10 @@ namespace Melt
                 BuildWeaponTier(weapon, Tier.Tier3, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
                 BuildWeaponTier(weapon, Tier.Tier4, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
                 BuildWeaponTier(weapon, Tier.Tier5, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
-                BuildWeaponTier(weapon, Tier.Tier6, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh, MinDamage.Tier5, MaxDamage.Tier6, 370, eRandomFormula.favorLow, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorLow);
-                BuildWeaponTier(weapon, Tier.Tier7, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorMid, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
-                BuildWeaponTier(weapon, Tier.Tier8, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorHigh, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
+                BuildWeaponTier(weapon, Tier.Tier6, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh); //disable this line and enable the ones below for more than 6 tiers
+                //BuildWeaponTier(weapon, Tier.Tier6, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh, MinDamage.Tier1, MaxDamage.Tier6, 370, eRandomFormula.favorLow, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorLow);
+                //BuildWeaponTier(weapon, Tier.Tier7, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorMid, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
+                //BuildWeaponTier(weapon, Tier.Tier8, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorHigh, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
                 BuildVariances(weapon);
             }
             else
@@ -553,7 +559,7 @@ namespace Melt
             int minArmor = armor.MinArmorTier[(int)armorBonus];
             int maxArmor = armor.MaxArmorTier[(int)armorBonus];
 
-            int numberOfEntries = DetermineNumberOfEntries(minArmor, maxArmor);
+            int numberOfEntries = ((maxArmor - minArmor) / 10) + 1;// DetermineNumberOfEntries(minArmor, maxArmor);
 
             armor.Tiers[(int)tier].Bonus = new ChanceEntry[numberOfEntries];
             armor.Tiers[(int)tier].wieldDifficulty = new int[numberOfEntries];
@@ -908,12 +914,12 @@ namespace Melt
             for (int i = 0; i < maxLootTier; i++)
             {
                 mutationCounter++;
-                outputFile.WriteLine($"{armorString} Mutation #{mutationCounter}:");
+                outputFile.WriteLine($"{armor.ArmorName} Mutation #{mutationCounter}:");
                 outputFile.WriteLine();
                 outputFile.Write("Tier Chances: ");
-                for (int tier = 0; i < maxLootTier; i++)
+                for (int tier = 0; tier < maxLootTier; tier++)
                 {
-                    outputFile.Write(i == 0 ? 1 : 0);
+                    outputFile.Write(tier == 0 ? 1 : 0);
                     if(tier + 1 < maxLootTier)
                         outputFile.Write(", ");
                     else

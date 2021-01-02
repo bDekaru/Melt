@@ -94,15 +94,15 @@ namespace Melt
             resistance_of_last_check = 65536;
         }
 
-        public sSkill(byte[] buffer, StreamReader inputFile)
+        public sSkill(StreamReader inputFile)
         {
-            key = (eSkills)Utils.ReadInt32(buffer, inputFile);
-            resistance_of_last_check = Utils.ReadInt32(buffer, inputFile);
-            sac = (eSkillAdvancementClass)Utils.ReadInt32(buffer, inputFile);
-            pp = Utils.ReadInt32(buffer, inputFile);
-            init_level = Utils.ReadInt32(buffer, inputFile);
-            level_from_pp = Utils.ReadInt32(buffer, inputFile);
-            last_used_time = Utils.ReadDouble(buffer, inputFile);
+            key = (eSkills)Utils.readInt32(inputFile);
+            resistance_of_last_check = Utils.readInt32(inputFile);
+            sac = (eSkillAdvancementClass)Utils.readInt32(inputFile);
+            pp = Utils.readInt32(inputFile);
+            init_level = Utils.readInt32(inputFile);
+            level_from_pp = Utils.readInt32(inputFile);
+            last_used_time = Utils.readDouble(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -143,17 +143,17 @@ namespace Melt
     {
         public List<sSkill> skills;
 
-        public sSkills(byte[] buffer, StreamReader inputFile)
+        public sSkills(StreamReader inputFile)
         {
             skills = new List<sSkill>();
 
-            int sectionHeader = Utils.ReadInt32(buffer, inputFile);
+            int sectionHeader = Utils.readInt32(inputFile);
             if (sectionHeader >> 16 == 0x40)
             {
                 short amount = (short)sectionHeader;
                 for (int i = 0; i < amount; i++)
                 {
-                    skills.Add(new sSkill(buffer, inputFile));
+                    skills.Add(new sSkill(inputFile));
                 }
             }
         }

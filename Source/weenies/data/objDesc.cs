@@ -10,11 +10,11 @@ namespace Melt
         public byte offset;
         public byte length;
 
-        public sSubPalette(byte[] buffer, StreamReader inputFile)
+        public sSubPalette(StreamReader inputFile)
         {
-            subPaletteId = Utils.ReadPackedUInt32(buffer, inputFile, 0x4000000);
-            offset = Utils.ReadByte(buffer, inputFile);
-            length = Utils.ReadByte(buffer, inputFile);
+            subPaletteId = Utils.readPackedUInt32(inputFile, 0x4000000);
+            offset = Utils.readByte(inputFile);
+            length = Utils.readByte(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -30,11 +30,11 @@ namespace Melt
         public uint basePaletteId;
         public List<sSubPalette> subPalettes;
 
-        public sPalette(byte[] buffer, StreamReader inputFile, byte subPaletteCount)
+        public sPalette(StreamReader inputFile, byte subPaletteCount)
         {
             if (subPaletteCount > 0)
             {
-                basePaletteId = Utils.ReadPackedUInt32(buffer, inputFile, 0x4000000);
+                basePaletteId = Utils.readPackedUInt32(inputFile, 0x4000000);
             }
             else
                 basePaletteId = 0;
@@ -42,7 +42,7 @@ namespace Melt
             subPalettes = new List<sSubPalette>(subPaletteCount);
             for (byte i = 0; i < subPaletteCount; i++)
             {
-                subPalettes.Add(new sSubPalette(buffer, inputFile));
+                subPalettes.Add(new sSubPalette(inputFile));
             }
         }
 
@@ -66,11 +66,11 @@ namespace Melt
         public uint oldTexture;
         public uint newTexture;
 
-        public sTextureMaps(byte[] buffer, StreamReader inputFile)
+        public sTextureMaps(StreamReader inputFile)
         {
-            index = Utils.ReadByte(buffer, inputFile);
-            oldTexture = Utils.ReadPackedUInt32(buffer, inputFile, 0x5000000);
-            newTexture = Utils.ReadPackedUInt32(buffer, inputFile, 0x5000000);
+            index = Utils.readByte(inputFile);
+            oldTexture = Utils.readPackedUInt32(inputFile, 0x5000000);
+            newTexture = Utils.readPackedUInt32(inputFile, 0x5000000);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -86,10 +86,10 @@ namespace Melt
         public byte index;
         public uint modelId;
 
-        public sModels(byte[] buffer, StreamReader inputFile)
+        public sModels(StreamReader inputFile)
         {
-            index = Utils.ReadByte(buffer, inputFile);
-            modelId = Utils.ReadPackedUInt32(buffer, inputFile, 0x1000000);
+            index = Utils.readByte(inputFile);
+            modelId = Utils.readPackedUInt32(inputFile, 0x1000000);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -105,33 +105,33 @@ namespace Melt
         public List<sTextureMaps> textureMaps;
         public List<sModels> models;
 
-        public sObjDesc(byte[] buffer, StreamReader inputFile)
+        public sObjDesc(StreamReader inputFile)
         {
-            byte sectionDelimiter = Utils.ReadByte(buffer, inputFile);
+            byte sectionDelimiter = Utils.readByte(inputFile);
 
             if (sectionDelimiter != 0x11)
                 Console.WriteLine("Error reading weenie at {0}", inputFile.BaseStream.Position);
 
-            byte subPaletteCount = Utils.ReadByte(buffer, inputFile);
-            byte textureMapCount = Utils.ReadByte(buffer, inputFile);
-            byte modelsCount = Utils.ReadByte(buffer, inputFile);
+            byte subPaletteCount = Utils.readByte(inputFile);
+            byte textureMapCount = Utils.readByte(inputFile);
+            byte modelsCount = Utils.readByte(inputFile);
 
-            palette = new sPalette(buffer, inputFile, subPaletteCount);
+            palette = new sPalette(inputFile, subPaletteCount);
 
             textureMaps = new List<sTextureMaps>(textureMapCount);
             for (byte i = 0; i < textureMapCount; i++)
             {
-                textureMaps.Add(new sTextureMaps(buffer, inputFile));
+                textureMaps.Add(new sTextureMaps(inputFile));
             }
 
             models = new List<sModels>(modelsCount);
             for (byte i = 0; i < modelsCount; i++)
             {
-                models.Add(new sModels(buffer, inputFile));
+                models.Add(new sModels(inputFile));
             }
 
             if(subPaletteCount + textureMapCount + modelsCount > 0)
-                Utils.Align(inputFile);
+                Utils.align(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -154,7 +154,7 @@ namespace Melt
             }
 
             if (palette.subPalettes.Count + textureMaps.Count + models.Count > 0)
-                Utils.Align(outputStream);
+                Utils.align(outputStream);
         }
     }
 }

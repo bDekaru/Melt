@@ -24,23 +24,23 @@ namespace Melt
         public int unknown4;
         public string failureMessage;
 
-        public sItemInteractionResult(byte[] buffer, StreamReader inputFile)
+        public sItemInteractionResult(StreamReader inputFile)
         {
-            resultId = Utils.ReadInt32(buffer, inputFile);
-            unknown1 = Utils.ReadInt32(buffer, inputFile);
-            skill = (eSkills)Utils.ReadInt32(buffer, inputFile);
-            difficulty = Utils.ReadInt32(buffer, inputFile);
-            unknown2 = Utils.ReadInt32(buffer, inputFile);
-            resultWcid = Utils.ReadInt32(buffer, inputFile);
-            resultAmount = Utils.ReadInt32(buffer, inputFile);
-            successMessage = Utils.ReadString(buffer, inputFile);
-            unknown3 = Utils.ReadInt32(buffer, inputFile);
-            unknown4 = Utils.ReadInt32(buffer, inputFile);
-            failureMessage = Utils.ReadString(buffer, inputFile);
+            resultId = Utils.readInt32(inputFile);
+            unknown1 = Utils.readInt32(inputFile);
+            skill = (eSkills)Utils.readInt32(inputFile);
+            difficulty = Utils.readInt32(inputFile);
+            unknown2 = Utils.readInt32(inputFile);
+            resultWcid = Utils.readInt32(inputFile);
+            resultAmount = Utils.readInt32(inputFile);
+            successMessage = Utils.readString(inputFile);
+            unknown3 = Utils.readInt32(inputFile);
+            unknown4 = Utils.readInt32(inputFile);
+            failureMessage = Utils.readString(inputFile);
 
             for (int i = 0; i < 163; i++)
             {
-                int unknown = Utils.ReadInt32(buffer, inputFile);
+                int unknown = Utils.readInt32(inputFile);
             }
         }
 
@@ -56,7 +56,6 @@ namespace Melt
     public class cCache4Converter
     {
         List<sItemInteractionResult> itemInteractionResults;
-        byte[] buffer = new byte[4096];
 
         public cCache4Converter()
         {
@@ -71,12 +70,12 @@ namespace Melt
 
             itemInteractionResults = new List<sItemInteractionResult>();
 
-            int header1 = Utils.ReadInt32(buffer, inputFile);
+            int header1 = Utils.readInt32(inputFile);
 
             short itemInteractionsCount = 0;
             for (itemInteractionsCount = 0; itemInteractionsCount < 292; itemInteractionsCount++)
             {
-                sItemInteractionResult interactionResult = new sItemInteractionResult(buffer, inputFile);
+                sItemInteractionResult interactionResult = new sItemInteractionResult(inputFile);
                 itemInteractionResults.Add(interactionResult);
             }
 

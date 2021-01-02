@@ -70,26 +70,26 @@ namespace Melt
             listOfBlocks = new List<cDatFileBlock>();
         }
 
-        public cDatFileEntry(byte[] buffer, StreamReader inputFile, eDatFormat fileFormat)
+        public cDatFileEntry(StreamReader inputFile, eDatFormat fileFormat)
         {
             this.fileFormat = fileFormat;
 
             if (fileFormat == eDatFormat.ToD)
             {
-                bitFlags = Utils.ReadUInt32(buffer, inputFile);//0x10000 = empty 0x20000 = has data
-                fileId = Utils.ReadUInt32(buffer, inputFile);
-                startBlockOffset = Utils.ReadUInt32(buffer, inputFile);
-                fileSize = Utils.ReadInt32(buffer, inputFile);
-                timeStamp = Utils.ReadUInt32(buffer, inputFile);
-                version = Utils.ReadUInt32(buffer, inputFile);
+                bitFlags = Utils.readUInt32(inputFile);//0x10000 = empty 0x20000 = has data
+                fileId = Utils.readUInt32(inputFile);
+                startBlockOffset = Utils.readUInt32(inputFile);
+                fileSize = Utils.readInt32(inputFile);
+                timeStamp = Utils.readUInt32(inputFile);
+                version = Utils.readUInt32(inputFile);
 
                 //DateTimeOffset convertedTimeStamp = DateTimeOffset.FromUnixTimeSeconds(timeStamp);
             }
             else
             {
-                fileId = Utils.ReadUInt32(buffer, inputFile);
-                startBlockOffset = Utils.ReadUInt32(buffer, inputFile);
-                fileSize = Utils.ReadInt32(buffer, inputFile);
+                fileId = Utils.readUInt32(inputFile);
+                startBlockOffset = Utils.readUInt32(inputFile);
+                fileSize = Utils.readInt32(inputFile);
                 bitFlags = 0x00020000;
                 timeStamp = (uint)DateTimeOffset.Now.ToUnixTimeSeconds();
                 version = 1;

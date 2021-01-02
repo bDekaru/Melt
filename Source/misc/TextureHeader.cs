@@ -47,15 +47,14 @@ namespace Melt
                 return "";
             }
 
-            byte[] buffer = new byte[1024];
-            uint fileHeader = Utils.ReadUInt32(buffer, inputFile);
-            uint unknown1 = Utils.ReadUInt32(buffer, inputFile);
-            byte amountOfTextures = Utils.ReadByte(buffer, inputFile);
-            uint unknown2 = Utils.ReadUInt32(buffer, inputFile);
-            uint textureId = Utils.ReadUInt32(buffer, inputFile);
+            uint fileHeader = Utils.readUInt32(inputFile);
+            uint unknown1 = Utils.readUInt32(inputFile);
+            byte amountOfTextures = Utils.readByte(inputFile);
+            uint unknown2 = Utils.readUInt32(inputFile);
+            uint textureId = Utils.readUInt32(inputFile);
             uint textureId2;
             if (amountOfTextures == 2)
-                textureId2 = Utils.ReadUInt32(buffer, inputFile);
+                textureId2 = Utils.readUInt32(inputFile);
             else
                 textureId2 = textureId;
             return fileHeader.ToString("x8") + " " + textureId2.ToString("x8");

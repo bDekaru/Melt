@@ -24,12 +24,12 @@ namespace Melt
             return comment.Length > 0;
         }
 
-        public sQuestFlag(byte[] buffer, StreamReader inputFile)
+        public sQuestFlag(StreamReader inputFile)
         {
-            name = Utils.ReadString(buffer, inputFile);
-            repeatTimerSeconds = Utils.ReadInt32(buffer, inputFile);
-            maxRepetitions = Utils.ReadInt32(buffer, inputFile);
-            description = Utils.ReadEncodedString(buffer, inputFile);
+            name = Utils.readString(inputFile);
+            repeatTimerSeconds = Utils.readInt32(inputFile);
+            maxRepetitions = Utils.readInt32(inputFile);
+            description = Utils.readEncodedString(inputFile);
 
             comment = "";
             TimeSpan time = TimeSpan.FromSeconds(repeatTimerSeconds);
@@ -77,7 +77,6 @@ namespace Melt
     public class cCache8Converter
     {
         List<sQuestFlag> questFlags;
-        byte[] buffer = new byte[4096];
 
         public cCache8Converter()
         {
@@ -92,13 +91,13 @@ namespace Melt
 
             questFlags = new List<sQuestFlag>();
 
-            short count = Utils.ReadInt16(buffer, inputFile);
-            short unknown = Utils.ReadInt16(buffer, inputFile);
+            short count = Utils.readInt16(inputFile);
+            short unknown = Utils.readInt16(inputFile);
 
             short questFlagCount;
             for (questFlagCount = 0; questFlagCount < count; questFlagCount++)
             {
-                sQuestFlag newTimerEntry = new sQuestFlag(buffer, inputFile);
+                sQuestFlag newTimerEntry = new sQuestFlag(inputFile);
                 questFlags.Add(newTimerEntry);
             }
 

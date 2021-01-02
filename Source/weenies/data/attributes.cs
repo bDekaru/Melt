@@ -27,11 +27,11 @@ namespace Melt
         public int init_level;
         public int cp_spent;
 
-        public sAttribute(byte[] buffer, StreamReader inputFile)
+        public sAttribute(StreamReader inputFile)
         {
-            level_from_cp = Utils.ReadInt32(buffer, inputFile);
-            init_level = Utils.ReadInt32(buffer, inputFile);
-            cp_spent = Utils.ReadInt32(buffer, inputFile);
+            level_from_cp = Utils.readInt32(inputFile);
+            init_level = Utils.readInt32(inputFile);
+            cp_spent = Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -61,12 +61,12 @@ namespace Melt
         public int cp_spent;
         public int current;
 
-        public sVital(byte[] buffer, StreamReader inputFile)
+        public sVital(StreamReader inputFile)
         {
-            level_from_cp = Utils.ReadInt32(buffer, inputFile);
-            init_level = Utils.ReadInt32(buffer, inputFile);
-            cp_spent = Utils.ReadInt32(buffer, inputFile);
-            current = Utils.ReadInt32(buffer, inputFile);
+            level_from_cp = Utils.readInt32(inputFile);
+            init_level = Utils.readInt32(inputFile);
+            cp_spent = Utils.readInt32(inputFile);
+            current = Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -107,52 +107,52 @@ namespace Melt
         public sVital stamina;
         public sVital mana;
 
-        public sAttributes(byte[] buffer, StreamReader inputFile)
+        public sAttributes(StreamReader inputFile)
         {
-            attributeFlags = (eAttributeFlags)Utils.ReadInt32(buffer, inputFile);
+            attributeFlags = (eAttributeFlags)Utils.readInt32(inputFile);
 
             if (attributeFlags.HasFlag(eAttributeFlags.strength))
-                strength = new sAttribute(buffer, inputFile);
+                strength = new sAttribute(inputFile);
             else
                 strength = new sAttribute();
 
             if (attributeFlags.HasFlag(eAttributeFlags.endurance))
-                endurance = new sAttribute(buffer, inputFile);
+                endurance = new sAttribute(inputFile);
             else
                 endurance = new sAttribute();
 
             if (attributeFlags.HasFlag(eAttributeFlags.quickness))
-                quickness = new sAttribute(buffer, inputFile);
+                quickness = new sAttribute(inputFile);
             else
                 quickness = new sAttribute();
 
             if (attributeFlags.HasFlag(eAttributeFlags.coordination))
-                coordination = new sAttribute(buffer, inputFile);
+                coordination = new sAttribute(inputFile);
             else
                 coordination = new sAttribute();
 
             if (attributeFlags.HasFlag(eAttributeFlags.focus))
-                focus = new sAttribute(buffer, inputFile);
+                focus = new sAttribute(inputFile);
             else
                 focus = new sAttribute();
 
             if (attributeFlags.HasFlag(eAttributeFlags.self))
-                self = new sAttribute(buffer, inputFile);
+                self = new sAttribute(inputFile);
             else
                 self = new sAttribute();
 
             if (attributeFlags.HasFlag(eAttributeFlags.health))
-                health = new sVital(buffer, inputFile);
+                health = new sVital(inputFile);
             else
                 health = new sVital();
 
             if (attributeFlags.HasFlag(eAttributeFlags.stamina))
-                stamina = new sVital(buffer, inputFile);
+                stamina = new sVital(inputFile);
             else
                 stamina = new sVital();
 
             if (attributeFlags.HasFlag(eAttributeFlags.mana))
-                mana = new sVital(buffer, inputFile);
+                mana = new sVital(inputFile);
             else
                 mana = new sVital();
         }

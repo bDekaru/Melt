@@ -118,12 +118,16 @@ namespace Melt
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Include)]
         public Single z;
 
-        public sAngles(byte[] buffer, StreamReader inputFile)
+        public sAngles(cDatFileEntry file) : this(new StreamReader(file.fileContent))
         {
-            w = Utils.ReadSingle(buffer, inputFile);
-            x = Utils.ReadSingle(buffer, inputFile);
-            y = Utils.ReadSingle(buffer, inputFile);
-            z = Utils.ReadSingle(buffer, inputFile);
+        }
+
+        public sAngles(StreamReader inputFile)
+        {
+            w = Utils.readSingle(inputFile);
+            x = Utils.readSingle(inputFile);
+            y = Utils.readSingle(inputFile);
+            z = Utils.readSingle(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -159,11 +163,15 @@ namespace Melt
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Include)]
         public Single z;
 
-        public sOrigin(byte[] buffer, StreamReader inputFile)
+        public sOrigin(cDatFileEntry file) : this(new StreamReader(file.fileContent))
         {
-            x = Utils.ReadSingle(buffer, inputFile);
-            y = Utils.ReadSingle(buffer, inputFile);
-            z = Utils.ReadSingle(buffer, inputFile);
+        }
+
+        public sOrigin(StreamReader inputFile)
+        {
+            x = Utils.readSingle(inputFile);
+            y = Utils.readSingle(inputFile);
+            z = Utils.readSingle(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -190,10 +198,14 @@ namespace Melt
         public sOrigin origin;
         public sAngles angles;
 
-        public sFrame(byte[] buffer, StreamReader inputFile)
+        public sFrame(cDatFileEntry file) : this(new StreamReader(file.fileContent))
         {
-            origin = new sOrigin(buffer, inputFile);
-            angles = new sAngles(buffer, inputFile);
+        }
+
+        public sFrame(StreamReader inputFile)
+        {
+            origin = new sOrigin(inputFile);
+            angles = new sAngles(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -219,10 +231,14 @@ namespace Melt
         public UInt32 objcell_id;
         public sFrame frame;
 
-        public sPosition(byte[] buffer, StreamReader inputFile)
+        public sPosition(cDatFileEntry file) : this(new StreamReader(file.fileContent))
         {
-            objcell_id = Utils.ReadUInt32(buffer, inputFile);
-            frame = new sFrame(buffer, inputFile);
+        }
+
+        public sPosition(StreamReader inputFile)
+        {
+            objcell_id = Utils.readUInt32(inputFile);
+            frame = new sFrame(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -249,11 +265,15 @@ namespace Melt
         public UInt32 objcell_id;
         public sFrame frame;
 
-        public sPosStat(byte[] buffer, StreamReader inputFile)
+        public sPosStat(cDatFileEntry file) : this(new StreamReader(file.fileContent))
         {
-            key = Utils.ReadInt32(buffer, inputFile);
-            objcell_id = Utils.ReadUInt32(buffer, inputFile);
-            frame = new sFrame(buffer, inputFile);
+        }
+
+        public sPosStat(StreamReader inputFile)
+        {
+            key = Utils.readInt32(inputFile);
+            objcell_id = Utils.readUInt32(inputFile);
+            frame = new sFrame(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)

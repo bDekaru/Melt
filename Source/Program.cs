@@ -9,67 +9,29 @@ namespace Melt
 {
     class Program
     {
+        static void Main(string[] args)
+        {
+            //GeneratePhatACLootFiles(args);
+            Workbench(args);
+        }
+
         //public static cCache4Converter cache4Converter = new cCache4Converter();
         public static cCache6Converter cache6Converter = new cCache6Converter();
         public static cCache8Converter cache8Converter = new cCache8Converter();
         public static cCache9Converter cache9Converter = new cCache9Converter();
-
-        static void Main(string[] args)
+        static void Workbench(string[] args)
         {
             //AceMutationScripts aceMutationScripts = new AceMutationScripts();
-
-            //cache9Converter.loadWeeniesRaw("./input/0009.raw");
-            //cache9Converter.performCacheFixes();
-            //cache9Converter.writeRaw();
-            //Stopwatch timer = new Stopwatch();
-            //timer.Start();
-            //Process cachePwnProcess = new Process();
-            //string path = AppDomain.CurrentDomain.BaseDirectory;
-            //cachePwnProcess.StartInfo.FileName = $"{path}CachePwn.exe";
-            //cachePwnProcess.StartInfo.Arguments = "2 .\\intermediate .\\output\\";
-            //cachePwnProcess.Start();
-            //cachePwnProcess.WaitForExit();
-            //timer.Stop();
-            //Console.WriteLine("Finished in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
-
-            //    cache6Converter.loadFromRaw("./input/0006.raw");
-            //    cache6Converter.writeJson("./output/landblocks");
-            //    return;
-
-            //SkillTable skillTable = new SkillTable("./Skill Tables/0E000004 - Skills Table - Original.bin");
-            //SkillTable skillTable2 = new SkillTable("./Skill Tables/0E000004 - Skills Table - Classic weapon skills.bin");
-            //SkillTable skillTable3 = new SkillTable("./Skill Tables/0E000004 - Skills Table - Release.bin");
-            //skillTable2.copySkill("Salvaging", skillTable);
-            //skillTable2.save("./0E000004 - Skills Table - Classic weapon skills with salvaging.bin");
-
-            //CharGen charGen = new CharGen("./input/0E000002.bin");
-            //charGen.modify();
-            //charGen.save("./0E000002 - CharGen - Classic.bin");
+            //aceMutationScripts.BuildScripts();
+            //Console.WriteLine("Done");
             //Console.ReadLine();
             //return;
-
-            ////TextureConverter.folderToPNG("textures ToD");
-            ////TextureConverter.folderBMPToPNG("C:/Users/Dekaru/Desktop/Research/Textures Retail");
-            ////TextureConverter.toPNG("textures ToD/06003afb.bin");
-            ////Console.ReadLine();
-            ////return;
-
-            ////TextureIdDictionary.folderExtractTextureFromHeader("./input/textureHeaders/");
-            ////return;
-
-            //RegionConverter.convert("Region/13000000.bin");
-            //RegionConverterDM.convert("Region/130F0000 Bael.bin");
-            //RegionConverterDM.convert("Region/130F0000 test.bin");
 
             //cDatFile portalDatFile = new cDatFile();
             //portalDatFile.loadFromDat("./input/client_portal.dat");
             //int iteration = portalDatFile.GetFileIteration();
             //portalDatFile.SetFileIteration(10000);
             //portalDatFile.writeToDat("client_portal.dat");
-
-
-
-
 
             //cDatFile datFile = new cDatFile();
             //datFile.loadFromDat("./input/client_cell_1.dat");
@@ -148,9 +110,48 @@ namespace Melt
 
             //datFile.writeToDat("./client_cell_1.dat");
 
+            //cache9Converter.loadWeeniesRaw("./input/0009.raw");
+            //cache9Converter.performCacheFixes();
+            //cache9Converter.writeRaw();
+            //Stopwatch timer = new Stopwatch();
+            //timer.Start();
+            //Process cachePwnProcess = new Process();
+            //string path = AppDomain.CurrentDomain.BaseDirectory;
+            //cachePwnProcess.StartInfo.FileName = $"{path}CachePwn.exe";
+            //cachePwnProcess.StartInfo.Arguments = "2 .\\intermediate .\\output\\";
+            //cachePwnProcess.Start();
+            //cachePwnProcess.WaitForExit();
+            //timer.Stop();
+            //Console.WriteLine("Finished in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
 
+            //    cache6Converter.loadFromRaw("./input/0006.raw");
+            //    cache6Converter.writeJson("./output/landblocks");
+            //    return;
+
+            //SkillTable skillTable = new SkillTable("./Skill Tables/0E000004 - Skills Table - Original.bin");
+            //SkillTable skillTable2 = new SkillTable("./Skill Tables/0E000004 - Skills Table - Classic weapon skills.bin");
+            //SkillTable skillTable3 = new SkillTable("./Skill Tables/0E000004 - Skills Table - Release.bin");
+            //skillTable2.copySkill("Salvaging", skillTable);
+            //skillTable2.save("./0E000004 - Skills Table - Classic weapon skills with salvaging.bin");
+
+            //CharGen charGen = new CharGen("./input/0E000002.bin");
+            //charGen.modify();
+            //charGen.save("./0E000002 - CharGen - Classic.bin");
             //Console.ReadLine();
             //return;
+
+            ////TextureConverter.folderToPNG("textures ToD");
+            ////TextureConverter.folderBMPToPNG("C:/Users/Dekaru/Desktop/Research/Textures Retail");
+            ////TextureConverter.toPNG("textures ToD/06003afb.bin");
+            ////Console.ReadLine();
+            ////return;
+
+            ////TextureIdDictionary.folderExtractTextureFromHeader("./input/textureHeaders/");
+            ////return;
+
+            //RegionConverter.convert("Region/13000000.bin");
+            //RegionConverterDM.convert("Region/130F0000 Bael.bin");
+            //RegionConverterDM.convert("Region/130F0000 test.bin");
 
             //cCellDat cellDat = new cCellDat();
             //cellDat.loadFromDat(datFileOld);
@@ -232,437 +233,440 @@ namespace Melt
             Console.WriteLine("Done");
             Console.ReadLine();
             return;
+        }
 
-            //bool invalidArgs = false;
+        static void GeneratePhatACLootFiles(string[] args)
+        {
+            bool invalidArgs = false;
 
-            //if (args.Length == 0)
-            //    invalidArgs = true;
+            if (args.Length == 0)
+                invalidArgs = true;
 
-            //if (!invalidArgs)
-            //{
-            //    switch (args[0].ToLower())
-            //    {
-            //        case "cached":
-            //            {
-            //                string fileLootProfile;
-            //                string file0002;
-            //                string file0009;
+            if (!invalidArgs)
+            {
+                switch (args[0].ToLower())
+                {
+                    case "cached":
+                        {
+                            string fileLootProfile;
+                            string file0002;
+                            string file0009;
 
-            //                if (args.Length >= 3)
-            //                {
-            //                    file0002 = Path.Combine(args[1], "0002.raw");
-            //                    file0009 = Path.Combine(args[1], "0009.raw");
-            //                    fileLootProfile = args[2];
+                            if (args.Length >= 3)
+                            {
+                                file0002 = Path.Combine(args[1], "0002.raw");
+                                file0009 = Path.Combine(args[1], "0009.raw");
+                                fileLootProfile = args[2];
 
-            //                    if (!File.Exists(fileLootProfile))
-            //                    {
-            //                        Console.WriteLine("Invalid file: {0}", fileLootProfile);
-            //                        Console.ReadLine();
-            //                        return;
-            //                    }
-            //                    else if (!File.Exists(file0009))
-            //                    {
-            //                        Console.WriteLine("Invalid file: {0}", file0009);
-            //                        Console.ReadLine();
-            //                        return;
-            //                    }
-            //                    else if (!File.Exists(file0002))
-            //                    {
-            //                        Console.WriteLine("Invalid file: {0}", file0002);
-            //                        Console.ReadLine();
-            //                        return;
-            //                    }
-            //                }
-            //                else
-            //                {
-            //                    invalidArgs = true;
-            //                    break;
-            //                }
+                                if (!File.Exists(fileLootProfile))
+                                {
+                                    Console.WriteLine("Invalid file: {0}", fileLootProfile);
+                                    Console.ReadLine();
+                                    return;
+                                }
+                                else if (!File.Exists(file0009))
+                                {
+                                    Console.WriteLine("Invalid file: {0}", file0009);
+                                    Console.ReadLine();
+                                    return;
+                                }
+                                else if (!File.Exists(file0002))
+                                {
+                                    Console.WriteLine("Invalid file: {0}", file0002);
+                                    Console.ReadLine();
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                invalidArgs = true;
+                                break;
+                            }
 
-            //                sLootProfile lootProfile = cache9Converter.generateRandomLoot(file0009, file0002, fileLootProfile, "./output/cached/", true, true, false, true);//write everything to raw
+                            sLootProfile lootProfile = cache9Converter.generateRandomLoot(file0009, file0002, fileLootProfile, "./output/cached/", true, true, false, true);//write everything to raw
 
-            //                Console.WriteLine("Waiting while CachePwn builds cache.bin...");
-            //                Stopwatch timer = new Stopwatch();
-            //                timer.Start();
-            //                Process cachePwnProcess = new Process();
-            //                string path = AppDomain.CurrentDomain.BaseDirectory;
-            //                cachePwnProcess.StartInfo.FileName = $"{path}CachePwn.exe";
-            //                cachePwnProcess.StartInfo.Arguments = "2 .\\intermediate .\\output\\cached";
-            //                cachePwnProcess.Start();
-            //                cachePwnProcess.WaitForExit();
-            //                timer.Stop();
-            //                Console.WriteLine("Finished in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
+                            Console.WriteLine("Waiting while CachePwn builds cache.bin...");
+                            Stopwatch timer = new Stopwatch();
+                            timer.Start();
+                            Process cachePwnProcess = new Process();
+                            string path = AppDomain.CurrentDomain.BaseDirectory;
+                            cachePwnProcess.StartInfo.FileName = $"{path}CachePwn.exe";
+                            cachePwnProcess.StartInfo.Arguments = "2 .\\intermediate .\\output\\cached";
+                            cachePwnProcess.Start();
+                            cachePwnProcess.WaitForExit();
+                            timer.Stop();
+                            Console.WriteLine("Finished in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
 
-            //                if (lootProfile.otherOptions.copyOutputToFolder != "")
-            //                {
-            //                    if (!Directory.Exists(lootProfile.otherOptions.copyOutputToFolder))
-            //                        Console.WriteLine("Invalid copyOutputToFolder: {0}", lootProfile.otherOptions.copyOutputToFolder);
-            //                    else
-            //                    {
-            //                        Console.WriteLine("Copying output to \"{0}\"...", lootProfile.otherOptions.copyOutputToFolder);
-            //                        timer.Reset();
-            //                        timer.Start();
+                            if (lootProfile.otherOptions.copyOutputToFolder != "")
+                            {
+                                if (!Directory.Exists(lootProfile.otherOptions.copyOutputToFolder))
+                                    Console.WriteLine("Invalid copyOutputToFolder: {0}", lootProfile.otherOptions.copyOutputToFolder);
+                                else
+                                {
+                                    Console.WriteLine("Copying output to \"{0}\"...", lootProfile.otherOptions.copyOutputToFolder);
+                                    timer.Reset();
+                                    timer.Start();
 
-            //                        Utils.copyDirectory(".\\output\\cached", lootProfile.otherOptions.copyOutputToFolder, true, true);
+                                    Utils.copyDirectory(".\\output\\cached", lootProfile.otherOptions.copyOutputToFolder, true, true);
 
-            //                        timer.Stop();
-            //                        Console.WriteLine("Finished in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
-            //                    }
-            //                }
-            //                return;
-            //            }
-            //        case "split":
-            //            {
-            //                string fileLootProfile;
-            //                string file0002;
-            //                string file0009;
+                                    timer.Stop();
+                                    Console.WriteLine("Finished in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
+                                }
+                            }
+                            return;
+                        }
+                    case "split":
+                        {
+                            string fileLootProfile;
+                            string file0002;
+                            string file0009;
 
-            //                if (args.Length >= 3)
-            //                {
-            //                    file0002 = Path.Combine(args[1], "0002.raw");
-            //                    file0009 = Path.Combine(args[1], "0009.raw");
-            //                    fileLootProfile = args[2];
+                            if (args.Length >= 3)
+                            {
+                                file0002 = Path.Combine(args[1], "0002.raw");
+                                file0009 = Path.Combine(args[1], "0009.raw");
+                                fileLootProfile = args[2];
 
-            //                    if (!File.Exists(fileLootProfile))
-            //                    {
-            //                        Console.WriteLine("Invalid file: {0}", fileLootProfile);
-            //                        Console.ReadLine();
-            //                        return;
-            //                    }
-            //                    else if (!File.Exists(file0009))
-            //                    {
-            //                        Console.WriteLine("Invalid file: {0}", file0009);
-            //                        Console.ReadLine();
-            //                        return;
-            //                    }
-            //                    else if (!File.Exists(file0002))
-            //                    {
-            //                        Console.WriteLine("Invalid file: {0}", file0002);
-            //                        Console.ReadLine();
-            //                        return;
-            //                    }
-            //                }
-            //                else
-            //                {
-            //                    invalidArgs = true;
-            //                    break;
-            //                }
-            //                sLootProfile lootProfile = cache9Converter.generateRandomLoot(file0009, file0002, fileLootProfile, "./output/split/", false, true, false, true);//write creature entries to raw
-            //                cache9Converter.generateRandomLoot(file0009, "", fileLootProfile, "./output/split/json/weenies/", true, false, true, false);//write items to json
+                                if (!File.Exists(fileLootProfile))
+                                {
+                                    Console.WriteLine("Invalid file: {0}", fileLootProfile);
+                                    Console.ReadLine();
+                                    return;
+                                }
+                                else if (!File.Exists(file0009))
+                                {
+                                    Console.WriteLine("Invalid file: {0}", file0009);
+                                    Console.ReadLine();
+                                    return;
+                                }
+                                else if (!File.Exists(file0002))
+                                {
+                                    Console.WriteLine("Invalid file: {0}", file0002);
+                                    Console.ReadLine();
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                invalidArgs = true;
+                                break;
+                            }
+                            sLootProfile lootProfile = cache9Converter.generateRandomLoot(file0009, file0002, fileLootProfile, "./output/split/", false, true, false, true);//write creature entries to raw
+                            cache9Converter.generateRandomLoot(file0009, "", fileLootProfile, "./output/split/json/weenies/", true, false, true, false);//write items to json
 
-            //                Console.WriteLine("Waiting while CachePwn builds cache.bin...");
-            //                Stopwatch timer = new Stopwatch();
-            //                timer.Start();
-            //                Process cachePwnProcess = new Process();
-            //                string path = AppDomain.CurrentDomain.BaseDirectory;
-            //                cachePwnProcess.StartInfo.FileName = $"{path}CachePwn.exe";
-            //                cachePwnProcess.StartInfo.Arguments = "2 .\\intermediate .\\output\\split";
-            //                cachePwnProcess.Start();
-            //                cachePwnProcess.WaitForExit();
-            //                timer.Stop();
-            //                Console.WriteLine("Finished in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
+                            Console.WriteLine("Waiting while CachePwn builds cache.bin...");
+                            Stopwatch timer = new Stopwatch();
+                            timer.Start();
+                            Process cachePwnProcess = new Process();
+                            string path = AppDomain.CurrentDomain.BaseDirectory;
+                            cachePwnProcess.StartInfo.FileName = $"{path}CachePwn.exe";
+                            cachePwnProcess.StartInfo.Arguments = "2 .\\intermediate .\\output\\split";
+                            cachePwnProcess.Start();
+                            cachePwnProcess.WaitForExit();
+                            timer.Stop();
+                            Console.WriteLine("Finished in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
 
-            //                if (lootProfile.otherOptions.copyOutputToFolder != "")
-            //                {
-            //                    if (!Directory.Exists(lootProfile.otherOptions.copyOutputToFolder))
-            //                        Console.WriteLine("Invalid copyOutputToFolder: {0}", lootProfile.otherOptions.copyOutputToFolder);
-            //                    else
-            //                    {
-            //                        Console.WriteLine("Copying output to \"{0}\"...", lootProfile.otherOptions.copyOutputToFolder);
-            //                        timer.Reset();
-            //                        timer.Start();
+                            if (lootProfile.otherOptions.copyOutputToFolder != "")
+                            {
+                                if (!Directory.Exists(lootProfile.otherOptions.copyOutputToFolder))
+                                    Console.WriteLine("Invalid copyOutputToFolder: {0}", lootProfile.otherOptions.copyOutputToFolder);
+                                else
+                                {
+                                    Console.WriteLine("Copying output to \"{0}\"...", lootProfile.otherOptions.copyOutputToFolder);
+                                    timer.Reset();
+                                    timer.Start();
 
-            //                        Utils.copyDirectory(".\\output\\split", lootProfile.otherOptions.copyOutputToFolder, true, true);
+                                    Utils.copyDirectory(".\\output\\split", lootProfile.otherOptions.copyOutputToFolder, true, true);
 
-            //                        timer.Stop();
-            //                        Console.WriteLine("Finished in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
-            //                    }
-            //                }
-            //                return;
-            //            }
-            //        case "json":
-            //            {
-            //                string fileLootProfile;
-            //                string file0002;
-            //                string file0009;
+                                    timer.Stop();
+                                    Console.WriteLine("Finished in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
+                                }
+                            }
+                            return;
+                        }
+                    case "json":
+                        {
+                            string fileLootProfile;
+                            string file0002;
+                            string file0009;
 
-            //                if (args.Length >= 3)
-            //                {
-            //                    file0002 = Path.Combine(args[1], "0002.raw");
-            //                    file0009 = Path.Combine(args[1], "0009.raw");
-            //                    fileLootProfile = args[2];
+                            if (args.Length >= 3)
+                            {
+                                file0002 = Path.Combine(args[1], "0002.raw");
+                                file0009 = Path.Combine(args[1], "0009.raw");
+                                fileLootProfile = args[2];
 
-            //                    if (!File.Exists(fileLootProfile))
-            //                    {
-            //                        Console.WriteLine("Invalid file: {0}", fileLootProfile);
-            //                        Console.ReadLine();
-            //                        return;
-            //                    }
-            //                    else if (!File.Exists(file0009))
-            //                    {
-            //                        Console.WriteLine("Invalid file: {0}", file0009);
-            //                        Console.ReadLine();
-            //                        return;
-            //                    }
-            //                    else if (!File.Exists(file0002))
-            //                    {
-            //                        Console.WriteLine("Invalid file: {0}", file0002);
-            //                        Console.ReadLine();
-            //                        return;
-            //                    }
-            //                }
-            //                else
-            //                {
-            //                    invalidArgs = true;
-            //                    break;
-            //                }
-            //                cache9Converter.generateRandomLoot(file0009, file0002, fileLootProfile, "./output/json/", true, true, true, false);//write everything to json
-            //                return;
-            //            }
-            //        case "loottablesjson":
-            //            {
-            //                string fileLootProfile;
-            //                string file0002;
-            //                string file0009;
+                                if (!File.Exists(fileLootProfile))
+                                {
+                                    Console.WriteLine("Invalid file: {0}", fileLootProfile);
+                                    Console.ReadLine();
+                                    return;
+                                }
+                                else if (!File.Exists(file0009))
+                                {
+                                    Console.WriteLine("Invalid file: {0}", file0009);
+                                    Console.ReadLine();
+                                    return;
+                                }
+                                else if (!File.Exists(file0002))
+                                {
+                                    Console.WriteLine("Invalid file: {0}", file0002);
+                                    Console.ReadLine();
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                invalidArgs = true;
+                                break;
+                            }
+                            cache9Converter.generateRandomLoot(file0009, file0002, fileLootProfile, "./output/json/", true, true, true, false);//write everything to json
+                            return;
+                        }
+                    case "loottablesjson":
+                        {
+                            string fileLootProfile;
+                            string file0002;
+                            string file0009;
 
-            //                if (args.Length >= 3)
-            //                {
-            //                    file0002 = Path.Combine(args[1], "0002.raw");
-            //                    file0009 = Path.Combine(args[1], "0009.raw");
-            //                    fileLootProfile = args[2];
+                            if (args.Length >= 3)
+                            {
+                                file0002 = Path.Combine(args[1], "0002.raw");
+                                file0009 = Path.Combine(args[1], "0009.raw");
+                                fileLootProfile = args[2];
 
-            //                    if (!File.Exists(fileLootProfile))
-            //                    {
-            //                        Console.WriteLine("Invalid file: {0}", fileLootProfile);
-            //                        Console.ReadLine();
-            //                        return;
-            //                    }
-            //                    else if (!File.Exists(file0009))
-            //                    {
-            //                        Console.WriteLine("Invalid file: {0}", file0009);
-            //                        Console.ReadLine();
-            //                        return;
-            //                    }
-            //                    else if (!File.Exists(file0002))
-            //                    {
-            //                        Console.WriteLine("Invalid file: {0}", file0002);
-            //                        Console.ReadLine();
-            //                        return;
-            //                    }
-            //                }
-            //                else
-            //                {
-            //                    invalidArgs = true;
-            //                    break;
-            //                }
-            //                cache9Converter.generateRandomLoot(file0009, file0002, fileLootProfile, "./output/json/", false, true, true, false);//write loot tables to json
-            //                return;
-            //            }
-            //        case "loottables":
-            //            {
-            //                string fileLootProfile;
-            //                string file0002;
-            //                string file0009;
+                                if (!File.Exists(fileLootProfile))
+                                {
+                                    Console.WriteLine("Invalid file: {0}", fileLootProfile);
+                                    Console.ReadLine();
+                                    return;
+                                }
+                                else if (!File.Exists(file0009))
+                                {
+                                    Console.WriteLine("Invalid file: {0}", file0009);
+                                    Console.ReadLine();
+                                    return;
+                                }
+                                else if (!File.Exists(file0002))
+                                {
+                                    Console.WriteLine("Invalid file: {0}", file0002);
+                                    Console.ReadLine();
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                invalidArgs = true;
+                                break;
+                            }
+                            cache9Converter.generateRandomLoot(file0009, file0002, fileLootProfile, "./output/json/", false, true, true, false);//write loot tables to json
+                            return;
+                        }
+                    case "loottables":
+                        {
+                            string fileLootProfile;
+                            string file0002;
+                            string file0009;
 
-            //                if (args.Length >= 3)
-            //                {
-            //                    file0002 = Path.Combine(args[1], "0002.raw");
-            //                    file0009 = Path.Combine(args[1], "0009.raw");
-            //                    fileLootProfile = args[2];
+                            if (args.Length >= 3)
+                            {
+                                file0002 = Path.Combine(args[1], "0002.raw");
+                                file0009 = Path.Combine(args[1], "0009.raw");
+                                fileLootProfile = args[2];
 
-            //                    if (!File.Exists(fileLootProfile))
-            //                    {
-            //                        Console.WriteLine("Invalid file: {0}", fileLootProfile);
-            //                        Console.ReadLine();
-            //                        return;
-            //                    }
-            //                    else if (!File.Exists(file0009))
-            //                    {
-            //                        Console.WriteLine("Invalid file: {0}", file0009);
-            //                        Console.ReadLine();
-            //                        return;
-            //                    }
-            //                    else if (!File.Exists(file0002))
-            //                    {
-            //                        Console.WriteLine("Invalid file: {0}", file0002);
-            //                        Console.ReadLine();
-            //                        return;
-            //                    }
-            //                }
-            //                else
-            //                {
-            //                    invalidArgs = true;
-            //                    break;
-            //                }
-            //                cache9Converter.generateRandomLoot(file0009, file0002, fileLootProfile, "./output/split/", false, true, false, true);//write loot tables to raw
-            //                return;
-            //            }
-            //        case "weenies":
-            //            {
-            //                string file0009;
+                                if (!File.Exists(fileLootProfile))
+                                {
+                                    Console.WriteLine("Invalid file: {0}", fileLootProfile);
+                                    Console.ReadLine();
+                                    return;
+                                }
+                                else if (!File.Exists(file0009))
+                                {
+                                    Console.WriteLine("Invalid file: {0}", file0009);
+                                    Console.ReadLine();
+                                    return;
+                                }
+                                else if (!File.Exists(file0002))
+                                {
+                                    Console.WriteLine("Invalid file: {0}", file0002);
+                                    Console.ReadLine();
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                invalidArgs = true;
+                                break;
+                            }
+                            cache9Converter.generateRandomLoot(file0009, file0002, fileLootProfile, "./output/split/", false, true, false, true);//write loot tables to raw
+                            return;
+                        }
+                    case "weenies":
+                        {
+                            string file0009;
 
-            //                if (args.Length >= 2)
-            //                {
-            //                    file0009 = Path.Combine(args[1], "0009.raw");
+                            if (args.Length >= 2)
+                            {
+                                file0009 = Path.Combine(args[1], "0009.raw");
 
-            //                    if (!File.Exists(file0009))
-            //                    {
-            //                        Console.WriteLine("Invalid file: {0}", file0009);
-            //                        Console.ReadLine();
-            //                        return;
-            //                    }
-            //                }
-            //                else
-            //                {
-            //                    invalidArgs = true;
-            //                    break;
-            //                }
-            //                cache9Converter.writeJson(file0009, "./output/weenies/", false);
-            //                return;
-            //            }
-            //        case "landblocks":
-            //            {
-            //                string file0006;
-            //                string file0009;
+                                if (!File.Exists(file0009))
+                                {
+                                    Console.WriteLine("Invalid file: {0}", file0009);
+                                    Console.ReadLine();
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                invalidArgs = true;
+                                break;
+                            }
+                            cache9Converter.writeJson(file0009, "./output/weenies/", false);
+                            return;
+                        }
+                    case "landblocks":
+                        {
+                            string file0006;
+                            string file0009;
 
-            //                if (args.Length >= 2)
-            //                {
-            //                    file0006 = Path.Combine(args[1], "0006.raw");
-            //                    file0009 = Path.Combine(args[1], "0009.raw");
+                            if (args.Length >= 2)
+                            {
+                                file0006 = Path.Combine(args[1], "0006.raw");
+                                file0009 = Path.Combine(args[1], "0009.raw");
 
-            //                    if (!File.Exists(file0006))
-            //                    {
-            //                        Console.WriteLine("Invalid file: {0}", file0006);
-            //                        Console.ReadLine();
-            //                        return;
-            //                    }
-            //                    else if (!File.Exists(file0009))
-            //                    {
-            //                        Console.WriteLine("Invalid file: {0}", file0009);
-            //                        Console.ReadLine();
-            //                        return;
-            //                    }
-            //                }
-            //                else
-            //                {
-            //                    invalidArgs = true;
-            //                    break;
-            //                }
-            //                cache9Converter.loadWeeniesRaw(file0009);
-            //                cache6Converter.loadFromRaw(file0006);
-            //                cache6Converter.writeJson("./output/landblocks");
-            //                return;
-            //            }
-            //        case "questflags":
-            //            {
-            //                string file0008;
+                                if (!File.Exists(file0006))
+                                {
+                                    Console.WriteLine("Invalid file: {0}", file0006);
+                                    Console.ReadLine();
+                                    return;
+                                }
+                                else if (!File.Exists(file0009))
+                                {
+                                    Console.WriteLine("Invalid file: {0}", file0009);
+                                    Console.ReadLine();
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                invalidArgs = true;
+                                break;
+                            }
+                            cache9Converter.loadWeeniesRaw(file0009);
+                            cache6Converter.loadFromRaw(file0006);
+                            cache6Converter.writeJson("./output/landblocks");
+                            return;
+                        }
+                    case "questflags":
+                        {
+                            string file0008;
 
-            //                if (args.Length >= 2)
-            //                {
-            //                    file0008 = Path.Combine(args[1], "0008.raw");
+                            if (args.Length >= 2)
+                            {
+                                file0008 = Path.Combine(args[1], "0008.raw");
 
-            //                    if (!File.Exists(file0008))
-            //                    {
-            //                        Console.WriteLine("Invalid file: {0}", file0008);
-            //                        Console.ReadLine();
-            //                        return;
-            //                    }
-            //                }
-            //                else
-            //                {
-            //                    invalidArgs = true;
-            //                    break;
-            //                }
-            //                cache8Converter.loadFromRaw(file0008);
-            //                cache8Converter.writeJson("./output");
-            //                return;
-            //            }
-            //        case "raw2json":
-            //            {
-            //                string file0009;
+                                if (!File.Exists(file0008))
+                                {
+                                    Console.WriteLine("Invalid file: {0}", file0008);
+                                    Console.ReadLine();
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                invalidArgs = true;
+                                break;
+                            }
+                            cache8Converter.loadFromRaw(file0008);
+                            cache8Converter.writeJson("./output");
+                            return;
+                        }
+                    case "raw2json":
+                        {
+                            string file0009;
 
-            //                if (args.Length >= 2)
-            //                {
-            //                    file0009 = Path.Combine(args[1], "0009.raw");
+                            if (args.Length >= 2)
+                            {
+                                file0009 = Path.Combine(args[1], "0009.raw");
 
-            //                    if (!File.Exists(file0009))
-            //                    {
-            //                        Console.WriteLine("Invalid file: {0}", file0009);
-            //                        Console.ReadLine();
-            //                        return;
-            //                    }
-            //                }
-            //                else
-            //                {
-            //                    invalidArgs = true;
-            //                    break;
-            //                }
-            //                cache9Converter.writeExtendedJson(file0009, "./output/extended weenies/", false);
-            //                return;
-            //            }
-            //        case "json2raw":
-            //            {
-            //                string folderExtendedWeenies;
+                                if (!File.Exists(file0009))
+                                {
+                                    Console.WriteLine("Invalid file: {0}", file0009);
+                                    Console.ReadLine();
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                invalidArgs = true;
+                                break;
+                            }
+                            cache9Converter.writeExtendedJson(file0009, "./output/extended weenies/", false);
+                            return;
+                        }
+                    case "json2raw":
+                        {
+                            string folderExtendedWeenies;
 
-            //                if (args.Length >= 2)
-            //                {
-            //                    folderExtendedWeenies = args[1];
+                            if (args.Length >= 2)
+                            {
+                                folderExtendedWeenies = args[1];
 
-            //                    if (!Directory.Exists(folderExtendedWeenies))
-            //                    {
-            //                        Console.WriteLine("Invalid folder: {0}", folderExtendedWeenies);
-            //                        Console.ReadLine();
-            //                        return;
-            //                    }
-            //                }
-            //                else
-            //                {
-            //                    invalidArgs = true;
-            //                    break;
-            //                }
+                                if (!Directory.Exists(folderExtendedWeenies))
+                                {
+                                    Console.WriteLine("Invalid folder: {0}", folderExtendedWeenies);
+                                    Console.ReadLine();
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                invalidArgs = true;
+                                break;
+                            }
 
-            //                cache9Converter.writeRawFromExtendedJson(folderExtendedWeenies);
+                            cache9Converter.writeRawFromExtendedJson(folderExtendedWeenies);
 
-            //                Console.WriteLine("Waiting while CachePwn builds cache.bin...");
-            //                Stopwatch timer = new Stopwatch();
-            //                timer.Start();
-            //                Process cachePwnProcess = new Process();
-            //                string path = AppDomain.CurrentDomain.BaseDirectory;
-            //                cachePwnProcess.StartInfo.FileName = $"{path}CachePwn.exe";
-            //                cachePwnProcess.StartInfo.Arguments = "2 .\\intermediate \".\\output\\extended weenies\"";
-            //                cachePwnProcess.Start();
-            //                cachePwnProcess.WaitForExit();
-            //                timer.Stop();
-            //                Console.WriteLine("Finished in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
-            //                return;
-            //            }
-            //    }
-            //}
+                            Console.WriteLine("Waiting while CachePwn builds cache.bin...");
+                            Stopwatch timer = new Stopwatch();
+                            timer.Start();
+                            Process cachePwnProcess = new Process();
+                            string path = AppDomain.CurrentDomain.BaseDirectory;
+                            cachePwnProcess.StartInfo.FileName = $"{path}CachePwn.exe";
+                            cachePwnProcess.StartInfo.Arguments = "2 .\\intermediate \".\\output\\extended weenies\"";
+                            cachePwnProcess.Start();
+                            cachePwnProcess.WaitForExit();
+                            timer.Stop();
+                            Console.WriteLine("Finished in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
+                            return;
+                        }
+                }
+            }
 
-            //if (invalidArgs)
-            //{
-            //    Console.WriteLine("Invalid arguments.");
-            //    Console.WriteLine("Valid Modes:");
-            //    Console.WriteLine("    Cached: produces a cache.bin file that contains both the generated loot and modified creatures and chests entries. Due to a limitation this file can only store up to 26550 new entries.");
-            //    Console.WriteLine("        Usage: (mode) (inputFolder) (profileFile)");
-            //    Console.WriteLine("    Split: produces a cache.bin file that contains the modified creatures and chests entries, and json files for the generated loot. Thus avoiding the limitation mentioned above but increasing server starting times considerably.");
-            //    Console.WriteLine("        Usage: (mode) (inputFolder) (profileFile)");
-            //    Console.WriteLine("    lootTables");
-            //    Console.WriteLine("        Usage: (mode) (inputFolder) (profileFile)");
-            //    Console.WriteLine("    Json: no cache.bin is produced, instead all modified entries are created as json.");
-            //    Console.WriteLine("        Usage: (mode) (inputFolder) (profileFile)");
-            //    Console.WriteLine("    lootTablesJson");
-            //    Console.WriteLine("        Usage: (mode) (inputFolder) (profileFile)");
-            //    Console.WriteLine("    raw2json: generate extended weenies that can later be reconverted into cached files.");
-            //    Console.WriteLine("        Usage: (mode) (inputFolder)");
-            //    Console.WriteLine("    json2raw: generate cache.bin file from extended weenies");
-            //    Console.WriteLine("        Usage: (mode) (inputFolder)");
-            //    Console.WriteLine("    Weenies: generate commented weenies files.");
-            //    Console.WriteLine("        Usage: (mode) (inputFolder)");
-            //    Console.WriteLine("    Landblocks: generate landblock files.");
-            //    Console.WriteLine("        Usage: (mode) (inputFolder)");
-            //    Console.ReadLine();
-            //}
+            if (invalidArgs)
+            {
+                Console.WriteLine("Invalid arguments.");
+                Console.WriteLine("Valid Modes:");
+                Console.WriteLine("    Cached: produces a cache.bin file that contains both the generated loot and modified creatures and chests entries. Due to a limitation this file can only store up to 26550 new entries.");
+                Console.WriteLine("        Usage: (mode) (inputFolder) (profileFile)");
+                Console.WriteLine("    Split: produces a cache.bin file that contains the modified creatures and chests entries, and json files for the generated loot. Thus avoiding the limitation mentioned above but increasing server starting times considerably.");
+                Console.WriteLine("        Usage: (mode) (inputFolder) (profileFile)");
+                Console.WriteLine("    lootTables");
+                Console.WriteLine("        Usage: (mode) (inputFolder) (profileFile)");
+                Console.WriteLine("    Json: no cache.bin is produced, instead all modified entries are created as json.");
+                Console.WriteLine("        Usage: (mode) (inputFolder) (profileFile)");
+                Console.WriteLine("    lootTablesJson");
+                Console.WriteLine("        Usage: (mode) (inputFolder) (profileFile)");
+                Console.WriteLine("    raw2json: generate extended weenies that can later be reconverted into cached files.");
+                Console.WriteLine("        Usage: (mode) (inputFolder)");
+                Console.WriteLine("    json2raw: generate cache.bin file from extended weenies");
+                Console.WriteLine("        Usage: (mode) (inputFolder)");
+                Console.WriteLine("    Weenies: generate commented weenies files.");
+                Console.WriteLine("        Usage: (mode) (inputFolder)");
+                Console.WriteLine("    Landblocks: generate landblock files.");
+                Console.WriteLine("        Usage: (mode) (inputFolder)");
+                Console.ReadLine();
+            }
         }
 
         static void testRandomValueGenerator()
@@ -720,7 +724,7 @@ namespace Melt
             }
             Console.WriteLine("---");
             Console.WriteLine("Rounded:");
-            SortedDictionary<int, int> valueDistributionRounded = Utils.DistributionRounding(valueDistribution);
+            SortedDictionary<int, int> valueDistributionRounded = Utils.distributionRounding(valueDistribution);
             foreach (KeyValuePair<int, int> entry in valueDistributionRounded)
             {
                 Console.WriteLine($"value: {entry.Key} amount: {entry.Value} percent: {entry.Value * 100d / testRolls}%");

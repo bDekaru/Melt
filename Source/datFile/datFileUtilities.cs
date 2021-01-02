@@ -25,7 +25,6 @@ namespace Melt
             List<ushort> allOldIds = new List<ushort>();
             SortedDictionary<ushort, ushort> missingList = new SortedDictionary<ushort, ushort>();
 
-            byte[] buffer = new byte[1024];
             foreach (KeyValuePair<uint, cDatFileEntry> entry in fileCache)
             {
                 if ((entry.Value.fileId & 0x0000FFFF) == 0x0000FFFF) //surface
@@ -36,8 +35,7 @@ namespace Melt
                 }
                 else //dungeons and interiors
                 {
-                    StreamReader reader = new StreamReader(entry.Value.fileContent);
-                    cEnvCell thisEnvCell = new cEnvCell(buffer, reader, fileFormat);
+                    cEnvCell thisEnvCell = new cEnvCell(entry.Value);
 
                     thisEnvCells.Add(entry.Value.fileId, thisEnvCell);
                 }
@@ -53,8 +51,7 @@ namespace Melt
                 }
                 else //dungeons and interiors
                 {
-                    StreamReader reader = new StreamReader(entry.Value.fileContent);
-                    cEnvCell otherEnvCell = new cEnvCell(buffer, reader, otherDat.fileFormat, false);
+                    cEnvCell otherEnvCell = new cEnvCell(entry.Value, false);
 
                     otherEnvCells.Add(entry.Value.fileId, otherEnvCell);
                 }
@@ -171,7 +168,6 @@ namespace Melt
             List<ushort> allOldIds = new List<ushort>();
             SortedDictionary<ushort, ushort> missingList = new SortedDictionary<ushort, ushort>();
 
-            byte[] buffer = new byte[1024];
             foreach (KeyValuePair<uint, cDatFileEntry> entry in fileCache)
             {
                 if ((entry.Value.fileId & 0x0000FFFF) == 0x0000FFFF) //surface
@@ -182,8 +178,7 @@ namespace Melt
                 }
                 else //dungeons and interiors
                 {
-                    StreamReader reader = new StreamReader(entry.Value.fileContent);
-                    cEnvCell thisEnvCell = new cEnvCell(buffer, reader, fileFormat);
+                    cEnvCell thisEnvCell = new cEnvCell(entry.Value);
 
                     thisEnvCells.Add(entry.Value.fileId, thisEnvCell);
                 }
@@ -199,8 +194,7 @@ namespace Melt
                 }
                 else //dungeons and interiors
                 {
-                    StreamReader reader = new StreamReader(entry.Value.fileContent);
-                    cEnvCell otherEnvCell = new cEnvCell(buffer, reader, otherDat.fileFormat, false);
+                    cEnvCell otherEnvCell = new cEnvCell(entry.Value, false);
 
                     otherEnvCells.Add(entry.Value.fileId, otherEnvCell);
                 }
@@ -311,7 +305,6 @@ namespace Melt
         {
             List<ushort> usedIds = new List<ushort>();
 
-            byte[] buffer = new byte[1024];
             foreach (KeyValuePair<uint, cDatFileEntry> entry in fileCache)
             {
                 if ((entry.Value.fileId & 0x0000FFFF) == 0x0000FFFF) //surface
@@ -322,8 +315,7 @@ namespace Melt
                 }
                 else //dungeons and interiors
                 {
-                    StreamReader reader = new StreamReader(entry.Value.fileContent);
-                    cEnvCell thisEnvCell = new cEnvCell(buffer, reader, fileFormat);
+                    cEnvCell thisEnvCell = new cEnvCell(entry.Value);
 
                     foreach (var portal in thisEnvCell.Portals)
                     {
@@ -500,7 +492,6 @@ namespace Melt
             cellLandblockList = new List<cCellLandblock>();
             landblockInfoList = new List<cLandblockInfo>();
             envCellList = new List<cEnvCell>();
-            byte[] buffer = new byte[1024];
 
             Console.WriteLine("Preparing files...");
             foreach (KeyValuePair<uint, cDatFileEntry> entry in fileCache)
@@ -508,7 +499,7 @@ namespace Melt
                 if ((entry.Value.fileId & 0x0000FFFF) == 0x0000FFFF) //surface
                 {
                     //StreamReader reader = new StreamReader(entry.Value.fileContent);
-                    //cCellLandblock thisLandblock = new cCellLandblock(buffer, reader);
+                    //cCellLandblock thisLandblock = new cCellLandblock(reader);
 
                     //cellLandblockList.Add(thisLandblock);
                 }
@@ -517,8 +508,7 @@ namespace Melt
                     if ((entry.Value.fileId >> 16) != 0xC6A9)//arwic
                         continue;
 
-                    StreamReader reader = new StreamReader(entry.Value.fileContent);
-                    cLandblockInfo thisLandblockInfo = new cLandblockInfo(buffer, reader, fileFormat);
+                    cLandblockInfo thisLandblockInfo = new cLandblockInfo(entry.Value);
 
                     landblockInfoList.Add(thisLandblockInfo);
                 }
@@ -527,8 +517,7 @@ namespace Melt
                     if ((entry.Value.fileId >> 16) != 0xC6A9)//arwic
                         continue;
 
-                    StreamReader reader = new StreamReader(entry.Value.fileContent);
-                    cEnvCell thisEnvCell = new cEnvCell(buffer, reader, fileFormat);
+                    cEnvCell thisEnvCell = new cEnvCell(entry.Value);
 
                     envCellList.Add(thisEnvCell);
                 }

@@ -21,10 +21,14 @@ namespace Melt
         public uint id;
         public sFrame frame;
 
-        public cStab(byte[] buffer, StreamReader inputFile)
+        public cStab(cDatFileEntry file) : this(new StreamReader(file.fileContent))
         {
-            id = Utils.ReadUInt32(buffer, inputFile);
-            frame = new sFrame(buffer, inputFile);
+        }
+
+        public cStab(StreamReader inputFile)
+        {
+            id = Utils.readUInt32(inputFile);
+            frame = new sFrame(inputFile);
 
             //if (!validPortalDatEntries.isValidStabEntry(id)) //this is not complete, there's some entries that can be converted and aren't in the entry. particles? something else?
             //    id = 0x0200026B;//turbine box
@@ -54,19 +58,23 @@ namespace Melt
         /// </summary>
         public List<ushort> visibleCells;
 
-        public cCBldPortal(byte[] buffer, StreamReader inputFile, eDatFormat format)
+        public cCBldPortal(cDatFileEntry file) : this(new StreamReader(file.fileContent), file.fileFormat)
         {
-            Flags = Utils.ReadUInt16(buffer, inputFile);
+        }
 
-            OtherCellId = Utils.ReadUInt16(buffer, inputFile);
-            OtherPortalId = Utils.ReadUInt16(buffer, inputFile);
+        public cCBldPortal(StreamReader inputFile, eDatFormat format)
+        {
+            Flags = Utils.readUInt16(inputFile);
+
+            OtherCellId = Utils.readUInt16(inputFile);
+            OtherPortalId = Utils.readUInt16(inputFile);
 
             visibleCells = new List<ushort>();
-            ushort visibleCellCount = Utils.ReadUInt16(buffer, inputFile);
+            ushort visibleCellCount = Utils.readUInt16(inputFile);
             for (var i = 0; i < visibleCellCount; i++)
-                visibleCells.Add(Utils.ReadUInt16(buffer, inputFile));
+                visibleCells.Add(Utils.readUInt16(inputFile));
 
-            Utils.Align(inputFile);
+            Utils.align(inputFile);
         }
 
         public void writeToDat(StreamWriter outputFile)
@@ -82,7 +90,7 @@ namespace Melt
                 Utils.writeUInt16(value, outputFile);
             }
 
-            Utils.Align(outputFile);
+            Utils.align(outputFile);
         }
     }
 
@@ -108,19 +116,23 @@ namespace Melt
         /// </summary>
         public List<cCBldPortal> Portals;
 
-        public cBuildInfo(byte[] buffer, StreamReader inputFile, eDatFormat format)
+        public cBuildInfo(cDatFileEntry file) : this(new StreamReader(file.fileContent), file.fileFormat)
         {
-            ModelId = Utils.ReadUInt32(buffer, inputFile);
+        }
 
-            Frame = new sFrame(buffer, inputFile);
+        public cBuildInfo(StreamReader inputFile, eDatFormat format)
+        {
+            ModelId = Utils.readUInt32(inputFile);
 
-            NumLeaves = Utils.ReadUInt32(buffer, inputFile);
+            Frame = new sFrame(inputFile);
 
-            int portalsCount = Utils.ReadInt32(buffer, inputFile);
+            NumLeaves = Utils.readUInt32(inputFile);
+
+            int portalsCount = Utils.readInt32(inputFile);
             Portals = new List<cCBldPortal>();
             for (int i = 0; i < portalsCount; i++)
             {
-                cCBldPortal newPortal = new cCBldPortal(buffer, inputFile, format);
+                cCBldPortal newPortal = new cCBldPortal(inputFile, format);
                 Portals.Add(newPortal);
             }
         }
@@ -197,45 +209,49 @@ namespace Melt
         public ushort totalObjects;
         public ushort bucketSize;
 
-        public cLandblockInfo(byte[] buffer, StreamReader inputFile, eDatFormat format)
+        public cLandblockInfo(cDatFileEntry file) : this(new StreamReader(file.fileContent), file.fileFormat)
         {
-            Id = Utils.ReadUInt32(buffer, inputFile);
+        }
 
-            NumCells = Utils.ReadUInt32(buffer, inputFile);
+        public cLandblockInfo(StreamReader inputFile, eDatFormat fileFormat)
+        {
+            Id = Utils.readUInt32(inputFile);
+
+            NumCells = Utils.readUInt32(inputFile);
 
             Objects = new List<cStab>();
-            int objectsCount = Utils.ReadInt32(buffer, inputFile);
+            int objectsCount = Utils.readInt32(inputFile);
             for (int i = 0; i < objectsCount; i++)
             {
-                cStab newObject = new cStab(buffer, inputFile);
+                cStab newObject = new cStab(inputFile);
                 Objects.Add(newObject);
             }
 
-            ushort numBuildings = Utils.ReadUInt16(buffer, inputFile);
-            buildingFlags = Utils.ReadUInt16(buffer, inputFile);
+            ushort numBuildings = Utils.readUInt16(inputFile);
+            buildingFlags = Utils.readUInt16(inputFile);
 
             Buildings = new List<cBuildInfo>();
             for (int i = 0; i < numBuildings; i++)
             {
-                cBuildInfo newBuilding = new cBuildInfo(buffer, inputFile, format);
+                cBuildInfo newBuilding = new cBuildInfo(inputFile, fileFormat);
                 Buildings.Add(newBuilding);
             }
 
-            if (format == eDatFormat.retail)
-                Utils.Align(inputFile);
+            if (fileFormat == eDatFormat.retail)
+                Utils.align(inputFile);
 
             RestrictionTables = new Dictionary<uint, uint>();
             if ((buildingFlags & 1) == 1)
             {
-                totalObjects = Utils.ReadUInt16(buffer, inputFile);
-                bucketSize = Utils.ReadUInt16(buffer, inputFile);
+                totalObjects = Utils.readUInt16(inputFile);
+                bucketSize = Utils.readUInt16(inputFile);
 
                 for (int i = 0; i < totalObjects; i++)
-                    RestrictionTables.Add(Utils.ReadUInt32(buffer, inputFile), Utils.ReadUInt32(buffer, inputFile));
+                    RestrictionTables.Add(Utils.readUInt32(inputFile), Utils.readUInt32(inputFile));
             }
 
-            if (format == eDatFormat.retail)
-                Utils.Align(inputFile);
+            if (fileFormat == eDatFormat.retail)
+                Utils.align(inputFile);
 
             if (inputFile.BaseStream.Position != inputFile.BaseStream.Length)
                 throw new Exception();

@@ -72,7 +72,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Source\aceMutationScripts.cs" />
+    <Compile Include="Source\misc\aceMutationScripts.cs" />
     <Compile Include="Source\datFile\btree\BTree.cs" />
     <Compile Include="Source\datFile\btree\Node.cs" />
     <Compile Include="Source\datFile\cellDat\cellLandblock.cs" />
@@ -87,15 +87,14 @@
     <Compile Include="Source\datFile\datFileBlock.cs" />
     <Compile Include="Source\datFile\datFileEntry.cs" />
     <Compile Include="Source\datFile\datFileNode.cs" />
-    <Compile Include="Source\datFile\datFileConverter.cs" />
     <Compile Include="Source\datFile\datFile.cs" />
     <Compile Include="Source\random\randomRange.cs" />
-    <Compile Include="Source\classNameConverter.cs" />
+    <Compile Include="Source\misc\classNameConverter.cs" />
     <Compile Include="Source\random\randomUtils.cs" />
     <Compile Include="Source\extensions\ObjectExtensions.cs" />
-    <Compile Include="Source\charGen.cs" />
-    <Compile Include="Source\skillTable.cs" />
-    <Compile Include="Source\TextureHeader.cs" />
+    <Compile Include="Source\misc\charGen.cs" />
+    <Compile Include="Source\misc\skillTable.cs" />
+    <Compile Include="Source\misc\TextureHeader.cs" />
     <Compile Include="Source\weenies\cache4Converter.cs" />
     <Compile Include="Source\weenies\cache8Converter.cs" />
     <Compile Include="Source\weenies\cache6Converter.cs" />
@@ -127,16 +126,16 @@
     <Compile Include="Source\weenies\weenieClassNameList.cs" />
     <Compile Include="Source\weenies\spellInfoList.cs" />
     <Compile Include="Source\weenies\enums.cs" />
-    <Compile Include="Source\DMtoToD.cs" />
-    <Compile Include="Source\RegionComparer.cs" />
-    <Compile Include="Source\TextureIdDictionary.cs" />
-    <Compile Include="Source\RegionConverter DM.cs" />
-    <Compile Include="Source\RegionConverter.cs" />
-    <Compile Include="Source\Diff.cs" />
+    <Compile Include="Source\misc\DMtoToD.cs" />
+    <Compile Include="Source\misc\RegionComparer.cs" />
+    <Compile Include="Source\misc\TextureIdDictionary.cs" />
+    <Compile Include="Source\misc\RegionConverter DM.cs" />
+    <Compile Include="Source\misc\RegionConverter.cs" />
+    <Compile Include="Source\misc\Diff.cs" />
     <Compile Include="Source\Utils.cs" />
-    <Compile Include="Source\TextureConverter.cs" />
-    <Compile Include="Source\SpellsConverter.cs" />
-    <Compile Include="Source\Patcher.cs" />
+    <Compile Include="Source\misc\TextureConverter.cs" />
+    <Compile Include="Source\misc\SpellsConverter.cs" />
+    <Compile Include="Source\misc\Patcher.cs" />
     <Compile Include="Source\Program.cs" />
     <Compile Include="Source\Properties\AssemblyInfo.cs" />
   </ItemGroup>

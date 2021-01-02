@@ -13,7 +13,7 @@ namespace Melt
         {
             string value;
             if (instance.map.TryGetValue(id, out value))
-                return Utils.ReplaceStringSpecialCharacters(value);
+                return Utils.replaceStringSpecialCharacters(value);
             return "";
         }
 

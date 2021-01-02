@@ -136,11 +136,11 @@ namespace Melt
         public Single delay;
         public Single extent;
 
-        public sEmoteTableActionBasicType(byte[] buffer, StreamReader inputFile, eEmoteActionType actionType)
+        public sEmoteTableActionBasicType(StreamReader inputFile, eEmoteActionType actionType)
         {
             type = actionType;
-            delay = Utils.ReadSingle(buffer, inputFile);
-            extent = Utils.ReadSingle(buffer, inputFile);
+            delay = Utils.readSingle(inputFile);
+            extent = Utils.readSingle(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -172,12 +172,12 @@ namespace Melt
         public Single extent;
         public int motion;
 
-        public sEmoteTableActionMotionType(byte[] buffer, StreamReader inputFile, eEmoteActionType actionType)
+        public sEmoteTableActionMotionType(StreamReader inputFile, eEmoteActionType actionType)
         {
             type = actionType;
-            delay = Utils.ReadSingle(buffer, inputFile);
-            extent = Utils.ReadSingle(buffer, inputFile);
-            motion = Utils.ReadInt32(buffer, inputFile);
+            delay = Utils.readSingle(inputFile);
+            extent = Utils.readSingle(inputFile);
+            motion = Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -211,12 +211,12 @@ namespace Melt
         public Single extent;
         public string msg;
 
-        public sEmoteTableActionMsgType(byte[] buffer, StreamReader inputFile, eEmoteActionType actionType)
+        public sEmoteTableActionMsgType(StreamReader inputFile, eEmoteActionType actionType)
         {
             type = actionType;
-            delay = Utils.ReadSingle(buffer, inputFile);
-            extent = Utils.ReadSingle(buffer, inputFile);
-            msg = Utils.ReadStringAndReplaceSpecialCharacters(buffer, inputFile);
+            delay = Utils.readSingle(inputFile);
+            extent = Utils.readSingle(inputFile);
+            msg = Utils.readStringAndReplaceSpecialCharacters(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -224,7 +224,7 @@ namespace Melt
             Utils.writeInt32((int)type, outputStream);
             Utils.writeSingle(delay, outputStream);
             Utils.writeSingle(extent, outputStream);
-            Utils.writeString(Utils.RestoreStringSpecialCharacters(msg), outputStream);
+            Utils.writeString(Utils.restoreStringSpecialCharacters(msg), outputStream);
         }
 
         public void writeJson(StreamWriter outputStream, string tab, bool isFirst)
@@ -250,12 +250,12 @@ namespace Melt
         public Single extent;
         public int amount;
 
-        public sEmoteTableActionAmountType(byte[] buffer, StreamReader inputFile, eEmoteActionType actionType)
+        public sEmoteTableActionAmountType(StreamReader inputFile, eEmoteActionType actionType)
         {
             type = actionType;
-            delay = Utils.ReadSingle(buffer, inputFile);
-            extent = Utils.ReadSingle(buffer, inputFile);
-            amount = Utils.ReadInt32(buffer, inputFile);
+            delay = Utils.readSingle(inputFile);
+            extent = Utils.readSingle(inputFile);
+            amount = Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -290,13 +290,13 @@ namespace Melt
         public string msg;
         public int amount;
 
-        public sEmoteTableActionMsgAmountType(byte[] buffer, StreamReader inputFile, eEmoteActionType actionType)
+        public sEmoteTableActionMsgAmountType(StreamReader inputFile, eEmoteActionType actionType)
         {
             type = actionType;
-            delay = Utils.ReadSingle(buffer, inputFile);
-            extent = Utils.ReadSingle(buffer, inputFile);
-            msg = Utils.ReadStringAndReplaceSpecialCharacters(buffer, inputFile);
-            amount = Utils.ReadInt32(buffer, inputFile);
+            delay = Utils.readSingle(inputFile);
+            extent = Utils.readSingle(inputFile);
+            msg = Utils.readStringAndReplaceSpecialCharacters(inputFile);
+            amount = Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -304,7 +304,7 @@ namespace Melt
             Utils.writeInt32((int)type, outputStream);
             Utils.writeSingle(delay, outputStream);
             Utils.writeSingle(extent, outputStream);
-            Utils.writeString(Utils.RestoreStringSpecialCharacters(msg), outputStream);
+            Utils.writeString(Utils.restoreStringSpecialCharacters(msg), outputStream);
             Utils.writeInt32(amount, outputStream);
         }
 
@@ -332,12 +332,12 @@ namespace Melt
         public Single extent;
         public ePScriptType pscript;
 
-        public sEmoteTableActionPScriptType(byte[] buffer, StreamReader inputFile, eEmoteActionType actionType)
+        public sEmoteTableActionPScriptType(StreamReader inputFile, eEmoteActionType actionType)
         {
             type = actionType;
-            delay = Utils.ReadSingle(buffer, inputFile);
-            extent = Utils.ReadSingle(buffer, inputFile);
-            pscript = (ePScriptType)Utils.ReadInt32(buffer, inputFile);
+            delay = Utils.readSingle(inputFile);
+            extent = Utils.readSingle(inputFile);
+            pscript = (ePScriptType)Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -372,12 +372,12 @@ namespace Melt
         public Single extent;
         public eSoundType sound;
 
-        public sEmoteTableActionSoundType(byte[] buffer, StreamReader inputFile, eEmoteActionType actionType)
+        public sEmoteTableActionSoundType(StreamReader inputFile, eEmoteActionType actionType)
         {
             type = actionType;
-            delay = Utils.ReadSingle(buffer, inputFile);
-            extent = Utils.ReadSingle(buffer, inputFile);
-            sound = (eSoundType)Utils.ReadInt32(buffer, inputFile);
+            delay = Utils.readSingle(inputFile);
+            extent = Utils.readSingle(inputFile);
+            sound = (eSoundType)Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -412,12 +412,12 @@ namespace Melt
         public Single extent;
         public sFrame frame;
 
-        public sEmoteTableActionFrameType(byte[] buffer, StreamReader inputFile, eEmoteActionType actionType)
+        public sEmoteTableActionFrameType(StreamReader inputFile, eEmoteActionType actionType)
         {
             type = actionType;
-            delay = Utils.ReadSingle(buffer, inputFile);
-            extent = Utils.ReadSingle(buffer, inputFile);
-            frame = new sFrame(buffer, inputFile);
+            delay = Utils.readSingle(inputFile);
+            extent = Utils.readSingle(inputFile);
+            frame = new sFrame(inputFile);
         }
 
         public void writeJson(StreamWriter outputStream, string tab, bool isFirst)
@@ -451,12 +451,12 @@ namespace Melt
         public Single extent;
         public sPosition mPosition;
 
-        public sEmoteTableActionMPositionType(byte[] buffer, StreamReader inputFile, eEmoteActionType actionType)
+        public sEmoteTableActionMPositionType(StreamReader inputFile, eEmoteActionType actionType)
         {
             type = actionType;
-            delay = Utils.ReadSingle(buffer, inputFile);
-            extent = Utils.ReadSingle(buffer, inputFile);
-            mPosition = new sPosition(buffer, inputFile);
+            delay = Utils.readSingle(inputFile);
+            extent = Utils.readSingle(inputFile);
+            mPosition = new sPosition(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -490,12 +490,12 @@ namespace Melt
         public Single extent;
         public sCprof cprof;
 
-        public sEmoteTableActionCProfType(byte[] buffer, StreamReader inputFile, eEmoteActionType actionType)
+        public sEmoteTableActionCProfType(StreamReader inputFile, eEmoteActionType actionType)
         {
             type = actionType;
-            delay = Utils.ReadSingle(buffer, inputFile);
-            extent = Utils.ReadSingle(buffer, inputFile);
-            cprof = new sCprof(buffer, inputFile);
+            delay = Utils.readSingle(inputFile);
+            extent = Utils.readSingle(inputFile);
+            cprof = new sCprof(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -530,13 +530,13 @@ namespace Melt
         public Int64 amount64;
         public Int64 heroxp64;
 
-        public sEmoteTableActionAmountHeroxp64Type(byte[] buffer, StreamReader inputFile, eEmoteActionType actionType)
+        public sEmoteTableActionAmountHeroxp64Type(StreamReader inputFile, eEmoteActionType actionType)
         {
             type = actionType;
-            delay = Utils.ReadSingle(buffer, inputFile);
-            extent = Utils.ReadSingle(buffer, inputFile);
-            amount64 = Utils.ReadInt64(buffer, inputFile);
-            heroxp64 = Utils.ReadInt64(buffer, inputFile);
+            delay = Utils.readSingle(inputFile);
+            extent = Utils.readSingle(inputFile);
+            amount64 = Utils.readInt64(inputFile);
+            heroxp64 = Utils.readInt64(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -573,13 +573,13 @@ namespace Melt
         public int amount;
         public eSkills stat;
 
-        public sEmoteTableActionAmountStatType(byte[] buffer, StreamReader inputFile, eEmoteActionType actionType)
+        public sEmoteTableActionAmountStatType(StreamReader inputFile, eEmoteActionType actionType)
         {
             type = actionType;
-            delay = Utils.ReadSingle(buffer, inputFile);
-            extent = Utils.ReadSingle(buffer, inputFile);
-            amount = Utils.ReadInt32(buffer, inputFile);
-            stat = (eSkills)Utils.ReadInt32(buffer, inputFile);
+            delay = Utils.readSingle(inputFile);
+            extent = Utils.readSingle(inputFile);
+            amount = Utils.readInt32(inputFile);
+            stat = (eSkills)Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -616,12 +616,12 @@ namespace Melt
         public Single extent;
         public int spellid;
 
-        public sEmoteTableActionSpellIdType(byte[] buffer, StreamReader inputFile, eEmoteActionType actionType)
+        public sEmoteTableActionSpellIdType(StreamReader inputFile, eEmoteActionType actionType)
         {
             type = actionType;
-            delay = Utils.ReadSingle(buffer, inputFile);
-            extent = Utils.ReadSingle(buffer, inputFile);
-            spellid = Utils.ReadInt32(buffer, inputFile);
+            delay = Utils.readSingle(inputFile);
+            extent = Utils.readSingle(inputFile);
+            spellid = Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -659,15 +659,15 @@ namespace Melt
         public Int64 max64;
         public int display;
 
-        public sEmoteTableActionMinMaxPercent64Type(byte[] buffer, StreamReader inputFile, eEmoteActionType actionType)
+        public sEmoteTableActionMinMaxPercent64Type(StreamReader inputFile, eEmoteActionType actionType)
         {
             type = actionType;
-            delay = Utils.ReadSingle(buffer, inputFile);
-            extent = Utils.ReadSingle(buffer, inputFile);
-            percent = Utils.ReadDouble(buffer, inputFile);
-            min64 = Utils.ReadInt64(buffer, inputFile);
-            max64 = Utils.ReadInt64(buffer, inputFile);
-            display = Utils.ReadInt32(buffer, inputFile);
+            delay = Utils.readSingle(inputFile);
+            extent = Utils.readSingle(inputFile);
+            percent = Utils.readDouble(inputFile);
+            min64 = Utils.readInt64(inputFile);
+            max64 = Utils.readInt64(inputFile);
+            display = Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -711,16 +711,16 @@ namespace Melt
         public int max;
         public int display;
 
-        public sEmoteTableActionMinMaxPercentSkillType(byte[] buffer, StreamReader inputFile, eEmoteActionType actionType)
+        public sEmoteTableActionMinMaxPercentSkillType(StreamReader inputFile, eEmoteActionType actionType)
         {
             type = actionType;
-            delay = Utils.ReadSingle(buffer, inputFile);
-            extent = Utils.ReadSingle(buffer, inputFile);
-            stat = (eSkills)Utils.ReadInt32(buffer, inputFile);
-            percent = Utils.ReadDouble(buffer, inputFile);
-            min = Utils.ReadInt32(buffer, inputFile);
-            max = Utils.ReadInt32(buffer, inputFile);
-            display = Utils.ReadInt32(buffer, inputFile);
+            delay = Utils.readSingle(inputFile);
+            extent = Utils.readSingle(inputFile);
+            stat = (eSkills)Utils.readInt32(inputFile);
+            percent = Utils.readDouble(inputFile);
+            min = Utils.readInt32(inputFile);
+            max = Utils.readInt32(inputFile);
+            display = Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -763,13 +763,13 @@ namespace Melt
         public string msg;
         public eBoolStat stat;
 
-        public sEmoteTableActionBoolStatType(byte[] buffer, StreamReader inputFile, eEmoteActionType actionType)
+        public sEmoteTableActionBoolStatType(StreamReader inputFile, eEmoteActionType actionType)
         {
             type = actionType;
-            delay = Utils.ReadSingle(buffer, inputFile);
-            extent = Utils.ReadSingle(buffer, inputFile);
-            msg = Utils.ReadStringAndReplaceSpecialCharacters(buffer, inputFile);
-            stat = (eBoolStat)Utils.ReadInt32(buffer, inputFile);
+            delay = Utils.readSingle(inputFile);
+            extent = Utils.readSingle(inputFile);
+            msg = Utils.readStringAndReplaceSpecialCharacters(inputFile);
+            stat = (eBoolStat)Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -777,7 +777,7 @@ namespace Melt
             Utils.writeInt32((int)type, outputStream);
             Utils.writeSingle(delay, outputStream);
             Utils.writeSingle(extent, outputStream);
-            Utils.writeString(Utils.RestoreStringSpecialCharacters(msg), outputStream);
+            Utils.writeString(Utils.restoreStringSpecialCharacters(msg), outputStream);
             Utils.writeInt32((int)stat, outputStream);
         }
 
@@ -809,15 +809,15 @@ namespace Melt
         public int max;
         public eIntStat stat;
 
-        public sEmoteTableActionIntStatType(byte[] buffer, StreamReader inputFile, eEmoteActionType actionType)
+        public sEmoteTableActionIntStatType(StreamReader inputFile, eEmoteActionType actionType)
         {
             type = actionType;
-            delay = Utils.ReadSingle(buffer, inputFile);
-            extent = Utils.ReadSingle(buffer, inputFile);
-            msg = Utils.ReadStringAndReplaceSpecialCharacters(buffer, inputFile);
-            min = Utils.ReadInt32(buffer, inputFile);
-            max = Utils.ReadInt32(buffer, inputFile);
-            stat = (eIntStat)Utils.ReadInt32(buffer, inputFile);
+            delay = Utils.readSingle(inputFile);
+            extent = Utils.readSingle(inputFile);
+            msg = Utils.readStringAndReplaceSpecialCharacters(inputFile);
+            min = Utils.readInt32(inputFile);
+            max = Utils.readInt32(inputFile);
+            stat = (eIntStat)Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -825,7 +825,7 @@ namespace Melt
             Utils.writeInt32((int)type, outputStream);
             Utils.writeSingle(delay, outputStream);
             Utils.writeSingle(extent, outputStream);
-            Utils.writeString(Utils.RestoreStringSpecialCharacters(msg), outputStream);
+            Utils.writeString(Utils.restoreStringSpecialCharacters(msg), outputStream);
             Utils.writeInt32(min, outputStream);
             Utils.writeInt32(max, outputStream);
             Utils.writeInt32((int)stat, outputStream);
@@ -861,15 +861,15 @@ namespace Melt
         public Double fmax;
         public eFloatStat stat;
 
-        public sEmoteTableActionFloatStatType(byte[] buffer, StreamReader inputFile, eEmoteActionType actionType)
+        public sEmoteTableActionFloatStatType(StreamReader inputFile, eEmoteActionType actionType)
         {
             type = actionType;
-            delay = Utils.ReadSingle(buffer, inputFile);
-            extent = Utils.ReadSingle(buffer, inputFile);
-            msg = Utils.ReadStringAndReplaceSpecialCharacters(buffer, inputFile);
-            fmin = Utils.ReadDouble(buffer, inputFile);
-            fmax = Utils.ReadDouble(buffer, inputFile);
-            stat = (eFloatStat)Utils.ReadInt32(buffer, inputFile);
+            delay = Utils.readSingle(inputFile);
+            extent = Utils.readSingle(inputFile);
+            msg = Utils.readStringAndReplaceSpecialCharacters(inputFile);
+            fmin = Utils.readDouble(inputFile);
+            fmax = Utils.readDouble(inputFile);
+            stat = (eFloatStat)Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -877,7 +877,7 @@ namespace Melt
             Utils.writeInt32((int)type, outputStream);
             Utils.writeSingle(delay, outputStream);
             Utils.writeSingle(extent, outputStream);
-            Utils.writeString(Utils.RestoreStringSpecialCharacters(msg), outputStream);
+            Utils.writeString(Utils.restoreStringSpecialCharacters(msg), outputStream);
             Utils.writeDouble(fmin, outputStream);
             Utils.writeDouble(fmax, outputStream);
             Utils.writeInt32((int)stat, outputStream);
@@ -912,14 +912,14 @@ namespace Melt
         public string teststring;
         public eStringStat stat;
 
-        public sEmoteTableActionStringStatType(byte[] buffer, StreamReader inputFile, eEmoteActionType actionType)
+        public sEmoteTableActionStringStatType(StreamReader inputFile, eEmoteActionType actionType)
         {
             type = actionType;
-            delay = Utils.ReadSingle(buffer, inputFile);
-            extent = Utils.ReadSingle(buffer, inputFile);
-            msg = Utils.ReadStringAndReplaceSpecialCharacters(buffer, inputFile);
-            teststring = Utils.ReadStringAndReplaceSpecialCharacters(buffer, inputFile);
-            stat = (eStringStat)Utils.ReadInt32(buffer, inputFile);
+            delay = Utils.readSingle(inputFile);
+            extent = Utils.readSingle(inputFile);
+            msg = Utils.readStringAndReplaceSpecialCharacters(inputFile);
+            teststring = Utils.readStringAndReplaceSpecialCharacters(inputFile);
+            stat = (eStringStat)Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -927,8 +927,8 @@ namespace Melt
             Utils.writeInt32((int)type, outputStream);
             Utils.writeSingle(delay, outputStream);
             Utils.writeSingle(extent, outputStream);
-            Utils.writeString(Utils.RestoreStringSpecialCharacters(msg), outputStream);
-            Utils.writeString(Utils.RestoreStringSpecialCharacters(teststring), outputStream);
+            Utils.writeString(Utils.restoreStringSpecialCharacters(msg), outputStream);
+            Utils.writeString(Utils.restoreStringSpecialCharacters(teststring), outputStream);
             Utils.writeInt32((int)stat, outputStream);
         }
 
@@ -961,15 +961,15 @@ namespace Melt
         public int max;
         public eAttributes stat;
 
-        public sEmoteTableActionMinMaxAttributeType(byte[] buffer, StreamReader inputFile, eEmoteActionType actionType)
+        public sEmoteTableActionMinMaxAttributeType(StreamReader inputFile, eEmoteActionType actionType)
         {
             type = actionType;
-            delay = Utils.ReadSingle(buffer, inputFile);
-            extent = Utils.ReadSingle(buffer, inputFile);
-            msg = Utils.ReadStringAndReplaceSpecialCharacters(buffer, inputFile);
-            min = Utils.ReadInt32(buffer, inputFile);
-            max = Utils.ReadInt32(buffer, inputFile);
-            stat = (eAttributes)Utils.ReadInt32(buffer, inputFile);
+            delay = Utils.readSingle(inputFile);
+            extent = Utils.readSingle(inputFile);
+            msg = Utils.readStringAndReplaceSpecialCharacters(inputFile);
+            min = Utils.readInt32(inputFile);
+            max = Utils.readInt32(inputFile);
+            stat = (eAttributes)Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -977,7 +977,7 @@ namespace Melt
             Utils.writeInt32((int)type, outputStream);
             Utils.writeSingle(delay, outputStream);
             Utils.writeSingle(extent, outputStream);
-            Utils.writeString(Utils.RestoreStringSpecialCharacters(msg), outputStream);
+            Utils.writeString(Utils.restoreStringSpecialCharacters(msg), outputStream);
             Utils.writeInt32(min, outputStream);
             Utils.writeInt32(max, outputStream);
             Utils.writeInt32((int)stat, outputStream);
@@ -1013,15 +1013,15 @@ namespace Melt
         public int max;
         public eVitals stat;
 
-        public sEmoteTableActionMinMaxVitalsType(byte[] buffer, StreamReader inputFile, eEmoteActionType actionType)
+        public sEmoteTableActionMinMaxVitalsType(StreamReader inputFile, eEmoteActionType actionType)
         {
             type = actionType;
-            delay = Utils.ReadSingle(buffer, inputFile);
-            extent = Utils.ReadSingle(buffer, inputFile);
-            msg = Utils.ReadStringAndReplaceSpecialCharacters(buffer, inputFile);
-            min = Utils.ReadInt32(buffer, inputFile);
-            max = Utils.ReadInt32(buffer, inputFile);
-            stat = (eVitals)Utils.ReadInt32(buffer, inputFile);
+            delay = Utils.readSingle(inputFile);
+            extent = Utils.readSingle(inputFile);
+            msg = Utils.readStringAndReplaceSpecialCharacters(inputFile);
+            min = Utils.readInt32(inputFile);
+            max = Utils.readInt32(inputFile);
+            stat = (eVitals)Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -1029,7 +1029,7 @@ namespace Melt
             Utils.writeInt32((int)type, outputStream);
             Utils.writeSingle(delay, outputStream);
             Utils.writeSingle(extent, outputStream);
-            Utils.writeString(Utils.RestoreStringSpecialCharacters(msg), outputStream);
+            Utils.writeString(Utils.restoreStringSpecialCharacters(msg), outputStream);
             Utils.writeInt32(min, outputStream);
             Utils.writeInt32(max, outputStream);
             Utils.writeInt32((int)stat, outputStream);
@@ -1065,15 +1065,15 @@ namespace Melt
         public int max;
         public eSkills stat;
 
-        public sEmoteTableActionMinMaxSkillsType(byte[] buffer, StreamReader inputFile, eEmoteActionType actionType)
+        public sEmoteTableActionMinMaxSkillsType(StreamReader inputFile, eEmoteActionType actionType)
         {
             type = actionType;
-            delay = Utils.ReadSingle(buffer, inputFile);
-            extent = Utils.ReadSingle(buffer, inputFile);
-            msg = Utils.ReadStringAndReplaceSpecialCharacters(buffer, inputFile);
-            min = Utils.ReadInt32(buffer, inputFile);
-            max = Utils.ReadInt32(buffer, inputFile);
-            stat = (eSkills)Utils.ReadInt32(buffer, inputFile);
+            delay = Utils.readSingle(inputFile);
+            extent = Utils.readSingle(inputFile);
+            msg = Utils.readStringAndReplaceSpecialCharacters(inputFile);
+            min = Utils.readInt32(inputFile);
+            max = Utils.readInt32(inputFile);
+            stat = (eSkills)Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -1081,7 +1081,7 @@ namespace Melt
             Utils.writeInt32((int)type, outputStream);
             Utils.writeSingle(delay, outputStream);
             Utils.writeSingle(extent, outputStream);
-            Utils.writeString(Utils.RestoreStringSpecialCharacters(msg), outputStream);
+            Utils.writeString(Utils.restoreStringSpecialCharacters(msg), outputStream);
             Utils.writeInt32(min, outputStream);
             Utils.writeInt32(max, outputStream);
             Utils.writeInt32((int)stat, outputStream);
@@ -1115,13 +1115,13 @@ namespace Melt
         public string msg;
         public eSkills stat;
 
-        public sEmoteTableActionMsgSkillsType(byte[] buffer, StreamReader inputFile, eEmoteActionType actionType)
+        public sEmoteTableActionMsgSkillsType(StreamReader inputFile, eEmoteActionType actionType)
         {
             type = actionType;
-            delay = Utils.ReadSingle(buffer, inputFile);
-            extent = Utils.ReadSingle(buffer, inputFile);
-            msg = Utils.ReadStringAndReplaceSpecialCharacters(buffer, inputFile);
-            stat = (eSkills)Utils.ReadInt32(buffer, inputFile);
+            delay = Utils.readSingle(inputFile);
+            extent = Utils.readSingle(inputFile);
+            msg = Utils.readStringAndReplaceSpecialCharacters(inputFile);
+            stat = (eSkills)Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -1129,7 +1129,7 @@ namespace Melt
             Utils.writeInt32((int)type, outputStream);
             Utils.writeSingle(delay, outputStream);
             Utils.writeSingle(extent, outputStream);
-            Utils.writeString(Utils.RestoreStringSpecialCharacters(msg), outputStream);
+            Utils.writeString(Utils.restoreStringSpecialCharacters(msg), outputStream);
             Utils.writeInt32((int)stat, outputStream);
         }
 
@@ -1160,14 +1160,14 @@ namespace Melt
         public int min;
         public int max;
 
-        public sEmoteTableActionMsgMinMax(byte[] buffer, StreamReader inputFile, eEmoteActionType actionType)
+        public sEmoteTableActionMsgMinMax(StreamReader inputFile, eEmoteActionType actionType)
         {
             type = actionType;
-            delay = Utils.ReadSingle(buffer, inputFile);
-            extent = Utils.ReadSingle(buffer, inputFile);
-            msg = Utils.ReadStringAndReplaceSpecialCharacters(buffer, inputFile);
-            min = Utils.ReadInt32(buffer, inputFile);
-            max = Utils.ReadInt32(buffer, inputFile);
+            delay = Utils.readSingle(inputFile);
+            extent = Utils.readSingle(inputFile);
+            msg = Utils.readStringAndReplaceSpecialCharacters(inputFile);
+            min = Utils.readInt32(inputFile);
+            max = Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -1175,7 +1175,7 @@ namespace Melt
             Utils.writeInt32((int)type, outputStream);
             Utils.writeSingle(delay, outputStream);
             Utils.writeSingle(extent, outputStream);
-            Utils.writeString(Utils.RestoreStringSpecialCharacters(msg), outputStream);
+            Utils.writeString(Utils.restoreStringSpecialCharacters(msg), outputStream);
             Utils.writeInt32(min, outputStream);
             Utils.writeInt32(max, outputStream);
         }
@@ -1206,13 +1206,13 @@ namespace Melt
         public eIntStat stat;
         public int amount;
 
-        public sEmoteTableActionIntStatAmountType(byte[] buffer, StreamReader inputFile, eEmoteActionType actionType)
+        public sEmoteTableActionIntStatAmountType(StreamReader inputFile, eEmoteActionType actionType)
         {
             type = actionType;
-            delay = Utils.ReadSingle(buffer, inputFile);
-            extent = Utils.ReadSingle(buffer, inputFile);
-            stat = (eIntStat)Utils.ReadInt32(buffer, inputFile);
-            amount = Utils.ReadInt32(buffer, inputFile);
+            delay = Utils.readSingle(inputFile);
+            extent = Utils.readSingle(inputFile);
+            stat = (eIntStat)Utils.readInt32(inputFile);
+            amount = Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -1251,14 +1251,14 @@ namespace Melt
         public int treasure_class;
         public eTreasureType treasure_type;
 
-        public sEmoteTableActionTreasureType(byte[] buffer, StreamReader inputFile, eEmoteActionType actionType)
+        public sEmoteTableActionTreasureType(StreamReader inputFile, eEmoteActionType actionType)
         {
             type = actionType;
-            delay = Utils.ReadSingle(buffer, inputFile);
-            extent = Utils.ReadSingle(buffer, inputFile);
-            wealth_rating = Utils.ReadInt32(buffer, inputFile);
-            treasure_class = Utils.ReadInt32(buffer, inputFile);
-            treasure_type = (eTreasureType)Utils.ReadInt32(buffer, inputFile);
+            delay = Utils.readSingle(inputFile);
+            extent = Utils.readSingle(inputFile);
+            wealth_rating = Utils.readInt32(inputFile);
+            treasure_class = Utils.readInt32(inputFile);
+            treasure_type = (eTreasureType)Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -1312,10 +1312,10 @@ namespace Melt
         public eEmoteTriggerCategory category;
         public Single probability;
 
-        public sEmoteTableTriggerBasicType(byte[] buffer, StreamReader inputFile, eEmoteTriggerCategory triggerCategory)
+        public sEmoteTableTriggerBasicType(StreamReader inputFile, eEmoteTriggerCategory triggerCategory)
         {
             category = triggerCategory;
-            probability = Utils.ReadSingle(buffer, inputFile);
+            probability = Utils.readSingle(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -1342,12 +1342,12 @@ namespace Melt
         public uint style;
         public uint substyle;
 
-        public sEmoteTableTriggerStyleSubstyleType(byte[] buffer, StreamReader inputFile, eEmoteTriggerCategory triggerCategory)
+        public sEmoteTableTriggerStyleSubstyleType(StreamReader inputFile, eEmoteTriggerCategory triggerCategory)
         {
             category = triggerCategory;
-            probability = Utils.ReadSingle(buffer, inputFile);
-            style = Utils.ReadUInt32(buffer, inputFile);
-            substyle = Utils.ReadUInt32(buffer, inputFile);
+            probability = Utils.readSingle(inputFile);
+            style = Utils.readUInt32(inputFile);
+            substyle = Utils.readUInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -1377,11 +1377,11 @@ namespace Melt
         public Single probability;
         public eVendorEmoteType vendorType;
 
-        public sEmoteTableTriggerVendorType(byte[] buffer, StreamReader inputFile, eEmoteTriggerCategory triggerCategory)
+        public sEmoteTableTriggerVendorType(StreamReader inputFile, eEmoteTriggerCategory triggerCategory)
         {
             category = triggerCategory;
-            probability = Utils.ReadSingle(buffer, inputFile);
-            vendorType = (eVendorEmoteType)Utils.ReadInt32(buffer, inputFile);
+            probability = Utils.readSingle(inputFile);
+            vendorType = (eVendorEmoteType)Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -1410,18 +1410,18 @@ namespace Melt
         public Single probability;
         public string quest;
 
-        public sEmoteTableTriggerQuestType(byte[] buffer, StreamReader inputFile, eEmoteTriggerCategory triggerCategory)
+        public sEmoteTableTriggerQuestType(StreamReader inputFile, eEmoteTriggerCategory triggerCategory)
         {
             category = triggerCategory;
-            probability = Utils.ReadSingle(buffer, inputFile);
-            quest = Utils.ReadStringAndReplaceSpecialCharacters(buffer, inputFile);
+            probability = Utils.readSingle(inputFile);
+            quest = Utils.readStringAndReplaceSpecialCharacters(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
         {
             Utils.writeInt32((int)category, outputStream);
             Utils.writeSingle(probability, outputStream);
-            Utils.writeString(Utils.RestoreStringSpecialCharacters(quest), outputStream);
+            Utils.writeString(Utils.restoreStringSpecialCharacters(quest), outputStream);
         }
 
         public void writeJson(StreamWriter outputStream, string tab, bool isFirst)
@@ -1442,11 +1442,11 @@ namespace Melt
     //    public Single probability;
     //    public string msg;
 
-    //    public sEmoteTableTriggerMsgType(byte[] buffer, StreamReader inputFile, eEmoteTriggerCategory triggerCategory)
+    //    public sEmoteTableTriggerMsgType(StreamReader inputFile, eEmoteTriggerCategory triggerCategory)
     //    {
     //        category = triggerCategory;
-    //        probability = Utils.ReadSingle(buffer, inputFile);
-    //        msg = Utils.ReadStringAndReplaceSpecialCharacters(buffer, inputFile);
+    //        probability = Utils.readSingle(inputFile);
+    //        msg = Utils.readStringAndReplaceSpecialCharacters(inputFile);
     //    }
 
     //    public void writeRaw(StreamWriter outputStream)
@@ -1474,11 +1474,11 @@ namespace Melt
         public Single probability;
         public int classID;
 
-        public sEmoteTableTriggerClassIDType(byte[] buffer, StreamReader inputFile, eEmoteTriggerCategory triggerCategory)
+        public sEmoteTableTriggerClassIDType(StreamReader inputFile, eEmoteTriggerCategory triggerCategory)
         {
             category = triggerCategory;
-            probability = Utils.ReadSingle(buffer, inputFile);
-            classID = Utils.ReadInt32(buffer, inputFile);
+            probability = Utils.readSingle(inputFile);
+            classID = Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -1515,12 +1515,12 @@ namespace Melt
         public Single minHealth;
         public Single maxHealth;
 
-        public sEmoteTableTriggerMinMaxHealthType(byte[] buffer, StreamReader inputFile, eEmoteTriggerCategory triggerCategory)
+        public sEmoteTableTriggerMinMaxHealthType(StreamReader inputFile, eEmoteTriggerCategory triggerCategory)
         {
             category = triggerCategory;
-            probability = Utils.ReadSingle(buffer, inputFile);
-            minHealth = Utils.ReadSingle(buffer, inputFile);
-            maxHealth = Utils.ReadSingle(buffer, inputFile);
+            probability = Utils.readSingle(inputFile);
+            minHealth = Utils.readSingle(inputFile);
+            maxHealth = Utils.readSingle(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -1549,16 +1549,16 @@ namespace Melt
         public int key;
         public List<sEmoteTableEntry> entries;
 
-        public sEmoteTableKey(byte[] buffer, StreamReader inputFile)
+        public sEmoteTableKey(StreamReader inputFile)
         {
             entries = new List<sEmoteTableEntry>();
 
-            key = Utils.ReadInt32(buffer, inputFile);
+            key = Utils.readInt32(inputFile);
 
-            int triggersCount = Utils.ReadInt32(buffer, inputFile);
+            int triggersCount = Utils.readInt32(inputFile);
             for (int currentTrigger = 0; currentTrigger < triggersCount; currentTrigger++)
             {
-                entries.Add(new sEmoteTableEntry(buffer, inputFile));
+                entries.Add(new sEmoteTableEntry(inputFile));
             }
         }
 
@@ -1600,14 +1600,14 @@ namespace Melt
         public iEmoteTableTrigger trigger;
         public List<iEmoteTableAction> actions;
 
-        public sEmoteTableEntry(byte[] buffer, StreamReader inputFile)
+        public sEmoteTableEntry(StreamReader inputFile)
         {
             trigger = new sEmoteTableTriggerEmpty();
             actions = new List<iEmoteTableAction>();
             
             //for (int currentTrigger = 0; currentTrigger < triggersCount; currentTrigger++)
             {
-                eEmoteTriggerCategory category = (eEmoteTriggerCategory)Utils.ReadInt32(buffer, inputFile);
+                eEmoteTriggerCategory category = (eEmoteTriggerCategory)Utils.readInt32(inputFile);
 
                 switch (category)
                 {
@@ -1629,17 +1629,17 @@ namespace Melt
                     case eEmoteTriggerCategory.onUnknownEmoteCategory3:
                     case eEmoteTriggerCategory.onPickup:
                         {
-                            trigger = new sEmoteTableTriggerBasicType(buffer, inputFile, category);
+                            trigger = new sEmoteTableTriggerBasicType(inputFile, category);
                             break;
                         }
                     case eEmoteTriggerCategory.onIdle:
                         {
-                            trigger = new sEmoteTableTriggerStyleSubstyleType(buffer, inputFile, category);
+                            trigger = new sEmoteTableTriggerStyleSubstyleType(inputFile, category);
                             break;
                         }
                     case eEmoteTriggerCategory.onShop:
                         {
-                            trigger = new sEmoteTableTriggerVendorType(buffer, inputFile, category);
+                            trigger = new sEmoteTableTriggerVendorType(inputFile, category);
                             break;
                         }
                     case eEmoteTriggerCategory.onQuestFlagCheckSuccess:
@@ -1652,18 +1652,18 @@ namespace Melt
                     case eEmoteTriggerCategory.OnFlagCheckFailure2:
                     case eEmoteTriggerCategory.OnFlagCheckSuccess2:
                         {
-                            trigger = new sEmoteTableTriggerQuestType(buffer, inputFile, category);
+                            trigger = new sEmoteTableTriggerQuestType(inputFile, category);
                             break;
                         }
                     case eEmoteTriggerCategory.onRefuseItem:
                     case eEmoteTriggerCategory.onReceiveItem:
                         {
-                            trigger = new sEmoteTableTriggerClassIDType(buffer, inputFile, category);
+                            trigger = new sEmoteTableTriggerClassIDType(inputFile, category);
                             break;
                         }
                     case eEmoteTriggerCategory.onHitPointsThreshold:
                         {
-                            trigger = new sEmoteTableTriggerMinMaxHealthType(buffer, inputFile, category);
+                            trigger = new sEmoteTableTriggerMinMaxHealthType(inputFile, category);
                             break;
                         }
                     default:
@@ -1674,10 +1674,10 @@ namespace Melt
                         }
                 }
 
-                int actionsCount = Utils.ReadInt32(buffer, inputFile);
+                int actionsCount = Utils.readInt32(inputFile);
                 for (int i = 0; i < actionsCount; i++)
                 {
-                    eEmoteActionType actionType = (eEmoteActionType)Utils.ReadInt32(buffer, inputFile);
+                    eEmoteActionType actionType = (eEmoteActionType)Utils.readInt32(inputFile);
                     switch (actionType)
                     {
                         case eEmoteActionType.turnToPlayer:
@@ -1685,13 +1685,13 @@ namespace Melt
                         case eEmoteActionType.lockFellowship:
                         case eEmoteActionType.useActivationTarget:
                             {
-                                actions.Add(new sEmoteTableActionBasicType(buffer, inputFile, actionType));
+                                actions.Add(new sEmoteTableActionBasicType(inputFile, actionType));
                                 break;
                             }
                         case eEmoteActionType.performEmote:
                         case eEmoteActionType.playerPerformEmote:
                             {
-                                actions.Add(new sEmoteTableActionMotionType(buffer, inputFile, actionType));
+                                actions.Add(new sEmoteTableActionMotionType(inputFile, actionType));
                                 break;
                             }
                         case eEmoteActionType.textEmote:
@@ -1717,137 +1717,137 @@ namespace Melt
                         case eEmoteActionType.setFellowshipQuestFlag:
                         case eEmoteActionType.textDirect:
                             {
-                                actions.Add(new sEmoteTableActionMsgType(buffer, inputFile, actionType));
+                                actions.Add(new sEmoteTableActionMsgType(inputFile, actionType));
                                 break;
                             }
                         case eEmoteActionType.giveSkillCredit:
                         case eEmoteActionType.giveVitae:
                         case eEmoteActionType.setTitle:
                             {
-                                actions.Add(new sEmoteTableActionAmountType(buffer, inputFile, actionType));
+                                actions.Add(new sEmoteTableActionAmountType(inputFile, actionType));
                                 break;
                             }
                         case eEmoteActionType.incrementQuestCounter:
                         case eEmoteActionType.decrementQuestCounter:
                             {
-                                actions.Add(new sEmoteTableActionMsgAmountType(buffer, inputFile, actionType));
+                                actions.Add(new sEmoteTableActionMsgAmountType(inputFile, actionType));
                                 break;
                             }
                         case eEmoteActionType.showParticleEffects:
                             {
-                                actions.Add(new sEmoteTableActionPScriptType(buffer, inputFile, actionType));
+                                actions.Add(new sEmoteTableActionPScriptType(inputFile, actionType));
                                 break;
                             }
                         case eEmoteActionType.playSound:
                             {
-                                actions.Add(new sEmoteTableActionSoundType(buffer, inputFile, actionType));
+                                actions.Add(new sEmoteTableActionSoundType(inputFile, actionType));
                                 break;
                             }
                         case eEmoteActionType.rotate:
                         case eEmoteActionType.moveToHomePosition:
                         case eEmoteActionType.moveTo:
                             {
-                                actions.Add(new sEmoteTableActionFrameType(buffer, inputFile, actionType));
+                                actions.Add(new sEmoteTableActionFrameType(inputFile, actionType));
                                 break;
                             }
                         case eEmoteActionType.setLifestonePosition:
                             {
-                                actions.Add(new sEmoteTableActionMPositionType(buffer, inputFile, actionType));
+                                actions.Add(new sEmoteTableActionMPositionType(inputFile, actionType));
                                 break;
                             }
                         case eEmoteActionType.giveItem:
                             {
-                                actions.Add(new sEmoteTableActionCProfType(buffer, inputFile, actionType));
+                                actions.Add(new sEmoteTableActionCProfType(inputFile, actionType));
                                 break;
                             }
                         case eEmoteActionType.giveExpFellowship:
                         case eEmoteActionType.giveExp:
                             {
-                                actions.Add(new sEmoteTableActionAmountHeroxp64Type(buffer, inputFile, actionType));
+                                actions.Add(new sEmoteTableActionAmountHeroxp64Type(inputFile, actionType));
                                 break;
                             }
                         case eEmoteActionType.increaseSkill:
                         case eEmoteActionType.giveExpSkill:
                             {
-                                actions.Add(new sEmoteTableActionAmountStatType(buffer, inputFile, actionType));
+                                actions.Add(new sEmoteTableActionAmountStatType(inputFile, actionType));
                                 break;
                             }
                         case eEmoteActionType.castSpell:
                         case eEmoteActionType.castSpellInstant:
                         case eEmoteActionType.teachSpell:
                             {
-                                actions.Add(new sEmoteTableActionSpellIdType(buffer, inputFile, actionType));
+                                actions.Add(new sEmoteTableActionSpellIdType(inputFile, actionType));
                                 break;
                             }
                         case eEmoteActionType.giveExpLevelProportional:
                             {
-                                actions.Add(new sEmoteTableActionMinMaxPercent64Type(buffer, inputFile, actionType));
+                                actions.Add(new sEmoteTableActionMinMaxPercent64Type(inputFile, actionType));
                                 break;
                             }
                         case eEmoteActionType.giveSkillExpLevelProportional:
                             {
-                                actions.Add(new sEmoteTableActionMinMaxPercentSkillType(buffer, inputFile, actionType));
+                                actions.Add(new sEmoteTableActionMinMaxPercentSkillType(inputFile, actionType));
                                 break;
                             }
                         case eEmoteActionType.checkBoolStatAndSetFlag:
                             {
-                                actions.Add(new sEmoteTableActionBoolStatType(buffer, inputFile, actionType));
+                                actions.Add(new sEmoteTableActionBoolStatType(inputFile, actionType));
                                 break;
                             }
                         case eEmoteActionType.checkIntStatAndSetFlag:
                             {
-                                actions.Add(new sEmoteTableActionIntStatType(buffer, inputFile, actionType));
+                                actions.Add(new sEmoteTableActionIntStatType(inputFile, actionType));
                                 break;
                             }
                         case eEmoteActionType.checkFloatStatAndSetFlag:
                             {
-                                actions.Add(new sEmoteTableActionFloatStatType(buffer, inputFile, actionType));
+                                actions.Add(new sEmoteTableActionFloatStatType(inputFile, actionType));
                                 break;
                             }
                         case eEmoteActionType.checkStringStatAndSetFlag:
                             {
-                                actions.Add(new sEmoteTableActionStringStatType(buffer, inputFile, actionType));
+                                actions.Add(new sEmoteTableActionStringStatType(inputFile, actionType));
                                 break;
                             }
                         case eEmoteActionType.checkAttributeAndSetFlag:
                         case eEmoteActionType.checkUnbuffedAttributeAndSetFlag:
                             {
-                                actions.Add(new sEmoteTableActionMinMaxAttributeType(buffer, inputFile, actionType));
+                                actions.Add(new sEmoteTableActionMinMaxAttributeType(inputFile, actionType));
                                 break;
                             }
                         case eEmoteActionType.checkVitalAndSetFlag:
                         case eEmoteActionType.checkRawVitalAndSetFlag:
                             {
-                                actions.Add(new sEmoteTableActionMinMaxVitalsType(buffer, inputFile, actionType));
+                                actions.Add(new sEmoteTableActionMinMaxVitalsType(inputFile, actionType));
                                 break;
                             }
                         case eEmoteActionType.checkSkillAndSetFlag:
                         case eEmoteActionType.checkUnbuffedSkillAndSetFlag:
                             {
-                                actions.Add(new sEmoteTableActionMinMaxSkillsType(buffer, inputFile, actionType));
+                                actions.Add(new sEmoteTableActionMinMaxSkillsType(inputFile, actionType));
                                 break;
                             }
                         case eEmoteActionType.checkIsSkillTrainedAndSetFlag:
                         case eEmoteActionType.checkIsSkillSpecializedAndSetFlag:
                             {
-                                actions.Add(new sEmoteTableActionMsgSkillsType(buffer, inputFile, actionType));
+                                actions.Add(new sEmoteTableActionMsgSkillsType(inputFile, actionType));
                                 break;
                             }
                         case eEmoteActionType.checkQuestCompletionCounter:
                             {
-                                actions.Add(new sEmoteTableActionMsgMinMax(buffer, inputFile, actionType));
+                                actions.Add(new sEmoteTableActionMsgMinMax(inputFile, actionType));
                                 break;
                             }
                         case eEmoteActionType.setIntStat:
                         case eEmoteActionType.increaseIntStat:
                         case eEmoteActionType.decreaseIntStat:
                             {
-                                actions.Add(new sEmoteTableActionIntStatAmountType(buffer, inputFile, actionType));
+                                actions.Add(new sEmoteTableActionIntStatAmountType(inputFile, actionType));
                                 break;
                             }
                         case eEmoteActionType.giveMutatedLoot:
                             {
-                                actions.Add(new sEmoteTableActionTreasureType(buffer, inputFile, actionType));
+                                actions.Add(new sEmoteTableActionTreasureType(inputFile, actionType));
                                 break;
                             }
                         default:
@@ -1897,11 +1897,11 @@ namespace Melt
     {
         public List<sEmoteTableKey> entries;
 
-        public sEmoteTable(byte[] buffer, StreamReader inputFile)
+        public sEmoteTable(StreamReader inputFile)
         {
             entries = new List<sEmoteTableKey>();
 
-            int sectionHeader = Utils.ReadInt32(buffer, inputFile);
+            int sectionHeader = Utils.readInt32(inputFile);
 
             if (sectionHeader >> 16 == 0x40)
             {
@@ -1909,7 +1909,7 @@ namespace Melt
 
                 for (int i = 0; i < amount; i++)
                 {
-                    entries.Add(new sEmoteTableKey(buffer, inputFile));
+                    entries.Add(new sEmoteTableKey(inputFile));
                 }
             }
         }

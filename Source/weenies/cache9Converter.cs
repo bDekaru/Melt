@@ -26,8 +26,6 @@ namespace Melt
         cClothingTableManager clothingTableManager = null;
         Dictionary<int, int> creatureReplacementSpellMap;
 
-        byte[] buffer = new byte[4096];
-
         public cWeenie getWeenie(int wcid)
         {
             cWeenie weenie;
@@ -180,14 +178,14 @@ namespace Melt
             Stopwatch timer = new Stopwatch();
             timer.Start();
 
-            int totalWeenies = Utils.ReadInt32(buffer, inputFile);
+            int totalWeenies = Utils.readInt32(inputFile);
             weenies = new ConcurrentDictionary<int, cWeenie>();
 
             int weenieCount;
             for (weenieCount = 0; weenieCount < totalWeenies; weenieCount++)
             //for (weenieCount = 0; weenieCount < 1000; weenieCount++)
             {
-                cWeenie weenie = new cWeenie(buffer, inputFile);
+                cWeenie weenie = new cWeenie(inputFile);
                 weenies.TryAdd(weenie.wcid, weenie);
             }
 

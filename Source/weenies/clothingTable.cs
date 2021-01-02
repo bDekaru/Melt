@@ -81,35 +81,34 @@ namespace Melt
 
         void loadClothingTable(StreamReader inputFile)
         {
-            byte[] buffer = new byte[1024];
             sClothingTable newTable = new sClothingTable();
             newTable.baseEffects = new Dictionary<uint, sClothingTableBaseEffect>();
             newTable.subPaletteEffects = new Dictionary<uint, sClothingTableSubPaletteEffect>();
 
-            newTable.id = Utils.ReadUInt32(buffer, inputFile);
+            newTable.id = Utils.readUInt32(inputFile);
 
-            UInt16 clothingEffectsCount = Utils.ReadUInt16(buffer, inputFile);
-            UInt16 unknown1 = Utils.ReadUInt16(buffer, inputFile);
+            UInt16 clothingEffectsCount = Utils.readUInt16(inputFile);
+            UInt16 unknown1 = Utils.readUInt16(inputFile);
             for (uint i = 0; i < clothingEffectsCount; i++)
             {
                 sClothingTableBaseEffect baseEffect = new sClothingTableBaseEffect();
-                baseEffect.setupModel = Utils.ReadUInt32(buffer, inputFile);
+                baseEffect.setupModel = Utils.readUInt32(inputFile);
 
                 baseEffect.objectEffects = new List<sClothingTableObjectEffect>();
-                int objectEffectsCount = Utils.ReadInt32(buffer, inputFile);
+                int objectEffectsCount = Utils.readInt32(inputFile);
                 for (int j = 0; j < objectEffectsCount; j++)
                 {
                     sClothingTableObjectEffect objectEffect = new sClothingTableObjectEffect();
-                    objectEffect.index = Utils.ReadUInt32(buffer, inputFile);
-                    objectEffect.modelId = Utils.ReadUInt32(buffer, inputFile);
+                    objectEffect.index = Utils.readUInt32(inputFile);
+                    objectEffect.modelId = Utils.readUInt32(inputFile);
 
                     objectEffect.textureEffects = new List<sClothingTableTextureEffect>();
-                    uint textureEffectsCount = Utils.ReadUInt32(buffer, inputFile);
+                    uint textureEffectsCount = Utils.readUInt32(inputFile);
                     for (uint k = 0; k < textureEffectsCount; k++)
                     {
                         sClothingTableTextureEffect textureEffect = new sClothingTableTextureEffect();
-                        textureEffect.oldTexture = Utils.ReadUInt32(buffer, inputFile);
-                        textureEffect.newTexture = Utils.ReadUInt32(buffer, inputFile);
+                        textureEffect.oldTexture = Utils.readUInt32(inputFile);
+                        textureEffect.newTexture = Utils.readUInt32(inputFile);
                         objectEffect.textureEffects.Add(textureEffect);
                     }
                     baseEffect.objectEffects.Add(objectEffect);
@@ -117,30 +116,30 @@ namespace Melt
                 newTable.baseEffects.Add(baseEffect.setupModel, baseEffect);
             }
 
-            ushort palleteEffectCount = Utils.ReadUInt16(buffer, inputFile);
+            ushort palleteEffectCount = Utils.readUInt16(inputFile);
             for (uint i = 0; i < palleteEffectCount; i++)
             {
-                Utils.Align(inputFile);
+                Utils.align(inputFile);
                 sClothingTableSubPaletteEffect subPaletteEffect = new sClothingTableSubPaletteEffect();
-                uint subPaletteId = Utils.ReadUInt32(buffer, inputFile);
-                subPaletteEffect.icon = Utils.ReadUInt32(buffer, inputFile);
+                uint subPaletteId = Utils.readUInt32(inputFile);
+                subPaletteEffect.icon = Utils.readUInt32(inputFile);
 
                 subPaletteEffect.subPalettes = new List<sClothingTableSubPalette>();
-                uint palettesCount = Utils.ReadUInt32(buffer, inputFile);
+                uint palettesCount = Utils.readUInt32(inputFile);
                 for (uint j = 0; j < palettesCount; j++)
                 {
                     sClothingTableSubPalette subPalette = new sClothingTableSubPalette();
 
                     subPalette.ranges = new List<sClothingTableSubPaletteRange>();
-                    uint length = Utils.ReadUInt32(buffer, inputFile);
+                    uint length = Utils.readUInt32(inputFile);
                     for (uint k = 0; k < length; k++)
                     {
                         sClothingTableSubPaletteRange range = new sClothingTableSubPaletteRange();
-                        range.offset = Utils.ReadUInt32(buffer, inputFile);
-                        range.numColors = Utils.ReadUInt32(buffer, inputFile);
+                        range.offset = Utils.readUInt32(inputFile);
+                        range.numColors = Utils.readUInt32(inputFile);
                         subPalette.ranges.Add(range);
                     }
-                    subPalette.paletteSet = Utils.ReadUInt32(buffer, inputFile);
+                    subPalette.paletteSet = Utils.readUInt32(inputFile);
                     subPaletteEffect.subPalettes.Add(subPalette);
                 }
                 newTable.subPaletteEffects.Add(subPaletteId, subPaletteEffect);

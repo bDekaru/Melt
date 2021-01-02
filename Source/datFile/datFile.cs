@@ -56,8 +56,6 @@ namespace Melt
 
         public void loadFromDat(string filename)
         {
-            byte[] buffer = new byte[1024];
-
             StreamReader inputFile = new StreamReader(new FileStream(filename, FileMode.Open, FileAccess.Read));
             if (inputFile.BaseStream.Length < 1024)
             {
@@ -70,17 +68,17 @@ namespace Melt
             timer.Start();
 
             inputFile.BaseStream.Seek(257, SeekOrigin.Begin);
-            int format = Utils.ReadInt32(buffer, inputFile);
+            int format = Utils.readInt32(inputFile);
             if (format == 0x4C50)
             {
                 inputFile.BaseStream.Seek(256, SeekOrigin.Begin); //skip acVersionStr which is empty
-                acTransactionRecord = Utils.ReadBytes(buffer, inputFile, 64);
+                acTransactionRecord = Utils.readBytes(inputFile, 64);
                 for (int i = 4; i < 64; i++)
                 {
                     acTransactionRecord[i] = 0;
                 }
 
-                fileType = Utils.ReadUInt32(buffer, inputFile);
+                fileType = Utils.readUInt32(inputFile);
                 if (fileType == 0x5442)
                 {
                     fileFormat = eDatFormat.ToD;
@@ -95,7 +93,7 @@ namespace Melt
                 acTransactionRecord[3] = 0x00;
 
                 inputFile.BaseStream.Seek(300, SeekOrigin.Begin);
-                fileType = Utils.ReadUInt32(buffer, inputFile);
+                fileType = Utils.readUInt32(inputFile);
                 if (fileType == 0x5442)
                     fileFormat = eDatFormat.retail;
             }
@@ -106,11 +104,11 @@ namespace Melt
                 return;
             }
 
-            blockSize = Utils.ReadInt32(buffer, inputFile);
-            fileSize = Utils.ReadUInt32(buffer, inputFile);
-            dataSet = Utils.ReadUInt32(buffer, inputFile);
+            blockSize = Utils.readInt32(inputFile);
+            fileSize = Utils.readUInt32(inputFile);
+            dataSet = Utils.readUInt32(inputFile);
             if (fileFormat == eDatFormat.ToD)
-                dataSubset = Utils.ReadUInt32(buffer, inputFile);
+                dataSubset = Utils.readUInt32(inputFile);
             else
             {
                 //dataSet = 0x00000043 for old cell.dat
@@ -131,23 +129,23 @@ namespace Melt
             //dataSet = 0x00000002 - dataSubset = 0x00000001 for client_cell_1.dat
             //dataSet = 0x00000003 - dataSubset = 0x00000001 for client_local_English.dat
 
-            freeHead = Utils.ReadUInt32(buffer, inputFile);
-            freeTail = Utils.ReadUInt32(buffer, inputFile);
-            freeCount = Utils.ReadUInt32(buffer, inputFile);
-            rootDirectoryOffset = Utils.ReadUInt32(buffer, inputFile);
+            freeHead = Utils.readUInt32(inputFile);
+            freeTail = Utils.readUInt32(inputFile);
+            freeCount = Utils.readUInt32(inputFile);
+            rootDirectoryOffset = Utils.readUInt32(inputFile);
 
             if (fileFormat == eDatFormat.ToD)
             {
-                youngLRU = Utils.ReadUInt32(buffer, inputFile);
-                oldLRU = Utils.ReadUInt32(buffer, inputFile);
-                useLRU = Utils.ReadUInt32(buffer, inputFile);
+                youngLRU = Utils.readUInt32(inputFile);
+                oldLRU = Utils.readUInt32(inputFile);
+                useLRU = Utils.readUInt32(inputFile);
 
-                masterMapId = Utils.ReadUInt32(buffer, inputFile);
+                masterMapId = Utils.readUInt32(inputFile);
 
-                enginePackVersion = Utils.ReadUInt32(buffer, inputFile);
-                gamePackVersion = Utils.ReadUInt32(buffer, inputFile);
-                versionMajor = Utils.ReadBytes(buffer, inputFile, 16);//int data1, short data2, short data3, int64 data4
-                versionMinor = Utils.ReadUInt32(buffer, inputFile);
+                enginePackVersion = Utils.readUInt32(inputFile);
+                gamePackVersion = Utils.readUInt32(inputFile);
+                versionMajor = Utils.readBytes(inputFile, 16);//int data1, short data2, short data3, int64 data4
+                versionMinor = Utils.readUInt32(inputFile);
             }
             else
             {
@@ -168,7 +166,7 @@ namespace Melt
 
             cDatFileBlock.loadBlocksAndAddToDictionary(inputBlockCache, inputFile, blockSize);
 
-            rootDirectory = new cDatFileNode(buffer, inputFile, inputBlockCache, rootDirectoryOffset, blockSize, fileFormat);
+            rootDirectory = new cDatFileNode(inputFile, inputBlockCache, rootDirectoryOffset, blockSize, fileFormat);
             rootDirectory.loadFilesAndAddToCache(fileCache, inputBlockCache, inputFile, blockSize);
 
             timer.Stop();
@@ -182,8 +180,6 @@ namespace Melt
             freeHead = inputBlockCache.freeHead;
             freeTail = inputBlockCache.freeTail;
             freeCount = inputBlockCache.freeCount;
-
-            byte[] buffer = new byte[1024];
 
             StreamWriter outputFile = new StreamWriter(new FileStream(filename, FileMode.Create, FileAccess.Write));
 

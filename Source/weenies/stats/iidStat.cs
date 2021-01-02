@@ -68,14 +68,14 @@ namespace Melt
             this.value = value;
         }
 
-        public sIidStat(byte[] buffer, StreamReader inputFile)
+        public sIidStat(StreamReader inputFile)
         {
-            key = (eIidStat)Utils.ReadInt32(buffer, inputFile);
+            key = (eIidStat)Utils.readInt32(inputFile);
 
             if (!Enum.IsDefined(typeof(eIidStat), key))
                 Console.WriteLine("Unknown iidStat: {0}", key);
 
-            value = Utils.ReadInt32(buffer, inputFile);
+            value = Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)

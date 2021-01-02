@@ -152,14 +152,14 @@ namespace Melt
             this.value = value;
         }
 
-        public sBoolStat(byte[] buffer, StreamReader inputFile)
+        public sBoolStat(StreamReader inputFile)
         {
-            key = (eBoolStat)Utils.ReadInt32(buffer, inputFile);
+            key = (eBoolStat)Utils.readInt32(inputFile);
 
             if (!Enum.IsDefined(typeof(eBoolStat), key))
                 Console.WriteLine("Unknown boolStat: {0}", key);
 
-            value = Utils.ReadInt32(buffer, inputFile);
+            value = Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)

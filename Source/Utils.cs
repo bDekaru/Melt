@@ -17,77 +17,83 @@ namespace Melt
 
     class Utils
     {
-        static public byte ReadByte(byte[] buffer, StreamReader data)
+        static public byte readByte(StreamReader data)
         {
+            byte[] buffer = new byte[1];
             data.BaseStream.Read(buffer, 0, 1);
-            return (byte)BitConverter.ToChar(buffer, 0);
+            return buffer[0];
         }
 
-        static public byte[] ReadBytes(byte[] buffer, StreamReader data, int amount)
+        static public byte[] readBytes(StreamReader data, int amount)
         {
-            byte[] bytes = new byte[amount];
-            for (int i = 0; i < amount; i++)
-                bytes[i] = ReadByte(buffer, data);
-            return bytes;
+            byte[] buffer = new byte[amount];
+            data.BaseStream.Read(buffer, 0, amount);
+            return buffer;
         }
 
-        static public Int16 ReadInt16(byte[] buffer, StreamReader data)
+        static public Int16 readInt16(StreamReader data)
         {
+            byte[] buffer = new byte[2];
             data.BaseStream.Read(buffer, 0, 2);
             return BitConverter.ToInt16(buffer, 0);
         }
 
-        static public Int32 ReadInt32(byte[] buffer, StreamReader data)
+        static public Int32 readInt32(StreamReader data)
         {
+            byte[] buffer = new byte[4];
             data.BaseStream.Read(buffer, 0, 4);
             return BitConverter.ToInt32(buffer, 0);
         }
 
-        static public Int64 ReadInt64(byte[] buffer, StreamReader data)
+        static public Int64 readInt64(StreamReader data)
         {
+            byte[] buffer = new byte[8];
             data.BaseStream.Read(buffer, 0, 8);
             return BitConverter.ToInt64(buffer, 0);
         }
 
-        static public bool ReadBool(byte[] buffer, StreamReader data)
+        static public bool readBool(StreamReader data)
         {
+            byte[] buffer = new byte[1];
             data.BaseStream.Read(buffer, 0, 1);
             return BitConverter.ToBoolean(buffer, 0);
         }
 
-        static public UInt16 ReadUInt16(byte[] buffer, StreamReader data)
+        static public UInt16 readUInt16(StreamReader data)
         {
+            byte[] buffer = new byte[2];
             data.BaseStream.Read(buffer, 0, 2);
             return BitConverter.ToUInt16(buffer, 0);
         }
 
-        static public UInt32 ReadUInt32(byte[] buffer, StreamReader data)
+        static public UInt32 readUInt32(StreamReader data)
         {
+            byte[] buffer = new byte[4];
             data.BaseStream.Read(buffer, 0, 4);
             return BitConverter.ToUInt32(buffer, 0);
         }
 
-        static public UInt32 ReadCompressedUInt32(byte[] buffer, StreamReader data)
+        static public UInt32 readCompressedUInt32(StreamReader data)
         {
-            var b0 = ReadByte(buffer, data);
+            var b0 = readByte(data);
             if ((b0 & 0x80) == 0)
                 return b0;
 
-            var b1 = ReadByte(buffer, data);
+            var b1 = readByte(data);
             if ((b0 & 0x40) == 0)
                 return (uint)(((b0 & 0x7F) << 8) | b1);
 
-            var s = ReadUInt16(buffer, data);
+            var s = readUInt16(data);
             return (uint)(((((b0 & 0x3F) << 8) | b1) << 16) | s);
         }
 
-        static public UInt32 ReadPackedUInt32(byte[] buffer, StreamReader data, uint typeSize = 0)
+        static public UInt32 readPackedUInt32(StreamReader data, uint typeSize = 0)
         {
             //uint testValue = 100000;
             //uint packedValue = (testValue << 16) | ((testValue >> 16) | 0x8000);
             //uint unpackedValue = (packedValue >> 16) | ((packedValue ^ 0x8000) << 16);
 
-            ushort value = ReadUInt16(buffer, data);
+            ushort value = readUInt16(data);
             if (value >> 12 != 0x08)
             {
                 return value + typeSize;
@@ -95,31 +101,34 @@ namespace Melt
             else
             {
                 data.BaseStream.Seek(-2, SeekOrigin.Current);
-                uint packedValue = ReadUInt32(buffer, data);
+                uint packedValue = readUInt32(data);
                 uint unpackedValue = (packedValue >> 16) | ((packedValue ^ 0x8000) << 16);
                 return unpackedValue + typeSize;
             }
         }
 
-        static public UInt64 ReadUInt64(byte[] buffer, StreamReader data)
+        static public UInt64 readUInt64(StreamReader data)
         {
+            byte[] buffer = new byte[8];
             data.BaseStream.Read(buffer, 0, 8);
             return BitConverter.ToUInt64(buffer, 0);
         }
 
-        static public float ReadSingle(byte[] buffer, StreamReader data)
+        static public float readSingle(StreamReader data)
         {
+            byte[] buffer = new byte[4];
             data.BaseStream.Read(buffer, 0, 4);
             return BitConverter.ToSingle(buffer, 0);
         }
 
-        static public double ReadDouble(byte[] buffer, StreamReader data)
+        static public double readDouble(StreamReader data)
         {
+            byte[] buffer = new byte[8];
             data.BaseStream.Read(buffer, 0, 8);
             return BitConverter.ToDouble(buffer, 0);
         }
 
-        static public void Align(StreamWriter data)
+        static public void align(StreamWriter data)
         {
             int alignedPosition = (int)(data.BaseStream.Position);
             if (alignedPosition % 4 != 0)
@@ -135,7 +144,7 @@ namespace Melt
             }
         }
 
-        static public void Align(StreamReader data)
+        static public void align(StreamReader data)
         {
             int alignedPosition = (int)(data.BaseStream.Position);
             if (alignedPosition % 4 != 0)
@@ -145,12 +154,12 @@ namespace Melt
             }
         }
 
-        static public int Align4(int index)
+        static public int align4(int index)
         {
             return (index + 3) & 0xFFFFFC;
         }
 
-        static public string ReplaceStringSpecialCharacters(string text)
+        static public string replaceStringSpecialCharacters(string text)
         {
             text = text.Replace("\\n", "<tempLineBreak>");
             text = text.Replace("\\t", "<tempTabulation>");
@@ -167,7 +176,7 @@ namespace Melt
             return text;
         }
 
-        static public string RestoreStringSpecialCharacters(string text)
+        static public string restoreStringSpecialCharacters(string text)
         {
             text = text.Replace("\\\\n", "<tempLineBreak>");
             text = text.Replace("\\\\t", "<tempTabulation>");
@@ -184,90 +193,90 @@ namespace Melt
             return text;
         }
 
-        static public string ReadStringAndReplaceSpecialCharacters(byte[] buffer, StreamReader data)
+        static public string readStringAndReplaceSpecialCharacters(StreamReader data)
         {
             int startIndex = (int)data.BaseStream.Position;
             string text = "";
-            int letterCount = ReadInt16(buffer, data);
+            int letterCount = readInt16(data);
 
+            byte[] buffer = new byte[letterCount];
             data.BaseStream.Read(buffer, 0, letterCount);
             for (int i = 0; i < letterCount; i++)
             {
-                byte nextByte = (byte)(buffer[i]);
-                text += (char)nextByte;
+                text += (char)buffer[i];
             }
-            Align(data);
+            align(data);
 
-            return ReplaceStringSpecialCharacters(text);
+            return replaceStringSpecialCharacters(text);
         }
 
-        static public string ReadSerializedString(byte[] buffer, StreamReader data)
+        static public string readSerializedString(StreamReader data)
         {
             int startIndex = (int)data.BaseStream.Position;
             string text = "";
-            uint letterCount = ReadCompressedUInt32(buffer, data);
+            uint letterCount = readCompressedUInt32(data);
 
+            byte[] buffer = new byte[letterCount];
             data.BaseStream.Read(buffer, 0, (int)letterCount);
             for (int i = 0; i < letterCount; i++)
             {
-                byte nextByte = buffer[i];
-                text += (char)nextByte;
+                text += (char)buffer[i];
             }
 
             return text;
         }
 
-        static public string ReadString(byte[] buffer, StreamReader data)
+        static public string readString(StreamReader data)
         {
             int startIndex = (int)data.BaseStream.Position;
             string text = "";
-            int letterCount = ReadInt16(buffer, data);
+            int letterCount = readInt16(data);
 
+            byte[] buffer = new byte[letterCount];
             data.BaseStream.Read(buffer, 0, letterCount);
             for (int i = 0; i < letterCount; i++)
             {
-                byte nextByte = buffer[i];
-                text += (char)nextByte;
+                text += (char)buffer[i];
             }
-            Align(data);
+            align(data);
 
             return text;
         }
 
-        static public string ReadStringNoAlign(byte[] buffer, StreamReader data)
+        static public string readStringNoAlign(StreamReader data)
         {
             int startIndex = (int)data.BaseStream.Position;
             string text = "";
-            int letterCount = ReadInt16(buffer, data);
+            int letterCount = readInt16(data);
 
+            byte[] buffer = new byte[letterCount];
             data.BaseStream.Read(buffer, 0, letterCount);
             for (int i = 0; i < letterCount; i++)
             {
-                byte nextByte = (byte)(buffer[i]);
-                text += (char)nextByte;
+                text += (char)buffer[i];
             }
 
             return text;
         }
 
-        static public string ReadEncodedString(byte[] buffer, StreamReader data)
+        static public string readEncodedString(StreamReader data)
         {
             int startIndex = (int)data.BaseStream.Position;
             string text = "";
-            int letterCount = ReadInt16(buffer, data);
+            int letterCount = readInt16(data);
 
+            byte[] buffer = new byte[letterCount];
             data.BaseStream.Read(buffer, 0, letterCount);
             for (int i = 0; i < letterCount; i++)
             {
-                byte nextByte = (byte)((buffer[i] >> 4) ^ (buffer[i] << 4));
-                text += (char)nextByte;
+                text += (char)((buffer[i] >> 4) ^ (buffer[i] << 4));
             }
 
-            Align(data);
+            align(data);
             return text;
         }
 
-        static public uint GetHash(string value, uint seed)
+        static public uint getHash(string value, uint seed)
         {
             uint r = 0;
             for (int i = 0; i < value.Length; i++)
@@ -315,129 +324,85 @@ namespace Melt
             }
         }
 
-        static public byte ReadAndWriteByte(byte[] buffer, StreamReader data, StreamWriter outputData, bool write = true)
+        static public byte readAndWriteByte(StreamReader data, StreamWriter outputData, bool write = true)
         {
-            data.BaseStream.Read(buffer, 0, 1);
+            byte value = readByte(data);
             if (write)
-                outputData.BaseStream.Write(buffer, 0, 1);
-            return (byte)BitConverter.ToChar(buffer, 0);
+                writeByte(value, outputData);
+            return value;
         }
 
-        static public short ReadAndWriteShort(byte[] buffer, StreamReader data, StreamWriter outputData, bool write = true)
+        static public short readAndWriteShort(StreamReader data, StreamWriter outputData, bool write = true)
         {
-            data.BaseStream.Read(buffer, 0, 2);
+            short value = readInt16(data);
             if (write)
-                outputData.BaseStream.Write(buffer, 0, 2);
-            return BitConverter.ToInt16(buffer, 0);
+                writeInt16(value, outputData);
+            return value;
         }
 
-        static public Int32 ReadAndWriteInt32(byte[] buffer, StreamReader data, StreamWriter outputData, bool write = true)
+        static public Int32 readAndWriteInt32(StreamReader data, StreamWriter outputData, bool write = true)
         {
-            data.BaseStream.Read(buffer, 0, 4);
+            Int32 value = readInt32(data);
             if (write)
-                outputData.BaseStream.Write(buffer, 0, 4);
-            return BitConverter.ToInt32(buffer, 0);
+                writeInt32(value, outputData);
+            return value;
         }
 
-        static public Int64 ReadAndWriteInt64(byte[] buffer, StreamReader data, StreamWriter outputData, bool write = true)
+        static public Int64 readAndWriteInt64(StreamReader data, StreamWriter outputData, bool write = true)
         {
-            data.BaseStream.Read(buffer, 0, 8);
+            Int64 value = readInt64(data);
             if (write)
-                outputData.BaseStream.Write(buffer, 0, 8);
-            return BitConverter.ToInt64(buffer, 0);
+                writeInt64(value, outputData);
+            return value;
         }
 
-        static public UInt32 ReadAndWriteUInt32(byte[] buffer, StreamReader data, StreamWriter outputData, bool write = true)
+        static public UInt32 readAndWriteUInt32(StreamReader data, StreamWriter outputData, bool write = true)
         {
-            data.BaseStream.Read(buffer, 0, 4);
+            UInt32 value = readUInt32(data);
             if (write)
-                outputData.BaseStream.Write(buffer, 0, 4);
-            return BitConverter.ToUInt32(buffer, 0);
+                writeUInt32(value, outputData);
+            return value;
         }
 
-        static public UInt64 ReadAndWriteUInt64(byte[] buffer, StreamReader data, StreamWriter outputData, bool write = true)
+        static public UInt64 readAndWriteUInt64(StreamReader data, StreamWriter outputData, bool write = true)
         {
-            data.BaseStream.Read(buffer, 0, 8);
+            UInt64 value = readUInt64(data);
             if (write)
-                outputData.BaseStream.Write(buffer, 0, 8);
-            return BitConverter.ToUInt64(buffer, 0);
+                writeUInt64(value, outputData);
+            return value;
         }
 
-        static public float ReadAndWriteSingle(byte[] buffer, StreamReader data, StreamWriter outputData, bool write = true)
+        static public float readAndWriteSingle(StreamReader data, StreamWriter outputData, bool write = true)
         {
-            data.BaseStream.Read(buffer, 0, 4);
+            float value = readSingle(data);
             if (write)
-                outputData.BaseStream.Write(buffer, 0, 4);
-            return BitConverter.ToSingle(buffer, 0);
+                writeSingle(value, outputData);
+            return value;
         }
 
-        static public double ReadAndWriteDouble(byte[] buffer, StreamReader data, StreamWriter outputData, bool write = true)
+        static public double readAndWriteDouble(StreamReader data, StreamWriter outputData, bool write = true)
         {
-            data.BaseStream.Read(buffer, 0, 8);
+            double value = readDouble(data);
             if (write)
-                outputData.BaseStream.Write(buffer, 0, 8);
-            return BitConverter.ToDouble(buffer, 0);
+                writeDouble(value, outputData);
+            return value;
         }
 
 
-        static public string ReadAndWriteString(byte[] buffer, StreamReader data, StreamWriter outputData, bool write = true)
+        static public string readAndWriteString(StreamReader data, StreamWriter outputData, bool write = true)
         {
-            int startIndex = (int)data.BaseStream.Position;
-            string text = "";
-            int letterCount = ReadInt16(buffer, data);
+            string value = readString(data);
             if (write)
-                outputData.BaseStream.Write(buffer, 0, 2);
-
-            data.BaseStream.Read(buffer, 0, letterCount);
-            if (write)
-                outputData.BaseStream.Write(buffer, 0, letterCount);
-            for (int i = 0; i < letterCount; i++)
-            {
-                byte nextByte = (byte)(buffer[i]);
-                text += (char)nextByte;
-            }
-
-            int endIndex = (int)(data.BaseStream.Position);
-            int alignedIndex = Align4(endIndex - startIndex);
-            int newIndex = startIndex + alignedIndex;
-            int bytesNeededToReachAlignment = newIndex - endIndex;
-            data.BaseStream.Read(buffer, 0, bytesNeededToReachAlignment);
-            if (write)
-            {
-                for (int i = 0; i < bytesNeededToReachAlignment; i++)
-                    outputData.BaseStream.WriteByte(0x00);
-            }
-            return text;
+                writeString(value, outputData);
+            return value;
         }
 
-        static public string ReadAndWriteEncodedString(byte[] buffer, StreamReader data, StreamWriter outputData, bool write = true)
+        static public string readAndWriteEncodedString(StreamReader data, StreamWriter outputData, bool write = true)
         {
-            int startIndex = (int)data.BaseStream.Position;
-            string text = "";
-            int letterCount = ReadInt16(buffer, data);
+            string value = readEncodedString(data);
             if (write)
-                outputData.BaseStream.Write(buffer, 0, 2);
-
-            data.BaseStream.Read(buffer, 0, letterCount);
-            if (write)
-                outputData.BaseStream.Write(buffer, 0, letterCount);
-            for (int i = 0; i < letterCount; i++)
-            {
-                byte nextByte = (byte)((buffer[i] >> 4) ^ (buffer[i] << 4));
-                text += (char)nextByte;
-            }
-
-            int endIndex = (int)(data.BaseStream.Position);
-            int alignedIndex = Align4(endIndex - startIndex);
-            int newIndex = startIndex + alignedIndex;
-            int bytesNeededToReachAlignment = newIndex - endIndex;
-            data.BaseStream.Read(buffer, 0, bytesNeededToReachAlignment);
-            if (write)
-            {
-                for (int i = 0; i < bytesNeededToReachAlignment; i++)
-                    outputData.BaseStream.WriteByte(0x00);
-            }
-            return text;
+                writeEncodedString(value, outputData);
+            return value;
         }
 
         static public void writeByte(byte value, StreamWriter outputData)
@@ -490,12 +455,12 @@ namespace Melt
             outputData.BaseStream.Write(BitConverter.GetBytes(value), 0, 8);
         }
 
-        static public UInt16 LowWord(UInt32 number)
+        static public UInt16 lowWord(UInt32 number)
         {
             return (UInt16)(number & 0x0000FFFF);
         }
 
-        static public UInt16 HighWord(UInt32 number)
+        static public UInt16 highWord(UInt32 number)
         {
             return (UInt16)(number & 0xFFFF0000);
         }
@@ -572,7 +537,7 @@ namespace Melt
                 convertStringToByteArray(value, ref buffer, 0, value.Length);
                 outputData.BaseStream.Write(buffer, 0, value.Length);
             }
-            Align(outputData);
+            align(outputData);
         }
 
         static public void writeEncodedString(string value, StreamWriter outputData)
@@ -584,7 +549,7 @@ namespace Melt
                 convertStringToEncodedByteArray(value, ref buffer, 0, value.Length);
                 outputData.BaseStream.Write(buffer, 0, value.Length);
             }
-            Align(outputData);
+            align(outputData);
         }
 
         static public void writeJson(StreamWriter outputStream, string key, string value, string tab = "", bool isFirst = false, bool lineBreak = true, int padAmount = 0)
@@ -848,7 +813,7 @@ namespace Melt
             return returnValue;
         }
 
-        public static SortedDictionary<int, int> DistributionRounding(SortedDictionary<int, int> numbers)
+        public static SortedDictionary<int, int> distributionRounding(SortedDictionary<int, int> numbers)
         {
             //Let's do some rounding so it looks better!
 

@@ -149,14 +149,13 @@ namespace Melt
             }
 
             Console.WriteLine("Converting to PNG...");
-            byte[] buffer = new byte[1024];
 
-            uint fileHeader = Utils.ReadUInt32(buffer, inputFile);
-            uint textureType = Utils.ReadUInt32(buffer, inputFile);
-            uint width = Utils.ReadUInt32(buffer, inputFile);
-            uint height = Utils.ReadUInt32(buffer, inputFile);
-            uint format = Utils.ReadUInt32(buffer, inputFile);
-            uint length = Utils.ReadUInt32(buffer, inputFile);
+            uint fileHeader = Utils.readUInt32(inputFile);
+            uint textureType = Utils.readUInt32(inputFile);
+            uint width = Utils.readUInt32(inputFile);
+            uint height = Utils.readUInt32(inputFile);
+            uint format = Utils.readUInt32(inputFile);
+            uint length = Utils.readUInt32(inputFile);
 
             if (textureType != 8)
                 return;
@@ -175,9 +174,9 @@ namespace Melt
                         {
                             for (int x = 0; x < width; x++)
                             {
-                                b = Utils.ReadByte(buffer, inputFile);
-                                g = Utils.ReadByte(buffer, inputFile);
-                                r = Utils.ReadByte(buffer, inputFile);
+                                b = Utils.readByte(inputFile);
+                                g = Utils.readByte(inputFile);
+                                r = Utils.readByte(inputFile);
 
                                 bmp.SetPixel(x, y, Color.FromArgb(255, r, g, b));
                             }
@@ -199,10 +198,10 @@ namespace Melt
                         {
                             for (int x = 0; x < width; x++)
                             {
-                                b = Utils.ReadByte(buffer, inputFile);
-                                g = Utils.ReadByte(buffer, inputFile);
-                                r = Utils.ReadByte(buffer, inputFile);
-                                a = Utils.ReadByte(buffer, inputFile);
+                                b = Utils.readByte(inputFile);
+                                g = Utils.readByte(inputFile);
+                                r = Utils.readByte(inputFile);
+                                a = Utils.readByte(inputFile);
 
                                 bmp.SetPixel(x, y, Color.FromArgb(a, r, g, b));
                             }
@@ -227,7 +226,7 @@ namespace Melt
                                 b = 255;
                                 g = 255;
                                 r = 255;
-                                a = Utils.ReadByte(buffer, inputFile);
+                                a = Utils.readByte(inputFile);
 
                                 bmp.SetPixel(x, y, Color.FromArgb(a, r, g, b));
                             }
@@ -239,8 +238,7 @@ namespace Melt
                 default:
                     if (textureType == 8)
                     {
-                        byte[] buffer2 = new byte[(int)length];
-                        byte[] data = Utils.ReadBytes(buffer2, inputFile, (int)length);
+                        byte[] data = Utils.readBytes(inputFile, (int)length);
 
                         byte[] data2 = Squish.DecompressImage(data, (int)width, (int)height, SquishFlags.Dxt1);
                         Bitmap bmp = new Bitmap((int)width, (int)height);
@@ -299,12 +297,11 @@ namespace Melt
             }
 
             Console.WriteLine("Converting to PNG...");
-            byte[] buffer = new byte[1024];
 
-            uint fileHeader = Utils.ReadUInt32(buffer, inputFile);
-            uint textureType = Utils.ReadUInt32(buffer, inputFile);
-            uint width = Utils.ReadUInt32(buffer, inputFile);
-            uint height = Utils.ReadUInt32(buffer, inputFile);
+            uint fileHeader = Utils.readUInt32(inputFile);
+            uint textureType = Utils.readUInt32(inputFile);
+            uint width = Utils.readUInt32(inputFile);
+            uint height = Utils.readUInt32(inputFile);
 
             switch (textureType)
             {
@@ -316,8 +313,8 @@ namespace Melt
                         {
                             for (int x = 0; x < width; x++)
                             {
-                                byte rgb = Utils.ReadByte(buffer, inputFile);
-                                byte alpha = Utils.ReadByte(buffer, inputFile);
+                                byte rgb = Utils.readByte(inputFile);
+                                byte alpha = Utils.readByte(inputFile);
 
                                 bmp.SetPixel(x, y, Color.FromArgb(alpha, rgb, rgb, rgb));
                             }
@@ -335,11 +332,11 @@ namespace Melt
 
                         uint sizePerColor = width * height;
                         for (int i = 0; i < sizePerColor; i++)
-                            r.Add(Utils.ReadByte(buffer, inputFile));
+                            r.Add(Utils.readByte(inputFile));
                         for (int i = 0; i < sizePerColor; i++)
-                            g.Add(Utils.ReadByte(buffer, inputFile));
+                            g.Add(Utils.readByte(inputFile));
                         for (int i = 0; i < sizePerColor; i++)
-                            b.Add(Utils.ReadByte(buffer, inputFile));
+                            b.Add(Utils.readByte(inputFile));
 
                         int count = 0;
                         for (int y = 0; y < height; y++)
@@ -364,13 +361,13 @@ namespace Melt
 
                         uint sizePerColor = width * height;
                         for (int i = 0; i < sizePerColor; i++)
-                            a.Add(Utils.ReadByte(buffer, inputFile));
+                            a.Add(Utils.readByte(inputFile));
                         for (int i = 0; i < sizePerColor; i++)
-                            r.Add(Utils.ReadByte(buffer, inputFile));
+                            r.Add(Utils.readByte(inputFile));
                         for (int i = 0; i < sizePerColor; i++)
-                            g.Add(Utils.ReadByte(buffer, inputFile));
+                            g.Add(Utils.readByte(inputFile));
                         for (int i = 0; i < sizePerColor; i++)
-                            b.Add(Utils.ReadByte(buffer, inputFile));
+                            b.Add(Utils.readByte(inputFile));
 
                         int count = 0;
                         for (int y = 0; y < height; y++)
@@ -413,7 +410,7 @@ namespace Melt
                     //    {
                     //        for (int x = 0; x < width; x++)
                     //        {
-                    //            pixelColor = (ushort)Utils.ReadShort(buffer, inputFile);
+                    //            pixelColor = (ushort)Utils.readShort(inputFile);
 
                     //            r = (byte)((pixelColor & redMask) >> 10);
                     //            g = (byte)((pixelColor & greenMask) >> 5);
@@ -446,7 +443,7 @@ namespace Melt
                     //    {
                     //        for (int x = 0; x < width; x++)
                     //        {
-                    //            pixelColor = (ushort)Utils.ReadShort(buffer, inputFile);
+                    //            pixelColor = (ushort)Utils.readShort(inputFile);
 
                     //            r = (byte)((pixelColor & redMask) >> 11);
                     //            g = (byte)((pixelColor & greenMask) >> 5);

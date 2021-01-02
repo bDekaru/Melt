@@ -32,14 +32,14 @@ namespace Melt
             this.value = value;
         }
 
-        public sInt64Stat(byte[] buffer, StreamReader inputFile)
+        public sInt64Stat(StreamReader inputFile)
         {
-            key = (eInt64Stat)Utils.ReadInt32(buffer, inputFile);
+            key = (eInt64Stat)Utils.readInt32(inputFile);
 
             if (!Enum.IsDefined(typeof(eInt64Stat), key))
                 Console.WriteLine("Unknown int64Stat: {0}", key);
 
-            value = Utils.ReadInt64(buffer, inputFile);
+            value = Utils.readInt64(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)

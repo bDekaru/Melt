@@ -16,16 +16,16 @@ namespace Melt
             public uint ClearCellId { get; set; }
             public uint ClearMonsterId { get; set; }
 
-            public static RegionMisc Read(byte[] buffer, StreamReader data, StreamWriter outputData, bool isToD, bool write)
+            public static RegionMisc Read(StreamReader data, StreamWriter outputData, bool isToD, bool write)
             {
                 RegionMisc obj = new RegionMisc();
 
-                obj.Version = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.GameMapID = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.AutotestMapId = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.AutotestMapSize = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.ClearCellId = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.ClearMonsterId = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                obj.Version = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.GameMapID = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.AutotestMapId = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.AutotestMapSize = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.ClearCellId = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.ClearMonsterId = Utils.readAndWriteUInt32(data, outputData, write);
 
                 return obj;
             }
@@ -95,20 +95,20 @@ namespace Melt
             public uint DetailTexTiling { get; set; }
             public uint DetailTexGID { get; set; }
 
-            public static TerrainTex Read(byte[] buffer, StreamReader data, StreamWriter outputData, bool isToD, bool write)
+            public static TerrainTex Read(StreamReader data, StreamWriter outputData, bool isToD, bool write)
             {
                 TerrainTex obj = new TerrainTex();
 
-                obj.TexGID = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.TexTiling = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.MaxVertBright = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.MinVertBright = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.MaxVertSaturate = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.MinVertSaturate = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.MaxVertHue = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.MinVertHue = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.DetailTexTiling = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.DetailTexGID = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                obj.TexGID = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.TexTiling = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.MaxVertBright = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.MinVertBright = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.MaxVertSaturate = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.MinVertSaturate = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.MaxVertHue = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.MinVertHue = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.DetailTexTiling = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.DetailTexGID = Utils.readAndWriteUInt32(data, outputData, write);
 
                 return obj;
             }
@@ -200,12 +200,12 @@ namespace Melt
             public uint terrainType { get; set; }
             public TerrainTex terrainTex { get; set; }
 
-            public static TMTerrainDesc Read(byte[] buffer, StreamReader data, StreamWriter outputData, bool isToD, bool write)
+            public static TMTerrainDesc Read(StreamReader data, StreamWriter outputData, bool isToD, bool write)
             {
                 TMTerrainDesc obj = new TMTerrainDesc();
 
-                obj.terrainType = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.terrainTex = TerrainTex.Read(buffer, data, outputData, isToD, write);
+                obj.terrainType = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.terrainTex = TerrainTex.Read(data, outputData, isToD, write);
 
                 return obj;
             }
@@ -243,11 +243,11 @@ namespace Melt
             public uint RCode { get; set; }
             public uint RoadTexGID { get; set; }
 
-            public static RoadAlphaMap Read(byte[] buffer, StreamReader data, StreamWriter outputData, bool isToD, bool write)
+            public static RoadAlphaMap Read(StreamReader data, StreamWriter outputData, bool isToD, bool write)
             {
                 RoadAlphaMap obj = new RoadAlphaMap();
-                obj.RCode = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.RoadTexGID = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                obj.RCode = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.RoadTexGID = Utils.readAndWriteUInt32(data, outputData, write);
                 return obj;
             }
 
@@ -284,11 +284,11 @@ namespace Melt
             public uint TCode { get; set; }
             public uint TexGID { get; set; }
 
-            public static TerrainAlphaMap Read(byte[] buffer, StreamReader data, StreamWriter outputData, bool isToD, bool write)
+            public static TerrainAlphaMap Read(StreamReader data, StreamWriter outputData, bool isToD, bool write)
             {
                 TerrainAlphaMap obj = new TerrainAlphaMap();
-                obj.TCode = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.TexGID = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                obj.TCode = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.TexGID = Utils.readAndWriteUInt32(data, outputData, write);
                 return obj;
             }
 
@@ -328,7 +328,7 @@ namespace Melt
             public List<RoadAlphaMap> RoadMaps { get; set; }
             public List<TMTerrainDesc> TerrainDescription { get; set; }
 
-            public static TexMerge Read(byte[] buffer, StreamReader data, StreamWriter outputData, bool isToD, bool write)
+            public static TexMerge Read(StreamReader data, StreamWriter outputData, bool isToD, bool write)
             {
                 TexMerge obj = new TexMerge();
 
@@ -337,65 +337,65 @@ namespace Melt
                 obj.RoadMaps = new List<RoadAlphaMap>();
                 obj.TerrainDescription = new List<TMTerrainDesc>();
 
-                obj.BaseTexSize = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                obj.BaseTexSize = Utils.readAndWriteUInt32(data, outputData, write);
 
-                uint num_corner_terrain_maps = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                uint num_corner_terrain_maps = Utils.readAndWriteUInt32(data, outputData, write);
                 for (uint i = 0; i < num_corner_terrain_maps; i++)
-                    obj.CornerTerrainMaps.Add(TerrainAlphaMap.Read(buffer, data, outputData, isToD, write));
+                    obj.CornerTerrainMaps.Add(TerrainAlphaMap.Read(data, outputData, isToD, write));
 
-                uint num_side_terrain_maps = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                uint num_side_terrain_maps = Utils.readAndWriteUInt32(data, outputData, write);
                 for (uint i = 0; i < num_side_terrain_maps; i++)
-                    obj.SideTerrainMaps.Add(TerrainAlphaMap.Read(buffer, data, outputData, isToD, write));
+                    obj.SideTerrainMaps.Add(TerrainAlphaMap.Read(data, outputData, isToD, write));
 
-                uint num_road_maps = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                uint num_road_maps = Utils.readAndWriteUInt32(data, outputData, write);
                 for (uint i = 0; i < num_road_maps; i++)
-                    obj.RoadMaps.Add(RoadAlphaMap.Read(buffer, data, outputData, isToD, write));
+                    obj.RoadMaps.Add(RoadAlphaMap.Read(data, outputData, isToD, write));
 
-                uint num_terrain_desc = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                uint num_terrain_desc = Utils.readAndWriteUInt32(data, outputData, write);
 
                 for (uint i = 0; i < num_terrain_desc; i++)
-                    obj.TerrainDescription.Add(TMTerrainDesc.Read(buffer, data, outputData, isToD, write));
+                    obj.TerrainDescription.Add(TMTerrainDesc.Read(data, outputData, isToD, write));
 
-                //TMTerrainDesc BarrenRock = TMTerrainDesc.Read(buffer, data, outputData, false);
-                //TMTerrainDesc Grassland = TMTerrainDesc.Read(buffer, data, outputData, false);
-                //TMTerrainDesc Ice = TMTerrainDesc.Read(buffer, data, outputData, false);
-                //TMTerrainDesc LushGrass = TMTerrainDesc.Read(buffer, data, outputData, false);
+                //TMTerrainDesc BarrenRock = TMTerrainDesc.Read(data, outputData, false);
+                //TMTerrainDesc Grassland = TMTerrainDesc.Read(data, outputData, false);
+                //TMTerrainDesc Ice = TMTerrainDesc.Read(data, outputData, false);
+                //TMTerrainDesc LushGrass = TMTerrainDesc.Read(data, outputData, false);
 
-                //TMTerrainDesc MarshSparseSwamp = TMTerrainDesc.Read(buffer, data, outputData, false);
-                //TMTerrainDesc MudRichDirt = TMTerrainDesc.Read(buffer, data, outputData, false);
-                //TMTerrainDesc ObsidianPlain = TMTerrainDesc.Read(buffer, data, outputData, false);
-                //TMTerrainDesc PackedDirt = TMTerrainDesc.Read(buffer, data, outputData, false);
+                //TMTerrainDesc MarshSparseSwamp = TMTerrainDesc.Read(data, outputData, false);
+                //TMTerrainDesc MudRichDirt = TMTerrainDesc.Read(data, outputData, false);
+                //TMTerrainDesc ObsidianPlain = TMTerrainDesc.Read(data, outputData, false);
+                //TMTerrainDesc PackedDirt = TMTerrainDesc.Read(data, outputData, false);
 
-                //TMTerrainDesc PatchyDirt = TMTerrainDesc.Read(buffer, data, outputData, false);
-                //TMTerrainDesc PatchyGrassland = TMTerrainDesc.Read(buffer, data, outputData, false);
-                //TMTerrainDesc SandYellow = TMTerrainDesc.Read(buffer, data, outputData, false);
-                //TMTerrainDesc SandGrey = TMTerrainDesc.Read(buffer, data, outputData, false);
+                //TMTerrainDesc PatchyDirt = TMTerrainDesc.Read(data, outputData, false);
+                //TMTerrainDesc PatchyGrassland = TMTerrainDesc.Read(data, outputData, false);
+                //TMTerrainDesc SandYellow = TMTerrainDesc.Read(data, outputData, false);
+                //TMTerrainDesc SandGrey = TMTerrainDesc.Read(data, outputData, false);
 
-                //TMTerrainDesc SandRockStrewn = TMTerrainDesc.Read(buffer, data, outputData, false);
-                //TMTerrainDesc SedimentaryRock = TMTerrainDesc.Read(buffer, data, outputData, false);
-                //TMTerrainDesc SemiBarrenRock = TMTerrainDesc.Read(buffer, data, outputData, false);
-                //TMTerrainDesc Snow = TMTerrainDesc.Read(buffer, data, outputData, false);
+                //TMTerrainDesc SandRockStrewn = TMTerrainDesc.Read(data, outputData, false);
+                //TMTerrainDesc SedimentaryRock = TMTerrainDesc.Read(data, outputData, false);
+                //TMTerrainDesc SemiBarrenRock = TMTerrainDesc.Read(data, outputData, false);
+                //TMTerrainDesc Snow = TMTerrainDesc.Read(data, outputData, false);
 
-                //TMTerrainDesc WaterRunning = TMTerrainDesc.Read(buffer, data, outputData, false);
-                //TMTerrainDesc WaterStandingFresh = TMTerrainDesc.Read(buffer, data, outputData, false);
-                //TMTerrainDesc WaterShallowSea = TMTerrainDesc.Read(buffer, data, outputData, false);
-                //TMTerrainDesc WaterShallowStillSea = TMTerrainDesc.Read(buffer, data, outputData, false);
+                //TMTerrainDesc WaterRunning = TMTerrainDesc.Read(data, outputData, false);
+                //TMTerrainDesc WaterStandingFresh = TMTerrainDesc.Read(data, outputData, false);
+                //TMTerrainDesc WaterShallowSea = TMTerrainDesc.Read(data, outputData, false);
+                //TMTerrainDesc WaterShallowStillSea = TMTerrainDesc.Read(data, outputData, false);
 
-                //TMTerrainDesc WaterDeepSea = TMTerrainDesc.Read(buffer, data, outputData, false);
-                //TMTerrainDesc Forestfloor = TMTerrainDesc.Read(buffer, data, outputData, false);
-                //TMTerrainDesc FauxWaterRunning = TMTerrainDesc.Read(buffer, data, outputData, false);
-                //TMTerrainDesc SeaSlime = TMTerrainDesc.Read(buffer, data, outputData, false);
+                //TMTerrainDesc WaterDeepSea = TMTerrainDesc.Read(data, outputData, false);
+                //TMTerrainDesc Forestfloor = TMTerrainDesc.Read(data, outputData, false);
+                //TMTerrainDesc FauxWaterRunning = TMTerrainDesc.Read(data, outputData, false);
+                //TMTerrainDesc SeaSlime = TMTerrainDesc.Read(data, outputData, false);
 
-                //TMTerrainDesc Argila = TMTerrainDesc.Read(buffer, data, outputData, false);
-                //TMTerrainDesc Volcano1 = TMTerrainDesc.Read(buffer, data, outputData, false);
-                //TMTerrainDesc Volcano2 = TMTerrainDesc.Read(buffer, data, outputData, false);
-                //TMTerrainDesc BlueIce = TMTerrainDesc.Read(buffer, data, outputData, false);
+                //TMTerrainDesc Argila = TMTerrainDesc.Read(data, outputData, false);
+                //TMTerrainDesc Volcano1 = TMTerrainDesc.Read(data, outputData, false);
+                //TMTerrainDesc Volcano2 = TMTerrainDesc.Read(data, outputData, false);
+                //TMTerrainDesc BlueIce = TMTerrainDesc.Read(data, outputData, false);
 
-                //TMTerrainDesc Moss = TMTerrainDesc.Read(buffer, data, outputData, false);
-                //TMTerrainDesc DarkMoss = TMTerrainDesc.Read(buffer, data, outputData, false);
-                //TMTerrainDesc olthoi = TMTerrainDesc.Read(buffer, data, outputData, false);
-                //TMTerrainDesc DesolateLands = TMTerrainDesc.Read(buffer, data, outputData, false);
-                //TMTerrainDesc Road = TMTerrainDesc.Read(buffer, data, outputData, false);
+                //TMTerrainDesc Moss = TMTerrainDesc.Read(data, outputData, false);
+                //TMTerrainDesc DarkMoss = TMTerrainDesc.Read(data, outputData, false);
+                //TMTerrainDesc olthoi = TMTerrainDesc.Read(data, outputData, false);
+                //TMTerrainDesc DesolateLands = TMTerrainDesc.Read(data, outputData, false);
+                //TMTerrainDesc Road = TMTerrainDesc.Read(data, outputData, false);
 
                 //BarrenRock.terrainTex = Snow.terrainTex;
                 //Grassland.terrainTex.TexGID = 0x0500146B;
@@ -533,11 +533,11 @@ namespace Melt
             public uint HasPalShift { get; set; }
             public TexMerge texMerge { get; set; }
 
-            public static LandSurf Read(byte[] buffer, StreamReader data, StreamWriter outputData, bool isToD, bool write)
+            public static LandSurf Read(StreamReader data, StreamWriter outputData, bool isToD, bool write)
             {
                 LandSurf obj = new LandSurf();
 
-                obj.HasPalShift = Utils.ReadAndWriteUInt32(buffer, data, outputData, write); // This is always 0
+                obj.HasPalShift = Utils.readAndWriteUInt32(data, outputData, write); // This is always 0
 
                 if (obj.HasPalShift == 1)
                 {
@@ -545,7 +545,7 @@ namespace Melt
                     // PalShift is used in software rendering in pre-ToD versions
                 }
                 else
-                    obj.texMerge = TexMerge.Read(buffer, data, outputData, isToD, write);
+                    obj.texMerge = TexMerge.Read(data, outputData, isToD, write);
 
                 return obj;
             }
@@ -583,18 +583,18 @@ namespace Melt
             public uint TerrainColor { get; set; }
             public List<uint> SceneTypes { get; set; }
 
-            public static TerrainType Read(byte[] buffer, StreamReader data, StreamWriter outputData, bool isToD, bool write)
+            public static TerrainType Read(StreamReader data, StreamWriter outputData, bool isToD, bool write)
             {
                 TerrainType obj = new TerrainType();
 
-                obj.TerrainName = Utils.ReadAndWriteString(buffer, data, outputData, write);
+                obj.TerrainName = Utils.readAndWriteString(data, outputData, write);
 
-                obj.TerrainColor = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                obj.TerrainColor = Utils.readAndWriteUInt32(data, outputData, write);
 
                 obj.SceneTypes = new List<uint>();
-                uint num_stypes = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                uint num_stypes = Utils.readAndWriteUInt32(data, outputData, write);
                 for (uint i = 0; i < num_stypes; i++)
-                    obj.SceneTypes.Add(Utils.ReadAndWriteUInt32(buffer, data, outputData, write));
+                    obj.SceneTypes.Add(Utils.readAndWriteUInt32(data, outputData, write));
 
                 return obj;
             }
@@ -606,7 +606,7 @@ namespace Melt
                 Utils.convertStringToByteArray(TerrainName, ref buffer, 0, TerrainName.Length);
                 int startIndex = (int)outputData.BaseStream.Position;
                 int endIndex = (int)outputData.BaseStream.Position + TerrainName.Length + 2;
-                int alignedIndex = Utils.Align4(endIndex - startIndex);
+                int alignedIndex = Utils.align4(endIndex - startIndex);
                 int newIndex = startIndex + alignedIndex;
                 int bytesNeededToReachAlignment = newIndex - endIndex;
                 outputData.BaseStream.Write(buffer, 0, TerrainName.Length + bytesNeededToReachAlignment);
@@ -663,56 +663,56 @@ namespace Melt
             public List<TerrainType> TerrainTypes { get; set; }
             public LandSurf LandSurfaces { get; set; }
 
-            public static TerrainDesc Read(byte[] buffer, StreamReader data, StreamWriter outputData, bool isToD, bool write)
+            public static TerrainDesc Read(StreamReader data, StreamWriter outputData, bool isToD, bool write)
             {
                 TerrainDesc obj = new TerrainDesc();
 
-                uint num_terrain_types = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                uint num_terrain_types = Utils.readAndWriteUInt32(data, outputData, write);
 
                 obj.TerrainTypes = new List<TerrainType>();
 
                 for (uint i = 0; i < num_terrain_types; i++)
-                    obj.TerrainTypes.Add(TerrainType.Read(buffer, data, outputData, isToD, write));
+                    obj.TerrainTypes.Add(TerrainType.Read(data, outputData, isToD, write));
 
-                //TerrainType BarrenRock = TerrainType.Read(buffer, data, outputData, false);
-                //TerrainType Grassland = TerrainType.Read(buffer, data, outputData, false);
-                //TerrainType Ice = TerrainType.Read(buffer, data, outputData, false);
-                //TerrainType LushGrass = TerrainType.Read(buffer, data, outputData, false);
+                //TerrainType BarrenRock = TerrainType.Read(data, outputData, false);
+                //TerrainType Grassland = TerrainType.Read(data, outputData, false);
+                //TerrainType Ice = TerrainType.Read(data, outputData, false);
+                //TerrainType LushGrass = TerrainType.Read(data, outputData, false);
 
-                //TerrainType MarshSparseSwamp = TerrainType.Read(buffer, data, outputData, false);
-                //TerrainType MudRichDirt = TerrainType.Read(buffer, data, outputData, false);
-                //TerrainType ObsidianPlain = TerrainType.Read(buffer, data, outputData, false);
-                //TerrainType PackedDirt = TerrainType.Read(buffer, data, outputData, false);
+                //TerrainType MarshSparseSwamp = TerrainType.Read(data, outputData, false);
+                //TerrainType MudRichDirt = TerrainType.Read(data, outputData, false);
+                //TerrainType ObsidianPlain = TerrainType.Read(data, outputData, false);
+                //TerrainType PackedDirt = TerrainType.Read(data, outputData, false);
 
-                //TerrainType PatchyDirt = TerrainType.Read(buffer, data, outputData, false);
-                //TerrainType PatchyGrassland = TerrainType.Read(buffer, data, outputData, false);
-                //TerrainType SandYellow = TerrainType.Read(buffer, data, outputData, false);
-                //TerrainType SandGrey = TerrainType.Read(buffer, data, outputData, false);
+                //TerrainType PatchyDirt = TerrainType.Read(data, outputData, false);
+                //TerrainType PatchyGrassland = TerrainType.Read(data, outputData, false);
+                //TerrainType SandYellow = TerrainType.Read(data, outputData, false);
+                //TerrainType SandGrey = TerrainType.Read(data, outputData, false);
 
-                //TerrainType SandRockStrewn = TerrainType.Read(buffer, data, outputData, false);
-                //TerrainType SedimentaryRock = TerrainType.Read(buffer, data, outputData, false);
-                //TerrainType SemiBarrenRock = TerrainType.Read(buffer, data, outputData, false);
-                //TerrainType Snow = TerrainType.Read(buffer, data, outputData, false);
+                //TerrainType SandRockStrewn = TerrainType.Read(data, outputData, false);
+                //TerrainType SedimentaryRock = TerrainType.Read(data, outputData, false);
+                //TerrainType SemiBarrenRock = TerrainType.Read(data, outputData, false);
+                //TerrainType Snow = TerrainType.Read(data, outputData, false);
 
-                //TerrainType WaterRunning = TerrainType.Read(buffer, data, outputData, false);
-                //TerrainType WaterStandingFresh = TerrainType.Read(buffer, data, outputData, false);
-                //TerrainType WaterShallowSea = TerrainType.Read(buffer, data, outputData, false);
-                //TerrainType WaterShallowStillSea = TerrainType.Read(buffer, data, outputData, false);
+                //TerrainType WaterRunning = TerrainType.Read(data, outputData, false);
+                //TerrainType WaterStandingFresh = TerrainType.Read(data, outputData, false);
+                //TerrainType WaterShallowSea = TerrainType.Read(data, outputData, false);
+                //TerrainType WaterShallowStillSea = TerrainType.Read(data, outputData, false);
 
-                //TerrainType WaterDeepSea = TerrainType.Read(buffer, data, outputData, false);
-                //TerrainType Forestfloor = TerrainType.Read(buffer, data, outputData, false);
-                //TerrainType FauxWaterRunning = TerrainType.Read(buffer, data, outputData, false);
-                //TerrainType SeaSlime = TerrainType.Read(buffer, data, outputData, false);
+                //TerrainType WaterDeepSea = TerrainType.Read(data, outputData, false);
+                //TerrainType Forestfloor = TerrainType.Read(data, outputData, false);
+                //TerrainType FauxWaterRunning = TerrainType.Read(data, outputData, false);
+                //TerrainType SeaSlime = TerrainType.Read(data, outputData, false);
 
-                //TerrainType Argila = TerrainType.Read(buffer, data, outputData, false);
-                //TerrainType Volcano1 = TerrainType.Read(buffer, data, outputData, false);
-                //TerrainType Volcano2 = TerrainType.Read(buffer, data, outputData, false);
-                //TerrainType BlueIce = TerrainType.Read(buffer, data, outputData, false);
+                //TerrainType Argila = TerrainType.Read(data, outputData, false);
+                //TerrainType Volcano1 = TerrainType.Read(data, outputData, false);
+                //TerrainType Volcano2 = TerrainType.Read(data, outputData, false);
+                //TerrainType BlueIce = TerrainType.Read(data, outputData, false);
 
-                //TerrainType Moss = TerrainType.Read(buffer, data, outputData, false);
-                //TerrainType DarkMoss = TerrainType.Read(buffer, data, outputData, false);
-                //TerrainType olthoi = TerrainType.Read(buffer, data, outputData, false);
-                //TerrainType DesolateLands = TerrainType.Read(buffer, data, outputData, false);
+                //TerrainType Moss = TerrainType.Read(data, outputData, false);
+                //TerrainType DarkMoss = TerrainType.Read(data, outputData, false);
+                //TerrainType olthoi = TerrainType.Read(data, outputData, false);
+                //TerrainType DesolateLands = TerrainType.Read(data, outputData, false);
 
                 ////BarrenRock = Snow;
                 ////Grassland = Snow;
@@ -761,7 +761,7 @@ namespace Melt
                 //olthoi.Write(outputData);
                 //DesolateLands.Write(outputData);
 
-                obj.LandSurfaces = LandSurf.Read(buffer, data, outputData, isToD, write);
+                obj.LandSurfaces = LandSurf.Read(data, outputData, isToD, write);
 
                 return obj;
             }
@@ -803,17 +803,17 @@ namespace Melt
         {
             public List<uint> Scenes { get; set; }
 
-            public static SceneType Read(byte[] buffer, StreamReader data, StreamWriter outputData, bool isToD, bool write)
+            public static SceneType Read(StreamReader data, StreamWriter outputData, bool isToD, bool write)
             {
                 SceneType obj = new SceneType();
 
                 // Not sure what this is...
-                uint unknown = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                uint unknown = Utils.readAndWriteUInt32(data, outputData, write);
 
-                uint num_scenes = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                uint num_scenes = Utils.readAndWriteUInt32(data, outputData, write);
                 obj.Scenes = new List<uint>();
                 for (uint i = 0; i < num_scenes; i++)
-                    obj.Scenes.Add(Utils.ReadAndWriteUInt32(buffer, data, outputData, write));
+                    obj.Scenes.Add(Utils.readAndWriteUInt32(data, outputData, write));
 
                 return obj;
             }
@@ -851,14 +851,14 @@ namespace Melt
         {
             public List<SceneType> SceneTypes { get; set; }
 
-            public static SceneDesc Read(byte[] buffer, StreamReader data, StreamWriter outputData, bool isToD, bool write)
+            public static SceneDesc Read(StreamReader data, StreamWriter outputData, bool isToD, bool write)
             {
                 SceneDesc obj = new SceneDesc();
 
-                uint num_scene_types = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                uint num_scene_types = Utils.readAndWriteUInt32(data, outputData, write);
                 obj.SceneTypes = new List<SceneType>();
                 for (uint i = 0; i < num_scene_types; i++)
-                    obj.SceneTypes.Add(SceneType.Read(buffer, data, outputData, isToD, write));
+                    obj.SceneTypes.Add(SceneType.Read(data, outputData, isToD, write));
 
                 return obj;
             }
@@ -900,14 +900,14 @@ namespace Melt
             public float MinRate { get; set; }
             public float MaxRate { get; set; }
 
-            public static AmbientSoundDesc Read(byte[] buffer, StreamReader data, StreamWriter outputData, bool isToD, bool write)
+            public static AmbientSoundDesc Read(StreamReader data, StreamWriter outputData, bool isToD, bool write)
             {
                 AmbientSoundDesc obj = new AmbientSoundDesc();
-                obj.SType = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.Volume = Utils.ReadAndWriteSingle(buffer, data, outputData, write);
-                obj.BaseChance = Utils.ReadAndWriteSingle(buffer, data, outputData, write);
-                obj.MinRate = Utils.ReadAndWriteSingle(buffer, data, outputData, write);
-                obj.MaxRate = Utils.ReadAndWriteSingle(buffer, data, outputData, write);
+                obj.SType = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.Volume = Utils.readAndWriteSingle(data, outputData, write);
+                obj.BaseChance = Utils.readAndWriteSingle(data, outputData, write);
+                obj.MinRate = Utils.readAndWriteSingle(data, outputData, write);
+                obj.MaxRate = Utils.readAndWriteSingle(data, outputData, write);
                 return obj;
             }
 
@@ -957,15 +957,15 @@ namespace Melt
             public uint STBId { get; set; }
             public List<AmbientSoundDesc> AmbientSounds { get; set; }
 
-            public static AmbientSTBDesc Read(byte[] buffer, StreamReader data, StreamWriter outputData, bool isToD, bool write)
+            public static AmbientSTBDesc Read(StreamReader data, StreamWriter outputData, bool isToD, bool write)
             {
                 AmbientSTBDesc obj = new AmbientSTBDesc();
-                obj.STBId = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                obj.STBId = Utils.readAndWriteUInt32(data, outputData, write);
 
-                uint num_ambient_sounds = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                uint num_ambient_sounds = Utils.readAndWriteUInt32(data, outputData, write);
                 obj.AmbientSounds = new List<AmbientSoundDesc>();
                 for (uint i = 0; i < num_ambient_sounds; i++)
-                    obj.AmbientSounds.Add(AmbientSoundDesc.Read(buffer, data, outputData, isToD, write));
+                    obj.AmbientSounds.Add(AmbientSoundDesc.Read(data, outputData, isToD, write));
 
                 return obj;
             }
@@ -1009,14 +1009,14 @@ namespace Melt
         {
             public List<AmbientSTBDesc> STBDesc { get; set; }
 
-            public static SoundDesc Read(byte[] buffer, StreamReader data, StreamWriter outputData, bool isToD, bool write)
+            public static SoundDesc Read(StreamReader data, StreamWriter outputData, bool isToD, bool write)
             {
                 SoundDesc obj = new SoundDesc();
 
-                uint num_stb_desc = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                uint num_stb_desc = Utils.readAndWriteUInt32(data, outputData, write);
                 obj.STBDesc = new List<AmbientSTBDesc>();
                 for (uint i = 0; i < num_stb_desc; i++)
-                    obj.STBDesc.Add(AmbientSTBDesc.Read(buffer, data, outputData, isToD, write));
+                    obj.STBDesc.Add(AmbientSTBDesc.Read(data, outputData, isToD, write));
 
                 return obj;
             }
@@ -1060,15 +1060,15 @@ namespace Melt
             public float Luminosity { get; set; }
             public float MaxBright { get; set; }
 
-            public static SkyObjectReplace Read(byte[] buffer, StreamReader data, StreamWriter outputData, bool isToD, bool write)
+            public static SkyObjectReplace Read(StreamReader data, StreamWriter outputData, bool isToD, bool write)
             {
                 SkyObjectReplace obj = new SkyObjectReplace();
-                obj.ObjectIndex = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.GFXObjId = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.Rotate = Utils.ReadAndWriteSingle(buffer, data, outputData, write);
-                obj.Transparent = Utils.ReadAndWriteSingle(buffer, data, outputData, write);
-                obj.Luminosity = Utils.ReadAndWriteSingle(buffer, data, outputData, write);
-                obj.MaxBright = Utils.ReadAndWriteSingle(buffer, data, outputData, write);
+                obj.ObjectIndex = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.GFXObjId = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.Rotate = Utils.readAndWriteSingle(data, outputData, write);
+                obj.Transparent = Utils.readAndWriteSingle(data, outputData, write);
+                obj.Luminosity = Utils.readAndWriteSingle(data, outputData, write);
+                obj.MaxBright = Utils.readAndWriteSingle(data, outputData, write);
                 return obj;
             }
 
@@ -1140,27 +1140,27 @@ namespace Melt
 
             public List<SkyObjectReplace> SkyObjReplace { get; set; }
 
-            public static SkyTimeOfDay Read(byte[] buffer, StreamReader data, StreamWriter outputData, bool isToD, bool write)
+            public static SkyTimeOfDay Read(StreamReader data, StreamWriter outputData, bool isToD, bool write)
             {
                 SkyTimeOfDay obj = new SkyTimeOfDay();
-                obj.Begin = Utils.ReadAndWriteSingle(buffer, data, outputData, write);
-                obj.DirBright = Utils.ReadAndWriteSingle(buffer, data, outputData, write);
-                obj.DirHeading = Utils.ReadAndWriteSingle(buffer, data, outputData, write);
-                obj.DirPitch = Utils.ReadAndWriteSingle(buffer, data, outputData, write);
-                obj.DirColor = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                obj.Begin = Utils.readAndWriteSingle(data, outputData, write);
+                obj.DirBright = Utils.readAndWriteSingle(data, outputData, write);
+                obj.DirHeading = Utils.readAndWriteSingle(data, outputData, write);
+                obj.DirPitch = Utils.readAndWriteSingle(data, outputData, write);
+                obj.DirColor = Utils.readAndWriteUInt32(data, outputData, write);
 
-                obj.AmbBright = Utils.ReadAndWriteSingle(buffer, data, outputData, write);
-                obj.AmbColor = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                obj.AmbBright = Utils.readAndWriteSingle(data, outputData, write);
+                obj.AmbColor = Utils.readAndWriteUInt32(data, outputData, write);
 
-                obj.MinWorldFog = Utils.ReadAndWriteSingle(buffer, data, outputData, write);
-                obj.MaxWorldFog = Utils.ReadAndWriteSingle(buffer, data, outputData, write);
-                obj.WorldFogColor = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.WorldFog = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                obj.MinWorldFog = Utils.readAndWriteSingle(data, outputData, write);
+                obj.MaxWorldFog = Utils.readAndWriteSingle(data, outputData, write);
+                obj.WorldFogColor = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.WorldFog = Utils.readAndWriteUInt32(data, outputData, write);
 
-                uint num_sky_obj_replace = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                uint num_sky_obj_replace = Utils.readAndWriteUInt32(data, outputData, write);
                 obj.SkyObjReplace = new List<SkyObjectReplace>();
                 for (uint i = 0; i < num_sky_obj_replace; i++)
-                    obj.SkyObjReplace.Add(SkyObjectReplace.Read(buffer, data, outputData, isToD, write));
+                    obj.SkyObjReplace.Add(SkyObjectReplace.Read(data, outputData, isToD, write));
 
                 return obj;
             }
@@ -1262,20 +1262,20 @@ namespace Melt
             public uint DefaultPESObjectId { get; set; }
             public uint Properties { get; set; }
 
-            public static SkyObject Read(byte[] buffer, StreamReader data, StreamWriter outputData, bool isToD, bool write)
+            public static SkyObject Read(StreamReader data, StreamWriter outputData, bool isToD, bool write)
             {
                 SkyObject obj = new SkyObject();
-                obj.BeginTime = Utils.ReadAndWriteSingle(buffer, data, outputData, write);
-                obj.EndTime = Utils.ReadAndWriteSingle(buffer, data, outputData, write);
-                obj.BeginAngle = Utils.ReadAndWriteSingle(buffer, data, outputData, write);
-                obj.EndAngle = Utils.ReadAndWriteSingle(buffer, data, outputData, write);
-                obj.TexVelocityX = Utils.ReadAndWriteSingle(buffer, data, outputData, write);
-                obj.TexVelocityY = Utils.ReadAndWriteSingle(buffer, data, outputData, write);
+                obj.BeginTime = Utils.readAndWriteSingle(data, outputData, write);
+                obj.EndTime = Utils.readAndWriteSingle(data, outputData, write);
+                obj.BeginAngle = Utils.readAndWriteSingle(data, outputData, write);
+                obj.EndAngle = Utils.readAndWriteSingle(data, outputData, write);
+                obj.TexVelocityX = Utils.readAndWriteSingle(data, outputData, write);
+                obj.TexVelocityY = Utils.readAndWriteSingle(data, outputData, write);
                 obj.TexVelocityZ = 0;
-                obj.DefaultGFXObjectId = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.DefaultPESObjectId = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                obj.DefaultGFXObjectId = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.DefaultPESObjectId = Utils.readAndWriteUInt32(data, outputData, write);
                 if (isToD)
-                    obj.Properties = obj.Properties = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                    obj.Properties = obj.Properties = Utils.readAndWriteUInt32(data, outputData, write);
                 else
                     obj.Properties = 0;
                 return obj;
@@ -1354,21 +1354,21 @@ namespace Melt
             public List<SkyObject> SkyObjects { get; set; }
             public List<SkyTimeOfDay> SkyTime { get; set; }
 
-            public static DayGroup Read(byte[] buffer, StreamReader data, StreamWriter outputData, bool isToD, bool write)
+            public static DayGroup Read(StreamReader data, StreamWriter outputData, bool isToD, bool write)
             {
                 DayGroup obj = new DayGroup();
-                obj.ChanceOfOccur = Utils.ReadAndWriteSingle(buffer, data, outputData, write);
-                obj.DayName = Utils.ReadAndWriteString(buffer, data, outputData, write);
+                obj.ChanceOfOccur = Utils.readAndWriteSingle(data, outputData, write);
+                obj.DayName = Utils.readAndWriteString(data, outputData, write);
 
-                uint num_sky_objects = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                uint num_sky_objects = Utils.readAndWriteUInt32(data, outputData, write);
                 obj.SkyObjects = new List<SkyObject>();
                 for (uint i = 0; i < num_sky_objects; i++)
-                    obj.SkyObjects.Add(SkyObject.Read(buffer, data, outputData, isToD, write));
+                    obj.SkyObjects.Add(SkyObject.Read(data, outputData, isToD, write));
 
-                uint num_sky_times = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                uint num_sky_times = Utils.readAndWriteUInt32(data, outputData, write);
                 obj.SkyTime = new List<SkyTimeOfDay>();
                 for (uint i = 0; i < num_sky_times; i++)
-                    obj.SkyTime.Add(SkyTimeOfDay.Read(buffer, data, outputData, isToD, write));
+                    obj.SkyTime.Add(SkyTimeOfDay.Read(data, outputData, isToD, write));
 
                 return obj;
             }
@@ -1434,16 +1434,16 @@ namespace Melt
             public UInt64 LightTickSize { get; set; }
             public List<DayGroup> DayGroups { get; set; }
 
-            public static SkyDesc Read(byte[] buffer, StreamReader data, StreamWriter outputData, bool isToD, bool write)
+            public static SkyDesc Read(StreamReader data, StreamWriter outputData, bool isToD, bool write)
             {
                 SkyDesc obj = new SkyDesc();
-                obj.TickSize = Utils.ReadAndWriteUInt64(buffer, data, outputData, write);
-                obj.LightTickSize = Utils.ReadAndWriteUInt64(buffer, data, outputData, write);
+                obj.TickSize = Utils.readAndWriteUInt64(data, outputData, write);
+                obj.LightTickSize = Utils.readAndWriteUInt64(data, outputData, write);
 
-                uint numDayGroups = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                uint numDayGroups = Utils.readAndWriteUInt32(data, outputData, write);
                 obj.DayGroups = new List<DayGroup>();
                 for (uint i = 0; i < numDayGroups; i++)
-                    obj.DayGroups.Add(DayGroup.Read(buffer, data, outputData, isToD, write));
+                    obj.DayGroups.Add(DayGroup.Read(data, outputData, isToD, write));
 
                 return obj;
             }
@@ -1495,13 +1495,13 @@ namespace Melt
         {
             public List<float> LandHeightTable { get; set; }
 
-            public static LandDefs Read(byte[] buffer, StreamReader data, StreamWriter outputData, bool isToD, bool write)
+            public static LandDefs Read(StreamReader data, StreamWriter outputData, bool isToD, bool write)
             {
                 LandDefs obj = new LandDefs();
                 obj.LandHeightTable = new List<float>();
                 for (int i = 0; i < 256; i++)
                 {
-                    obj.LandHeightTable.Add(Utils.ReadAndWriteSingle(buffer, data, outputData, write));
+                    obj.LandHeightTable.Add(Utils.readAndWriteSingle(data, outputData, write));
                 }
                 return obj;
             }
@@ -1542,11 +1542,11 @@ namespace Melt
             public uint StartDate { get; set; }
             public string Name { get; set; }
 
-            public static Season Read(byte[] buffer, StreamReader data, StreamWriter outputData, bool isToD, bool write)
+            public static Season Read(StreamReader data, StreamWriter outputData, bool isToD, bool write)
             {
                 Season obj = new Season();
-                obj.StartDate = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.Name = Utils.ReadAndWriteString(buffer, data, outputData, write);
+                obj.StartDate = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.Name = Utils.readAndWriteString(data, outputData, write);
                 return obj;
             }
 
@@ -1582,12 +1582,12 @@ namespace Melt
             public uint IsNight { get; set; }
             public string Name { get; set; }
 
-            public static TimeOfDay Read(byte[] buffer, StreamReader data, StreamWriter outputData, bool isToD, bool write)
+            public static TimeOfDay Read(StreamReader data, StreamWriter outputData, bool isToD, bool write)
             {
                 TimeOfDay obj = new TimeOfDay();
-                obj.Start = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.IsNight = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.Name = Utils.ReadAndWriteString(buffer, data, outputData, write);
+                obj.Start = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.IsNight = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.Name = Utils.readAndWriteString(data, outputData, write);
                 return obj;
             }
 
@@ -1633,34 +1633,34 @@ namespace Melt
             public List<string> DaysOfTheWeek { get; set; }
             public List<Season> Seasons { get; set; }
 
-            public static GameTime Read(byte[] buffer, StreamReader data, StreamWriter outputData, bool isToD, bool write)
+            public static GameTime Read(StreamReader data, StreamWriter outputData, bool isToD, bool write)
             {
                 GameTime obj = new GameTime();
-                obj.ZeroTimeOfYear = Utils.ReadAndWriteUInt64(buffer, data, outputData, write);
-                obj.ZeroYear = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.DayLength = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.DaysPerYear = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
-                obj.YearSpec = Utils.ReadAndWriteString(buffer, data, outputData, write);
+                obj.ZeroTimeOfYear = Utils.readAndWriteUInt64(data, outputData, write);
+                obj.ZeroYear = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.DayLength = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.DaysPerYear = Utils.readAndWriteUInt32(data, outputData, write);
+                obj.YearSpec = Utils.readAndWriteString(data, outputData, write);
 
-                uint numTimesOfDay = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                uint numTimesOfDay = Utils.readAndWriteUInt32(data, outputData, write);
                 obj.TimesOfDay = new List<TimeOfDay>();
                 for (uint i = 0; i < numTimesOfDay; i++)
                 {
-                    obj.TimesOfDay.Add(TimeOfDay.Read(buffer, data, outputData, isToD, write));
+                    obj.TimesOfDay.Add(TimeOfDay.Read(data, outputData, isToD, write));
                 }
 
-                uint numDaysOfTheWeek = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                uint numDaysOfTheWeek = Utils.readAndWriteUInt32(data, outputData, write);
                 obj.DaysOfTheWeek = new List<string>();
                 for (uint i = 0; i < numDaysOfTheWeek; i++)
                 {
-                    obj.DaysOfTheWeek.Add(Utils.ReadAndWriteString(buffer, data, outputData, write));
+                    obj.DaysOfTheWeek.Add(Utils.readAndWriteString(data, outputData, write));
                 }
 
-                uint numSeasons = Utils.ReadAndWriteUInt32(buffer, data, outputData, write);
+                uint numSeasons = Utils.readAndWriteUInt32(data, outputData, write);
                 obj.Seasons = new List<Season>();
                 for (uint i = 0; i < numSeasons; i++)
                 {
-                    obj.Seasons.Add(Season.Read(buffer, data, outputData, isToD, write));
+                    obj.Seasons.Add(Season.Read(data, outputData, isToD, write));
                 }
 
                 return obj;
@@ -1824,87 +1824,87 @@ namespace Melt
             TerrainDesc file2terrainInfo = null;
             RegionMisc file2regionMisc = null;
 
-            fileHeader = Utils.ReadAndWriteUInt32(buffer, inputFile, outputFile, false);
+            fileHeader = Utils.readAndWriteUInt32(inputFile, outputFile, false);
             if (fileHeader != 0x13000000 && fileHeader != 0x130F0000)
             {
                 Console.WriteLine("Invalid header, aborting.");
                 return;
             }
 
-            loaded = Utils.ReadAndWriteUInt32(buffer, inputFile, outputFile, false);
-            timeStamp = Utils.ReadAndWriteUInt32(buffer, inputFile, outputFile, false);
-            regionName = Utils.ReadAndWriteString(buffer, inputFile, outputFile, false);
-            partsMask = Utils.ReadAndWriteUInt32(buffer, inputFile, outputFile, false);
+            loaded = Utils.readAndWriteUInt32(inputFile, outputFile, false);
+            timeStamp = Utils.readAndWriteUInt32(inputFile, outputFile, false);
+            regionName = Utils.readAndWriteString(inputFile, outputFile, false);
+            partsMask = Utils.readAndWriteUInt32(inputFile, outputFile, false);
 
-            unknown1 = Utils.ReadAndWriteUInt32(buffer, inputFile, outputFile, false);
-            unknown2 = Utils.ReadAndWriteUInt32(buffer, inputFile, outputFile, false);
-            unknown3 = Utils.ReadAndWriteUInt32(buffer, inputFile, outputFile, false);
-            unknown4 = Utils.ReadAndWriteUInt32(buffer, inputFile, outputFile, false);
-            unknown5 = Utils.ReadAndWriteUInt32(buffer, inputFile, outputFile, false);
-            unknown6 = Utils.ReadAndWriteUInt32(buffer, inputFile, outputFile, false);
-            unknown7 = Utils.ReadAndWriteUInt32(buffer, inputFile, outputFile, false);
+            unknown1 = Utils.readAndWriteUInt32(inputFile, outputFile, false);
+            unknown2 = Utils.readAndWriteUInt32(inputFile, outputFile, false);
+            unknown3 = Utils.readAndWriteUInt32(inputFile, outputFile, false);
+            unknown4 = Utils.readAndWriteUInt32(inputFile, outputFile, false);
+            unknown5 = Utils.readAndWriteUInt32(inputFile, outputFile, false);
+            unknown6 = Utils.readAndWriteUInt32(inputFile, outputFile, false);
+            unknown7 = Utils.readAndWriteUInt32(inputFile, outputFile, false);
 
-            landDef = LandDefs.Read(buffer, inputFile, outputFile, isToD, false);
-            gameTime = GameTime.Read(buffer, inputFile, outputFile, isToD, false);
+            landDef = LandDefs.Read(inputFile, outputFile, isToD, false);
+            gameTime = GameTime.Read(inputFile, outputFile, isToD, false);
 
-            next = Utils.ReadAndWriteUInt32(buffer, inputFile, outputFile, false);
+            next = Utils.readAndWriteUInt32(inputFile, outputFile, false);
 
             if ((next & 0x10) > 0)
-                skyInfo = SkyDesc.Read(buffer, inputFile, outputFile, isToD, false);
+                skyInfo = SkyDesc.Read(inputFile, outputFile, isToD, false);
 
             if ((next & 0x01) > 0)
-                soundInfo = SoundDesc.Read(buffer, inputFile, outputFile, isToD, false);
+                soundInfo = SoundDesc.Read(inputFile, outputFile, isToD, false);
 
             if ((next & 0x02) > 0)
-                sceneInfo = SceneDesc.Read(buffer, inputFile, outputFile, isToD, false);
+                sceneInfo = SceneDesc.Read(inputFile, outputFile, isToD, false);
 
-            terrainInfo = TerrainDesc.Read(buffer, inputFile, outputFile, isToD, false);
+            terrainInfo = TerrainDesc.Read(inputFile, outputFile, isToD, false);
 
             if ((next & 0x0200) > 0)
-                regionMisc = RegionMisc.Read(buffer, inputFile, outputFile, isToD, false);
+                regionMisc = RegionMisc.Read(inputFile, outputFile, isToD, false);
 
 
 
 
 
-            file2fileHeader = Utils.ReadAndWriteUInt32(buffer, inputFile2, outputFile, false);
+            file2fileHeader = Utils.readAndWriteUInt32(inputFile2, outputFile, false);
             if (file2fileHeader != 0x13000000 && file2fileHeader != 0x130F0000)
             {
                 Console.WriteLine("Invalid header, aborting.");
                 return;
             }
 
-            file2loaded = Utils.ReadAndWriteUInt32(buffer, inputFile2, outputFile, false);
-            file2timeStamp = Utils.ReadAndWriteUInt32(buffer, inputFile2, outputFile, false);
-            file2regionName = Utils.ReadAndWriteString(buffer, inputFile2, outputFile, false);
-            file2partsMask = Utils.ReadAndWriteUInt32(buffer, inputFile2, outputFile, false);
+            file2loaded = Utils.readAndWriteUInt32(inputFile2, outputFile, false);
+            file2timeStamp = Utils.readAndWriteUInt32(inputFile2, outputFile, false);
+            file2regionName = Utils.readAndWriteString(inputFile2, outputFile, false);
+            file2partsMask = Utils.readAndWriteUInt32(inputFile2, outputFile, false);
 
-            file2unknown1 = Utils.ReadAndWriteUInt32(buffer, inputFile2, outputFile, false);
-            file2unknown2 = Utils.ReadAndWriteUInt32(buffer, inputFile2, outputFile, false);
-            file2unknown3 = Utils.ReadAndWriteUInt32(buffer, inputFile2, outputFile, false);
-            file2unknown4 = Utils.ReadAndWriteUInt32(buffer, inputFile2, outputFile, false);
-            file2unknown5 = Utils.ReadAndWriteUInt32(buffer, inputFile2, outputFile, false);
-            file2unknown6 = Utils.ReadAndWriteUInt32(buffer, inputFile2, outputFile, false);
-            file2unknown7 = Utils.ReadAndWriteUInt32(buffer, inputFile2, outputFile, false);
+            file2unknown1 = Utils.readAndWriteUInt32(inputFile2, outputFile, false);
+            file2unknown2 = Utils.readAndWriteUInt32(inputFile2, outputFile, false);
+            file2unknown3 = Utils.readAndWriteUInt32(inputFile2, outputFile, false);
+            file2unknown4 = Utils.readAndWriteUInt32(inputFile2, outputFile, false);
+            file2unknown5 = Utils.readAndWriteUInt32(inputFile2, outputFile, false);
+            file2unknown6 = Utils.readAndWriteUInt32(inputFile2, outputFile, false);
+            file2unknown7 = Utils.readAndWriteUInt32(inputFile2, outputFile, false);
 
-            file2landDef = LandDefs.Read(buffer, inputFile2, outputFile, isToD2, false);
-            file2gameTime = GameTime.Read(buffer, inputFile2, outputFile, isToD2, false);
+            file2landDef = LandDefs.Read(inputFile2, outputFile, isToD2, false);
+            file2gameTime = GameTime.Read(inputFile2, outputFile, isToD2, false);
 
-            file2next = Utils.ReadAndWriteUInt32(buffer, inputFile2, outputFile, false);
+            file2next = Utils.readAndWriteUInt32(inputFile2, outputFile, false);
 
             if ((file2next & 0x10) > 0)
-                file2skyInfo = SkyDesc.Read(buffer, inputFile2, outputFile, isToD2, false);
+                file2skyInfo = SkyDesc.Read(inputFile2, outputFile, isToD2, false);
 
             if ((file2next & 0x01) > 0)
-                file2soundInfo = SoundDesc.Read(buffer, inputFile2, outputFile, isToD2, false);
+                file2soundInfo = SoundDesc.Read(inputFile2, outputFile, isToD2, false);
 
             if ((file2next & 0x02) > 0)
-                file2sceneInfo = SceneDesc.Read(buffer, inputFile2, outputFile, isToD2, false);
+                file2sceneInfo = SceneDesc.Read(inputFile2, outputFile, isToD2, false);
 
-            file2terrainInfo = TerrainDesc.Read(buffer, inputFile2, outputFile, isToD2, false);
+            file2terrainInfo = TerrainDesc.Read(inputFile2, outputFile, isToD2, false);
 
             if ((file2next & 0x0200) > 0)
-                file2regionMisc = RegionMisc.Read(buffer, inputFile2, outputFile, isToD2, false);
+                file2regionMisc = RegionMisc.Read(inputFile2, outputFile, isToD2, false);
 
             inputFile.Close();
             inputFile2.Close();

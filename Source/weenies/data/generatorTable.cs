@@ -20,21 +20,21 @@ namespace Melt
         public sFrame frame;
         public int objcell_id;
 
-        public sGeneratorTableEntry(byte[] buffer, StreamReader inputFile)
+        public sGeneratorTableEntry(StreamReader inputFile)
         {
-            probability = Utils.ReadSingle(buffer, inputFile);
-            type = Utils.ReadInt32(buffer, inputFile);
-            delay = Utils.ReadDouble(buffer, inputFile);
-            initCreate = Utils.ReadInt32(buffer, inputFile);
-            maxNum = Utils.ReadInt32(buffer, inputFile);
-            whenCreate = (eRegenerationType)Utils.ReadInt32(buffer, inputFile);
-            whereCreate = (eRegenLocationType)Utils.ReadInt32(buffer, inputFile);
-            stackSize = Utils.ReadInt32(buffer, inputFile);
-            ptid = Utils.ReadInt32(buffer, inputFile);
-            shade = Utils.ReadInt32(buffer, inputFile);
-            objcell_id = Utils.ReadInt32(buffer, inputFile);
-            frame = new sFrame(buffer, inputFile);
-            slot = Utils.ReadInt32(buffer, inputFile);
+            probability = Utils.readSingle(inputFile);
+            type = Utils.readInt32(inputFile);
+            delay = Utils.readDouble(inputFile);
+            initCreate = Utils.readInt32(inputFile);
+            maxNum = Utils.readInt32(inputFile);
+            whenCreate = (eRegenerationType)Utils.readInt32(inputFile);
+            whereCreate = (eRegenLocationType)Utils.readInt32(inputFile);
+            stackSize = Utils.readInt32(inputFile);
+            ptid = Utils.readInt32(inputFile);
+            shade = Utils.readInt32(inputFile);
+            objcell_id = Utils.readInt32(inputFile);
+            frame = new sFrame(inputFile);
+            slot = Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -96,14 +96,14 @@ namespace Melt
     {
         public List<sGeneratorTableEntry> entries;
 
-        public sGeneratorTable(byte[] buffer, StreamReader inputFile)
+        public sGeneratorTable(StreamReader inputFile)
         {
             entries = new List<sGeneratorTableEntry>();
 
-            int count = Utils.ReadInt32(buffer, inputFile);
+            int count = Utils.readInt32(inputFile);
             for (int i = 0; i < count; i++)
             {
-                entries.Add(new sGeneratorTableEntry(buffer, inputFile));
+                entries.Add(new sGeneratorTableEntry(inputFile));
             }
         }
 

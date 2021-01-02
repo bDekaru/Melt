@@ -75,20 +75,20 @@ namespace Melt
             this.value = value;
         }
 
-        public sStringStat(byte[] buffer, StreamReader inputFile)
+        public sStringStat(StreamReader inputFile)
         {
-            key = (eStringStat)Utils.ReadInt32(buffer, inputFile);
+            key = (eStringStat)Utils.readInt32(inputFile);
 
             if (!Enum.IsDefined(typeof(eStringStat), key))
                 Console.WriteLine("Unknown stringStat: {0}", key);
 
-            value = Utils.ReadStringAndReplaceSpecialCharacters(buffer, inputFile);
+            value = Utils.readStringAndReplaceSpecialCharacters(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
         {
             Utils.writeInt32((int)key, outputStream);
-            Utils.writeString(Utils.RestoreStringSpecialCharacters(value), outputStream);
+            Utils.writeString(Utils.restoreStringSpecialCharacters(value), outputStream);
         }
 
         public void writeJson(StreamWriter outputStream, string tab, bool isFirst)

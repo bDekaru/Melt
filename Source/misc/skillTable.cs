@@ -16,14 +16,14 @@ namespace Melt
             public uint Attr1;
             public uint Attr2;
 
-            public SkillFormula(byte[] buffer, StreamReader inputFile)
+            public SkillFormula(StreamReader inputFile)
             {
-                W = Utils.ReadUInt32(buffer, inputFile);
-                X = Utils.ReadUInt32(buffer, inputFile);
-                Y = Utils.ReadUInt32(buffer, inputFile);
-                Z = Utils.ReadUInt32(buffer, inputFile);
-                Attr1 = Utils.ReadUInt32(buffer, inputFile);
-                Attr2 = Utils.ReadUInt32(buffer, inputFile);
+                W = Utils.readUInt32(inputFile);
+                X = Utils.readUInt32(inputFile);
+                Y = Utils.readUInt32(inputFile);
+                Z = Utils.readUInt32(inputFile);
+                Attr1 = Utils.readUInt32(inputFile);
+                Attr2 = Utils.readUInt32(inputFile);
             }
 
             public void writeRaw(StreamWriter outputStream)
@@ -52,20 +52,20 @@ namespace Melt
             public Double LowerBound;
             public Double LearnMod;
 
-            public Skill(byte[] buffer, StreamReader inputFile)
+            public Skill(StreamReader inputFile)
             {
-                Description = Utils.ReadString(buffer, inputFile);
-                Name = Utils.ReadString(buffer, inputFile);
-                IconId = Utils.ReadUInt32(buffer, inputFile);
-                TrainedCost = Utils.ReadUInt32(buffer, inputFile);
-                SpecializedCost = Utils.ReadUInt32(buffer, inputFile);
-                Category = Utils.ReadInt32(buffer, inputFile);
-                CharGenUse = Utils.ReadInt32(buffer, inputFile);
-                MinLevel = Utils.ReadInt32(buffer, inputFile);
-                Formula = new SkillFormula(buffer, inputFile);
-                UpperBound = Utils.ReadDouble(buffer, inputFile);
-                LowerBound = Utils.ReadDouble(buffer, inputFile);
-                LearnMod = Utils.ReadDouble(buffer, inputFile);
+                Description = Utils.readString(inputFile);
+                Name = Utils.readString(inputFile);
+                IconId = Utils.readUInt32(inputFile);
+                TrainedCost = Utils.readUInt32(inputFile);
+                SpecializedCost = Utils.readUInt32(inputFile);
+                Category = Utils.readInt32(inputFile);
+                CharGenUse = Utils.readInt32(inputFile);
+                MinLevel = Utils.readInt32(inputFile);
+                Formula = new SkillFormula(inputFile);
+                UpperBound = Utils.readDouble(inputFile);
+                LowerBound = Utils.readDouble(inputFile);
+                LearnMod = Utils.readDouble(inputFile);
             }
 
             public void writeRaw(StreamWriter outputStream)
@@ -95,9 +95,7 @@ namespace Melt
 
             StreamReader inputFile = new StreamReader(new FileStream(filename, FileMode.Open, FileAccess.Read));
 
-            byte[] buffer = new byte[1024];
-
-            FileId = Utils.ReadUInt32(buffer, inputFile);
+            FileId = Utils.readUInt32(inputFile);
 
             if (FileId != 0x0E000004)
             {
@@ -105,15 +103,15 @@ namespace Melt
                 return;
             }
 
-            ushort count = Utils.ReadUInt16(buffer, inputFile);
-            BucketSize = Utils.ReadUInt16(buffer, inputFile);
+            ushort count = Utils.readUInt16(inputFile);
+            BucketSize = Utils.readUInt16(inputFile);
 
             Skills = new Dictionary<uint, Skill>();
             uint key = 0;
             for (int i = 0; i < count; i++)
             {
-                key = Utils.ReadUInt32(buffer, inputFile);
-                Skills.Add(key, new Skill(buffer, inputFile));
+                key = Utils.readUInt32(inputFile);
+                Skills.Add(key, new Skill(inputFile));
             }
 
             inputFile.Close();

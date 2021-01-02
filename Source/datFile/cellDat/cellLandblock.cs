@@ -40,17 +40,21 @@ namespace Melt
         /// </summary>
         public List<byte> Height;
 
-        public cCellLandblock(byte[] buffer, StreamReader inputFile)
+        public cCellLandblock(cDatFileEntry file) : this(new StreamReader(file.fileContent))
         {
-            Id = Utils.ReadUInt32(buffer, inputFile);
+        }
 
-            HasObjects = (Utils.ReadUInt32(buffer, inputFile) == 1);
+        public cCellLandblock(StreamReader inputFile)
+        {
+            Id = Utils.readUInt32(inputFile);
+
+            HasObjects = (Utils.readUInt32(inputFile) == 1);
 
             Terrain = new List<ushort>();
             // Read in the terrain. 9x9 so 81 records.
             for (int i = 0; i < 81; i++)
             {
-                var terrain = Utils.ReadUInt16(buffer, inputFile);
+                var terrain = Utils.readUInt16(inputFile);
                 Terrain.Add(terrain);
             }
 
@@ -58,11 +62,11 @@ namespace Melt
             // Read in the height. 9x9 so 81 records
             for (int i = 0; i < 81; i++)
             {
-                var height = Utils.ReadByte(buffer, inputFile);
+                var height = Utils.readByte(inputFile);
                 Height.Add(height);
             }
 
-            Utils.Align(inputFile);
+            Utils.align(inputFile);
 
             if (inputFile.BaseStream.Position != inputFile.BaseStream.Length)
                 throw new Exception();
@@ -102,7 +106,7 @@ namespace Melt
                 Utils.writeByte(value, outputFile);
             }
 
-            Utils.Align(outputFile);
+            Utils.align(outputFile);
         }
 
         /// <summary>

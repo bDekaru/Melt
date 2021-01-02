@@ -34,16 +34,15 @@ namespace Melt
         public cDatFileBlock(StreamReader inputFile, int blockSize)
         {
             int blockSizeWithoutHeader = blockSize - 4;
-            byte[] buffer = new byte[blockSizeWithoutHeader];
 
             blockOffset = (uint)inputFile.BaseStream.Position;
-            nextBlockOffset = Utils.ReadUInt32(buffer, inputFile);
+            nextBlockOffset = Utils.readUInt32(inputFile);
             if ((nextBlockOffset & 0x80000000) > 0)
             {
                 isFree = true;
                 nextBlockOffset = (nextBlockOffset ^ 0x80000000);
             }
-            data = Utils.ReadBytes(buffer, inputFile, blockSizeWithoutHeader);
+            data = Utils.readBytes(inputFile, blockSizeWithoutHeader);
         }
 
         public void writeToDat(StreamWriter outputFile, int blockSize)

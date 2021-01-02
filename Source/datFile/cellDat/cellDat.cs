@@ -45,14 +45,11 @@ namespace Melt
             int landBlockCounter = 0;
             foreach (KeyValuePair<uint, cDatFileEntry> entry in datFile.fileCache)
             {
-                byte[] buffer = new byte[1024];
-                StreamReader reader = new StreamReader(entry.Value.fileContent);
-
                 if ((entry.Value.fileId & 0x0000FFFF) == 0x0000FFFF)
                 {
                     uint x = (uint)entry.Value.fileId >> 24;
                     uint y = (uint)(entry.Value.fileId & 0x00FF0000) >> 16;
-                    cCellLandblock newLandblock = new cCellLandblock(buffer, reader);
+                    cCellLandblock newLandblock = new cCellLandblock(entry.Value);
                     surfaceLandblocks[(int)x].Add((int)y, newLandblock);
                     landBlockCounter++;
                 }

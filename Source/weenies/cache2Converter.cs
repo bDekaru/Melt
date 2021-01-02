@@ -69,11 +69,9 @@ namespace Melt
 
             List<sWarSpellData> warSpells = new List<sWarSpellData>();
 
-            byte[] buffer = new byte[1024];
-
             int fileHeader;
 
-            fileHeader = Utils.ReadAndWriteInt32(buffer, inputFile, outputFile);
+            fileHeader = Utils.readAndWriteInt32(inputFile, outputFile);
             if (fileHeader != 0x10000E9F)
             {
                 Console.WriteLine("Invalid header, aborting.");
@@ -323,7 +321,7 @@ namespace Melt
                 spellCounter++;
                 sWarSpellData spell = new sWarSpellData();
 
-                spell.spellId = Utils.ReadAndWriteInt32(buffer, inputFile, outputFile);
+                spell.spellId = Utils.readAndWriteInt32(inputFile, outputFile);
 
                 //int replacementStartIndex = 3679;
                 //if (spell.spellId >= replacementStartIndex && spell.spellId < Math.Min(replacementStartIndex + warSpells.Count, 3745))
@@ -382,40 +380,40 @@ namespace Melt
                 //    writeSpellToFile = false;
                 //}
 
-                spell.spellName = Utils.ReadAndWriteString(buffer, inputFile, outputFile, writeSpellToFile);
-                spell.spellDescription = Utils.ReadAndWriteString(buffer, inputFile, outputFile, writeSpellToFile);
-                spell.schoolId = Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                spell.iconId = Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                spell.familyId = Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                spell.flags = Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                spell.manaCost = Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                spell.unknown1 = Utils.ReadAndWriteSingle(buffer, inputFile, outputFile, writeSpellToFile);
-                spell.unknown3 = Utils.ReadAndWriteSingle(buffer, inputFile, outputFile, writeSpellToFile);
-                spell.difficulty = Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                spell.economy = Utils.ReadAndWriteSingle(buffer, inputFile, outputFile, writeSpellToFile);
-                spell.generation = Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                spell.speed = Utils.ReadAndWriteSingle(buffer, inputFile, outputFile, writeSpellToFile);
-                spell.spellType = (eSpellType)Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                spell.unknown4 = Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
+                spell.spellName = Utils.readAndWriteString(inputFile, outputFile, writeSpellToFile);
+                spell.spellDescription = Utils.readAndWriteString(inputFile, outputFile, writeSpellToFile);
+                spell.schoolId = Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                spell.iconId = Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                spell.familyId = Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                spell.flags = Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                spell.manaCost = Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                spell.unknown1 = Utils.readAndWriteSingle(inputFile, outputFile, writeSpellToFile);
+                spell.unknown3 = Utils.readAndWriteSingle(inputFile, outputFile, writeSpellToFile);
+                spell.difficulty = Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                spell.economy = Utils.readAndWriteSingle(inputFile, outputFile, writeSpellToFile);
+                spell.generation = Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                spell.speed = Utils.readAndWriteSingle(inputFile, outputFile, writeSpellToFile);
+                spell.spellType = (eSpellType)Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                spell.unknown4 = Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
 
                 switch (spell.spellType)
                 {
                     case eSpellType.Enchantment_SpellType:
                     case eSpellType.Transfer_SpellType:
                     case eSpellType.PortalSending_SpellType:
-                        Double duration = Utils.ReadAndWriteDouble(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
+                        Double duration = Utils.readAndWriteDouble(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
 
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
                         break;
                     case eSpellType.Projectile_SpellType:
-                        spell.damageType = (eDamageType)Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        spell.minDamage = Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, false);
-                        spell.damageVariance = Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, false);
+                        spell.damageType = (eDamageType)Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        spell.minDamage = Utils.readAndWriteInt32(inputFile, outputFile, false);
+                        spell.damageVariance = Utils.readAndWriteInt32(inputFile, outputFile, false);
 
                         if (writeSpellToFile)
                         {
@@ -438,60 +436,60 @@ namespace Melt
                         spell.unknownProjectileValues = new int[29];
                         for (int i = 0; i < 29; i++)
                         {
-                            spell.unknownProjectileValues[i] = Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
+                            spell.unknownProjectileValues[i] = Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
                         }
                         break;
                     case eSpellType.Boost_SpellType:
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        int minAmount = Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        int maxAmount = Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        int minAmount = Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        int maxAmount = Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
                         break;
                     case eSpellType.PortalLink_SpellType:
                     case eSpellType.PortalRecall_SpellType:
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
                         break;
                     case eSpellType.PortalSummon_SpellType:
-                        duration = Utils.ReadAndWriteDouble(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
+                        duration = Utils.readAndWriteDouble(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
                         break;
                     case eSpellType.Dispel_SpellType:
                     case eSpellType.FellowDispel_SpellType:
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
                         break;
                     case eSpellType.LifeProjectile_SpellType:
-                        eDamageType damageType = (eDamageType)Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
+                        eDamageType damageType = (eDamageType)Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
                         for (int i = 0; i < 33; i++)
-                            Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
+                            Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
                         break;
                     case eSpellType.FellowBoost_SpellType:
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
                         break;
                     case eSpellType.FellowEnchantment_SpellType:
-                        duration = Utils.ReadAndWriteDouble(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
+                        duration = Utils.readAndWriteDouble(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
                         break;
                     case eSpellType.FellowPortalSending_SpellType:
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                        Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                        Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
                         break;
                     default:
                         break;
@@ -500,20 +498,20 @@ namespace Melt
                 spell.component = new int[8];
                 for (int i = 0; i < 8; i++)
                 {
-                    spell.component[i] = Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
+                    spell.component[i] = Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
                 }
 
-                spell.casterEffect = Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                spell.targetEffect = Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
+                spell.casterEffect = Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                spell.targetEffect = Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
 
-                spell.unknown6 = Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                spell.unknown7 = Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                spell.unknown8 = Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                spell.unknown9 = Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
+                spell.unknown6 = Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                spell.unknown7 = Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                spell.unknown8 = Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                spell.unknown9 = Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
 
-                spell.sortOrder = Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                spell.targetMask = Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
-                spell.unknown10 = Utils.ReadAndWriteInt32(buffer, inputFile, outputFile, writeSpellToFile);
+                spell.sortOrder = Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                spell.targetMask = Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
+                spell.unknown10 = Utils.readAndWriteInt32(inputFile, outputFile, writeSpellToFile);
 
                 if (spell.spellType == eSpellType.Projectile_SpellType && sharedSpellList.Contains(spell.spellId))
                     warSpells.Add(spell);

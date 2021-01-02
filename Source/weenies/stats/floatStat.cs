@@ -196,14 +196,14 @@ namespace Melt
             this.value = value;
         }
 
-        public sFloatStat(byte[] buffer, StreamReader inputFile)
+        public sFloatStat(StreamReader inputFile)
         {
-            key = (eFloatStat)Utils.ReadInt32(buffer, inputFile);
+            key = (eFloatStat)Utils.readInt32(inputFile);
 
             if (!Enum.IsDefined(typeof(eFloatStat), key))
                 Console.WriteLine("Unknown floatStat: {0}", key);
 
-            value = Utils.ReadDouble(buffer, inputFile);
+            value = Utils.readDouble(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)

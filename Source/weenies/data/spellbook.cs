@@ -15,10 +15,10 @@ namespace Melt
             casting_likelihood = castingLikelyhood;
         }
 
-        public sSpellData(byte[] buffer, StreamReader inputFile)
+        public sSpellData(StreamReader inputFile)
         {
-            key = Utils.ReadInt32(buffer, inputFile);
-            casting_likelihood = Utils.ReadSingle(buffer, inputFile);
+            key = Utils.readInt32(inputFile);
+            casting_likelihood = Utils.readSingle(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -48,18 +48,18 @@ namespace Melt
     {
         public List<sSpellData> spellData;
 
-        public sSpellBook(byte[] buffer, StreamReader inputFile)
+        public sSpellBook(StreamReader inputFile)
         {
             spellData = new List<sSpellData>();
 
-            int sectionHeader = Utils.ReadInt32(buffer, inputFile);
+            int sectionHeader = Utils.readInt32(inputFile);
 
             if (sectionHeader >> 16 == 0x40)
             {
                 short amount = (short)sectionHeader;
                 for (int i = 0; i < amount; i++)
                 {
-                    spellData.Add(new sSpellData(buffer, inputFile));
+                    spellData.Add(new sSpellData(inputFile));
                 }
             }
         }

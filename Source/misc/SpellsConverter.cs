@@ -31,15 +31,15 @@ namespace Melt
             short spellCount;
             short unknown1;
 
-            fileHeader = Utils.ReadInt32(buffer, inputFile);
+            fileHeader = Utils.readInt32(inputFile);
             if (fileHeader != 0x0E00000E)
             {
                 Console.WriteLine("Invalid header, aborting.");
                 return;
             }
 
-            spellCount = Utils.ReadInt16(buffer, inputFile);
-            unknown1 = Utils.ReadInt16(buffer, inputFile);
+            spellCount = Utils.readInt16(inputFile);
+            unknown1 = Utils.readInt16(inputFile);
 
             outputFile.WriteLine("{0}", spellCount);
             outputFile.WriteLine("{0}", unknown1);
@@ -78,39 +78,39 @@ namespace Melt
                 int targetMask;
                 int unknown10; //something for fellowship spells
 
-                spellId = Utils.ReadInt32(buffer, inputFile);
+                spellId = Utils.readInt32(inputFile);
 
-                spellName = Utils.ReadEncodedString(buffer, inputFile);
-                spellDescription = Utils.ReadEncodedString(buffer, inputFile);
-                hash = Utils.GetHash(spellDescription, 0xBEADCF45) + Utils.GetHash(spellName, 0x12107680);
-                schoolId = Utils.ReadInt32(buffer, inputFile);
-                iconId = Utils.ReadInt32(buffer, inputFile);
-                familyId = Utils.ReadInt32(buffer, inputFile);
-                flags = Utils.ReadInt32(buffer, inputFile);
-                manaCost = Utils.ReadInt32(buffer, inputFile);
-                unknown2 = Utils.ReadSingle(buffer, inputFile);
-                unknown3 = Utils.ReadSingle(buffer, inputFile);
-                difficulty = Utils.ReadInt32(buffer, inputFile);
-                economy = Utils.ReadSingle(buffer, inputFile);
-                generation = Utils.ReadInt32(buffer, inputFile);
-                speed = Utils.ReadSingle(buffer, inputFile);
-                spellType = Utils.ReadInt32(buffer, inputFile);
-                unknown4 = Utils.ReadInt32(buffer, inputFile);
+                spellName = Utils.readEncodedString(inputFile);
+                spellDescription = Utils.readEncodedString(inputFile);
+                hash = Utils.getHash(spellDescription, 0xBEADCF45) + Utils.getHash(spellName, 0x12107680);
+                schoolId = Utils.readInt32(inputFile);
+                iconId = Utils.readInt32(inputFile);
+                familyId = Utils.readInt32(inputFile);
+                flags = Utils.readInt32(inputFile);
+                manaCost = Utils.readInt32(inputFile);
+                unknown2 = Utils.readSingle(inputFile);
+                unknown3 = Utils.readSingle(inputFile);
+                difficulty = Utils.readInt32(inputFile);
+                economy = Utils.readSingle(inputFile);
+                generation = Utils.readInt32(inputFile);
+                speed = Utils.readSingle(inputFile);
+                spellType = Utils.readInt32(inputFile);
+                unknown4 = Utils.readInt32(inputFile);
 
                 switch (spellType)
                 {
                     case 1:
-                        duration = Utils.ReadDouble(buffer, inputFile);
-                        unknown5a = Utils.ReadInt32(buffer, inputFile);
-                        unknown5b = Utils.ReadInt32(buffer, inputFile);
+                        duration = Utils.readDouble(inputFile);
+                        unknown5a = Utils.readInt32(inputFile);
+                        unknown5b = Utils.readInt32(inputFile);
                         break;
                     case 7:
-                        duration = Utils.ReadDouble(buffer, inputFile);
+                        duration = Utils.readDouble(inputFile);
                         break;
                     case 12:
-                        duration = Utils.ReadDouble(buffer, inputFile);
-                        unknown5a = Utils.ReadInt32(buffer, inputFile);
-                        unknown5b = Utils.ReadInt32(buffer, inputFile);
+                        duration = Utils.readDouble(inputFile);
+                        unknown5a = Utils.readInt32(inputFile);
+                        unknown5b = Utils.readInt32(inputFile);
                         break;
                     default:
                         break;
@@ -118,24 +118,24 @@ namespace Melt
 
                 for (int i = 0; i < 8; i++)
                 {
-                    int hashedComponent = Utils.ReadInt32(buffer, inputFile);
+                    int hashedComponent = Utils.readInt32(inputFile);
                     if (hashedComponent != 0)
                         component[i] = (int)(hashedComponent - hash);
                     else
                         component[i] = 0;
                 }
 
-                casterEffect = Utils.ReadInt32(buffer, inputFile);
-                targetEffect = Utils.ReadInt32(buffer, inputFile);
+                casterEffect = Utils.readInt32(inputFile);
+                targetEffect = Utils.readInt32(inputFile);
 
-                unknown6 = Utils.ReadInt32(buffer, inputFile);
-                unknown7 = Utils.ReadInt32(buffer, inputFile);
-                unknown8 = Utils.ReadInt32(buffer, inputFile);
-                unknown9 = Utils.ReadInt32(buffer, inputFile);
+                unknown6 = Utils.readInt32(inputFile);
+                unknown7 = Utils.readInt32(inputFile);
+                unknown8 = Utils.readInt32(inputFile);
+                unknown9 = Utils.readInt32(inputFile);
 
-                sortOrder = Utils.ReadInt32(buffer, inputFile);
-                targetMask = Utils.ReadInt32(buffer, inputFile);
-                unknown10 = Utils.ReadInt32(buffer, inputFile);
+                sortOrder = Utils.readInt32(inputFile);
+                targetMask = Utils.readInt32(inputFile);
+                unknown10 = Utils.readInt32(inputFile);
 
                 outputFile.WriteLine("{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}",
                     spellId, spellName, spellDescription, schoolId, iconId, familyId, flags,
@@ -206,21 +206,19 @@ namespace Melt
 
             Console.WriteLine("Converting spells from binary to json...");
 
-            byte[] buffer = new byte[1024];
-
             int fileHeader;
             short spellCount;
             short spellCount2;
             short unknown1;
 
-            fileHeader = Utils.ReadInt32(buffer, client0e00000eFile);
+            fileHeader = Utils.readInt32(client0e00000eFile);
             if (fileHeader != 0x0E00000E)
             {
                 Console.WriteLine("Invalid header, aborting.");
                 return;
             }
 
-            spellCount = Utils.ReadInt16(buffer, cache2rawFile); spellCount2 = Utils.ReadInt16(buffer, client0e00000eFile);
+            spellCount = Utils.readInt16(cache2rawFile); spellCount2 = Utils.readInt16(client0e00000eFile);
 
             //if (spellCount != spellCount2)
             //{
@@ -228,7 +226,7 @@ namespace Melt
             //    return;
             //}
 
-            unknown1 = Utils.ReadInt16(buffer, cache2rawFile); Utils.ReadInt16(buffer, client0e00000eFile);
+            unknown1 = Utils.readInt16(cache2rawFile); Utils.readInt16(client0e00000eFile);
 
             string tabChar = "    "; //"\t"
             string newLine = "\n";
@@ -368,186 +366,186 @@ namespace Melt
                 int _mana_mod;
 
                 ///starting at _spellId 3679 the server files contains placeholder data for ToD spells
-                _spellId = Utils.ReadInt32(buffer, cache2rawFile); Utils.ReadInt32(buffer, client0e00000eFile);
+                _spellId = Utils.readInt32(cache2rawFile); Utils.readInt32(client0e00000eFile);
                 _spellId2 = _spellId;
-                _name = Utils.ReadString(buffer, cache2rawFile); _name_client = Utils.ReadEncodedString(buffer, client0e00000eFile);
-                _desc = Utils.ReadString(buffer, cache2rawFile); Utils.ReadEncodedString(buffer, client0e00000eFile);
+                _name = Utils.readString(cache2rawFile); _name_client = Utils.readEncodedString(client0e00000eFile);
+                _desc = Utils.readString(cache2rawFile); Utils.readEncodedString(client0e00000eFile);
                 //_hash = Utils.GetHash(_desc, 0xBEADCF45) + Utils.GetHash(_name, 0x12107680);
-                _school = Utils.ReadUInt32(buffer, cache2rawFile); Utils.ReadUInt32(buffer, client0e00000eFile);
-                _iconID = Utils.ReadUInt32(buffer, cache2rawFile); Utils.ReadUInt32(buffer, client0e00000eFile);
-                _category = Utils.ReadUInt32(buffer, cache2rawFile); Utils.ReadUInt32(buffer, client0e00000eFile);
-                _bitfield = Utils.ReadUInt32(buffer, cache2rawFile); Utils.ReadUInt32(buffer, client0e00000eFile);
-                _base_mana = Utils.ReadInt32(buffer, cache2rawFile); Utils.ReadInt32(buffer, client0e00000eFile);
-                _base_range_constant = Utils.ReadSingle(buffer, cache2rawFile); Utils.ReadSingle(buffer, client0e00000eFile);
-                _base_range_mod = Utils.ReadSingle(buffer, cache2rawFile); Utils.ReadSingle(buffer, client0e00000eFile);
-                _power = Utils.ReadInt32(buffer, cache2rawFile); Utils.ReadInt32(buffer, client0e00000eFile);
-                _spell_economy_mod = Utils.ReadSingle(buffer, cache2rawFile); Utils.ReadSingle(buffer, client0e00000eFile);
-                _formula_version = Utils.ReadUInt32(buffer, cache2rawFile); Utils.ReadUInt32(buffer, client0e00000eFile);
-                _component_loss = Utils.ReadSingle(buffer, cache2rawFile); Utils.ReadSingle(buffer, client0e00000eFile);
-                _sp_type = Utils.ReadUInt32(buffer, cache2rawFile); Utils.ReadUInt32(buffer, client0e00000eFile);
+                _school = Utils.readUInt32(cache2rawFile); Utils.readUInt32(client0e00000eFile);
+                _iconID = Utils.readUInt32(cache2rawFile); Utils.readUInt32(client0e00000eFile);
+                _category = Utils.readUInt32(cache2rawFile); Utils.readUInt32(client0e00000eFile);
+                _bitfield = Utils.readUInt32(cache2rawFile); Utils.readUInt32(client0e00000eFile);
+                _base_mana = Utils.readInt32(cache2rawFile); Utils.readInt32(client0e00000eFile);
+                _base_range_constant = Utils.readSingle(cache2rawFile); Utils.readSingle(client0e00000eFile);
+                _base_range_mod = Utils.readSingle(cache2rawFile); Utils.readSingle(client0e00000eFile);
+                _power = Utils.readInt32(cache2rawFile); Utils.readInt32(client0e00000eFile);
+                _spell_economy_mod = Utils.readSingle(cache2rawFile); Utils.readSingle(client0e00000eFile);
+                _formula_version = Utils.readUInt32(cache2rawFile); Utils.readUInt32(client0e00000eFile);
+                _component_loss = Utils.readSingle(cache2rawFile); Utils.readSingle(client0e00000eFile);
+                _sp_type = Utils.readUInt32(cache2rawFile); Utils.readUInt32(client0e00000eFile);
 
                 switch (_sp_type)
                 {
                     case 1: //Enchantment_SpellType
                     case 12: //FellowEnchantment_SpellType
-                        _elementalDamageType = Utils.ReadUInt32(buffer, cache2rawFile); Utils.ReadUInt32(buffer, client0e00000eFile);
-                        _duration = Utils.ReadDouble(buffer, cache2rawFile); Utils.ReadDouble(buffer, client0e00000eFile);
-                        _degrade_modifier = Utils.ReadSingle(buffer, cache2rawFile); Utils.ReadSingle(buffer, client0e00000eFile);
-                        _degrade_limit = Utils.ReadSingle(buffer, cache2rawFile); Utils.ReadSingle(buffer, client0e00000eFile);
-                        _spellCategory = Utils.ReadInt32(buffer, cache2rawFile);
-                        _smod_type = Utils.ReadUInt32(buffer, cache2rawFile);
-                        _smod_key = Utils.ReadUInt32(buffer, cache2rawFile);
-                        _smod_val = Utils.ReadSingle(buffer, cache2rawFile);
+                        _elementalDamageType = Utils.readUInt32(cache2rawFile); Utils.readUInt32(client0e00000eFile);
+                        _duration = Utils.readDouble(cache2rawFile); Utils.readDouble(client0e00000eFile);
+                        _degrade_modifier = Utils.readSingle(cache2rawFile); Utils.readSingle(client0e00000eFile);
+                        _degrade_limit = Utils.readSingle(cache2rawFile); Utils.readSingle(client0e00000eFile);
+                        _spellCategory = Utils.readInt32(cache2rawFile);
+                        _smod_type = Utils.readUInt32(cache2rawFile);
+                        _smod_key = Utils.readUInt32(cache2rawFile);
+                        _smod_val = Utils.readSingle(cache2rawFile);
                         break;
                     case 2: //Projectile_SpellType
-                        _spellId2 = Utils.ReadInt32(buffer, cache2rawFile); Utils.ReadInt32(buffer, client0e00000eFile);
-                        _etype = Utils.ReadUInt32(buffer, cache2rawFile);
-                        _baseIntensity = Utils.ReadInt32(buffer, cache2rawFile);
-                        _variance = Utils.ReadInt32(buffer, cache2rawFile);
-                        _wcid = Utils.ReadUInt32(buffer, cache2rawFile);
-                        _numProjectiles = Utils.ReadInt32(buffer, cache2rawFile);
-                        _numProjectilesVariance = Utils.ReadInt32(buffer, cache2rawFile);
-                        _spreadAngle = Utils.ReadSingle(buffer, cache2rawFile);
-                        _verticalAngle = Utils.ReadSingle(buffer, cache2rawFile);
-                        _defaultLaunchAngle = Utils.ReadSingle(buffer, cache2rawFile);
-                        _bNonTracking = Utils.ReadInt32(buffer, cache2rawFile);
-                        _createOffset[0] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _createOffset[1] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _createOffset[2] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _padding[0] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _padding[1] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _padding[2] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _dims[0] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _dims[1] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _dims[2] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _peturbation[0] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _peturbation[1] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _peturbation[2] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _imbuedEffect = Utils.ReadUInt32(buffer, cache2rawFile);
-                        _slayerCreatureType = Utils.ReadInt32(buffer, cache2rawFile);
-                        _slayerDamageBonus = Utils.ReadSingle(buffer, cache2rawFile);
-                        _critFreq = Utils.ReadDouble(buffer, cache2rawFile);
-                        _critMultiplier = Utils.ReadDouble(buffer, cache2rawFile);
-                        _ignoreMagicResist = Utils.ReadInt32(buffer, cache2rawFile);
-                        _elementalModifier = Utils.ReadDouble(buffer, cache2rawFile);
+                        _spellId2 = Utils.readInt32(cache2rawFile); Utils.readInt32(client0e00000eFile);
+                        _etype = Utils.readUInt32(cache2rawFile);
+                        _baseIntensity = Utils.readInt32(cache2rawFile);
+                        _variance = Utils.readInt32(cache2rawFile);
+                        _wcid = Utils.readUInt32(cache2rawFile);
+                        _numProjectiles = Utils.readInt32(cache2rawFile);
+                        _numProjectilesVariance = Utils.readInt32(cache2rawFile);
+                        _spreadAngle = Utils.readSingle(cache2rawFile);
+                        _verticalAngle = Utils.readSingle(cache2rawFile);
+                        _defaultLaunchAngle = Utils.readSingle(cache2rawFile);
+                        _bNonTracking = Utils.readInt32(cache2rawFile);
+                        _createOffset[0] = Utils.readSingle(cache2rawFile);
+                        _createOffset[1] = Utils.readSingle(cache2rawFile);
+                        _createOffset[2] = Utils.readSingle(cache2rawFile);
+                        _padding[0] = Utils.readSingle(cache2rawFile);
+                        _padding[1] = Utils.readSingle(cache2rawFile);
+                        _padding[2] = Utils.readSingle(cache2rawFile);
+                        _dims[0] = Utils.readSingle(cache2rawFile);
+                        _dims[1] = Utils.readSingle(cache2rawFile);
+                        _dims[2] = Utils.readSingle(cache2rawFile);
+                        _peturbation[0] = Utils.readSingle(cache2rawFile);
+                        _peturbation[1] = Utils.readSingle(cache2rawFile);
+                        _peturbation[2] = Utils.readSingle(cache2rawFile);
+                        _imbuedEffect = Utils.readUInt32(cache2rawFile);
+                        _slayerCreatureType = Utils.readInt32(cache2rawFile);
+                        _slayerDamageBonus = Utils.readSingle(cache2rawFile);
+                        _critFreq = Utils.readDouble(cache2rawFile);
+                        _critMultiplier = Utils.readDouble(cache2rawFile);
+                        _ignoreMagicResist = Utils.readInt32(cache2rawFile);
+                        _elementalModifier = Utils.readDouble(cache2rawFile);
                         break;
                     case 3: //Boost_SpellType
                     case 11: //FellowBoost_SpellType
-                        _spellId2 = Utils.ReadInt32(buffer, cache2rawFile); Utils.ReadInt32(buffer, client0e00000eFile);
-                        _elementalDamageType = Utils.ReadUInt32(buffer, cache2rawFile);
-                        _boost = Utils.ReadInt32(buffer, cache2rawFile);
-                        _boostVariance = Utils.ReadInt32(buffer, cache2rawFile);
+                        _spellId2 = Utils.readInt32(cache2rawFile); Utils.readInt32(client0e00000eFile);
+                        _elementalDamageType = Utils.readUInt32(cache2rawFile);
+                        _boost = Utils.readInt32(cache2rawFile);
+                        _boostVariance = Utils.readInt32(cache2rawFile);
                         break;
                     case 4: //Transfer_SpellType
-                        _spellId2 = Utils.ReadInt32(buffer, cache2rawFile); Utils.ReadInt32(buffer, client0e00000eFile);
-                        _src = Utils.ReadUInt32(buffer, cache2rawFile);
-                        _dest = Utils.ReadUInt32(buffer, cache2rawFile);
-                        _proportion = Utils.ReadSingle(buffer, cache2rawFile);
-                        _lossPercent = Utils.ReadSingle(buffer, cache2rawFile);
-                        _sourceLoss = Utils.ReadInt32(buffer, cache2rawFile);
-                        _transferCap = Utils.ReadInt32(buffer, cache2rawFile);
-                        _maxBoostAllowed = Utils.ReadInt32(buffer, cache2rawFile);
-                        _transferBitfield = Utils.ReadUInt32(buffer, cache2rawFile);
+                        _spellId2 = Utils.readInt32(cache2rawFile); Utils.readInt32(client0e00000eFile);
+                        _src = Utils.readUInt32(cache2rawFile);
+                        _dest = Utils.readUInt32(cache2rawFile);
+                        _proportion = Utils.readSingle(cache2rawFile);
+                        _lossPercent = Utils.readSingle(cache2rawFile);
+                        _sourceLoss = Utils.readInt32(cache2rawFile);
+                        _transferCap = Utils.readInt32(cache2rawFile);
+                        _maxBoostAllowed = Utils.readInt32(cache2rawFile);
+                        _transferBitfield = Utils.readUInt32(cache2rawFile);
                         break;
                     case 5: //PortalLink_SpellType
                     case 6: //PortalRecall_SpellType
-                        _spellId2 = Utils.ReadInt32(buffer, cache2rawFile); Utils.ReadInt32(buffer, client0e00000eFile);
-                        _index = Utils.ReadInt32(buffer, cache2rawFile);
+                        _spellId2 = Utils.readInt32(cache2rawFile); Utils.readInt32(client0e00000eFile);
+                        _index = Utils.readInt32(cache2rawFile);
                         break;
                     case 7: //PortalSummon_SpellType
-                        _spellId2 = Utils.ReadInt32(buffer, cache2rawFile); Utils.ReadInt32(buffer, client0e00000eFile);
-                        _portal_lifetime = Utils.ReadDouble(buffer, cache2rawFile); Utils.ReadDouble(buffer, client0e00000eFile);
-                        _link = Utils.ReadInt32(buffer, cache2rawFile);
+                        _spellId2 = Utils.readInt32(cache2rawFile); Utils.readInt32(client0e00000eFile);
+                        _portal_lifetime = Utils.readDouble(cache2rawFile); Utils.readDouble(client0e00000eFile);
+                        _link = Utils.readInt32(cache2rawFile);
                         break;
                     case 8: //PortalSending_SpellType
                     case 13: //FellowPortalSending_SpellType
-                        _spellId2 = Utils.ReadInt32(buffer, cache2rawFile); Utils.ReadInt32(buffer, client0e00000eFile);
-                        _pos = new sPosition(buffer, cache2rawFile);
+                        _spellId2 = Utils.readInt32(cache2rawFile); Utils.readInt32(client0e00000eFile);
+                        _pos = new sPosition(cache2rawFile);
                         break;
                     case 9: //Dispel_SpellType
                     case 14: //FellowDispel_SpellType
-                        _spellId2 = Utils.ReadInt32(buffer, cache2rawFile); Utils.ReadInt32(buffer, client0e00000eFile);
-                        _min_power = Utils.ReadInt32(buffer, cache2rawFile);
-                        _max_power = Utils.ReadInt32(buffer, cache2rawFile);
-                        _power_variance = Utils.ReadSingle(buffer, cache2rawFile);
-                        _dispelSchool = Utils.ReadInt32(buffer, cache2rawFile);
-                        _align = Utils.ReadInt32(buffer, cache2rawFile);
-                        _number = Utils.ReadInt32(buffer, cache2rawFile);
-                        _number_variance = Utils.ReadSingle(buffer, cache2rawFile);
+                        _spellId2 = Utils.readInt32(cache2rawFile); Utils.readInt32(client0e00000eFile);
+                        _min_power = Utils.readInt32(cache2rawFile);
+                        _max_power = Utils.readInt32(cache2rawFile);
+                        _power_variance = Utils.readSingle(cache2rawFile);
+                        _dispelSchool = Utils.readInt32(cache2rawFile);
+                        _align = Utils.readInt32(cache2rawFile);
+                        _number = Utils.readInt32(cache2rawFile);
+                        _number_variance = Utils.readSingle(cache2rawFile);
                         break;
                     case 10: //LifeProjectile_SpellType
-                        _spellId2 = Utils.ReadInt32(buffer, cache2rawFile); Utils.ReadInt32(buffer, client0e00000eFile);
-                        _etype = Utils.ReadUInt32(buffer, cache2rawFile);
-                        _baseIntensity = Utils.ReadInt32(buffer, cache2rawFile);
-                        _variance = Utils.ReadInt32(buffer, cache2rawFile);
-                        _wcid = Utils.ReadUInt32(buffer, cache2rawFile);
-                        _numProjectiles = Utils.ReadInt32(buffer, cache2rawFile);
-                        _numProjectilesVariance = Utils.ReadInt32(buffer, cache2rawFile);
-                        _spreadAngle = Utils.ReadSingle(buffer, cache2rawFile);
-                        _verticalAngle = Utils.ReadSingle(buffer, cache2rawFile);
-                        _defaultLaunchAngle = Utils.ReadSingle(buffer, cache2rawFile);
-                        _bNonTracking = Utils.ReadInt32(buffer, cache2rawFile);
-                        _createOffset[0] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _createOffset[1] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _createOffset[2] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _padding[0] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _padding[1] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _padding[2] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _dims[0] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _dims[1] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _dims[2] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _peturbation[0] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _peturbation[1] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _peturbation[2] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _imbuedEffect = Utils.ReadUInt32(buffer, cache2rawFile);
-                        _slayerCreatureType = Utils.ReadInt32(buffer, cache2rawFile);
-                        _slayerDamageBonus = Utils.ReadSingle(buffer, cache2rawFile);
-                        _critFreq = Utils.ReadDouble(buffer, cache2rawFile);
-                        _critMultiplier = Utils.ReadDouble(buffer, cache2rawFile);
-                        _ignoreMagicResist = Utils.ReadInt32(buffer, cache2rawFile);
-                        _elementalModifier = Utils.ReadDouble(buffer, cache2rawFile);
-                        _drain_percentage = Utils.ReadSingle(buffer, cache2rawFile);
-                        _damage_ratio = Utils.ReadSingle(buffer, cache2rawFile);
+                        _spellId2 = Utils.readInt32(cache2rawFile); Utils.readInt32(client0e00000eFile);
+                        _etype = Utils.readUInt32(cache2rawFile);
+                        _baseIntensity = Utils.readInt32(cache2rawFile);
+                        _variance = Utils.readInt32(cache2rawFile);
+                        _wcid = Utils.readUInt32(cache2rawFile);
+                        _numProjectiles = Utils.readInt32(cache2rawFile);
+                        _numProjectilesVariance = Utils.readInt32(cache2rawFile);
+                        _spreadAngle = Utils.readSingle(cache2rawFile);
+                        _verticalAngle = Utils.readSingle(cache2rawFile);
+                        _defaultLaunchAngle = Utils.readSingle(cache2rawFile);
+                        _bNonTracking = Utils.readInt32(cache2rawFile);
+                        _createOffset[0] = Utils.readSingle(cache2rawFile);
+                        _createOffset[1] = Utils.readSingle(cache2rawFile);
+                        _createOffset[2] = Utils.readSingle(cache2rawFile);
+                        _padding[0] = Utils.readSingle(cache2rawFile);
+                        _padding[1] = Utils.readSingle(cache2rawFile);
+                        _padding[2] = Utils.readSingle(cache2rawFile);
+                        _dims[0] = Utils.readSingle(cache2rawFile);
+                        _dims[1] = Utils.readSingle(cache2rawFile);
+                        _dims[2] = Utils.readSingle(cache2rawFile);
+                        _peturbation[0] = Utils.readSingle(cache2rawFile);
+                        _peturbation[1] = Utils.readSingle(cache2rawFile);
+                        _peturbation[2] = Utils.readSingle(cache2rawFile);
+                        _imbuedEffect = Utils.readUInt32(cache2rawFile);
+                        _slayerCreatureType = Utils.readInt32(cache2rawFile);
+                        _slayerDamageBonus = Utils.readSingle(cache2rawFile);
+                        _critFreq = Utils.readDouble(cache2rawFile);
+                        _critMultiplier = Utils.readDouble(cache2rawFile);
+                        _ignoreMagicResist = Utils.readInt32(cache2rawFile);
+                        _elementalModifier = Utils.readDouble(cache2rawFile);
+                        _drain_percentage = Utils.readSingle(cache2rawFile);
+                        _damage_ratio = Utils.readSingle(cache2rawFile);
                         break;
                     case 15: //EnchantmentProjectile_SpellType
-                        _spellId2 = Utils.ReadInt32(buffer, cache2rawFile); Utils.ReadInt32(buffer, client0e00000eFile);
-                        _etype = Utils.ReadUInt32(buffer, cache2rawFile);
-                        _baseIntensity = Utils.ReadInt32(buffer, cache2rawFile);
-                        _variance = Utils.ReadInt32(buffer, cache2rawFile);
-                        _wcid = Utils.ReadUInt32(buffer, cache2rawFile);
-                        _numProjectiles = Utils.ReadInt32(buffer, cache2rawFile);
-                        _numProjectilesVariance = Utils.ReadInt32(buffer, cache2rawFile);
-                        _spreadAngle = Utils.ReadSingle(buffer, cache2rawFile);
-                        _verticalAngle = Utils.ReadSingle(buffer, cache2rawFile);
-                        _defaultLaunchAngle = Utils.ReadSingle(buffer, cache2rawFile);
-                        _bNonTracking = Utils.ReadInt32(buffer, cache2rawFile);
-                        _createOffset[0] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _createOffset[1] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _createOffset[2] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _padding[0] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _padding[1] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _padding[2] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _dims[0] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _dims[1] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _dims[2] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _peturbation[0] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _peturbation[1] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _peturbation[2] = Utils.ReadSingle(buffer, cache2rawFile);
-                        _imbuedEffect = Utils.ReadUInt32(buffer, cache2rawFile);
-                        _slayerCreatureType = Utils.ReadInt32(buffer, cache2rawFile);
-                        _slayerDamageBonus = Utils.ReadSingle(buffer, cache2rawFile);
-                        _critFreq = Utils.ReadDouble(buffer, cache2rawFile);
-                        _critMultiplier = Utils.ReadDouble(buffer, cache2rawFile);
-                        _ignoreMagicResist = Utils.ReadInt32(buffer, cache2rawFile);
-                        _elementalModifier = Utils.ReadDouble(buffer, cache2rawFile);
-                        _elementalDamageType = Utils.ReadUInt32(buffer, cache2rawFile); Utils.ReadUInt32(buffer, client0e00000eFile);
-                        _duration = Utils.ReadDouble(buffer, cache2rawFile); Utils.ReadDouble(buffer, client0e00000eFile);
-                        _degrade_modifier = Utils.ReadSingle(buffer, cache2rawFile); Utils.ReadSingle(buffer, client0e00000eFile);
-                        _degrade_limit = Utils.ReadSingle(buffer, cache2rawFile); Utils.ReadSingle(buffer, client0e00000eFile);
-                        _spellCategory = Utils.ReadInt32(buffer, cache2rawFile);
-                        _smod_type = Utils.ReadUInt32(buffer, cache2rawFile);
-                        _smod_key = Utils.ReadUInt32(buffer, cache2rawFile);
-                        _smod_val = Utils.ReadSingle(buffer, cache2rawFile);
+                        _spellId2 = Utils.readInt32(cache2rawFile); Utils.readInt32(client0e00000eFile);
+                        _etype = Utils.readUInt32(cache2rawFile);
+                        _baseIntensity = Utils.readInt32(cache2rawFile);
+                        _variance = Utils.readInt32(cache2rawFile);
+                        _wcid = Utils.readUInt32(cache2rawFile);
+                        _numProjectiles = Utils.readInt32(cache2rawFile);
+                        _numProjectilesVariance = Utils.readInt32(cache2rawFile);
+                        _spreadAngle = Utils.readSingle(cache2rawFile);
+                        _verticalAngle = Utils.readSingle(cache2rawFile);
+                        _defaultLaunchAngle = Utils.readSingle(cache2rawFile);
+                        _bNonTracking = Utils.readInt32(cache2rawFile);
+                        _createOffset[0] = Utils.readSingle(cache2rawFile);
+                        _createOffset[1] = Utils.readSingle(cache2rawFile);
+                        _createOffset[2] = Utils.readSingle(cache2rawFile);
+                        _padding[0] = Utils.readSingle(cache2rawFile);
+                        _padding[1] = Utils.readSingle(cache2rawFile);
+                        _padding[2] = Utils.readSingle(cache2rawFile);
+                        _dims[0] = Utils.readSingle(cache2rawFile);
+                        _dims[1] = Utils.readSingle(cache2rawFile);
+                        _dims[2] = Utils.readSingle(cache2rawFile);
+                        _peturbation[0] = Utils.readSingle(cache2rawFile);
+                        _peturbation[1] = Utils.readSingle(cache2rawFile);
+                        _peturbation[2] = Utils.readSingle(cache2rawFile);
+                        _imbuedEffect = Utils.readUInt32(cache2rawFile);
+                        _slayerCreatureType = Utils.readInt32(cache2rawFile);
+                        _slayerDamageBonus = Utils.readSingle(cache2rawFile);
+                        _critFreq = Utils.readDouble(cache2rawFile);
+                        _critMultiplier = Utils.readDouble(cache2rawFile);
+                        _ignoreMagicResist = Utils.readInt32(cache2rawFile);
+                        _elementalModifier = Utils.readDouble(cache2rawFile);
+                        _elementalDamageType = Utils.readUInt32(cache2rawFile); Utils.readUInt32(client0e00000eFile);
+                        _duration = Utils.readDouble(cache2rawFile); Utils.readDouble(client0e00000eFile);
+                        _degrade_modifier = Utils.readSingle(cache2rawFile); Utils.readSingle(client0e00000eFile);
+                        _degrade_limit = Utils.readSingle(cache2rawFile); Utils.readSingle(client0e00000eFile);
+                        _spellCategory = Utils.readInt32(cache2rawFile);
+                        _smod_type = Utils.readUInt32(cache2rawFile);
+                        _smod_key = Utils.readUInt32(cache2rawFile);
+                        _smod_val = Utils.readSingle(cache2rawFile);
                         break;
                     default:
                         break;
@@ -555,19 +553,19 @@ namespace Melt
 
                 for (int i = 0; i < 8; i++)
                 {
-                    _component[i] = Utils.ReadInt32(buffer, cache2rawFile); Utils.ReadInt32(buffer, client0e00000eFile);
-                    //int hashedComponent = Utils.ReadInt32(buffer, inputFile);
+                    _component[i] = Utils.readInt32(cache2rawFile); Utils.readInt32(client0e00000eFile);
+                    //int hashedComponent = Utils.readInt32(inputFile);
                     //if (hashedComponent != 0)
                     //    _component[i] = (int)(hashedComponent - _hash);
                     //else
                     //    _component[i] = 0;
                 }
 
-                _caster_effect = Utils.ReadInt32(buffer, cache2rawFile); Utils.ReadInt32(buffer, client0e00000eFile);
-                _target_effect = Utils.ReadInt32(buffer, cache2rawFile); _target_effect_client = Utils.ReadInt32(buffer, client0e00000eFile);
-                _fizzle_effect = Utils.ReadInt32(buffer, cache2rawFile); Utils.ReadInt32(buffer, client0e00000eFile);
-                _recovery_interval = Utils.ReadDouble(buffer, cache2rawFile); Utils.ReadDouble(buffer, client0e00000eFile);
-                _recovery_amount = Utils.ReadSingle(buffer, cache2rawFile); Utils.ReadSingle(buffer, client0e00000eFile);
+                _caster_effect = Utils.readInt32(cache2rawFile); Utils.readInt32(client0e00000eFile);
+                _target_effect = Utils.readInt32(cache2rawFile); _target_effect_client = Utils.readInt32(client0e00000eFile);
+                _fizzle_effect = Utils.readInt32(cache2rawFile); Utils.readInt32(client0e00000eFile);
+                _recovery_interval = Utils.readDouble(cache2rawFile); Utils.readDouble(client0e00000eFile);
+                _recovery_amount = Utils.readSingle(cache2rawFile); Utils.readSingle(client0e00000eFile);
 
                 //there's a divergence here that must have been added by the devs at some point
                 if (_caster_effect >= 30)
@@ -577,9 +575,9 @@ namespace Melt
                 if (_fizzle_effect >= 30)
                     _fizzle_effect += 1;
 
-                Utils.ReadInt32(buffer, cache2rawFile); _display_order = Utils.ReadInt32(buffer, client0e00000eFile); //get the display order from the client file
-                _non_component_target_type = Utils.ReadUInt32(buffer, cache2rawFile); Utils.ReadUInt32(buffer, client0e00000eFile);
-                _mana_mod = Utils.ReadInt32(buffer, cache2rawFile); Utils.ReadInt32(buffer, client0e00000eFile);
+                Utils.readInt32(cache2rawFile); _display_order = Utils.readInt32(client0e00000eFile); //get the display order from the client file
+                _non_component_target_type = Utils.readUInt32(cache2rawFile); Utils.readUInt32(client0e00000eFile);
+                _mana_mod = Utils.readInt32(cache2rawFile); Utils.readInt32(client0e00000eFile);
 
                 Utils.writeJson(outputStream, "key", _spellId, tab, true);
                 outputStream.Write($",{newLine}{tab}\"value\": {bracket}");
@@ -998,7 +996,7 @@ namespace Melt
                         break;
                 }
 
-                hash = Utils.GetHash(spellDescription, 0xBEADCF45) + Utils.GetHash(spellName, 0x12107680);
+                hash = Utils.getHash(spellDescription, 0xBEADCF45) + Utils.getHash(spellName, 0x12107680);
 
                 int[] component = new int[8];
                 for (int i = 0; i < 8; i++)
@@ -1026,7 +1024,7 @@ namespace Melt
                 convertStringToByteArray(spellName, ref buffer, 0, spellName.Length);
                 int startIndex = (int)outputFile.BaseStream.Position;
                 int endIndex = (int)outputFile.BaseStream.Position + spellName.Length + 2;
-                int alignedIndex = Utils.Align4(endIndex - startIndex);
+                int alignedIndex = Utils.align4(endIndex - startIndex);
                 int newIndex = startIndex + alignedIndex;
                 int bytesNeededToReachAlignment = newIndex - endIndex;
                 outputFile.BaseStream.Write(buffer, 0, spellName.Length + bytesNeededToReachAlignment);
@@ -1035,7 +1033,7 @@ namespace Melt
                 convertStringToByteArray(spellDescription, ref buffer, 0, spellDescription.Length);
                 startIndex = (int)outputFile.BaseStream.Position;
                 endIndex = (int)outputFile.BaseStream.Position + spellDescription.Length + 2;
-                alignedIndex = Utils.Align4(endIndex - startIndex);
+                alignedIndex = Utils.align4(endIndex - startIndex);
                 newIndex = startIndex + alignedIndex;
                 bytesNeededToReachAlignment = newIndex - endIndex;
                 outputFile.BaseStream.Write(buffer, 0, spellDescription.Length + bytesNeededToReachAlignment);

@@ -22,38 +22,38 @@ namespace Melt
             public byte Unknown;
             public Dictionary<int, SexCG> Genders = new Dictionary<int, SexCG>();
 
-            public HeritageGroupCG(byte[] buffer, StreamReader inputFile)
+            public HeritageGroupCG(StreamReader inputFile)
             {
-                Name = Utils.ReadSerializedString(buffer, inputFile);
-                IconImage = Utils.ReadUInt32(buffer, inputFile);
-                SetupID = Utils.ReadUInt32(buffer, inputFile);
-                EnvironmentSetupID = Utils.ReadUInt32(buffer, inputFile);
-                AttributeCredits = Utils.ReadUInt32(buffer, inputFile);
-                SkillCredits = Utils.ReadUInt32(buffer, inputFile);
+                Name = Utils.readSerializedString(inputFile);
+                IconImage = Utils.readUInt32(inputFile);
+                SetupID = Utils.readUInt32(inputFile);
+                EnvironmentSetupID = Utils.readUInt32(inputFile);
+                AttributeCredits = Utils.readUInt32(inputFile);
+                SkillCredits = Utils.readUInt32(inputFile);
 
-                uint count = Utils.ReadCompressedUInt32(buffer, inputFile);
+                uint count = Utils.readCompressedUInt32(inputFile);
                 for (int i = 0; i < count; i++)
-                    PrimaryStartAreas.Add(Utils.ReadInt32(buffer, inputFile));
+                    PrimaryStartAreas.Add(Utils.readInt32(inputFile));
 
-                count = Utils.ReadCompressedUInt32(buffer, inputFile);
+                count = Utils.readCompressedUInt32(inputFile);
                 for (int i = 0; i < count; i++)
-                    SecondaryStartAreas.Add(Utils.ReadInt32(buffer, inputFile));
+                    SecondaryStartAreas.Add(Utils.readInt32(inputFile));
 
-                count = Utils.ReadCompressedUInt32(buffer, inputFile);
+                count = Utils.readCompressedUInt32(inputFile);
                 for (int i = 0; i < count; i++)
-                    Skills.Add(new SkillCG(buffer, inputFile));
+                    Skills.Add(new SkillCG(inputFile));
 
-                count = Utils.ReadCompressedUInt32(buffer, inputFile);
+                count = Utils.readCompressedUInt32(inputFile);
                 for (int i = 0; i < count; i++)
-                    Templates.Add(new TemplateCG(buffer, inputFile));
+                    Templates.Add(new TemplateCG(inputFile));
 
-                Unknown = Utils.ReadByte(buffer, inputFile);
+                Unknown = Utils.readByte(inputFile);
 
-                count = Utils.ReadCompressedUInt32(buffer, inputFile);
+                count = Utils.readCompressedUInt32(inputFile);
                 for (int i = 0; i < count; i++)
                 {
-                    int key = Utils.ReadInt32(buffer, inputFile);
-                    SexCG value = new SexCG(buffer, inputFile);
+                    int key = Utils.readInt32(inputFile);
+                    SexCG value = new SexCG(inputFile);
                     Genders.Add(key, value);
                 }
             }
@@ -108,26 +108,26 @@ namespace Melt
             public List<uint> NormalSkillsList = new List<uint>();
             public List<uint> PrimarySkillsList = new List<uint>();
 
-            public TemplateCG(byte[] buffer, StreamReader inputFile)
+            public TemplateCG(StreamReader inputFile)
             {
-                Name = Utils.ReadSerializedString(buffer, inputFile);
-                IconImage = Utils.ReadUInt32(buffer, inputFile);
-                Title = Utils.ReadUInt32(buffer, inputFile);
+                Name = Utils.readSerializedString(inputFile);
+                IconImage = Utils.readUInt32(inputFile);
+                Title = Utils.readUInt32(inputFile);
 
-                Strength = Utils.ReadUInt32(buffer, inputFile);
-                Endurance = Utils.ReadUInt32(buffer, inputFile);
-                Coordination = Utils.ReadUInt32(buffer, inputFile);
-                Quickness = Utils.ReadUInt32(buffer, inputFile);
-                Focus = Utils.ReadUInt32(buffer, inputFile);
-                Self = Utils.ReadUInt32(buffer, inputFile);
+                Strength = Utils.readUInt32(inputFile);
+                Endurance = Utils.readUInt32(inputFile);
+                Coordination = Utils.readUInt32(inputFile);
+                Quickness = Utils.readUInt32(inputFile);
+                Focus = Utils.readUInt32(inputFile);
+                Self = Utils.readUInt32(inputFile);
 
-                uint count = Utils.ReadCompressedUInt32(buffer, inputFile);
+                uint count = Utils.readCompressedUInt32(inputFile);
                 for (int i = 0; i < count; i++)
-                    NormalSkillsList.Add(Utils.ReadUInt32(buffer, inputFile));
+                    NormalSkillsList.Add(Utils.readUInt32(inputFile));
 
-                count = Utils.ReadCompressedUInt32(buffer, inputFile);
+                count = Utils.readCompressedUInt32(inputFile);
                 for (int i = 0; i < count; i++)
-                    PrimarySkillsList.Add(Utils.ReadUInt32(buffer, inputFile));
+                    PrimarySkillsList.Add(Utils.readUInt32(inputFile));
             }
 
             public void writeRaw(StreamWriter outputStream)
@@ -178,65 +178,65 @@ namespace Melt
             public List<GearCG> FootwearList = new List<GearCG>();
             public List<uint> ClothingColorsList = new List<uint>();
 
-            public SexCG(byte[] buffer, StreamReader inputFile)
+            public SexCG(StreamReader inputFile)
             {
-                Name = Utils.ReadSerializedString(buffer, inputFile);
-                Scale = Utils.ReadUInt32(buffer, inputFile);
-                SetupID = Utils.ReadUInt32(buffer, inputFile);
-                SoundTable = Utils.ReadUInt32(buffer, inputFile);
-                IconImage = Utils.ReadUInt32(buffer, inputFile);
-                BasePalette = Utils.ReadUInt32(buffer, inputFile);
-                SkinPalSet = Utils.ReadUInt32(buffer, inputFile);
-                PhysicsTable = Utils.ReadUInt32(buffer, inputFile);
-                MotionTable = Utils.ReadUInt32(buffer, inputFile);
-                CombatTable = Utils.ReadUInt32(buffer, inputFile);
+                Name = Utils.readSerializedString(inputFile);
+                Scale = Utils.readUInt32(inputFile);
+                SetupID = Utils.readUInt32(inputFile);
+                SoundTable = Utils.readUInt32(inputFile);
+                IconImage = Utils.readUInt32(inputFile);
+                BasePalette = Utils.readUInt32(inputFile);
+                SkinPalSet = Utils.readUInt32(inputFile);
+                PhysicsTable = Utils.readUInt32(inputFile);
+                MotionTable = Utils.readUInt32(inputFile);
+                CombatTable = Utils.readUInt32(inputFile);
 
-                Utils.Align(inputFile);
-                BaseObjDesc = new sObjDesc(buffer, inputFile);
+                Utils.align(inputFile);
+                BaseObjDesc = new sObjDesc(inputFile);
 
-                uint count = Utils.ReadCompressedUInt32(buffer, inputFile);
+                uint count = Utils.readCompressedUInt32(inputFile);
                 for (int i = 0; i < count; i++)
-                    HairColorList.Add(Utils.ReadUInt32(buffer, inputFile));
+                    HairColorList.Add(Utils.readUInt32(inputFile));
 
-                count = Utils.ReadCompressedUInt32(buffer, inputFile);
+                count = Utils.readCompressedUInt32(inputFile);
                 for (int i = 0; i < count; i++)
-                    HairStyleList.Add(new HairStyleCG(buffer, inputFile));
+                    HairStyleList.Add(new HairStyleCG(inputFile));
 
-                count = Utils.ReadCompressedUInt32(buffer, inputFile);
+                count = Utils.readCompressedUInt32(inputFile);
                 for (int i = 0; i < count; i++)
-                    EyeColorList.Add(Utils.ReadUInt32(buffer, inputFile));
+                    EyeColorList.Add(Utils.readUInt32(inputFile));
 
-                count = Utils.ReadCompressedUInt32(buffer, inputFile);
+                count = Utils.readCompressedUInt32(inputFile);
                 for (int i = 0; i < count; i++)
-                    EyeStripList.Add(new EyeStripCG(buffer, inputFile));
+                    EyeStripList.Add(new EyeStripCG(inputFile));
 
-                count = Utils.ReadCompressedUInt32(buffer, inputFile);
+                count = Utils.readCompressedUInt32(inputFile);
                 for (int i = 0; i < count; i++)
-                    NoseStripList.Add(new FaceStripCG(buffer, inputFile));
+                    NoseStripList.Add(new FaceStripCG(inputFile));
 
-                count = Utils.ReadCompressedUInt32(buffer, inputFile);
+                count = Utils.readCompressedUInt32(inputFile);
                 for (int i = 0; i < count; i++)
-                    MouthStripList.Add(new FaceStripCG(buffer, inputFile));
+                    MouthStripList.Add(new FaceStripCG(inputFile));
 
-                count = Utils.ReadCompressedUInt32(buffer, inputFile);
+                count = Utils.readCompressedUInt32(inputFile);
                 for (int i = 0; i < count; i++)
-                    HeadgearList.Add(new GearCG(buffer, inputFile));
+                    HeadgearList.Add(new GearCG(inputFile));
 
-                count = Utils.ReadCompressedUInt32(buffer, inputFile);
+                count = Utils.readCompressedUInt32(inputFile);
                 for (int i = 0; i < count; i++)
-                    ShirtList.Add(new GearCG(buffer, inputFile));
+                    ShirtList.Add(new GearCG(inputFile));
 
-                count = Utils.ReadCompressedUInt32(buffer, inputFile);
+                count = Utils.readCompressedUInt32(inputFile);
                 for (int i = 0; i < count; i++)
-                    PantsList.Add(new GearCG(buffer, inputFile));
+                    PantsList.Add(new GearCG(inputFile));
 
-                count = Utils.ReadCompressedUInt32(buffer, inputFile);
+                count = Utils.readCompressedUInt32(inputFile);
                 for (int i = 0; i < count; i++)
-                    FootwearList.Add(new GearCG(buffer, inputFile));
+                    FootwearList.Add(new GearCG(inputFile));
 
-                count = Utils.ReadCompressedUInt32(buffer, inputFile);
+                count = Utils.readCompressedUInt32(inputFile);
                 for (int i = 0; i < count; i++)
-                    ClothingColorsList.Add(Utils.ReadUInt32(buffer, inputFile));
+                    ClothingColorsList.Add(Utils.readUInt32(inputFile));
             }
 
             public void writeRaw(StreamWriter outputStream)
@@ -252,7 +252,7 @@ namespace Melt
                 Utils.writeUInt32(MotionTable, outputStream);
                 Utils.writeUInt32(CombatTable, outputStream);
 
-                Utils.Align(outputStream);
+                Utils.align(outputStream);
                 BaseObjDesc.writeRaw(outputStream);
 
                 Utils.writeCompressedUInt32((uint)HairColorList.Count, outputStream);
@@ -307,11 +307,11 @@ namespace Melt
             public uint ClothingTable;
             public uint WeenieDefault;
 
-            public GearCG(byte[] buffer, StreamReader inputFile)
+            public GearCG(StreamReader inputFile)
             {
-                Name = Utils.ReadSerializedString(buffer, inputFile);
-                ClothingTable = Utils.ReadUInt32(buffer, inputFile);
-                WeenieDefault = Utils.ReadUInt32(buffer, inputFile);
+                Name = Utils.readSerializedString(inputFile);
+                ClothingTable = Utils.readUInt32(inputFile);
+                WeenieDefault = Utils.readUInt32(inputFile);
             }
 
             public void writeRaw(StreamWriter outputStream)
@@ -327,17 +327,17 @@ namespace Melt
             public uint IconImage;
             public sObjDesc ObjDesc;
 
-            public FaceStripCG(byte[] buffer, StreamReader inputFile)
+            public FaceStripCG(StreamReader inputFile)
             {
-                IconImage = Utils.ReadUInt32(buffer, inputFile);
-                Utils.Align(inputFile);
-                ObjDesc = new sObjDesc(buffer, inputFile);
+                IconImage = Utils.readUInt32(inputFile);
+                Utils.align(inputFile);
+                ObjDesc = new sObjDesc(inputFile);
             }
 
             public void writeRaw(StreamWriter outputStream)
             {
                 Utils.writeUInt32(IconImage, outputStream);
-                Utils.Align(outputStream);
+                Utils.align(outputStream);
                 ObjDesc.writeRaw(outputStream);
             }
         }
@@ -349,23 +349,23 @@ namespace Melt
             public sObjDesc ObjDesc;
             public sObjDesc ObjDescBald;
 
-            public EyeStripCG(byte[] buffer, StreamReader inputFile)
+            public EyeStripCG(StreamReader inputFile)
             {
-                IconImage = Utils.ReadUInt32(buffer, inputFile);
-                IconImageBald = Utils.ReadUInt32(buffer, inputFile);
-                Utils.Align(inputFile);
-                ObjDesc = new sObjDesc(buffer, inputFile);
-                Utils.Align(inputFile);
-                ObjDescBald = new sObjDesc(buffer, inputFile);
+                IconImage = Utils.readUInt32(inputFile);
+                IconImageBald = Utils.readUInt32(inputFile);
+                Utils.align(inputFile);
+                ObjDesc = new sObjDesc(inputFile);
+                Utils.align(inputFile);
+                ObjDescBald = new sObjDesc(inputFile);
             }
 
             public void writeRaw(StreamWriter outputStream)
             {
                 Utils.writeUInt32(IconImage, outputStream);
                 Utils.writeUInt32(IconImageBald, outputStream);
-                Utils.Align(outputStream);
+                Utils.align(outputStream);
                 ObjDesc.writeRaw(outputStream);
-                Utils.Align(outputStream);
+                Utils.align(outputStream);
                 ObjDescBald.writeRaw(outputStream);
             }
         }
@@ -377,13 +377,13 @@ namespace Melt
             public uint AlternateSetup;
             public sObjDesc ObjDesc;
 
-            public HairStyleCG(byte[] buffer, StreamReader inputFile)
+            public HairStyleCG(StreamReader inputFile)
             {
-                IconImage = Utils.ReadUInt32(buffer, inputFile);
-                Bald = Utils.ReadBool(buffer, inputFile);
-                AlternateSetup = Utils.ReadUInt32(buffer, inputFile);
-                Utils.Align(inputFile);
-                ObjDesc = new sObjDesc(buffer, inputFile);
+                IconImage = Utils.readUInt32(inputFile);
+                Bald = Utils.readBool(inputFile);
+                AlternateSetup = Utils.readUInt32(inputFile);
+                Utils.align(inputFile);
+                ObjDesc = new sObjDesc(inputFile);
             }
 
             public void writeRaw(StreamWriter outputStream)
@@ -391,7 +391,7 @@ namespace Melt
                 Utils.writeUInt32(IconImage, outputStream);
                 Utils.writeBool(Bald, outputStream);
                 Utils.writeUInt32(AlternateSetup, outputStream);
-                Utils.Align(outputStream);
+                Utils.align(outputStream);
                 ObjDesc.writeRaw(outputStream);
             }
         }
@@ -409,11 +409,11 @@ namespace Melt
                 this.PrimaryCost = PrimaryCost;
             }
 
-            public SkillCG(byte[] buffer, StreamReader inputFile)
+            public SkillCG(StreamReader inputFile)
             {
-                SkillNum = Utils.ReadUInt32(buffer, inputFile);
-                NormalCost = Utils.ReadUInt32(buffer, inputFile);
-                PrimaryCost = Utils.ReadUInt32(buffer, inputFile);
+                SkillNum = Utils.readUInt32(inputFile);
+                NormalCost = Utils.readUInt32(inputFile);
+                PrimaryCost = Utils.readUInt32(inputFile);
             }
 
             public void writeRaw(StreamWriter outputStream)
@@ -429,14 +429,14 @@ namespace Melt
             public string Name;
             public List<sPosition> Locations = new List<sPosition>();
 
-            public StarterArea(byte[] buffer, StreamReader inputFile)
+            public StarterArea(StreamReader inputFile)
             {
-                Name = Utils.ReadSerializedString(buffer, inputFile);
+                Name = Utils.readSerializedString(inputFile);
 
-                uint count = Utils.ReadCompressedUInt32(buffer, inputFile);
+                uint count = Utils.readCompressedUInt32(inputFile);
                 for (int i = 0; i < count; i++)
                 {
-                    Locations.Add(new sPosition(buffer, inputFile));
+                    Locations.Add(new sPosition(inputFile));
                 }
             }
 
@@ -462,10 +462,8 @@ namespace Melt
 
             StreamReader inputFile = new StreamReader(new FileStream(filename, FileMode.Open, FileAccess.Read));
 
-            byte[] buffer = new byte[1024];
-
-            FileId = Utils.ReadUInt32(buffer, inputFile);
-            FileId2 = Utils.ReadUInt32(buffer, inputFile);
+            FileId = Utils.readUInt32(inputFile);
+            FileId2 = Utils.readUInt32(inputFile);
 
             if (FileId != 0x0E000002)
             {
@@ -473,17 +471,17 @@ namespace Melt
                 return;
             }
 
-            uint count = Utils.ReadCompressedUInt32(buffer, inputFile);
+            uint count = Utils.readCompressedUInt32(inputFile);
             for (int i = 0; i < count; i++)
-                StarterAreas.Add(new StarterArea(buffer, inputFile));
+                StarterAreas.Add(new StarterArea(inputFile));
 
-            Unknown = Utils.ReadByte(buffer, inputFile);
+            Unknown = Utils.readByte(inputFile);
 
-            count = Utils.ReadCompressedUInt32(buffer, inputFile);
+            count = Utils.readCompressedUInt32(inputFile);
             for (int i = 0; i < count; i++)
             {
-                uint key = Utils.ReadUInt32(buffer, inputFile);
-                HeritageGroupCG value = new HeritageGroupCG(buffer, inputFile);
+                uint key = Utils.readUInt32(inputFile);
+                HeritageGroupCG value = new HeritageGroupCG(inputFile);
                 HeritageGroups.Add(key, value);
             }
 

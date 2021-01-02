@@ -43,61 +43,61 @@ namespace Melt
         {
         }
 
-        public cWeenie(byte[] buffer, StreamReader inputFile)
+        public cWeenie(StreamReader inputFile)
         {
-            wcid = Utils.ReadInt32(buffer, inputFile);
-            entryHeader1 = Utils.ReadUInt32(buffer, inputFile);
-            weenieName = Utils.ReadStringAndReplaceSpecialCharacters(buffer, inputFile);
-            entryHeader2 = Utils.ReadUInt32(buffer, inputFile);
+            wcid = Utils.readInt32(inputFile);
+            entryHeader1 = Utils.readUInt32(inputFile);
+            weenieName = Utils.readStringAndReplaceSpecialCharacters(inputFile);
+            entryHeader2 = Utils.readUInt32(inputFile);
 
-            statFlags = (eStatFlags)Utils.ReadInt32(buffer, inputFile);
-            weenieType = (eWeenieTypes)Utils.ReadInt32(buffer, inputFile);
+            statFlags = (eStatFlags)Utils.readInt32(inputFile);
+            weenieType = (eWeenieTypes)Utils.readInt32(inputFile);
 
             if (statFlags.HasFlag(eStatFlags.intStats))
-                parseIntStats(buffer, inputFile);
+                parseIntStats(inputFile);
             if (statFlags.HasFlag(eStatFlags.int64Stats))
-                parseInt64Stats(buffer, inputFile);
+                parseInt64Stats(inputFile);
             if (statFlags.HasFlag(eStatFlags.boolStats))
-                parseBoolStats(buffer, inputFile);
+                parseBoolStats(inputFile);
             if (statFlags.HasFlag(eStatFlags.floatStats))
-                parseFloatStats(buffer, inputFile);
+                parseFloatStats(inputFile);
             if (statFlags.HasFlag(eStatFlags.stringStats))
-                parseStringStats(buffer, inputFile);
+                parseStringStats(inputFile);
             if (statFlags.HasFlag(eStatFlags.didStats))
-                parseDidStats(buffer, inputFile);
+                parseDidStats(inputFile);
             if (statFlags.HasFlag(eStatFlags.posStats))
-                parsePosStats(buffer, inputFile);
+                parsePosStats(inputFile);
             if (statFlags.HasFlag(eStatFlags.iidStat))
-                parseIidStats(buffer, inputFile);
+                parseIidStats(inputFile);
 
-            dataFlags = (eDataFlags)Utils.ReadInt32(buffer, inputFile);
+            dataFlags = (eDataFlags)Utils.readInt32(inputFile);
 
-            int repeatWcid = Utils.ReadInt32(buffer, inputFile);
+            int repeatWcid = Utils.readInt32(inputFile);
 
             if (wcid != repeatWcid)
                 Console.WriteLine("Wcids do not match: {0} and {1}", wcid, repeatWcid);
 
             if (dataFlags.HasFlag(eDataFlags.attributes))
-                attributes = new sAttributes(buffer, inputFile);
+                attributes = new sAttributes(inputFile);
             if (dataFlags.HasFlag(eDataFlags.skills))
-                skills = new sSkills(buffer, inputFile);
+                skills = new sSkills(inputFile);
             if (dataFlags.HasFlag(eDataFlags.body))
-                body = new sBody(buffer, inputFile);
+                body = new sBody(inputFile);
             if (dataFlags.HasFlag(eDataFlags.spellBook))
-                spellBook = new sSpellBook(buffer, inputFile);
+                spellBook = new sSpellBook(inputFile);
             if (dataFlags.HasFlag(eDataFlags.eventFilter))
-                eventFilter = new sEventFilter(buffer, inputFile);
+                eventFilter = new sEventFilter(inputFile);
             if (dataFlags.HasFlag(eDataFlags.emoteTable))
-                emoteTable = new sEmoteTable(buffer, inputFile);
+                emoteTable = new sEmoteTable(inputFile);
             if (dataFlags.HasFlag(eDataFlags.createList))
-                createList = new sCreateList(buffer, inputFile);
+                createList = new sCreateList(inputFile);
             if (dataFlags.HasFlag(eDataFlags.pageDataList))
-                pageDataList = new sPageDataList(buffer, inputFile);
+                pageDataList = new sPageDataList(inputFile);
             if (dataFlags.HasFlag(eDataFlags.generatorTable))
-                generatorTable = new sGeneratorTable(buffer, inputFile);
+                generatorTable = new sGeneratorTable(inputFile);
 
-            objDesc = new sObjDesc(buffer, inputFile);
-            byte entryDelimiter = Utils.ReadByte(buffer, inputFile);
+            objDesc = new sObjDesc(inputFile);
+            byte entryDelimiter = Utils.readByte(inputFile);
 
             if (entryDelimiter != 0x01)
                 Console.WriteLine("Error reading weenie at {0}", inputFile.BaseStream.Position);
@@ -107,7 +107,7 @@ namespace Melt
         {
             Utils.writeInt32(wcid, outputStream);
             Utils.writeUInt32(entryHeader1, outputStream);
-            Utils.writeString(Utils.RestoreStringSpecialCharacters(weenieName), outputStream);
+            Utils.writeString(Utils.restoreStringSpecialCharacters(weenieName), outputStream);
             Utils.writeUInt32(entryHeader2, outputStream);
 
             Utils.writeInt32((int)statFlags, outputStream);
@@ -446,128 +446,128 @@ namespace Melt
             outputStream.Write("\n{0}]", tab);
         }
 
-        void parseIntStats(byte[] buffer, StreamReader inputFile)
+        void parseIntStats(StreamReader inputFile)
         {
             short amount = 0;
-            int sectionHeader = Utils.ReadInt32(buffer, inputFile);
+            int sectionHeader = Utils.readInt32(inputFile);
             if (sectionHeader >> 16 == 0x40)
             {
                 amount = (short)sectionHeader;
 
                 for (int i = 0; i < amount; i++)
                 {
-                    sIntStat newStat = new sIntStat(buffer, inputFile);
+                    sIntStat newStat = new sIntStat(inputFile);
                     intStats.Add(newStat.key, newStat);
                 }
             }
         }
 
-        void parseInt64Stats(byte[] buffer, StreamReader inputFile)
+        void parseInt64Stats(StreamReader inputFile)
         {
             short amount = 0;
-            int sectionHeader = Utils.ReadInt32(buffer, inputFile);
+            int sectionHeader = Utils.readInt32(inputFile);
             if (sectionHeader >> 16 == 0x40)
             {
                 amount = (short)sectionHeader;
 
                 for (int i = 0; i < amount; i++)
                 {
-                    sInt64Stat newStat = new sInt64Stat(buffer, inputFile);
+                    sInt64Stat newStat = new sInt64Stat(inputFile);
                     int64Stats.Add(newStat.key, newStat);
                 }
             }
         }
 
-        void parseBoolStats(byte[] buffer, StreamReader inputFile)
+        void parseBoolStats(StreamReader inputFile)
         {
             short amount = 0;
-            int sectionHeader = Utils.ReadInt32(buffer, inputFile);
+            int sectionHeader = Utils.readInt32(inputFile);
             if (sectionHeader >> 16 == 0x40)
             {
                 amount = (short)sectionHeader;
 
                 for (int i = 0; i < amount; i++)
                 {
-                    sBoolStat newStat = new sBoolStat(buffer, inputFile);
+                    sBoolStat newStat = new sBoolStat(inputFile);
                     boolStats.Add(newStat.key, newStat);
                 }
             }
         }
 
-        void parseFloatStats(byte[] buffer, StreamReader inputFile)
+        void parseFloatStats(StreamReader inputFile)
         {
             short amount = 0;
-            int sectionHeader = Utils.ReadInt32(buffer, inputFile);
+            int sectionHeader = Utils.readInt32(inputFile);
             if (sectionHeader >> 16 == 0x40)
             {
                 amount = (short)sectionHeader;
 
                 for (int i = 0; i < amount; i++)
                 {
-                    sFloatStat newStat = new sFloatStat(buffer, inputFile);
+                    sFloatStat newStat = new sFloatStat(inputFile);
                     floatStats.Add(newStat.key, newStat);
                 }
             }
         }
 
-        void parseStringStats(byte[] buffer, StreamReader inputFile)
+        void parseStringStats(StreamReader inputFile)
         {
             short amount = 0;
-            int sectionHeader = Utils.ReadInt32(buffer, inputFile);
+            int sectionHeader = Utils.readInt32(inputFile);
             if (sectionHeader >> 16 == 0x40)
             {
                 amount = (short)sectionHeader;
 
                 for (int i = 0; i < amount; i++)
                 {
-                    sStringStat newStat = new sStringStat(buffer, inputFile);
+                    sStringStat newStat = new sStringStat(inputFile);
                     stringStats.Add(newStat.key, newStat);
                 }
             }
         }
 
-        void parseDidStats(byte[] buffer, StreamReader inputFile)
+        void parseDidStats(StreamReader inputFile)
         {
             short amount = 0;
-            int sectionHeader = Utils.ReadInt32(buffer, inputFile);
+            int sectionHeader = Utils.readInt32(inputFile);
             if (sectionHeader >> 16 == 0x40)
             {
                 amount = (short)sectionHeader;
 
                 for (int i = 0; i < amount; i++)
                 {
-                    sDidStat newStat = new sDidStat(buffer, inputFile);
+                    sDidStat newStat = new sDidStat(inputFile);
                     didStats.Add(newStat.key, newStat);
                 }
             }
         }
 
-        void parsePosStats(byte[] buffer, StreamReader inputFile)
+        void parsePosStats(StreamReader inputFile)
         {
             short amount = 0;
-            int sectionHeader = Utils.ReadInt32(buffer, inputFile);
+            int sectionHeader = Utils.readInt32(inputFile);
             if (sectionHeader >> 16 == 0x40)
             {
                 amount = (short)sectionHeader;
 
                 for (int i = 0; i < amount; i++)
                 {
-                    posStats.Add(new sPosStat(buffer, inputFile));
+                    posStats.Add(new sPosStat(inputFile));
                 }
             }
         }
 
-        void parseIidStats(byte[] buffer, StreamReader inputFile)
+        void parseIidStats(StreamReader inputFile)
         {
             short amount = 0;
-            int sectionHeader = Utils.ReadInt32(buffer, inputFile);
+            int sectionHeader = Utils.readInt32(inputFile);
             if (sectionHeader >> 16 == 0x40)
             {
                 amount = (short)sectionHeader;
 
                 for (int i = 0; i < amount; i++)
                 {
-                    sIidStat newStat = new sIidStat(buffer, inputFile);
+                    sIidStat newStat = new sIidStat(inputFile);
                     iidStats.Add(newStat.key, newStat);
                 }
             }

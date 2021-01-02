@@ -13,14 +13,14 @@ namespace Melt
         public int stack_size;
         public int try_to_bond;
 
-        public sCreateListEntry(byte[] buffer, StreamReader inputFile)
+        public sCreateListEntry(StreamReader inputFile)
         {
-            wcid = Utils.ReadInt32(buffer, inputFile);
-            palette = Utils.ReadInt32(buffer, inputFile);
-            shade = Utils.ReadSingle(buffer, inputFile);
-            destination = (eDestinationType)Utils.ReadInt32(buffer, inputFile);
-            stack_size = Utils.ReadInt32(buffer, inputFile);
-            try_to_bond = Utils.ReadInt32(buffer, inputFile);
+            wcid = Utils.readInt32(inputFile);
+            palette = Utils.readInt32(inputFile);
+            shade = Utils.readSingle(inputFile);
+            destination = (eDestinationType)Utils.readInt32(inputFile);
+            stack_size = Utils.readInt32(inputFile);
+            try_to_bond = Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -68,14 +68,14 @@ namespace Melt
         public int stack_size;
         public int try_to_bond;
 
-        public sCprof(byte[] buffer, StreamReader inputFile)
+        public sCprof(StreamReader inputFile)
         {
-            wcid = Utils.ReadInt32(buffer, inputFile);
-            palette = Utils.ReadInt32(buffer, inputFile);
-            shade = Utils.ReadSingle(buffer, inputFile);
-            destination = (eDestinationType)Utils.ReadInt32(buffer, inputFile);
-            stack_size = Utils.ReadInt32(buffer, inputFile);
-            try_to_bond = Utils.ReadInt32(buffer, inputFile);
+            wcid = Utils.readInt32(inputFile);
+            palette = Utils.readInt32(inputFile);
+            shade = Utils.readSingle(inputFile);
+            destination = (eDestinationType)Utils.readInt32(inputFile);
+            stack_size = Utils.readInt32(inputFile);
+            try_to_bond = Utils.readInt32(inputFile);
         }
 
         public void writeRaw(StreamWriter outputStream)
@@ -117,14 +117,14 @@ namespace Melt
     {
         public List<sCreateListEntry> entries;
 
-        public sCreateList(byte[] buffer, StreamReader inputFile)
+        public sCreateList(StreamReader inputFile)
         {
             entries = new List<sCreateListEntry>();
 
-            int count = Utils.ReadInt32(buffer, inputFile);
+            int count = Utils.readInt32(inputFile);
             for (int i = 0; i < count; i++)
             {
-                entries.Add(new sCreateListEntry(buffer, inputFile));
+                entries.Add(new sCreateListEntry(inputFile));
             }
         }
 

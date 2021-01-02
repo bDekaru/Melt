@@ -21,12 +21,16 @@ namespace Melt
         //public bool ExactMatch => (Bitfield & 1) != 0;
         //public bool PortalSide => (Bitfield & 2) == 0;
 
-        public cCellPortal(byte[] buffer, StreamReader inputFile)
+        public cCellPortal(cDatFileEntry file) : this(new StreamReader(file.fileContent))
         {
-            Bitfield = Utils.ReadUInt16(buffer, inputFile);
-            EnvironmentId = Utils.ReadUInt16(buffer, inputFile);
-            OtherCellId = Utils.ReadUInt16(buffer, inputFile);
-            OtherPortalId = Utils.ReadUInt16(buffer, inputFile);
+        }
+
+        public cCellPortal(StreamReader inputFile)
+        {
+            Bitfield = Utils.readUInt16(inputFile);
+            EnvironmentId = Utils.readUInt16(inputFile);
+            OtherCellId = Utils.readUInt16(inputFile);
+            OtherPortalId = Utils.readUInt16(inputFile);
         }
 
         public void writeToDat(StreamWriter outputFile)
@@ -59,31 +63,35 @@ namespace Melt
         {
         }
 
-        public cEnvCell(byte[] buffer, StreamReader inputFile, eDatFormat format, bool translateTextureIds = true)
+        public cEnvCell(cDatFileEntry file, bool translateTextureIds = true) : this(new StreamReader(file.fileContent), file.fileFormat, translateTextureIds)
+        {
+        }
+
+        public cEnvCell(StreamReader inputFile, eDatFormat format, bool translateTextureIds = true)
         {
             if (format == eDatFormat.ToD)
             {
-                Id = Utils.ReadUInt32(buffer, inputFile);
+                Id = Utils.readUInt32(inputFile);
 
-                Bitfield = Utils.ReadUInt32(buffer, inputFile);
+                Bitfield = Utils.readUInt32(inputFile);
 
-                Utils.ReadUInt32(buffer, inputFile); //repeat id
+                Utils.readUInt32(inputFile); //repeat id
             }
             else if(format == eDatFormat.retail)
             {
-                Bitfield = Utils.ReadUInt32(buffer, inputFile);
-                Id = Utils.ReadUInt32(buffer, inputFile);
+                Bitfield = Utils.readUInt32(inputFile);
+                Id = Utils.readUInt32(inputFile);
             }
 
-            byte numSurfaces = Utils.ReadByte(buffer, inputFile);
-            byte numPortals = Utils.ReadByte(buffer, inputFile);    // Note that "portal" in this context does not refer to the swirly pink/purple thing, its basically connecting cells
-            ushort numCells = Utils.ReadUInt16(buffer, inputFile);  // I believe this is what cells can be seen from this one. So the engine knows what else it needs to load/draw.
+            byte numSurfaces = Utils.readByte(inputFile);
+            byte numPortals = Utils.readByte(inputFile);    // Note that "portal" in this context does not refer to the swirly pink/purple thing, its basically connecting cells
+            ushort numCells = Utils.readUInt16(inputFile);  // I believe this is what cells can be seen from this one. So the engine knows what else it needs to load/draw.
 
             Textures = new List<ushort>();
             // Read what surfaces are used in this cell
             for (uint i = 0; i < numSurfaces; i++)
             {
-                ushort texture = Utils.ReadUInt16(buffer, inputFile);
+                ushort texture = Utils.readUInt16(inputFile);
 
                 if (translateTextureIds)
                 {
@@ -97,49 +105,49 @@ namespace Melt
             }
 
             if (format == eDatFormat.retail)
-                Utils.Align(inputFile);
+                Utils.align(inputFile);
 
-            EnvironmentId = Utils.ReadUInt16(buffer, inputFile);
+            EnvironmentId = Utils.readUInt16(inputFile);
 
-            StructId = Utils.ReadUInt16(buffer, inputFile);
+            StructId = Utils.readUInt16(inputFile);
 
-            Position = new sFrame(buffer, inputFile);
+            Position = new sFrame(inputFile);
 
             Portals = new List<cCellPortal>();
             for (int i = 0; i < numPortals; i++)
             {
-                cCellPortal newPortal = new cCellPortal(buffer, inputFile);
+                cCellPortal newPortal = new cCellPortal(inputFile);
                 Portals.Add(newPortal);
             }
 
             if(format == eDatFormat.retail)
-                Utils.Align(inputFile);
+                Utils.align(inputFile);
 
             Cells = new List<ushort>();
             for (uint i = 0; i < numCells; i++)
-                Cells.Add(Utils.ReadUInt16(buffer, inputFile));
+                Cells.Add(Utils.readUInt16(inputFile));
 
             if (format == eDatFormat.retail)
-                Utils.Align(inputFile);
+                Utils.align(inputFile);
 
             Stabs = new List<cStab>();
             if ((Bitfield & 2) != 0)
             {
-                int numStabs = Utils.ReadInt32(buffer, inputFile);
+                int numStabs = Utils.readInt32(inputFile);
 
                 for (int i = 0; i < numStabs; i++)
                 {
                     //cStab Size is 32
-                    cStab newStab = new cStab(buffer, inputFile);
+                    cStab newStab = new cStab(inputFile);
                     Stabs.Add(newStab);
                 }
             }
 
             if (format == eDatFormat.retail)
-                Utils.Align(inputFile);
+                Utils.align(inputFile);
 
             if ((Bitfield & 8) != 0)
-                RestrictionObj = Utils.ReadUInt32(buffer, inputFile);
+                RestrictionObj = Utils.readUInt32(inputFile);
 
             if (inputFile.BaseStream.Position != inputFile.BaseStream.Length)
                 throw new Exception();

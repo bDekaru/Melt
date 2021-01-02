@@ -8,14 +8,14 @@ namespace Melt
     {
         public List<int> events;
 
-        public sEventFilter(byte[] buffer, StreamReader inputFile)
+        public sEventFilter(StreamReader inputFile)
         {
             events = new List<int>();
 
-            int count = Utils.ReadInt32(buffer, inputFile);
+            int count = Utils.readInt32(inputFile);
             for (int i = 0; i < count; i++)
             {
-                events.Add(Utils.ReadInt32(buffer, inputFile));
+                events.Add(Utils.readInt32(inputFile));
             }
         }
 
