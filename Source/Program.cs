@@ -35,6 +35,7 @@ namespace Melt
 
             //cDatFile datFile = new cDatFile();
             //datFile.loadFromDat("./input/client_cell_1.dat");
+            //datFile.loadFromDat("./input/client_cell_1 - Infiltration.dat");
             //datFile.loadFromDat("./input/cell - Late DM - 2004-09-01.dat");
             //datFile.loadFromDat("./client_cell_1.dat");
 
@@ -44,6 +45,9 @@ namespace Melt
             //datFileOld.loadFromDat("./input/cell - End of Beta Event.dat");
             //datFileOld.loadFromDat("./input/cell - 2005-01-05 (198656kb) (Admin) (Iteration 1583 - Complete).dat");
             datFileOld.loadFromDat("./input/cell - 2005-02-XX (202752kb) (Admin) (Iteration 1593 - Complete).dat");
+
+            //List<uint> listOfSettlements = cDatFile.loadSettlementListFromFile("./input/ListOfSettlements.txt");
+            //datFile.replaceLandblocks(listOfSettlements, datFileOld);
 
             datFileOld.convertRetailToToD(10000);
 
@@ -108,7 +112,7 @@ namespace Melt
             //};
             //datFile.replaceDungeonList(trainingAcademies, datFileOld);
 
-            //datFile.writeToDat("./client_cell_1.dat");
+            datFile.writeToDat("./client_cell_1.dat");
 
             //cache9Converter.loadWeeniesRaw("./input/0009.raw");
             //cache9Converter.performCacheFixes();
@@ -204,6 +208,7 @@ namespace Melt
             //RegionConverter.convert("Region/13000000.bin");
             //RegionConverterDM.convert("Region/130F0000 Bael.bin");
             //RegionComparer.compare("Region/130F0000 DM.bin", false, "Region/130F0000 Bael.bin", false);
+            //RegionComparer.compare("Region/130F0000 DM.bin", false, "Region/130F0000 - 2005-02-XX (Admin) (Iteration 2112).bin", false);
             //TextureHeader.folderExtractTextureFromHeader("Landscape Texture Conversion/ToD/Alpha Maps/Headers");
             //TextureConverter.toBin("Landscape Texture Conversion/ToD/Alpha Maps/06006d6b.png", 0x06006d6b, 244);
             //DMtoToDTexture.convert();

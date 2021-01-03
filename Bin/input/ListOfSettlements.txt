@@ -1,0 +1,535 @@
+912a0012	Qalaba'r Seaside Villas
+d65a001d	Chi Zou Cottages
+bc870024	North Lytelthorpe Villas
+bba80023	East Span Way Settlement (Cottages)
+d47e001c	Siege Road Settlement (Cottages)
+9b700037	Yushad Ridge Settlement (Cottages)
+ce900010	Filos' Font Cottages
+b715003d	Kara Mansion
+ce57000c	Sawato Foothills Settlement (Cottages)
+c3870014	Meridian Cottages
+b1a30012	Witshire Mansion
+b391001a	Hilltop Mansion
+c18f001c	Leafdawning Settlement (Cottages)
+bb8e0025	West Rithwic Estates (Villas)
+d5d00015	Unnamed Villa
+dcd20026	Unnamed Villa
+bf1a0019	Ishilai Inlet Settlement (Cottages)
+94ce0024	Highland Manors (Villas)
+c2200018	North Adjamaer Cottages
+7c6c000e	North Yaraq Villas
+a09c001d	Auroch Pasture Estates (Villas)
+569c0022	Danby's Outpost Mansion
+9b5f001b	West Uziz Settlement (Cottages)
+965a0025	Dry Bone Manors (Villas)
+ec49001d	Southwest Hebian-To Settlement (Cottages)
+40bf0024	Rivermouth Villas
+3dc7002d	Adams' Beach (Cottages)
+b598001d	Cragstone Farms (Cottages)
+bc950025	South Victory Harbor (Cottages)
+bab20024	Holtburg Wilderness Settlement (Cottages)
+d1ab001d	South Beach Pass Villas
+d5a90036	Seaside Mansion
+d1a50024	Cape Feirgard Cottages
+caa30024	Southeast Arwic Settlement (Cottages)
+c39f0014	Isle of Tears  Mansion
+ca9c001d	North Eastham Meadow (Cottages)
+c7980026	Strathelar's Watch Cottages
+c794001e	Lake Blessed Cottages
+d6ba002d	Beach Pass Villas
+cfc0001c	Sennon Valley Retreat (Cottages)
+c9c30025	Far Claw Villas
+cfc5002e	Enchantment Mansion
+c0dd001c	Norstead (Cottages)
+b6d8001d	Bandit Road Villas
+a8da0015	Virindi Complex Mansion
+9bd80024	Neydisa Village (Cottages)
+98c6001d	Prosper River Headwaters (Cottages)
+a6cb0024	New Colier (Cottages)
+a2d90025	East Esper Valley (Cottages)
+b2b3001d	Evensong Settlement (Cottages)
+b2b9001d	West Holtburg Villas
+abbe001d	Mountain Keep Cottages
+a3bb001c	Lilyglen Cottages
+a49f001c	Iceea Hills Estates (Villas)
+a6a70024	Glenden Hills East Settlement (Cottages)
+a0ab001c	Glenden Hills North Settlement (Cottages)
+9baa0024	Mountain Ridge (Cottages)
+96a8001c	Eaves of Tiofor Settlement (Cottages)
+99b00026	Unnamed Cottage
+96b60025	Woodsbane Cottages
+92b3002d	Bucolic Villas
+90aa0014	Whispering Pines Cottages
+8aa6002c	Majestic Hill Cottages
+8ea10015	Power Plant Mansion
+99a2002b	Underground Forest Mansion
+9b9b001d	Zabool Overlook Settlement (Cottages)
+a698001f	Unnamed Villa
+ae91001c	Forgotten Hills (Cottages)
+c77f001c	East Lytelthorpe Settlement (Cottages)
+c27c001c	South Lytelthorpe (Cottages)
+bb79001c	North Yanshi Plains Settlement (Cottages)
+ac810025	Adventurer's Haven Cottages
+b77d000b	Seedsow Festival Stone Mansion
+9419001c	Simda'r Villas
+9b27000b	Unnamed Villa
+a52d0015	Unnamed Cottage
+9a30001c	Roadside Mansion
+962c002c	Forking Trail Mansion
+a23d001c	South Khayyaban Cottages
+a04b0023	Bhah Dhah Villas
+98440025	Dunes End Cottages
+8e400025	Serpent Hills Settlement (Cottages)
+9654001c	Al-Hatar Settlement (Cottages)
+9350001d	Monument Sands Settlement (Cottages)
+8b55001d	Al-Kasan Settlement (Cottages)
+8556001c	Ijaniya (Cottages)
+92600024	Arqasanti (Cottages)
+8c5f001d	Wi Badlands Settlement (Cottages)
+815e001d	South Yaraq Cottages
+84620024	Yaraq Mansion
+7c760024	Aqalah (Cottages)
+7981001c	Bay of Sands (Cottages)
+788c0014	Desert March Mansion
+808b0024	Unnamed Villas
+868e0025	Four Towers Settlement (Cottages)
+8a92001a	Zaikhal Mansion
+84960025	New Suntik (Cottages)
+879f0025	Maitland (Cottages)
+92770014	Samsur Butte Cottages
+8d73001d	Naqut Dreams Villas
+8f840024	Musansayn (Cottages)
+9b76002c	Janaa Ridge Settlement (Cottages)
+a06a0013	Desert Path Mansion
+a4640024	North Uziz Settlement (Cottages)
+a867001c	Narziz Cottages
+ad62001c	Arida Butte (Cottages)
+d28c001c	East Rithwic Estates (Villas)
+ce87001d	Gaerwel Edge Settlement (Cottages)
+4b98002c	Artifex South Mansion
+4eac001c	Plateau Hollow Settlement (Cottages)
+52c1002e	Lithaenean Cottages
+5eba0014	Unnamed Cottage
+5bcd001b	Frostfell Festival Stone Mansion
+65d0002a	Unnamed Villa
+52df001c	Sonel (Cottages)
+48e00024	Woodshore Cottages
+49e60023	Desolation Beach (Cottages)
+53e8001c	Empyrean Shrine Mansion
+7cf70027	Unnamed Villa
+84f8001e	North Beach Mansion
+91ec001d	Pavanne Vale Freehold (Cottages)
+a4ea0020	Celdiseth's Beach Settlement (Cottages)
+7fcc0028	Lake Nemuel Settlement (Cottages)
+ee52002a	Tou-Tou Estate Mansion
+f24f002c	Tou-Tou Penninsula Cottages
+f14a0024	Tou-Tou Road Villas
+ee420025	Nan-Zari (Villas)
+e9410025	Meditation Meadow (Cottages)
+e7460024	South Hebian-To Estates (Villas)
+e348001c	South Hebian-To Cottages
+e2440024	Nanto North Mansion
+df40001d	Saadia's Retreat Mansion
+da41000a	Unnamed Cottage
+6897001d	Sanai (Cottages)
+78b20024	Tiofor Deeps (Cottages)
+e42c001f	Mayoi Mansion
+e02a001c	Vesayan Overlook (Cottages)
+db33001c	West Mayoi Mountain Villas
+bf15002c	Ishilai Inlet Villas
+d1220025	Lugian Meadows Settlement (Cottages)
+ba25001c	Yukikaze (Cottages)
+c51a001c	South Adjamaer Cottages
+e059000b	Unnamed Cottage
+dd5c0024	Aimaru Plains Cottages
+e25f0014	Stoneport Villas
+db63001c	Mosswart Place Cottages
+e166001c	Bluewater Cottages
+df6a001c	Ariake (Cottages)
+df6f0024	Dryreach Beach Cottages
+de7a0025	Dryreach Beach Manors (Villas)
+cf74001d	Maedew (Cottages)
+ce70001d	Broadacre Cottages
+cb6b001d	Imuth Maer Cottages
+c566001d	North Sawato Villas
+c06f001e	Yanshi Mansion
+c6760026	Neu Gerz Villas
+d5510025	Shou-Zin (Villas)
+d64c0026	South Shoushi Villas
+d14b0015	Baishi North Mansion
+ce47001d	North Baishi Cottages
+d346001c	Tanshi (Villas)
+df4c001c	Shian-To Cottages
+d55f0014	Green Mire Mansion
+cf5c001c	East Sawato Settlement (Cottages)
+c258001c	East Sawato Cottages
+bd550025	Banderling Conquest Mansion
+c44e001c	Ayn Tayan (Cottages)
+b3740015	Liang Chi Settlement (Cottages)
+b26c001d	Faranar Foothills (Cottages)
+ad6a0024	Broken Sword Bethel Settlement (Cottages)
+b667001c	Yanshi Namoon North (Cottages)
+b661001e	Swamp Temple Place (Cottages)
+b55d001d	Jinianshi (Cottages)
+b95c0024	Blackmire Edge Cottages
+b04f001d	Taklihuan Settlement (Cottages)
+b141001c	Oboro (Cottages)
+a60f001d	Brigands Bay Settlement (Cottages)
+b13b001d	Spire Hills Settlement (Cottages)
+a57f001c	Charbone Ridge (Cottages)
+7792001c	Sharvale (Cottages)
+3c980033	Unnamed Cottage
+3b9c0023	Dire's Edge (Cottages)
+619e001c	East Danby (Cottages)
+c1a30031	Unnamed Cottages
+d07b001d	Riverbend Cottages
+ca83001c	Slinker Meadows (Cottages)
+e558002f	Unnamed Cottage
+cba8001c	Unnamed Cottages
+cab90033	Unnamed Cottage
+bf43001c	Ring of Crystals Estates (Cottages)
+84bc0016	Unnamed Cottage
+ad86001c	Enchanter's Meadow (Cottages)
+89180023	Artifice Mansion
+8a0e0025	South Shore Overlook Mansion
+9036001d	Unnamed Cottage
+9e330025	Brigand Sands Cottages
+d5310025	Font Alpa (Cottages)
+ca300026	Unnamed Cottages
+9a2c0024	Qalaba'r Oasis Settlement (Cottages)
+dc25001f	Unnamed Cottages
+87e00024	Frosty Dale Cottages
+9b1e002c	Unnamed Cottage
+80e10024	Stone Triad Dell (Cottages)
+6ae1001c	Dires Doors Estates (Cottages)
+8de30025	Greenvale Settlement (Cottages)
+7de80015	Wisp Lake Cottages
+6aea0023	Unnamed Cottage
+74ea001c	Snowy Valley (Cottages)
+6eed001c	Seaview Ridge Cottages
+8f0c0014	South Shore Mansion
+78f40025	Northwater Cottages
+9a81001d	Stone Face Oasis Villas
+9daf0024	Unnamed Villas
+9ebd0023	Unnamed Villa
+a2c1001c	Ispan Hills (Cottages)
+a5c00024	Mountain Keep Mansion
+a2c6002c	Unnamed Cottages
+a65a0015	Uziz Mansion
+a0510016	Krau Li Labyrinth Mansion
+a5490025	Unnamed Villas
+c946001c	Jai-Tan Dale (Cottages)
+a444000f	Unnamed Villa
+ab44001c	Zombie Castle Mansion
+c641001c	West Baishi Settlement (Cottages)
+ac3f0024	Kanasa (Cottages)
+a73f0026	Unnamed Cottages
+c13d0025	Mage's Pass (Cottages and Villa)
+bc390025	Unnamed Cottages
+a1380015	Unnamed Villa
+c1380025	Unnamed Cottages
+a7380024	Plainsview Cottages
+cc360024	Unnamed Cottages
+b6340035	Tattered Ridge (Villas)
+ab30001d	Ro-Nan (Villas)
+8c210024	Unnamed Cottages
+941d0027	Unnamed Cottage
+8a7f0025	Jackcat Canyon (Cottages)
+7d7e0025	Midsong Cottages
+dd7e002d	Dryreach Mansion
+d68c0016	Unnamed Villa
+d38f000e	Unnamed Cottage
+7d98002e	Unnamed Cottages
+809b0026	Helms Villas
+a9a10016	Two Pillars Mansion
+7a7b0025	Unnamed Cottage
+d1830024	Siege Road Villas
+aca60025	Taralla (Cottages)
+bcad0027	Mite Tunnels Mansion
+c1af000b	Unnamed Cottage
+da860036	Unnamed Cottage
+8573001d	Arrak (Cottages)
+9e7e001e	Samsur Crater Mansion
+9c8d001c	Dillo Butte Settlement (Cottages)
+d26d001c	Crescent Lane Cottages
+b264001d	West Yanshi Namoon (Cottages)
+cb64001c	Mire Hill (Villas)
+d1640024	Sclavavania (Cottages)
+f754000a	Unnamed Villa
+c6530013	Forgotten Spire Mansion
+93850024	Stone Scar Settlement (Cottages)
+99850024	Nal Wadi Cottages
+eb3a0023	Unnamed Villa
+e82d001d	Unnamed Villa
+9e880024	Greenswath (Cottages)
+9189001b	Unnamed Cottages
+d627000a	Unnamed Cottage
+db21001e	Unnamed Cottages
+ca1d001d	Xinh (Cottages)
+9e74001c	Cactus Acres (Cottages)
+ca170016	Two Sand Bars Mansion
+a973001c	Yinar (Cottages)
+bc0e001e	Unnamed Cottages
+da6b0025	Narsys (Cottages)
+8c98001d	Alfreth Ridge Cottages
+4ca10025	Unnamed Cottages
+86a80032	Unnamed Cottage
+3ea80026	Unnamed Cottages
+3eac0035	Unnamed Villa
+44b4001b	Unnamed Cottage
+dd470024	Sai-Nan (Cottages)
+8a48001c	Pillars-on-the-Sea Cottages
+42b9002d	Unnamed Cottages
+46c00025	Auralla Settlement (Cottages)
+dbc2001c	Unnamed Cottages
+4bc40016	Unnamed Villa
+b2d4001c	Alvador (Villas)
+cbda0025	Haliana (Cottages)
+b1dd001c	West Norstead (Cottages)
+a5df0023	Unnamed Cottages
+abde001c	Zatara (Cottages)
+ace3001c	Unnamed Cottages
+8de80023	Unnamed Cottage
+a5860025	Sand's Edge (Cottages)
+96330026	Villabar (Villas)
+ccac0024	Unnamed Cottages
+b7ae0024	Obsidian Span Mansion
+cbb20025	Eotensfang Cottages
+ceb10024	Lost Wish Cottages
+add4001d	Bretslef Cottages
+9170001d	Al-Nosaj (Cottages)
+a06e0025	Vulture's Eye Villas
+956e0024	Sand Kings Cottages
+8b6d001d	Bleached Skull Wastes (Cottages)
+906c0025	Desert Mirage Cottages
+9a6b001c	Djebel al-Nar Cottages
+9264001c	Hamud Cottages
+8d630024	Djinaya Wind Cottages
+a4540024	South Uziz Villas
+a34f003f	South Uziz Mansion
+9c4d0024	Unnamed Cottages
+a591001c	Hermit Hill Cottages
+a097001c	Lost Realm Cottages
+b0980013	Meerthus Square (Cottages)
+a998001c	Solstice Hill (Cottages)
+ec450025	Ong-Hau Village (Cottages)
+b3c2001d	Bleak Valley (Cottages)
+c0d9001c	Norvale (Cottages)
+abe7001c	Northreach (Cottages)
+ad8b0024	King Pwyll Square (Villas)
+83f4001d	Unnamed Cottages
+88f70024	Point Tremblant (Cottages)
+97910025	Bellig Mesa Cottages
+9b91001d	Stonebend Cottages
+9b960024	Redrock Cottages
+8382001b	Midsong Festival Stone Mansion
+679d001d	Fearnot Valley Cottages
+68a1001d	Embara (Cottages)
+5fa20025	Tarn Vinara Villas
+91a5001c	Mistdweller Villas
+6faf002d	East Morntide Villas
+91b8001c	Pine Hillock Settlement (Cottages)
+8cb9001c	Firedew (Cottages)
+8fbf002e	Mesa Valley Mansion
+86c0001e	Ianna (Cottages)
+67c90025	Hidden Valley (Cottages)
+61ca001c	Verena (Cottages)
+5fcd0025	Unnamed Villas
+69d3003b	Laiti's Villa
+5ed90024	Unnamed Villas
+c46c0024	Snakehead (Cottages)
+94140024	Stormbrow (Cottages)
+8312001d	Land Bridge Villas
+c583000c	Lytelthorpe Mansion
+52ab001c	Yee Villas
+4db0001b	Unnamed Cottage
+4eb6000e	Unnamed Villa
+4eba0014	Rhynntal Cottages
+48bc0024	Fadsahil Settlement (Cottages)
+4dc00025	Rahvard Square (Villas)
+4bc80024	Pine Deep (Cottages)
+3ecc0024	Westshore Cottages
+bd740025	Folthid Mansion
+71e40024	Lord Cambarth Villas
+69e50024	Lightbringer Dale Cottages
+4de70026	Empyrean Shore Villas
+7c70001d	Al-Arqis Cottages
+7394001c	West Zaikhal Freehold (Cottages and Villa)
+845b0014	Markers End Mansion
+8e480024	Desert Vanguard Cottages
+d03d001e	East Baishi Mansion
+74880014	Desert Boundary Cottages
+b4250025	Lake Thrasyl Cottages
+ad200025	Southern Park (Cottages)
+a6180025	Linvak Tukal Foothills Settlement (Cottages)
+6f8b0024	Loredane Villas
+d467002c	Sawato Mansion
+d563001c	San-Chin (Cottages)
+b9570024	Li-Po Cottages
+c1540024	Lo-Han (Villas)
+b9530025	Zin-Dai (Cottages)
+b54f0025	Empyrean Fields Cottages
+bd470024	Jasmine Meadow (Cottages)
+b53b001c	Shara (Cottages)
+ab38001d	Erevana Villas
+ab340025	Ikama Cottages
+a97d001d	Devana (Cottages)
+a08d001c	Palm-of-Stone Villas
+aa910033	Forgotten Mansion
+a092001c	Maythen Geroyu Villas
+ac950024	Tinkelo Hold Villas
+95890025	East Al-Jalima Villas
+96640024	Ahr-Zona (Cottages)
+995b0025	Thasali Cottages
+f354001c	Unnamed Cottages
+94440025	Al-Mar Oasis (Cottages)
+b286001d	Osric Cottages
+a274002c	Drytree Settlement (Cottages)
+b28b001c	Darawyll Village (Cottages)
+84170014	Landbridge Mansion
+806f0025	Sand Shallow Cottages
+859b0025	Halls of the Helm Mansion
+b94f002c	Empyrean Fields Mansion
+8c9d001d	Dovetail Valley Villas
+929e0024	Soltan Villas
+7a9e001d	Mimiana Villas
+95a3001c	Howling Wolf Villas
+7e9f0024	Bright Blade Cottages
+b252001d	Kuyiza (Cottages)
+ab480024	Sonpay (Cottages)
+b3450025	Kelnen Village (Cottages)
+923b0025	Mahara Cottages
+9938001c	Avatania Cottages
+84770014	Return of Mumiyah Cottages
+6b8e0025	Shore Vista Cottages
+4a9c0025	Mirthless Dale Cottages
+459c001e	Last-Stop-Before-Dires Villas
+55a00024	Inquisitor's Dale Cottages
+51a00025	Merak (Cottages)
+5ba20024	Tia-Leh Homestead (Cottages)
+68a50024	Rethux Vale (Cottages)
+5fa60025	Nalib Cavana Settlement (Cottages)
+5ba60025	Wolfenvale (Villas)
+63a80025	Direvale Villas
+5dab0024	Unnamed Villas
+70aa0024	Genem Causland (Cottages)
+42aa0024	Sliver-of-Blue Cottages
+6cab001c	East Morntide Settlement (Cottages)
+4adb0025	Brazenn Domain (Cottages)
+3fb40002	Far West Shores Mansion
+3ed00023	Marae Vista Mansion
+45dc0025	Lady Maila Estates (Cottages)
+65e5001d	Thyrinn Cant Cottages
+5ce7001d	Northfire Estates (Cottages)
+58e80024	Azaroth Cottages
+cb7f001a	Riverbend Mansion
+ddcc001d	Olthoi North Mansion
+ba31002e	Linvak Range Mansion
+db2e0027	Snow Capped Mountain Mansion
+b17e0024	Asbel Domain (Cottages)
+b779001d	Jenshi Cottages
+cb76001c	Jin-Lai Stronghold (Cottages and Villa)
+da6f001c	South Siege Villas
+ceba0024	Unnamed Villas
+53c5001c	Stormtree Villas
+c6ce0025	Unnamed Villas
+ce68001c	Village Quan (Cottages)
+d642001c	Lin Kiln Park (Cottages)
+5ebe0024	Aloria (Cottages)
+66c30025	Regina Cottages
+41c4001c	Caerlin Cottages
+5dc6001d	Asandra Cottages
+a4cf0025	Glystaene Cottages
+6acf001c	Ice's Edge Cottages
+c7d20024	New Cannthalo (Cottages)
+a529001c	Mattekar Slopes Cottages
+7ad6001c	Anadil (Cottages)
+cbd6001c	P'rnelle Acres (Cottages)
+a3e70025	Dagger Vale (Cottages)
+81e90025	Midhill Cottages
+ae13001d	Scimitar Lake Cottages
+86f10024	Tharesun (Cottages)
+8bf2001d	Celcynd Cottages
+85b4001c	Durglen (Cottages/Villa)
+78b60025	Unnamed Villas
+d8460024	Unnamed Cottages
+8cc2001d	New Nesortania (Cottages)
+a78a0024	Demonsbane Cottages
+6f910016	Hidden Valley Mansion
+6992001c	Nidal-Taraq Villas
+419c001d	Peril's Edge Cottages
+63a2001d	Harmonious Blade Cottages
+51a30024	Adept's Domain (Cottages)
+55a40025	Shield of Valor Cottages
+4ca50014	Axefall Glen (Cottages)
+61ac001c	Deepvale Cottages
+a84d0025	Ardent Realm (Cottages and Villa)
+52b8001d	Rytheran Dale (Cottages)
+7ec80024	Mountain Retreat Cottages
+b2c9001d	Colier View Hill (Cottages)
+83cd0025	Windrune Cottages
+aed00025	Baron's Domain (Cottages)
+d9d00025	Arrowdale Cottages
+c4d9001d	Broken Haft Vale (Cottages)
+a1dd0025	Patron's Honor Cottages
+a3e3002b	Unnamed Cottages
+53e40025	Sweet Maple Cottages
+8f15001c	Artifice Cottages
+7cf3001c	Far Horizon Cottages
+6494001d	Inner Sea Mansion
+7aa6002c	Deep Forest Mansion
+42a60023	Artifex North Mansion
+b948001b	Hill of Pines Mansion
+923f0024	Nicks Signature Mansion
+c53d0014	Trialos Mansion
+c7c7000d	Lost Wish Range Mansion
+41c80025	Plateau River Mansion
+a8e30012	Northreach Mansion
+6f950024	Gharu'n Victory Villas
+7aa20024	Blazing Wand Villas
+46a5001c	Hero's Vale (Villas)
+42ae0024	Wilomine Villas
+ac4d001c	Shield of Ispar Villas
+a7430024	Unnamed Villas
+973d000b	Unnamed Villa
+97cb0025	Songview (Cottages)
+c9560014	Sawato Spire Mansion
+9390001d	Unified Heart Villas
+a734001c	Gredaline Villas
+9132002c	Ebbing Tide Villas
+70a60025	Sanam Batal Villas
+74ab0025	Darasa Villas
+73af001c	Unnamed Villas
+5eb40025	Dame Tolani Villas
+81a60023	Unnamed Cottages
+6ca70025	Morntide Ascent Cottages
+54a80025	Hopevale (Cottages)
+80aa001d	Reviled Maw Cottages
+56ac0023	Stone Scythe Stronghold (Cottages and Villa)
+84ac001c	Tusker Notch (Cottages)
+80ae001d	Lanadryll Cottages
+5eaf001d	Firesong Cottages
+84b0001c	Charnhold (Cottages)
+63b0001c	Majestic Saddle Cottages
+5ab0001c	Rending Talon Cottages
+56b00025	Two Hills Cottages
+5ab40024	Tyrrin Cottages
+d6be001d	Hand-on-Sword Cottages
+d3c00024	Secluded Valley Cottages
+d7c2001c	Jeweled Thorn Estates (Cottages)
+85c4001d	North Pass Hollow Cottages
+82c7001d	Defiant Prey Cottages
+89c9001d	Stonerune Cottages
+d1cc0024	Explorer's Villas
+89cd0025	Shaky Ledge Cottages
+d1d00025	Isparian Flame Estates (Cottages)
+8bab0023	Banderling Tower Mansion
+8cb30025	Treehouse Tower Mansion
+4993002f	Ridge Route Mansion
+a777001c	Laikothas Crypt Mansion
+b15d001c	Mage Tower Mansion
+b257001c	Blackmire Swamp Mansion
+42cc001b	Northwest Delta Mansion
+42d0001d	Farmstead Mansion
+73af001f	Amarand Villas
+9c4d001d	Sands-of-the-Skull Cottages

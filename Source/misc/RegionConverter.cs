@@ -768,8 +768,6 @@ namespace Melt
 
             Console.WriteLine("Converting region file to winter...");
 
-            byte[] buffer = new byte[1024];
-
             uint fileHeader;
             uint loaded;
             uint timeStamp;

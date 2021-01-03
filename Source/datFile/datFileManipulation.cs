@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 
 namespace Melt
@@ -867,6 +868,112 @@ namespace Melt
             timer.Stop();
             if (verboseLevel > 1)
                 Console.WriteLine("{0} landblocks replaced in {1} seconds. {2} landblocks unchanged", landblocksAddedCounter, timer.ElapsedMilliseconds / 1000f, landblocksNotFoundCounter);
+        }
+
+        public void replaceLandblocks(List<uint> listOfLandblocks, cDatFile fromFile, int verboseLevel = 5)
+        {
+            if (verboseLevel > 1)
+                Console.WriteLine($"Replacing {listOfLandblocks.Count} landblocks...");
+
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+
+            int landblockReplacedCounter = 0;
+            int landblockNotFoundCounter = 0;
+            foreach (uint landblockId in listOfLandblocks)
+            {
+                if (replaceLandblock(landblockId, fromFile, false, verboseLevel))
+                    landblockReplacedCounter++;
+                else
+                    landblockNotFoundCounter++;
+            }
+
+            timer.Stop();
+            if (verboseLevel > 1)
+                Console.WriteLine("{0} landblocks(s) replaced in {1} seconds. {2} landblocks(s) not found.", landblockReplacedCounter, timer.ElapsedMilliseconds / 1000f, landblockNotFoundCounter);
+        }
+
+        static public List<uint> loadSettlementListFromFile(string filename)
+        {
+            StreamReader inputFile = new StreamReader(new FileStream(filename, FileMode.Open, FileAccess.Read));
+            StreamWriter outputFile = new StreamWriter(new FileStream("./ListOfSettlements.txt", FileMode.Create, FileAccess.Write));
+
+            List<uint> list = new List<uint>();
+
+            string line = inputFile.ReadLine();
+            string[] splitLine;
+            while (!inputFile.EndOfStream)
+            {
+                splitLine = line.Split('\t');
+                uint cellId = Convert.ToUInt32(splitLine[0], 16);
+                list.Add(cellId);
+
+                line = inputFile.ReadLine();
+            }
+
+            return list;
+        }
+
+        static public void buildSettlementFileFromGoArrowLocationFile(string filename)
+        {
+            StreamReader inputFile = new StreamReader(new FileStream(filename, FileMode.Open, FileAccess.Read));
+            StreamWriter outputFile = new StreamWriter(new FileStream("./ListOfSettlements.txt", FileMode.Create, FileAccess.Write));
+
+            string line = inputFile.ReadLine();
+            string substring;
+            while (!inputFile.EndOfStream)
+            {
+                if (line.Contains("type=\"Village\""))
+                {
+                    int nameStartIndex = line.IndexOf("name=") + 6;
+                    int nameEndIndex = line.IndexOf("\"", nameStartIndex);
+
+                    string name = line.Substring(nameStartIndex, nameEndIndex - nameStartIndex);
+
+                    int nsStartIndex = line.IndexOf("NS=") + 4;
+                    int nsEndIndex = line.IndexOf("\"", nsStartIndex);
+
+                    substring = line.Substring(nsStartIndex, nsEndIndex - nsStartIndex);
+                    float ns = float.Parse(substring, CultureInfo.InvariantCulture.NumberFormat);
+
+                    int ewStartIndex = line.IndexOf("EW=") + 4;
+                    int ewEndIndex = line.IndexOf("\"", ewStartIndex);
+
+                    substring = line.Substring(ewStartIndex, ewEndIndex - ewStartIndex);
+                    float ew = float.Parse(substring, CultureInfo.InvariantCulture.NumberFormat);
+
+                    uint cellId = coordsToCellId(ns, ew);
+
+                    outputFile.WriteLine($"{cellId.ToString("x8")}\t{name}");
+                    outputFile.Flush();
+                }
+
+                line = inputFile.ReadLine();
+            }
+
+            inputFile.Close();
+            outputFile.Close();
+        }
+
+        static public uint coordsToCellId(float northSouth, float eastWest)
+        {
+            northSouth = (northSouth - 0.5f) * 10.0f;
+            eastWest = (eastWest - 0.5f) * 10.0f;
+
+            var baseX = (uint)(eastWest + 0x400);
+            var baseY = (uint)(northSouth + 0x400);
+
+            byte blockX = (byte)(baseX >> 3);
+            byte blockY = (byte)(baseY >> 3);
+            byte cellX = (byte)(baseX & 7);
+            byte cellY = (byte)(baseY & 7);
+
+            uint block = (uint)((blockX << 8) | blockY);
+            uint cell = (uint)((cellX << 3) | cellY);
+
+            uint cellId = (block << 16) | (cell + 1);            
+
+            return cellId;
         }
     }
 }
