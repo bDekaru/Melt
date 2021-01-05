@@ -21,6 +21,7 @@ namespace Melt
         public static cCache9Converter cache9Converter = new cCache9Converter();
         static void Workbench(string[] args)
         {
+            //AceDatabaseUtilities.RemoveAllNonApartmentHouses();
             //AceMutationScripts aceMutationScripts = new AceMutationScripts();
             //aceMutationScripts.BuildScripts();
             //Console.WriteLine("Done");
@@ -40,13 +41,13 @@ namespace Melt
             //datFile.loadFromDat("./client_cell_1.dat");
 
             cDatFile datFileOld = new cDatFile();
-            //datFileOld.loadFromDat("./input/cell - Release.dat");
+            datFileOld.loadFromDat("./input/cell - Release.dat");
             //datFileOld.loadFromDat("./input/client_cell_1.dat");
             //datFileOld.loadFromDat("./input/cell - End of Beta Event.dat");
             //datFileOld.loadFromDat("./input/cell - 2005-01-05 (198656kb) (Admin) (Iteration 1583 - Complete).dat");
-            datFileOld.loadFromDat("./input/cell - 2005-02-XX (202752kb) (Admin) (Iteration 1593 - Complete).dat");
+            //datFileOld.loadFromDat("./input/cell - 2005-02-XX (202752kb) (Admin) (Iteration 1593 - Complete).dat");
 
-            //List<uint> listOfSettlements = cDatFile.loadSettlementListFromFile("./input/ListOfSettlements.txt");
+            //List<uint> listOfSettlements = cDatFile.loadSettlementListFromFile("./input/ListOfSettlementLandblocks.txt");
             //datFile.replaceLandblocks(listOfSettlements, datFileOld);
 
             datFileOld.convertRetailToToD(10000);

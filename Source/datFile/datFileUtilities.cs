@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 
 namespace Melt
@@ -12,6 +13,12 @@ namespace Melt
         {
             public ushort newId;
             public List<ushort> alternateNewIds;
+        }
+
+        class cAmbiguousUintValues
+        {
+            public uint newId;
+            public List<uint> alternateNewIds;
         }
 
         public void buildTextureIdMigrationTable(cDatFile otherDat)
@@ -82,14 +89,14 @@ namespace Melt
                         ushort currentId = 0;
                         idMigrationTable.TryGetValue(oldId, out currentId);
 
-                        if(currentId == 0)
+                        if (currentId == 0)
                             idMigrationTable.Add(oldId, newId);
                         else
                         {
                             if (newId != currentId)
                             {
                                 cAmbiguousValues ambiguousId;
-                                if(!ambiguousList.TryGetValue(oldId, out ambiguousId))
+                                if (!ambiguousList.TryGetValue(oldId, out ambiguousId))
                                 {
                                     ambiguousId = new cAmbiguousValues();
                                     ambiguousId.newId = currentId;
@@ -99,7 +106,7 @@ namespace Melt
                                 }
                                 else
                                 {
-                                    if(!ambiguousId.alternateNewIds.Contains(newId))
+                                    if (!ambiguousId.alternateNewIds.Contains(newId))
                                         ambiguousId.alternateNewIds.Add(newId);
                                 }
                                 //throw new Exception("ambiguous texture id migration");
@@ -111,7 +118,7 @@ namespace Melt
 
             foreach (ushort entry in allOldIds)
             {
-                if(!idMigrationTable.ContainsKey(entry))
+                if (!idMigrationTable.ContainsKey(entry))
                 {
                     missingList.Add(entry, entry);
                 }
@@ -157,16 +164,19 @@ namespace Melt
             outputFile.Close();
         }
 
-        public void buildEnvironmentIdMigrationTable(cDatFile otherDat)
+        public void buildObjectIdMigrationTable(cDatFile otherDat)
         {
-            Dictionary<uint, cEnvCell> thisEnvCells = new Dictionary<uint, cEnvCell>(); ;
-            Dictionary<uint, cEnvCell> otherEnvCells = new Dictionary<uint, cEnvCell>(); ;
-            SortedDictionary<ushort, ushort> idMigrationTable = new SortedDictionary<ushort, ushort>(); ;
+            Dictionary<uint, cLandblockInfo> thisLandblockInfoMap = new Dictionary<uint, cLandblockInfo>();
+            Dictionary<uint, cLandblockInfo> otherLandblockInfoMap = new Dictionary<uint, cLandblockInfo>();
 
-            SortedDictionary<ushort, cAmbiguousValues> ambiguousList = new SortedDictionary<ushort, cAmbiguousValues>();
+            Dictionary<uint, cEnvCell> thisEnvCells = new Dictionary<uint, cEnvCell>();
+            Dictionary<uint, cEnvCell> otherEnvCells = new Dictionary<uint, cEnvCell>();
+            SortedDictionary<uint, uint> idMigrationTable = new SortedDictionary<uint, uint>();
 
-            List<ushort> allOldIds = new List<ushort>();
-            SortedDictionary<ushort, ushort> missingList = new SortedDictionary<ushort, ushort>();
+            SortedDictionary<uint, cAmbiguousUintValues> ambiguousList = new SortedDictionary<uint, cAmbiguousUintValues>();
+
+            List<uint> allOldIds = new List<uint>();
+            SortedDictionary<uint, uint> missingList = new SortedDictionary<uint, uint>();
 
             foreach (KeyValuePair<uint, cDatFileEntry> entry in fileCache)
             {
@@ -175,6 +185,9 @@ namespace Melt
                 }
                 else if ((entry.Value.fileId & 0x0000FFFE) == 0x0000FFFE) //surface objects
                 {
+                    cLandblockInfo thisLandblockInfo = new cLandblockInfo(entry.Value);
+
+                    thisLandblockInfoMap.Add(entry.Value.fileId, thisLandblockInfo);
                 }
                 else //dungeons and interiors
                 {
@@ -191,6 +204,9 @@ namespace Melt
                 }
                 else if ((entry.Value.fileId & 0x0000FFFE) == 0x0000FFFE) //surface objects
                 {
+                    cLandblockInfo otherLandlockInfo = new cLandblockInfo(entry.Value);
+
+                    otherLandblockInfoMap.Add(entry.Value.fileId, otherLandlockInfo);
                 }
                 else //dungeons and interiors
                 {
@@ -200,29 +216,29 @@ namespace Melt
                 }
             }
 
-            foreach (KeyValuePair<uint, cEnvCell> entry in otherEnvCells)
+            foreach (KeyValuePair<uint, cLandblockInfo> entry in otherLandblockInfoMap)
             {
-                cEnvCell thisEnvCell;
-                cEnvCell otherEnvCell = entry.Value;
+                cLandblockInfo thisLandblockInfo;
+                cLandblockInfo otherLandblockInfo = entry.Value;
 
-                if (!thisEnvCells.TryGetValue(otherEnvCell.Id, out thisEnvCell))
+                if (!thisLandblockInfoMap.TryGetValue(otherLandblockInfo.Id, out thisLandblockInfo))
                     continue;
 
-                for (int i = 0; i < otherEnvCell.Portals.Count; i++)
+                for (int i = 0; i < otherLandblockInfo.Objects.Count; i++)
                 {
-                    ushort oldId = otherEnvCell.Portals[i].EnvironmentId;
+                    uint oldId = otherLandblockInfo.Objects[i].id;
                     if (!allOldIds.Contains(oldId))
                         allOldIds.Add(oldId);
                 }
 
-                if (compareEnvCells(thisEnvCell, otherEnvCell, true))
+                if (compareLandblockInfo(thisLandblockInfo, otherLandblockInfo))
                 {
-                    for (int i = 0; i < otherEnvCell.Portals.Count; i++)
+                    for (int i = 0; i < otherLandblockInfo.Objects.Count; i++)
                     {
-                        ushort oldId = otherEnvCell.Portals[i].EnvironmentId;
-                        ushort newId = thisEnvCell.Portals[i].EnvironmentId;
+                        uint oldId = otherLandblockInfo.Objects[i].id;
+                        uint newId = thisLandblockInfo.Objects[i].id;
 
-                        ushort currentId = 0;
+                        uint currentId = 0;
 
                         if (!idMigrationTable.TryGetValue(oldId, out currentId))
                             idMigrationTable.Add(oldId, newId);
@@ -230,12 +246,12 @@ namespace Melt
                         {
                             if (newId != currentId)
                             {
-                                cAmbiguousValues ambiguousId;
+                                cAmbiguousUintValues ambiguousId;
                                 if (!ambiguousList.TryGetValue(oldId, out ambiguousId))
                                 {
-                                    ambiguousId = new cAmbiguousValues();
+                                    ambiguousId = new cAmbiguousUintValues();
                                     ambiguousId.newId = currentId;
-                                    ambiguousId.alternateNewIds = new List<ushort>();
+                                    ambiguousId.alternateNewIds = new List<uint>();
                                     ambiguousList.Add(oldId, ambiguousId);
                                     ambiguousId.alternateNewIds.Add(newId);
                                 }
@@ -251,7 +267,58 @@ namespace Melt
                 }
             }
 
-            foreach (ushort entry in allOldIds)
+            foreach (KeyValuePair<uint, cEnvCell> entry in otherEnvCells)
+            {
+                cEnvCell thisEnvCell;
+                cEnvCell otherEnvCell = entry.Value;
+
+                if (!thisEnvCells.TryGetValue(otherEnvCell.Id, out thisEnvCell))
+                    continue;
+
+                for (int i = 0; i < otherEnvCell.Stabs.Count; i++)
+                {
+                    uint oldId = otherEnvCell.Stabs[i].id;
+                    if (!allOldIds.Contains(oldId))
+                        allOldIds.Add(oldId);
+                }
+
+                if (compareEnvCells(thisEnvCell, otherEnvCell, true))
+                {
+                    for (int i = 0; i < otherEnvCell.Stabs.Count; i++)
+                    {
+                        uint oldId = otherEnvCell.Stabs[i].id;
+                        uint newId = thisEnvCell.Stabs[i].id;
+
+                        uint currentId = 0;
+
+                        if (!idMigrationTable.TryGetValue(oldId, out currentId))
+                            idMigrationTable.Add(oldId, newId);
+                        else
+                        {
+                            if (newId != currentId)
+                            {
+                                cAmbiguousUintValues ambiguousId;
+                                if (!ambiguousList.TryGetValue(oldId, out ambiguousId))
+                                {
+                                    ambiguousId = new cAmbiguousUintValues();
+                                    ambiguousId.newId = currentId;
+                                    ambiguousId.alternateNewIds = new List<uint>();
+                                    ambiguousList.Add(oldId, ambiguousId);
+                                    ambiguousId.alternateNewIds.Add(newId);
+                                }
+                                else
+                                {
+                                    if (!ambiguousId.alternateNewIds.Contains(newId))
+                                        ambiguousId.alternateNewIds.Add(newId);
+                                }
+                                //throw new Exception("ambiguous texture id migration");
+                            }
+                        }
+                    }
+                }
+            }
+
+            foreach (uint entry in allOldIds)
             {
                 if (!idMigrationTable.ContainsKey(entry))
                 {
@@ -259,30 +326,30 @@ namespace Melt
                 }
             }
 
-            StreamWriter outputFile = new StreamWriter(new FileStream("environmentIdMigrationTable.txt", FileMode.Create, FileAccess.Write));
-            foreach (KeyValuePair<ushort, ushort> entry in idMigrationTable)
+            StreamWriter outputFile = new StreamWriter(new FileStream("objectIdMigrationTable.txt", FileMode.Create, FileAccess.Write));
+            foreach (KeyValuePair<uint, uint> entry in idMigrationTable)
             {
                 if (entry.Key == entry.Value)
                     continue;
-                outputFile.WriteLine($"{entry.Key.ToString("x4")} {entry.Value.ToString("x4")}");
+                outputFile.WriteLine($"{entry.Key.ToString("x8")} {entry.Value.ToString("x8")}");
                 outputFile.Flush();
             }
             outputFile.Close();
 
-            outputFile = new StreamWriter(new FileStream("environmentIdMigrationMissingConversions.txt", FileMode.Create, FileAccess.Write));
-            foreach (KeyValuePair<ushort, ushort> entry in missingList)
+            outputFile = new StreamWriter(new FileStream("objectIdMigrationMissingConversions.txt", FileMode.Create, FileAccess.Write));
+            foreach (KeyValuePair<uint, uint> entry in missingList)
             {
-                outputFile.WriteLine(entry.Key.ToString("x4"));
+                outputFile.WriteLine(entry.Key.ToString("x8"));
                 outputFile.Flush();
             }
             outputFile.Close();
 
-            outputFile = new StreamWriter(new FileStream("environmentIdMigrationTableAmbiguous.txt", FileMode.Create, FileAccess.Write));
-            foreach (KeyValuePair<ushort, cAmbiguousValues> entry in ambiguousList)
+            outputFile = new StreamWriter(new FileStream("objectIdMigrationTableAmbiguous.txt", FileMode.Create, FileAccess.Write));
+            foreach (KeyValuePair<uint, cAmbiguousUintValues> entry in ambiguousList)
             {
-                outputFile.Write($"{entry.Key.ToString("x4")} {entry.Value.newId.ToString("x4")}");
+                outputFile.Write($"{entry.Key.ToString("x8")} {entry.Value.newId.ToString("x8")}");
                 bool first = true;
-                foreach (ushort value in entry.Value.alternateNewIds)
+                foreach (uint value in entry.Value.alternateNewIds)
                 {
                     if (first)
                     {
@@ -291,7 +358,7 @@ namespace Melt
                     }
                     else
                         outputFile.Write(", ");
-                    outputFile.Write(value.ToString("x4"));
+                    outputFile.Write(value.ToString("x8"));
                     outputFile.Flush();
                 }
                 outputFile.WriteLine(")");
@@ -319,7 +386,7 @@ namespace Melt
 
                     foreach (var portal in thisEnvCell.Portals)
                     {
-                        if(!usedIds.Contains(portal.EnvironmentId))
+                        if (!usedIds.Contains(portal.EnvironmentId))
                             usedIds.Add(portal.EnvironmentId);
                     }
                 }
@@ -335,7 +402,62 @@ namespace Melt
             outputFile.Close();
         }
 
-        private bool compareEnvCells(cEnvCell thisEnvCell, cEnvCell otherEnvCell, bool isEnviromentComparison = false)
+        private bool compareLandblockInfo(cLandblockInfo thisLandblockInfo, cLandblockInfo otherLandblockInfo)
+        {
+            if (thisLandblockInfo.Id != otherLandblockInfo.Id)
+                return false;
+            if (thisLandblockInfo.NumCells != otherLandblockInfo.NumCells)
+                return false;
+
+            if (thisLandblockInfo.Objects.Count != otherLandblockInfo.Objects.Count)
+                return false;
+            for (int i = 0; i < thisLandblockInfo.Objects.Count; i++)
+            {
+                cStab thisStab = thisLandblockInfo.Objects[i];
+                cStab otherStab = otherLandblockInfo.Objects[i];
+                //if (thisStab.id == otherStab.id) // this is what we're migrating
+                //    return false;
+
+                if (thisStab.frame.angles.x != otherStab.frame.angles.x)
+                    return false;
+                if (thisStab.frame.angles.y != otherStab.frame.angles.y)
+                    return false;
+                if (thisStab.frame.angles.z != otherStab.frame.angles.z)
+                    return false;
+                if (thisStab.frame.angles.w != otherStab.frame.angles.w)
+                    return false;
+
+                if (thisStab.frame.origin.x != otherStab.frame.origin.x)
+                    return false;
+                if (thisStab.frame.origin.y != otherStab.frame.origin.y)
+                    return false;
+                if (thisStab.frame.origin.z != otherStab.frame.origin.z)
+                    return false;
+            }
+            if (thisLandblockInfo.buildingFlags != otherLandblockInfo.buildingFlags)
+                return false;
+
+            if (thisLandblockInfo.Buildings.Count != otherLandblockInfo.Buildings.Count)
+                return false;
+            for (int i = 0; i < thisLandblockInfo.Buildings.Count; i++)
+            {
+                //ignoring for now
+            }
+
+            if (thisLandblockInfo.RestrictionTables.Count != otherLandblockInfo.RestrictionTables.Count)
+                return false;
+            for (int i = 0; i < thisLandblockInfo.RestrictionTables.Count; i++)
+            {
+                ///ignoring for now
+            }
+            if (thisLandblockInfo.totalObjects != otherLandblockInfo.totalObjects)
+                return false;
+            if (thisLandblockInfo.bucketSize != otherLandblockInfo.bucketSize)
+                return false;
+            return true;
+        }
+
+        private bool compareEnvCells(cEnvCell thisEnvCell, cEnvCell otherEnvCell, bool isObjectComparison = false)
         {
             if (thisEnvCell.Id != otherEnvCell.Id)
                 return false;
@@ -371,7 +493,7 @@ namespace Melt
                 cCellPortal thisPortal = thisEnvCell.Portals[i];
                 cCellPortal otherPortal = otherEnvCell.Portals[i];
 
-                if (!isEnviromentComparison && thisPortal.EnvironmentId != otherPortal.EnvironmentId)
+                if (thisPortal.EnvironmentId != otherPortal.EnvironmentId)
                     return false;
 
                 if (thisPortal.Bitfield != otherPortal.Bitfield ||
@@ -384,7 +506,7 @@ namespace Melt
                 return false;
             for (int i = 0; i < thisEnvCell.Cells.Count; i++)
             {
-                if(thisEnvCell.Cells[i] != otherEnvCell.Cells[i])
+                if (thisEnvCell.Cells[i] != otherEnvCell.Cells[i])
                     return false;
             }
 
@@ -395,7 +517,7 @@ namespace Melt
                 cStab thisStab = thisEnvCell.Stabs[i];
                 cStab otherStab = otherEnvCell.Stabs[i];
 
-                if (thisStab.id != otherStab.id)
+                if (!isObjectComparison && thisStab.id != otherStab.id) //do not check thisStab.id if that's what we're converting
                     return false;
 
                 if (thisStab.frame.angles.x != otherStab.frame.angles.x)
@@ -418,7 +540,7 @@ namespace Melt
             if (thisEnvCell.Textures.Count != otherEnvCell.Textures.Count)
                 return false;
 
-            if (isEnviromentComparison) //do not check textureIds if that's what we're converting
+            if (isObjectComparison) //do not check textureIds if that's what we're converting
             {
                 for (int i = 0; i < thisEnvCell.Textures.Count; i++)
                 {
@@ -578,6 +700,88 @@ namespace Melt
 
             timer.Stop();
             Console.WriteLine("Finished in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
+        }
+
+        static public List<uint> loadSettlementListFromFile(string filename)
+        {
+            StreamReader inputFile = new StreamReader(new FileStream(filename, FileMode.Open, FileAccess.Read));
+
+            List<uint> list = new List<uint>();
+
+            string line = inputFile.ReadLine();
+            string[] splitLine;
+            while (!inputFile.EndOfStream)
+            {
+                splitLine = line.Split('\t');
+                uint cellId = Convert.ToUInt32(splitLine[0], 16);
+                list.Add(cellId);
+
+                line = inputFile.ReadLine();
+            }
+
+            return list;
+        }
+
+        static public void buildSettlementFileFromGoArrowLocationFile(string filename)
+        {
+            StreamReader inputFile = new StreamReader(new FileStream(filename, FileMode.Open, FileAccess.Read));
+            StreamWriter outputFile = new StreamWriter(new FileStream("./ListOfSettlements.txt", FileMode.Create, FileAccess.Write));
+
+            string line = inputFile.ReadLine();
+            string substring;
+            while (!inputFile.EndOfStream)
+            {
+                if (line.Contains("type=\"Village\""))
+                {
+                    int nameStartIndex = line.IndexOf("name=") + 6;
+                    int nameEndIndex = line.IndexOf("\"", nameStartIndex);
+
+                    string name = line.Substring(nameStartIndex, nameEndIndex - nameStartIndex);
+
+                    int nsStartIndex = line.IndexOf("NS=") + 4;
+                    int nsEndIndex = line.IndexOf("\"", nsStartIndex);
+
+                    substring = line.Substring(nsStartIndex, nsEndIndex - nsStartIndex);
+                    float ns = float.Parse(substring, CultureInfo.InvariantCulture.NumberFormat);
+
+                    int ewStartIndex = line.IndexOf("EW=") + 4;
+                    int ewEndIndex = line.IndexOf("\"", ewStartIndex);
+
+                    substring = line.Substring(ewStartIndex, ewEndIndex - ewStartIndex);
+                    float ew = float.Parse(substring, CultureInfo.InvariantCulture.NumberFormat);
+
+                    uint cellId = coordsToCellId(ns, ew);
+
+                    outputFile.WriteLine($"{cellId.ToString("x8")}\t{name}");
+                    outputFile.Flush();
+                }
+
+                line = inputFile.ReadLine();
+            }
+
+            inputFile.Close();
+            outputFile.Close();
+        }
+
+        static public uint coordsToCellId(float northSouth, float eastWest)
+        {
+            northSouth = (northSouth - 0.5f) * 10.0f;
+            eastWest = (eastWest - 0.5f) * 10.0f;
+
+            var baseX = (uint)(eastWest + 0x400);
+            var baseY = (uint)(northSouth + 0x400);
+
+            byte blockX = (byte)(baseX >> 3);
+            byte blockY = (byte)(baseY >> 3);
+            byte cellX = (byte)(baseX & 7);
+            byte cellY = (byte)(baseY & 7);
+
+            uint block = (uint)((blockX << 8) | blockY);
+            uint cell = (uint)((cellX << 3) | cellY);
+
+            uint cellId = (block << 16) | (cell + 1);
+
+            return cellId;
         }
     }
 }
