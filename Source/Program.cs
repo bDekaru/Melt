@@ -12,7 +12,8 @@ namespace Melt
         static void Main(string[] args)
         {
             //GeneratePhatACLootFiles(args);
-            Workbench(args);
+            MapManipulation(args);
+            //Workbench(args);
         }
 
         //public static cCache4Converter cache4Converter = new cCache4Converter();
@@ -27,93 +28,6 @@ namespace Melt
             //Console.WriteLine("Done");
             //Console.ReadLine();
             //return;
-
-            //cDatFile portalDatFile = new cDatFile();
-            //portalDatFile.loadFromDat("./input/client_portal.dat");
-            //int iteration = portalDatFile.GetFileIteration();
-            //portalDatFile.SetFileIteration(10000);
-            //portalDatFile.writeToDat("client_portal.dat");
-
-            //cDatFile datFile = new cDatFile();
-            //datFile.loadFromDat("./input/client_cell_1.dat");
-            //datFile.loadFromDat("./input/client_cell_1 - Infiltration.dat");
-            //datFile.loadFromDat("./input/cell - Late DM - 2004-09-01.dat");
-            //datFile.loadFromDat("./client_cell_1.dat");
-
-            cDatFile datFileOld = new cDatFile();
-            datFileOld.loadFromDat("./input/cell - Release.dat");
-            //datFileOld.loadFromDat("./input/client_cell_1.dat");
-            //datFileOld.loadFromDat("./input/cell - End of Beta Event.dat");
-            //datFileOld.loadFromDat("./input/cell - 2005-01-05 (198656kb) (Admin) (Iteration 1583 - Complete).dat");
-            //datFileOld.loadFromDat("./input/cell - 2005-02-XX (202752kb) (Admin) (Iteration 1593 - Complete).dat");
-
-            //List<uint> listOfSettlements = cDatFile.loadSettlementListFromFile("./input/ListOfSettlementLandblocks.txt");
-            //datFile.replaceLandblocks(listOfSettlements, datFileOld);
-
-            datFileOld.convertRetailToToD(10000);
-
-            cDatFile replacementDataFile = null;
-            if (datFileOld.isMissingCells)
-            {
-                Console.WriteLine($"Missing {datFileOld.getMissingCellsList().Count} cells...");
-                replacementDataFile = new cDatFile();
-                //replacementDataFile.loadFromDat("./input/cell - Release.dat");
-                replacementDataFile.loadFromDat("./input/client_cell_1.dat");
-                datFileOld.completeCellsFrom(replacementDataFile, true);
-                //datFileOld.truncateMissingCells();
-            }
-
-            int missingCount;
-            if (datFileOld.isMissingLandblocks(out missingCount))
-            {
-                Console.WriteLine($"Missing {missingCount} landblocks...");
-                if (replacementDataFile == null)
-                {
-                    replacementDataFile = new cDatFile();
-                    //replacementDataFile.loadFromDat("./input/cell - Release.dat");
-                    replacementDataFile.loadFromDat("./input/client_cell_1.dat");
-                }
-                datFileOld.completeLandblocksFrom(replacementDataFile);
-            }
-
-            datFileOld.writeToDat("./client_cell_1.dat");
-
-            //datFile.replaceDungeon(0x017d, datFileOld, 0);
-
-            //datFile.replaceLandblockArea(0xC98C0028, datFileOld); //Rithwic
-            //datFile.replaceLandblockArea(0xC6A90013, datFileOld); //Arwic
-            //datFile.replaceLandblockArea(0x856D0040, datFileOld); //Tufa
-
-            //datFile.replaceLandblock(0xC6A90013, datFileOld); //Arwic
-
-            //datFile.removeBuildings(0xC6A90013);
-            //datFile.removeBuilding(0xC6A9011A);
-
-            //List<uint> buildingsToRemove = new List<uint>()
-            //{
-            //    0xA9B30114, //Holtburg->Neydisa Castle Portal Bunker
-            //    0xAAB40103, //Holtburg->Dryreach Portal Bunker
-            //    0xAAB40108, //Holtburg->Arwic Portal Bunker
-            //    0xA9B40188, //Holtburg->Rithwic Portal Bunker
-            //    0xA9B4017E, //Holtburg->Cragstone Portal Bunker
-            //    0xA9B40183, //Holtburg->Shoushi Portal Bunker
-            //};
-            //datFile.removeBuildings(buildingsToRemove);
-
-            //datFile.migrateDungeon(datFileOld, 0x017D, 0x017D); //original training academy
-
-            //List<ushort> trainingAcademies = new List<ushort>()
-            //{
-            //    0x0363,
-            //    0x0364,
-            //    0x0365,
-            //    0x0366,
-            //    0x0367,
-            //    0x0368
-            //};
-            //datFile.replaceDungeonList(trainingAcademies, datFileOld);
-
-            datFile.writeToDat("./client_cell_1.dat");
 
             //cache9Converter.loadWeeniesRaw("./input/0009.raw");
             //cache9Converter.performCacheFixes();
@@ -141,7 +55,7 @@ namespace Melt
 
             //CharGen charGen = new CharGen("./input/0E000002.bin");
             //charGen.modify();
-            //charGen.save("./0E000002 - CharGen - Classic.bin");
+            //charGen.save("./0E000002 - test.bin");
             //Console.ReadLine();
             //return;
 
@@ -173,13 +87,6 @@ namespace Melt
             //cache4Converter.writeJson("./output/");
             //Console.ReadLine();
             //return;
-
-            //testing
-            //args = new string[3];
-            //args[0] = "cached";
-            //args[1] = "./input/";
-            //args[2] = "./input/lootProfile.json";
-            //testing
 
             //Patcher.patch();
             //return;
@@ -239,6 +146,134 @@ namespace Melt
             Console.WriteLine("Done");
             Console.ReadLine();
             return;
+        }
+
+        static void MapManipulation(string[] args)
+        {
+            //cDatFile portalDatFile = new cDatFile();
+            //portalDatFile.loadFromDat("./input/client_portal.dat");
+            //int iteration = portalDatFile.GetFileIteration();
+            //portalDatFile.SetFileIteration(10000);
+            //portalDatFile.writeToDat("client_portal.dat");
+
+            cDatFile datFile = new cDatFile();
+            //datFile.loadFromDat("./input/client_cell_1.dat");
+            datFile.loadFromDat("./input/client_cell_1 - Infiltration.dat");
+            //datFile.loadFromDat("./input/cell - Late DM - 2004-09-01.dat");
+            //datFile.loadFromDat("./client_cell_1.dat");
+
+            cDatFile datFileOld = new cDatFile();
+            datFileOld.loadFromDat("./input/cell - Release.dat");
+            //datFileOld.loadFromDat("./input/cell - DM - 2001-09-12.dat");
+            //datFileOld.loadFromDat("./input/client_cell_1.dat");
+            //datFileOld.loadFromDat("./input/cell - End of Beta Event.dat");
+            //datFileOld.loadFromDat("./input/cell - 2005-01-05 (198656kb) (Admin) (Iteration 1583 - Complete).dat");
+            //datFileOld.loadFromDat("./input/cell - 2005-02-XX (202752kb) (Admin) (Iteration 1593 - Complete).dat");
+
+            //datFileOld.convertRetailToToD(10000);
+
+            //cDatFile replacementDataFile = null;
+            //if (datFileOld.isMissingCells)
+            //{
+            //    Console.WriteLine($"Missing {datFileOld.getMissingCellsList().Count} cells...");
+            //    replacementDataFile = new cDatFile();
+            //    //replacementDataFile.loadFromDat("./input/cell - Release.dat");
+            //    replacementDataFile.loadFromDat("./input/client_cell_1.dat");
+            //    datFileOld.completeCellsFrom(replacementDataFile, true);
+            //    //datFileOld.truncateMissingCells();
+            //}
+
+            //int missingCount;
+            //if (datFileOld.isMissingLandblocks(out missingCount))
+            //{
+            //    Console.WriteLine($"Missing {missingCount} landblocks...");
+            //    if (replacementDataFile == null)
+            //    {
+            //        replacementDataFile = new cDatFile();
+            //        //replacementDataFile.loadFromDat("./input/cell - Release.dat");
+            //        replacementDataFile.loadFromDat("./input/client_cell_1.dat");
+            //    }
+            //    datFileOld.completeLandblocksFrom(replacementDataFile);
+            //}
+
+            //datFileOld.writeToDat("./client_cell_1.dat");
+
+            //datFile.replaceDungeon(0x017d, datFileOld, 0);
+
+            //datFile.replaceLandblock(0xC6A90013, datFileOld); //Arwic
+
+            //datFile.replaceLandblockArea(0xC98C0028, datFileOld); //Rithwic
+            //datFile.replaceLandblockArea(0xC6A90013, datFileOld); //Arwic
+            //datFile.replaceLandblockArea(0x856D0040, datFileOld); //Tufa
+
+            List<uint> listOfSettlements = cDatFile.loadSettlementListFromFile("./input/ListOfSettlementLandblocks.txt");
+            datFile.replaceLandblocks(listOfSettlements, datFileOld);
+
+            datFile.removeNoobFence();
+
+            List<uint> LandblocksToReplace = new List<uint>()
+            {
+                0x905C003B, // North Al-Arqas Outpost
+                0x915C0003, // North Al-Arqas Outpost part 2
+                0x8C58002B, // West Al-Arqas Outpost
+                0xC380000C, // East Lytelthorpe Outpost
+                0xBB80002E, // West Lytelthorpe Outpost
+                0xEA3D000E, // East Nanto Outpost
+                0xE542002B, // North Nanto Outpost
+                0xCC8C0014, // East Rithwic Outpost
+                0xC8880016, // South Rithwic Outpost
+                0x9B7B0015, // East Samsur Outpost
+                0x937F002D, // Northwest Samsur Outpost
+                0xB9730032, // North Yanshi Outpost
+                0xB96B001E, // South Yanshi Outpost
+            };
+            datFile.replaceLandblocksSpecialForStarterOutposts(LandblocksToReplace, datFileOld);
+
+            List<uint> buildingsToRemove = new List<uint>()
+            {
+                0xA9B30114, //Holtburg->Neydisa Castle Portal Bunker
+                0xA9B40183, //Holtburg->Shoushi Portal Bunker
+                0xA9B40188, //Holtburg->Rithwic Portal Bunker
+                0xA9B4017E, //Holtburg->Cragstone Portal Bunker
+                0xAAB40108, //Holtburg->Arwic Portal Bunker
+                0xAAB40103, //Holtburg->Dryreach Portal Bunker
+
+                0x7D64018B, //Yaraq->Holtburg Portal Bunker
+                0x7D64017C, //Yaraq->Al-Arqas Portal Bunker
+                0x7D640181, //Yaraq->Samsur Portal Bunker
+                0x7E640122, //Yaraq->Zaikhal Portal Bunker
+                0x7E640127, //Yaraq->Linvak Tukal Portal Bunker
+                0x7D640177, //Yaraq->Khayyaban Portal Bunker
+                0x7D640186, //Yaraq->Xarabydum Portal Bunker
+
+                0xDA560116, //Shoushi->Kryst Portal Bunker
+                0xDA5501F9, //Shoushi->Nanto Portal Bunker
+                0xDA56011B, //Shoushi->Kara Portal Bunker
+                0xDA5501F4, //Shoushi->Yanshi Portal Bunker
+                0xDA540103, //Shoushi->Tou-Tou Portal Bunker
+                0xDA5501EF, //Shoushi->Yaraq Portal Bunker
+                0xD955010D, //Shoushi->Hebian-To Portal Bunker
+            };
+            datFile.removeBuildings(buildingsToRemove);
+            //Since we're removing the bunkers might as well roll back Holtburg's heightmap that was flattened in areas to fit the bunkers.
+            datFile.replaceLandblockTerrain(0xA9B40024, datFileOld, true, true);
+            datFile.replaceLandblockTerrain(0xAAB4000A, datFileOld, true, true);
+            datFile.replaceLandblockTerrain(0xA8B4003B, datFileOld, true, true);
+
+            //datFile.migrateDungeon(datFileOld, 0x017D, 0x017D); //original training academy
+
+            //List<ushort> trainingAcademies = new List<ushort>()
+            //{
+            //    0x0363,
+            //    0x0364,
+            //    0x0365,
+            //    0x0366,
+            //    0x0367,
+            //    0x0368
+            //};
+            //datFile.replaceDungeonList(trainingAcademies, datFileOld);
+
+            datFile.writeToDat("./client_cell_1.dat");
         }
 
         static void GeneratePhatACLootFiles(string[] args)

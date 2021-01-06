@@ -42,6 +42,7 @@ namespace Melt
 
         public cCellLandblock(cDatFileEntry file) : this(new StreamReader(file.fileContent))
         {
+            file.fileContent.Seek(0, SeekOrigin.Begin);
         }
 
         public cCellLandblock(StreamReader inputFile)

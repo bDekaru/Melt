@@ -52,6 +52,52 @@ namespace Melt
             fileCache[0xFFFF0001] = iterationFile;
         }
 
+        public void removeNoobFence(int verboseLevel = 6)
+        {
+            if (verboseLevel > 5)
+                Console.WriteLine("Removing noob fence...");
+
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+
+            cDatFile toDat = this; //just to make things less confusing
+
+            List<uint> landblockIds = new List<uint>();
+            foreach (var file in fileCache)
+            {
+                if ((file.Key & 0x0000FFFF) == 0x0000FFFF)
+                    landblockIds.Add(file.Key);
+            }
+
+            foreach (var landblockId in landblockIds)
+            {
+                cDatFileEntry landblockFile;
+                if (fileCache.TryGetValue(landblockId, out landblockFile))
+                {
+                    cCellLandblock landblock = new cCellLandblock(landblockFile);
+
+                    for (int i = 0; i < landblock.Terrain.Count; i++)
+                    {
+                        if (landblock.Terrain[i] == 59416)
+                        {
+                            if (i > 0 && landblock.Terrain[i - 1] != 59416)
+                                landblock.Terrain[i] = landblock.Terrain[i - 1];
+                            else if (i < 80 && landblock.Terrain[i + 1] != 59416)
+                                landblock.Terrain[i] = landblock.Terrain[i + 1];
+                            else
+                                landblock.Terrain[i] = 0;
+                        }
+                    }
+
+                    landblock.updateFileContent(landblockFile);
+                }
+            }
+
+            timer.Stop();
+            if (verboseLevel > 5)
+                Console.WriteLine("Removed noob fence in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
+        }
+
         public bool convertLandblock(uint cellIdInLandblock, int verboseLevel = 6)
         {
             if (verboseLevel > 5)
@@ -129,6 +175,249 @@ namespace Melt
             timer.Stop();
             if (verboseLevel > 5)
                 Console.WriteLine("Landblock rewritten in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
+            return true;
+        }
+
+        public uint getNextAvailableCellIdBlock(uint startSearchId, int minBlockLength)
+        {
+            int blockLength = 0;
+            uint currentSearchId = startSearchId;
+            uint currentBlockStartId = startSearchId;
+            while (true)
+            {
+                if (!fileCache.ContainsKey(currentSearchId))
+                {
+                    blockLength++;
+                    currentSearchId++;
+                    if (blockLength >= minBlockLength)
+                        break;
+                }
+                else
+                {
+                    blockLength = 0;
+                    currentSearchId++;
+                    currentBlockStartId = currentSearchId;
+                }
+            }
+
+            return currentBlockStartId;
+        }
+
+        public bool replaceLandblockSpecialForStarterOutposts(uint cellIdInLandblock, cDatFile fromDat, bool createOnly = false, int verboseLevel = 6)
+        {
+            if (verboseLevel > 5)
+                Console.WriteLine("Replacing landblock surface and objects...");
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+
+            cDatFile toDat = this; //just to make things less confusing
+
+            uint landblockId = cellIdInLandblock & 0xFFFF0000 | 0x0000FFFF;
+
+            cDatFileEntry toLandBlockFile;
+            cDatFileEntry fromLandblockFile;
+            if (fromDat.fileCache.TryGetValue(landblockId, out fromLandblockFile))
+            {
+                cCellLandblock landblockFrom = new cCellLandblock(fromLandblockFile);
+                cCellLandblock landblockTo;
+
+                bool existsOnDestination = toDat.fileCache.TryGetValue(landblockId, out toLandBlockFile);
+
+                if (!existsOnDestination || !createOnly)
+                {
+                    if (existsOnDestination)
+                    {
+                        //cCellLandblock exists on origin and destination, replace.
+                        landblockTo = new cCellLandblock(toLandBlockFile);
+
+                        landblockTo.Terrain = landblockFrom.Terrain;
+                        landblockTo.HasObjects = landblockFrom.HasObjects;
+                    }
+                    else
+                    {
+                        toLandBlockFile = new cDatFileEntry(landblockId, eDatFormat.ToD);
+                        landblockTo = landblockFrom;
+                    }
+
+                    landblockTo.updateFileContent(toLandBlockFile);
+
+                    if (!existsOnDestination)
+                    {
+                        //cCellLandblock exists on origin but not on destination, add.
+                        toDat.fileCache.Add(landblockId, toLandBlockFile);
+                    }
+                }
+            }
+            else
+            {
+                if (toDat.fileCache.TryGetValue(landblockId, out toLandBlockFile))
+                {
+                    //cCellLandblock exists on destination but not on origin, delete.
+                    if (!createOnly)
+                        toDat.fileCache.Remove(landblockId);
+                }
+                else
+                {
+                    //no cCellLandblock on origin or destination. nothing to do.
+                }
+            }
+
+            uint landblockInfoId = cellIdInLandblock & 0xFFFF0000 | 0x0000FFFE;
+            cDatFileEntry toLandblockInfoFile;
+            cDatFileEntry fromLandblockInfoFile;
+            if (fromDat.fileCache.TryGetValue(landblockInfoId, out fromLandblockInfoFile))
+            {
+                cLandblockInfo landblockInfoFrom = new cLandblockInfo(fromLandblockInfoFile);
+                cLandblockInfo landblockInfoTo;
+
+
+                bool existsOnDestination = toDat.fileCache.TryGetValue(landblockInfoId, out toLandblockInfoFile);
+                if (!existsOnDestination || !createOnly)
+                {
+                    if (existsOnDestination)
+                    {
+                        //cLandblockInfo exists on origin and destination, replace.
+
+                        List<uint> stabIdsToKeep = new List<uint> //DM portal stands
+                        {
+                            0x020007c5,
+                            0x02000b6f,
+                            0x02000b61,
+                        };
+
+                        landblockInfoTo = new cLandblockInfo(toLandblockInfoFile);
+                        foreach (var building in landblockInfoTo.Buildings)
+                        {
+                            if (building.ModelId == 0x01002866) //the ruined spire
+                            {
+                                removeBuilding(building.Portals[0].OtherCellId | (landblockId & 0xFFFF0000), true, verboseLevel);
+                                break;
+                            }
+                        }
+                        landblockInfoTo = new cLandblockInfo(toLandblockInfoFile); //refetch the file now that we removed the building.
+
+                        List<cStab> tempList = new List<cStab>();
+                        tempList = landblockInfoTo.Objects.Copy();
+                        landblockInfoTo.Objects.Clear();
+                        foreach(var entry in tempList)
+                        {
+                            if(stabIdsToKeep.Contains(entry.id))
+                                landblockInfoTo.Objects.Add(entry);
+                        }
+                        landblockInfoTo.Objects.AddRange(landblockInfoFrom.Objects);
+
+                        List<uint> copiedList = new List<uint>();
+
+                        cBuildInfo newBuilding = null;
+                        foreach (var building in landblockInfoFrom.Buildings)
+                        {
+                            if (building.ModelId == 0x010014c3) //the pristine spire
+                            {
+                                newBuilding = building;
+                                landblockInfoTo.Buildings.Add(building);
+                                uint cellInBuilding = building.Portals[0].OtherCellId | (landblockId & 0xFFFF0000);
+                                uint lowestCellId;
+                                int cellsNeeded = countCell(cellInBuilding, fromDat, out lowestCellId);
+                                uint newCellId = getNextAvailableCellIdBlock(0x0100 | (landblockId & 0xFFFF0000), cellsNeeded);
+
+                                //replaceCellNewId(newCellId, fromDat, lowestCellId, true, false, building, replacedList, landblockId, verboseLevel);
+                                copyBuildingCellsNewId(landblockId, building, fromDat, newCellId, copiedList, verboseLevel);
+                                break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        landblockInfoTo = landblockInfoFrom;
+                        landblockInfoTo.NumCells = 0;
+                        landblockInfoTo.Buildings.Clear();
+                        toLandblockInfoFile = new cDatFileEntry(landblockInfoId, eDatFormat.ToD);
+                    }
+
+                    landblockInfoTo.updateFileContent(toLandblockInfoFile);
+
+                    if (!existsOnDestination)
+                    {
+                        //cCellLandblock exists on origin but not on destination, add.
+                        toDat.fileCache.Add(landblockInfoId, fromLandblockInfoFile);
+                    }
+                }
+            }
+
+            timer.Stop();
+            if (verboseLevel > 5)
+                Console.WriteLine("Landblock replaced in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
+            return true;
+        }
+
+        public bool replaceLandblockTerrain(uint cellIdInLandblock, cDatFile fromDat, bool heightmap = true, bool textures = true, bool createOnly = false, int verboseLevel = 6)
+        {
+            if (verboseLevel > 5)
+                Console.WriteLine("Replacing landblock heightmap...");
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+
+            cDatFile toDat = this; //just to make things less confusing
+
+            uint landblockId = cellIdInLandblock & 0xFFFF0000 | 0x0000FFFF;
+
+            cDatFileEntry toLandBlockFile;
+            cDatFileEntry fromLandblockFile;
+            if (fromDat.fileCache.TryGetValue(landblockId, out fromLandblockFile))
+            {
+                cCellLandblock landblockFrom = new cCellLandblock(fromLandblockFile);
+                cCellLandblock landblockTo;
+
+                bool existsOnDestination = toDat.fileCache.TryGetValue(landblockId, out toLandBlockFile);
+
+                if (!existsOnDestination || !createOnly)
+                {
+                    if (existsOnDestination)
+                    {
+                        //cCellLandblock exists on origin and destination, replace.
+                        landblockTo = new cCellLandblock(toLandBlockFile);
+
+                        if(heightmap)
+                            landblockTo.Height = landblockFrom.Height;
+
+                        if (textures)
+                            landblockTo.Terrain = landblockFrom.Terrain;
+
+                        // Here is where we would manipulate the origin files before copying them over, nothing for now.
+                    }
+                    else
+                    {
+                        toLandBlockFile = new cDatFileEntry(landblockId, eDatFormat.ToD);
+                        landblockTo = landblockFrom;
+                        landblockTo.HasObjects = false; //we're not importing them here so might as well set this.
+                    }
+
+                    landblockTo.updateFileContent(toLandBlockFile);
+
+                    if (!existsOnDestination)
+                    {
+                        //cCellLandblock exists on origin but not on destination, add.
+                        toDat.fileCache.Add(landblockId, toLandBlockFile);
+                    }
+                }
+            }
+            else
+            {
+                if (toDat.fileCache.TryGetValue(landblockId, out toLandBlockFile))
+                {
+                    //cCellLandblock exists on destination but not on origin, delete.
+                    if (!createOnly)
+                        toDat.fileCache.Remove(landblockId);
+                }
+                else
+                {
+                    //no cCellLandblock on origin or destination. nothing to do.
+                }
+            }
+
+            timer.Stop();
+            if (verboseLevel > 5)
+                Console.WriteLine("Landblock heightmap replaced in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
             return true;
         }
 
@@ -304,6 +593,40 @@ namespace Melt
             return true;
         }
 
+        public int countCell(uint cellId, cDatFile fromDat, out uint lowestCellId)
+        {
+            int cellsCounter = 0;
+            lowestCellId = uint.MaxValue;
+
+            List<uint> countedList = new List<uint>();
+            countCellRecursive(cellId, fromDat, ref cellsCounter, countedList, ref lowestCellId);
+
+            return cellsCounter;
+        }
+
+        public void countCellRecursive(uint cellId, cDatFile fromDat, ref int cellsCounter, List<uint> countedList, ref uint lowestCellId)
+        {
+            cDatFileEntry file;
+            if (fromDat.fileCache.TryGetValue(cellId, out file))
+            {
+                if (cellId < lowestCellId)
+                    lowestCellId = cellId;
+                cEnvCell eEnvCell = new cEnvCell(file);
+                countedList.Add(cellId);
+                cellsCounter++;
+
+                foreach (ushort connectedCell in eEnvCell.Cells)
+                {
+                    uint connectedCellId = connectedCell | (cellId & 0xFFFF0000);
+
+                    if (countedList.Contains(connectedCellId))
+                        continue;
+                    else
+                        countCellRecursive(connectedCellId, fromDat, ref cellsCounter, countedList, ref lowestCellId);
+                }
+            }
+        }
+
         public int replaceCell(uint cellId, cDatFile fromDat, bool recurse, bool createOnly, cBuildInfo building, List<uint> replacedList, uint parentCellOrLandblock, int verboseLevel = 7)
         {
             int cellsReplacedCounter = 0;
@@ -384,6 +707,219 @@ namespace Melt
                 parentCellList.Add(cellId);
         }
 
+        public int copyBuildingCellsNewId(uint fromLandblockId, cBuildInfo building, cDatFile fromDat, uint newLowestCellId, List<uint> copiedList, int verboseLevel = 7)
+        {
+            int cellsCopiedCounter = 0;
+            int cellsNotFoundCounter = 0;
+
+            uint lowestCellId = uint.MaxValue;
+            foreach (var portal in building.Portals)
+            {
+                foreach (var cell in portal.visibleCells)
+                {
+                    if (cell < lowestCellId)
+                        lowestCellId = cell;
+                }
+            }
+
+            lowestCellId = lowestCellId | (fromLandblockId & 0xFFFF0000);
+
+            int offset = (int)(newLowestCellId - lowestCellId);
+
+            foreach (var portal in building.Portals)
+            {
+                for (int i = 0; i < portal.visibleCells.Count; i++)
+                {
+                    uint fromCellId = portal.visibleCells[i] | (fromLandblockId & 0xFFFF0000);
+                    uint toCellId = (uint)(fromCellId + offset);
+                    copyCell(fromCellId, fromDat, toCellId, building, copiedList, ref cellsCopiedCounter, ref cellsNotFoundCounter, verboseLevel);
+                    portal.visibleCells[i] += (ushort)offset;
+                }
+                portal.OtherCellId += (ushort)offset;
+            }
+
+            if (verboseLevel > 6)
+                Console.WriteLine("{0} cell(s) copied, {1} cell(s) not found.", cellsCopiedCounter, cellsNotFoundCounter);
+
+            return cellsCopiedCounter;
+        }
+
+        public void copyCell(uint fromCellId, cDatFile fromDat, uint toCellId, cBuildInfo building, List<uint> copiedList, ref int cellsCopiedCounter, ref int cellsNotFoundCounter, int verboseLevel = 7)
+        {
+            if (copiedList.Contains(toCellId))
+                return;
+
+            cDatFileEntry file;
+            if (fromDat.fileCache.TryGetValue(fromCellId, out file))
+            {
+                cEnvCell envCell = new cEnvCell(file);
+
+                envCell.Id = toCellId;
+
+                int offset = (int)(toCellId - fromCellId);
+
+                for (int i = 0; i < envCell.Cells.Count; i++)
+                {
+                    envCell.Cells[i] = (ushort)(envCell.Cells[i] + offset);
+                }
+                foreach (var portal in envCell.Portals)
+                {
+                    if(portal.OtherCellId != 0xffff)
+                        portal.OtherCellId = (ushort)(portal.OtherCellId + offset);
+                }
+
+                if (file.fileFormat == eDatFormat.retail && building != null)
+                {
+                    foreach (var portal in envCell.Portals)
+                    {
+                        ushort id = validPortalDatEntries.translateBuildingPortalEnvId(building.ModelId, portal.EnvironmentId);
+                        if (id != portal.EnvironmentId)
+                        {
+                            if (verboseLevel > 6)
+                                Console.WriteLine($"INFO: 0x{toCellId.ToString("x8")}: BuildInfo.ModelId: 0x{building.ModelId.ToString("x8")}: Translated EnvironmentId in child portal from 0x{portal.EnvironmentId.ToString("x4")} to 0x{id.ToString("x4")}.");
+                            portal.EnvironmentId = id;
+                        }
+                    }
+                }
+
+                cDatFileEntry fileNew = new cDatFileEntry(toCellId, eDatFormat.ToD);
+                envCell.updateFileContent(fileNew);
+
+                copiedList.Add(toCellId);
+                //fileCache.Add(cellId, fileNew);
+                fileCache[toCellId] = fileNew;
+                cellsCopiedCounter++;
+            }
+            else
+                cellsNotFoundCounter++;
+        }
+
+        public int replaceCellNewId(uint toCellId, cDatFile fromDat, uint fromCellIdLowest, bool recurse, bool createOnly, cBuildInfo building, List<uint> replacedList, uint parentCellOrLandblock, int verboseLevel = 7)
+        {
+            int cellsReplacedCounter = 0;
+            int cellsNotFoundCounter = 0;
+
+            int offset = (int)(toCellId - fromCellIdLowest);
+            replaceCellNewIdRecursive(fromCellIdLowest, offset, fromDat, recurse, createOnly, ref cellsReplacedCounter, ref cellsNotFoundCounter, replacedList, building, parentCellOrLandblock, verboseLevel);
+
+            if (building != null)
+            {
+                foreach (var portal in building.Portals)
+                {
+                    portal.OtherCellId = (ushort)(portal.OtherCellId + offset);
+                    for (int i = 0; i < portal.visibleCells.Count; i++)
+                    {
+                        portal.visibleCells[i] = (ushort)(portal.visibleCells[i] + offset);
+                    }
+                }
+            }
+
+            foreach (var entry in replacedList)
+            {
+                cDatFileEntry file;
+                if (fileCache.TryGetValue(entry, out file))
+                {
+                    cEnvCell envCell = new cEnvCell(file);
+                    envCell.Id = entry;
+                    for (int i = 0; i < envCell.Cells.Count; i++)
+                    {
+                        envCell.Cells[i] = (ushort)(envCell.Cells[i] + offset);
+                    }
+                    foreach (var portal in envCell.Portals)
+                    {
+                        if (portal.OtherCellId != 0xffff)
+                            portal.OtherCellId = (ushort)(portal.OtherCellId + offset);
+                    }
+
+                    envCell.updateFileContent(file);
+                }
+            }
+
+            if (verboseLevel > 6)
+                Console.WriteLine("{0} cell(s) copied, {1} cell(s) not found.", cellsReplacedCounter, cellsNotFoundCounter);
+
+            return cellsReplacedCounter;
+        }
+
+        public void replaceCellNewIdRecursive(uint fromCellId, int cellIdOffset, cDatFile fromDat, bool recurse, bool createOnly, ref int cellsReplacedCounter, ref int cellsNotFoundCounter, List<uint> copiedList, cBuildInfo building, uint parentCellOrLandblock, int verboseLevel = 7)
+        {
+            uint cellId = (uint)(fromCellId + cellIdOffset);
+
+            if (copiedList.Contains(cellId))
+                return;
+
+            if (createOnly && fileCache.ContainsKey(cellId))
+                return;
+
+            cDatFileEntry file;
+            if (fromDat.fileCache.TryGetValue(fromCellId, out file))
+            {
+                cEnvCell eEnvCell = new cEnvCell(file);
+
+                if (file.fileFormat == eDatFormat.retail && building != null)
+                {
+                    foreach (var portal in eEnvCell.Portals)
+                    {
+                        ushort id = validPortalDatEntries.translateBuildingPortalEnvId(building.ModelId, portal.EnvironmentId);
+                        if (id != portal.EnvironmentId)
+                        {
+                            if (verboseLevel > 6)
+                                Console.WriteLine($"INFO: 0x{cellId.ToString("x8")}: BuildInfo.ModelId: 0x{building.ModelId.ToString("x8")}: Translated EnvironmentId in child portal from 0x{portal.EnvironmentId.ToString("x4")} to 0x{id.ToString("x4")}.");
+                            portal.EnvironmentId = id;
+                        }
+                    }
+                }
+
+                cDatFileEntry fileNew = new cDatFileEntry(cellId, eDatFormat.ToD);
+                eEnvCell.updateFileContent(fileNew);
+
+                copiedList.Add(cellId);
+                //fileCache.Add(cellId, fileNew);
+                fileCache[cellId] = fileNew;
+                cellsReplacedCounter++;
+
+                if (recurse)
+                {
+                    foreach (var portal in eEnvCell.Portals)
+                    {
+                        if (portal.OtherCellId == 0xffff)
+                            continue;
+                        uint connectedCellId = portal.OtherCellId | (fromCellId & 0xFFFF0000);
+
+                        if (copiedList.Contains(connectedCellId))
+                            continue;
+                        else
+                            replaceCellNewIdRecursive(connectedCellId, cellIdOffset, fromDat, recurse, createOnly, ref cellsReplacedCounter, ref cellsNotFoundCounter, copiedList, building, fromCellId, verboseLevel);
+                    }
+
+                    foreach (ushort connectedCell in eEnvCell.Cells)
+                    {
+                        uint connectedCellId = connectedCell | (fromCellId & 0xFFFF0000);
+
+                        if (copiedList.Contains(connectedCellId))
+                            continue;
+                        else
+                            replaceCellNewIdRecursive(connectedCellId, cellIdOffset, fromDat, recurse, createOnly, ref cellsReplacedCounter, ref cellsNotFoundCounter, copiedList, building, fromCellId, verboseLevel);
+                    }
+                }
+                return;
+            }
+
+            if (verboseLevel > 0)
+                Console.WriteLine($"Couldn't find cell id: 0x{fromCellId.ToString("x8")}. Parent cell: 0x{parentCellOrLandblock.ToString("x8")}.");
+
+            cellsNotFoundCounter++;
+
+            List<uint> parentCellList;
+            if (!CellsNotFound.TryGetValue(parentCellOrLandblock, out parentCellList))
+            {
+                parentCellList = new List<uint>();
+                CellsNotFound[parentCellOrLandblock] = parentCellList;
+            }
+            if (!parentCellList.Contains(fromCellId))
+                parentCellList.Add(fromCellId);
+        }
+
         private int removeCell(uint cellId, bool recurse, int verboseLevel = 7)
         {
             int cellsRemovedCounter = 0;
@@ -454,9 +990,9 @@ namespace Melt
             }
         }
 
-        public bool removeBuilding(uint idToCellInBuilding, int verboseLevel = 5)
+        public bool removeBuilding(uint idToCellInBuilding, bool removeCells = false, int verboseLevel = 6)
         {
-            if (verboseLevel > 1)
+            if (verboseLevel > 5)
                 Console.WriteLine("Removing Building...");
 
             uint landblockId = idToCellInBuilding & 0xFFFF0000 | 0x0000FFFE;
@@ -476,8 +1012,11 @@ namespace Melt
                         {
                             landblockInfo.Buildings.RemoveAt(i);
 
-                            uint startCellId = cellId | (landblockId & 0xFFFF0000);
-                            removeCell(startCellId, true, verboseLevel);
+                            if (removeCells) //removing the cells will cause problems if the cells in the landblock become non-continuous(when the building's cells aren't the last ones in the list). todo: a way to resort the remaining cells, but this would also require updating the server database to redirect NPCs and items to the new cell Ids.
+                            {
+                                uint startCellId = cellId | (landblockId & 0xFFFF0000);
+                                removeCell(startCellId, true, verboseLevel);
+                            }
 
                             landblockInfo.updateFileContent(file);
 
@@ -491,7 +1030,7 @@ namespace Melt
             return false;
         }
 
-        public void removeBuildings(List<uint> listOfBuildingsIds, int verboseLevel = 5)
+        public void removeBuildings(List<uint> listOfBuildingsIds, bool removeCells = false, int verboseLevel = 5)
         {
             if (verboseLevel > 1)
                 Console.WriteLine($"Removing {listOfBuildingsIds.Count} Buildings...");
@@ -503,7 +1042,7 @@ namespace Melt
             int buildingsNotFoundCounter = 0;
             foreach (uint buildingId in listOfBuildingsIds)
             {
-                if (removeBuilding(buildingId, verboseLevel))
+                if (removeBuilding(buildingId, removeCells, verboseLevel))
                     buildingsRemovedCounter++;
                 else
                     buildingsNotFoundCounter++;
@@ -883,6 +1422,29 @@ namespace Melt
             foreach (uint landblockId in listOfLandblocks)
             {
                 if (replaceLandblock(landblockId, fromFile, false, verboseLevel))
+                    landblockReplacedCounter++;
+                else
+                    landblockNotFoundCounter++;
+            }
+
+            timer.Stop();
+            if (verboseLevel > 1)
+                Console.WriteLine("{0} landblocks(s) replaced in {1} seconds. {2} landblocks(s) not found.", landblockReplacedCounter, timer.ElapsedMilliseconds / 1000f, landblockNotFoundCounter);
+        }
+
+        public void replaceLandblocksSpecialForStarterOutposts(List<uint> listOfLandblocks, cDatFile fromFile, int verboseLevel = 5)
+        {
+            if (verboseLevel > 1)
+                Console.WriteLine($"Replacing {listOfLandblocks.Count} landblocks...");
+
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+
+            int landblockReplacedCounter = 0;
+            int landblockNotFoundCounter = 0;
+            foreach (uint landblockId in listOfLandblocks)
+            {
+                if (replaceLandblockSpecialForStarterOutposts(landblockId, fromFile, false, verboseLevel))
                     landblockReplacedCounter++;
                 else
                     landblockNotFoundCounter++;

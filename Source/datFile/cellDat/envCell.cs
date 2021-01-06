@@ -65,6 +65,7 @@ namespace Melt
 
         public cEnvCell(cDatFileEntry file, bool translateTextureIds = true) : this(new StreamReader(file.fileContent), file.fileFormat, translateTextureIds)
         {
+            file.fileContent.Seek(0, SeekOrigin.Begin);
         }
 
         public cEnvCell(StreamReader inputFile, eDatFormat format, bool translateTextureIds = true)

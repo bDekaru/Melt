@@ -60,6 +60,7 @@ namespace Melt
 
         public cCBldPortal(cDatFileEntry file) : this(new StreamReader(file.fileContent), file.fileFormat)
         {
+            file.fileContent.Seek(0, SeekOrigin.Begin);
         }
 
         public cCBldPortal(StreamReader inputFile, eDatFormat format)
@@ -118,6 +119,7 @@ namespace Melt
 
         public cBuildInfo(cDatFileEntry file) : this(new StreamReader(file.fileContent), file.fileFormat)
         {
+            file.fileContent.Seek(0, SeekOrigin.Begin);
         }
 
         public cBuildInfo(StreamReader inputFile, eDatFormat format)
@@ -211,6 +213,7 @@ namespace Melt
 
         public cLandblockInfo(cDatFileEntry file) : this(new StreamReader(file.fileContent), file.fileFormat)
         {
+            file.fileContent.Seek(0, SeekOrigin.Begin);
         }
 
         public cLandblockInfo(StreamReader inputFile, eDatFormat fileFormat)
