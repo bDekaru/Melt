@@ -16,6 +16,7 @@ namespace Melt
         int landSize = 2045;
 
         public Dictionary<int, Dictionary<int, cCellLandblock>> surfaceLandblocks;
+        public Dictionary<int, Dictionary<int, cLandblockInfo>> landblockInfo;
 
         public cCellDat()
         {
@@ -23,6 +24,12 @@ namespace Melt
             for (int x = 0; x < landSize; x++)
             {
                 surfaceLandblocks[x] = new Dictionary<int, cCellLandblock>(landSize);
+            }
+
+            landblockInfo = new Dictionary<int, Dictionary<int, cLandblockInfo>>(landSize);
+            for (int x = 0; x < landSize; x++)
+            {
+                landblockInfo[x] = new Dictionary<int, cLandblockInfo>(landSize);
             }
         }
 
@@ -43,6 +50,7 @@ namespace Melt
             timer.Start();
 
             int landBlockCounter = 0;
+            int landBlockInfoCounter = 0;
             foreach (KeyValuePair<uint, cDatFileEntry> entry in datFile.fileCache)
             {
                 if ((entry.Value.fileId & 0x0000FFFF) == 0x0000FFFF)
@@ -53,10 +61,18 @@ namespace Melt
                     surfaceLandblocks[(int)x].Add((int)y, newLandblock);
                     landBlockCounter++;
                 }
+                else if ((entry.Value.fileId & 0x0000FFFE) == 0x0000FFFE)
+                {
+                    uint x = (uint)entry.Value.fileId >> 24;
+                    uint y = (uint)(entry.Value.fileId & 0x00FF0000) >> 16;
+                    cLandblockInfo newLandblockInfo = new cLandblockInfo(entry.Value);
+                    landblockInfo[(int)x].Add((int)y, newLandblockInfo);
+                    landBlockInfoCounter++;
+                }
             }
 
             timer.Stop();
-            Console.WriteLine("{0} landblocks read in {1} seconds.", landBlockCounter, timer.ElapsedMilliseconds / 1000f);
+            Console.WriteLine("{0} landblocks and {1} landblockInfos read in {2} seconds.", landBlockCounter, landBlockInfoCounter, timer.ElapsedMilliseconds / 1000f);
         }
     }
 }

@@ -72,10 +72,14 @@ namespace Melt
             //RegionConverterDM.convert("Region/130F0000 Bael.bin");
             //RegionConverterDM.convert("Region/130F0000 test.bin");
 
-            //cCellDat cellDat = new cCellDat();
-            //cellDat.loadFromDat(datFileOld);
-            //cMapDrawer mapDrawer = new cMapDrawer(cellDat);
-            //mapDrawer.draw();
+            cDatFile datFile = new cDatFile();
+            //datFile.loadFromDat("./input/client_cell_1 - Latest.dat");
+            //datFile.loadFromDat("./input/client_cell_1 - Infiltration.dat");
+            datFile.loadFromDat("./client_cell_1.dat");
+            cCellDat cellDat = new cCellDat();
+            cellDat.loadFromDat(datFile);
+            cMapDrawer mapDrawer = new cMapDrawer(cellDat);
+            mapDrawer.draw(true, 50);
 
             //testRandomValueGenerator();
             //Console.ReadLine();

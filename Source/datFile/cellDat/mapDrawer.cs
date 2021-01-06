@@ -86,6 +86,7 @@ namespace Melt
             public ushort type;
             public byte z;
             public bool used;
+            public uint cellAmount;
         }
 
         landData[,] land;
@@ -121,9 +122,29 @@ namespace Melt
                     }
                 }
             }
+
+            foreach (KeyValuePair<int, Dictionary<int, cLandblockInfo>> entryX in cellDat.landblockInfo)
+            {
+                foreach (KeyValuePair<int, cLandblockInfo> entryY in entryX.Value)
+                {
+                    int landBlockX = entryX.Key * 8;
+                    int landBlockY = entryY.Key * 8;
+
+                    for (int x = 0; x < 9; x++)
+                    {
+                        for (int y = 0; y < 9; y++)
+                        {
+                            int finalX = landBlockX + x;
+                            int finalY = landSize - (landBlockY + y) - 1;
+
+                            land[finalX, finalY].cellAmount = entryY.Value.NumCells;
+                        }
+                    }
+                }
+            }
         }
 
-        public void draw()
+        public void draw(bool overlayCells = false, int overlayThreshold = 0)
         {
             Console.WriteLine("Drawing map to file...");
             Stopwatch timer = new Stopwatch();
@@ -142,68 +163,78 @@ namespace Melt
                 {
                     if (land[y, x].used)
                     {
-                        // Calculate normal by using surrounding z values, if they exist
-                        v[0] = 0.0;
-                        v[1] = 0.0;
-                        v[2] = 0.0;
-                        if ((x < landSize - 1) && (y < landSize - 1))
+                        if (overlayCells && land[y, x].cellAmount > overlayThreshold)
                         {
-                            if (land[y, x + 1].used && land[y + 1, x].used)
-                            {
-                                v[0] -= land[y, x + 1].z - land[y, x].z;
-                                v[1] -= land[y + 1, x].z - land[y, x].z;
-                                v[2] += 12.0;
-                            }
+                            // If we have cells the resultant pixel is red
+                            topo[y, x, 0] = 0xFF;
+                            topo[y, x, 1] = 0;
+                            topo[y, x, 2] = 0;
                         }
-                        if ((x > 0) && (y < landSize - 1))
-                        {
-                            if (land[y, x - 1].used && land[y + 1, x].used)
-                            {
-                                v[0] += land[y, x - 1].z - land[y, x].z;
-                                v[1] -= land[y + 1, x].z - land[y, x].z;
-                                v[2] += 12.0;
-                            }
-                        }
-                        if ((x > 0) && (y > 0))
-                        {
-                            if (land[y, x - 1].used && land[y - 1, x].used)
-                            {
-                                v[0] += land[y, x - 1].z - land[y, x].z;
-                                v[1] += land[y - 1, x].z - land[y, x].z;
-                                v[2] += 12.0;
-                            }
-                        }
-                        if ((x < landSize - 1) && (y > 0))
-                        {
-                            if (land[y, x + 1].used && land[y - 1, x].used)
-                            {
-                                v[0] -= land[y, x + 1].z - land[y, x].z;
-                                v[1] += land[y - 1, x].z - land[y, x].z;
-                                v[2] += 12.0;
-                            }
-                        }
-
-                        // Check for road bit(s)
-                        if ((land[y, x].type & 0x0003) != 0)
-                            type = 32;
                         else
-                            type = (ushort)((land[y, x].type & 0x00FF) >> 2);
-
-                        // Calculate lighting scalar
-                        light = (((lightVector[0] * v[0] + lightVector[1] * v[1] + lightVector[2] * v[2]) /
-                            Math.Sqrt((lightVector[0] * lightVector[0] + lightVector[1] * lightVector[1] + lightVector[2] * lightVector[2]) *
-                            (v[0] * v[0] + v[1] * v[1] + v[2] * v[2]))) * 128.0 + 128.0) * LightCorrection + AmbientLight;
-
-                        // Apply lighting scalar to base colors
-                        for (i = 0; i < 3; i++)
                         {
-                            color = (landColor[type, i] * ColorCorrection / landColor[type, 3]) * light / 256.0;
-                            if (color > 255.0)
-                                topo[y, x, i] = 255;
-                            else if (color < 0.0)
-                                topo[y, x, i] = 0;
+                            // Calculate normal by using surrounding z values, if they exist
+                            v[0] = 0.0;
+                            v[1] = 0.0;
+                            v[2] = 0.0;
+                            if ((x < landSize - 1) && (y < landSize - 1))
+                            {
+                                if (land[y, x + 1].used && land[y + 1, x].used)
+                                {
+                                    v[0] -= land[y, x + 1].z - land[y, x].z;
+                                    v[1] -= land[y + 1, x].z - land[y, x].z;
+                                    v[2] += 12.0;
+                                }
+                            }
+                            if ((x > 0) && (y < landSize - 1))
+                            {
+                                if (land[y, x - 1].used && land[y + 1, x].used)
+                                {
+                                    v[0] += land[y, x - 1].z - land[y, x].z;
+                                    v[1] -= land[y + 1, x].z - land[y, x].z;
+                                    v[2] += 12.0;
+                                }
+                            }
+                            if ((x > 0) && (y > 0))
+                            {
+                                if (land[y, x - 1].used && land[y - 1, x].used)
+                                {
+                                    v[0] += land[y, x - 1].z - land[y, x].z;
+                                    v[1] += land[y - 1, x].z - land[y, x].z;
+                                    v[2] += 12.0;
+                                }
+                            }
+                            if ((x < landSize - 1) && (y > 0))
+                            {
+                                if (land[y, x + 1].used && land[y - 1, x].used)
+                                {
+                                    v[0] -= land[y, x + 1].z - land[y, x].z;
+                                    v[1] += land[y - 1, x].z - land[y, x].z;
+                                    v[2] += 12.0;
+                                }
+                            }
+
+                            // Check for road bit(s)
+                            if ((land[y, x].type & 0x0003) != 0)
+                                type = 32;
                             else
-                                topo[y, x, i] = (byte)color;
+                                type = (ushort)((land[y, x].type & 0x00FF) >> 2);
+
+                            // Calculate lighting scalar
+                            light = (((lightVector[0] * v[0] + lightVector[1] * v[1] + lightVector[2] * v[2]) /
+                                Math.Sqrt((lightVector[0] * lightVector[0] + lightVector[1] * lightVector[1] + lightVector[2] * lightVector[2]) *
+                                (v[0] * v[0] + v[1] * v[1] + v[2] * v[2]))) * 128.0 + 128.0) * LightCorrection + AmbientLight;
+
+                            // Apply lighting scalar to base colors
+                            for (i = 0; i < 3; i++)
+                            {
+                                color = (landColor[type, i] * ColorCorrection / landColor[type, 3]) * light / 256.0;
+                                if (color > 255.0)
+                                    topo[y, x, i] = 255;
+                                else if (color < 0.0)
+                                    topo[y, x, i] = 0;
+                                else
+                                    topo[y, x, i] = (byte)color;
+                            }
                         }
                     }
                     else
