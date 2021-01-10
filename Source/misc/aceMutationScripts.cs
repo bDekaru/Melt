@@ -201,14 +201,18 @@ namespace Melt
             //Shield.SetArmorTiers( 20, 40, 60,  80, 100, 120, 130, 140);
 
             // The last 2 tiers are made up for forward compatibility with loot tiers 7 and 8
-            //Armor.SetMinArmorTiers(10, 40, 70, 90, 100, 100, 110, 120);
+            //Armor.SetMinArmorTiers(10,  40,  70,  90, 100, 100, 110, 120);
             //Armor.SetMaxArmorTiers(70, 100, 130, 150, 160, 160, 170, 180);
+
+            //Shield.SetMinArmorTiers(10, 20, 30,  40,  50,  60, 70,  80);
+            //Shield.SetMaxArmorTiers(50, 80, 90, 100, 110, 120, 130, 140);
+
             // Adjusted for better low tier balance?
-            Armor.SetMinArmorTiers( 0, 10,  40,  70,  90, 100, 110, 120);
+            Armor.SetMinArmorTiers(0,  10,  40,  70,  90, 100, 110, 120);
             Armor.SetMaxArmorTiers(30, 70, 100, 130, 150, 160, 170, 180);
 
-            Shield.SetMinArmorTiers(10, 20, 30, 40, 50, 60, 70, 80);
-            Shield.SetMaxArmorTiers(50, 80, 90, 100, 110, 120, 130, 140);
+            Shield.SetMinArmorTiers(0,  10, 30,  40,  50,  60,  70,  80);
+            Shield.SetMaxArmorTiers(20, 50, 80, 100, 110, 120, 130, 140);
 
             BuildArmor(Armor);
             BuildArmor(Shield);
@@ -560,6 +564,9 @@ namespace Melt
             int maxArmor = armor.MaxArmorTier[(int)armorBonus];
 
             int numberOfEntries = ((maxArmor - minArmor) / 10) + 1;// DetermineNumberOfEntries(minArmor, maxArmor);
+
+            if (maxArmor <= 30)
+                numberOfEntries *= 2;
 
             armor.Tiers[(int)tier].Bonus = new ChanceEntry[numberOfEntries];
             armor.Tiers[(int)tier].wieldDifficulty = new int[numberOfEntries];
@@ -919,7 +926,7 @@ namespace Melt
                 outputFile.Write("Tier Chances: ");
                 for (int tier = 0; tier < maxLootTier; tier++)
                 {
-                    outputFile.Write(tier == 0 ? 1 : 0);
+                    outputFile.Write(tier == i ? 1 : 0);
                     if(tier + 1 < maxLootTier)
                         outputFile.Write(", ");
                     else

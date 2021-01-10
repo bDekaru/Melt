@@ -9,7 +9,7 @@ namespace Melt
     {
         public static void RemoveAllNonApartmentHouses()
         {
-            var connection = new MySqlConnection($"server=127.0.0.1;port=3306;user=root;password=;DefaultCommandTimeout=120;database=ace_world");
+            var connection = new MySqlConnection($"server=127.0.0.1;port=3306;user=root;password=;DefaultCommandTimeout=120;database=ace_world_test");
             connection.Open();
 
             string sql = "SELECT * FROM weenie WHERE type = 53";
@@ -97,6 +97,7 @@ namespace Melt
             foreach (var entry in landblocksList)
             {
                 outputFile.WriteLine($"{(entry << 16).ToString("x8")}");
+                outputFile.Flush();
             }
 
             connection.Close();

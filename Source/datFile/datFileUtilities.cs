@@ -702,24 +702,25 @@ namespace Melt
             Console.WriteLine("Finished in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
         }
 
-        static public List<uint> loadSettlementListFromFile(string filename)
+        static public void loadSettlementListFromFile(string filename, List<uint> regularList, List<uint> preserveTextureList, List<uint> preserveSurfaceList)
         {
             StreamReader inputFile = new StreamReader(new FileStream(filename, FileMode.Open, FileAccess.Read));
 
-            List<uint> list = new List<uint>();
-
-            string line = inputFile.ReadLine();
+            string line;
             string[] splitLine;
             while (!inputFile.EndOfStream)
             {
+                line = inputFile.ReadLine();
                 splitLine = line.Split('\t');
                 uint cellId = Convert.ToUInt32(splitLine[0], 16);
-                list.Add(cellId);
 
-                line = inputFile.ReadLine();
+                if (splitLine.Length > 1 && splitLine[1] == "PreserveTextures")
+                    preserveTextureList.Add(cellId);
+                else if (splitLine.Length > 1 && splitLine[1] == "PreserveSurface")
+                    preserveSurfaceList.Add(cellId);
+                else
+                    regularList.Add(cellId);
             }
-
-            return list;
         }
 
         static public void buildSettlementFileFromGoArrowLocationFile(string filename)
@@ -727,10 +728,11 @@ namespace Melt
             StreamReader inputFile = new StreamReader(new FileStream(filename, FileMode.Open, FileAccess.Read));
             StreamWriter outputFile = new StreamWriter(new FileStream("./ListOfSettlements.txt", FileMode.Create, FileAccess.Write));
 
-            string line = inputFile.ReadLine();
+            string line;
             string substring;
             while (!inputFile.EndOfStream)
             {
+                line = inputFile.ReadLine();
                 if (line.Contains("type=\"Village\""))
                 {
                     int nameStartIndex = line.IndexOf("name=") + 6;
@@ -755,8 +757,6 @@ namespace Melt
                     outputFile.WriteLine($"{cellId.ToString("x8")}\t{name}");
                     outputFile.Flush();
                 }
-
-                line = inputFile.ReadLine();
             }
 
             inputFile.Close();

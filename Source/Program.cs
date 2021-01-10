@@ -16,18 +16,24 @@ namespace Melt
             //Workbench(args);
         }
 
+
         //public static cCache4Converter cache4Converter = new cCache4Converter();
         public static cCache6Converter cache6Converter = new cCache6Converter();
         public static cCache8Converter cache8Converter = new cCache8Converter();
         public static cCache9Converter cache9Converter = new cCache9Converter();
         static void Workbench(string[] args)
         {
+            //LandscapeSpawnMap map = new LandscapeSpawnMap("./input/region.json");
+
+            //GoArrowUtilities goArrow = new GoArrowUtilities("./CustomDM-GoArrow-Locations.xml");
+            ////goArrow.RemoveSettlements();
+            //goArrow.ReIndex();
+            //goArrow.Save("./CustomDM-GoArrow-Locations2.xml");
+
             //AceDatabaseUtilities.RemoveAllNonApartmentHouses();
+
             //AceMutationScripts aceMutationScripts = new AceMutationScripts();
             //aceMutationScripts.BuildScripts();
-            //Console.WriteLine("Done");
-            //Console.ReadLine();
-            //return;
 
             //cache9Converter.loadWeeniesRaw("./input/0009.raw");
             //cache9Converter.performCacheFixes();
@@ -72,14 +78,16 @@ namespace Melt
             //RegionConverterDM.convert("Region/130F0000 Bael.bin");
             //RegionConverterDM.convert("Region/130F0000 test.bin");
 
-            cDatFile datFile = new cDatFile();
-            //datFile.loadFromDat("./input/client_cell_1 - Latest.dat");
-            //datFile.loadFromDat("./input/client_cell_1 - Infiltration.dat");
-            datFile.loadFromDat("./client_cell_1.dat");
-            cCellDat cellDat = new cCellDat();
-            cellDat.loadFromDat(datFile);
-            cMapDrawer mapDrawer = new cMapDrawer(cellDat);
-            mapDrawer.draw(true, 50);
+            //cDatFile datFile = new cDatFile();
+            ////datFile.loadFromDat("./input/client_cell_1 - Latest.dat");
+            ////datFile.loadFromDat("./input/client_cell_1 - Infiltration.dat");
+            ////datFile.loadFromDat("./input/client_cell_1 - Release.dat");
+            //datFile.loadFromDat("./input/client_cell_1 - DM.dat");
+            ////datFile.loadFromDat("./client_cell_1.dat");
+            //cCellDat cellDat = new cCellDat();
+            //cellDat.loadFromDat(datFile);
+            //cMapDrawer mapDrawer = new cMapDrawer(cellDat);
+            //mapDrawer.draw(false, 50);
 
             //testRandomValueGenerator();
             //Console.ReadLine();
@@ -167,7 +175,8 @@ namespace Melt
             //datFile.loadFromDat("./client_cell_1.dat");
 
             cDatFile datFileOld = new cDatFile();
-            datFileOld.loadFromDat("./input/cell - Release.dat");
+            //datFileOld.loadFromDat("./input/cell - Release.dat");
+            datFileOld.loadFromDat("./input/cell - 2000-12-31 - Obsidian Span.dat");
             //datFileOld.loadFromDat("./input/cell - DM - 2001-09-12.dat");
             //datFileOld.loadFromDat("./input/client_cell_1.dat");
             //datFileOld.loadFromDat("./input/cell - End of Beta Event.dat");
@@ -210,10 +219,11 @@ namespace Melt
             //datFile.replaceLandblockArea(0xC6A90013, datFileOld); //Arwic
             //datFile.replaceLandblockArea(0x856D0040, datFileOld); //Tufa
 
-            List<uint> listOfSettlements = cDatFile.loadSettlementListFromFile("./input/ListOfSettlementLandblocks.txt");
-            datFile.replaceLandblocks(listOfSettlements, datFileOld);
+            datFile.removeHouseSettlements(datFileOld);
 
             datFile.removeNoobFence();
+
+            datFile.replaceLandblock(0x7D8F0013, datFileOld); // The Zaikhal settlement portals pillar is baked into this landblock for some reason, remove it.
 
             List<uint> LandblocksToReplace = new List<uint>()
             {
@@ -233,36 +243,36 @@ namespace Melt
             };
             datFile.replaceLandblocksSpecialForStarterOutposts(LandblocksToReplace, datFileOld);
 
-            List<uint> buildingsToRemove = new List<uint>()
-            {
-                0xA9B30114, //Holtburg->Neydisa Castle Portal Bunker
-                0xA9B40183, //Holtburg->Shoushi Portal Bunker
-                0xA9B40188, //Holtburg->Rithwic Portal Bunker
-                0xA9B4017E, //Holtburg->Cragstone Portal Bunker
-                0xAAB40108, //Holtburg->Arwic Portal Bunker
-                0xAAB40103, //Holtburg->Dryreach Portal Bunker
+            //List<uint> buildingsToRemove = new List<uint>()
+            //{
+            //    0xA9B30114, //Holtburg->Neydisa Castle Portal Bunker
+            //    0xA9B40183, //Holtburg->Shoushi Portal Bunker
+            //    0xA9B40188, //Holtburg->Rithwic Portal Bunker
+            //    0xA9B4017E, //Holtburg->Cragstone Portal Bunker
+            //    0xAAB40108, //Holtburg->Arwic Portal Bunker
+            //    0xAAB40103, //Holtburg->Dryreach Portal Bunker
 
-                0x7D64018B, //Yaraq->Holtburg Portal Bunker
-                0x7D64017C, //Yaraq->Al-Arqas Portal Bunker
-                0x7D640181, //Yaraq->Samsur Portal Bunker
-                0x7E640122, //Yaraq->Zaikhal Portal Bunker
-                0x7E640127, //Yaraq->Linvak Tukal Portal Bunker
-                0x7D640177, //Yaraq->Khayyaban Portal Bunker
-                0x7D640186, //Yaraq->Xarabydum Portal Bunker
+            //    0x7D64018B, //Yaraq->Holtburg Portal Bunker
+            //    0x7D64017C, //Yaraq->Al-Arqas Portal Bunker
+            //    0x7D640181, //Yaraq->Samsur Portal Bunker
+            //    0x7E640122, //Yaraq->Zaikhal Portal Bunker
+            //    0x7E640127, //Yaraq->Linvak Tukal Portal Bunker
+            //    0x7D640177, //Yaraq->Khayyaban Portal Bunker
+            //    0x7D640186, //Yaraq->Xarabydum Portal Bunker
 
-                0xDA560116, //Shoushi->Kryst Portal Bunker
-                0xDA5501F9, //Shoushi->Nanto Portal Bunker
-                0xDA56011B, //Shoushi->Kara Portal Bunker
-                0xDA5501F4, //Shoushi->Yanshi Portal Bunker
-                0xDA540103, //Shoushi->Tou-Tou Portal Bunker
-                0xDA5501EF, //Shoushi->Yaraq Portal Bunker
-                0xD955010D, //Shoushi->Hebian-To Portal Bunker
-            };
-            datFile.removeBuildings(buildingsToRemove);
-            //Since we're removing the bunkers might as well roll back Holtburg's heightmap that was flattened in areas to fit the bunkers.
-            datFile.replaceLandblockTerrain(0xA9B40024, datFileOld, true, true);
-            datFile.replaceLandblockTerrain(0xAAB4000A, datFileOld, true, true);
-            datFile.replaceLandblockTerrain(0xA8B4003B, datFileOld, true, true);
+            //    0xDA560116, //Shoushi->Kryst Portal Bunker
+            //    0xDA5501F9, //Shoushi->Nanto Portal Bunker
+            //    0xDA56011B, //Shoushi->Kara Portal Bunker
+            //    0xDA5501F4, //Shoushi->Yanshi Portal Bunker
+            //    0xDA540103, //Shoushi->Tou-Tou Portal Bunker
+            //    0xDA5501EF, //Shoushi->Yaraq Portal Bunker
+            //    0xD955010D, //Shoushi->Hebian-To Portal Bunker
+            //};
+            //datFile.removeBuildings(buildingsToRemove);
+            ////Since we're removing the bunkers might as well roll back Holtburg's heightmap that was flattened in areas to fit the bunkers.
+            //datFile.replaceLandblockTerrain(0xA9B40024, datFileOld, true, true);
+            //datFile.replaceLandblockTerrain(0xAAB4000A, datFileOld, true, true);
+            //datFile.replaceLandblockTerrain(0xA8B4003B, datFileOld, true, true);
 
             //datFile.migrateDungeon(datFileOld, 0x017D, 0x017D); //original training academy
 
@@ -277,7 +287,16 @@ namespace Melt
             //};
             //datFile.replaceDungeonList(trainingAcademies, datFileOld);
 
+            cCellDat cellDat = new cCellDat();
+            cellDat.loadFromDat(datFile);
+            cMapDrawer mapDrawer = new cMapDrawer(cellDat);
+            mapDrawer.draw(false, 50);
+
             datFile.writeToDat("./client_cell_1.dat");
+
+            Console.WriteLine("Done");
+            Console.ReadLine();
+            return;
         }
 
         static void GeneratePhatACLootFiles(string[] args)

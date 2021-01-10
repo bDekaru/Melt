@@ -118,6 +118,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Source\misc\LandscapeSpawnMap.cs" />
+    <Compile Include="Source\misc\GoArrowUtilities.cs" />
     <Compile Include="Source\misc\aceDatabaseUtilities.cs" />
     <Compile Include="Source\misc\aceMutationScripts.cs" />
     <Compile Include="Source\datFile\btree\BTree.cs" />

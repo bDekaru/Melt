@@ -164,10 +164,6 @@ namespace Melt
                     }
                 }
 
-                //int a = 0;
-                //if (landblockInfoFrom.NumCells > cellsAdded || cells.Count > 0)
-                //    a = 1;
-
                 landblockInfoFile.fileFormat = eDatFormat.ToD;
                 landblockInfo.updateFileContent(landblockInfoFile);
             }
@@ -350,6 +346,114 @@ namespace Melt
             return true;
         }
 
+        public bool removeNoobPillarFromLandblock(uint cellIdInLandblock, int verboseLevel = 6)
+        {
+            if (verboseLevel > 5)
+                Console.WriteLine($"Removing noob pillar from landblock...");
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+
+            cDatFile toDat = this; //just to make things less confusing
+
+            uint landblockId = cellIdInLandblock & 0xFFFF0000 | 0x0000FFFF;
+
+            cDatFileEntry landBlockFile;
+            cCellLandblock landblock;
+
+            bool existsOnDestination = toDat.fileCache.TryGetValue(landblockId, out landBlockFile);
+
+            if (existsOnDestination)
+            {
+                //cCellLandblock exists on origin and destination, replace.
+                landblock = new cCellLandblock(landBlockFile);
+
+                for (int i = 0; i < landblock.Terrain.Count; i++)
+                {
+                    if ((landblock.Terrain[i] & 0x0800) != 0x0000)
+                        landblock.Terrain[i] = (ushort)(landblock.Terrain[i] & ~0x0800);
+                }
+
+                landblock.updateFileContent(landBlockFile);
+            }
+
+            timer.Stop();
+            if (verboseLevel > 5)
+                Console.WriteLine("Landblock noob pillars removed in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
+            return true;
+        }
+
+        public bool removeRoadFromLandblock(uint cellIdInLandblock, int verboseLevel = 6)
+        {
+            if (verboseLevel > 5)
+                Console.WriteLine($"Removing roads from landblock...");
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+
+            cDatFile toDat = this; //just to make things less confusing
+
+            uint landblockId = cellIdInLandblock & 0xFFFF0000 | 0x0000FFFF;
+
+            cDatFileEntry landBlockFile;
+            cCellLandblock landblock;
+
+            bool existsOnDestination = toDat.fileCache.TryGetValue(landblockId, out landBlockFile);
+
+            if (existsOnDestination)
+            {
+                //cCellLandblock exists on origin and destination, replace.
+                landblock = new cCellLandblock(landBlockFile);
+
+                for (int i = 0; i < landblock.Terrain.Count; i++)
+                {
+                    if ((landblock.Terrain[i] & 0x0003) != 0x0000)
+                        landblock.Terrain[i] = (ushort)(landblock.Terrain[i] & ~0x0003);
+                }
+
+                landblock.updateFileContent(landBlockFile);
+            }
+
+            timer.Stop();
+            if (verboseLevel > 5)
+                Console.WriteLine("Landblock roads removed in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
+            return true;
+        }
+
+        public bool replaceLandblockSpecificTexture(uint cellIdInLandblock, ushort texId, ushort replacementTexId, int verboseLevel = 6)
+        {
+            if (verboseLevel > 5)
+                Console.WriteLine($"Replacing landblock TextureId from 0x{texId.ToString("x4")} to 0x{replacementTexId.ToString("x4")}...");
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+
+            cDatFile toDat = this; //just to make things less confusing
+
+            uint landblockId = cellIdInLandblock & 0xFFFF0000 | 0x0000FFFF;
+
+            cDatFileEntry landBlockFile;
+            cCellLandblock landblock;
+
+            bool existsOnDestination = toDat.fileCache.TryGetValue(landblockId, out landBlockFile);
+
+            if (existsOnDestination)
+            {
+                //cCellLandblock exists on origin and destination, replace.
+                landblock = new cCellLandblock(landBlockFile);
+
+                for (int i = 0; i < landblock.Terrain.Count; i++)
+                {
+                    if (landblock.Terrain[i] == texId)
+                        landblock.Terrain[i] = replacementTexId;
+                }
+
+                landblock.updateFileContent(landBlockFile);
+            }
+
+            timer.Stop();
+            if (verboseLevel > 5)
+                Console.WriteLine("Landblock heightmap replaced in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
+            return true;
+        }
+
         public bool replaceLandblockTerrain(uint cellIdInLandblock, cDatFile fromDat, bool heightmap = true, bool textures = true, bool createOnly = false, int verboseLevel = 6)
         {
             if (verboseLevel > 5)
@@ -377,13 +481,11 @@ namespace Melt
                         //cCellLandblock exists on origin and destination, replace.
                         landblockTo = new cCellLandblock(toLandBlockFile);
 
-                        if(heightmap)
+                        if (heightmap)
                             landblockTo.Height = landblockFrom.Height;
 
                         if (textures)
                             landblockTo.Terrain = landblockFrom.Terrain;
-
-                        // Here is where we would manipulate the origin files before copying them over, nothing for now.
                     }
                     else
                     {
@@ -421,7 +523,7 @@ namespace Melt
             return true;
         }
 
-        public bool replaceLandblock(uint cellIdInLandblock, cDatFile fromDat, bool createOnly = false, int verboseLevel = 6)
+        public bool replaceLandblock(uint cellIdInLandblock, cDatFile fromDat, bool heightmap = true, bool textures = true, bool objects = true, bool createOnly = false, int verboseLevel = 6)
         {
             if (verboseLevel > 5)
                 Console.WriteLine("Replacing landblock...");
@@ -446,11 +548,15 @@ namespace Melt
                     if (existsOnDestination)
                     {
                         //cCellLandblock exists on origin and destination, replace.
-                        //landblockTo = new cCellLandblock(toLandBlockFile);
+                        landblockTo = new cCellLandblock(toLandBlockFile);
 
-                        // Here is where we would manipulate the origin files before copying them over, nothing for now.
-
-                        landblockTo = landblockFrom;
+                        landblockTo.Id = landblockFrom.Id;
+                        if (objects)
+                            landblockTo.HasObjects = landblockFrom.HasObjects;
+                        if (heightmap)
+                            landblockTo.Height = landblockFrom.Height;
+                        if (textures)
+                            landblockTo.Terrain = landblockFrom.Terrain;
                     }
                     else
                     {
@@ -549,11 +655,17 @@ namespace Melt
                         }
                     }
 
-                    //int a = 0;
-                    //if (landblockInfoFrom.NumCells > cellsAdded || cells.Count > 0)
-                    //    a = 1;
-
-                    landblockInfoTo = landblockInfoFrom;
+                    landblockInfoTo.Id = landblockInfoFrom.Id;
+                    landblockInfoTo.NumCells = landblockInfoFrom.NumCells;
+                    landblockInfoTo.buildingFlags = landblockInfoFrom.buildingFlags;
+                    landblockInfoTo.Buildings = landblockInfoFrom.Buildings;
+                    landblockInfoTo.RestrictionTables = landblockInfoFrom.RestrictionTables;
+                    landblockInfoTo.bucketSize = landblockInfoFrom.bucketSize;
+                    if (objects)
+                    {
+                        landblockInfoTo.Objects = landblockInfoFrom.Objects;
+                        landblockInfoTo.totalObjects = landblockInfoFrom.totalObjects;
+                    }
                     landblockInfoTo.updateFileContent(toLandblockInfoFile);
 
                     if (!existsOnDestination)
@@ -570,9 +682,25 @@ namespace Melt
                     //cLandblockInfo exists on destination but not on origin, delete.
                     if (!createOnly)
                     {
-                        //cLandblockInfo landblockInfoTo = new cLandblockInfo(toLandblockInfoFile);
+                        cLandblockInfo landblockInfoTo = new cLandblockInfo(toLandblockInfoFile);
 
-                        toDat.fileCache.Remove(landblockInfoId);
+                        if(objects)
+                            toDat.fileCache.Remove(landblockInfoId);
+                        else
+                        {
+                            //Clear everything but the objects.
+                            landblockInfoTo.NumCells = 0;
+                            landblockInfoTo.buildingFlags = 0;
+                            List<cBuildInfo> buildingsToKeep = new List<cBuildInfo>(); // Let's keep buildings without interions as they are pretty much objects.
+                            foreach(var building in landblockInfoTo.Buildings)
+                            {
+                                if (building.Portals.Count == 0)
+                                    buildingsToKeep.Add(building);
+                            }
+                            landblockInfoTo.Buildings = buildingsToKeep;
+                            landblockInfoTo.RestrictionTables.Clear();
+                            landblockInfoTo.updateFileContent(toLandblockInfoFile);
+                        }
 
                         for (uint i = 0; i < 0xFFFE; i++)
                         {
@@ -1058,7 +1186,7 @@ namespace Melt
             if (verboseLevel > 1)
                 Console.WriteLine($"Replacing dungeon 0x{dungeonId.ToString("x4")}...");
             uint dungeonLandblock = (uint)(dungeonId << 16 | 0x0000FFFF);
-            replaceLandblock(dungeonLandblock, fromDat, false, verboseLevel);
+            replaceLandblock(dungeonLandblock, fromDat, true, true, true, false, verboseLevel);
         }
 
         public void replaceDungeonList(List<ushort> listOfDungeonIds, cDatFile fromDat, int verboseLevel = 5)
@@ -1077,7 +1205,7 @@ namespace Melt
                 Console.WriteLine($"Replacing {listOfLandblockIds.Count} landblocks...");
             foreach (var landblockId in listOfLandblockIds)
             {
-                replaceLandblock(landblockId, fromDat, false, verboseLevel);
+                replaceLandblock(landblockId, fromDat, true, true, true, false, verboseLevel);
             }
         }
 
@@ -1205,7 +1333,7 @@ namespace Melt
             {
                 if (!fileCache.ContainsKey(landblockId))
                 {
-                    if (replaceLandblock(landblockId, fromDat, true, verboseLevel))
+                    if (replaceLandblock(landblockId, fromDat, true, true, true, true, verboseLevel))
                         landblocksCounter++;
                 }
             }
@@ -1348,7 +1476,7 @@ namespace Melt
                 Console.WriteLine("{0} landblocks converted in {1} seconds.", landblocksCounter, timer.ElapsedMilliseconds / 1000f);
         }
 
-        public void replaceAllLandblocks(cDatFile fromDat, bool createOnly = false, int verboseLevel = 5)
+        public void replaceAllLandblocks(cDatFile fromDat, bool heightmap = true, bool textures = true, bool objects = true, bool createOnly = false, int verboseLevel = 5)
         {
             if (verboseLevel > 1)
                 Console.WriteLine("Replacing all landblocks...");
@@ -1359,7 +1487,7 @@ namespace Melt
 
             for (uint landblockId = 0x00000000; landblockId < 0xFFFF0000; landblockId += 0x00010000)
             {
-                if (replaceLandblock(landblockId, fromDat, createOnly, verboseLevel))
+                if (replaceLandblock(landblockId, fromDat, heightmap, textures, objects, createOnly, verboseLevel))
                     landblocksCounter++;
             }
 
@@ -1368,7 +1496,7 @@ namespace Melt
                 Console.WriteLine("{0} landblocks replaced in {1} seconds.", landblocksCounter, timer.ElapsedMilliseconds / 1000f);
         }
 
-        public void replaceLandblockArea(uint baseLandblock, cDatFile fromDat, int verboseLevel = 5)
+        public void replaceLandblockArea(uint baseLandblock, cDatFile fromDat, bool heightmap = true, bool textures = true, bool objects = true, int verboseLevel = 5)
         {
             uint startLandblockId = baseLandblock & 0xFF000000 | 0x0000FFFF;
             int gridSize = 3;
@@ -1397,7 +1525,7 @@ namespace Melt
                 for (byte y = startY; y <= endY; y++)
                 {
                     landblockId = (uint)(x << 24 | y << 16 | 0x0000FFFF);
-                    if (replaceLandblock(landblockId, fromDat, false, verboseLevel))
+                    if (replaceLandblock(landblockId, fromDat, heightmap, textures, objects, false, verboseLevel))
                         landblocksAddedCounter++;
                     else
                         landblocksNotFoundCounter++;
@@ -1409,7 +1537,99 @@ namespace Melt
                 Console.WriteLine("{0} landblocks replaced in {1} seconds. {2} landblocks unchanged", landblocksAddedCounter, timer.ElapsedMilliseconds / 1000f, landblocksNotFoundCounter);
         }
 
-        public void replaceLandblocks(List<uint> listOfLandblocks, cDatFile fromFile, int verboseLevel = 5)
+        public void replaceLandblocksTerrain(List<uint> listOfLandblocks, cDatFile fromFile, bool heightmap = true, bool textures = true, int verboseLevel = 5)
+        {
+            if (verboseLevel > 1)
+                Console.WriteLine($"Replacing {listOfLandblocks.Count} landblocks terrain...");
+
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+
+            int landblockReplacedCounter = 0;
+            int landblockNotFoundCounter = 0;
+            foreach (uint landblockId in listOfLandblocks)
+            {
+                if (replaceLandblockTerrain(landblockId, fromFile, heightmap, textures, false, verboseLevel))
+                    landblockReplacedCounter++;
+                else
+                    landblockNotFoundCounter++;
+            }
+
+            timer.Stop();
+            if (verboseLevel > 1)
+                Console.WriteLine("{0} landblock(s) terrain replaced in {1} seconds. {2} landblock(s) not found.", landblockReplacedCounter, timer.ElapsedMilliseconds / 1000f, landblockNotFoundCounter);
+        }
+
+        public void removeNoobPillarFromLandblocks(List<uint> listOfLandblocks, int verboseLevel = 5)
+        {
+            if (verboseLevel > 1)
+                Console.WriteLine($"Removing noob pillars from {listOfLandblocks.Count} landblocks...");
+
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+
+            int landblockReplacedCounter = 0;
+            int landblockNotFoundCounter = 0;
+            foreach (uint landblockId in listOfLandblocks)
+            {
+                if (removeNoobPillarFromLandblock(landblockId, verboseLevel))
+                    landblockReplacedCounter++;
+                else
+                    landblockNotFoundCounter++;
+            }
+
+            timer.Stop();
+            if (verboseLevel > 1)
+                Console.WriteLine("Removed noob pillars from {0} landblock(s) in {1} seconds. {2} landblock(s) not found.", landblockReplacedCounter, timer.ElapsedMilliseconds / 1000f, landblockNotFoundCounter);
+        }
+
+        public void removeRoadsFromLandblocks(List<uint> listOfLandblocks, int verboseLevel = 5)
+        {
+            if (verboseLevel > 1)
+                Console.WriteLine($"Removing roads from {listOfLandblocks.Count} landblocks...");
+
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+
+            int landblockReplacedCounter = 0;
+            int landblockNotFoundCounter = 0;
+            foreach (uint landblockId in listOfLandblocks)
+            {
+                if (removeRoadFromLandblock(landblockId, verboseLevel))
+                    landblockReplacedCounter++;
+                else
+                    landblockNotFoundCounter++;
+            }
+
+            timer.Stop();
+            if (verboseLevel > 1)
+                Console.WriteLine("Removed roads from {0} landblock(s) in {1} seconds. {2} landblock(s) not found.", landblockReplacedCounter, timer.ElapsedMilliseconds / 1000f, landblockNotFoundCounter);
+        }
+
+        public void replaceLandblocksSpecificTexture(List<uint> listOfLandblocks, ushort texId, ushort replacementTexId, int verboseLevel = 5)
+        {
+            if (verboseLevel > 1)
+                Console.WriteLine($"Modifying {listOfLandblocks.Count}: TextureId from 0x{texId.ToString("x4")} to 0x{replacementTexId.ToString("x4")}...");
+
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+
+            int landblockReplacedCounter = 0;
+            int landblockNotFoundCounter = 0;
+            foreach (uint landblockId in listOfLandblocks)
+            {
+                if (replaceLandblockSpecificTexture(landblockId, texId, replacementTexId, verboseLevel))
+                    landblockReplacedCounter++;
+                else
+                    landblockNotFoundCounter++;
+            }
+
+            timer.Stop();
+            if (verboseLevel > 1)
+                Console.WriteLine("Modified {0} landblock(s) in {1} seconds. {2} landblock(s) not found.", landblockReplacedCounter, timer.ElapsedMilliseconds / 1000f, landblockNotFoundCounter);
+        }
+
+        public void replaceLandblocks(List<uint> listOfLandblocks, cDatFile fromFile, bool heightmap = true, bool textures = true, bool objects = true, int verboseLevel = 5)
         {
             if (verboseLevel > 1)
                 Console.WriteLine($"Replacing {listOfLandblocks.Count} landblocks...");
@@ -1421,7 +1641,7 @@ namespace Melt
             int landblockNotFoundCounter = 0;
             foreach (uint landblockId in listOfLandblocks)
             {
-                if (replaceLandblock(landblockId, fromFile, false, verboseLevel))
+                if (replaceLandblock(landblockId, fromFile, heightmap, textures, objects, false, verboseLevel))
                     landblockReplacedCounter++;
                 else
                     landblockNotFoundCounter++;
@@ -1429,7 +1649,7 @@ namespace Melt
 
             timer.Stop();
             if (verboseLevel > 1)
-                Console.WriteLine("{0} landblocks(s) replaced in {1} seconds. {2} landblocks(s) not found.", landblockReplacedCounter, timer.ElapsedMilliseconds / 1000f, landblockNotFoundCounter);
+                Console.WriteLine("{0} landblock(s) replaced in {1} seconds. {2} landblock(s) not found.", landblockReplacedCounter, timer.ElapsedMilliseconds / 1000f, landblockNotFoundCounter);
         }
 
         public void replaceLandblocksSpecialForStarterOutposts(List<uint> listOfLandblocks, cDatFile fromFile, int verboseLevel = 5)
@@ -1452,7 +1672,23 @@ namespace Melt
 
             timer.Stop();
             if (verboseLevel > 1)
-                Console.WriteLine("{0} landblocks(s) replaced in {1} seconds. {2} landblocks(s) not found.", landblockReplacedCounter, timer.ElapsedMilliseconds / 1000f, landblockNotFoundCounter);
+                Console.WriteLine("{0} landblock(s) replaced in {1} seconds. {2} landblock(s) not found.", landblockReplacedCounter, timer.ElapsedMilliseconds / 1000f, landblockNotFoundCounter);
+        }
+
+        public void removeHouseSettlements(cDatFile datFileWithoutSettlements) // The ideal cell without settlements is one from after the obsidian span was added and before the first housing settlements were added. I used one from 2000-12-31.
+        {
+            List<uint> listOfSettlements = new List<uint>();
+            List<uint> listOfSettlementsPreserveTexture = new List<uint>();
+            List<uint> listOfSettlementsPreserveSurface = new List<uint>();
+            loadSettlementListFromFile("./input/ListOfSettlementLandblocks.txt", listOfSettlements, listOfSettlementsPreserveTexture, listOfSettlementsPreserveSurface);
+
+            replaceLandblocks(listOfSettlements, datFileWithoutSettlements);
+            removeNoobPillarFromLandblocks(listOfSettlements); // Some landblocks have noob pillars under the houses!
+
+            replaceLandblocks(listOfSettlementsPreserveTexture, datFileWithoutSettlements, true, false, true);
+            removeRoadsFromLandblocks(listOfSettlementsPreserveTexture);
+
+            replaceLandblocks(listOfSettlementsPreserveSurface, datFileWithoutSettlements, false, false, false);
         }
     }
 }
