@@ -12,6 +12,7 @@ namespace Melt
         static void Main(string[] args)
         {
             //GeneratePhatACLootFiles(args);
+            //MapManipulationForCustomDM(args);
             MapManipulation(args);
             //Workbench(args);
         }
@@ -23,7 +24,23 @@ namespace Melt
         public static cCache9Converter cache9Converter = new cCache9Converter();
         static void Workbench(string[] args)
         {
-            //LandscapeSpawnMap map = new LandscapeSpawnMap("./input/region.json");
+            //AceDatabaseUtilities.AddLevelReqToShadowArmor();
+            //AceDatabaseUtilities.UpdateXPRewardsFromList("./input/listOfXpRewards.txt");
+
+            //AceDatabaseUtilities.CreateCreatureXPList();
+            //AceDatabaseUtilities.CreateXPRewardsList();
+
+            //AceDatabaseUtilities.AddThrownWeaponsToVendors();
+            //AceDatabaseUtilities.IncreaseThrownWeaponsStackSizeTo250();
+            //AceDatabaseUtilities.AddSpellComponentPouchToVendors();
+
+            //LandscapeSpawnMap spawnMap = new LandscapeSpawnMap();
+            //spawnMap.ExportSpawnMapToAceDatabase("./input/spawnMap/region.json", "./input/spawnMap/regionEncounterMap.png");
+            //spawnMap.LoadRegionFromJson("./input/spawnMap/region.json");
+            //spawnMap.SaveRegionToPng("./regionEncounterMap.png");
+            //spawnMap.LoadRegionFromPng("./regionEncounterMap.png");
+            //spawnMap.LoadRegionFromPng("./input/spawnMap/regionEncounterMap.png");
+            //spawnMap.SaveRegionToJson("./region.json");
 
             //GoArrowUtilities goArrow = new GoArrowUtilities("./CustomDM-GoArrow-Locations.xml");
             ////goArrow.RemoveSettlements();
@@ -31,6 +48,7 @@ namespace Melt
             //goArrow.Save("./CustomDM-GoArrow-Locations2.xml");
 
             //AceDatabaseUtilities.RemoveAllNonApartmentHouses();
+            //AceDatabaseUtilities.AddPortalGemsToAllSpellComponentVendors();
 
             //AceMutationScripts aceMutationScripts = new AceMutationScripts();
             //aceMutationScripts.BuildScripts();
@@ -53,17 +71,19 @@ namespace Melt
             //    cache6Converter.writeJson("./output/landblocks");
             //    return;
 
-            //SkillTable skillTable = new SkillTable("./Skill Tables/0E000004 - Skills Table - Original.bin");
-            //SkillTable skillTable2 = new SkillTable("./Skill Tables/0E000004 - Skills Table - Classic weapon skills.bin");
-            //SkillTable skillTable3 = new SkillTable("./Skill Tables/0E000004 - Skills Table - Release.bin");
-            //skillTable2.copySkill("Salvaging", skillTable);
-            //skillTable2.save("./0E000004 - Skills Table - Classic weapon skills with salvaging.bin");
+            //SkillTable skillTableLatest = new SkillTable("./Skill Tables/0E000004 - Skills Table - Original.bin");
+            //SkillTable skillTableClassicWeaponSkills = new SkillTable("./Skill Tables/0E000004 - Skills Table - Classic weapon skills.bin");
+            ////SkillTable skillTableRelease = new SkillTable("./Skill Tables/0E000004 - Skills Table - Release.bin");
+            //skillTableClassicWeaponSkills.modifyForCustomDM(skillTableLatest);
+            //skillTableClassicWeaponSkills.save("./0E000004 - Skills Table - CustomDM.bin");
 
             //CharGen charGen = new CharGen("./input/0E000002.bin");
-            //charGen.modify();
-            //charGen.save("./0E000002 - test.bin");
-            //Console.ReadLine();
-            //return;
+            //////charGen.modifyForDM();
+            //charGen.modifyForCustomDM();
+            //charGen.save("./0E000002 - CharGen - CustomDM.bin");
+
+            //SpellsConverter.MergeWeaponsSkillsForCustomDM("Spells/0E00000E - Reversed plus removed auras.txt", "./0E00000E - CustomDM.txt");
+            //SpellsConverter.toBin("./0E00000E - CustomDM.txt", "./0E00000E - Spells Table - CustomDM.bin");
 
             ////TextureConverter.folderToPNG("textures ToD");
             ////TextureConverter.folderBMPToPNG("C:/Users/Dekaru/Desktop/Research/Textures Retail");
@@ -110,7 +130,7 @@ namespace Melt
             //SpellsConverter.to0002raw("Spells/0E00000E - latest.txt");
             //SpellsConverter.toBin("Spells/0E00000E - Reversed.txt");
             //SpellsConverter.toTxt("Spells/0E00000E - Reversed.bin");
-            //SpellsConverter.revertWeaponMasteries("Spells/0E00000E - Latest.txt", "Spells/0E00000E - 2010.txt");
+            //SpellsConverter.revertWeaponMasteriesAndAuras("Spells/0E00000E - Latest.txt", "Spells/0E00000E - 2010.txt");
             //SpellsConverter.toBin("0E00000E.txt");
             //SpellsConverter.toBin("Spells/0E00000E - Reversed plus removed auras.txt");
             //SpellsConverter.toJson("Spells/0E00000E - Reversed plus removed auras.bin");
@@ -168,6 +188,76 @@ namespace Melt
             //portalDatFile.SetFileIteration(10000);
             //portalDatFile.writeToDat("client_portal.dat");
 
+            //cDatFile datFile = new cDatFile();
+            //datFile.loadFromDat("./input/client_cell_1.dat");
+            //datFile.loadFromDat("./input/client_cell_1 - Infiltration.dat");
+            //datFile.loadFromDat("./input/cell - Late DM - 2004-09-01.dat");
+            //datFile.loadFromDat("./client_cell_1.dat");
+
+            cDatFile datFileOld = new cDatFile();
+            datFileOld.loadFromDat("./input/cell - Release.dat");
+            //datFileOld.loadFromDat("./input/cell - 2000-12-31 - Obsidian Span.dat");
+            //datFileOld.loadFromDat("./input/cell - DM - 2001-09-12.dat");
+            //datFileOld.loadFromDat("./input/client_cell_1.dat");
+            //datFileOld.loadFromDat("./input/cell - End of Beta Event.dat");
+            //datFileOld.loadFromDat("./input/cell - 2005-01-05 (198656kb) (Admin) (Iteration 1583 - Complete).dat");
+            //datFileOld.loadFromDat("./input/cell - 2005-02-XX (202752kb) (Admin) (Iteration 1593 - Complete).dat");
+
+            datFileOld.convertRetailToToD(10000);
+
+            //cDatFile replacementDataFile = null;
+            //if (datFileOld.isMissingCells)
+            //{
+            //    Console.WriteLine($"Missing {datFileOld.getMissingCellsList().Count} cells...");
+            //    replacementDataFile = new cDatFile();
+            //    //replacementDataFile.loadFromDat("./input/cell - Release.dat");
+            //    replacementDataFile.loadFromDat("./input/client_cell_1.dat");
+            //    datFileOld.completeCellsFrom(replacementDataFile, true);
+            //    //datFileOld.truncateMissingCells();
+            //}
+
+            //int missingCount;
+            //if (datFileOld.isMissingLandblocks(out missingCount))
+            //{
+            //    Console.WriteLine($"Missing {missingCount} landblocks...");
+            //    if (replacementDataFile == null)
+            //    {
+            //        replacementDataFile = new cDatFile();
+            //        //replacementDataFile.loadFromDat("./input/cell - Release.dat");
+            //        replacementDataFile.loadFromDat("./input/client_cell_1.dat");
+            //    }
+            //    datFileOld.completeLandblocksFrom(replacementDataFile);
+            //}
+
+            //datFileOld.writeToDat("./client_cell_1.dat");
+
+            //datFile.replaceDungeon(0x017d, datFileOld, 0);
+
+            //datFile.replaceLandblock(0xC6A90013, datFileOld); //Arwic
+
+            //datFile.replaceLandblockArea(0xC98C0028, datFileOld); //Rithwic
+            //datFile.replaceLandblockArea(0x856D0040, datFileOld); //Tufa
+            //datFile.replaceLandblockArea(0xC6A90013, datFileArwic); //Arwic
+
+            cCellDat cellDat = new cCellDat();
+            cellDat.loadFromDat(datFileOld);
+            cMapDrawer mapDrawer = new cMapDrawer(cellDat);
+            mapDrawer.draw(false, 50);
+
+            datFileOld.writeToDat("./client_cell_1.dat");
+
+            Console.WriteLine("Done");
+            Console.ReadLine();
+        }
+
+        static void MapManipulationForCustomDM(string[] args)
+        {
+            //cDatFile portalDatFile = new cDatFile();
+            //portalDatFile.loadFromDat("./input/client_portal.dat");
+            //int iteration = portalDatFile.GetFileIteration();
+            //portalDatFile.SetFileIteration(10000);
+            //portalDatFile.writeToDat("client_portal.dat");
+
             cDatFile datFile = new cDatFile();
             //datFile.loadFromDat("./input/client_cell_1.dat");
             datFile.loadFromDat("./input/client_cell_1 - Infiltration.dat");
@@ -182,6 +272,15 @@ namespace Melt
             //datFileOld.loadFromDat("./input/cell - End of Beta Event.dat");
             //datFileOld.loadFromDat("./input/cell - 2005-01-05 (198656kb) (Admin) (Iteration 1583 - Complete).dat");
             //datFileOld.loadFromDat("./input/cell - 2005-02-XX (202752kb) (Admin) (Iteration 1593 - Complete).dat");
+
+            cDatFile datFileRelease = new cDatFile();
+            datFileRelease.loadFromDat("./input/cell - Release.dat");
+
+            cDatFile datFileArwic = new cDatFile();
+            datFileArwic.loadFromDat("./input/cell - 2000-08-22.dat");
+
+            cDatFile datFileToD = new cDatFile();
+            datFileToD.loadFromDat("./input/client_cell_1 - ToD.dat");
 
             //datFileOld.convertRetailToToD(10000);
 
@@ -216,8 +315,24 @@ namespace Melt
             //datFile.replaceLandblock(0xC6A90013, datFileOld); //Arwic
 
             //datFile.replaceLandblockArea(0xC98C0028, datFileOld); //Rithwic
-            //datFile.replaceLandblockArea(0xC6A90013, datFileOld); //Arwic
             //datFile.replaceLandblockArea(0x856D0040, datFileOld); //Tufa
+            //datFile.replaceLandblockArea(0xC6A90013, datFileArwic); //Arwic
+
+            //Arwic
+            datFile.replaceLandblock(0xC6A90013, datFileRelease);
+            datFile.replaceLandblock(0xC6A90008, datFileRelease);
+            datFile.replaceLandblock(0xC6A80038, datFileRelease);
+            datFile.replaceLandblock(0xC6AA0011, datFileRelease);
+            datFile.replaceLandblock(0xC5AA0039, datFileRelease);
+            datFile.replaceLandblock(0xC5A80028, datFileRelease);
+            datFile.replaceLandblock(0xC5A80028, datFileRelease);
+
+            datFile.replaceLandblock(0xC5A90037, datFileArwic); // Meeting Hall with the correct fallen pillars around the road.
+            datFile.replaceLandblock(0xC6A90013, datFileArwic, false, false, true, false); // use the surface objects from this file(lamp posts!) but not the buildings as they have fire lighting effects that bleed all over thru the walls on the new client.
+
+            datFile.replaceLandblock(0xC5A6003A, datFileRelease); //Get rid of Newic.
+
+            datFile.replaceLandblockArea(0x2B110028, datFileToD); //Candeth Keep - todo: investigate why Candeth is causing crashes when using the one from infiltration data.
 
             datFile.removeHouseSettlements(datFileOld);
 
@@ -243,36 +358,99 @@ namespace Melt
             };
             datFile.replaceLandblocksSpecialForStarterOutposts(LandblocksToReplace, datFileOld);
 
-            //List<uint> buildingsToRemove = new List<uint>()
-            //{
-            //    0xA9B30114, //Holtburg->Neydisa Castle Portal Bunker
-            //    0xA9B40183, //Holtburg->Shoushi Portal Bunker
-            //    0xA9B40188, //Holtburg->Rithwic Portal Bunker
-            //    0xA9B4017E, //Holtburg->Cragstone Portal Bunker
-            //    0xAAB40108, //Holtburg->Arwic Portal Bunker
-            //    0xAAB40103, //Holtburg->Dryreach Portal Bunker
+            List<uint> buildingsToRemove = new List<uint>()
+            {
+                0xA9B30114, // Holtburg->Neydisa Castle Portal Bunker
+                0xA9B40183, // Holtburg->Shoushi Portal Bunker
+                0xA9B40188, // Holtburg->Rithwic Portal Bunker
+                0xA9B4017E, // Holtburg->Cragstone Portal Bunker
+                0xAAB40108, // Holtburg->Arwic Portal Bunker
+                0xAAB40103, // Holtburg->Dryreach Portal Bunker
 
-            //    0x7D64018B, //Yaraq->Holtburg Portal Bunker
-            //    0x7D64017C, //Yaraq->Al-Arqas Portal Bunker
-            //    0x7D640181, //Yaraq->Samsur Portal Bunker
-            //    0x7E640122, //Yaraq->Zaikhal Portal Bunker
-            //    0x7E640127, //Yaraq->Linvak Tukal Portal Bunker
-            //    0x7D640177, //Yaraq->Khayyaban Portal Bunker
-            //    0x7D640186, //Yaraq->Xarabydum Portal Bunker
+                0x7D64018B, // Yaraq->Holtburg Portal Bunker
+                0x7D64017C, // Yaraq->Al-Arqas Portal Bunker
+                0x7D640181, // Yaraq->Samsur Portal Bunker
+                0x7E640122, // Yaraq->Zaikhal Portal Bunker
+                0x7E640127, // Yaraq->Linvak Tukal Portal Bunker
+                0x7D640177, // Yaraq->Khayyaban Portal Bunker
+                0x7D640186, // Yaraq->Xarabydum Portal Bunker
 
-            //    0xDA560116, //Shoushi->Kryst Portal Bunker
-            //    0xDA5501F9, //Shoushi->Nanto Portal Bunker
-            //    0xDA56011B, //Shoushi->Kara Portal Bunker
-            //    0xDA5501F4, //Shoushi->Yanshi Portal Bunker
-            //    0xDA540103, //Shoushi->Tou-Tou Portal Bunker
-            //    0xDA5501EF, //Shoushi->Yaraq Portal Bunker
-            //    0xD955010D, //Shoushi->Hebian-To Portal Bunker
-            //};
-            //datFile.removeBuildings(buildingsToRemove);
-            ////Since we're removing the bunkers might as well roll back Holtburg's heightmap that was flattened in areas to fit the bunkers.
-            //datFile.replaceLandblockTerrain(0xA9B40024, datFileOld, true, true);
-            //datFile.replaceLandblockTerrain(0xAAB4000A, datFileOld, true, true);
-            //datFile.replaceLandblockTerrain(0xA8B4003B, datFileOld, true, true);
+                0xDA560116, // Shoushi->Kryst Portal Bunker
+                0xDA5501F9, // Shoushi->Nanto Portal Bunker
+                0xDA56011B, // Shoushi->Kara Portal Bunker
+                0xDA5501F4, // Shoushi->Yanshi Portal Bunker
+                0xDA540103, // Shoushi->Tou-Tou Portal Bunker
+                0xDA5501EF, // Shoushi->Yaraq Portal Bunker
+                0xD955010D, // Shoushi->Hebian-To Portal Bunker
+
+                //Statues
+                0x90580141, // Al-Arqas
+                0xA9B40177, // Holtburg
+                0xBF80017D, // Lytelthorpe
+                0xE63D0154, // Nanto
+                0xC88C0171, // Rithwic
+                0x977B015F, // Samsur
+                0xDA5501E8, // Shoushi
+                0x7D640151, // Yaraq
+                0xBC9F0166, // Cragstone
+                0x85880129, // Al-Jalima
+                0xCE95016A, // Eastham
+                0xA1A40162, // Glenden Wood
+                0xE74E01A7, // Hebian-To
+                0x9E430132, // Khayyaban
+                0xE9220141, // Kryst
+                0xDA3B013C, // Lin
+                0xA2600122, // Uziz
+                0x80900139, // Zhaikal
+                0xF75C0155, // Tou-Tou
+                0xCD41018B, // Baishi
+                0xF2220122, // MacNiall's Freehold
+                0xE5320136, // Mayoi
+                0x49B6012D, // Plateau Village
+                0x9722015F, // Qalaba'r
+                0xC95B0169, // Sawato
+                0x64D50131, // Stonehold
+                0x866C010B, // Tufa
+                0x1134014A, // Ayan Baqur
+                0xBA170143, // Kara
+                0x3F310101, // Wai Jhou
+                0x2581016B, // Fort Tethana
+
+                //Arcanum Buildings
+                0x90570102, // Al-Arqas
+                0xA9B40171, // Holtburg
+                0xBE800109, // Lytelthorpe
+                0xE63D014E, // Nanto
+                0xC88B0102, // Rithwic
+                0x977B0159, // Samsur
+                0xDA56010E, // Shoushi
+                0x7D64014B, // Yaraq
+                0xBA9E0105, // Cragstone
+                0x85880123, // Al-Jalima
+                0xCE950163, // Eastham
+                0xA2A40100, // Glenden Wood
+                0xE64E0104, // Hebian-To
+                0x9E43012D, // Khayyaban
+                0xE8210104, // Kryst
+                0xDB3B011D, // Lin
+                0xA260011C, // Uziz
+                0x7F8F011C, // Zhaikal
+                0xF75C014F, // Tou-Tou
+                0xCD410183, // Baishi
+                0xF2230104, // MacNiall's Freehold
+                0xE532012E, // Mayoi
+                0x49B60126, // Plateau Village
+                0x97220159, // Qalaba'r
+                0xC95B0161, // Sawato
+                0x64D50129, // Stonehold
+                0x11340144, // Ayan Baqur
+                0xBA17013B, // Kara
+            };
+            datFile.removeBuildings(buildingsToRemove);
+            //Since we're removing the bunkers might as well roll back Holtburg's heightmap that was flattened in areas to fit the bunkers.
+            datFile.replaceLandblockTerrain(0xA9B40024, datFileOld, true, true);
+            datFile.replaceLandblockTerrain(0xAAB4000A, datFileOld, true, true);
+            datFile.replaceLandblockTerrain(0xA8B4003B, datFileOld, true, true);
 
             //datFile.migrateDungeon(datFileOld, 0x017D, 0x017D); //original training academy
 

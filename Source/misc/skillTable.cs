@@ -118,6 +118,74 @@ namespace Melt
             Console.WriteLine("Done");
         }
 
+        public void removeSkill(string skillName)
+        {
+            bool found = false;
+            uint key = 0;
+            foreach (KeyValuePair<uint, Skill> entry in Skills)
+            {
+                Skill skill = entry.Value;
+                if (skill.Name == skillName)
+                {
+                    key = entry.Key;
+                    found = true;
+                }
+            }
+            if (found)
+            {
+                Skills.Remove(key);
+                Console.WriteLine("Skill removed.");
+            }
+            else
+                Console.WriteLine($"Couldn't find {skillName} skill to remove.");
+        }
+
+        public void modifyForCustomDM(SkillTable skillTableLatest)
+        {
+            copySkill("Salvaging", skillTableLatest);
+            copySkill("Shield", skillTableLatest);
+            removeSkill("Item Enchantment");
+            removeSkill("Creature Enchantment");
+            removeSkill("Mace");
+            removeSkill("Staff");
+            removeSkill("Crossbow");
+
+            Skills[(uint)eSkills.Salvaging].TrainedCost = 2;
+            Skills[(uint)eSkills.Salvaging].SpecializedCost = 1001;
+            Skills[(uint)eSkills.Salvaging].Formula = Skills[(uint)eSkills.ItemAppraisal].Formula;
+
+            Skills[(uint)eSkills.Sword].TrainedCost = 6;
+            Skills[(uint)eSkills.Sword].SpecializedCost = 12;
+            Skills[(uint)eSkills.Sword].Description = $"Bonus damage source: Strength\n{Skills[(uint)eSkills.Sword].Description}";
+
+            Skills[(uint)eSkills.Dagger].Description = $"Bonus damage source: Coordination\n{Skills[(uint)eSkills.Dagger].Description}";
+
+            Skills[(uint)eSkills.Axe].Name = "Axe and Mace";
+            Skills[(uint)eSkills.Axe].Description = "Bonus damage source: Strength\nHelps you wield axes, hammers, maces, clubs and similar weapons.";
+
+            Skills[(uint)eSkills.Spear].Name = "Spear and Staff";
+            Skills[(uint)eSkills.Spear].Description = "Bonus damage source: Coordination\nHelps you wield spears, staffs and similar weapons.";
+            Skills[(uint)eSkills.Spear].TrainedCost = 6;
+            Skills[(uint)eSkills.Spear].SpecializedCost = 12;
+            Skills[(uint)eSkills.Spear].Formula = Skills[(uint)eSkills.Dagger].Formula;
+
+            Skills[(uint)eSkills.UnarmedCombat].TrainedCost = 4;
+            Skills[(uint)eSkills.UnarmedCombat].SpecializedCost = 8;
+            Skills[(uint)eSkills.UnarmedCombat].Description = $"Bonus damage source: Unarmed Combat\n{Skills[(uint)eSkills.UnarmedCombat].Description}";
+
+            Skills[(uint)eSkills.Bow].Name = "Bow and Crossbow";
+            Skills[(uint)eSkills.Bow].Description = "Bonus damage source: Coordination\nHelps you fire bows, crossbows and similar weapons.";
+            Skills[(uint)eSkills.Bow].TrainedCost = 6;
+            Skills[(uint)eSkills.Bow].SpecializedCost = 12;
+
+            Skills[(uint)eSkills.ThrownWeapon].Description = $"Bonus damage source: Strength\n{Skills[(uint)eSkills.ThrownWeapon].Description}";
+
+            Skills[(uint)eSkills.Alchemy].TrainedCost = 8;
+            Skills[(uint)eSkills.Alchemy].SpecializedCost = 16;
+
+            Skills[(uint)eSkills.CreatureAppraisal].SpecializedCost = 8;
+        }
+
         public void copySkill(string skillName, SkillTable from)
         {
             foreach (KeyValuePair<uint, Skill> entry in from.Skills)
@@ -126,7 +194,7 @@ namespace Melt
                 if (skill.Name == skillName)
                 {
                     Skills.Add(entry.Key, skill);
-                    Console.WriteLine("Done");
+                    Console.WriteLine("Skill copied.");
                     return;
                 }
             }

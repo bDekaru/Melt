@@ -914,18 +914,195 @@ namespace Melt
             }
         }
 
-        static public void toBin(string filename)
+        static public void MergeWeaponsSkillsForCustomDM(string inputFilename, string outputFilename = "./0E00000E - CustomDM.txt")
         {
-            StreamReader inputFile = new StreamReader(new FileStream(filename, FileMode.Open, FileAccess.Read));
+            StreamReader inputFile = new StreamReader(new FileStream(inputFilename, FileMode.Open, FileAccess.Read));
             if (inputFile == null)
             {
-                Console.WriteLine("Unable to open {0}", filename);
+                Console.WriteLine("Unable to open {0}", inputFilename);
                 return;
             }
-            StreamWriter outputFile = new StreamWriter(new FileStream(".\\0E00000E.bin", FileMode.Create, FileAccess.Write));
+            StreamWriter outputFile = new StreamWriter(new FileStream(outputFilename, FileMode.Create, FileAccess.Write));
             if (outputFile == null)
             {
-                Console.WriteLine("Unable to open 0E00000E.bin");
+                Console.WriteLine("Unable to open {0}", outputFilename);
+                return;
+            }
+
+            Console.WriteLine("Merging weapon skills spells...");
+
+            string line;
+            string[] spell;
+            byte[] buffer = new byte[1024];
+            char[] textArray = new char[1024];
+
+            short spellCount;
+            short unknown1;
+
+            line = inputFile.ReadLine();
+            spellCount = Convert.ToInt16(line);
+            outputFile.WriteLine(line);
+
+            line = inputFile.ReadLine();
+            unknown1 = Convert.ToInt16(line);
+            outputFile.WriteLine(line);
+
+            outputFile.Flush();
+
+            for (int entry = 0; entry < spellCount; entry++)
+            {
+                line = inputFile.ReadLine();
+                spell = line.Split('|');
+
+                int spellId = Convert.ToInt32(spell[0]);
+                string spellName = spell[1];
+                string spellDescription = spell[2];
+                int schoolId = Convert.ToInt32(spell[3]);
+                int iconId = Convert.ToInt32(spell[4]);
+                int familyId = Convert.ToInt32(spell[5]);
+                int flags = Convert.ToInt32(spell[6]);
+                int manaCost = Convert.ToInt32(spell[7]);
+                float unknown2 = Convert.ToSingle(spell[8]);
+                float unknown3 = Convert.ToSingle(spell[9]);
+                int difficulty = Convert.ToInt32(spell[10]);
+                float economy = Convert.ToSingle(spell[11]);
+                int generation = Convert.ToInt32(spell[12]);
+                float speed = Convert.ToSingle(spell[13]);
+                int spellType = Convert.ToInt32(spell[14]);
+                int unknown4 = Convert.ToInt32(spell[15]);
+
+                double duration = 0d; //if(spellType = 1/7/12)
+                int unknown5a = 0; //if(type = 1/12) // = 0xc4268000 for buffs/debuffs, = 0 for wars/portals -- related to duration?
+                int unknown5b = 0; //if(type = 1/12) // = 0xc4268000 for buffs/debuffs, = 0 for wars/portals -- related to duration?
+                switch (spellType)
+                {
+                    case 1:
+                        duration = Convert.ToDouble(spell[16]);
+                        unknown5a = Convert.ToInt32(spell[17]);
+                        unknown5b = Convert.ToInt32(spell[18]);
+                        break;
+                    case 7:
+                        duration = Convert.ToDouble(spell[16]);
+                        break;
+                    case 12:
+                        duration = Convert.ToDouble(spell[16]);
+                        unknown5a = Convert.ToInt32(spell[17]);
+                        unknown5b = Convert.ToInt32(spell[18]);
+                        break;
+                    default:
+                        break;
+                }
+
+                int[] component = new int[8];
+                for (int i = 0; i < 8; i++)
+                {
+                    component[i] = Convert.ToInt32(spell[19 + i]);
+                }
+
+                int casterEffect = Convert.ToInt32(spell[27]);
+                int targetEffect = Convert.ToInt32(spell[28]);
+                int unknown6 = Convert.ToInt32(spell[29]);
+                int unknown7 = Convert.ToInt32(spell[30]);
+                int unknown8 = Convert.ToInt32(spell[31]);
+                int unknown9 = Convert.ToInt32(spell[32]);
+                int sortOrder = Convert.ToInt32(spell[33]);
+                int targetMask = Convert.ToInt32(spell[34]);
+                int unknown10 = Convert.ToInt32(spell[35]);
+
+                switch(familyId)
+                {
+                    case 17: // Axe mastery
+                        spellName = spellName.Replace("Axe", "Axe and Mace");
+                        spellDescription = spellDescription.Replace("Axe", "Axe and Mace");
+                        break;
+                    case 18: // Axe ineptude
+                        spellName = spellName.Replace("Axe", "Axe and Mace");
+                        spellDescription = spellDescription.Replace("Axe", "Axe and Mace");
+                        break;
+                    case 25: // Mace mastery
+                        spellName = spellName.Replace("Mace", "Axe and Mace");
+                        spellDescription = spellDescription.Replace("Mace", "Axe and Mace");
+                        familyId = 17;
+                        break;
+                    case 26: // Mace ineptude
+                        spellName = spellName.Replace("Mace", "Axe and Mace");
+                        spellDescription = spellDescription.Replace("Mace", "Axe and Mace");
+                        familyId = 18;
+                        break;
+                    case 27: // Spear mastery
+                        spellName = spellName.Replace("Spear", "Spear and Staff");
+                        spellDescription = spellDescription.Replace("Spear", "Spear and Staff");
+                        break;
+                    case 28: // Spear ineptude
+                        spellName = spellName.Replace("Spear", "Spear and Staff");
+                        spellDescription = spellDescription.Replace("Spear", "Spear and Staff");
+                        break;
+                    case 29: // Staff mastery
+                        spellName = spellName.Replace("Staff", "Spear and Staff");
+                        spellDescription = spellDescription.Replace("Staff", "Spear and Staff");
+                        familyId = 27;
+                        break;
+                    case 30: // Staff ineptude
+                        spellName = spellName.Replace("Staff", "Spear and Staff");
+                        spellDescription = spellDescription.Replace("Staff", "Spear and Staff");
+                        familyId = 28;
+                        break;
+                    case 19: // Bow mastery
+                        spellName = spellName.Replace("Bow", "Bow and Crossbow");
+                        spellDescription = spellDescription.Replace("Bow", "Bow and Crossbow");
+                        break;
+                    case 20: // Bow ineptude
+                        spellName = spellName.Replace("Bow", "Bow and Crossbow");
+                        spellDescription = spellDescription.Replace("Bow", "Bow and Crossbow");
+                        break;
+                    case 21: // Crossbow mastery
+                        spellName = spellName.Replace("Crossbow", "Bow and Crossbow");
+                        spellDescription = spellDescription.Replace("Crossbow", "Bow and Crossbow");
+                        familyId = 19;
+                        break;
+                    case 22: // Crossbow ineptude
+                        spellName = spellName.Replace("Crossbow", "Bow and Crossbow");
+                        spellDescription = spellDescription.Replace("Crossbow", "Bow and Crossbow");
+                        familyId = 20;
+                        break;
+                }
+
+                outputFile.WriteLine("{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}",
+                    spellId, spellName, spellDescription, schoolId, iconId, familyId, flags,
+                    manaCost, unknown2, unknown3, difficulty, economy, generation, speed, spellType,
+                    unknown4, duration, unknown5a, unknown5b, component[0], component[1], component[2], component[3],
+                    component[4], component[5], component[6], component[7], casterEffect, targetEffect,
+                    unknown6, unknown7, unknown8, unknown9, sortOrder, targetMask, unknown10);
+
+                outputFile.Flush();
+            }
+
+            //unknown data
+            while (!inputFile.EndOfStream)
+            {
+                line = inputFile.ReadLine();
+                int unknown11 = Convert.ToInt32(line);
+                outputFile.WriteLine(line);
+                outputFile.Flush();
+            }
+
+            inputFile.Close();
+            outputFile.Close();
+            Console.WriteLine("Done");
+        }
+
+        static public void toBin(string inputFilename, string outputFilename = "./0E00000E.bin")
+        {
+            StreamReader inputFile = new StreamReader(new FileStream(inputFilename, FileMode.Open, FileAccess.Read));
+            if (inputFile == null)
+            {
+                Console.WriteLine("Unable to open {0}", inputFilename);
+                return;
+            }
+            StreamWriter outputFile = new StreamWriter(new FileStream(outputFilename, FileMode.Create, FileAccess.Write));
+            if (outputFile == null)
+            {
+                Console.WriteLine("Unable to open {0}", outputFilename);
                 return;
             }
 
@@ -1326,7 +1503,7 @@ namespace Melt
         //    Console.WriteLine("Done");
         //}
 
-        static public void revertWeaponMasteries(string filename1, string originalSpellsFilename)
+        static public void revertWeaponMasteriesAndAuras(string filename1, string originalSpellsFilename)
         {
             StreamReader inputFile = new StreamReader(new FileStream(filename1, FileMode.Open, FileAccess.Read));
             if (inputFile == null)
@@ -1451,6 +1628,7 @@ namespace Melt
                     string spellDescriptionOld = spellOld[2];
                     int schoolIdOld = Convert.ToInt32(spellOld[3]);
                     int iconIdOld = Convert.ToInt32(spellOld[4]);
+                    int familyIdOld = Convert.ToInt32(spellOld[5]);
                     int casterEffectOld = Convert.ToInt32(spellOld[27]);
                     int targetEffectOld = Convert.ToInt32(spellOld[28]);
                     int fizzleEffectOld = Convert.ToInt32(spellOld[29]);
@@ -1458,7 +1636,7 @@ namespace Melt
                     eItemType targetMaskOld = (eItemType)Convert.ToInt32(spellOld[34]);
                     eSpellIndex flagsOld = (eSpellIndex)Convert.ToInt32(spell[6]);
 
-
+                    //Revert Item Enchantment
                     if (targetMaskOld != targetMask)
                     {
                         flags &= ~(eSpellIndex.SelfTargeted_SpellIndex);
@@ -1490,6 +1668,7 @@ namespace Melt
                         spellName = spellNameOld;
                         spellDescription = spellDescriptionOld;
                         iconId = iconIdOld;
+                        familyId = familyIdOld;
                         casterEffect = casterEffectOld;
                         targetEffect = targetEffectOld;
                         fizzleEffect = fizzleEffectOld;

@@ -182,6 +182,11 @@ namespace Melt
         WeaponProfile Sword;
         WeaponProfile SwordMS;
         WeaponProfile Unarmed;
+        WeaponProfile Thrown;
+
+        WeaponProfile AxeTwoHanded;
+        WeaponProfile SpearTwoHanded;
+        WeaponProfile SwordTwoHanded;
 
         ArmorProfile Armor;
         ArmorProfile Shield;
@@ -208,66 +213,88 @@ namespace Melt
             //Shield.SetMaxArmorTiers(50, 80, 90, 100, 110, 120, 130, 140);
 
             // Adjusted for better low tier balance?
-            Armor.SetMinArmorTiers(0,  10,  40,  70,  90, 100, 110, 120);
-            Armor.SetMaxArmorTiers(30, 70, 100, 130, 150, 160, 170, 180);
+            //Armor.SetMinArmorTiers(0,  10,  40,  70,  90, 100, 110, 120);
+            //Armor.SetMaxArmorTiers(30, 70, 100, 130, 150, 160, 170, 180);
 
-            Shield.SetMinArmorTiers(0,  10, 30,  40,  50,  60,  70,  80);
-            Shield.SetMaxArmorTiers(20, 50, 80, 100, 110, 120, 130, 140);
+            //Shield.SetMinArmorTiers(0,  10, 30,  40,  50,  60,  70,  80);
+            //Shield.SetMaxArmorTiers(20, 50, 80, 100, 110, 120, 130, 140);
 
-            BuildArmor(Armor);
-            BuildArmor(Shield);
+            //BuildArmor(Armor);
+            //BuildArmor(Shield);
 
-            WriteFile(Armor, 6);
-            WriteFile(Shield, 6);
+            //WriteFile(Armor, 6);
+            //WriteFile(Shield, 6);
 
-            Axe = new WeaponProfile("Axe", 0.40f, 0.50f);
-            Dagger = new WeaponProfile("Dagger", 0.30f, 0.75f);
-            Mace = new WeaponProfile("Mace", 0.25f, 0.50f);
-            Spear = new WeaponProfile("Spear", 0.45f, 0.75f);
-            Staff = new WeaponProfile("Staff", 0.25f, 0.50f);
-            Sword = new WeaponProfile("Sword", 0.40f, 0.50f);
-            Unarmed = new WeaponProfile("Unarmed", 0.50f, 0.75f);
+            //Axe = new WeaponProfile("Axe", 0.40f, 0.50f);
+            //Dagger = new WeaponProfile("Dagger", 0.30f, 0.75f);
+            //Mace = new WeaponProfile("Mace", 0.25f, 0.50f);
+            //Spear = new WeaponProfile("Spear", 0.45f, 0.75f);
+            //Staff = new WeaponProfile("Staff", 0.25f, 0.50f);
+            //Sword = new WeaponProfile("Sword", 0.40f, 0.50f);
+            //Unarmed = new WeaponProfile("Unarmed", 0.50f, 0.75f);
+            //Thrown = new WeaponProfile("Thrown", 0.40f, 0.50f);
 
-            DaggerMS = new WeaponProfile("DaggerMS", 0.71f, 0.75f);
-            SwordMS = new WeaponProfile("SwordMS", 0.40f, 0.50f);
-            MaceJitte = new WeaponProfile("MaceJitte", 0.25f, 0.50f);
+            //DaggerMS = new WeaponProfile("DaggerMS", 0.71f, 0.75f);
+            //SwordMS = new WeaponProfile("SwordMS", 0.40f, 0.50f);
+            //MaceJitte = new WeaponProfile("MaceJitte", 0.25f, 0.50f);
 
-            // The last tier is made up for forward compatibility with loot tiers 7 and 8
-            Axe.SetDamageTiers(8, 17, 21, 25, 27, 31, 35, 39);
-            Dagger.SetDamageTiers(5, 7, 9, 11, 13, 17, 19, 21);
-            Mace.SetDamageTiers(8, 16, 20, 24, 26, 28, 32, 36);
-            Spear.SetDamageTiers(7, 14, 16, 18, 22, 26, 30, 34);
-            Staff.SetDamageTiers(5, 7, 9, 11, 13, 17, 19, 21);
-            Sword.SetDamageTiers(10, 20, 25, 30, 35, 40, 45, 50);
-            Unarmed.SetDamageTiers(4, 7, 9, 12, 16, 18, 22, 24);
+            AxeTwoHanded = new WeaponProfile("two_handed_axe", 0.40f, 0.50f);
+            SpearTwoHanded = new WeaponProfile("two_handed_spear", 0.25f, 0.50f);
+            SwordTwoHanded = new WeaponProfile("two_handed_sword", 0.40f, 0.50f);
 
-            DaggerMS.SetDamageTiers(3, 0, 0, 0, 0, 0, 0, 0);
-            SwordMS.SetDamageTiers(5, 0, 0, 0, 0, 0, 0, 0);
-            MaceJitte.SetDamageTiers(8, 16, 20, 24, 26, 28, 32, 36);
+            //// The last tier is made up for forward compatibility with loot tiers 7 and 8
+            //Axe.SetDamageTiers(8, 17, 21, 25, 27, 31, 35, 39);
+            //Dagger.SetDamageTiers(5, 7, 9, 11, 13, 17, 19, 21);
+            ////Dagger.SetDamageTiers(3, 6, 9, 12, 14, 16, 18, 20);
+            //Mace.SetDamageTiers(8, 16, 20, 24, 26, 28, 32, 36);
+            //Spear.SetDamageTiers(7, 14, 16, 18, 22, 26, 30, 34);
+            //Staff.SetDamageTiers(5, 7, 9, 11, 13, 17, 19, 21);
+            //Sword.SetDamageTiers(10, 20, 25, 30, 35, 40, 45, 50);
+            //Unarmed.SetDamageTiers(4, 7, 9, 12, 16, 18, 22, 24);
+            //Thrown.SetDamageTiers(6, 8, 12, 16, 20, 24, 28, 32);
 
-            BuildWeapon(Axe);
-            BuildWeapon(Dagger);
-            BuildWeapon(Mace);
-            BuildWeapon(Spear);
-            BuildWeapon(Staff);
-            BuildWeapon(Sword);
-            BuildWeapon(Unarmed);
+            //DaggerMS.SetDamageTiers(3, 0, 0, 0, 0, 0, 0, 0);
+            //SwordMS.SetDamageTiers(5, 0, 0, 0, 0, 0, 0, 0);
+            ////SwordMS.SetDamageTiers(9, 6, 8, 10, 13, 15, 18, 20);
+            //MaceJitte.SetDamageTiers(8, 16, 20, 24, 26, 28, 32, 36);
 
-            BuildWeapon(DaggerMS);
-            BuildWeapon(SwordMS);
-            BuildWeapon(MaceJitte);
+            AxeTwoHanded.SetDamageTiers(3, 6, 7, 8, 9, 10, 12, 14);
+            SpearTwoHanded.SetDamageTiers(3, 6, 7, 8, 9, 10, 12, 14);
+            SwordTwoHanded.SetDamageTiers(4, 7, 8, 10, 11, 13, 15, 17);
 
-            WriteFile(Axe, 6);
-            WriteFile(Dagger, 6);
-            WriteFile(Mace, 6);
-            WriteFile(Spear, 6);
-            WriteFile(Staff, 6);
-            WriteFile(Sword, 6);
-            WriteFile(Unarmed, 6);
+            //BuildWeapon(Axe);
+            //BuildWeapon(Dagger);
+            //BuildWeapon(Mace);
+            //BuildWeapon(Spear);
+            //BuildWeapon(Staff);
+            //BuildWeapon(Sword);
+            //BuildWeapon(Unarmed);
+            //BuildWeapon(Thrown);
 
-            WriteFile(DaggerMS, 6);
-            WriteFile(SwordMS, 6);
-            WriteFile(MaceJitte, 6);
+            //BuildWeapon(DaggerMS);
+            //BuildWeapon(SwordMS);
+            //BuildWeapon(MaceJitte);
+
+            BuildWeapon(AxeTwoHanded);
+            BuildWeapon(SpearTwoHanded);
+            BuildWeapon(SwordTwoHanded);
+
+            //WriteFile(Axe, 6);
+            //WriteFile(Dagger, 6);
+            //WriteFile(Mace, 6);
+            //WriteFile(Spear, 6);
+            //WriteFile(Staff, 6);
+            //WriteFile(Sword, 6);
+            //WriteFile(Unarmed, 6);
+            //WriteFile(Thrown, 6);
+
+            //WriteFile(DaggerMS, 6);
+            //WriteFile(SwordMS, 6);
+            //WriteFile(MaceJitte, 6);
+
+            WriteFile(AxeTwoHanded, 6);
+            WriteFile(SpearTwoHanded, 6);
+            WriteFile(SwordTwoHanded, 6);
         }
 
         public void BuildArmor(ArmorProfile armor)
@@ -296,19 +323,19 @@ namespace Melt
                 BuildWeaponTier(weapon, Tier.Tier8, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
                 BuildVariances(weapon);
             }
-            else if (weapon.WeaponName == "SwordMS")
-            {
-                BuildWeaponTier(weapon, Tier.Tier1, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid);
-                BuildWeaponTier(weapon, Tier.Tier2, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid);
-                BuildWeaponTier(weapon, Tier.Tier3, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
-                BuildWeaponTier(weapon, Tier.Tier4, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
-                BuildWeaponTier(weapon, Tier.Tier5, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
-                BuildWeaponTier(weapon, Tier.Tier6, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh); //disable this line and enable the ones below for more than 6 tiers
-                //BuildWeaponTier(weapon, Tier.Tier6, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh, MinDamage.Tier1, MaxDamage.Tier6, 370, eRandomFormula.favorLow, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorLow);
-                //BuildWeaponTier(weapon, Tier.Tier7, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorMid, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
-                //BuildWeaponTier(weapon, Tier.Tier8, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorHigh, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
-                BuildVariances(weapon);
-            }
+            //else if (weapon.WeaponName == "SwordMS")
+            //{
+            //    BuildWeaponTier(weapon, Tier.Tier1, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid);
+            //    BuildWeaponTier(weapon, Tier.Tier2, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid);
+            //    BuildWeaponTier(weapon, Tier.Tier3, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
+            //    BuildWeaponTier(weapon, Tier.Tier4, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
+            //    BuildWeaponTier(weapon, Tier.Tier5, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh);
+            //    BuildWeaponTier(weapon, Tier.Tier6, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh); //disable this line and enable the ones below for more than 6 tiers
+            //    //BuildWeaponTier(weapon, Tier.Tier6, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorHigh, MinDamage.Tier1, MaxDamage.Tier6, 370, eRandomFormula.favorLow, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorLow);
+            //    //BuildWeaponTier(weapon, Tier.Tier7, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorMid, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
+            //    //BuildWeaponTier(weapon, Tier.Tier8, MinDamage.Tier6, MaxDamage.Tier7, 400, eRandomFormula.favorHigh, MinDamage.Tier7, MaxDamage.Tier8, 420, eRandomFormula.favorLow);
+            //    BuildVariances(weapon);
+            //}
             else
             {
                 BuildWeaponTier(weapon, Tier.Tier1, MinDamage.Zero, MaxDamage.Tier1, 0, eRandomFormula.favorMid);
@@ -565,8 +592,8 @@ namespace Melt
 
             int numberOfEntries = ((maxArmor - minArmor) / 10) + 1;// DetermineNumberOfEntries(minArmor, maxArmor);
 
-            if (maxArmor <= 30)
-                numberOfEntries *= 2;
+            //if (maxArmor <= 30)
+            //    numberOfEntries *= 2;
 
             armor.Tiers[(int)tier].Bonus = new ChanceEntry[numberOfEntries];
             armor.Tiers[(int)tier].wieldDifficulty = new int[numberOfEntries];

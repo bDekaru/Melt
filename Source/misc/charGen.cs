@@ -515,7 +515,113 @@ namespace Melt
             Console.WriteLine("Done");
         }
 
-        public void modify()
+        public void modifyForCustomDM()
+        {
+            foreach (KeyValuePair<uint, HeritageGroupCG> entry in HeritageGroups)
+            {
+                HeritageGroupCG heritage = entry.Value;
+
+                heritage.SkillCredits = 50;
+
+                switch (heritage.Name)
+                {
+                    case "Aluvian":
+                        heritage.Skills = new List<SkillCG>();
+                        heritage.Skills.Add(new SkillCG((uint)eSkills.Shield, 0, 2));
+                        break;
+                    case "Gharu'ndim":
+                        heritage.Skills = new List<SkillCG>();
+                        heritage.Skills.Add(new SkillCG((uint)eSkills.Salvaging, 0, 999));
+                        break;
+                    case "Sho":
+                        heritage.Skills = new List<SkillCG>();
+                        heritage.Skills.Add(new SkillCG((uint)eSkills.PersonalAppraisal, 0, 2));
+                        break;
+                }
+                foreach (TemplateCG template in heritage.Templates)
+                {
+                    switch (template.Name)
+                    {
+                        case "Bow Hunter":
+                            template.PrimarySkillsList = new List<uint>();
+                            template.PrimarySkillsList.Add((uint)eSkills.Bow);
+                            template.PrimarySkillsList.Add((uint)eSkills.MeleeDefense);
+                            template.NormalSkillsList = new List<uint>();
+                            template.NormalSkillsList.Add((uint)eSkills.ArcaneLore);
+                            template.NormalSkillsList.Add((uint)eSkills.CreatureAppraisal);
+                            template.NormalSkillsList.Add((uint)eSkills.Fletching);
+                            template.NormalSkillsList.Add((uint)eSkills.Healing);
+                            break;
+                        case "Life Caster":
+                            template.PrimarySkillsList = new List<uint>();
+                            template.PrimarySkillsList.Add((uint)eSkills.LifeMagic);
+                            template.NormalSkillsList = new List<uint>();
+                            template.NormalSkillsList.Add((uint)eSkills.ManaConversion);
+                            template.NormalSkillsList.Add((uint)eSkills.WarMagic);
+                            template.NormalSkillsList.Add((uint)eSkills.Alchemy);
+                            break;
+                        case "War Mage":
+                            template.PrimarySkillsList = new List<uint>();
+                            template.PrimarySkillsList.Add((uint)eSkills.WarMagic);
+                            template.PrimarySkillsList.Add((uint)eSkills.ManaConversion);
+                            template.NormalSkillsList = new List<uint>();
+                            template.NormalSkillsList.Add((uint)eSkills.ArcaneLore);
+                            template.NormalSkillsList.Add((uint)eSkills.Healing);
+                            break;
+                        case "Wayfarer":
+                            template.PrimarySkillsList = new List<uint>();
+                            template.PrimarySkillsList.Add((uint)eSkills.ArcaneLore);
+                            template.PrimarySkillsList.Add((uint)eSkills.CreatureAppraisal);
+                            template.PrimarySkillsList.Add((uint)eSkills.Lockpick);
+                            template.NormalSkillsList = new List<uint>();
+                            if (heritage.Name == "Sho")
+                            {
+                                template.PrimarySkillsList.Add((uint)eSkills.UnarmedCombat);
+                                template.PrimarySkillsList.Add((uint)eSkills.PersonalAppraisal);
+                            }
+                            else
+                            {
+                                template.PrimarySkillsList.Add((uint)eSkills.Dagger);
+                                template.NormalSkillsList.Add((uint)eSkills.PersonalAppraisal);
+                            }
+                            template.NormalSkillsList.Add((uint)eSkills.Healing);
+                            template.NormalSkillsList.Add((uint)eSkills.MeleeDefense);
+                            break;
+                        case "Soldier":
+                            template.PrimarySkillsList = new List<uint>();
+                            template.PrimarySkillsList.Add((uint)eSkills.ArcaneLore);
+                            template.PrimarySkillsList.Add((uint)eSkills.Axe);
+                            template.PrimarySkillsList.Add((uint)eSkills.Healing);
+                            template.PrimarySkillsList.Add((uint)eSkills.MeleeDefense);
+                            template.NormalSkillsList = new List<uint>();
+                            if (heritage.Name == "Aluvian")
+                                template.PrimarySkillsList.Add((uint)eSkills.Shield);
+                            else
+                                template.NormalSkillsList.Add((uint)eSkills.Shield);
+                            break;
+                        case "Swashbuckler":
+                            template.PrimarySkillsList = new List<uint>();
+                            template.PrimarySkillsList.Add((uint)eSkills.ArcaneLore);
+                            template.PrimarySkillsList.Add((uint)eSkills.MeleeDefense);
+                            template.PrimarySkillsList.Add((uint)eSkills.Sword);
+                            template.NormalSkillsList = new List<uint>();
+                            if (heritage.Name == "Aluvian")
+                                template.PrimarySkillsList.Add((uint)eSkills.Shield);
+                            else
+                                template.NormalSkillsList.Add((uint)eSkills.Shield);
+                            template.NormalSkillsList.Add((uint)eSkills.CreatureAppraisal);
+                            template.NormalSkillsList.Add((uint)eSkills.Healing);
+                            template.Endurance = 50;
+                            template.Quickness = 60;
+                            template.Focus = 10;
+                            template.Self = 10;
+                            break;
+                    }
+                }
+            }
+        }
+
+        public void modifyForDM()
         {
             foreach(KeyValuePair<uint, HeritageGroupCG> entry in HeritageGroups)
             {

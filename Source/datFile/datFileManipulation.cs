@@ -523,7 +523,7 @@ namespace Melt
             return true;
         }
 
-        public bool replaceLandblock(uint cellIdInLandblock, cDatFile fromDat, bool heightmap = true, bool textures = true, bool objects = true, bool createOnly = false, int verboseLevel = 6)
+        public bool replaceLandblock(uint cellIdInLandblock, cDatFile fromDat, bool heightmap = true, bool textures = true, bool objects = true, bool cells = true, bool createOnly = false, int verboseLevel = 6)
         {
             if (verboseLevel > 5)
                 Console.WriteLine("Replacing landblock...");
@@ -603,10 +603,13 @@ namespace Melt
                         //cLandblockInfo exists on origin and destination, replace.
                         landblockInfoTo = new cLandblockInfo(toLandblockInfoFile);
 
-                        for (uint i = 0; i < 0xFFFE; i++)
+                        if (cells)
                         {
-                            uint id = i | (landblockId & 0xFFFF0000);
-                            toDat.fileCache.Remove(id);
+                            for (uint i = 0; i < 0xFFFE; i++)
+                            {
+                                uint id = i | (landblockId & 0xFFFF0000);
+                                toDat.fileCache.Remove(id);
+                            }
                         }
                     }
                     else
@@ -618,47 +621,53 @@ namespace Melt
                     int cellsAdded = 0;
                     uint startCellId;
                     List<uint> replacedList = new List<uint>();
-                    foreach (var newBuilding in landblockInfoFrom.Buildings)
+                    if (cells)
                     {
-                        if (newBuilding.Portals.Count > 0 && newBuilding.Portals[0].visibleCells.Count > 0)
+                        foreach (var newBuilding in landblockInfoFrom.Buildings)
                         {
-                            startCellId = newBuilding.Portals[0].visibleCells[0] | (landblockInfoId & 0xFFFF0000);
-                            cellsAdded += replaceCell(startCellId, fromDat, true, false, newBuilding, replacedList, landblockId, verboseLevel);
+                            if (newBuilding.Portals.Count > 0 && newBuilding.Portals[0].visibleCells.Count > 0)
+                            {
+                                startCellId = newBuilding.Portals[0].visibleCells[0] | (landblockInfoId & 0xFFFF0000);
+                                cellsAdded += replaceCell(startCellId, fromDat, true, false, newBuilding, replacedList, landblockId, verboseLevel);
+                            }
                         }
-                    }
 
-                    //if (landblockInfoFrom.NumCells > 0)
-                    //{
-                    //    startCellId = 0x0100 | (landblockInfoId & 0xFFFF0000);
-                    //    if (!replacedList.Contains(startCellId))
-                    //        cellsAdded += replaceCell(startCellId, fromDat, true, false, null, replacedList, landblockId, verboseLevel);
-                    //}
+                        //if (landblockInfoFrom.NumCells > 0)
+                        //{
+                        //    startCellId = 0x0100 | (landblockInfoId & 0xFFFF0000);
+                        //    if (!replacedList.Contains(startCellId))
+                        //        cellsAdded += replaceCell(startCellId, fromDat, true, false, null, replacedList, landblockId, verboseLevel);
+                        //}
 
-                    List<cDatFileEntry> cells = new List<cDatFileEntry>();
-                    for (uint i = 0; i < 0xFFFE; i++)
-                    {
-                        uint id = i | (landblockId & 0xFFFF0000);
-
-                        cDatFileEntry entry;
-                        if (fromDat.fileCache.TryGetValue(id, out entry))
-                            cells.Add(entry);
-                    }
-
-                    List<uint> missingList = new List<uint>();
-                    foreach (var entry in cells)
-                    {
-                        if (!replacedList.Contains(entry.fileId))
+                        List<cDatFileEntry> cellList = new List<cDatFileEntry>();
+                        for (uint i = 0; i < 0xFFFE; i++)
                         {
-                            //ideally I would like to get at these cells from a reference and not by searching for them.
-                            missingList.Add(entry.fileId);
-                            cellsAdded += replaceCell(entry.fileId, fromDat, true, false, null, replacedList, landblockId, verboseLevel);
+                            uint id = i | (landblockId & 0xFFFF0000);
+
+                            cDatFileEntry entry;
+                            if (fromDat.fileCache.TryGetValue(id, out entry))
+                                cellList.Add(entry);
+                        }
+
+                        List<uint> missingList = new List<uint>();
+                        foreach (var entry in cellList)
+                        {
+                            if (!replacedList.Contains(entry.fileId))
+                            {
+                                //ideally I would like to get at these cells from a reference and not by searching for them.
+                                missingList.Add(entry.fileId);
+                                cellsAdded += replaceCell(entry.fileId, fromDat, true, false, null, replacedList, landblockId, verboseLevel);
+                            }
                         }
                     }
 
                     landblockInfoTo.Id = landblockInfoFrom.Id;
-                    landblockInfoTo.NumCells = landblockInfoFrom.NumCells;
-                    landblockInfoTo.buildingFlags = landblockInfoFrom.buildingFlags;
-                    landblockInfoTo.Buildings = landblockInfoFrom.Buildings;
+                    if (cells)
+                    {
+                        landblockInfoTo.NumCells = landblockInfoFrom.NumCells;
+                        landblockInfoTo.buildingFlags = landblockInfoFrom.buildingFlags;
+                        landblockInfoTo.Buildings = landblockInfoFrom.Buildings;
+                    }
                     landblockInfoTo.RestrictionTables = landblockInfoFrom.RestrictionTables;
                     landblockInfoTo.bucketSize = landblockInfoFrom.bucketSize;
                     if (objects)
@@ -1186,7 +1195,7 @@ namespace Melt
             if (verboseLevel > 1)
                 Console.WriteLine($"Replacing dungeon 0x{dungeonId.ToString("x4")}...");
             uint dungeonLandblock = (uint)(dungeonId << 16 | 0x0000FFFF);
-            replaceLandblock(dungeonLandblock, fromDat, true, true, true, false, verboseLevel);
+            replaceLandblock(dungeonLandblock, fromDat, true, true, true, true, false, verboseLevel);
         }
 
         public void replaceDungeonList(List<ushort> listOfDungeonIds, cDatFile fromDat, int verboseLevel = 5)
@@ -1205,7 +1214,7 @@ namespace Melt
                 Console.WriteLine($"Replacing {listOfLandblockIds.Count} landblocks...");
             foreach (var landblockId in listOfLandblockIds)
             {
-                replaceLandblock(landblockId, fromDat, true, true, true, false, verboseLevel);
+                replaceLandblock(landblockId, fromDat, true, true, true, true, false, verboseLevel);
             }
         }
 
@@ -1333,7 +1342,7 @@ namespace Melt
             {
                 if (!fileCache.ContainsKey(landblockId))
                 {
-                    if (replaceLandblock(landblockId, fromDat, true, true, true, true, verboseLevel))
+                    if (replaceLandblock(landblockId, fromDat, true, true, true, true, true, verboseLevel))
                         landblocksCounter++;
                 }
             }
@@ -1476,7 +1485,7 @@ namespace Melt
                 Console.WriteLine("{0} landblocks converted in {1} seconds.", landblocksCounter, timer.ElapsedMilliseconds / 1000f);
         }
 
-        public void replaceAllLandblocks(cDatFile fromDat, bool heightmap = true, bool textures = true, bool objects = true, bool createOnly = false, int verboseLevel = 5)
+        public void replaceAllLandblocks(cDatFile fromDat, bool heightmap = true, bool textures = true, bool objects = true, bool cells = true, bool createOnly = false, int verboseLevel = 5)
         {
             if (verboseLevel > 1)
                 Console.WriteLine("Replacing all landblocks...");
@@ -1487,7 +1496,7 @@ namespace Melt
 
             for (uint landblockId = 0x00000000; landblockId < 0xFFFF0000; landblockId += 0x00010000)
             {
-                if (replaceLandblock(landblockId, fromDat, heightmap, textures, objects, createOnly, verboseLevel))
+                if (replaceLandblock(landblockId, fromDat, heightmap, textures, objects, cells, createOnly, verboseLevel))
                     landblocksCounter++;
             }
 
@@ -1496,7 +1505,7 @@ namespace Melt
                 Console.WriteLine("{0} landblocks replaced in {1} seconds.", landblocksCounter, timer.ElapsedMilliseconds / 1000f);
         }
 
-        public void replaceLandblockArea(uint baseLandblock, cDatFile fromDat, bool heightmap = true, bool textures = true, bool objects = true, int verboseLevel = 5)
+        public void replaceLandblockArea(uint baseLandblock, cDatFile fromDat, bool heightmap = true, bool textures = true, bool cells = true, bool objects = true, int verboseLevel = 5)
         {
             uint startLandblockId = baseLandblock & 0xFF000000 | 0x0000FFFF;
             int gridSize = 3;
@@ -1525,7 +1534,7 @@ namespace Melt
                 for (byte y = startY; y <= endY; y++)
                 {
                     landblockId = (uint)(x << 24 | y << 16 | 0x0000FFFF);
-                    if (replaceLandblock(landblockId, fromDat, heightmap, textures, objects, false, verboseLevel))
+                    if (replaceLandblock(landblockId, fromDat, heightmap, textures, objects, cells, false, verboseLevel))
                         landblocksAddedCounter++;
                     else
                         landblocksNotFoundCounter++;
@@ -1629,7 +1638,7 @@ namespace Melt
                 Console.WriteLine("Modified {0} landblock(s) in {1} seconds. {2} landblock(s) not found.", landblockReplacedCounter, timer.ElapsedMilliseconds / 1000f, landblockNotFoundCounter);
         }
 
-        public void replaceLandblocks(List<uint> listOfLandblocks, cDatFile fromFile, bool heightmap = true, bool textures = true, bool objects = true, int verboseLevel = 5)
+        public void replaceLandblocks(List<uint> listOfLandblocks, cDatFile fromFile, bool heightmap = true, bool textures = true, bool objects = true, bool cells = true, int verboseLevel = 5)
         {
             if (verboseLevel > 1)
                 Console.WriteLine($"Replacing {listOfLandblocks.Count} landblocks...");
@@ -1641,7 +1650,7 @@ namespace Melt
             int landblockNotFoundCounter = 0;
             foreach (uint landblockId in listOfLandblocks)
             {
-                if (replaceLandblock(landblockId, fromFile, heightmap, textures, objects, false, verboseLevel))
+                if (replaceLandblock(landblockId, fromFile, heightmap, textures, objects, cells, false, verboseLevel))
                     landblockReplacedCounter++;
                 else
                     landblockNotFoundCounter++;

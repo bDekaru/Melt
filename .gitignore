@@ -8,6 +8,8 @@
 *.7z
 *.dll
 *.png
+Bin/*.txt
+Bin/*.json
 Bin/intermediate
 Bin/misc
 Bin/output

@@ -313,78 +313,78 @@
 337|Dagger Ineptitude Self IV|Decreases the caster's Dagger skill by 25 points.|4|100668269|24|26|50|0|0|175|1|1|0.15|1|337|150|0|-1004109824|4|66|8|71|35|44|60|0|0|19|0|0|0|0|3220|16|0
 338|Dagger Ineptitude Self V|Decreases the caster's Dagger skill by 30 points.|4|100668269|24|26|60|0|0|225|1|1|0.2|1|338|180|0|-1004109824|5|67|8|72|35|44|65|60|0|19|0|0|0|0|3222|16|0
 339|Dagger Ineptitude Self VI|Decreases the caster's Dagger skill by 35 points.|4|100668269|24|26|70|0|0|275|1|1|0.3|1|339|210|0|-1004109824|6|68|8|73|35|44|66|60|0|19|0|0|0|0|3224|16|0
-340|Mace Mastery Other I|Increases the target's Mace skill by 10 points.|4|100668287|17|6|10|5|1|1|1|1|0.01|1|340|1800|0|-1004109824|1|7|35|45|49|0|0|0|0|18|0|0|0|0|6482|16|0
-341|Mace Mastery Other II|Increases the target's Mace skill by 15 points.|4|100668287|17|6|20|5|0.85|50|1|1|0.05|1|341|1800|0|-1004109824|2|64|7|35|45|49|0|0|0|18|0|0|0|0|6492|16|0
-342|Mace Mastery Other III|Increases the target's Mace skill by 20 points.|4|100668287|17|6|30|5|0.7|100|1|1|0.1|1|342|1800|0|-1004109824|3|65|7|72|35|45|49|0|0|18|0|0|0|0|6502|16|0
-343|Mace Mastery Other IV|Increases the target's Mace skill by 25 points.|4|100668287|17|6|40|5|0.55|150|1|1|0.15|1|343|1800|0|-1004109824|4|66|7|73|35|45|49|0|0|18|0|0|0|0|6512|16|0
-344|Mace Mastery Other V|Increases the target's Mace skill by 30 points.|4|100668287|17|6|50|5|0.4|200|1|1|0.2|1|344|1800|0|-1004109824|5|67|7|74|35|45|67|49|0|18|0|0|0|0|6522|16|0
-345|Mace Mastery Other VI|Increases the target's Mace skill by 35 points.|4|100668287|17|6|60|5|0.25|250|1|1|0.3|1|345|2700|0|-1004109824|6|68|7|63|35|45|68|49|0|18|0|0|0|0|6532|16|0
-346|Mace Mastery Self I|Increases the caster's Mace skill by 10 points.|4|100668287|17|16398|15|0|0|1|1|1|0.01|1|346|1800|0|-1004109824|1|7|35|45|60|0|0|0|0|18|0|0|0|0|6542|16|0
-347|Mace Mastery Self II|Increases the caster's Mace skill by 15 points.|4|100668287|17|16398|30|0|0|50|1|1|0.05|1|347|1800|0|-1004109824|2|63|7|35|45|60|0|0|0|18|0|0|0|0|6552|16|0
-348|Mace Mastery Self III|Increases the caster's Mace skill by 20 points.|4|100668287|17|16398|40|0|0|100|1|1|0.1|1|348|1800|0|-1004109824|3|64|7|71|35|45|60|0|0|18|0|0|0|0|6562|16|0
-349|Mace Mastery Self IV|Increases the caster's Mace skill by 25 points.|4|100668287|17|16398|50|0|0|150|1|1|0.15|1|349|1800|0|-1004109824|4|65|7|72|35|45|60|0|0|18|0|0|0|0|6572|16|0
-350|Mace Mastery Self V|Increases the caster's Mace skill by 30 points.|4|100668287|17|16398|60|0|0|200|1|1|0.2|1|350|1800|0|-1004109824|5|66|7|73|35|45|65|60|0|18|0|0|0|0|6582|16|0
-351|Mace Mastery Self VI|Increases the caster's Mace skill by 35 points.|4|100668287|17|16398|70|0|0|250|1|1|0.3|1|351|2700|0|-1004109824|6|67|7|74|35|45|66|60|0|18|0|0|0|0|6592|16|0
-352|Mace Ineptitude Other I|Decreases the target's Mace skill by 10 points.|4|100668287|18|19|10|0|1|1|1|1|0.01|1|352|60|0|-1004109824|1|8|35|45|50|0|0|0|0|19|0|0|0|0|6362|16|0
-353|Mace Ineptitude Other II|Decreases the target's Mace skill by 15 points.|4|100668287|18|19|20|5|0.85|75|1|1|0.05|1|353|90|0|-1004109824|2|67|8|35|45|50|0|0|0|19|0|0|0|0|6372|16|0
-354|Mace Ineptitude Other III|Decreases the target's Mace skill by 20 points.|4|100668287|18|19|30|5|0.7|125|1|1|0.1|1|354|120|0|-1004109824|3|68|8|74|35|45|50|0|0|19|0|0|0|0|6382|16|0
-355|Mace Ineptitude Other IV|Decreases the target's Mace skill by 25 points.|4|100668287|18|19|40|5|0.55|175|1|1|0.15|1|355|150|0|-1004109824|4|69|8|63|35|45|50|0|0|19|0|0|0|0|6392|16|0
-356|Mace Ineptitude Other V|Decreases the target's Mace skill by 30 points.|4|100668287|18|19|50|5|0.4|225|1|1|0.2|1|356|180|0|-1004109824|5|70|8|64|35|45|70|50|0|19|0|0|0|0|6402|16|0
-357|Mace Ineptitude Other VI|Decreases the target's Mace skill by 35 points.|4|100668287|18|19|60|5|0.25|275|1|1|0.3|1|357|210|0|-1004109824|6|71|8|65|35|45|71|50|0|19|0|0|0|0|6412|16|0
-358|Mace Ineptitude Self I|Decreases the caster's Mace skill by 10 points.|4|100668287|18|26|15|0|0|1|1|1|0.01|1|358|60|0|-1004109824|1|8|35|45|60|0|0|0|0|19|0|0|0|0|6422|16|0
-359|Mace Ineptitude Self II|Decreases the caster's Mace skill by 15 points.|4|100668287|18|26|30|0|0|75|1|1|0.05|1|359|90|0|-1004109824|2|65|8|35|45|60|0|0|0|19|0|0|0|0|6432|16|0
-360|Mace Ineptitude Self III|Decreases the caster's Mace skill by 20 points.|4|100668287|18|26|40|0|0|125|1|1|0.1|1|360|120|0|-1004109824|3|66|8|72|35|45|60|0|0|19|0|0|0|0|6442|16|0
-361|Mace Ineptitude Self IV|Decreases the caster's Mace skill by 25 points.|4|100668287|18|26|50|0|0|175|1|1|0.15|1|361|150|0|-1004109824|4|67|8|73|35|45|60|0|0|19|0|0|0|0|6452|16|0
-362|Mace Ineptitude Self V|Decreases the caster's Mace skill by 30 points.|4|100668287|18|26|60|0|0|225|1|1|0.2|1|362|180|0|-1004109824|5|68|8|74|35|45|66|60|0|19|0|0|0|0|6462|16|0
-363|Mace Ineptitude Self VI|Decreases the caster's Mace skill by 35 points.|4|100668287|18|26|70|0|0|275|1|1|0.3|1|363|210|0|-1004109824|6|69|8|63|35|45|67|60|0|19|0|0|0|0|6472|16|0
-364|Spear Mastery Other I|Increases the target's Spear skill by 10 points.|4|100668297|17|6|10|5|1|1|1|1|0.01|1|364|1800|0|-1004109824|1|7|35|45|49|0|0|0|0|18|0|0|0|0|6484|16|0
-365|Spear Mastery Other II|Increases the target's Spear skill by 15 points.|4|100668297|17|6|20|5|0.85|50|1|1|0.05|1|365|1800|0|-1004109824|2|64|7|35|45|49|0|0|0|18|0|0|0|0|6494|16|0
-366|Spear Mastery Other III|Increases the target's Spear skill by 20 points.|4|100668297|17|6|30|5|0.7|100|1|1|0.1|1|366|1800|0|-1004109824|3|65|7|72|35|45|49|0|0|18|0|0|0|0|6504|16|0
-367|Spear Mastery Other IV|Increases the target's Spear skill by 25 points.|4|100668297|17|6|40|5|0.55|150|1|1|0.15|1|367|1800|0|-1004109824|4|66|7|73|35|45|49|0|0|18|0|0|0|0|6514|16|0
-368|Spear Mastery Other V|Increases the target's Spear skill by 30 points.|4|100668297|17|6|50|5|0.4|200|1|1|0.2|1|368|1800|0|-1004109824|5|67|7|74|35|45|67|49|0|18|0|0|0|0|6524|16|0
-369|Spear Mastery Other VI|Increases the target's Spear skill by 35 points.|4|100668297|17|6|60|5|0.25|250|1|1|0.3|1|369|2700|0|-1004109824|6|68|7|63|35|45|68|49|0|18|0|0|0|0|6534|16|0
-370|Spear Mastery Self I|Increases the caster's Spear skill by 10 points.|4|100668297|17|16398|15|0|0|1|1|1|0.01|1|370|1800|0|-1004109824|1|7|35|45|60|0|0|0|0|18|0|0|0|0|6544|16|0
-371|Spear Mastery Self II|Increases the caster's Spear skill by 15 points.|4|100668297|17|16398|30|0|0|50|1|1|0.05|1|371|1800|0|-1004109824|2|63|7|35|45|60|0|0|0|18|0|0|0|0|6554|16|0
-372|Spear Mastery Self III|Increases the caster's Spear skill by 20 points.|4|100668297|17|16398|40|0|0|100|1|1|0.1|1|372|1800|0|-1004109824|3|64|7|71|35|45|60|0|0|18|0|0|0|0|6564|16|0
-373|Spear Mastery Self IV|Increases the caster's Spear skill by 25 points.|4|100668297|17|16398|50|0|0|150|1|1|0.15|1|373|1800|0|-1004109824|4|65|7|72|35|45|60|0|0|18|0|0|0|0|6574|16|0
-374|Spear Mastery Self V|Increases the caster's Spear skill by 30 points.|4|100668297|17|16398|60|0|0|200|1|1|0.2|1|374|1800|0|-1004109824|5|66|7|73|35|45|65|60|0|18|0|0|0|0|6584|16|0
-375|Spear Mastery Self VI|Increases the caster's Spear skill by 35 points.|4|100668297|17|16398|70|0|0|250|1|1|0.3|1|375|2700|0|-1004109824|6|67|7|74|35|45|66|60|0|18|0|0|0|0|6594|16|0
-376|Spear Ineptitude Other I|Decreases the target's Spear skill by 10 points.|4|100668297|18|19|10|0|1|1|1|1|0.01|1|376|60|0|-1004109824|1|8|35|45|50|0|0|0|0|19|0|0|0|0|6364|16|0
-377|Spear Ineptitude Other II|Decreases the target's Spear skill by 15 points.|4|100668297|18|19|20|5|0.85|75|1|1|0.05|1|377|90|0|-1004109824|2|67|8|35|45|50|0|0|0|19|0|0|0|0|6374|16|0
-378|Spear Ineptitude Other III|Decreases the target's Spear skill by 20 points.|4|100668297|18|19|30|5|0.7|125|1|1|0.1|1|378|120|0|-1004109824|3|68|8|74|35|45|50|0|0|19|0|0|0|0|6384|16|0
-379|Spear Ineptitude Other IV|Decreases the target's Spear skill by 25 points.|4|100668297|18|19|40|5|0.55|175|1|1|0.15|1|379|150|0|-1004109824|4|69|8|63|35|45|50|0|0|19|0|0|0|0|6394|16|0
-380|Spear Ineptitude Other V|Decreases the target's Spear skill by 30 points.|4|100668297|18|19|50|5|0.4|225|1|1|0.2|1|380|180|0|-1004109824|5|70|8|64|35|45|70|50|0|19|0|0|0|0|6404|16|0
-381|Spear Ineptitude Other VI|Decreases the target's Spear skill by 35 points.|4|100668297|18|19|60|5|0.25|275|1|1|0.3|1|381|210|0|-1004109824|6|71|8|65|35|45|71|50|0|19|0|0|0|0|6414|16|0
-382|Spear Ineptitude Self I|Decreases the caster's Spear skill by 10 points.|4|100668297|18|26|15|0|0|1|1|1|0.01|1|382|60|0|-1004109824|1|8|35|45|60|0|0|0|0|19|0|0|0|0|6424|16|0
-383|Spear Ineptitude Self II|Decreases the caster's Spear skill by 15 points.|4|100668297|18|26|30|0|0|75|1|1|0.05|1|383|90|0|-1004109824|2|65|8|35|45|60|0|0|0|19|0|0|0|0|6434|16|0
-384|Spear Ineptitude Self III|Decreases the caster's Spear skill by 20 points.|4|100668297|18|26|40|0|0|125|1|1|0.1|1|384|120|0|-1004109824|3|66|8|72|35|45|60|0|0|19|0|0|0|0|6444|16|0
-385|Spear Ineptitude Self IV|Decreases the caster's Spear skill by 25 points.|4|100668297|18|26|50|0|0|175|1|1|0.15|1|385|150|0|-1004109824|4|67|8|73|35|45|60|0|0|19|0|0|0|0|6454|16|0
-386|Spear Ineptitude Self V|Decreases the caster's Spear skill by 30 points.|4|100668297|18|26|60|0|0|225|1|1|0.2|1|386|180|0|-1004109824|5|68|8|74|35|45|66|60|0|19|0|0|0|0|6464|16|0
-387|Spear Ineptitude Self VI|Decreases the caster's Spear skill by 35 points.|4|100668297|18|26|70|0|0|275|1|1|0.3|1|387|210|0|-1004109824|6|69|8|63|35|45|67|60|0|19|0|0|0|0|6474|16|0
-388|Staff Mastery Other I|Increases the target's Staff skill by 10 points.|4|100668298|17|6|10|5|1|1|1|1|0.01|1|388|1800|0|-1004109824|1|7|35|45|49|0|0|0|0|18|0|0|0|0|6486|16|0
-389|Staff Mastery Other II|Increases the target's Staff skill by 15 points.|4|100668298|17|6|20|5|0.85|50|1|1|0.05|1|389|1800|0|-1004109824|2|64|7|35|45|49|0|0|0|18|0|0|0|0|6496|16|0
-390|Staff Mastery Other III|Increases the target's Staff skill by 20 points.|4|100668298|17|6|30|5|0.7|100|1|1|0.1|1|390|1800|0|-1004109824|3|65|7|72|35|45|49|0|0|18|0|0|0|0|6506|16|0
-391|Staff Mastery Other IV|Increases the target's Staff skill by 25 points.|4|100668298|17|6|40|5|0.55|150|1|1|0.15|1|391|1800|0|-1004109824|4|66|7|73|35|45|49|0|0|18|0|0|0|0|6516|16|0
-392|Staff Mastery Other V|Increases the target's Staff skill by 30 points.|4|100668298|17|6|50|5|0.4|200|1|1|0.2|1|392|1800|0|-1004109824|5|67|7|74|35|45|67|49|0|18|0|0|0|0|6526|16|0
-393|Staff Mastery Other VI|Increases the target's Staff skill by 35 points.|4|100668298|17|6|60|5|0.25|250|1|1|0.3|1|393|2700|0|-1004109824|6|68|7|63|35|45|68|49|0|18|0|0|0|0|6536|16|0
-394|Staff Mastery Self I|Increases the caster's Staff skill by 10 points.|4|100668298|17|16398|15|0|0|1|1|1|0.01|1|394|1800|0|-1004109824|1|7|35|45|60|0|0|0|0|18|0|0|0|0|6546|16|0
-395|Staff Mastery Self II|Increases the caster's Staff skill by 15 points.|4|100668298|17|16398|30|0|0|50|1|1|0.05|1|395|1800|0|-1004109824|2|63|7|35|45|60|0|0|0|18|0|0|0|0|6556|16|0
-396|Staff Mastery Self III|Increases the caster's Staff skill by 20 points.|4|100668298|17|16398|40|0|0|100|1|1|0.1|1|396|1800|0|-1004109824|3|64|7|71|35|45|60|0|0|18|0|0|0|0|6566|16|0
-397|Staff Mastery Self IV|Increases the caster's Staff skill by 25 points.|4|100668298|17|16398|50|0|0|150|1|1|0.15|1|397|1800|0|-1004109824|4|65|7|72|35|45|60|0|0|18|0|0|0|0|6576|16|0
-398|Staff Mastery Self V|Increases the caster's Staff skill by 30 points.|4|100668298|17|16398|60|0|0|200|1|1|0.2|1|398|1800|0|-1004109824|5|66|7|73|35|45|65|60|0|18|0|0|0|0|6586|16|0
-399|Staff Mastery Self VI|Increases the caster's Staff skill by 35 points.|4|100668298|17|16398|70|0|0|250|1|1|0.3|1|399|2700|0|-1004109824|6|67|7|74|35|45|66|60|0|18|0|0|0|0|6596|16|0
-400|Staff Ineptitude Other I|Decreases the target's Staff skill by 10 points.|4|100668298|18|19|10|0|1|1|1|1|0.01|1|400|60|0|-1004109824|1|8|35|45|50|0|0|0|0|19|0|0|0|0|6366|16|0
-401|Staff Ineptitude Other II|Decreases the target's Staff skill by 15 points.|4|100668298|18|19|20|5|0.85|75|1|1|0.05|1|401|90|0|-1004109824|2|67|8|35|45|50|0|0|0|19|0|0|0|0|6376|16|0
-402|Staff Ineptitude Other III|Decreases the target's Staff skill by 20 points.|4|100668298|18|19|30|5|0.7|125|1|1|0.1|1|402|120|0|-1004109824|3|68|8|74|35|45|50|0|0|19|0|0|0|0|6386|16|0
-403|Staff Ineptitude Other IV|Decreases the target's Staff skill by 25 points.|4|100668298|18|19|40|5|0.55|175|1|1|0.15|1|403|150|0|-1004109824|4|69|8|63|35|45|50|0|0|19|0|0|0|0|6396|16|0
-404|Staff Ineptitude Other V|Decreases the target's Staff skill by 30 points.|4|100668298|18|19|50|5|0.4|225|1|1|0.2|1|404|180|0|-1004109824|5|70|8|64|35|45|70|50|0|19|0|0|0|0|6406|16|0
-405|Staff Ineptitude Other VI|Decreases the target's Staff skill by 35 points.|4|100668298|18|19|60|5|0.25|275|1|1|0.3|1|405|210|0|-1004109824|6|71|8|65|35|45|71|50|0|19|0|0|0|0|6416|16|0
-406|Staff Ineptitude Self I|Decreases the caster's Staff skill by 10 points.|4|100668298|18|26|15|0|0|1|1|1|0.01|1|406|60|0|-1004109824|1|8|35|45|60|0|0|0|0|19|0|0|0|0|6426|16|0
-407|Staff Ineptitude Self II|Decreases the caster's Staff skill by 15 points.|4|100668298|18|26|30|0|0|75|1|1|0.05|1|407|90|0|-1004109824|2|65|8|35|45|60|0|0|0|19|0|0|0|0|6436|16|0
-408|Staff Ineptitude Self III|Decreases the caster's Staff skill by 20 points.|4|100668298|18|26|40|0|0|125|1|1|0.1|1|408|120|0|-1004109824|3|66|8|72|35|45|60|0|0|19|0|0|0|0|6446|16|0
-409|Staff Ineptitude Self IV|Decreases the caster's Staff skill by 25 points.|4|100668298|18|26|50|0|0|175|1|1|0.15|1|409|150|0|-1004109824|4|67|8|73|35|45|60|0|0|19|0|0|0|0|6456|16|0
-410|Staff Ineptitude Self V|Decreases the caster's Staff skill by 30 points.|4|100668298|18|26|60|0|0|225|1|1|0.2|1|410|180|0|-1004109824|5|68|8|74|35|45|66|60|0|19|0|0|0|0|6466|16|0
-411|Staff Ineptitude Self VI|Decreases the caster's Staff skill by 35 points.|4|100668298|18|26|70|0|0|275|1|1|0.3|1|411|210|0|-1004109824|6|69|8|63|35|45|67|60|0|19|0|0|0|0|6476|16|0
+340|Mace Mastery Other I|Increases the target's Mace skill by 10 points.|4|100668287|25|6|10|5|1|1|1|1|0.01|1|340|1800|0|-1004109824|1|7|35|45|49|0|0|0|0|18|0|0|0|0|6482|16|0
+341|Mace Mastery Other II|Increases the target's Mace skill by 15 points.|4|100668287|25|6|20|5|0.85|50|1|1|0.05|1|341|1800|0|-1004109824|2|64|7|35|45|49|0|0|0|18|0|0|0|0|6492|16|0
+342|Mace Mastery Other III|Increases the target's Mace skill by 20 points.|4|100668287|25|6|30|5|0.7|100|1|1|0.1|1|342|1800|0|-1004109824|3|65|7|72|35|45|49|0|0|18|0|0|0|0|6502|16|0
+343|Mace Mastery Other IV|Increases the target's Mace skill by 25 points.|4|100668287|25|6|40|5|0.55|150|1|1|0.15|1|343|1800|0|-1004109824|4|66|7|73|35|45|49|0|0|18|0|0|0|0|6512|16|0
+344|Mace Mastery Other V|Increases the target's Mace skill by 30 points.|4|100668287|25|6|50|5|0.4|200|1|1|0.2|1|344|1800|0|-1004109824|5|67|7|74|35|45|67|49|0|18|0|0|0|0|6522|16|0
+345|Mace Mastery Other VI|Increases the target's Mace skill by 35 points.|4|100668287|25|6|60|5|0.25|250|1|1|0.3|1|345|2700|0|-1004109824|6|68|7|63|35|45|68|49|0|18|0|0|0|0|6532|16|0
+346|Mace Mastery Self I|Increases the caster's Mace skill by 10 points.|4|100668287|25|16398|15|0|0|1|1|1|0.01|1|346|1800|0|-1004109824|1|7|35|45|60|0|0|0|0|18|0|0|0|0|6542|16|0
+347|Mace Mastery Self II|Increases the caster's Mace skill by 15 points.|4|100668287|25|16398|30|0|0|50|1|1|0.05|1|347|1800|0|-1004109824|2|63|7|35|45|60|0|0|0|18|0|0|0|0|6552|16|0
+348|Mace Mastery Self III|Increases the caster's Mace skill by 20 points.|4|100668287|25|16398|40|0|0|100|1|1|0.1|1|348|1800|0|-1004109824|3|64|7|71|35|45|60|0|0|18|0|0|0|0|6562|16|0
+349|Mace Mastery Self IV|Increases the caster's Mace skill by 25 points.|4|100668287|25|16398|50|0|0|150|1|1|0.15|1|349|1800|0|-1004109824|4|65|7|72|35|45|60|0|0|18|0|0|0|0|6572|16|0
+350|Mace Mastery Self V|Increases the caster's Mace skill by 30 points.|4|100668287|25|16398|60|0|0|200|1|1|0.2|1|350|1800|0|-1004109824|5|66|7|73|35|45|65|60|0|18|0|0|0|0|6582|16|0
+351|Mace Mastery Self VI|Increases the caster's Mace skill by 35 points.|4|100668287|25|16398|70|0|0|250|1|1|0.3|1|351|2700|0|-1004109824|6|67|7|74|35|45|66|60|0|18|0|0|0|0|6592|16|0
+352|Mace Ineptitude Other I|Decreases the target's Mace skill by 10 points.|4|100668287|26|19|10|0|1|1|1|1|0.01|1|352|60|0|-1004109824|1|8|35|45|50|0|0|0|0|19|0|0|0|0|6362|16|0
+353|Mace Ineptitude Other II|Decreases the target's Mace skill by 15 points.|4|100668287|26|19|20|5|0.85|75|1|1|0.05|1|353|90|0|-1004109824|2|67|8|35|45|50|0|0|0|19|0|0|0|0|6372|16|0
+354|Mace Ineptitude Other III|Decreases the target's Mace skill by 20 points.|4|100668287|26|19|30|5|0.7|125|1|1|0.1|1|354|120|0|-1004109824|3|68|8|74|35|45|50|0|0|19|0|0|0|0|6382|16|0
+355|Mace Ineptitude Other IV|Decreases the target's Mace skill by 25 points.|4|100668287|26|19|40|5|0.55|175|1|1|0.15|1|355|150|0|-1004109824|4|69|8|63|35|45|50|0|0|19|0|0|0|0|6392|16|0
+356|Mace Ineptitude Other V|Decreases the target's Mace skill by 30 points.|4|100668287|26|19|50|5|0.4|225|1|1|0.2|1|356|180|0|-1004109824|5|70|8|64|35|45|70|50|0|19|0|0|0|0|6402|16|0
+357|Mace Ineptitude Other VI|Decreases the target's Mace skill by 35 points.|4|100668287|26|19|60|5|0.25|275|1|1|0.3|1|357|210|0|-1004109824|6|71|8|65|35|45|71|50|0|19|0|0|0|0|6412|16|0
+358|Mace Ineptitude Self I|Decreases the caster's Mace skill by 10 points.|4|100668287|26|26|15|0|0|1|1|1|0.01|1|358|60|0|-1004109824|1|8|35|45|60|0|0|0|0|19|0|0|0|0|6422|16|0
+359|Mace Ineptitude Self II|Decreases the caster's Mace skill by 15 points.|4|100668287|26|26|30|0|0|75|1|1|0.05|1|359|90|0|-1004109824|2|65|8|35|45|60|0|0|0|19|0|0|0|0|6432|16|0
+360|Mace Ineptitude Self III|Decreases the caster's Mace skill by 20 points.|4|100668287|26|26|40|0|0|125|1|1|0.1|1|360|120|0|-1004109824|3|66|8|72|35|45|60|0|0|19|0|0|0|0|6442|16|0
+361|Mace Ineptitude Self IV|Decreases the caster's Mace skill by 25 points.|4|100668287|26|26|50|0|0|175|1|1|0.15|1|361|150|0|-1004109824|4|67|8|73|35|45|60|0|0|19|0|0|0|0|6452|16|0
+362|Mace Ineptitude Self V|Decreases the caster's Mace skill by 30 points.|4|100668287|26|26|60|0|0|225|1|1|0.2|1|362|180|0|-1004109824|5|68|8|74|35|45|66|60|0|19|0|0|0|0|6462|16|0
+363|Mace Ineptitude Self VI|Decreases the caster's Mace skill by 35 points.|4|100668287|26|26|70|0|0|275|1|1|0.3|1|363|210|0|-1004109824|6|69|8|63|35|45|67|60|0|19|0|0|0|0|6472|16|0
+364|Spear Mastery Other I|Increases the target's Spear skill by 10 points.|4|100668297|27|6|10|5|1|1|1|1|0.01|1|364|1800|0|-1004109824|1|7|35|45|49|0|0|0|0|18|0|0|0|0|6484|16|0
+365|Spear Mastery Other II|Increases the target's Spear skill by 15 points.|4|100668297|27|6|20|5|0.85|50|1|1|0.05|1|365|1800|0|-1004109824|2|64|7|35|45|49|0|0|0|18|0|0|0|0|6494|16|0
+366|Spear Mastery Other III|Increases the target's Spear skill by 20 points.|4|100668297|27|6|30|5|0.7|100|1|1|0.1|1|366|1800|0|-1004109824|3|65|7|72|35|45|49|0|0|18|0|0|0|0|6504|16|0
+367|Spear Mastery Other IV|Increases the target's Spear skill by 25 points.|4|100668297|27|6|40|5|0.55|150|1|1|0.15|1|367|1800|0|-1004109824|4|66|7|73|35|45|49|0|0|18|0|0|0|0|6514|16|0
+368|Spear Mastery Other V|Increases the target's Spear skill by 30 points.|4|100668297|27|6|50|5|0.4|200|1|1|0.2|1|368|1800|0|-1004109824|5|67|7|74|35|45|67|49|0|18|0|0|0|0|6524|16|0
+369|Spear Mastery Other VI|Increases the target's Spear skill by 35 points.|4|100668297|27|6|60|5|0.25|250|1|1|0.3|1|369|2700|0|-1004109824|6|68|7|63|35|45|68|49|0|18|0|0|0|0|6534|16|0
+370|Spear Mastery Self I|Increases the caster's Spear skill by 10 points.|4|100668297|27|16398|15|0|0|1|1|1|0.01|1|370|1800|0|-1004109824|1|7|35|45|60|0|0|0|0|18|0|0|0|0|6544|16|0
+371|Spear Mastery Self II|Increases the caster's Spear skill by 15 points.|4|100668297|27|16398|30|0|0|50|1|1|0.05|1|371|1800|0|-1004109824|2|63|7|35|45|60|0|0|0|18|0|0|0|0|6554|16|0
+372|Spear Mastery Self III|Increases the caster's Spear skill by 20 points.|4|100668297|27|16398|40|0|0|100|1|1|0.1|1|372|1800|0|-1004109824|3|64|7|71|35|45|60|0|0|18|0|0|0|0|6564|16|0
+373|Spear Mastery Self IV|Increases the caster's Spear skill by 25 points.|4|100668297|27|16398|50|0|0|150|1|1|0.15|1|373|1800|0|-1004109824|4|65|7|72|35|45|60|0|0|18|0|0|0|0|6574|16|0
+374|Spear Mastery Self V|Increases the caster's Spear skill by 30 points.|4|100668297|27|16398|60|0|0|200|1|1|0.2|1|374|1800|0|-1004109824|5|66|7|73|35|45|65|60|0|18|0|0|0|0|6584|16|0
+375|Spear Mastery Self VI|Increases the caster's Spear skill by 35 points.|4|100668297|27|16398|70|0|0|250|1|1|0.3|1|375|2700|0|-1004109824|6|67|7|74|35|45|66|60|0|18|0|0|0|0|6594|16|0
+376|Spear Ineptitude Other I|Decreases the target's Spear skill by 10 points.|4|100668297|28|19|10|0|1|1|1|1|0.01|1|376|60|0|-1004109824|1|8|35|45|50|0|0|0|0|19|0|0|0|0|6364|16|0
+377|Spear Ineptitude Other II|Decreases the target's Spear skill by 15 points.|4|100668297|28|19|20|5|0.85|75|1|1|0.05|1|377|90|0|-1004109824|2|67|8|35|45|50|0|0|0|19|0|0|0|0|6374|16|0
+378|Spear Ineptitude Other III|Decreases the target's Spear skill by 20 points.|4|100668297|28|19|30|5|0.7|125|1|1|0.1|1|378|120|0|-1004109824|3|68|8|74|35|45|50|0|0|19|0|0|0|0|6384|16|0
+379|Spear Ineptitude Other IV|Decreases the target's Spear skill by 25 points.|4|100668297|28|19|40|5|0.55|175|1|1|0.15|1|379|150|0|-1004109824|4|69|8|63|35|45|50|0|0|19|0|0|0|0|6394|16|0
+380|Spear Ineptitude Other V|Decreases the target's Spear skill by 30 points.|4|100668297|28|19|50|5|0.4|225|1|1|0.2|1|380|180|0|-1004109824|5|70|8|64|35|45|70|50|0|19|0|0|0|0|6404|16|0
+381|Spear Ineptitude Other VI|Decreases the target's Spear skill by 35 points.|4|100668297|28|19|60|5|0.25|275|1|1|0.3|1|381|210|0|-1004109824|6|71|8|65|35|45|71|50|0|19|0|0|0|0|6414|16|0
+382|Spear Ineptitude Self I|Decreases the caster's Spear skill by 10 points.|4|100668297|28|26|15|0|0|1|1|1|0.01|1|382|60|0|-1004109824|1|8|35|45|60|0|0|0|0|19|0|0|0|0|6424|16|0
+383|Spear Ineptitude Self II|Decreases the caster's Spear skill by 15 points.|4|100668297|28|26|30|0|0|75|1|1|0.05|1|383|90|0|-1004109824|2|65|8|35|45|60|0|0|0|19|0|0|0|0|6434|16|0
+384|Spear Ineptitude Self III|Decreases the caster's Spear skill by 20 points.|4|100668297|28|26|40|0|0|125|1|1|0.1|1|384|120|0|-1004109824|3|66|8|72|35|45|60|0|0|19|0|0|0|0|6444|16|0
+385|Spear Ineptitude Self IV|Decreases the caster's Spear skill by 25 points.|4|100668297|28|26|50|0|0|175|1|1|0.15|1|385|150|0|-1004109824|4|67|8|73|35|45|60|0|0|19|0|0|0|0|6454|16|0
+386|Spear Ineptitude Self V|Decreases the caster's Spear skill by 30 points.|4|100668297|28|26|60|0|0|225|1|1|0.2|1|386|180|0|-1004109824|5|68|8|74|35|45|66|60|0|19|0|0|0|0|6464|16|0
+387|Spear Ineptitude Self VI|Decreases the caster's Spear skill by 35 points.|4|100668297|28|26|70|0|0|275|1|1|0.3|1|387|210|0|-1004109824|6|69|8|63|35|45|67|60|0|19|0|0|0|0|6474|16|0
+388|Staff Mastery Other I|Increases the target's Staff skill by 10 points.|4|100668298|29|6|10|5|1|1|1|1|0.01|1|388|1800|0|-1004109824|1|7|35|45|49|0|0|0|0|18|0|0|0|0|6486|16|0
+389|Staff Mastery Other II|Increases the target's Staff skill by 15 points.|4|100668298|29|6|20|5|0.85|50|1|1|0.05|1|389|1800|0|-1004109824|2|64|7|35|45|49|0|0|0|18|0|0|0|0|6496|16|0
+390|Staff Mastery Other III|Increases the target's Staff skill by 20 points.|4|100668298|29|6|30|5|0.7|100|1|1|0.1|1|390|1800|0|-1004109824|3|65|7|72|35|45|49|0|0|18|0|0|0|0|6506|16|0
+391|Staff Mastery Other IV|Increases the target's Staff skill by 25 points.|4|100668298|29|6|40|5|0.55|150|1|1|0.15|1|391|1800|0|-1004109824|4|66|7|73|35|45|49|0|0|18|0|0|0|0|6516|16|0
+392|Staff Mastery Other V|Increases the target's Staff skill by 30 points.|4|100668298|29|6|50|5|0.4|200|1|1|0.2|1|392|1800|0|-1004109824|5|67|7|74|35|45|67|49|0|18|0|0|0|0|6526|16|0
+393|Staff Mastery Other VI|Increases the target's Staff skill by 35 points.|4|100668298|29|6|60|5|0.25|250|1|1|0.3|1|393|2700|0|-1004109824|6|68|7|63|35|45|68|49|0|18|0|0|0|0|6536|16|0
+394|Staff Mastery Self I|Increases the caster's Staff skill by 10 points.|4|100668298|29|16398|15|0|0|1|1|1|0.01|1|394|1800|0|-1004109824|1|7|35|45|60|0|0|0|0|18|0|0|0|0|6546|16|0
+395|Staff Mastery Self II|Increases the caster's Staff skill by 15 points.|4|100668298|29|16398|30|0|0|50|1|1|0.05|1|395|1800|0|-1004109824|2|63|7|35|45|60|0|0|0|18|0|0|0|0|6556|16|0
+396|Staff Mastery Self III|Increases the caster's Staff skill by 20 points.|4|100668298|29|16398|40|0|0|100|1|1|0.1|1|396|1800|0|-1004109824|3|64|7|71|35|45|60|0|0|18|0|0|0|0|6566|16|0
+397|Staff Mastery Self IV|Increases the caster's Staff skill by 25 points.|4|100668298|29|16398|50|0|0|150|1|1|0.15|1|397|1800|0|-1004109824|4|65|7|72|35|45|60|0|0|18|0|0|0|0|6576|16|0
+398|Staff Mastery Self V|Increases the caster's Staff skill by 30 points.|4|100668298|29|16398|60|0|0|200|1|1|0.2|1|398|1800|0|-1004109824|5|66|7|73|35|45|65|60|0|18|0|0|0|0|6586|16|0
+399|Staff Mastery Self VI|Increases the caster's Staff skill by 35 points.|4|100668298|29|16398|70|0|0|250|1|1|0.3|1|399|2700|0|-1004109824|6|67|7|74|35|45|66|60|0|18|0|0|0|0|6596|16|0
+400|Staff Ineptitude Other I|Decreases the target's Staff skill by 10 points.|4|100668298|30|19|10|0|1|1|1|1|0.01|1|400|60|0|-1004109824|1|8|35|45|50|0|0|0|0|19|0|0|0|0|6366|16|0
+401|Staff Ineptitude Other II|Decreases the target's Staff skill by 15 points.|4|100668298|30|19|20|5|0.85|75|1|1|0.05|1|401|90|0|-1004109824|2|67|8|35|45|50|0|0|0|19|0|0|0|0|6376|16|0
+402|Staff Ineptitude Other III|Decreases the target's Staff skill by 20 points.|4|100668298|30|19|30|5|0.7|125|1|1|0.1|1|402|120|0|-1004109824|3|68|8|74|35|45|50|0|0|19|0|0|0|0|6386|16|0
+403|Staff Ineptitude Other IV|Decreases the target's Staff skill by 25 points.|4|100668298|30|19|40|5|0.55|175|1|1|0.15|1|403|150|0|-1004109824|4|69|8|63|35|45|50|0|0|19|0|0|0|0|6396|16|0
+404|Staff Ineptitude Other V|Decreases the target's Staff skill by 30 points.|4|100668298|30|19|50|5|0.4|225|1|1|0.2|1|404|180|0|-1004109824|5|70|8|64|35|45|70|50|0|19|0|0|0|0|6406|16|0
+405|Staff Ineptitude Other VI|Decreases the target's Staff skill by 35 points.|4|100668298|30|19|60|5|0.25|275|1|1|0.3|1|405|210|0|-1004109824|6|71|8|65|35|45|71|50|0|19|0|0|0|0|6416|16|0
+406|Staff Ineptitude Self I|Decreases the caster's Staff skill by 10 points.|4|100668298|30|26|15|0|0|1|1|1|0.01|1|406|60|0|-1004109824|1|8|35|45|60|0|0|0|0|19|0|0|0|0|6426|16|0
+407|Staff Ineptitude Self II|Decreases the caster's Staff skill by 15 points.|4|100668298|30|26|30|0|0|75|1|1|0.05|1|407|90|0|-1004109824|2|65|8|35|45|60|0|0|0|19|0|0|0|0|6436|16|0
+408|Staff Ineptitude Self III|Decreases the caster's Staff skill by 20 points.|4|100668298|30|26|40|0|0|125|1|1|0.1|1|408|120|0|-1004109824|3|66|8|72|35|45|60|0|0|19|0|0|0|0|6446|16|0
+409|Staff Ineptitude Self IV|Decreases the caster's Staff skill by 25 points.|4|100668298|30|26|50|0|0|175|1|1|0.15|1|409|150|0|-1004109824|4|67|8|73|35|45|60|0|0|19|0|0|0|0|6456|16|0
+410|Staff Ineptitude Self V|Decreases the caster's Staff skill by 30 points.|4|100668298|30|26|60|0|0|225|1|1|0.2|1|410|180|0|-1004109824|5|68|8|74|35|45|66|60|0|19|0|0|0|0|6466|16|0
+411|Staff Ineptitude Self VI|Decreases the caster's Staff skill by 35 points.|4|100668298|30|26|70|0|0|275|1|1|0.3|1|411|210|0|-1004109824|6|69|8|63|35|45|67|60|0|19|0|0|0|0|6476|16|0
 412|Sword Mastery Other I|Increases the target's Sword skill by 10 points.|4|100668302|31|6|10|0|1|1|1|1|0.01|1|412|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|4336|16|0
 413|Sword Mastery Other II|Increases the target's Sword skill by 15 points.|4|100668302|31|6|20|5|0.85|50|1|1|0.05|1|413|1800|0|-1004109824|2|74|7|35|43|49|0|0|0|18|0|0|0|0|4338|16|0
 414|Sword Mastery Other III|Increases the target's Sword skill by 20 points.|4|100668302|31|6|30|5|0.7|100|1|1|0.1|1|414|1800|0|-1004109824|3|63|7|68|35|43|49|0|0|18|0|0|0|0|4340|16|0
@@ -409,30 +409,30 @@
 433|Sword Ineptitude Self IV|Decreases the caster's Sword skill by 25 points.|4|100668302|32|26|50|0|0|175|1|1|0.15|1|433|150|0|-1004109824|4|65|8|69|35|43|60|0|0|19|0|0|0|0|4330|16|0
 435|Sword Ineptitude Self V|Decreases the caster's Sword skill by 30 points.|4|100668302|32|26|60|0|0|225|1|1|0.2|1|435|180|0|-1004109824|5|66|8|70|35|43|64|60|0|19|0|0|0|0|4332|16|0
 436|Sword Ineptitude Self VI|Decreases the caster's Sword skill by 35 points.|4|100668302|32|26|70|0|0|275|1|1|0.3|1|436|210|0|-1004109824|6|67|8|71|35|43|65|60|0|19|0|0|0|0|4334|16|0
-437|Unarmed Combat Mastery Other I|Increases the target's Unarmed Combat skill by 10 points.|4|100668274|17|6|10|5|1|1|1|1|0.01|1|437|1800|0|-1004109824|1|7|35|45|49|0|0|0|0|18|0|0|0|0|6488|16|0
-438|Unarmed Combat Mastery Other II|Increases the target's Unarmed Combat skill by 15 points.|4|100668274|17|6|20|5|0.85|50|1|1|0.05|1|438|1800|0|-1004109824|2|64|7|35|45|49|0|0|0|18|0|0|0|0|6498|16|0
-439|Unarmed Combat Mastery Other III|Increases the target's Unarmed Combat skill by 20 points.|4|100668274|17|6|30|5|0.7|100|1|1|0.1|1|439|1800|0|-1004109824|3|65|7|72|35|45|49|0|0|18|0|0|0|0|6508|16|0
-440|Unarmed Combat Mastery Other IV|Increases the target's Unarmed Combat skill by 25 points.|4|100668274|17|6|40|5|0.55|150|1|1|0.15|1|440|1800|0|-1004109824|4|66|7|73|35|45|49|0|0|18|0|0|0|0|6518|16|0
-441|Unarmed Combat Mastery Other V|Increases the target's Unarmed Combat skill by 30 points.|4|100668274|17|6|50|5|0.4|200|1|1|0.2|1|441|1800|0|-1004109824|5|67|7|74|35|45|67|49|0|18|0|0|0|0|6528|16|0
-442|Unarmed Combat Mastery Other VI|Increases the target's Unarmed Combat skill by 35 points.|4|100668274|17|6|60|5|0.25|250|1|1|0.3|1|442|2700|0|-1004109824|6|68|7|63|35|45|68|49|0|18|0|0|0|0|6538|16|0
-443|Unarmed Combat Mastery Self I|Increases the caster's Unarmed Combat skill by 10 points.|4|100668274|17|16398|15|0|0|1|1|1|0.01|1|443|1800|0|-1004109824|1|7|35|45|60|0|0|0|0|18|0|0|0|0|6548|16|0
-444|Unarmed Combat Mastery Self II|Increases the caster's Unarmed Combat skill by 15 points.|4|100668274|17|16398|30|0|0|50|1|1|0.05|1|444|1800|0|-1004109824|2|63|7|35|45|60|0|0|0|18|0|0|0|0|6558|16|0
-445|Unarmed Combat Mastery Self III|Increases the caster's Unarmed Combat skill by 20 points.|4|100668274|17|16398|40|0|0|100|1|1|0.1|1|445|1800|0|-1004109824|3|64|7|71|35|45|60|0|0|18|0|0|0|0|6568|16|0
-446|Unarmed Combat Mastery Self IV|Increases the caster's Unarmed Combat skill by 25 points.|4|100668274|17|16398|50|0|0|150|1|1|0.15|1|446|1800|0|-1004109824|4|65|7|72|35|45|60|0|0|18|0|0|0|0|6578|16|0
-447|Unarmed Combat Mastery Self V|Increases the caster's Unarmed Combat skill by 30 points.|4|100668274|17|16398|60|0|0|200|1|1|0.2|1|447|1800|0|-1004109824|5|66|7|73|35|45|65|60|0|18|0|0|0|0|6588|16|0
-448|Unarmed Combat Mastery Self VI|Increases the caster's Unarmed Combat skill by 35 points.|4|100668274|17|16398|70|0|0|250|1|1|0.3|1|448|2700|0|-1004109824|6|67|7|74|35|45|66|60|0|18|0|0|0|0|6598|16|0
-449|Unarmed Combat Ineptitude Other I|Decreases the target's Unarmed Combat skill by 10 points.|4|100668274|18|19|10|0|1|1|1|1|0.01|1|449|60|0|-1004109824|1|8|35|45|50|0|0|0|0|19|0|0|0|0|6368|16|0
-450|Unarmed Combat Ineptitude Other II|Decreases the target's Unarmed Combat skill by 15 points.|4|100668274|18|19|20|5|0.85|75|1|1|0.05|1|450|90|0|-1004109824|2|67|8|35|45|50|0|0|0|19|0|0|0|0|6378|16|0
-451|Unarmed Combat Ineptitude Other III|Decreases the target's Unarmed Combat skill by 20 points.|4|100668274|18|19|30|5|0.7|125|1|1|0.1|1|451|120|0|-1004109824|3|68|8|74|35|45|50|0|0|19|0|0|0|0|6388|16|0
-452|Unarmed Combat Ineptitude Other IV|Decreases the target's Unarmed Combat skill by 25 points.|4|100668274|18|19|40|5|0.55|175|1|1|0.15|1|452|150|0|-1004109824|4|69|8|63|35|45|50|0|0|19|0|0|0|0|6398|16|0
-453|Unarmed Combat Ineptitude Other V|Decreases the target's Unarmed Combat skill by 30 points.|4|100668274|18|19|50|5|0.4|225|1|1|0.2|1|453|180|0|-1004109824|5|70|8|64|35|45|70|50|0|19|0|0|0|0|6408|16|0
-454|Unarmed Combat Ineptitude Other VI|Decreases the target's Unarmed Combat skill by 35 points.|4|100668274|18|19|60|5|0.25|275|1|1|0.3|1|454|210|0|-1004109824|6|71|8|65|35|45|71|50|0|19|0|0|0|0|6418|16|0
-455|Unarmed Combat Ineptitude Self I|Decreases the caster's Unarmed Combat skill by 10 points.|4|100668274|18|26|15|0|0|1|1|1|0.01|1|455|60|0|-1004109824|1|8|35|45|60|0|0|0|0|19|0|0|0|0|6428|16|0
-456|Unarmed Combat Ineptitude Self II|Decreases the caster's Unarmed Combat skill by 15 points.|4|100668274|18|26|30|0|0|75|1|1|0.05|1|456|90|0|-1004109824|2|65|8|35|45|60|0|0|0|19|0|0|0|0|6438|16|0
-457|Unarmed Combat Ineptitude Self III|Decreases the caster's Unarmed Combat skill by 20 points.|4|100668274|18|26|40|0|0|125|1|1|0.1|1|457|120|0|-1004109824|3|66|8|72|35|45|60|0|0|19|0|0|0|0|6448|16|0
-458|Unarmed Combat Ineptitude Self IV|Decreases the caster's Unarmed Combat skill by 25 points.|4|100668274|18|26|50|0|0|175|1|1|0.15|1|458|150|0|-1004109824|4|67|8|73|35|45|60|0|0|19|0|0|0|0|6458|16|0
-459|Unarmed Combat Ineptitude Self V|Decreases the caster's Unarmed Combat skill by 30 points.|4|100668274|18|26|60|0|0|225|1|1|0.2|1|459|180|0|-1004109824|5|68|8|74|35|45|66|60|0|19|0|0|0|0|6468|16|0
-460|Unarmed Combat Ineptitude Self VI|Decreases the caster's Unarmed Combat skill by 35 points.|4|100668274|18|26|70|0|0|275|1|1|0.3|1|460|210|0|-1004109824|6|69|8|63|35|45|67|60|0|19|0|0|0|0|6478|16|0
+437|Unarmed Combat Mastery Other I|Increases the target's Unarmed Combat skill by 10 points.|4|100668274|35|6|10|5|1|1|1|1|0.01|1|437|1800|0|-1004109824|1|7|35|45|49|0|0|0|0|18|0|0|0|0|6488|16|0
+438|Unarmed Combat Mastery Other II|Increases the target's Unarmed Combat skill by 15 points.|4|100668274|35|6|20|5|0.85|50|1|1|0.05|1|438|1800|0|-1004109824|2|64|7|35|45|49|0|0|0|18|0|0|0|0|6498|16|0
+439|Unarmed Combat Mastery Other III|Increases the target's Unarmed Combat skill by 20 points.|4|100668274|35|6|30|5|0.7|100|1|1|0.1|1|439|1800|0|-1004109824|3|65|7|72|35|45|49|0|0|18|0|0|0|0|6508|16|0
+440|Unarmed Combat Mastery Other IV|Increases the target's Unarmed Combat skill by 25 points.|4|100668274|35|6|40|5|0.55|150|1|1|0.15|1|440|1800|0|-1004109824|4|66|7|73|35|45|49|0|0|18|0|0|0|0|6518|16|0
+441|Unarmed Combat Mastery Other V|Increases the target's Unarmed Combat skill by 30 points.|4|100668274|35|6|50|5|0.4|200|1|1|0.2|1|441|1800|0|-1004109824|5|67|7|74|35|45|67|49|0|18|0|0|0|0|6528|16|0
+442|Unarmed Combat Mastery Other VI|Increases the target's Unarmed Combat skill by 35 points.|4|100668274|35|6|60|5|0.25|250|1|1|0.3|1|442|2700|0|-1004109824|6|68|7|63|35|45|68|49|0|18|0|0|0|0|6538|16|0
+443|Unarmed Combat Mastery Self I|Increases the caster's Unarmed Combat skill by 10 points.|4|100668274|35|16398|15|0|0|1|1|1|0.01|1|443|1800|0|-1004109824|1|7|35|45|60|0|0|0|0|18|0|0|0|0|6548|16|0
+444|Unarmed Combat Mastery Self II|Increases the caster's Unarmed Combat skill by 15 points.|4|100668274|35|16398|30|0|0|50|1|1|0.05|1|444|1800|0|-1004109824|2|63|7|35|45|60|0|0|0|18|0|0|0|0|6558|16|0
+445|Unarmed Combat Mastery Self III|Increases the caster's Unarmed Combat skill by 20 points.|4|100668274|35|16398|40|0|0|100|1|1|0.1|1|445|1800|0|-1004109824|3|64|7|71|35|45|60|0|0|18|0|0|0|0|6568|16|0
+446|Unarmed Combat Mastery Self IV|Increases the caster's Unarmed Combat skill by 25 points.|4|100668274|35|16398|50|0|0|150|1|1|0.15|1|446|1800|0|-1004109824|4|65|7|72|35|45|60|0|0|18|0|0|0|0|6578|16|0
+447|Unarmed Combat Mastery Self V|Increases the caster's Unarmed Combat skill by 30 points.|4|100668274|35|16398|60|0|0|200|1|1|0.2|1|447|1800|0|-1004109824|5|66|7|73|35|45|65|60|0|18|0|0|0|0|6588|16|0
+448|Unarmed Combat Mastery Self VI|Increases the caster's Unarmed Combat skill by 35 points.|4|100668274|35|16398|70|0|0|250|1|1|0.3|1|448|2700|0|-1004109824|6|67|7|74|35|45|66|60|0|18|0|0|0|0|6598|16|0
+449|Unarmed Combat Ineptitude Other I|Decreases the target's Unarmed Combat skill by 10 points.|4|100668274|36|19|10|0|1|1|1|1|0.01|1|449|60|0|-1004109824|1|8|35|45|50|0|0|0|0|19|0|0|0|0|6368|16|0
+450|Unarmed Combat Ineptitude Other II|Decreases the target's Unarmed Combat skill by 15 points.|4|100668274|36|19|20|5|0.85|75|1|1|0.05|1|450|90|0|-1004109824|2|67|8|35|45|50|0|0|0|19|0|0|0|0|6378|16|0
+451|Unarmed Combat Ineptitude Other III|Decreases the target's Unarmed Combat skill by 20 points.|4|100668274|36|19|30|5|0.7|125|1|1|0.1|1|451|120|0|-1004109824|3|68|8|74|35|45|50|0|0|19|0|0|0|0|6388|16|0
+452|Unarmed Combat Ineptitude Other IV|Decreases the target's Unarmed Combat skill by 25 points.|4|100668274|36|19|40|5|0.55|175|1|1|0.15|1|452|150|0|-1004109824|4|69|8|63|35|45|50|0|0|19|0|0|0|0|6398|16|0
+453|Unarmed Combat Ineptitude Other V|Decreases the target's Unarmed Combat skill by 30 points.|4|100668274|36|19|50|5|0.4|225|1|1|0.2|1|453|180|0|-1004109824|5|70|8|64|35|45|70|50|0|19|0|0|0|0|6408|16|0
+454|Unarmed Combat Ineptitude Other VI|Decreases the target's Unarmed Combat skill by 35 points.|4|100668274|36|19|60|5|0.25|275|1|1|0.3|1|454|210|0|-1004109824|6|71|8|65|35|45|71|50|0|19|0|0|0|0|6418|16|0
+455|Unarmed Combat Ineptitude Self I|Decreases the caster's Unarmed Combat skill by 10 points.|4|100668274|36|26|15|0|0|1|1|1|0.01|1|455|60|0|-1004109824|1|8|35|45|60|0|0|0|0|19|0|0|0|0|6428|16|0
+456|Unarmed Combat Ineptitude Self II|Decreases the caster's Unarmed Combat skill by 15 points.|4|100668274|36|26|30|0|0|75|1|1|0.05|1|456|90|0|-1004109824|2|65|8|35|45|60|0|0|0|19|0|0|0|0|6438|16|0
+457|Unarmed Combat Ineptitude Self III|Decreases the caster's Unarmed Combat skill by 20 points.|4|100668274|36|26|40|0|0|125|1|1|0.1|1|457|120|0|-1004109824|3|66|8|72|35|45|60|0|0|19|0|0|0|0|6448|16|0
+458|Unarmed Combat Ineptitude Self IV|Decreases the caster's Unarmed Combat skill by 25 points.|4|100668274|36|26|50|0|0|175|1|1|0.15|1|458|150|0|-1004109824|4|67|8|73|35|45|60|0|0|19|0|0|0|0|6458|16|0
+459|Unarmed Combat Ineptitude Self V|Decreases the caster's Unarmed Combat skill by 30 points.|4|100668274|36|26|60|0|0|225|1|1|0.2|1|459|180|0|-1004109824|5|68|8|74|35|45|66|60|0|19|0|0|0|0|6468|16|0
+460|Unarmed Combat Ineptitude Self VI|Decreases the caster's Unarmed Combat skill by 35 points.|4|100668274|36|26|70|0|0|275|1|1|0.3|1|460|210|0|-1004109824|6|69|8|63|35|45|67|60|0|19|0|0|0|0|6478|16|0
 461|Bow Mastery Other I|Increases the target's Bow skill by 10 points.|4|100668266|19|6|10|0|1|1|1|1|0.01|1|461|1800|0|-1004109824|1|7|29|45|49|0|0|0|0|18|0|0|0|0|7790|16|0
 462|Bow Mastery Other II|Increases the target's Bow skill by 15 points.|4|100668266|19|6|20|5|0.85|50|1|1|0.05|1|462|1800|0|-1004109824|2|70|7|29|45|49|0|0|0|18|0|0|0|0|7796|16|0
 463|Bow Mastery Other III|Increases the target's Bow skill by 20 points.|4|100668266|19|6|30|5|0.7|100|1|1|0.1|1|463|1800|0|-1004109824|3|71|7|72|29|45|49|0|0|18|0|0|0|0|7802|16|0
@@ -457,30 +457,30 @@
 482|Bow Ineptitude Self IV|Decreases the caster's Bow skill by 25 points.|4|100668266|20|26|50|0|0|175|1|1|0.15|1|482|150|0|-1004109824|4|73|8|73|29|45|60|0|0|19|0|0|0|0|7772|16|0
 483|Bow Ineptitude Self V|Decreases the caster's Bow skill by 30 points.|4|100668266|20|26|60|0|0|225|1|1|0.2|1|483|180|0|-1004109824|5|74|8|74|29|45|72|60|0|19|0|0|0|0|7778|16|0
 484|Bow Ineptitude Self VI|Decreases the caster's Bow skill by 35 points.|4|100668266|20|26|70|0|0|275|1|1|0.3|1|484|210|0|-1004109824|6|63|8|63|29|45|73|60|0|19|0|0|0|0|7784|16|0
-485|Crossbow Mastery Other I|Increases the target's Crossbow skill by 10 points.|4|100668267|19|6|10|0|1|1|1|1|0.01|1|485|1800|0|-1004109824|1|7|29|45|49|0|0|0|0|18|0|0|0|0|7792|16|0
-486|Crossbow Mastery Other II|Increases the target's Crossbow skill by 15 points.|4|100668267|19|6|20|5|0.85|50|1|1|0.05|1|486|1800|0|-1004109824|2|70|7|29|45|49|0|0|0|18|0|0|0|0|7798|16|0
-487|Crossbow Mastery Other III|Increases the target's Crossbow skill by 20 points.|4|100668267|19|6|30|5|0.7|100|1|1|0.1|1|487|1800|0|-1004109824|3|71|7|72|29|45|49|0|0|18|0|0|0|0|7804|16|0
-488|Crossbow Mastery Other IV|Increases the target's Crossbow skill by 25 points.|4|100668267|19|6|40|5|0.55|150|1|1|0.15|1|488|1800|0|-1004109824|4|72|7|73|29|45|49|0|0|18|0|0|0|0|7810|16|0
-489|Crossbow Mastery Other V|Increases the target's Crossbow skill by 30 points.|4|100668267|19|6|50|0|1|200|1|1|0.2|1|489|1800|0|-1004109824|5|73|7|74|29|45|73|49|0|18|0|0|0|0|7816|16|0
-490|Crossbow Mastery Other VI|Increases the target's Crossbow skill by 35 points.|4|100668267|19|6|60|5|0.25|250|1|1|0.3|1|490|2700|0|-1004109824|6|74|7|63|29|45|74|49|0|18|0|0|0|0|7822|16|0
-491|Crossbow Mastery Self I|Increases the caster's Crossbow skill by 10 points.|4|100668267|19|16398|15|0|0|1|1|1|0.01|1|491|1800|0|-1004109824|1|7|29|45|60|0|0|0|0|18|0|0|0|0|7828|16|0
-492|Crossbow Mastery Self II|Increases the caster's Crossbow skill by 15 points.|4|100668267|19|16398|30|0|0|50|1|1|0.05|1|492|1800|0|-1004109824|2|69|7|29|45|60|0|0|0|18|0|0|0|0|7834|16|0
-493|Crossbow Mastery Self III|Increases the caster's Crossbow skill by 20 points.|4|100668267|19|16398|40|0|0|100|1|1|0.1|1|493|1800|0|-1004109824|3|70|7|71|29|45|60|0|0|18|0|0|0|0|7840|16|0
-494|Crossbow Mastery Self IV|Increases the caster's Crossbow skill by 25 points.|4|100668267|19|16398|50|0|0|150|1|1|0.15|1|494|1800|0|-1004109824|4|71|7|72|29|45|60|0|0|18|0|0|0|0|7846|16|0
-495|Crossbow Mastery Self V|Increases the caster's Crossbow skill by 30 points.|4|100668267|19|16398|60|0|0|200|1|1|0.2|1|495|1800|0|-1004109824|5|72|7|73|29|45|71|60|0|18|0|0|0|0|7852|16|0
-496|Crossbow Mastery Self VI|Increases the caster's Crossbow skill by 35 points.|4|100668267|19|16398|70|0|0|250|1|1|0.3|1|496|2700|0|-1004109824|6|73|7|74|29|45|72|60|0|18|0|0|0|0|7858|16|0
-497|Crossbow Ineptitude Other I|Decreases the target's Crossbow skill by 10 points.|4|100668267|20|19|10|0|1|1|1|1|0.01|1|497|60|0|-1004109824|1|8|29|45|50|0|0|0|0|19|0|0|0|0|7720|16|0
-498|Crossbow Ineptitude Other II|Decreases the target's Crossbow skill by 15 points.|4|100668267|20|19|20|5|0.85|75|1|1|0.05|1|498|90|0|-1004109824|2|73|8|29|45|50|0|0|0|19|0|0|0|0|7726|16|0
-499|Crossbow Ineptitude Other III|Decreases the target's Crossbow skill by 20 points.|4|100668267|20|19|30|5|0.7|125|1|1|0.1|1|499|120|0|-1004109824|3|74|8|74|29|45|50|0|0|19|0|0|0|0|7732|16|0
-500|Crossbow Ineptitude Other IV|Decreases the target's Crossbow skill by 25 points.|4|100668267|20|19|40|5|0.55|175|1|1|0.15|1|500|150|0|-1004109824|4|63|8|63|29|45|50|0|0|19|0|0|0|0|7738|16|0
-501|Crossbow Ineptitude Other V|Decreases the target's Crossbow skill by 30 points.|4|100668267|20|19|50|5|0.4|225|1|1|0.2|1|501|180|0|-1004109824|5|64|8|64|29|45|64|50|0|19|0|0|0|0|7744|16|0
-502|Crossbow Ineptitude Other VI|Decreases the target's Crossbow skill by 35 points.|4|100668267|20|19|60|5|0.25|275|1|1|0.3|1|502|210|0|-1004109824|6|65|8|65|29|45|65|50|0|19|0|0|0|0|7750|16|0
-503|Crossbow Ineptitude Self I|Decreases the caster's Crossbow skill by 10 points.|4|100668267|20|26|15|0|0|1|1|1|0.01|1|503|60|0|-1004109824|1|8|29|45|60|0|0|0|0|19|0|0|0|0|7756|16|0
-504|Crossbow Ineptitude Self II|Decreases the caster's Crossbow skill by 15 points.|4|100668267|20|26|30|0|0|75|1|1|0.05|1|504|90|0|-1004109824|2|71|8|29|45|60|0|0|0|19|0|0|0|0|7762|16|0
-505|Crossbow Ineptitude Self III|Decreases the caster's Crossbow skill by 20 points.|4|100668267|20|26|40|0|0|125|1|1|0.1|1|505|120|0|-1004109824|3|72|8|72|29|45|60|0|0|19|0|0|0|0|7768|16|0
-506|Crossbow Ineptitude Self IV|Decreases the caster's Crossbow skill by 25 points.|4|100668267|20|26|50|0|0|175|1|1|0.15|1|506|150|0|-1004109824|4|73|8|73|29|45|60|0|0|19|0|0|0|0|7774|16|0
-507|Crossbow Ineptitude Self V|Decreases the caster's Crossbow skill by 30 points.|4|100668267|20|26|60|0|0|225|1|1|0.2|1|507|180|0|-1004109824|5|74|8|74|29|45|72|60|0|19|0|0|0|0|7780|16|0
-508|Crossbow Ineptitude Self VI|Decreases the caster's Crossbow skill by 35 points.|4|100668267|20|26|70|0|0|275|1|1|0.3|1|508|210|0|-1004109824|6|63|8|63|29|45|73|60|0|19|0|0|0|0|7786|16|0
+485|Crossbow Mastery Other I|Increases the target's Crossbow skill by 10 points.|4|100668267|21|6|10|0|1|1|1|1|0.01|1|485|1800|0|-1004109824|1|7|29|45|49|0|0|0|0|18|0|0|0|0|7792|16|0
+486|Crossbow Mastery Other II|Increases the target's Crossbow skill by 15 points.|4|100668267|21|6|20|5|0.85|50|1|1|0.05|1|486|1800|0|-1004109824|2|70|7|29|45|49|0|0|0|18|0|0|0|0|7798|16|0
+487|Crossbow Mastery Other III|Increases the target's Crossbow skill by 20 points.|4|100668267|21|6|30|5|0.7|100|1|1|0.1|1|487|1800|0|-1004109824|3|71|7|72|29|45|49|0|0|18|0|0|0|0|7804|16|0
+488|Crossbow Mastery Other IV|Increases the target's Crossbow skill by 25 points.|4|100668267|21|6|40|5|0.55|150|1|1|0.15|1|488|1800|0|-1004109824|4|72|7|73|29|45|49|0|0|18|0|0|0|0|7810|16|0
+489|Crossbow Mastery Other V|Increases the target's Crossbow skill by 30 points.|4|100668267|21|6|50|0|1|200|1|1|0.2|1|489|1800|0|-1004109824|5|73|7|74|29|45|73|49|0|18|0|0|0|0|7816|16|0
+490|Crossbow Mastery Other VI|Increases the target's Crossbow skill by 35 points.|4|100668267|21|6|60|5|0.25|250|1|1|0.3|1|490|2700|0|-1004109824|6|74|7|63|29|45|74|49|0|18|0|0|0|0|7822|16|0
+491|Crossbow Mastery Self I|Increases the caster's Crossbow skill by 10 points.|4|100668267|21|16398|15|0|0|1|1|1|0.01|1|491|1800|0|-1004109824|1|7|29|45|60|0|0|0|0|18|0|0|0|0|7828|16|0
+492|Crossbow Mastery Self II|Increases the caster's Crossbow skill by 15 points.|4|100668267|21|16398|30|0|0|50|1|1|0.05|1|492|1800|0|-1004109824|2|69|7|29|45|60|0|0|0|18|0|0|0|0|7834|16|0
+493|Crossbow Mastery Self III|Increases the caster's Crossbow skill by 20 points.|4|100668267|21|16398|40|0|0|100|1|1|0.1|1|493|1800|0|-1004109824|3|70|7|71|29|45|60|0|0|18|0|0|0|0|7840|16|0
+494|Crossbow Mastery Self IV|Increases the caster's Crossbow skill by 25 points.|4|100668267|21|16398|50|0|0|150|1|1|0.15|1|494|1800|0|-1004109824|4|71|7|72|29|45|60|0|0|18|0|0|0|0|7846|16|0
+495|Crossbow Mastery Self V|Increases the caster's Crossbow skill by 30 points.|4|100668267|21|16398|60|0|0|200|1|1|0.2|1|495|1800|0|-1004109824|5|72|7|73|29|45|71|60|0|18|0|0|0|0|7852|16|0
+496|Crossbow Mastery Self VI|Increases the caster's Crossbow skill by 35 points.|4|100668267|21|16398|70|0|0|250|1|1|0.3|1|496|2700|0|-1004109824|6|73|7|74|29|45|72|60|0|18|0|0|0|0|7858|16|0
+497|Crossbow Ineptitude Other I|Decreases the target's Crossbow skill by 10 points.|4|100668267|22|19|10|0|1|1|1|1|0.01|1|497|60|0|-1004109824|1|8|29|45|50|0|0|0|0|19|0|0|0|0|7720|16|0
+498|Crossbow Ineptitude Other II|Decreases the target's Crossbow skill by 15 points.|4|100668267|22|19|20|5|0.85|75|1|1|0.05|1|498|90|0|-1004109824|2|73|8|29|45|50|0|0|0|19|0|0|0|0|7726|16|0
+499|Crossbow Ineptitude Other III|Decreases the target's Crossbow skill by 20 points.|4|100668267|22|19|30|5|0.7|125|1|1|0.1|1|499|120|0|-1004109824|3|74|8|74|29|45|50|0|0|19|0|0|0|0|7732|16|0
+500|Crossbow Ineptitude Other IV|Decreases the target's Crossbow skill by 25 points.|4|100668267|22|19|40|5|0.55|175|1|1|0.15|1|500|150|0|-1004109824|4|63|8|63|29|45|50|0|0|19|0|0|0|0|7738|16|0
+501|Crossbow Ineptitude Other V|Decreases the target's Crossbow skill by 30 points.|4|100668267|22|19|50|5|0.4|225|1|1|0.2|1|501|180|0|-1004109824|5|64|8|64|29|45|64|50|0|19|0|0|0|0|7744|16|0
+502|Crossbow Ineptitude Other VI|Decreases the target's Crossbow skill by 35 points.|4|100668267|22|19|60|5|0.25|275|1|1|0.3|1|502|210|0|-1004109824|6|65|8|65|29|45|65|50|0|19|0|0|0|0|7750|16|0
+503|Crossbow Ineptitude Self I|Decreases the caster's Crossbow skill by 10 points.|4|100668267|22|26|15|0|0|1|1|1|0.01|1|503|60|0|-1004109824|1|8|29|45|60|0|0|0|0|19|0|0|0|0|7756|16|0
+504|Crossbow Ineptitude Self II|Decreases the caster's Crossbow skill by 15 points.|4|100668267|22|26|30|0|0|75|1|1|0.05|1|504|90|0|-1004109824|2|71|8|29|45|60|0|0|0|19|0|0|0|0|7762|16|0
+505|Crossbow Ineptitude Self III|Decreases the caster's Crossbow skill by 20 points.|4|100668267|22|26|40|0|0|125|1|1|0.1|1|505|120|0|-1004109824|3|72|8|72|29|45|60|0|0|19|0|0|0|0|7768|16|0
+506|Crossbow Ineptitude Self IV|Decreases the caster's Crossbow skill by 25 points.|4|100668267|22|26|50|0|0|175|1|1|0.15|1|506|150|0|-1004109824|4|73|8|73|29|45|60|0|0|19|0|0|0|0|7774|16|0
+507|Crossbow Ineptitude Self V|Decreases the caster's Crossbow skill by 30 points.|4|100668267|22|26|60|0|0|225|1|1|0.2|1|507|180|0|-1004109824|5|74|8|74|29|45|72|60|0|19|0|0|0|0|7780|16|0
+508|Crossbow Ineptitude Self VI|Decreases the caster's Crossbow skill by 35 points.|4|100668267|22|26|70|0|0|275|1|1|0.3|1|508|210|0|-1004109824|6|63|8|63|29|45|73|60|0|19|0|0|0|0|7786|16|0
 509|Acid Protection Other I|Reduces damage the target takes from acid by 9%.|2|100668344|101|6|10|5|1|1|0|1|0.01|1|509|1800|0|-1004109824|1|13|34|42|54|0|0|0|0|49|0|0|0|0|70|16|0
 510|Acid Protection Other II|Reduces damage the target takes from acid by 20%.|2|100668344|101|6|20|5|0.85|50|0|1|0.05|1|510|1800|0|-1004109824|2|65|13|34|42|54|0|0|0|49|0|0|0|0|72|16|0
 511|Acid Protection Other III|Reduces damage the target takes from acid by 33%.|2|100668344|101|6|30|5|0.7|100|0|1|0.1|1|511|1800|0|-1004109824|3|66|13|63|34|42|54|0|0|49|0|0|0|0|74|16|0
@@ -505,30 +505,30 @@
 530|Acid Vulnerability Self IV|Increases damage the caster takes from acid by 75%.|2|100668344|102|26|50|0|0|175|1|1|0.15|1|530|150|0|-1004109824|4|65|14|73|34|42|62|0|0|50|0|0|0|0|178|16|0
 531|Acid Vulnerability Self V|Increases damage the caster takes from acid by 100%.|2|100668344|102|26|60|0|0|225|1|1|0.2|1|531|180|0|-1004109824|5|66|14|74|34|42|72|62|0|50|0|0|0|0|180|16|0
 532|Acid Vulnerability Self VI|Increases damage the caster takes from acid by 150%.|2|100668344|102|26|70|0|0|275|1|1|0.3|1|532|210|0|-1004109824|6|67|14|63|34|42|73|62|0|50|0|0|0|0|182|16|0
-533|Thrown Weapons Mastery Other I|Increases the target's Thrown Weapons skill by 10 points.|4|100668303|19|6|10|0|1|1|1|1|0.01|1|533|1800|0|-1004109824|1|7|29|45|49|0|0|0|0|18|0|0|0|0|7794|16|0
-534|Thrown Weapons Mastery Other II|Increases the target's Thrown Weapons skill by 15 points.|4|100668303|19|6|20|5|0.85|50|1|1|0.05|1|534|1800|0|-1004109824|2|70|7|29|45|49|0|0|0|18|0|0|0|0|7800|16|0
-535|Thrown Weapons Mastery Other III|Increases the target's Thrown Weapons skill by 20 points.|4|100668303|19|6|30|5|0.7|100|1|1|0.1|1|535|1800|0|-1004109824|3|71|7|72|29|45|49|0|0|18|0|0|0|0|7806|16|0
-536|Thrown Weapons Mastery Other IV|Increases the target's Thrown Weapons skill by 25 points.|4|100668303|19|6|40|5|0.55|150|1|1|0.15|1|536|1800|0|-1004109824|4|72|7|73|29|45|49|0|0|18|0|0|0|0|7812|16|0
-537|Thrown Weapons Mastery Other V|Increases the target's Thrown Weapons skill by 30 points.|4|100668303|19|6|50|0|1|200|1|1|0.2|1|537|1800|0|-1004109824|5|73|7|74|29|45|73|49|0|18|0|0|0|0|7818|16|0
-538|Thrown Weapons Mastery Other VI|Increases the target's Thrown Weapons skill by 35 points.|4|100668303|19|6|60|5|0.25|250|1|1|0.3|1|538|2700|0|-1004109824|6|74|7|63|29|45|74|49|0|18|0|0|0|0|7824|16|0
-539|Thrown Weapons Mastery Self I|Increases the caster's Thrown Weapons skill by 10 points.|4|100668303|19|16398|15|0|0|1|1|1|0.01|1|539|1800|0|-1004109824|1|7|29|45|60|0|0|0|0|18|0|0|0|0|7830|16|0
-540|Thrown Weapons Mastery Self II|Increases the caster's Thrown Weapons skill by 15 points.|4|100668303|19|16398|30|0|0|50|1|1|0.05|1|540|1800|0|-1004109824|2|69|7|29|45|60|0|0|0|18|0|0|0|0|7836|16|0
-541|Thrown Weapons Mastery Self III|Increases the caster's Thrown Weapons skill by 20 points.|4|100668303|19|16398|40|0|0|100|1|1|0.1|1|541|1800|0|-1004109824|3|70|7|71|29|45|60|0|0|18|0|0|0|0|7842|16|0
-542|Thrown Weapons Mastery Self IV|Increases the caster's Thrown Weapons skill by 25 points.|4|100668303|19|16398|50|0|0|150|1|1|0.15|1|542|1800|0|-1004109824|4|71|7|72|29|45|60|0|0|18|0|0|0|0|7848|16|0
-543|Thrown Weapons Mastery Self V|Increases the caster's Thrown Weapons skill by 30 points.|4|100668303|19|16398|60|0|0|200|1|1|0.2|1|543|1800|0|-1004109824|5|72|7|73|29|45|71|60|0|18|0|0|0|0|7854|16|0
-544|Thrown Weapons Mastery Self VI|Increases the caster's Thrown Weapons skill by 35 points.|4|100668303|19|16398|70|0|0|250|1|1|0.3|1|544|2700|0|-1004109824|6|73|7|74|29|45|72|60|0|18|0|0|0|0|7860|16|0
-545|Thrown Weapons Ineptitude Other I|Decreases the target's Thrown Weapons skill by 10 points.|4|100668303|20|19|10|0|1|1|1|1|0.01|1|545|60|0|-1004109824|1|8|29|45|50|0|0|0|0|19|0|0|0|0|7722|16|0
-546|Thrown Weapons Ineptitude Other II|Decreases the target's Thrown Weapons skill by 15 points.|4|100668303|20|19|20|5|0.85|75|1|1|0.05|1|546|90|0|-1004109824|2|73|8|29|45|50|0|0|0|19|0|0|0|0|7728|16|0
-547|Thrown Weapons Ineptitude Other III|Decreases the target's Thrown Weapons skill by 20 points.|4|100668303|20|19|30|5|0.7|125|1|1|0.1|1|547|120|0|-1004109824|3|74|8|74|29|45|50|0|0|19|0|0|0|0|7734|16|0
-548|Thrown Weapons Ineptitude Other IV|Decreases the target's Thrown Weapons skill by 25 points.|4|100668303|20|19|40|5|0.55|175|1|1|0.15|1|548|150|0|-1004109824|4|63|8|63|29|45|50|0|0|19|0|0|0|0|7740|16|0
-549|Thrown Weapons Ineptitude Other V|Decreases the target's Thrown Weapons skill by 30 points.|4|100668303|20|19|50|5|0.4|225|1|1|0.2|1|549|180|0|-1004109824|5|64|8|64|29|45|64|50|0|19|0|0|0|0|7746|16|0
-550|Thrown Weapons Ineptitude Other VI|Decreases the target's Thrown Weapons skill by 35 points.|4|100668303|20|19|60|5|0.25|275|1|1|0.3|1|550|210|0|-1004109824|6|65|8|65|29|45|65|50|0|19|0|0|0|0|7752|16|0
-551|Thrown Weapons Ineptitude Self I|Decreases the caster's Thrown Weapons skill by 10 points.|4|100668303|20|26|15|0|0|1|1|1|0.01|1|551|60|0|-1004109824|1|8|29|45|60|0|0|0|0|19|0|0|0|0|7758|16|0
-552|Thrown Weapons Ineptitude Self II|Decreases the caster's Thrown Weapons skill by 15 points.|4|100668303|20|26|30|0|0|75|1|1|0.05|1|552|90|0|-1004109824|2|71|8|29|45|60|0|0|0|19|0|0|0|0|7764|16|0
-553|Thrown Weapons Ineptitude Self III|Decreases the caster's Thrown Weapons skill by 20 points.|4|100668303|20|26|40|0|0|125|1|1|0.1|1|553|120|0|-1004109824|3|72|8|72|29|45|60|0|0|19|0|0|0|0|7770|16|0
-554|Thrown Weapons Ineptitude Self IV|Decreases the caster's Thrown Weapons skill by 25 points.|4|100668303|20|26|50|0|0|175|1|1|0.15|1|554|150|0|-1004109824|4|73|8|73|29|45|60|0|0|19|0|0|0|0|7776|16|0
-555|Thrown Weapons Ineptitude Self V|Decreases the caster's Thrown Weapons skill by 30 points.|4|100668303|20|26|60|0|0|225|1|1|0.2|1|555|180|0|-1004109824|5|74|8|74|29|45|72|60|0|19|0|0|0|0|7782|16|0
-556|Thrown Weapons Ineptitude Self VI|Decreases the caster's Thrown Weapons skill by 35 points.|4|100668303|20|26|70|0|0|275|1|1|0.3|1|556|210|0|-1004109824|6|63|8|63|29|45|73|60|0|19|0|0|0|0|7788|16|0
+533|Thrown Weapons Mastery Other I|Increases the target's Thrown Weapons skill by 10 points.|4|100668303|33|6|10|0|1|1|1|1|0.01|1|533|1800|0|-1004109824|1|7|29|45|49|0|0|0|0|18|0|0|0|0|7794|16|0
+534|Thrown Weapons Mastery Other II|Increases the target's Thrown Weapons skill by 15 points.|4|100668303|33|6|20|5|0.85|50|1|1|0.05|1|534|1800|0|-1004109824|2|70|7|29|45|49|0|0|0|18|0|0|0|0|7800|16|0
+535|Thrown Weapons Mastery Other III|Increases the target's Thrown Weapons skill by 20 points.|4|100668303|33|6|30|5|0.7|100|1|1|0.1|1|535|1800|0|-1004109824|3|71|7|72|29|45|49|0|0|18|0|0|0|0|7806|16|0
+536|Thrown Weapons Mastery Other IV|Increases the target's Thrown Weapons skill by 25 points.|4|100668303|33|6|40|5|0.55|150|1|1|0.15|1|536|1800|0|-1004109824|4|72|7|73|29|45|49|0|0|18|0|0|0|0|7812|16|0
+537|Thrown Weapons Mastery Other V|Increases the target's Thrown Weapons skill by 30 points.|4|100668303|33|6|50|0|1|200|1|1|0.2|1|537|1800|0|-1004109824|5|73|7|74|29|45|73|49|0|18|0|0|0|0|7818|16|0
+538|Thrown Weapons Mastery Other VI|Increases the target's Thrown Weapons skill by 35 points.|4|100668303|33|6|60|5|0.25|250|1|1|0.3|1|538|2700|0|-1004109824|6|74|7|63|29|45|74|49|0|18|0|0|0|0|7824|16|0
+539|Thrown Weapons Mastery Self I|Increases the caster's Thrown Weapons skill by 10 points.|4|100668303|33|16398|15|0|0|1|1|1|0.01|1|539|1800|0|-1004109824|1|7|29|45|60|0|0|0|0|18|0|0|0|0|7830|16|0
+540|Thrown Weapons Mastery Self II|Increases the caster's Thrown Weapons skill by 15 points.|4|100668303|33|16398|30|0|0|50|1|1|0.05|1|540|1800|0|-1004109824|2|69|7|29|45|60|0|0|0|18|0|0|0|0|7836|16|0
+541|Thrown Weapons Mastery Self III|Increases the caster's Thrown Weapons skill by 20 points.|4|100668303|33|16398|40|0|0|100|1|1|0.1|1|541|1800|0|-1004109824|3|70|7|71|29|45|60|0|0|18|0|0|0|0|7842|16|0
+542|Thrown Weapons Mastery Self IV|Increases the caster's Thrown Weapons skill by 25 points.|4|100668303|33|16398|50|0|0|150|1|1|0.15|1|542|1800|0|-1004109824|4|71|7|72|29|45|60|0|0|18|0|0|0|0|7848|16|0
+543|Thrown Weapons Mastery Self V|Increases the caster's Thrown Weapons skill by 30 points.|4|100668303|33|16398|60|0|0|200|1|1|0.2|1|543|1800|0|-1004109824|5|72|7|73|29|45|71|60|0|18|0|0|0|0|7854|16|0
+544|Thrown Weapons Mastery Self VI|Increases the caster's Thrown Weapons skill by 35 points.|4|100668303|33|16398|70|0|0|250|1|1|0.3|1|544|2700|0|-1004109824|6|73|7|74|29|45|72|60|0|18|0|0|0|0|7860|16|0
+545|Thrown Weapons Ineptitude Other I|Decreases the target's Thrown Weapons skill by 10 points.|4|100668303|34|19|10|0|1|1|1|1|0.01|1|545|60|0|-1004109824|1|8|29|45|50|0|0|0|0|19|0|0|0|0|7722|16|0
+546|Thrown Weapons Ineptitude Other II|Decreases the target's Thrown Weapons skill by 15 points.|4|100668303|34|19|20|5|0.85|75|1|1|0.05|1|546|90|0|-1004109824|2|73|8|29|45|50|0|0|0|19|0|0|0|0|7728|16|0
+547|Thrown Weapons Ineptitude Other III|Decreases the target's Thrown Weapons skill by 20 points.|4|100668303|34|19|30|5|0.7|125|1|1|0.1|1|547|120|0|-1004109824|3|74|8|74|29|45|50|0|0|19|0|0|0|0|7734|16|0
+548|Thrown Weapons Ineptitude Other IV|Decreases the target's Thrown Weapons skill by 25 points.|4|100668303|34|19|40|5|0.55|175|1|1|0.15|1|548|150|0|-1004109824|4|63|8|63|29|45|50|0|0|19|0|0|0|0|7740|16|0
+549|Thrown Weapons Ineptitude Other V|Decreases the target's Thrown Weapons skill by 30 points.|4|100668303|34|19|50|5|0.4|225|1|1|0.2|1|549|180|0|-1004109824|5|64|8|64|29|45|64|50|0|19|0|0|0|0|7746|16|0
+550|Thrown Weapons Ineptitude Other VI|Decreases the target's Thrown Weapons skill by 35 points.|4|100668303|34|19|60|5|0.25|275|1|1|0.3|1|550|210|0|-1004109824|6|65|8|65|29|45|65|50|0|19|0|0|0|0|7752|16|0
+551|Thrown Weapons Ineptitude Self I|Decreases the caster's Thrown Weapons skill by 10 points.|4|100668303|34|26|15|0|0|1|1|1|0.01|1|551|60|0|-1004109824|1|8|29|45|60|0|0|0|0|19|0|0|0|0|7758|16|0
+552|Thrown Weapons Ineptitude Self II|Decreases the caster's Thrown Weapons skill by 15 points.|4|100668303|34|26|30|0|0|75|1|1|0.05|1|552|90|0|-1004109824|2|71|8|29|45|60|0|0|0|19|0|0|0|0|7764|16|0
+553|Thrown Weapons Ineptitude Self III|Decreases the caster's Thrown Weapons skill by 20 points.|4|100668303|34|26|40|0|0|125|1|1|0.1|1|553|120|0|-1004109824|3|72|8|72|29|45|60|0|0|19|0|0|0|0|7770|16|0
+554|Thrown Weapons Ineptitude Self IV|Decreases the caster's Thrown Weapons skill by 25 points.|4|100668303|34|26|50|0|0|175|1|1|0.15|1|554|150|0|-1004109824|4|73|8|73|29|45|60|0|0|19|0|0|0|0|7776|16|0
+555|Thrown Weapons Ineptitude Self V|Decreases the caster's Thrown Weapons skill by 30 points.|4|100668303|34|26|60|0|0|225|1|1|0.2|1|555|180|0|-1004109824|5|74|8|74|29|45|72|60|0|19|0|0|0|0|7782|16|0
+556|Thrown Weapons Ineptitude Self VI|Decreases the caster's Thrown Weapons skill by 35 points.|4|100668303|34|26|70|0|0|275|1|1|0.3|1|556|210|0|-1004109824|6|63|8|63|29|45|73|60|0|19|0|0|0|0|7788|16|0
 557|Creature Enchantment Mastery Self I|Increases the caster's Creature Enchantment skill by 10 points.|4|100668358|43|16398|15|0|0|1|1|1|0.01|1|557|1800|0|-1004109824|1|7|25|42|60|0|0|0|0|26|0|0|0|0|1866|16|0
 558|Creature Enchantment Mastery Self II|Increases the caster's Creature Enchantment skill by 15 points.|4|100668358|43|16398|30|0|0|50|1|1|0.05|1|558|1800|0|-1004109824|2|74|7|25|42|60|0|0|0|26|0|0|0|0|1868|16|0
 559|Creature Enchantment Mastery Self III|Increases the caster's Creature Enchantment skill by 20 points.|4|100668358|43|16398|40|0|0|100|1|1|0.1|1|559|1800|0|-1004109824|3|63|7|69|25|42|60|0|0|26|0|0|0|0|1870|16|0
@@ -2143,10 +2143,10 @@
 2213|Creature Enchantment Ineptitude Self VII|Decreases the caster's Creature Enchantment skill by 40 points.|4|100668358|44|154|70|0|0|325|1|1|0.15|1|2213|240|0|-1004109824|112|68|8|73|25|42|66|60|0|27|0|0|0|0|1853|16|0
 2214|Adja's Boon|Increases the target's Creature Enchantment skill by 40 points.|4|100668358|43|134|70|5|0.25|300|1|1|0.15|1|2214|3600|0|-1004109824|112|67|7|73|25|42|67|49|0|26|0|0|0|0|1865|16|0
 2215|Adja's Blessing|Increases the caster's Creature Enchantment skill by 40 points.|4|100668358|43|16526|70|0|0|300|1|1|0.15|1|2215|3600|0|-1004109824|112|66|7|72|25|42|65|60|0|26|0|0|0|0|1877|16|0
-2216|Itchy Finger|Decreases the target's Crossbow skill by 40 points.|4|100668267|20|147|70|5|0.25|325|1|1|0.15|1|2216|240|0|-1004109824|112|65|8|65|29|45|65|50|0|19|0|0|0|0|7751|16|0
-2217|Crossbow Ineptitude Self VII|Decreases the caster's Crossbow skill by 40 points.|4|100668267|20|154|70|0|0|325|1|1|0.15|1|2217|240|0|-1004109824|112|63|8|63|29|45|73|60|0|19|0|0|0|0|7787|16|0
-2218|Barnar's Boon|Increases the target's Crossbow skill by 40 points.|4|100668267|19|134|70|5|0.25|300|1|1|0.15|1|2218|3600|0|-1004109824|112|74|7|63|29|45|74|49|0|18|0|0|0|0|7823|16|0
-2219|Barnar's Blessing|Increases the caster's Crossbow skill by 40 points.|4|100668267|19|16526|70|0|0|300|1|1|0.15|1|2219|3600|0|-1004109824|112|73|7|74|29|45|72|60|0|18|0|0|0|0|7859|16|0
+2216|Itchy Finger|Decreases the target's Crossbow skill by 40 points.|4|100668267|22|147|70|5|0.25|325|1|1|0.15|1|2216|240|0|-1004109824|112|65|8|65|29|45|65|50|0|19|0|0|0|0|7751|16|0
+2217|Crossbow Ineptitude Self VII|Decreases the caster's Crossbow skill by 40 points.|4|100668267|22|154|70|0|0|325|1|1|0.15|1|2217|240|0|-1004109824|112|63|8|63|29|45|73|60|0|19|0|0|0|0|7787|16|0
+2218|Barnar's Boon|Increases the target's Crossbow skill by 40 points.|4|100668267|21|134|70|5|0.25|300|1|1|0.15|1|2218|3600|0|-1004109824|112|74|7|63|29|45|74|49|0|18|0|0|0|0|7823|16|0
+2219|Barnar's Blessing|Increases the caster's Crossbow skill by 40 points.|4|100668267|21|16526|70|0|0|300|1|1|0.15|1|2219|3600|0|-1004109824|112|73|7|74|29|45|72|60|0|18|0|0|0|0|7859|16|0
 2220|Picking of the Teeth|Decreases the target's Dagger skill by 40 points.|4|100668269|24|147|70|5|0.25|325|1|1|0.15|1|2220|240|0|-1004109824|112|70|8|63|35|44|70|50|0|19|0|0|0|0|3213|16|0
 2221|Dagger Ineptitude Self VII|Decreases the caster's Dagger skill by 40 points.|4|100668269|24|154|70|0|0|325|1|1|0.15|1|2221|240|0|-1004109824|112|68|8|73|35|44|66|60|0|19|0|0|0|0|3225|16|0
 2222|Gertarh's Boon|Increases the target's Dagger skill by 40 points.|4|100668269|23|134|70|5|0.25|300|1|1|0.15|1|2222|3600|0|-1004109824|112|67|7|73|35|44|67|49|0|18|0|0|0|0|3237|16|0
@@ -2199,10 +2199,10 @@
 2269|Lockpick Ineptitude Self VII|Decreases the caster's Lockpick skill by 40 points.|4|100668284|74|154|70|0|0|325|1|1|0.15|1|2269|240|0|-1004109824|112|72|8|69|28|43|70|60|0|21|0|0|0|0|6783|16|0
 2270|Oswald's Boon|Increases the target's Lockpick skill by 40 points.|4|100668284|73|134|70|5|0.25|300|1|1|0.15|1|2270|3600|0|-1004109824|112|71|7|69|28|43|71|49|0|20|0|0|0|0|6795|16|0
 2271|Oswald's Blessing|Increases the caster's Lockpick skill by 40 points.|4|100668284|73|16526|70|0|0|300|1|1|0.15|1|2271|3600|0|-1004109824|112|70|7|68|28|43|69|60|0|20|0|0|0|0|6807|16|0
-2272|Top Heavy Swing|Decreases the target's Mace skill by 40 points.|4|100668287|18|147|70|5|0.25|325|1|1|0.15|1|2272|240|0|-1004109824|112|71|8|65|35|45|71|50|0|19|0|0|0|0|6413|16|0
-2273|Mace Ineptitude Self VII|Decreases the caster's Mace skill by 40 points.|4|100668287|18|154|70|0|0|325|1|1|0.15|1|2273|240|0|-1004109824|112|69|8|63|35|45|67|60|0|19|0|0|0|0|6473|16|0
-2274|Mi-Krauli's Boon|Increases the target's Mace skill by 40 points.|4|100668287|17|134|70|5|0.25|300|1|1|0.15|1|2274|3600|0|-1004109824|112|68|7|63|35|45|68|49|0|18|0|0|0|0|6533|16|0
-2275|Mi-Krauli's Blessing|Increases the caster's Mace skill by 40 points.|4|100668287|17|16526|70|0|0|300|1|1|0.15|1|2275|3600|0|-1004109824|112|67|7|74|35|45|66|60|0|18|0|0|0|0|6593|16|0
+2272|Top Heavy Swing|Decreases the target's Mace skill by 40 points.|4|100668287|26|147|70|5|0.25|325|1|1|0.15|1|2272|240|0|-1004109824|112|71|8|65|35|45|71|50|0|19|0|0|0|0|6413|16|0
+2273|Mace Ineptitude Self VII|Decreases the caster's Mace skill by 40 points.|4|100668287|26|154|70|0|0|325|1|1|0.15|1|2273|240|0|-1004109824|112|69|8|63|35|45|67|60|0|19|0|0|0|0|6473|16|0
+2274|Mi-Krauli's Boon|Increases the target's Mace skill by 40 points.|4|100668287|25|134|70|5|0.25|300|1|1|0.15|1|2274|3600|0|-1004109824|112|68|7|63|35|45|68|49|0|18|0|0|0|0|6533|16|0
+2275|Mi-Krauli's Blessing|Increases the caster's Mace skill by 40 points.|4|100668287|25|16526|70|0|0|300|1|1|0.15|1|2275|3600|0|-1004109824|112|67|7|74|35|45|66|60|0|18|0|0|0|0|6593|16|0
 2276|Celdiseth's Boon|Increases the target's Magic Item Tinkering skill by 40 points.|4|100668354|59|135|70|5|0.25|300|1|1|0.15|1|2276|3600|0|-1004109824|112|73|7|73|25|48|73|49|0|28|0|0|0|0|6855|16|0
 2277|Celdiseth's Blessing|Increases the caster's Magic Item Tinkering skill by 40 points.|4|100668354|59|16526|70|0|0|300|1|1|0.15|1|2277|3600|0|-1004109824|112|72|7|72|25|48|71|60|0|28|0|0|0|0|6867|16|0
 2278|Eyes Clouded|Decreases the target's Magic Item Tinkering skill by 40 points.|4|100668354|60|147|70|5|0.25|325|1|1|0.15|1|2278|240|0|-1004109824|112|64|8|63|25|48|64|50|0|29|0|0|0|0|6879|16|0
@@ -2223,28 +2223,28 @@
 2293|Kaluhc's Blessing|Increases the caster's Assess Person skill by 40 points.|4|100668355|205|16526|70|0|0|300|1|1|0.15|1|2293|3600|0|-1004109824|112|71|7|70|28|44|70|60|0|28|0|0|0|0|8561|16|0
 2294|Introversion|Decreases the target's Assess Person skill by 40 points.|4|100668355|206|147|70|5|0.25|325|1|1|0.15|1|2294|240|0|-1004109824|112|63|8|73|28|44|63|50|0|29|0|0|0|0|8573|16|0
 2295|Person Unfamiliarity Self VII|Decreases the caster's Assess Person skill by 40 points.|4|100668355|206|154|70|0|0|325|1|1|0.15|1|2295|240|0|-1004109824|112|73|8|71|28|44|71|60|0|29|0|0|0|0|8585|16|0
-2296|Headbreaker|Decreases the target's Spear skill by 40 points.|4|100668297|18|147|70|5|0.25|325|1|1|0.15|1|2296|240|0|-1004109824|112|71|8|65|35|45|71|50|0|19|0|0|0|0|6415|16|0
-2297|Spear Ineptitude Self VII|Decreases the caster's Spear skill by 40 points.|4|100668297|18|154|70|0|0|325|1|1|0.15|1|2297|240|0|-1004109824|112|69|8|63|35|45|67|60|0|19|0|0|0|0|6475|16|0
-2298|Tibri's Boon|Increases the target's Spear skill by 40 points.|4|100668297|17|134|70|5|0.25|300|1|1|0.15|1|2298|3600|0|-1004109824|112|68|7|63|35|45|68|49|0|18|0|0|0|0|6535|16|0
-2299|Tibri's Blessing|Increases the caster's Spear skill by 40 points.|4|100668297|17|16526|70|0|0|300|1|1|0.15|1|2299|3600|0|-1004109824|112|67|7|74|35|45|66|60|0|18|0|0|0|0|6595|16|0
+2296|Headbreaker|Decreases the target's Spear skill by 40 points.|4|100668297|28|147|70|5|0.25|325|1|1|0.15|1|2296|240|0|-1004109824|112|71|8|65|35|45|71|50|0|19|0|0|0|0|6415|16|0
+2297|Spear Ineptitude Self VII|Decreases the caster's Spear skill by 40 points.|4|100668297|28|154|70|0|0|325|1|1|0.15|1|2297|240|0|-1004109824|112|69|8|63|35|45|67|60|0|19|0|0|0|0|6475|16|0
+2298|Tibri's Boon|Increases the target's Spear skill by 40 points.|4|100668297|27|134|70|5|0.25|300|1|1|0.15|1|2298|3600|0|-1004109824|112|68|7|63|35|45|68|49|0|18|0|0|0|0|6535|16|0
+2299|Tibri's Blessing|Increases the caster's Spear skill by 40 points.|4|100668297|27|16526|70|0|0|300|1|1|0.15|1|2299|3600|0|-1004109824|112|67|7|74|35|45|66|60|0|18|0|0|0|0|6595|16|0
 2300|Saladur's Boon|Increases the target's Run skill by 40 points.|4|100668295|77|134|70|5|0.25|300|1|1|0.15|1|2300|3600|0|-1004109824|112|63|7|65|28|47|63|49|0|24|0|0|0|0|10317|16|0
 2301|Saladur's Blessing|Increases the caster's Run skill by 40 points.|4|100668295|77|16526|70|0|0|300|1|1|0.15|1|2301|3600|0|-1004109824|112|74|7|64|28|47|73|60|0|24|0|0|0|0|10329|16|0
-2302|The Shaft|Decreases the target's Staff skill by 40 points.|4|100668298|18|147|70|5|0.25|325|1|1|0.15|1|2302|240|0|-1004109824|112|71|8|65|35|45|71|50|0|19|0|0|0|0|6417|16|0
-2303|Staff Ineptitude Self VII|Decreases the caster's Staff skill by 40 points.|4|100668298|18|154|70|0|0|325|1|1|0.15|1|2303|240|0|-1004109824|112|69|8|63|35|45|67|60|0|19|0|0|0|0|6477|16|0
-2304|Anadil's Boon|Increases the target's Staff skill by 40 points.|4|100668298|17|134|70|5|0.25|300|1|1|0.15|1|2304|3600|0|-1004109824|112|68|7|63|35|45|68|49|0|18|0|0|0|0|6537|16|0
-2305|Anadil's Blessing|Increases the caster's Staff skill by 40 points.|4|100668298|17|16526|70|0|0|300|1|1|0.15|1|2305|3600|0|-1004109824|112|67|7|74|35|45|66|60|0|18|0|0|0|0|6597|16|0
+2302|The Shaft|Decreases the target's Staff skill by 40 points.|4|100668298|30|147|70|5|0.25|325|1|1|0.15|1|2302|240|0|-1004109824|112|71|8|65|35|45|71|50|0|19|0|0|0|0|6417|16|0
+2303|Staff Ineptitude Self VII|Decreases the caster's Staff skill by 40 points.|4|100668298|30|154|70|0|0|325|1|1|0.15|1|2303|240|0|-1004109824|112|69|8|63|35|45|67|60|0|19|0|0|0|0|6477|16|0
+2304|Anadil's Boon|Increases the target's Staff skill by 40 points.|4|100668298|29|134|70|5|0.25|300|1|1|0.15|1|2304|3600|0|-1004109824|112|68|7|63|35|45|68|49|0|18|0|0|0|0|6537|16|0
+2305|Anadil's Blessing|Increases the caster's Staff skill by 40 points.|4|100668298|29|16526|70|0|0|300|1|1|0.15|1|2305|3600|0|-1004109824|112|67|7|74|35|45|66|60|0|18|0|0|0|0|6597|16|0
 2306|Metallophobia|Decreases the target's Sword skill by 40 points.|4|100668302|32|147|70|5|0.25|325|1|1|0.15|1|2306|240|0|-1004109824|112|69|8|73|35|43|69|50|0|19|0|0|0|0|4323|16|0
 2307|Sword Ineptitude Self VII|Decreases the caster's Sword skill by 40 points.|4|100668302|32|154|70|0|0|325|1|1|0.15|1|2307|240|0|-1004109824|112|67|8|71|35|43|65|60|0|19|0|0|0|0|4335|16|0
 2308|MacNiall's Boon|Increases the target's Sword skill by 40 points.|4|100668302|31|134|70|5|0.25|300|1|1|0.15|1|2308|3600|0|-1004109824|112|66|7|71|35|43|66|49|0|18|0|0|0|0|4347|16|0
 2309|MacNiall's Blessing|Increases the caster's Sword skill by 40 points.|4|100668302|31|16526|70|0|0|300|1|1|0.15|1|2309|3600|0|-1004109824|112|65|7|70|35|43|64|60|0|18|0|0|0|0|4359|16|0
-2310|The Wrong Spell|Decreases the target's Thrown Weapons skill by 40 points.|4|100668303|20|147|70|5|0.25|325|1|1|0.15|1|2310|240|0|-1004109824|112|65|8|65|29|45|65|50|0|19|0|0|0|0|7753|16|0
-2311|Thrown Weapons Ineptitude Self VII|Decreases the caster's Thrown Weapons skill by 40 points.|4|100668303|20|154|70|0|0|325|1|1|0.15|1|2311|240|0|-1004109824|112|63|8|63|29|45|73|60|0|19|0|0|0|0|7789|16|0
-2312|Asmolum's Boon|Increases the target's Thrown Weapons skill by 40 points.|4|100668303|19|134|70|5|0.25|300|1|1|0.15|1|2312|3600|0|-1004109824|112|74|7|63|29|45|74|49|0|18|0|0|0|0|7825|16|0
-2313|Asmolum's Blessing|Increases the caster's Thrown Weapons skill by 40 points.|4|100668303|19|16526|70|0|0|300|1|1|0.15|1|2313|3600|0|-1004109824|112|73|7|74|29|45|72|60|0|18|0|0|0|0|7861|16|0
-2314|Hamfistedness|Decreases the target's Unarmed Combat skill by 40 points.|4|100668274|18|147|70|5|0.25|325|1|1|0.15|1|2314|240|0|-1004109824|112|71|8|65|35|45|71|50|0|19|0|0|0|0|6419|16|0
-2315|Hamud's Boon|Increases the target's Unarmed Combat skill by 40 points.|4|100668274|17|134|70|5|0.25|300|1|1|0.15|1|2315|3600|0|-1004109824|112|68|7|63|35|45|68|49|0|18|0|0|0|0|6539|16|0
-2316|Hamud's Blessing|Increases the caster's Unarmed Combat skill by 40 points.|4|100668274|17|16526|70|0|0|300|1|1|0.15|1|2316|3600|0|-1004109824|112|67|7|74|35|45|66|60|0|18|0|0|0|0|6599|16|0
-2317|Unarmed Combat Ineptitude Self VII|Decreases the caster's Unarmed Combat skill by 40 points.|4|100668274|18|147|70|5|0.25|325|1|1|0.15|1|2317|240|0|-1004109824|112|71|8|65|35|45|71|50|0|19|0|0|0|0|6479|16|0
+2310|The Wrong Spell|Decreases the target's Thrown Weapons skill by 40 points.|4|100668303|34|147|70|5|0.25|325|1|1|0.15|1|2310|240|0|-1004109824|112|65|8|65|29|45|65|50|0|19|0|0|0|0|7753|16|0
+2311|Thrown Weapons Ineptitude Self VII|Decreases the caster's Thrown Weapons skill by 40 points.|4|100668303|34|154|70|0|0|325|1|1|0.15|1|2311|240|0|-1004109824|112|63|8|63|29|45|73|60|0|19|0|0|0|0|7789|16|0
+2312|Asmolum's Boon|Increases the target's Thrown Weapons skill by 40 points.|4|100668303|33|134|70|5|0.25|300|1|1|0.15|1|2312|3600|0|-1004109824|112|74|7|63|29|45|74|49|0|18|0|0|0|0|7825|16|0
+2313|Asmolum's Blessing|Increases the caster's Thrown Weapons skill by 40 points.|4|100668303|33|16526|70|0|0|300|1|1|0.15|1|2313|3600|0|-1004109824|112|73|7|74|29|45|72|60|0|18|0|0|0|0|7861|16|0
+2314|Hamfistedness|Decreases the target's Unarmed Combat skill by 40 points.|4|100668274|36|147|70|5|0.25|325|1|1|0.15|1|2314|240|0|-1004109824|112|71|8|65|35|45|71|50|0|19|0|0|0|0|6419|16|0
+2315|Hamud's Boon|Increases the target's Unarmed Combat skill by 40 points.|4|100668274|35|134|70|5|0.25|300|1|1|0.15|1|2315|3600|0|-1004109824|112|68|7|63|35|45|68|49|0|18|0|0|0|0|6539|16|0
+2316|Hamud's Blessing|Increases the caster's Unarmed Combat skill by 40 points.|4|100668274|35|16526|70|0|0|300|1|1|0.15|1|2316|3600|0|-1004109824|112|67|7|74|35|45|66|60|0|18|0|0|0|0|6599|16|0
+2317|Unarmed Combat Ineptitude Self VII|Decreases the caster's Unarmed Combat skill by 40 points.|4|100668274|36|147|70|5|0.25|325|1|1|0.15|1|2317|240|0|-1004109824|112|71|8|65|35|45|71|50|0|19|0|0|0|0|6479|16|0
 2318|Gravity Well|Decrease the target's Melee Defense skill by 40 points.|4|100668331|38|147|70|5|0.25|325|1|1|0.15|1|2318|240|0|-1004109824|112|65|8|65|30|44|65|50|0|23|0|0|0|0|10899|16|0
 2319|Vulnerability Self VII|Decrease the target's Melee Defense skill by 40 points.|4|100668331|38|152|70|0|0|325|1|1|0.15|1|2319|240|0|-1004109824|112|63|8|63|30|44|73|60|0|23|0|0|0|0|10911|16|0
 2320|Wrath of the Hieromancer|Decreases the target's War Magic skill by 40 points.|4|100668272|50|147|70|5|0.25|325|1|1|0.15|1|2320|240|0|-1004109824|112|63|8|73|25|47|63|50|0|27|0|0|0|0|10927|16|0
@@ -2388,15 +2388,15 @@
 2458|Greater Cascade|Increases the target's Dagger skill by 15 points.|4|100668269|313|132|10|0|0|15|1|1|0.01|1|2458|780|0|-1004109824|2|2|7|35|44|60|0|0|0|18|0|0|0|0|3920|16|0
 2459|Lesser Cascade|Increases the target's Dagger skill by 8 points.|4|100668269|313|132|10|0|1|8|1|1|0.01|1|2459|780|0|-1004109824|2|66|72|44|66|49|0|0|0|18|0|0|0|0|6144|16|0
 2460|Cascade|Increases the target's Dagger skill by 12 points.|4|100668269|313|132|10|0|1|12|1|1|0.01|1|2460|780|0|-1004109824|2|7|72|72|66|49|0|0|0|18|0|0|0|0|1448|16|0
-2461|Greater Cascade|Increases the target's Mace skill by 15 points.|4|100668287|311|132|10|5|1|15|1|1|0.01|1|2461|780|0|-1004109824|2|67|72|72|66|49|0|0|0|18|0|0|0|0|3922|16|0
-2462|Lesser Cascade|Increases the target's Mace skill by 8 points.|4|100668287|311|132|10|5|1|8|1|1|0.01|1|2462|780|0|-1004109824|4|66|64|72|66|49|0|0|0|18|0|0|0|0|6146|16|0
-2463|Cascade|Increases the target's Mace skill by 12 points.|4|100668287|311|132|10|5|1|12|1|1|0.01|1|2463|780|0|-1004109824|4|66|72|72|64|49|0|0|0|18|0|0|0|0|1450|16|0
-2464|Greater Cascade|Increases the target's Spear skill by 15 points.|4|100668297|311|132|10|5|1|15|1|1|0.01|1|2464|780|0|-1004109824|2|67|72|72|66|49|0|0|0|18|0|0|0|0|3924|16|0
-2465|Lesser Cascade|Increases the target's Spear skill by 8 points.|4|100668297|311|132|10|5|1|8|1|1|0.01|1|2465|780|0|-1004109824|4|66|64|72|66|49|0|0|0|18|0|0|0|0|6148|16|0
-2466|Cascade|Increases the target's Spear skill by 12 points.|4|100668297|311|132|10|5|1|12|1|1|0.01|1|2466|780|0|-1004109824|4|66|72|72|64|49|0|0|0|18|0|0|0|0|1452|16|0
-2467|Greater Cascade|Increases the target's Staff skill by 15 points.|4|100668298|311|132|10|5|1|15|1|1|0.01|1|2467|780|0|-1004109824|2|67|72|72|66|49|0|0|0|18|0|0|0|0|3926|16|0
-2468|Lesser Cascade|Increases the target's Staff skill by 8 points.|4|100668298|311|132|10|5|1|8|1|1|0.01|1|2468|780|0|-1004109824|4|66|64|72|66|49|0|0|0|18|0|0|0|0|6150|16|0
-2469|Cascade|Increases the target's Staff skill by 12 points.|4|100668298|311|132|10|5|1|12|1|1|0.01|1|2469|780|0|-1004109824|4|66|72|72|64|49|0|0|0|18|0|0|0|0|1454|16|0
+2461|Greater Cascade|Increases the target's Mace skill by 15 points.|4|100668287|315|132|10|5|1|15|1|1|0.01|1|2461|780|0|-1004109824|2|67|72|72|66|49|0|0|0|18|0|0|0|0|3922|16|0
+2462|Lesser Cascade|Increases the target's Mace skill by 8 points.|4|100668287|315|132|10|5|1|8|1|1|0.01|1|2462|780|0|-1004109824|4|66|64|72|66|49|0|0|0|18|0|0|0|0|6146|16|0
+2463|Cascade|Increases the target's Mace skill by 12 points.|4|100668287|315|132|10|5|1|12|1|1|0.01|1|2463|780|0|-1004109824|4|66|72|72|64|49|0|0|0|18|0|0|0|0|1450|16|0
+2464|Greater Cascade|Increases the target's Spear skill by 15 points.|4|100668297|317|132|10|5|1|15|1|1|0.01|1|2464|780|0|-1004109824|2|67|72|72|66|49|0|0|0|18|0|0|0|0|3924|16|0
+2465|Lesser Cascade|Increases the target's Spear skill by 8 points.|4|100668297|317|132|10|5|1|8|1|1|0.01|1|2465|780|0|-1004109824|4|66|64|72|66|49|0|0|0|18|0|0|0|0|6148|16|0
+2466|Cascade|Increases the target's Spear skill by 12 points.|4|100668297|317|132|10|5|1|12|1|1|0.01|1|2466|780|0|-1004109824|4|66|72|72|64|49|0|0|0|18|0|0|0|0|1452|16|0
+2467|Greater Cascade|Increases the target's Staff skill by 15 points.|4|100668298|319|132|10|5|1|15|1|1|0.01|1|2467|780|0|-1004109824|2|67|72|72|66|49|0|0|0|18|0|0|0|0|3926|16|0
+2468|Lesser Cascade|Increases the target's Staff skill by 8 points.|4|100668298|319|132|10|5|1|8|1|1|0.01|1|2468|780|0|-1004109824|4|66|64|72|66|49|0|0|0|18|0|0|0|0|6150|16|0
+2469|Cascade|Increases the target's Staff skill by 12 points.|4|100668298|319|132|10|5|1|12|1|1|0.01|1|2469|780|0|-1004109824|4|66|72|72|64|49|0|0|0|18|0|0|0|0|1454|16|0
 2470|Greater Still Water|Increases the target's Endurance by 15 points.|4|100668273|263|132|30|5|0.7|12|1|1|0.1|1|2470|780|0|-1004109824|2|66|72|70|66|49|0|0|0|10|0|0|0|0|4000|16|0
 2471|Lesser Still Water|Increases the target's Endurance by 8 points.|4|100668273|263|132|30|5|0.7|4|1|1|0.1|1|2471|780|0|-1004109824|2|66|72|70|74|49|0|0|0|10|0|0|0|0|6250|16|0
 2472|Still Water|Increases the target's Endurance by 12 points.|4|100668273|263|132|30|5|0.7|8|1|1|0.1|1|2472|780|0|-1004109824|4|66|64|70|64|49|0|0|0|10|0|0|0|0|10398|16|0
@@ -2435,7 +2435,7 @@
 2505|Major Bow Aptitude|Increases the target's Bow skill by 15 points. Additional spells can be layered over this.|4|100668266|331|1156|10|0|1|15|1|1|0.01|1|2505|780|0|-1004109824|2|16|29|45|49|0|0|0|0|18|0|0|0|0|7042|16|0
 2506|Major Cooking Prowess|Increases the target's Cooking skill by 15 points. Additional spells can be layered over this.|4|100670579|339|1156|10|0|1|2|1|1|0.01|1|2506|780|0|-1004109824|2|16|28|37|49|0|0|0|0|20|0|0|0|0|6962|16|0
 2507|Major Creature Enchantment Aptitude|Increases the target's Creature Enchantment skill by 15 points. Additional spells can be layered over this.|4|100668358|251|1156|10|0|1|15|1|1|0.01|1|2507|780|0|-1004109824|2|16|25|42|49|0|0|0|0|26|0|0|0|0|6966|16|0
-2508|Major Crossbow Aptitude|Increases the target's Crossbow skill by 15 points. Additional spells can be layered over this.|4|100668267|331|1156|10|0|1|15|1|1|0.01|1|2508|780|0|-1004109824|2|16|29|45|49|0|0|0|0|18|0|0|0|0|7044|16|0
+2508|Major Crossbow Aptitude|Increases the target's Crossbow skill by 15 points. Additional spells can be layered over this.|4|100668267|341|1156|10|0|1|15|1|1|0.01|1|2508|780|0|-1004109824|2|16|29|45|49|0|0|0|0|18|0|0|0|0|7044|16|0
 2509|Major Dagger Aptitude|Increases the target's Dagger skill by 15 points. Additional spells can be layered over this.|4|100668269|313|1156|10|0|1|15|1|1|0.01|1|2509|780|0|-1004109824|2|16|35|44|49|0|0|0|0|18|0|0|0|0|6980|16|0
 2510|Major Deception Prowess|Increases the target's Deception skill by 15 points. Additional spells can be layered over this.|4|100668296|343|1156|10|0|1|2|1|1|0.01|1|2510|780|0|-1004109824|2|16|28|42|49|0|0|0|0|28|0|0|0|0|6968|16|0
 2511|Major Fealty|Increases the target's Loyalty skill by 15 points. Additional spells can be layered over this.|4|100668286|345|1156|10|0|1|15|1|1|0.01|1|2511|780|0|-1004109824|2|16|28|39|49|0|0|0|0|20|0|0|0|0|6978|16|0
@@ -2449,18 +2449,18 @@
 2519|Major Leadership|Increases the target's Leadership skill by 15 points. Additional spells can be layered over this.|4|100668283|293|1156|10|0|1|2|1|1|0.01|1|2519|780|0|-1004109824|2|16|28|45|49|0|0|0|0|20|0|0|0|0|7018|16|0
 2520|Major Life Magic Aptitude|Increases the target's Life Magic skill by 15 points. Additional spells can be layered over this.|4|100668337|357|1156|10|0|1|15|1|1|0.01|1|2520|780|0|-1004109824|2|16|25|39|49|0|0|0|0|26|0|0|0|0|7020|16|0
 2521|Major Lockpick Prowess|Increases the target's Lockpick skill by 15 points. Additional spells can be layered over this.|4|100668284|359|1156|10|0|1|2|1|1|0.01|1|2521|780|0|-1004109824|2|16|28|43|60|0|0|0|0|20|0|0|0|0|7032|16|0
-2522|Major Mace Aptitude|Increases the target's Mace skill by 15 points. Additional spells can be layered over this.|4|100668287|311|1156|10|0|1|15|1|1|0.01|1|2522|780|0|-1004109824|2|16|35|45|49|0|0|0|0|18|0|0|0|0|7024|16|0
+2522|Major Mace Aptitude|Increases the target's Mace skill by 15 points. Additional spells can be layered over this.|4|100668287|315|1156|10|0|1|15|1|1|0.01|1|2522|780|0|-1004109824|2|16|35|45|49|0|0|0|0|18|0|0|0|0|7024|16|0
 2523|Major Magic Item Tinkering Expertise|Increases the target's Magic Item Tinkering skill by 15 points. Additional spells can be layered over this.|4|100668354|361|1156|10|0|1|2|1|1|0.01|1|2523|780|0|-1004109824|2|16|25|48|49|0|0|0|0|28|0|0|0|0|7034|16|0
 2524|Major Magic Resistance|Increases the target's Magic Defense skill by 15 points. Additional spells can be layered over this.|4|100668330|299|1156|10|0|1|15|1|1|0.01|1|2524|780|0|-1004109824|2|16|30|41|49|0|0|0|0|22|0|0|0|0|7036|16|0
 2525|Major Mana Conversion Prowess|Increases the target's Mana Conversion skill by 15 points. Additional spells can be layered over this.|4|100668288|363|1156|10|0|1|15|1|1|0.01|1|2525|780|0|-1004109824|2|16|25|40|49|0|0|0|0|26|0|0|0|0|7038|16|0
 2526|Major Monster Attunement|Increases the target's Assess Creature skill by 15 points. Additional spells can be layered over this.|4|100668353|365|1156|10|0|1|2|1|1|0.01|1|2526|780|0|-1004109824|2|16|28|41|49|0|0|0|0|28|0|0|0|0|7048|16|0
 2527|Major Person Attunement|Increases the target's Assess Person skill by 15 points. Additional spells can be layered over this.|4|100668355|367|1156|10|0|1|2|1|1|0.01|1|2527|780|0|-1004109824|2|16|28|44|49|0|0|0|0|28|0|0|0|0|7050|16|0
-2528|Major Spear Aptitude|Increases the target's Spear skill by 15 points. Additional spells can be layered over this.|4|100668297|311|1156|10|0|1|15|1|1|0.01|1|2528|780|0|-1004109824|2|16|35|45|49|0|0|0|0|18|0|0|0|0|7026|16|0
+2528|Major Spear Aptitude|Increases the target's Spear skill by 15 points. Additional spells can be layered over this.|4|100668297|317|1156|10|0|1|15|1|1|0.01|1|2528|780|0|-1004109824|2|16|35|45|49|0|0|0|0|18|0|0|0|0|7026|16|0
 2529|Major Sprint|Increases the target's Run skill by 15 points. Additional spells can be layered over this.|4|100668295|369|1156|10|0|1|2|1|1|0.01|1|2529|780|0|-1004109824|2|16|28|47|49|0|0|0|0|24|0|0|0|0|7072|16|0
-2530|Major Staff Aptitude|Increases the target's Staff skill by 15 points. Additional spells can be layered over this.|4|100668298|311|1156|10|0|1|15|1|1|0.01|1|2530|780|0|-1004109824|2|16|35|45|49|0|0|0|0|18|0|0|0|0|7028|16|0
+2530|Major Staff Aptitude|Increases the target's Staff skill by 15 points. Additional spells can be layered over this.|4|100668298|319|1156|10|0|1|15|1|1|0.01|1|2530|780|0|-1004109824|2|16|35|45|49|0|0|0|0|18|0|0|0|0|7028|16|0
 2531|Major Sword Aptitude|Increases the target's Sword skill by 15 points. Additional spells can be layered over this.|4|100668302|371|1156|10|0|1|15|1|1|0.01|1|2531|780|0|-1004109824|2|16|35|43|49|0|0|0|0|18|0|0|0|0|7000|16|0
-2532|Major Thrown Aptitude|Increases the target's Thrown Weapons skill by 15 points. Additional spells can be layered over this.|4|100668303|331|1156|10|0|1|15|1|1|0.01|1|2532|780|0|-1004109824|2|16|29|45|49|0|0|0|0|18|0|0|0|0|7046|16|0
-2533|Major Unarmed Aptitude|Increases the target's Unarmed Combat skill by 15 points. Additional spells can be layered over this.|4|100668274|311|1156|10|0|1|15|1|1|0.01|1|2533|780|0|-1004109824|2|16|35|45|49|0|0|0|0|18|0|0|0|0|7030|16|0
+2532|Major Thrown Aptitude|Increases the target's Thrown Weapons skill by 15 points. Additional spells can be layered over this.|4|100668303|373|1156|10|0|1|15|1|1|0.01|1|2532|780|0|-1004109824|2|16|29|45|49|0|0|0|0|18|0|0|0|0|7046|16|0
+2533|Major Unarmed Aptitude|Increases the target's Unarmed Combat skill by 15 points. Additional spells can be layered over this.|4|100668274|375|1156|10|0|1|15|1|1|0.01|1|2533|780|0|-1004109824|2|16|35|45|49|0|0|0|0|18|0|0|0|0|7030|16|0
 2534|Major War Magic Aptitude|Increases the target's War Magic skill by 15 points. Additional spells can be layered over this.|4|100668272|255|1156|10|0|1|15|1|1|0.01|1|2534|780|0|-1004109824|2|16|25|47|49|0|0|0|0|26|0|0|0|0|7090|16|0
 2535|Major Weapon Tinkering Expertise|Increases the target's Weapon Tinkering skill by 15 points. Additional spells can be layered over this.|4|100668357|377|1156|10|0|1|15|1|1|0.01|1|2535|780|0|-1004109824|2|16|35|38|49|0|0|0|0|28|0|0|0|0|7092|16|0
 2536|Minor Alchemical Prowess|Increases the target's Alchemy skill by 5 points. Additional spells can be layered over this.|4|100670578|333|1156|10|0|1|1|1|1|0.01|1|2536|780|0|-1004109824|1|16|25|45|49|0|0|0|0|26|0|0|0|0|7548|16|0
@@ -2470,7 +2470,7 @@
 2540|Minor Bow Aptitude|Increases the target's Bow skill by 5 points. Additional spells can be layered over this.|4|100668266|331|1156|10|0|1|5|1|1|0.01|1|2540|780|0|-1004109824|1|16|29|45|49|0|0|0|0|18|0|0|0|0|7652|16|0
 2541|Minor Cooking Prowess|Increases the target's Cooking skill by 5 points. Additional spells can be layered over this.|4|100670579|339|1156|10|0|1|1|1|1|0.01|1|2541|780|0|-1004109824|1|16|28|37|49|0|0|0|0|20|0|0|0|0|7566|16|0
 2542|Minor Creature Enchantment Aptitude|Increases the target's Creature Enchantment skill by 5 points. Additional spells can be layered over this.|4|100668358|251|1156|10|0|1|5|1|1|0.01|1|2542|780|0|-1004109824|1|16|25|42|49|0|0|0|0|26|0|0|0|0|7570|16|0
-2543|Minor Crossbow Aptitude|Increases the target's Crossbow skill by 5 points. Additional spells can be layered over this.|4|100668267|331|1156|10|0|1|5|1|1|0.01|1|2543|780|0|-1004109824|1|16|29|45|49|0|0|0|0|18|0|0|0|0|7654|16|0
+2543|Minor Crossbow Aptitude|Increases the target's Crossbow skill by 5 points. Additional spells can be layered over this.|4|100668267|341|1156|10|0|1|5|1|1|0.01|1|2543|780|0|-1004109824|1|16|29|45|49|0|0|0|0|18|0|0|0|0|7654|16|0
 2544|Minor Dagger Aptitude|Increases the target's Dagger skill by 5 points. Additional spells can be layered over this.|4|100668269|313|1156|10|0|1|5|1|1|0.01|1|2544|780|0|-1004109824|1|16|35|44|49|0|0|0|0|18|0|0|0|0|7588|16|0
 2545|Minor Deception Prowess|Increases the target's Deception skill by 5 points. Additional spells can be layered over this.|4|100668296|343|1156|10|0|1|1|1|1|0.01|1|2545|780|0|-1004109824|1|16|28|42|49|0|0|0|0|28|0|0|0|0|7572|16|0
 2546|Minor Fealty|Increases the target's Loyalty skill by 5 points. Additional spells can be layered over this.|4|100668286|345|1156|10|0|1|1|1|1|0.01|1|2546|780|0|-1004109824|1|16|28|39|49|0|0|0|0|20|0|0|0|0|7586|16|0
@@ -2484,18 +2484,18 @@
 2554|Minor Leadership|Increases the target's Leadership skill by 5 points. Additional spells can be layered over this.|4|100668283|293|1156|10|0|1|1|1|1|0.01|1|2554|780|0|-1004109824|1|16|28|45|49|0|0|0|0|20|0|0|0|0|7628|16|0
 2555|Minor Life Magic Aptitude|Increases the target's Life Magic skill by 5 points. Additional spells can be layered over this.|4|100668337|357|1156|10|0|1|5|1|1|0.01|1|2555|780|0|-1004109824|1|16|25|39|49|0|0|0|0|26|0|0|0|0|7630|16|0
 2556|Minor Lockpick Prowess|Increases the target's Lockpick skill by 5 points. Additional spells can be layered over this.|4|100668284|359|1156|10|0|1|1|1|1|0.01|1|2556|780|0|-1004109824|1|16|28|43|49|0|0|0|0|20|0|0|0|0|7642|16|0
-2557|Minor Mace Aptitude|Increases the target's Mace skill by 5 points. Additional spells can be layered over this.|4|100668287|311|1156|10|0|1|5|1|1|0.01|1|2557|780|0|-1004109824|1|16|35|45|49|0|0|0|0|18|0|0|0|0|7634|16|0
+2557|Minor Mace Aptitude|Increases the target's Mace skill by 5 points. Additional spells can be layered over this.|4|100668287|315|1156|10|0|1|5|1|1|0.01|1|2557|780|0|-1004109824|1|16|35|45|49|0|0|0|0|18|0|0|0|0|7634|16|0
 2558|Minor Magic Item Tinkering Expertise|Increases the target's Magic Item Tinkering skill by 5 points. Additional spells can be layered over this.|4|100668354|361|1156|10|0|1|1|1|1|0.01|1|2558|780|0|-1004109824|1|16|25|48|49|0|0|0|0|28|0|0|0|0|7644|16|0
 2559|Minor Magic Resistance|Increases the target's Magic Defense skill by 5 points. Additional spells can be layered over this.|4|100668330|299|1156|10|0|1|5|1|1|0.01|1|2559|780|0|-1004109824|1|16|30|41|49|0|0|0|0|22|0|0|0|0|7646|16|0
 2560|Minor Mana Conversion Prowess|Increases the target's Mana Conversion skill by 5 points. Additional spells can be layered over this.|4|100668288|363|1156|10|0|1|5|1|1|0.01|1|2560|780|0|-1004109824|1|16|25|40|49|0|0|0|0|26|0|0|0|0|7648|16|0
 2561|Minor Monster Attunement|Increases the target's Assess Creature skill by 5 points. Additional spells can be layered over this.|4|100668353|365|1156|10|0|1|1|1|1|0.01|1|2561|780|0|-1004109824|1|7|28|41|49|0|0|0|0|28|0|0|0|0|7660|16|0
 2562|Minor Person Attunement|Increases the target's Assess Person skill by 5 points. Additional spells can be layered over this.|4|100668355|367|1156|10|0|1|1|1|1|0.01|1|2562|780|0|-1004109824|1|16|28|44|49|0|0|0|0|28|0|0|0|0|7662|16|0
-2563|Minor Spear Aptitude|Increases the target's Spear skill by 5 points. Additional spells can be layered over this.|4|100668297|311|1156|10|0|1|5|1|1|0.01|1|2563|780|0|-1004109824|1|16|35|45|49|0|0|0|0|18|0|0|0|0|7636|16|0
+2563|Minor Spear Aptitude|Increases the target's Spear skill by 5 points. Additional spells can be layered over this.|4|100668297|317|1156|10|0|1|5|1|1|0.01|1|2563|780|0|-1004109824|1|16|35|45|49|0|0|0|0|18|0|0|0|0|7636|16|0
 2564|Minor Sprint|Increases the target's Run skill by 5 points. Additional spells can be layered over this.|4|100668295|369|1156|10|0|1|1|1|1|0.01|1|2564|780|0|-1004109824|1|16|28|47|49|0|0|0|0|24|0|0|0|0|7688|16|0
-2565|Minor Staff Aptitude|Increases the target's Staff skill by 5 points. Additional spells can be layered over this.|4|100668298|311|1156|10|0|1|5|1|1|0.01|1|2565|780|0|-1004109824|1|16|35|45|49|0|0|0|0|18|0|0|0|0|7638|16|0
+2565|Minor Staff Aptitude|Increases the target's Staff skill by 5 points. Additional spells can be layered over this.|4|100668298|319|1156|10|0|1|5|1|1|0.01|1|2565|780|0|-1004109824|1|16|35|45|49|0|0|0|0|18|0|0|0|0|7638|16|0
 2566|Minor Sword Aptitude|Increases the target's Sword skill by 5 points. Additional spells can be layered over this.|4|100668302|371|1156|10|0|1|5|1|1|0.01|1|2566|780|0|-1004109824|1|16|35|43|49|0|0|0|0|18|0|0|0|0|7610|16|0
-2567|Minor Thrown Aptitude|Increases the target's Thrown Weapons skill by 5 points. Additional spells can be layered over this.|4|100668303|331|1156|10|0|1|5|1|1|0.01|1|2567|780|0|-1004109824|1|16|29|45|49|0|0|0|0|18|0|0|0|0|7656|16|0
-2568|Minor Unarmed Aptitude|Increases the target's Unarmed Combat skill by 5 points. Additional spells can be layered over this.|4|100668274|311|1156|10|0|1|5|1|1|0.01|1|2568|780|0|-1004109824|1|16|35|45|49|0|0|0|0|18|0|0|0|0|7640|16|0
+2567|Minor Thrown Aptitude|Increases the target's Thrown Weapons skill by 5 points. Additional spells can be layered over this.|4|100668303|373|1156|10|0|1|5|1|1|0.01|1|2567|780|0|-1004109824|1|16|29|45|49|0|0|0|0|18|0|0|0|0|7656|16|0
+2568|Minor Unarmed Aptitude|Increases the target's Unarmed Combat skill by 5 points. Additional spells can be layered over this.|4|100668274|375|1156|10|0|1|5|1|1|0.01|1|2568|780|0|-1004109824|1|16|35|45|49|0|0|0|0|18|0|0|0|0|7640|16|0
 2569|Minor War Magic Aptitude|Increases the target's War Magic skill by 5 points. Additional spells can be layered over this.|4|100668272|255|1156|10|0|1|5|1|1|0.01|1|2569|780|0|-1004109824|1|16|25|47|49|0|0|0|0|26|0|0|0|0|7708|16|0
 2570|Minor Weapon Tinkering Expertise|Increases the target's Weapon Tinkering skill by 5 points. Additional spells can be layered over this.|4|100668357|377|1156|10|0|1|5|1|1|0.01|1|2570|780|0|-1004109824|1|16|35|38|49|0|0|0|0|28|0|0|0|0|7712|16|0
 2571|Major Armor|Increases the target's natural armor by 40 points. Additional spells can be layered over this.|2|100668293|379|1156|10|0|1|40|1|1|0.01|1|2571|780|0|-1004109824|2|16|34|40|54|0|0|0|0|55|0|0|0|0|6952|16|0
@@ -2604,26 +2604,26 @@
 2674|Vicious Rebuke|Kills the target.|1|100670703|237|128|120|30|0.2|320|1|2|0|2|2674|0|0|0|1|63|63|65|66|67|69|56|0|0|0|0|0|0|10798|16|0
 2675|Feeble Axe Aptitude|Increases the target's Axe skill by 3 points. Additional spells can be layered over this.|4|100668265|311|1156|10|0|1|3|1|1|0.01|1|2675|780|0|-1004109824|1|16|35|45|49|0|0|0|0|18|0|0|0|0|3098|16|0
 2676|Feeble Bow Aptitude|Increases the target's Bow skill by 3 points. Additional spells can be layered over this.|4|100668266|331|1156|10|0|1|3|1|1|0.01|1|2676|780|0|-1004109824|1|16|29|45|49|0|0|0|0|18|0|0|0|0|3110|16|0
-2677|Feeble Crossbow Aptitude|Increases the target's Crossbow skill by 3 points. Additional spells can be layered over this.|4|100668267|331|1156|10|0|1|3|1|1|0.01|1|2677|780|0|-1004109824|1|16|29|45|49|0|0|0|0|18|0|0|0|0|3112|16|0
+2677|Feeble Crossbow Aptitude|Increases the target's Crossbow skill by 3 points. Additional spells can be layered over this.|4|100668267|341|1156|10|0|1|3|1|1|0.01|1|2677|780|0|-1004109824|1|16|29|45|49|0|0|0|0|18|0|0|0|0|3112|16|0
 2678|Feeble Dagger Aptitude|Increases the target's Dagger skill by 3 points. Additional spells can be layered over this.|4|100668269|313|1156|10|0|1|3|1|1|0.01|1|2678|780|0|-1004109824|1|16|35|44|49|0|0|0|0|18|0|0|0|0|3090|16|0
-2679|Feeble Mace Aptitude|Increases the target's Mace skill by 3 points. Additional spells can be layered over this.|4|100668287|311|1156|10|0|1|3|1|1|0.01|1|2679|780|0|-1004109824|1|16|35|45|49|0|0|0|0|18|0|0|0|0|3100|16|0
+2679|Feeble Mace Aptitude|Increases the target's Mace skill by 3 points. Additional spells can be layered over this.|4|100668287|315|1156|10|0|1|3|1|1|0.01|1|2679|780|0|-1004109824|1|16|35|45|49|0|0|0|0|18|0|0|0|0|3100|16|0
 2680|Feeble Mana Conversion Prowess|Increases the target's Mana Conversion skill by 3 points. Additional spells can be layered over this.|4|100668288|363|1156|10|0|1|3|1|1|0.01|1|2680|780|0|-1004109824|1|16|25|40|49|0|0|0|0|26|0|0|0|0|3108|16|0
-2681|Feeble Spear Aptitude|Increases the target's Spear skill by 3 points. Additional spells can be layered over this.|4|100668297|311|1156|10|0|1|3|1|1|0.01|1|2681|780|0|-1004109824|1|16|35|45|49|0|0|0|0|18|0|0|0|0|3102|16|0
-2682|Feeble Staff Aptitude|Increases the target's Staff skill by 3 points. Additional spells can be layered over this.|4|100668298|311|1156|10|0|1|3|1|1|0.01|1|2682|780|0|-1004109824|1|16|35|45|49|0|0|0|0|18|0|0|0|0|3104|16|0
+2681|Feeble Spear Aptitude|Increases the target's Spear skill by 3 points. Additional spells can be layered over this.|4|100668297|317|1156|10|0|1|3|1|1|0.01|1|2681|780|0|-1004109824|1|16|35|45|49|0|0|0|0|18|0|0|0|0|3102|16|0
+2682|Feeble Staff Aptitude|Increases the target's Staff skill by 3 points. Additional spells can be layered over this.|4|100668298|319|1156|10|0|1|3|1|1|0.01|1|2682|780|0|-1004109824|1|16|35|45|49|0|0|0|0|18|0|0|0|0|3104|16|0
 2683|Feeble Sword Aptitude|Increases the target's Sword skill by 3 points. Additional spells can be layered over this.|4|100668302|371|1156|10|0|1|3|1|1|0.01|1|2683|780|0|-1004109824|1|16|35|43|49|0|0|0|0|18|0|0|0|0|3094|16|0
-2684|Feeble Thrown Aptitude|Increases the target's Thrown Weapons skill by 3 points. Additional spells can be layered over this.|4|100668303|331|1156|10|0|1|3|1|1|0.01|1|2684|780|0|-1004109824|1|16|29|45|49|0|0|0|0|18|0|0|0|0|3114|16|0
-2685|Feeble Unarmed Aptitude|Increases the target's Unarmed Combat skill by 3 points. Additional spells can be layered over this.|4|100668274|311|1156|10|0|1|3|1|1|0.01|1|2685|780|0|-1004109824|1|16|35|45|49|0|0|0|0|18|0|0|0|0|3106|16|0
+2684|Feeble Thrown Aptitude|Increases the target's Thrown Weapons skill by 3 points. Additional spells can be layered over this.|4|100668303|373|1156|10|0|1|3|1|1|0.01|1|2684|780|0|-1004109824|1|16|29|45|49|0|0|0|0|18|0|0|0|0|3114|16|0
+2685|Feeble Unarmed Aptitude|Increases the target's Unarmed Combat skill by 3 points. Additional spells can be layered over this.|4|100668274|375|1156|10|0|1|3|1|1|0.01|1|2685|780|0|-1004109824|1|16|35|45|49|0|0|0|0|18|0|0|0|0|3106|16|0
 2686|Moderate Axe Aptitude|Increases the target's Axe skill by 10 points. Additional spells can be layered over this.|4|100668265|311|1156|10|0|1|10|1|1|0.01|1|2686|780|0|-1004109824|1|16|35|45|49|0|0|0|0|18|0|0|0|0|7894|16|0
 2687|Moderate Bow Aptitude|Increases the target's Bow skill by 10 points. Additional spells can be layered over this.|4|100668266|331|1156|10|0|1|10|1|1|0.01|1|2687|780|0|-1004109824|1|16|29|45|49|0|0|0|0|18|0|0|0|0|7908|16|0
-2688|Moderate Crossbow Aptitude|Increases the target's Crossbow skill by 10 points. Additional spells can be layered over this.|4|100668267|331|1156|10|0|1|10|1|1|0.01|1|2688|780|0|-1004109824|1|16|29|45|49|0|0|0|0|18|0|0|0|0|7910|16|0
+2688|Moderate Crossbow Aptitude|Increases the target's Crossbow skill by 10 points. Additional spells can be layered over this.|4|100668267|341|1156|10|0|1|10|1|1|0.01|1|2688|780|0|-1004109824|1|16|29|45|49|0|0|0|0|18|0|0|0|0|7910|16|0
 2689|Moderate Dagger Aptitude|Increases the target's Dagger skill by 10 points. Additional spells can be layered over this.|4|100668269|313|1156|10|0|1|10|1|1|0.01|1|2689|780|0|-1004109824|1|16|35|44|49|0|0|0|0|18|0|0|0|0|7876|16|0
-2690|Moderate Mace Aptitude|Increases the target's Mace skill by 10 points. Additional spells can be layered over this.|4|100668287|311|1156|10|0|1|10|1|1|0.01|1|2690|780|0|-1004109824|1|16|35|45|49|0|0|0|0|18|0|0|0|0|7896|16|0
+2690|Moderate Mace Aptitude|Increases the target's Mace skill by 10 points. Additional spells can be layered over this.|4|100668287|315|1156|10|0|1|10|1|1|0.01|1|2690|780|0|-1004109824|1|16|35|45|49|0|0|0|0|18|0|0|0|0|7896|16|0
 2691|Moderate Mana Conversion Prowess|Increases the target's Mana Conversion skill by 10 points. Additional spells can be layered over this.|4|100668288|363|1156|10|0|1|10|1|1|0.01|1|2691|780|0|-1004109824|1|16|25|40|49|0|0|0|0|26|0|0|0|0|7906|16|0
-2692|Moderate Spear Aptitude|Increases the target's Spear skill by 10 points. Additional spells can be layered over this.|4|100668297|311|1156|10|0|1|10|1|1|0.01|1|2692|780|0|-1004109824|1|16|35|45|49|0|0|0|0|18|0|0|0|0|7898|16|0
-2693|Moderate Staff Aptitude|Increases the target's Staff skill by 10 points. Additional spells can be layered over this.|4|100668298|311|1156|10|0|1|10|1|1|0.01|1|2693|780|0|-1004109824|1|16|35|45|49|0|0|0|0|18|0|0|0|0|7900|16|0
+2692|Moderate Spear Aptitude|Increases the target's Spear skill by 10 points. Additional spells can be layered over this.|4|100668297|317|1156|10|0|1|10|1|1|0.01|1|2692|780|0|-1004109824|1|16|35|45|49|0|0|0|0|18|0|0|0|0|7898|16|0
+2693|Moderate Staff Aptitude|Increases the target's Staff skill by 10 points. Additional spells can be layered over this.|4|100668298|319|1156|10|0|1|10|1|1|0.01|1|2693|780|0|-1004109824|1|16|35|45|49|0|0|0|0|18|0|0|0|0|7900|16|0
 2694|Moderate Sword Aptitude|Increases the target's Sword skill by 10 points. Additional spells can be layered over this.|4|100668302|371|1156|10|0|1|10|1|1|0.01|1|2694|780|0|-1004109824|1|16|35|43|49|0|0|0|0|18|0|0|0|0|7880|16|0
-2695|Moderate Thrown Aptitude|Increases the target's Thrown Weapons skill by 10 points. Additional spells can be layered over this.|4|100668303|331|1156|10|0|1|10|1|1|0.01|1|2695|780|0|-1004109824|1|16|29|45|49|0|0|0|0|18|0|0|0|0|7912|16|0
-2696|Moderate Unarmed Aptitude|Increases the target's Unarmed Combat skill by 10 points. Additional spells can be layered over this.|4|100668274|311|1156|10|0|1|10|1|1|0.01|1|2696|780|0|-1004109824|1|16|35|45|49|0|0|0|0|18|0|0|0|0|7902|16|0
+2695|Moderate Thrown Aptitude|Increases the target's Thrown Weapons skill by 10 points. Additional spells can be layered over this.|4|100668303|373|1156|10|0|1|10|1|1|0.01|1|2695|780|0|-1004109824|1|16|29|45|49|0|0|0|0|18|0|0|0|0|7912|16|0
+2696|Moderate Unarmed Aptitude|Increases the target's Unarmed Combat skill by 10 points. Additional spells can be layered over this.|4|100668274|375|1156|10|0|1|10|1|1|0.01|1|2696|780|0|-1004109824|1|16|35|45|49|0|0|0|0|18|0|0|0|0|7902|16|0
 2697|Aerfalle's Touch|Decreases all of the target's attributes by 45 points for 120 seconds.|4|100667504|421|146|300|5|0.25|325|1|3|0.35|1|2697|120|0|-1004109824|4|63|65|66|67|69|50|0|0|38|0|0|0|0|266|16|0
 2698|Aerfalle's Embrace|Decreases the attributes of all fellowship members by 45 points for 120 seconds.|4|100667504|421|8337|70|5|0.25|325|1|1|0.15|12|2698|120|0|-1004109824|4|63|65|66|67|69|51|0|0|38|0|0|0|0|252|16|0
 2699|Auroric Whip|Sends a bolt of lightning streaking towards the target. The stream does 150-200 points of lightning damage to the first thing it hits.|1|100670714|246|16515|70|30|0.2|300|1|1|0.15|2|2699|0|0|0|1|69|18|71|34|37|67|55|0|0|0|0|0|0|904|16|0
@@ -3144,9 +3144,9 @@
 3214|Sorrow|The sad tale of the Shadow Child decreases the target's Focus by 15%.|4|100668277|10|147|70|5|0.25|350|1|1|0.15|1|3214|45|0|-1004109824|112|63|8|66|33|43|74|50|0|17|0|0|0|0|10138|16|0
 3215|Underfoot|The Shadow Child gets in the target's way, reducing the target's Quickness by 15%.|4|100668294|6|147|70|5|0.25|350|1|1|0.15|1|3215|45|0|-1004109824|112|63|8|66|33|43|74|50|0|9|0|0|0|0|10780|16|0
 3216|Transport to the Forbidden Catacombs|Transports the target to the specified destination.|3|100668290|214|128|50|30|0|125|1|1|0.25|8|3216|0|0|0|3|66|110|66|72|60|0|0|0|16|0|0|0|0|10638|16|0
-3217|Cascade|Increases the target's Thrown Weapons skill by 12 points.|4|100668267|331|132|30|5|0.7|12|1|1|0.1|1|3217|780|0|-1004109824|2|66|72|70|64|49|0|0|0|18|0|0|0|0|1456|16|0
-3218|Greater Cascade|Increases the target's Thrown Weapons skill by 15 points.|4|100668303|331|132|30|5|0.7|15|1|1|0.1|1|3218|780|0|-1004109824|2|66|72|70|64|49|0|0|0|18|0|0|0|0|3928|16|0
-3219|Lesser Cascade|Increases the target's Thrown Weapons skill by 8 points.|4|100668303|331|132|30|5|0.7|8|1|1|0.1|1|3219|780|0|-1004109824|3|66|72|70|64|49|0|0|0|18|0|0|0|0|6152|16|0
+3217|Cascade|Increases the target's Thrown Weapons skill by 12 points.|4|100668267|373|132|30|5|0.7|12|1|1|0.1|1|3217|780|0|-1004109824|2|66|72|70|64|49|0|0|0|18|0|0|0|0|1456|16|0
+3218|Greater Cascade|Increases the target's Thrown Weapons skill by 15 points.|4|100668303|373|132|30|5|0.7|15|1|1|0.1|1|3218|780|0|-1004109824|2|66|72|70|64|49|0|0|0|18|0|0|0|0|3928|16|0
+3219|Lesser Cascade|Increases the target's Thrown Weapons skill by 8 points.|4|100668303|373|132|30|5|0.7|8|1|1|0.1|1|3219|780|0|-1004109824|3|66|72|70|64|49|0|0|0|18|0|0|0|0|6152|16|0
 3220|Cascade|Increases the target's Bow skill by 12 points.|4|100668266|331|132|30|5|0.7|12|1|1|0.1|1|3220|780|0|-1004109824|2|66|72|70|64|49|0|0|0|18|0|0|0|0|1458|16|0
 3221|Greater Cascade|Increases the target's Bow skill by 15 points.|4|100668266|331|132|30|5|0.7|15|1|1|0.1|1|3221|780|0|-1004109824|2|66|72|70|64|49|0|0|0|18|0|0|0|0|3930|16|0
 3222|Lesser Cascade|Increases the target's Bow skill by 8 points.|4|100668266|331|132|30|5|0.7|8|1|1|0.1|1|3222|780|0|-1004109824|3|66|72|70|64|49|0|0|0|18|0|0|0|0|6154|16|0
@@ -3156,12 +3156,12 @@
 3226|Cascade|Increases the target's Sword skill by 12 points.|4|100668302|371|132|30|5|0.7|12|1|1|0.1|1|3226|780|0|-1004109824|2|66|72|70|64|49|0|0|0|18|0|0|0|0|1462|16|0
 3227|Greater Cascade|Increases the target's Sword skill by 15 points.|4|100668302|371|132|30|5|0.7|15|1|1|0.1|1|3227|780|0|-1004109824|2|66|72|70|64|49|0|0|0|18|0|0|0|0|3934|16|0
 3228|Lesser Cascade|Increases the target's Sword skill by 8 points.|4|100668302|371|132|30|5|0.7|8|1|1|0.1|1|3228|780|0|-1004109824|3|66|72|70|64|49|0|0|0|18|0|0|0|0|6158|16|0
-3229|Cascade|Increases the target's Unarmed Combat skill by 12 points.|4|100668274|311|132|10|5|1|12|1|1|0.01|1|3229|780|0|-1004109824|4|66|72|72|64|49|0|0|0|18|0|0|0|0|1464|16|0
-3230|Greater Cascade|Increases the target's Unarmed Combat skill by 15 points.|4|100668274|311|132|10|5|1|15|1|1|0.01|1|3230|780|0|-1004109824|2|67|72|72|66|49|0|0|0|18|0|0|0|0|3936|16|0
-3231|Lesser Cascade|Increases the target's Unarmed Combat skill by 8 points.|4|100668274|311|132|10|5|1|8|1|1|0.01|1|3231|780|0|-1004109824|4|66|64|72|66|49|0|0|0|18|0|0|0|0|6160|16|0
-3232|Cascade|Increases the target's Crossbow skill by 12 points.|4|100668267|331|132|30|5|0.7|12|1|1|0.1|1|3232|780|0|-1004109824|2|66|72|70|64|49|0|0|0|18|0|0|0|0|1466|16|0
+3229|Cascade|Increases the target's Unarmed Combat skill by 12 points.|4|100668274|375|132|10|5|1|12|1|1|0.01|1|3229|780|0|-1004109824|4|66|72|72|64|49|0|0|0|18|0|0|0|0|1464|16|0
+3230|Greater Cascade|Increases the target's Unarmed Combat skill by 15 points.|4|100668274|375|132|10|5|1|15|1|1|0.01|1|3230|780|0|-1004109824|2|67|72|72|66|49|0|0|0|18|0|0|0|0|3936|16|0
+3231|Lesser Cascade|Increases the target's Unarmed Combat skill by 8 points.|4|100668274|375|132|10|5|1|8|1|1|0.01|1|3231|780|0|-1004109824|4|66|64|72|66|49|0|0|0|18|0|0|0|0|6160|16|0
+3232|Cascade|Increases the target's Crossbow skill by 12 points.|4|100668267|341|132|30|5|0.7|12|1|1|0.1|1|3232|780|0|-1004109824|2|66|72|70|64|49|0|0|0|18|0|0|0|0|1466|16|0
 3233|Greater Cascade|Increases the target's CrossBow skill by 15 points.|4|100668267|331|132|30|5|0.7|15|1|1|0.1|1|3233|780|0|-1004109824|2|66|72|70|64|49|0|0|0|18|0|0|0|0|3938|16|0
-3234|Lesser Cascade|Increases the target's Crossbow skill by 8 points.|4|100668267|331|132|30|5|0.7|8|1|1|0.1|1|3234|780|0|-1004109824|3|66|72|70|64|49|0|0|0|18|0|0|0|0|6162|16|0
+3234|Lesser Cascade|Increases the target's Crossbow skill by 8 points.|4|100668267|341|132|30|5|0.7|8|1|1|0.1|1|3234|780|0|-1004109824|3|66|72|70|64|49|0|0|0|18|0|0|0|0|6162|16|0
 3235|Dark Power|A dark power suffuses your being, increasing your Self by 2.|4|100668296|417|1156|10|0|1|2|1|1|0.01|1|3235|10800|0|-1004109824|1|16|33|40|49|0|0|0|0|14|0|0|0|0|2032|16|0
 3236|Restorative Draught|Restores 60-80 points of the target's Health.|2|100674018|79|4|1000|5|0.25|200|1|1|0.3|3|3236|0|0|0|1|7|26|41|51|0|0|0|0|31|0|0|0|0|9440|16|0
 3237|Fanaticism|A fervent need for destruction increases your War Magic skill by 2.|4|100676542|426|1156|10|0|1|2|1|1|0.01|1|3237|10800|0|-1004109824|1|16|25|47|49|0|0|0|0|26|0|0|0|0|3056|16|0
@@ -3623,7 +3623,7 @@
 3693|Prodigal Cooking Mastery|Increases the caster's Cooking skill by 250 points.|4|100670579|468|16526|70|0|0|600|1|1|0.15|1|3693|900|0|-1004109824|112|64|7|68|28|37|63|60|0|20|0|0|0|0|8932|16|0
 3694|Prodigal Coordination|Increases the caster's Coordination by 250 points.|4|100668268|469|16526|70|0|0|600|1|1|0.15|1|3694|900|0|-1004109824|112|71|7|70|33|39|70|60|0|8|0|0|0|0|8934|16|0
 3695|Prodigal Creature Enchantment Mastery|Increases the caster's Creature Enchantment skill by 250 points.|4|100668358|470|16526|70|0|0|600|1|1|0.15|1|3695|900|0|-1004109824|112|66|7|72|25|42|65|60|0|26|0|0|0|0|8936|16|0
-3696|Prodigal Crossbow Mastery|Increases the caster's Crossbow skill by 250 points.|4|100668267|465|16526|70|0|0|600|1|1|0.15|1|3696|900|0|-1004109824|112|73|7|74|29|45|72|60|0|18|0|0|0|0|9024|16|0
+3696|Prodigal Crossbow Mastery|Increases the caster's Crossbow skill by 250 points.|4|100668267|471|16526|70|0|0|600|1|1|0.15|1|3696|900|0|-1004109824|112|73|7|74|29|45|72|60|0|18|0|0|0|0|9024|16|0
 3697|Prodigal Dagger Mastery|Increases the caster's Dagger skill by 250 points.|4|100668269|472|16526|70|0|0|600|1|1|0.15|1|3697|900|0|-1004109824|112|66|7|72|35|44|65|60|0|18|0|0|0|0|8950|16|0
 3698|Prodigal Deception Mastery|Increases the caster's Deception skill by 250 points.|4|100668296|474|16526|70|0|0|600|1|1|0.15|1|3698|900|0|-1004109824|112|69|7|66|28|42|68|60|0|28|0|0|0|0|8938|16|0
 3699|Prodigal Defender|Increases the Melee Defense skill modifier of a weapon or magic caster by 25%.|3|100673988|475|132|70|25|0|600|1|1|0.15|1|3699|900|0|-1004109824|112|66|7|63|36|46|74|57|0|61|0|0|0|0|8940|33025|0
@@ -3648,7 +3648,7 @@
 3718|Prodigal Lightning Bane|Increases a shield or piece of armor's resistance to electric damage by 500%. Target yourself to cast this spell on all of your equipped armor.|3|100673972|477|132|70|25|0|600|1|1|0.15|1|3718|900|0|-1004109824|112|69|7|69|34|37|65|57|0|67|0|0|0|0|9008|6|14
 3719|Prodigal Lightning Protection|Reduces damage the caster takes from Lightning by 99.9%.|2|100668346|476|16526|70|0|0|600|0|1|0.15|1|3719|900|0|-1004109824|112|72|13|64|34|37|67|62|0|53|0|0|0|0|9010|16|0
 3720|Prodigal Lockpick Mastery|Increases the caster's Lockpick skill by 250 points.|4|100668284|489|16526|70|0|0|600|1|1|0.15|1|3720|900|0|-1004109824|112|70|7|68|28|43|69|60|0|20|0|0|0|0|9012|16|0
-3721|Prodigal Mace Mastery|Increases the caster's Mace skill by 250 points.|4|100668287|462|16526|70|0|0|600|1|1|0.15|1|3721|900|0|-1004109824|112|67|7|74|35|45|66|60|0|18|0|0|0|0|9000|16|0
+3721|Prodigal Mace Mastery|Increases the caster's Mace skill by 250 points.|4|100668287|491|16526|70|0|0|600|1|1|0.15|1|3721|900|0|-1004109824|112|67|7|74|35|45|66|60|0|18|0|0|0|0|9000|16|0
 3722|Prodigal Magic Item Expertise|Increases the caster's Magic Item Tinkering skill by 250 points.|4|100668354|454|16526|70|0|0|600|1|1|0.15|1|3722|900|0|-1004109824|112|72|7|72|25|48|71|60|0|28|0|0|0|0|9014|16|0
 3723|Prodigal Magic Resistance|Increases the caster's Magic Defense skill by 250 points.|4|100668330|492|16526|70|0|0|600|1|1|0.15|1|3723|900|0|-1004109824|112|70|7|68|30|41|69|60|0|22|0|0|0|0|9016|16|0
 3724|Prodigal Mana Conversion Mastery|Increases the caster's Mana Conversion skill by 250 points.|4|100668288|494|16526|70|0|0|600|1|1|0.15|1|3724|900|0|-1004109824|112|64|7|68|25|40|63|60|0|26|0|0|0|0|9018|16|0
@@ -3661,15 +3661,15 @@
 3731|Prodigal Regeneration|Increase caster's natural healing rate by 1000%.|2|100668279|484|16526|70|5|1|600|1|1|0.15|1|3731|900|0|-1004109824|112|63|11|65|26|41|71|61|0|37|0|0|0|0|9040|16|0
 3732|Prodigal Rejuvenation|Increases the rate at which the caster regains Stamina by 1000%.|2|100668299|506|16524|70|0|0|600|1|1|0.15|1|3732|900|0|-1004109824|112|73|11|73|26|39|69|61|0|41|0|0|0|0|9042|16|0
 3733|Prodigal Willpower|Increases the caster's Self by 250 points.|4|100668296|501|16526|70|0|0|600|1|1|0.15|1|3733|900|0|-1004109824|112|72|7|72|33|40|71|60|0|14|0|0|0|0|9064|16|0
-3734|Prodigal Spear Mastery|Increases the caster's Spear skill by 250 points.|4|100668297|462|16526|70|0|0|600|1|1|0.15|1|3734|900|0|-1004109824|112|67|7|74|35|45|66|60|0|18|0|0|0|0|9002|16|0
+3734|Prodigal Spear Mastery|Increases the caster's Spear skill by 250 points.|4|100668297|504|16526|70|0|0|600|1|1|0.15|1|3734|900|0|-1004109824|112|67|7|74|35|45|66|60|0|18|0|0|0|0|9002|16|0
 3735|Prodigal Spirit Drinker|Increases a caster's damage mod by 15%.|3|100676645|473|132|70|25|0|600|1|1|0.15|1|3735|900|0|-1004109824|112|65|7|70|36|43|72|57|0|57|0|0|0|0|9048|32768|0
 3736|Prodigal Sprint|Increases the caster's Run skill by 250 points.|4|100668295|500|16526|70|0|0|600|1|1|0.15|1|3736|900|0|-1004109824|112|74|7|64|28|47|73|60|0|24|0|0|0|0|9050|16|0
-3737|Prodigal Staff Mastery|Increases the caster's Staff skill by 250 points.|4|100668298|462|16526|70|0|0|600|1|1|0.15|1|3737|900|0|-1004109824|112|67|7|74|35|45|66|60|0|18|0|0|0|0|9004|16|0
+3737|Prodigal Staff Mastery|Increases the caster's Staff skill by 250 points.|4|100668298|505|16526|70|0|0|600|1|1|0.15|1|3737|900|0|-1004109824|112|67|7|74|35|45|66|60|0|18|0|0|0|0|9004|16|0
 3738|Prodigal Strength|Increases the caster's Strength by 250 points.|4|100668300|507|16526|70|0|0|600|1|1|0.15|1|3738|900|0|-1004109824|112|64|7|68|33|44|63|60|0|6|0|0|0|0|9052|16|0
 3739|Prodigal Swift Killer|Improves a weapon's speed by 1000 points.|3|100673991|512|132|70|25|0|600|1|1|0.15|1|3739|900|0|-1004109824|112|65|7|73|36|45|73|57|0|63|0|0|0|0|9054|257|0
 3740|Prodigal Sword Mastery|Increases the caster's Sword skill by 250 points.|4|100668302|508|16526|70|0|0|600|1|1|0.15|1|3740|900|0|-1004109824|112|65|7|70|35|43|64|60|0|18|0|0|0|0|8976|16|0
-3741|Prodigal Thrown Weapon Mastery|Increases the caster's Thrown Weapons skill by 250 points.|4|100668303|465|16526|70|0|0|600|1|1|0.15|1|3741|900|0|-1004109824|112|73|7|74|29|45|72|60|0|18|0|0|0|0|9026|16|0
-3742|Prodigal Unarmed Combat Mastery|Increases the caster's Unarmed Combat skill by 250 points.|4|100668274|462|16526|70|0|0|600|1|1|0.15|1|3742|900|0|-1004109824|112|67|7|74|35|45|66|60|0|18|0|0|0|0|9006|16|0
+3741|Prodigal Thrown Weapon Mastery|Increases the caster's Thrown Weapons skill by 250 points.|4|100668303|509|16526|70|0|0|600|1|1|0.15|1|3741|900|0|-1004109824|112|73|7|74|29|45|72|60|0|18|0|0|0|0|9026|16|0
+3742|Prodigal Unarmed Combat Mastery|Increases the caster's Unarmed Combat skill by 250 points.|4|100668274|510|16526|70|0|0|600|1|1|0.15|1|3742|900|0|-1004109824|112|67|7|74|35|45|66|60|0|18|0|0|0|0|9006|16|0
 3743|Prodigal War Magic Mastery|Increases the caster's War Magic skill by 250 points.|4|100668272|511|16526|70|0|0|600|1|1|0.15|1|3743|900|0|-1004109824|112|71|7|70|25|47|70|60|0|26|0|0|0|0|9060|16|0
 3744|Prodigal Weapon Expertise|Increases the caster's Weapon Tinkering skill by 250 points.|4|100668357|455|16526|70|0|0|600|1|1|0.15|1|3744|900|0|-1004109824|112|72|7|72|35|38|71|60|0|28|0|0|0|0|9062|16|0
 3745|Inferior Inferno Aegis|Reduces damage the target takes from Fire by 52%.|2|100668291|109|6|40|5|0.55|245|0|1|0.15|1|3745|3600|0|-1004109824|4|71|13|72|34|46|54|0|0|43|0|0|0|0|5358|16|0
@@ -4061,14 +4061,14 @@
 4131|Spectral Axe Mastery|Increases the caster's Axe skill by 150 points for 9 minutes.|4|100668265|462|16526|70|0|0|250|1|1|0.15|1|4131|540|0|-1004109824|112|67|7|74|35|45|66|60|0|18|0|0|0|0|10214|16|0
 4132|Spectral Blood Drinker|Increases a weapon's damage value by 30 points for 3 minutes.|3|100673986|473|132|70|25|0|250|1|1|0.15|1|4132|180|0|-1004109824|112|65|7|70|36|43|72|57|0|57|0|0|0|0|10192|257|0
 4133|Spectral Bow Mastery|Increases the caster's Bow skill by 150 points for 9 minutes|4|100668266|465|16526|70|0|0|250|1|1|0.15|1|4133|540|0|-1004109824|112|73|7|74|29|45|72|60|0|18|0|0|0|0|10224|16|0
-4134|Spectral Crossbow Mastery|Increases the caster's Crossbow skill by 150 points for 9 minutes.|4|100668267|465|16526|70|0|0|250|1|1|0.15|1|4134|540|0|-1004109824|112|73|7|74|29|45|72|60|0|18|0|0|0|0|10226|16|0
+4134|Spectral Crossbow Mastery|Increases the caster's Crossbow skill by 150 points for 9 minutes.|4|100668267|471|16526|70|0|0|250|1|1|0.15|1|4134|540|0|-1004109824|112|73|7|74|29|45|72|60|0|18|0|0|0|0|10226|16|0
 4135|Spectral Dagger Mastery|Increases the caster's Dagger skill by 150 points for 9 minutes.|4|100668269|472|16526|70|0|0|250|1|1|0.15|1|4135|540|0|-1004109824|112|66|7|72|35|44|65|60|0|18|0|0|0|0|10198|16|0
-4136|Spectral Mace Mastery|Increases the caster's Mace skill by 150 points for 9 minutes.|4|100668287|462|16526|70|0|0|250|1|1|0.15|1|4136|540|0|-1004109824|112|67|7|74|35|45|66|60|0|18|0|0|0|0|10216|16|0
-4137|Spectral Spear Mastery|Increases the caster's Spear skill by 150 points for 9 minutes.|4|100668297|462|16526|70|0|0|250|1|1|0.15|1|4137|540|0|-1004109824|112|67|7|74|35|45|66|60|0|18|0|0|0|0|10218|16|0
-4138|Spectral Staff Mastery|Increases the caster's Staff skill by 150 points for 9 minutes.|4|100668298|462|16526|70|0|0|250|1|1|0.15|1|4138|540|0|-1004109824|112|67|7|74|35|45|66|60|0|18|0|0|0|0|10220|16|0
+4136|Spectral Mace Mastery|Increases the caster's Mace skill by 150 points for 9 minutes.|4|100668287|491|16526|70|0|0|250|1|1|0.15|1|4136|540|0|-1004109824|112|67|7|74|35|45|66|60|0|18|0|0|0|0|10216|16|0
+4137|Spectral Spear Mastery|Increases the caster's Spear skill by 150 points for 9 minutes.|4|100668297|504|16526|70|0|0|250|1|1|0.15|1|4137|540|0|-1004109824|112|67|7|74|35|45|66|60|0|18|0|0|0|0|10218|16|0
+4138|Spectral Staff Mastery|Increases the caster's Staff skill by 150 points for 9 minutes.|4|100668298|505|16526|70|0|0|250|1|1|0.15|1|4138|540|0|-1004109824|112|67|7|74|35|45|66|60|0|18|0|0|0|0|10220|16|0
 4139|Spectral Sword Mastery|Increases the caster's Sword skill by 150 points for 9 minutes.|4|100668302|508|16526|70|0|0|250|1|1|0.15|1|4139|540|0|-1004109824|112|65|7|70|35|43|64|60|0|18|0|0|0|0|10208|16|0
-4140|Spectral Thrown Weapon Mastery|Increases the caster's Thrown Weapons skill by 150 points for 9 minutes.|4|100668303|465|16526|70|0|0|250|1|1|0.15|1|4140|540|0|-1004109824|112|73|7|74|29|45|72|60|0|18|0|0|0|0|10228|16|0
-4141|Spectral Unarmed Combat Mastery|Increases the caster's Unarmed Combat skill by 150 points for 9 minutes.|4|100668274|462|16526|70|0|0|250|1|1|0.15|1|4141|540|0|-1004109824|112|67|7|74|35|45|66|60|0|18|0|0|0|0|10222|16|0
+4140|Spectral Thrown Weapon Mastery|Increases the caster's Thrown Weapons skill by 150 points for 9 minutes.|4|100668303|509|16526|70|0|0|250|1|1|0.15|1|4140|540|0|-1004109824|112|73|7|74|29|45|72|60|0|18|0|0|0|0|10228|16|0
+4141|Spectral Unarmed Combat Mastery|Increases the caster's Unarmed Combat skill by 150 points for 9 minutes.|4|100668274|510|16526|70|0|0|250|1|1|0.15|1|4141|540|0|-1004109824|112|67|7|74|35|45|66|60|0|18|0|0|0|0|10222|16|0
 4142|Spectral War Magic Mastery|Increases the caster's War Magic skill by 150 points for 9 minutes.|4|100668272|511|16526|70|0|0|250|1|1|0.15|1|4142|540|0|-1004109824|112|71|7|70|25|47|70|60|0|26|0|0|0|0|10240|16|0
 4143|Witnessing History|Teleports the PC to Branch 4, Stage 4 of Vision Quest|3|100668290|214|8320|150|300|0|900|1|1|0.25|13|4143|0|0|0|5|4|23|63|32|44|63|62|0|16|0|0|0|0|11600|16|0
 4144|Witnessing History|Teleports the PC to Branch 5, Stage 4 of Vision Quest|3|100668290|214|8320|150|300|0|900|1|1|0.25|13|4144|0|0|0|5|4|23|63|32|44|63|62|0|16|0|0|0|0|11602|16|0
@@ -4457,10 +4457,10 @@
 4528|Incantation of Creature Enchantment Ineptitude Self|Decreases the caster's Creature Enchantment skill by 45 points.|4|100668358|44|154|80|0|0|400|1|1|0.15|1|4528|300|0|-1004109824|193|68|8|73|25|42|66|60|0|27|0|0|0|0|4674|16|0
 4529|Incantation of Creature Enchantment Mastery Other|Increases the target's Creature Enchantment skill by 45 points.|4|100668358|43|134|80|5|0.25|400|1|1|0.15|1|4529|5400|0|-1004109824|193|67|7|73|25|42|67|49|0|26|0|0|0|0|4676|16|0
 4530|Incantation of Creature Enchantment Mastery Self|Increases the caster's Creature Enchantment skill by 45 points.|4|100668358|43|16526|80|0|0|400|1|1|0.15|1|4530|5400|0|-1004109824|193|66|7|72|25|42|65|60|0|26|0|0|0|0|4678|16|0
-4531|Incantation of Crossbow Ineptitude Other|Decreases the target's Crossbow skill by 45 points.|4|100668267|20|147|80|5|0.25|400|1|1|0.15|1|4531|300|0|-1004109824|193|65|8|65|29|45|65|50|0|19|0|0|0|0|5096|16|0
-4532|Incantation of Crossbow Ineptitude Self|Decreases the caster's Crossbow skill by 45 points.|4|100668267|20|154|80|0|0|400|1|1|0.15|1|4532|300|0|-1004109824|193|63|8|63|29|45|73|60|0|19|0|0|0|0|5102|16|0
-4533|Incantation of Crossbow Mastery Other|Increases the target's Crossbow skill by 45 points.|4|100668267|19|134|80|5|0.25|400|1|1|0.15|1|4533|5400|0|-1004109824|193|74|7|63|29|45|74|49|0|18|0|0|0|0|5108|16|0
-4534|Incantation of Crossbow Mastery Self|Increases the caster's Crossbow skill by 45 points.|4|100668267|19|16526|80|0|0|400|1|1|0.15|1|4534|5400|0|-1004109824|193|73|7|74|29|45|72|60|0|18|0|0|0|0|5114|16|0
+4531|Incantation of Crossbow Ineptitude Other|Decreases the target's Crossbow skill by 45 points.|4|100668267|22|147|80|5|0.25|400|1|1|0.15|1|4531|300|0|-1004109824|193|65|8|65|29|45|65|50|0|19|0|0|0|0|5096|16|0
+4532|Incantation of Crossbow Ineptitude Self|Decreases the caster's Crossbow skill by 45 points.|4|100668267|22|154|80|0|0|400|1|1|0.15|1|4532|300|0|-1004109824|193|63|8|63|29|45|73|60|0|19|0|0|0|0|5102|16|0
+4533|Incantation of Crossbow Mastery Other|Increases the target's Crossbow skill by 45 points.|4|100668267|21|134|80|5|0.25|400|1|1|0.15|1|4533|5400|0|-1004109824|193|74|7|63|29|45|74|49|0|18|0|0|0|0|5108|16|0
+4534|Incantation of Crossbow Mastery Self|Increases the caster's Crossbow skill by 45 points.|4|100668267|21|16526|80|0|0|400|1|1|0.15|1|4534|5400|0|-1004109824|193|73|7|74|29|45|72|60|0|18|0|0|0|0|5114|16|0
 4535|Incantation of Dagger Ineptitude Other|Decreases the target's Dagger skill by 45 points.|4|100668269|24|147|80|5|0.25|400|1|1|0.15|1|4535|300|0|-1004109824|193|70|8|63|35|44|70|50|0|19|0|0|0|0|4742|16|0
 4536|Incantation of Dagger Ineptitude Self|Decreases the caster's Dagger skill by 45 points.|4|100668269|24|154|80|0|0|400|1|1|0.15|1|4536|300|0|-1004109824|193|68|8|73|35|44|66|60|0|19|0|0|0|0|4744|16|0
 4537|Incantation of Dagger Mastery Other|Increases the target's Dagger skill by 45 points.|4|100668269|23|134|80|5|0.25|400|1|1|0.15|1|4537|5400|0|-1004109824|193|67|7|73|35|44|67|49|0|18|0|0|0|0|4746|16|0
@@ -4513,10 +4513,10 @@
 4584|Incantation of Lockpick Ineptitude Self|Decreases the caster's Lockpick skill by 45 points.|4|100668284|74|154|80|0|0|400|1|1|0.15|1|4584|300|0|-1004109824|193|72|8|69|28|43|70|60|0|21|0|0|0|0|5032|16|0
 4585|Incantation of Lockpick Mastery Other|Increases the target's Lockpick skill by 45 points.|4|100668284|73|134|80|5|0.25|400|1|1|0.15|1|4585|5400|0|-1004109824|193|71|7|69|28|43|71|49|0|20|0|0|0|0|5034|16|0
 4586|Incantation of Lockpick Mastery Self|Increases the caster's Lockpick skill by 45 points.|4|100668284|73|16526|80|0|0|400|1|1|0.15|1|4586|5400|0|-1004109824|193|70|7|68|28|43|69|60|0|20|0|0|0|0|5036|16|0
-4587|Incantation of Mace Ineptitude Other|Decreases the target's Mace skill by 45 points.|4|100668287|18|147|80|5|0.25|400|1|1|0.15|1|4587|300|0|-1004109824|193|71|8|65|35|45|71|50|0|19|0|0|0|0|4966|16|0
-4588|Incantation of Mace Ineptitude Self|Decreases the caster's Mace skill by 45 points.|4|100668287|18|154|80|0|0|400|1|1|0.15|1|4588|300|0|-1004109824|193|69|8|63|35|45|67|60|0|19|0|0|0|0|4978|16|0
-4589|Incantation of Mace Mastery Other|Increases the target's Mace skill by 45 points.|4|100668287|17|134|80|5|0.25|400|1|1|0.15|1|4589|5400|0|-1004109824|193|68|7|63|35|45|68|49|0|18|0|0|0|0|4986|16|0
-4590|Incantation of Mace Mastery Self|Increases the caster's Mace skill by 45 points.|4|100668287|17|16526|80|0|0|400|1|1|0.15|1|4590|5400|0|-1004109824|193|67|7|74|35|45|66|60|0|18|0|0|0|0|4996|16|0
+4587|Incantation of Mace Ineptitude Other|Decreases the target's Mace skill by 45 points.|4|100668287|26|147|80|5|0.25|400|1|1|0.15|1|4587|300|0|-1004109824|193|71|8|65|35|45|71|50|0|19|0|0|0|0|4966|16|0
+4588|Incantation of Mace Ineptitude Self|Decreases the caster's Mace skill by 45 points.|4|100668287|26|154|80|0|0|400|1|1|0.15|1|4588|300|0|-1004109824|193|69|8|63|35|45|67|60|0|19|0|0|0|0|4978|16|0
+4589|Incantation of Mace Mastery Other|Increases the target's Mace skill by 45 points.|4|100668287|25|134|80|5|0.25|400|1|1|0.15|1|4589|5400|0|-1004109824|193|68|7|63|35|45|68|49|0|18|0|0|0|0|4986|16|0
+4590|Incantation of Mace Mastery Self|Increases the caster's Mace skill by 45 points.|4|100668287|25|16526|80|0|0|400|1|1|0.15|1|4590|5400|0|-1004109824|193|67|7|74|35|45|66|60|0|18|0|0|0|0|4996|16|0
 4591|Incantation of Magic Item Tinkering Expertise Other|Increases the target's Magic Item Tinkering skill by 45 points.|4|100668354|59|135|80|5|0.25|400|1|1|0.15|1|4591|5400|0|-1004109824|193|73|7|73|25|48|73|49|0|28|0|0|0|0|5040|16|0
 4592|Incantation of Magic Item Tinkering Expertise Self|Increases the caster's Magic Item Tinkering skill by 45 points.|4|100668354|59|16526|80|0|0|400|1|1|0.15|1|4592|5400|0|-1004109824|193|72|7|72|25|48|71|60|0|28|0|0|0|0|5042|16|0
 4593|Incantation of Magic Item Tinkering Ignorance Other|Decreases the target's Magic Item Tinkering skill by 45 points.|4|100668354|60|147|80|5|0.25|400|1|1|0.15|1|4593|300|0|-1004109824|193|64|8|63|25|48|64|50|0|29|0|0|0|0|5044|16|0
@@ -4537,28 +4537,28 @@
 4608|Incantation of Person Attunement Self|Increases the caster's Assess Person skill by 45 points.|4|100668355|205|16526|80|0|0|400|1|1|0.15|1|4608|5400|0|-1004109824|193|71|7|70|28|44|70|60|0|28|0|0|0|0|5184|16|0
 4609|Incantation of Person Unfamiliarity Other|Decreases the target's Assess Person skill by 45 points.|4|100668355|206|147|80|5|0.25|400|1|1|0.15|1|4609|300|0|-1004109824|193|63|8|73|28|44|63|50|0|29|0|0|0|0|5186|16|0
 4610|Incantation of Person Unfamiliarity Self|Decreases the caster's Assess Person skill by 45 points.|4|100668355|206|154|80|0|0|400|1|1|0.15|1|4610|300|0|-1004109824|193|73|8|71|28|44|71|60|0|29|0|0|0|0|5188|16|0
-4611|Incantation of Spear Ineptitude Other|Decreases the target's Spear skill by 45 points.|4|100668297|18|147|80|5|0.25|400|1|1|0.15|1|4611|300|0|-1004109824|193|71|8|65|35|45|71|50|0|19|0|0|0|0|4968|16|0
-4612|Incantation of Spear Ineptitude Self|Decreases the caster's Spear skill by 45 points.|4|100668297|18|154|80|0|0|400|1|1|0.15|1|4612|300|0|-1004109824|193|69|8|63|35|45|67|60|0|19|0|0|0|0|4980|16|0
-4613|Incantation of Spear Mastery Other|Increases the target's Spear skill by 45 points.|4|100668297|17|134|80|5|0.25|400|1|1|0.15|1|4613|5400|0|-1004109824|193|68|7|63|35|45|68|49|0|18|0|0|0|0|4988|16|0
-4614|Incantation of Spear Mastery Self|Increases the caster's Spear skill by 45 points.|4|100668297|17|16526|80|0|0|400|1|1|0.15|1|4614|5400|0|-1004109824|193|67|7|74|35|45|66|60|0|18|0|0|0|0|4998|16|0
+4611|Incantation of Spear Ineptitude Other|Decreases the target's Spear skill by 45 points.|4|100668297|28|147|80|5|0.25|400|1|1|0.15|1|4611|300|0|-1004109824|193|71|8|65|35|45|71|50|0|19|0|0|0|0|4968|16|0
+4612|Incantation of Spear Ineptitude Self|Decreases the caster's Spear skill by 45 points.|4|100668297|28|154|80|0|0|400|1|1|0.15|1|4612|300|0|-1004109824|193|69|8|63|35|45|67|60|0|19|0|0|0|0|4980|16|0
+4613|Incantation of Spear Mastery Other|Increases the target's Spear skill by 45 points.|4|100668297|27|134|80|5|0.25|400|1|1|0.15|1|4613|5400|0|-1004109824|193|68|7|63|35|45|68|49|0|18|0|0|0|0|4988|16|0
+4614|Incantation of Spear Mastery Self|Increases the caster's Spear skill by 45 points.|4|100668297|27|16526|80|0|0|400|1|1|0.15|1|4614|5400|0|-1004109824|193|67|7|74|35|45|66|60|0|18|0|0|0|0|4998|16|0
 4615|Incantation of Sprint Other|Increases the target's Run skill by 45 points.|4|100668295|77|134|80|5|0.25|400|1|1|0.15|1|4615|5400|0|-1004109824|193|63|7|65|28|47|63|49|0|24|0|0|0|0|5252|16|0
 4616|Incantation of Sprint Self|Increases the caster's Run skill by 45 points.|4|100668295|77|16526|80|0|0|400|1|1|0.15|1|4616|5400|0|-1004109824|193|74|7|64|28|47|73|60|0|24|0|0|0|0|5254|16|0
-4617|Incantation of Staff Ineptitude Other|Decreases the target's Staff skill by 45 points.|4|100668298|18|147|80|5|0.25|400|1|1|0.15|1|4617|300|0|-1004109824|193|71|8|65|35|45|71|50|0|19|0|0|0|0|4970|16|0
-4618|Incantation of Staff Ineptitude Self|Decreases the caster's Staff skill by 45 points.|4|100668298|18|154|80|0|0|400|1|1|0.15|1|4618|300|0|-1004109824|193|69|8|63|35|45|67|60|0|19|0|0|0|0|4982|16|0
-4619|Incantation of Staff Mastery Other|Increases the target's Staff skill by 45 points.|4|100668298|17|134|80|5|0.25|400|1|1|0.15|1|4619|5400|0|-1004109824|193|68|7|63|35|45|68|49|0|18|0|0|0|0|4990|16|0
-4620|Incantation of Staff Mastery Self|Increases the caster's Staff skill by 45 points.|4|100668298|17|16526|80|0|0|400|1|1|0.15|1|4620|5400|0|-1004109824|193|67|7|74|35|45|66|60|0|18|0|0|0|0|5000|16|0
+4617|Incantation of Staff Ineptitude Other|Decreases the target's Staff skill by 45 points.|4|100668298|30|147|80|5|0.25|400|1|1|0.15|1|4617|300|0|-1004109824|193|71|8|65|35|45|71|50|0|19|0|0|0|0|4970|16|0
+4618|Incantation of Staff Ineptitude Self|Decreases the caster's Staff skill by 45 points.|4|100668298|30|154|80|0|0|400|1|1|0.15|1|4618|300|0|-1004109824|193|69|8|63|35|45|67|60|0|19|0|0|0|0|4982|16|0
+4619|Incantation of Staff Mastery Other|Increases the target's Staff skill by 45 points.|4|100668298|29|134|80|5|0.25|400|1|1|0.15|1|4619|5400|0|-1004109824|193|68|7|63|35|45|68|49|0|18|0|0|0|0|4990|16|0
+4620|Incantation of Staff Mastery Self|Increases the caster's Staff skill by 45 points.|4|100668298|29|16526|80|0|0|400|1|1|0.15|1|4620|5400|0|-1004109824|193|67|7|74|35|45|66|60|0|18|0|0|0|0|5000|16|0
 4621|Incantation of Sword Ineptitude Other|Decreases the target's Sword skill by 45 points.|4|100668302|32|147|80|5|0.25|400|1|1|0.15|1|4621|300|0|-1004109824|193|69|8|73|35|43|69|50|0|19|0|0|0|0|4880|16|0
 4622|Incantation of Sword Ineptitude Self|Decreases the caster's Sword skill by 45 points.|4|100668302|32|154|80|0|0|400|1|1|0.15|1|4622|300|0|-1004109824|193|67|8|71|35|43|65|60|0|19|0|0|0|0|4882|16|0
 4623|Incantation of Sword Mastery Other|Increases the target's Sword skill by 45 points.|4|100668302|31|134|80|5|0.25|400|1|1|0.15|1|4623|5400|0|-1004109824|193|66|7|71|35|43|66|49|0|18|0|0|0|0|4884|16|0
 4624|Incantation of Sword Mastery Self|Increases the caster's Sword skill by 45 points.|4|100668302|31|16526|80|0|0|400|1|1|0.15|1|4624|5400|0|-1004109824|193|65|7|70|35|43|64|60|0|18|0|0|0|0|4886|16|0
-4625|Incantation of Thrown Weapons Ineptitude Other|Decreases the target's Thrown Weapons skill by 45 points.|4|100668303|20|147|80|5|0.25|400|1|1|0.15|1|4625|300|0|-1004109824|193|65|8|65|29|45|65|50|0|19|0|0|0|0|5098|16|0
-4626|Incantation of Thrown Weapons Ineptitude Self|Decreases the caster's Thrown Weapons skill by 45 points.|4|100668303|20|154|80|0|0|400|1|1|0.15|1|4626|300|0|-1004109824|193|63|8|63|29|45|73|60|0|19|0|0|0|0|5104|16|0
-4627|Incantation of Thrown Weapons Mastery Other|Increases the target's Thrown Weapons skill by 45 points.|4|100668303|19|134|80|5|0.25|400|1|1|0.15|1|4627|5400|0|-1004109824|193|74|7|63|29|45|74|49|0|18|0|0|0|0|5110|16|0
-4628|Incantation of Thrown Weapons Mastery Self|Increases the caster's Thrown Weapons skill by 45 points.|4|100668303|19|16526|80|0|0|400|1|1|0.15|1|4628|5400|0|-1004109824|193|73|7|74|29|45|72|60|0|18|0|0|0|0|5116|16|0
-4629|Incantation of Unarmed Combat Ineptitude Other|Decreases the target's Unarmed Combat skill by 45 points.|4|100668274|18|147|80|5|0.25|400|1|1|0.15|1|4629|300|0|-1004109824|193|71|8|65|35|45|71|50|0|19|0|0|0|0|4972|16|0
-4630|Incantation of Unarmed Combat Mastery Other|Increases the target's Unarmed Combat skill by 45 points.|4|100668274|17|134|80|5|0.25|400|1|1|0.15|1|4630|5400|0|-1004109824|193|68|7|63|35|45|68|49|0|18|0|0|0|0|4992|16|0
-4631|Incantation of Unarmed Combat Mastery Self|Increases the caster's Unarmed Combat skill by 45 points.|4|100668274|17|16526|80|0|0|400|1|1|0.15|1|4631|5400|0|-1004109824|193|67|7|74|35|45|66|60|0|18|0|0|0|0|5002|16|0
-4632|Incantation of Unarmed Combat Ineptitude Self|Decreases the caster's Unarmed Combat skill by 45 points.|4|100668274|18|147|80|5|0.25|400|1|1|0.15|1|4632|300|0|-1004109824|193|71|8|65|35|45|71|50|0|19|0|0|0|0|4974|16|0
+4625|Incantation of Thrown Weapons Ineptitude Other|Decreases the target's Thrown Weapons skill by 45 points.|4|100668303|34|147|80|5|0.25|400|1|1|0.15|1|4625|300|0|-1004109824|193|65|8|65|29|45|65|50|0|19|0|0|0|0|5098|16|0
+4626|Incantation of Thrown Weapons Ineptitude Self|Decreases the caster's Thrown Weapons skill by 45 points.|4|100668303|34|154|80|0|0|400|1|1|0.15|1|4626|300|0|-1004109824|193|63|8|63|29|45|73|60|0|19|0|0|0|0|5104|16|0
+4627|Incantation of Thrown Weapons Mastery Other|Increases the target's Thrown Weapons skill by 45 points.|4|100668303|33|134|80|5|0.25|400|1|1|0.15|1|4627|5400|0|-1004109824|193|74|7|63|29|45|74|49|0|18|0|0|0|0|5110|16|0
+4628|Incantation of Thrown Weapons Mastery Self|Increases the caster's Thrown Weapons skill by 45 points.|4|100668303|33|16526|80|0|0|400|1|1|0.15|1|4628|5400|0|-1004109824|193|73|7|74|29|45|72|60|0|18|0|0|0|0|5116|16|0
+4629|Incantation of Unarmed Combat Ineptitude Other|Decreases the target's Unarmed Combat skill by 45 points.|4|100668274|36|147|80|5|0.25|400|1|1|0.15|1|4629|300|0|-1004109824|193|71|8|65|35|45|71|50|0|19|0|0|0|0|4972|16|0
+4630|Incantation of Unarmed Combat Mastery Other|Increases the target's Unarmed Combat skill by 45 points.|4|100668274|35|134|80|5|0.25|400|1|1|0.15|1|4630|5400|0|-1004109824|193|68|7|63|35|45|68|49|0|18|0|0|0|0|4992|16|0
+4631|Incantation of Unarmed Combat Mastery Self|Increases the caster's Unarmed Combat skill by 45 points.|4|100668274|35|16526|80|0|0|400|1|1|0.15|1|4631|5400|0|-1004109824|193|67|7|74|35|45|66|60|0|18|0|0|0|0|5002|16|0
+4632|Incantation of Unarmed Combat Ineptitude Self|Decreases the caster's Unarmed Combat skill by 45 points.|4|100668274|36|147|80|5|0.25|400|1|1|0.15|1|4632|300|0|-1004109824|193|71|8|65|35|45|71|50|0|19|0|0|0|0|4974|16|0
 4633|Incantation of Vulnerability Other|Decrease the target's Melee Defense skill by 45 points.|4|100668331|38|147|80|5|0.25|400|1|1|0.15|1|4633|300|0|-1004109824|193|65|8|65|30|44|65|50|0|23|0|0|0|0|5292|16|0
 4634|Incantation of Vulnerability Self|Decrease the target's Melee Defense skill by 45 points.|4|100668331|38|152|80|0|0|400|1|1|0.15|1|4634|300|0|-1004109824|193|63|8|63|30|44|73|60|0|23|0|0|0|0|5294|16|0
 4635|Incantation of War Magic Ineptitude Other|Decreases the target's War Magic skill by 45 points.|4|100668272|50|147|80|5|0.25|400|1|1|0.15|1|4635|300|0|-1004109824|193|63|8|73|25|47|63|50|0|27|0|0|0|0|5296|16|0
@@ -4616,7 +4616,7 @@
 4687|Epic Bow Aptitude|Increases the target's Bow skill by 20 points. Additional spells can be layered over this.|4|100668266|331|1156|10|0|1|25|1|1|0.01|1|4687|780|0|-1004109824|2|16|29|45|49|0|0|0|0|18|0|0|0|0|2752|16|0
 4688|Epic Cooking Prowess|Increases the target's Cooking skill by 25 points. Additional spells can be layered over this.|4|100670579|339|1156|10|0|1|25|1|1|0.01|1|4688|780|0|-1004109824|2|16|28|37|49|0|0|0|0|20|0|0|0|0|2672|16|0
 4689|Epic Creature Enchantment Aptitude|Increases the target's Creature Enchantment skill by 25 points. Additional spells can be layered over this.|4|100668358|251|1156|10|0|1|25|1|1|0.01|1|4689|780|0|-1004109824|2|16|25|42|49|0|0|0|0|26|0|0|0|0|2676|16|0
-4690|Epic Crossbow Aptitude|Increases the target's Crossbow skill by 20 points. Additional spells can be layered over this.|4|100668267|331|1156|10|0|1|25|1|1|0.01|1|4690|780|0|-1004109824|2|16|29|45|49|0|0|0|0|18|0|0|0|0|2754|16|0
+4690|Epic Crossbow Aptitude|Increases the target's Crossbow skill by 20 points. Additional spells can be layered over this.|4|100668267|341|1156|10|0|1|25|1|1|0.01|1|4690|780|0|-1004109824|2|16|29|45|49|0|0|0|0|18|0|0|0|0|2754|16|0
 4691|Epic Dagger Aptitude|Increases the target's Dagger skill by 20 points. Additional spells can be layered over this.|4|100668269|313|1156|10|0|1|25|1|1|0.01|1|4691|780|0|-1004109824|2|16|35|44|49|0|0|0|0|18|0|0|0|0|2690|16|0
 4692|Epic Fealty|Increases the target's Loyalty skill by 25 points. Additional spells can be layered over this.|4|100668286|345|1156|10|0|1|25|1|1|0.01|1|4692|780|0|-1004109824|2|16|28|39|49|0|0|0|0|20|0|0|0|0|2688|16|0
 4693|Epic Fletching Prowess|Increases the target's Fletching skill by 25 points. Additional spells can be layered over this.|4|100670580|347|1156|10|0|1|25|1|1|0.01|1|4693|780|0|-1004109824|2|16|28|48|49|0|0|0|0|20|0|0|0|0|2696|16|0
@@ -4628,19 +4628,19 @@
 4699|Epic Jumping Prowess|Increases the target's Jump skill by 25 points. Additional spells can be layered over this.|4|100668264|355|1156|10|0|1|25|1|1|0.01|1|4699|780|0|-1004109824|2|16|28|40|49|0|0|0|0|24|0|0|0|0|2726|16|0
 4700|Epic Life Magic Aptitude|Increases the target's Life Magic skill by 25 points. Additional spells can be layered over this.|4|100668337|357|1156|10|0|1|25|1|1|0.01|1|4700|780|0|-1004109824|2|16|25|39|49|0|0|0|0|26|0|0|0|0|2730|16|0
 4701|Epic Lockpick Prowess|Increases the target's Lockpick skill by 25 points. Additional spells can be layered over this.|4|100668284|359|1156|10|0|1|25|1|1|0.01|1|4701|780|0|-1004109824|2|16|28|43|60|0|0|0|0|20|0|0|0|0|2742|16|0
-4702|Epic Mace Aptitude|Increases the target's Mace skill by 20 points. Additional spells can be layered over this.|4|100668287|311|1156|10|0|1|25|1|1|0.01|1|4702|780|0|-1004109824|2|16|35|45|49|0|0|0|0|18|0|0|0|0|2734|16|0
+4702|Epic Mace Aptitude|Increases the target's Mace skill by 20 points. Additional spells can be layered over this.|4|100668287|315|1156|10|0|1|25|1|1|0.01|1|4702|780|0|-1004109824|2|16|35|45|49|0|0|0|0|18|0|0|0|0|2734|16|0
 4703|Epic Magic Item Tinkering Expertise|Increases the target's Magic Item Tinkering skill by 25 points. Additional spells can be layered over this.|4|100668354|361|1156|10|0|1|25|1|1|0.01|1|4703|780|0|-1004109824|2|16|25|48|49|0|0|0|0|28|0|0|0|0|2744|16|0
 4704|Epic Magic Resistance|Increases the target's Magic Defense skill by 25 points. Additional spells can be layered over this.|4|100668330|299|1156|10|0|1|25|1|1|0.01|1|4704|780|0|-1004109824|2|16|30|41|49|0|0|0|0|22|0|0|0|0|2746|16|0
 4705|Epic Mana Conversion Prowess|Increases the target's Mana Conversion skill by 25 points. Additional spells can be layered over this.|4|100668288|363|1156|10|0|1|25|1|1|0.01|1|4705|780|0|-1004109824|2|16|25|40|49|0|0|0|0|26|0|0|0|0|2748|16|0
 4706|Epic Monster Attunement|Increases the target's Assess Creature skill by 25 points. Additional spells can be layered over this.|4|100668353|365|1156|10|0|1|25|1|1|0.01|1|4706|780|0|-1004109824|2|16|28|41|49|0|0|0|0|28|0|0|0|0|2758|16|0
 4707|Epic Person Attunement|Increases the target's Assess Person skill by 25 points. Additional spells can be layered over this.|4|100668355|367|1156|10|0|1|25|1|1|0.01|1|4707|780|0|-1004109824|2|16|28|44|49|0|0|0|0|28|0|0|0|0|2760|16|0
 4708|Epic Salvaging Aptitude|Increases the target's Salvaging skill by 25 points. Additional spells can be layered over this.|4|100673210|437|1156|10|0|1|25|1|1|0.01|1|4708|780|0|-1004109824|2|16|25|45|49|0|0|0|0|26|0|0|0|0|2772|16|0
-4709|Epic Spear Aptitude|Increases the target's Spear skill by 20 points. Additional spells can be layered over this.|4|100668297|311|1156|10|0|1|25|1|1|0.01|1|4709|780|0|-1004109824|2|16|35|45|49|0|0|0|0|18|0|0|0|0|2736|16|0
+4709|Epic Spear Aptitude|Increases the target's Spear skill by 20 points. Additional spells can be layered over this.|4|100668297|317|1156|10|0|1|25|1|1|0.01|1|4709|780|0|-1004109824|2|16|35|45|49|0|0|0|0|18|0|0|0|0|2736|16|0
 4710|Epic Sprint|Increases the target's Run skill by 25 points. Additional spells can be layered over this.|4|100668295|369|1156|10|0|1|25|1|1|0.01|1|4710|780|0|-1004109824|2|16|28|47|49|0|0|0|0|24|0|0|0|0|2786|16|0
-4711|Epic Staff Aptitude|Increases the target's Staff skill by 20 points. Additional spells can be layered over this.|4|100668298|311|1156|10|0|1|25|1|1|0.01|1|4711|780|0|-1004109824|2|16|35|45|49|0|0|0|0|18|0|0|0|0|2738|16|0
+4711|Epic Staff Aptitude|Increases the target's Staff skill by 20 points. Additional spells can be layered over this.|4|100668298|319|1156|10|0|1|25|1|1|0.01|1|4711|780|0|-1004109824|2|16|35|45|49|0|0|0|0|18|0|0|0|0|2738|16|0
 4712|Epic Sword Aptitude|Increases the target's Sword skill by 20 points. Additional spells can be layered over this.|4|100668302|371|1156|10|0|1|25|1|1|0.01|1|4712|780|0|-1004109824|2|16|35|43|49|0|0|0|0|18|0|0|0|0|2710|16|0
-4713|Epic Thrown Aptitude|Increases the target's Thrown Weapons skill by 20 points. Additional spells can be layered over this.|4|100668303|331|1156|10|0|1|25|1|1|0.01|1|4713|780|0|-1004109824|2|16|29|45|49|0|0|0|0|18|0|0|0|0|2756|16|0
-4714|Epic Unarmed Aptitude|Increases the target's Unarmed Combat skill by 20 points. Additional spells can be layered over this.|4|100668274|311|1156|10|0|1|25|1|1|0.01|1|4714|780|0|-1004109824|2|16|35|45|49|0|0|0|0|18|0|0|0|0|2740|16|0
+4713|Epic Thrown Aptitude|Increases the target's Thrown Weapons skill by 20 points. Additional spells can be layered over this.|4|100668303|373|1156|10|0|1|25|1|1|0.01|1|4713|780|0|-1004109824|2|16|29|45|49|0|0|0|0|18|0|0|0|0|2756|16|0
+4714|Epic Unarmed Aptitude|Increases the target's Unarmed Combat skill by 20 points. Additional spells can be layered over this.|4|100668274|375|1156|10|0|1|25|1|1|0.01|1|4714|780|0|-1004109824|2|16|35|45|49|0|0|0|0|18|0|0|0|0|2740|16|0
 4715|Epic War Magic Aptitude|Increases the target's War Magic skill by 25 points. Additional spells can be layered over this.|4|100668272|255|1156|10|0|1|25|1|1|0.01|1|4715|780|0|-1004109824|2|16|25|47|49|0|0|0|0|26|0|0|0|0|2804|16|0
 4716|Burning Curse|Does 100-250 points of fire damage to the cursed target.|2|100673976|80|147|70|35|0|350|1|1|0.15|3|4716|0|0|0|112|72|8|65|26|41|74|52|0|32|0|0|0|0|1414|16|0
 4717|Expedient Return to Ulgrim|Teleports target far above Ayan Baqur.|3|100674025|214|128|150|0|0|150|1|1|0.25|8|4717|0|0|0|3|32|110|32|66|60|0|0|0|16|0|0|0|0|2922|16|0
@@ -4738,10 +4738,10 @@
 4809|Apprentice Enchanter's Creature Aptitude|Increases the target's Creature Enchantment skill by 5 points.|4|100668358|549|6|10|0|1|2|1|1|0.01|1|4809|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|388|16|0
 4810|Journeyman Enchanter's Creature Aptitude|Increases the target's Creature Enchantment skill by 10 points.|4|100668358|549|6|10|0|1|3|1|1|0.01|1|4810|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|5700|16|0
 4811|Master Enchanter's Creature Aptitude|Increases the target's Creature Enchantment skill by 20 points.|4|100668358|549|6|10|0|1|4|1|1|0.01|1|4811|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|7408|16|0
-4812|Novice Archer's Crossbow Aptitude|Increases the target's Crossbow skill by 3 points.|4|100668267|545|6|10|0|1|1|1|1|0.01|1|4812|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|8076|16|0
-4813|Apprentice Archer's Crossbow Aptitude|Increases the target's Crossbow skill by 5 points.|4|100668267|545|6|10|0|1|2|1|1|0.01|1|4813|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|368|16|0
-4814|Journeyman Archer's Crossbow Aptitude|Increases the target's Crossbow skill by 10 points.|4|100668267|545|6|10|0|1|3|1|1|0.01|1|4814|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|5680|16|0
-4815|Master Archer's Crossbow Aptitude|Increases the target's Crossbow skill by 20 points.|4|100668267|545|6|10|0|1|4|1|1|0.01|1|4815|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|7386|16|0
+4812|Novice Archer's Crossbow Aptitude|Increases the target's Crossbow skill by 3 points.|4|100668267|546|6|10|0|1|1|1|1|0.01|1|4812|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|8076|16|0
+4813|Apprentice Archer's Crossbow Aptitude|Increases the target's Crossbow skill by 5 points.|4|100668267|546|6|10|0|1|2|1|1|0.01|1|4813|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|368|16|0
+4814|Journeyman Archer's Crossbow Aptitude|Increases the target's Crossbow skill by 10 points.|4|100668267|546|6|10|0|1|3|1|1|0.01|1|4814|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|5680|16|0
+4815|Master Archer's Crossbow Aptitude|Increases the target's Crossbow skill by 20 points.|4|100668267|546|6|10|0|1|4|1|1|0.01|1|4815|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|7386|16|0
 4816|Novice Soldier's Dagger Aptitude|Increases the target's Dagger skill by 3 points.|4|100668269|540|6|10|0|1|1|1|1|0.01|1|4816|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|8128|16|0
 4817|Apprentice Soldier's Dagger Aptitude|Increases the target's Dagger skill by 5 points.|4|100668269|540|6|10|0|1|2|1|1|0.01|1|4817|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|420|16|0
 4818|Journeyman Soldier's Dagger Aptitude|Increases the target's Dagger skill by 10 points.|4|100668269|540|6|10|0|1|3|1|1|0.01|1|4818|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|5734|16|0
@@ -4772,10 +4772,10 @@
 4843|Master Locksmith's Lockpick Aptitude|Increases the target's Lockpick skill by 20 points.|4|100668284|558|6|10|0|1|4|1|1|0.01|1|4843|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|20|0|0|0|0|7432|16|0
 4844|Yeoman's Loyalty|Increases the target's Loyalty skill by 3 points.|4|100668286|565|6|10|0|1|1|1|1|0.01|1|4844|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|11628|16|0
 4845|Squire's Loyalty|Increases the target's Loyalty skill by 5 points.|4|100668286|565|6|10|0|1|2|1|1|0.01|1|4845|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|10332|16|0
-4846|Novice Soldier's Mace Aptitude|Increases the target's Mace skill by 3 points.|4|100668287|539|6|10|0|1|1|1|1|0.01|1|4846|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|8134|16|0
-4847|Apprentice Soldier's Mace Aptitude|Increases the target's Mace skill by 5 points.|4|100668287|539|6|10|0|1|2|1|1|0.01|1|4847|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|426|16|0
-4848|Journeyman Soldier's Mace Aptitude|Increases the target's Mace skill by 10 points.|4|100668287|539|6|10|0|1|3|1|1|0.01|1|4848|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|5740|16|0
-4849|Master Soldier's Mace Aptitude|Increases the target's Mace skill by 20 points.|4|100668287|539|6|10|0|1|4|1|1|0.01|1|4849|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|7456|16|0
+4846|Novice Soldier's Mace Aptitude|Increases the target's Mace skill by 3 points.|4|100668287|541|6|10|0|1|1|1|1|0.01|1|4846|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|8134|16|0
+4847|Apprentice Soldier's Mace Aptitude|Increases the target's Mace skill by 5 points.|4|100668287|541|6|10|0|1|2|1|1|0.01|1|4847|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|426|16|0
+4848|Journeyman Soldier's Mace Aptitude|Increases the target's Mace skill by 10 points.|4|100668287|541|6|10|0|1|3|1|1|0.01|1|4848|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|5740|16|0
+4849|Master Soldier's Mace Aptitude|Increases the target's Mace skill by 20 points.|4|100668287|541|6|10|0|1|4|1|1|0.01|1|4849|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|7456|16|0
 4850|Novice Negator's Magic Resistance|Increases the target's Magic Defense skill by 3 points.|4|100668330|554|6|10|0|1|1|1|1|0.01|1|4850|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|8114|16|0
 4851|Apprentice Negator's Magic Resistance|Increases the target's Magic Defense skill by 5 points.|4|100668330|554|6|10|0|1|2|1|1|0.01|1|4851|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|408|16|0
 4852|Journeyman Negator's Magic Resistance|Increases the target's Magic Defense skill by 10 points.|4|100668330|554|6|10|0|1|3|1|1|0.01|1|4852|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|5724|16|0
@@ -4794,30 +4794,30 @@
 4865|Master Wayfarer's Impregnability|Increases the target's Missile Defense skill by 20 points.|4|100669126|553|6|10|0|1|4|1|1|0.01|1|4865|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|7480|16|0
 4866|Novice Scavenger's Salvaging Aptitude|Increases the target's Salvaging skill by 3 points.|4|100673210|560|6|10|0|1|1|1|1|0.01|1|4866|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|20|0|0|0|0|8120|16|0
 4867|Apprentice Scavenger's Salvaging Aptitude|Increases the target's Salvaging skill by 5 points.|4|100673210|560|6|10|0|1|2|1|1|0.01|1|4867|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|20|0|0|0|0|414|16|0
-4868|Novice Soldier's Spear Aptitude|Increases the target's Spear skill by 3 points.|4|100668297|539|6|10|0|1|1|1|1|0.01|1|4868|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|8136|16|0
-4869|Apprentice Soldier's Spear Aptitude|Increases the target's Spear skill by 5 points.|4|100668297|539|6|10|0|1|2|1|1|0.01|1|4869|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|428|16|0
-4870|Journeyman Soldier's Spear Aptitude|Increases the target's Spear skill by 10 points.|4|100668297|539|6|10|0|1|3|1|1|0.01|1|4870|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|5742|16|0
-4871|Master Soldier's Spear Aptitude|Increases the target's Spear skill by 20 points.|4|100668297|539|6|10|0|1|4|1|1|0.01|1|4871|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|7458|16|0
+4868|Novice Soldier's Spear Aptitude|Increases the target's Spear skill by 3 points.|4|100668297|542|6|10|0|1|1|1|1|0.01|1|4868|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|8136|16|0
+4869|Apprentice Soldier's Spear Aptitude|Increases the target's Spear skill by 5 points.|4|100668297|542|6|10|0|1|2|1|1|0.01|1|4869|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|428|16|0
+4870|Journeyman Soldier's Spear Aptitude|Increases the target's Spear skill by 10 points.|4|100668297|542|6|10|0|1|3|1|1|0.01|1|4870|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|5742|16|0
+4871|Master Soldier's Spear Aptitude|Increases the target's Spear skill by 20 points.|4|100668297|542|6|10|0|1|4|1|1|0.01|1|4871|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|7458|16|0
 4872|Novice Messenger's Sprint Aptitude|Increases the target's Run skill by 3 points.|4|100668295|575|6|10|0|1|1|1|1|0.01|1|4872|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|8112|16|0
 4873|Apprentice Messenger's Sprint Aptitude|Increases the target's Run skill by 5 points.|4|100668295|575|6|10|0|1|2|1|1|0.01|1|4873|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|406|16|0
 4874|Journeyman Messenger's Sprint Aptitude|Increases the target's Run skill by 10 points.|4|100668295|575|6|10|0|1|3|1|1|0.01|1|4874|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|5722|16|0
 4875|Master Messenger's Sprint Aptitude|Increases the target's Run skill by 20 points.|4|100668295|575|6|10|0|1|4|1|1|0.01|1|4875|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|7434|16|0
-4876|Novice Soldier's Staff Aptitude|Increases the target's Staff skill by 3 points.|4|100668298|539|6|10|0|1|1|1|1|0.01|1|4876|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|8138|16|0
-4877|Apprentice Soldier's Staff Aptitude|Increases the target's Staff skill by 5 points.|4|100668298|539|6|10|0|1|2|1|1|0.01|1|4877|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|430|16|0
-4878|Journeyman Soldier's Staff Aptitude|Increases the target's Staff skill by 10 points.|4|100668298|539|6|10|0|1|3|1|1|0.01|1|4878|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|5744|16|0
-4879|Master Soldier's Staff Aptitude|Increases the target's Staff skill by 20 points.|4|100668298|539|6|10|0|1|4|1|1|0.01|1|4879|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|7460|16|0
+4876|Novice Soldier's Staff Aptitude|Increases the target's Staff skill by 3 points.|4|100668298|543|6|10|0|1|1|1|1|0.01|1|4876|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|8138|16|0
+4877|Apprentice Soldier's Staff Aptitude|Increases the target's Staff skill by 5 points.|4|100668298|543|6|10|0|1|2|1|1|0.01|1|4877|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|430|16|0
+4878|Journeyman Soldier's Staff Aptitude|Increases the target's Staff skill by 10 points.|4|100668298|543|6|10|0|1|3|1|1|0.01|1|4878|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|5744|16|0
+4879|Master Soldier's Staff Aptitude|Increases the target's Staff skill by 20 points.|4|100668298|543|6|10|0|1|4|1|1|0.01|1|4879|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|7460|16|0
 4880|Novice Soldier's Sword Aptitude|Increases the target's Sword skill by 3 points.|4|100668302|538|6|10|0|1|1|1|1|0.01|1|4880|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|8130|16|0
 4881|Apprentice Soldier's Sword Aptitude|Increases the target's Sword skill by 5 points.|4|100668302|538|6|10|0|1|2|1|1|0.01|1|4881|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|422|16|0
 4882|Journeyman Soldier's Sword Aptitude|Increases the target's Sword skill by 10 points.|4|100668302|538|6|10|0|1|3|1|1|0.01|1|4882|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|5736|16|0
 4883|Master Soldier's Sword Aptitude|Increases the target's Sword skill by 20 points.|4|100668302|538|6|10|0|1|4|1|1|0.01|1|4883|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|7452|16|0
-4884|Novice Archer's Thrown Aptitude|Increases the target's Thrown Weapon skill by 3 points.|4|100668303|545|6|10|0|1|1|1|1|0.01|1|4884|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|8078|16|0
-4885|Apprentice Archer's Thrown Aptitude|Increases the target's Thrown Weapon skill by 5 points.|4|100668303|545|6|10|0|1|2|1|1|0.01|1|4885|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|370|16|0
-4886|Journeyman Archer's Thrown Aptitude|Increases the target's Thrown Weapon skill by 10 points.|4|100668303|545|6|10|0|1|3|1|1|0.01|1|4886|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|5682|16|0
-4887|Master Archer's Thrown Aptitude|Increases the target's Thrown Weapon skill by 20 points.|4|100668303|545|6|10|0|1|4|1|1|0.01|1|4887|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|7388|16|0
-4888|Novice Soldier's Unarmed Aptitude|Increases the target's Unarmed Combat skill by 3 points.|4|100668274|539|6|10|0|1|1|1|1|0.01|1|4888|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|8140|16|0
-4889|Apprentice Soldier's Unarmed Aptitude|Increases the target's Unarmed Combatskill by 5 points.|4|100668274|539|6|10|0|1|2|1|1|0.01|1|4889|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|432|16|0
-4890|Journeyman Soldier's Unarmed Aptitude|Increases the target's Unarmed Combat skill by 10 points.|4|100668274|539|6|10|0|1|3|1|1|0.01|1|4890|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|5746|16|0
-4891|Master Soldier's Unarmed Aptitude|Increases the target's Unarmed Combat skill by 20 points.|4|100668274|539|6|10|0|1|4|1|1|0.01|1|4891|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|7462|16|0
+4884|Novice Archer's Thrown Aptitude|Increases the target's Thrown Weapon skill by 3 points.|4|100668303|547|6|10|0|1|1|1|1|0.01|1|4884|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|8078|16|0
+4885|Apprentice Archer's Thrown Aptitude|Increases the target's Thrown Weapon skill by 5 points.|4|100668303|547|6|10|0|1|2|1|1|0.01|1|4885|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|370|16|0
+4886|Journeyman Archer's Thrown Aptitude|Increases the target's Thrown Weapon skill by 10 points.|4|100668303|547|6|10|0|1|3|1|1|0.01|1|4886|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|5682|16|0
+4887|Master Archer's Thrown Aptitude|Increases the target's Thrown Weapon skill by 20 points.|4|100668303|547|6|10|0|1|4|1|1|0.01|1|4887|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|7388|16|0
+4888|Novice Soldier's Unarmed Aptitude|Increases the target's Unarmed Combat skill by 3 points.|4|100668274|544|6|10|0|1|1|1|1|0.01|1|4888|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|8140|16|0
+4889|Apprentice Soldier's Unarmed Aptitude|Increases the target's Unarmed Combatskill by 5 points.|4|100668274|544|6|10|0|1|2|1|1|0.01|1|4889|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|432|16|0
+4890|Journeyman Soldier's Unarmed Aptitude|Increases the target's Unarmed Combat skill by 10 points.|4|100668274|544|6|10|0|1|3|1|1|0.01|1|4890|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|5746|16|0
+4891|Master Soldier's Unarmed Aptitude|Increases the target's Unarmed Combat skill by 20 points.|4|100668274|544|6|10|0|1|4|1|1|0.01|1|4891|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|7462|16|0
 4892|Novice Warlock's War Magic Aptitude|Increases the target's War Magic skill by 3 points.|4|100668272|550|6|10|0|1|1|1|1|0.01|1|4892|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|8154|16|0
 4893|Apprentice Warlock's War Magic Aptitude|Increases the target's War Magic skill by 5 points.|4|100668272|550|6|10|0|1|2|1|1|0.01|1|4893|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|452|16|0
 4894|Journeyman Warlock's War Magic Aptitude|Increases the target's War Magic skill by 10 points.|4|100668272|550|6|10|0|1|3|1|1|0.01|1|4894|1800|0|-1004109824|1|7|35|43|49|0|0|0|0|18|0|0|0|0|5766|16|0
