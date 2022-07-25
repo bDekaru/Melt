@@ -232,7 +232,7 @@ namespace Melt
             //Staff = new WeaponProfile("Staff", 0.25f, 0.50f);
             //Sword = new WeaponProfile("Sword", 0.40f, 0.50f);
             //Unarmed = new WeaponProfile("Unarmed", 0.50f, 0.75f);
-            //Thrown = new WeaponProfile("Thrown", 0.40f, 0.50f);
+            Thrown = new WeaponProfile("Thrown", 0.40f, 0.50f);
 
             //DaggerMS = new WeaponProfile("DaggerMS", 0.71f, 0.75f);
             //SwordMS = new WeaponProfile("SwordMS", 0.40f, 0.50f);
@@ -251,7 +251,8 @@ namespace Melt
             //Staff.SetDamageTiers(5, 7, 9, 11, 13, 17, 19, 21);
             //Sword.SetDamageTiers(10, 20, 25, 30, 35, 40, 45, 50);
             //Unarmed.SetDamageTiers(4, 7, 9, 12, 16, 18, 22, 24);
-            //Thrown.SetDamageTiers(6, 8, 12, 16, 20, 24, 28, 32);
+            ////Thrown.SetDamageTiers(6, 8, 12, 16, 20, 24, 28, 32);
+            Thrown.SetDamageTiers(8, 16, 20, 24, 26, 28, 32, 36);
 
             //DaggerMS.SetDamageTiers(3, 0, 0, 0, 0, 0, 0, 0);
             //SwordMS.SetDamageTiers(5, 0, 0, 0, 0, 0, 0, 0);
@@ -269,7 +270,7 @@ namespace Melt
             //BuildWeapon(Staff);
             //BuildWeapon(Sword);
             //BuildWeapon(Unarmed);
-            //BuildWeapon(Thrown);
+            BuildWeapon(Thrown);
 
             //BuildWeapon(DaggerMS);
             //BuildWeapon(SwordMS);
@@ -286,7 +287,7 @@ namespace Melt
             //WriteFile(Staff, 6);
             //WriteFile(Sword, 6);
             //WriteFile(Unarmed, 6);
-            //WriteFile(Thrown, 6);
+            WriteFile(Thrown, 6);
 
             //WriteFile(DaggerMS, 6);
             //WriteFile(SwordMS, 6);

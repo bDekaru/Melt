@@ -10,7 +10,8 @@ namespace Melt
     {
         invalid,
         retail,
-        ToD 
+        ToD,
+        Latest
     }
 
     public partial class cDatFile
@@ -54,13 +55,14 @@ namespace Melt
             fileCache = new SortedDictionary<uint, cDatFileEntry>();
         }
 
-        public void loadFromDat(string filename)
+        public int loadFromDat(string filename)
         {
+            int retailIteration = 0;
             StreamReader inputFile = new StreamReader(new FileStream(filename, FileMode.Open, FileAccess.Read));
             if (inputFile.BaseStream.Length < 1024)
             {
                 Console.WriteLine("{0} is too small to be a valid dat file", filename);
-                return;
+                return retailIteration;
             }
 
             Console.WriteLine("Reading data from {0}...", filename);
@@ -101,7 +103,7 @@ namespace Melt
             if (fileFormat == eDatFormat.invalid)
             {
                 Console.WriteLine("{0} is not a valid dat file.", filename);
-                return;
+                return retailIteration;
             }
 
             blockSize = Utils.readInt32(inputFile);
@@ -111,9 +113,9 @@ namespace Melt
                 dataSubset = Utils.readUInt32(inputFile);
             else
             {
-                //dataSet = 0x00000043 for old cell.dat
-                //dataSet = 0x0000082f for old portal.dat
-                if (dataSet == 0x00000043)
+                retailIteration = (int)dataSet;
+                //dataSet for retail is the file iteration. TODO: figure a way to tell apart portal and cell, for now just check for know cell iterations.
+                if (dataSet == 0x00000043 || dataSet == 0x00000639)
                 {
                     dataSet = 0x00000002;
                     dataSubset = 0x00000001;
@@ -171,6 +173,7 @@ namespace Melt
 
             timer.Stop();
             Console.WriteLine("{0} blocks read in {1} seconds.", inputBlockCache.blocks.Count, timer.ElapsedMilliseconds / 1000f);
+            return retailIteration;
         }
 
         //we only write to the ToD data format.

@@ -65,6 +65,31 @@ namespace Melt
 
                 switch (format)
                 {
+                    case 20:
+                        {
+                            lenght = width * height * 3;
+                            outputFile.BaseStream.Write(BitConverter.GetBytes((uint)fileid), 0, 4);
+                            outputFile.BaseStream.Write(BitConverter.GetBytes((uint)6), 0, 4);
+                            outputFile.BaseStream.Write(BitConverter.GetBytes(width), 0, 4);
+                            outputFile.BaseStream.Write(BitConverter.GetBytes(height), 0, 4);
+                            outputFile.BaseStream.Write(BitConverter.GetBytes(format), 0, 4);
+                            outputFile.BaseStream.Write(BitConverter.GetBytes(lenght), 0, 4);
+                            outputFile.Flush();
+
+                            for (int y = 0; y < height; y++)
+                            {
+                                for (int x = 0; x < width; x++)
+                                {
+                                    Color pixel = inputBMP.GetPixel(x, y);
+
+                                    outputFile.BaseStream.Write(BitConverter.GetBytes(pixel.B), 0, 1);
+                                    outputFile.BaseStream.Write(BitConverter.GetBytes(pixel.G), 0, 1);
+                                    outputFile.BaseStream.Write(BitConverter.GetBytes(pixel.R), 0, 1);
+                                    outputFile.Flush();
+                                }
+                            }
+                            break;
+                        }
                     case 21:
                         {
                             lenght = width * height * 4;
@@ -157,8 +182,8 @@ namespace Melt
             uint format = Utils.readUInt32(inputFile);
             uint length = Utils.readUInt32(inputFile);
 
-            if (textureType != 8)
-                return;
+            //if (textureType != 8)
+            //    return;
 
             switch (format)
             {

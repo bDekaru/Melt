@@ -1,8 +1,11 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using Newtonsoft.Json;
+using ACE.DatLoader.FileTypes;
+using ACE.Entity.Enum;
+using ACE.DatLoader.Entity;
 
 namespace Melt
 {
@@ -185,6 +188,102 @@ namespace Melt
             inputFile.Close();
             outputFile.Close();
             Console.WriteLine("Done");
+        }
+
+        struct SpellInfo
+        {
+            public int Key;
+            public string Name;
+            public string Description;
+        }
+
+        static public void transferSpellDescriptiuonsFromJsonToTxt(string jsonFileName, string txtFilename)
+        {
+            StreamReader jsonFile = new StreamReader(new FileStream(jsonFileName, FileMode.Open, FileAccess.Read));
+            if (jsonFile == null)
+            {
+                Console.WriteLine("Unable to open {0}", jsonFileName);
+                return;
+            }
+
+            StreamReader inputFile = new StreamReader(new FileStream(txtFilename, FileMode.Open, FileAccess.Read));
+            if (inputFile == null)
+            {
+                Console.WriteLine("Unable to open {0}", txtFilename);
+                return;
+            }
+
+            StreamWriter outputFile = new StreamWriter(new FileStream(".\\0E00000E.txt", FileMode.Create, FileAccess.Write));
+            if (outputFile == null)
+            {
+                Console.WriteLine("Unable to open 0E00000E.txt");
+                return;
+            }
+
+            string line;
+            bool foundDesc = false;
+            bool foundKey = false;
+            Dictionary<int, SpellInfo> spellList = new Dictionary<int, SpellInfo>();
+
+            SpellInfo newSpell = new SpellInfo();
+            while (!jsonFile.EndOfStream)
+            {
+                line = jsonFile.ReadLine();
+
+                if (!foundDesc && line.Contains("\"desc\""))
+                {
+                    foundDesc = true;
+                    newSpell.Description = line.Replace("                    \"desc\": \"", "").Replace("\",", "");
+                }
+                else if (!foundKey && line.Contains("\"key\":") && !line.Contains("                                "))
+                {
+                    foundKey = true;
+                    newSpell.Key = int.Parse(line.Replace("                \"key\": ", "").Replace(",", ""));
+                }
+                else if (line.Contains("\"name\":"))
+                {
+                    newSpell.Name = line.Replace("                    \"name\": \"", "").Replace("\",", "");
+
+                    spellList.Add(newSpell.Key, newSpell);
+
+                    foundDesc = false;
+                    foundKey = false;
+                    newSpell = new SpellInfo();
+                }
+            }
+            jsonFile.Close();
+
+            string[] spell;         
+            line = inputFile.ReadLine();
+            short spellCount = Convert.ToInt16(line);
+            line = inputFile.ReadLine();
+
+            for (int entry = 0; entry < spellCount; entry++)
+            {
+                line = inputFile.ReadLine();
+                spell = line.Split('|');
+
+                int spellId = Convert.ToInt32(spell[0]);
+                string spellName = spell[1];
+                string spellDescription = spell[2];
+
+                SpellInfo spellInfo;
+                if(spellList.TryGetValue(spellId, out spellInfo))
+                {
+                    if (spellInfo.Name != spellName)
+                        Console.WriteLine("Spell with same id but different name found: {0} -> {1}", spellName, newSpell.Name);
+                    else if(spellInfo.Description != spellDescription)
+                        line = line.Replace(spellDescription, spellInfo.Description);
+
+                    outputFile.WriteLine(line);
+                    outputFile.Flush();
+                }
+                else
+                    Console.WriteLine("Spell not found in json file: {0}", newSpell.Name);
+            }
+
+            inputFile.Close();
+            outputFile.Close();
         }
 
         static public void toJson(string cache2rawFilename, string client0e00000eFilename)
@@ -1012,7 +1111,9 @@ namespace Melt
                 switch(familyId)
                 {
                     case 17: // Axe mastery
-                        spellName = spellName.Replace("Axe", "Axe and Mace");
+                    case 438: // Axe boon
+                        if (!spellName.Contains("Boon"))
+                            spellName = spellName.Replace("Axe", "Axe and Mace");
                         spellDescription = spellDescription.Replace("Axe", "Axe and Mace");
                         break;
                     case 18: // Axe ineptude
@@ -1024,13 +1125,21 @@ namespace Melt
                         spellDescription = spellDescription.Replace("Mace", "Axe and Mace");
                         familyId = 17;
                         break;
+                    case 443: // Mace boon
+                        if (!spellName.Contains("Boon"))
+                            spellName = spellName.Replace("Mace", "Axe and Mace");
+                        spellDescription = spellDescription.Replace("Mace", "Axe and Mace");
+                        familyId = 438;
+                        break;
                     case 26: // Mace ineptude
                         spellName = spellName.Replace("Mace", "Axe and Mace");
                         spellDescription = spellDescription.Replace("Mace", "Axe and Mace");
                         familyId = 18;
                         break;
                     case 27: // Spear mastery
-                        spellName = spellName.Replace("Spear", "Spear and Staff");
+                    case 445: // Spear boon
+                        if (!spellName.Contains("Boon"))
+                            spellName = spellName.Replace("Spear", "Spear and Staff");
                         spellDescription = spellDescription.Replace("Spear", "Spear and Staff");
                         break;
                     case 28: // Spear ineptude
@@ -1042,13 +1151,21 @@ namespace Melt
                         spellDescription = spellDescription.Replace("Staff", "Spear and Staff");
                         familyId = 27;
                         break;
+                    case 446: // Staff boon
+                        if (!spellName.Contains("Boon"))
+                            spellName = spellName.Replace("Staff", "Spear and Staff");
+                        spellDescription = spellDescription.Replace("Staff", "Spear and Staff");
+                        familyId = 445;
+                        break;
                     case 30: // Staff ineptude
                         spellName = spellName.Replace("Staff", "Spear and Staff");
                         spellDescription = spellDescription.Replace("Staff", "Spear and Staff");
                         familyId = 28;
                         break;
                     case 19: // Bow mastery
-                        spellName = spellName.Replace("Bow", "Bow and Crossbow");
+                    case 439: // Bow boon
+                        if (!spellName.Contains("Boon"))
+                            spellName = spellName.Replace("Bow", "Bow and Crossbow");
                         spellDescription = spellDescription.Replace("Bow", "Bow and Crossbow");
                         break;
                     case 20: // Bow ineptude
@@ -1056,9 +1173,16 @@ namespace Melt
                         spellDescription = spellDescription.Replace("Bow", "Bow and Crossbow");
                         break;
                     case 21: // Crossbow mastery
-                        spellName = spellName.Replace("Crossbow", "Bow and Crossbow");
+                        if (!spellName.Contains("Boon"))
+                            spellName = spellName.Replace("Crossbow", "Bow and Crossbow");
                         spellDescription = spellDescription.Replace("Crossbow", "Bow and Crossbow");
                         familyId = 19;
+                        break;
+                    case 441: // Crossbow boon
+                        if (!spellName.Contains("Boon"))
+                            spellName = spellName.Replace("Crossbow", "Bow and Crossbow");
+                        spellDescription = spellDescription.Replace("Crossbow", "Bow and Crossbow");
+                        familyId = 439;
                         break;
                     case 22: // Crossbow ineptude
                         spellName = spellName.Replace("Crossbow", "Bow and Crossbow");
@@ -1663,6 +1787,10 @@ namespace Melt
                         spellName.Contains("Heavy Weapon") ||
                         spellName.Contains("Light Weapon") ||
                         spellName.Contains("Missile Weapon") ||
+                        spellName.Contains("Kern's Boon") ||
+                        spellName.Contains("Ranger's Boon") ||
+                        spellName.Contains("Fencer's Boon") ||
+                        spellName.Contains("Soldier's Boon") ||
                         spellName.Contains("Cascade"))
                     {
                         spellName = spellNameOld;

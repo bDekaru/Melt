@@ -38,7 +38,7 @@ namespace Melt
 
             StreamWriter outputStream = new StreamWriter(iterationFile.fileContent);
             Utils.writeInt32(iteration, outputStream);
-            if (dataSet == 0x00000001) //portal
+            if (masterMapId == 0x25000000) //portal
                 Utils.writeInt32(-iteration, outputStream);
             else
                 Utils.writeInt32((int)(0xffffffff - iteration + 1), outputStream);
@@ -520,6 +520,259 @@ namespace Melt
             timer.Stop();
             if (verboseLevel > 5)
                 Console.WriteLine("Landblock heightmap replaced in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
+            return true;
+        }
+
+        public bool compareLandblockInfo(uint cellIdInLandblock, cDatFile otherDat, int verboseLevel = 6)
+        {
+            if (verboseLevel > 5)
+                Console.WriteLine("Comparing landblock...");
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+
+            cDatFile ourDat = this; //just to make things less confusing
+
+            uint landblockId = cellIdInLandblock & 0xFFFF0000 | 0x0000FFFF;
+            uint landblockInfoId = cellIdInLandblock & 0xFFFF0000 | 0x0000FFFE;
+            cDatFileEntry ourLandblockInfoFile;
+            cDatFileEntry otherLandblockInfoFile;
+
+            if (otherDat.fileCache.TryGetValue(landblockInfoId, out otherLandblockInfoFile))
+            {
+                cLandblockInfo landblockInfoOther = new cLandblockInfo(otherLandblockInfoFile);
+                cLandblockInfo landblockInfoOurs;
+
+                if (ourDat.fileCache.TryGetValue(landblockInfoId, out ourLandblockInfoFile))
+                {
+                    landblockInfoOurs = new cLandblockInfo(ourLandblockInfoFile);
+
+                    return compareLandblockInfo(landblockInfoOurs, landblockInfoOther);
+                }
+            }
+
+            return false;
+        }
+
+        public bool compareLandblockCells(uint cellIdInLandblock, cDatFile otherDat, int verboseLevel = 6)
+        {
+            if (verboseLevel > 5)
+                Console.WriteLine("Comparing landblock...");
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+
+            cDatFile ourDat = this; //just to make things less confusing
+
+            uint landblockId = cellIdInLandblock & 0xFFFF0000 | 0x0000FFFF;
+            uint landblockInfoId = cellIdInLandblock & 0xFFFF0000 | 0x0000FFFE;
+            cDatFileEntry ourLandblockInfoFile;
+            cDatFileEntry otherLandblockInfoFile;
+
+            if (otherDat.fileCache.TryGetValue(landblockInfoId, out otherLandblockInfoFile))
+            {
+                cLandblockInfo landblockInfoOther = new cLandblockInfo(otherLandblockInfoFile);
+                cLandblockInfo landblockInfoOurs;
+
+                if (ourDat.fileCache.TryGetValue(landblockInfoId, out ourLandblockInfoFile))
+                {
+                    landblockInfoOurs = new cLandblockInfo(ourLandblockInfoFile);
+
+                    List<cEnvCell> ourEnvCells = new List<cEnvCell>();
+                    List<cEnvCell> otherEnvCells = new List<cEnvCell>();
+
+                    for (uint i = 0; i < 0xFFFE; i++)
+                    {
+                        uint id = i | (landblockId & 0xFFFF0000);
+                        cDatFileEntry envCellFile;
+                        if (ourDat.fileCache.TryGetValue(id, out envCellFile))
+                            ourEnvCells.Add(new cEnvCell(envCellFile));
+                        if (otherDat.fileCache.TryGetValue(id, out envCellFile))
+                            otherEnvCells.Add(new cEnvCell(envCellFile));
+                    }
+
+                    if (ourEnvCells.Count != otherEnvCells.Count)
+                        Console.WriteLine($"Cells count mismatch: {ourEnvCells.Count} {otherEnvCells.Count}");
+
+                    for (int i = 0; i < ourEnvCells.Count; i++)
+                    {
+                        cEnvCell ourEnvCell = ourEnvCells[i];
+                        cEnvCell otherEnvCell = otherEnvCells[i];
+
+                        int counter = 0;
+
+                        if (!compareEnvCells(ourEnvCell, otherEnvCell))
+                            counter++;
+                    }
+
+                }
+            }
+
+            timer.Stop();
+            if (verboseLevel > 5)
+                Console.WriteLine("Landblock compared in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
+            return true;
+        }
+
+        public void findEnvironmentIdInCells(int verboseLevel = 5)
+        {
+            if (verboseLevel > 1)
+                Console.WriteLine("Searching all landblocks...");
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+
+            int landblocksCounter = 0;
+
+            List<uint> landblockIds = new List<uint>();
+            foreach (var file in fileCache)
+            {
+                if ((file.Key & 0x0000FFFF) == 0x0000FFFF)
+                    landblockIds.Add(file.Key);
+            }
+
+            foreach (var landblockId in landblockIds)
+            {
+                if (findEnvironmentIdInCells(landblockId, verboseLevel))
+                    landblocksCounter++;
+            }
+
+            timer.Stop();
+            if (verboseLevel > 1)
+                Console.WriteLine("Found {0} landblocks with matches in {1} seconds.", landblocksCounter, timer.ElapsedMilliseconds / 1000f);
+        }
+
+        public bool findEnvironmentIdInCells(uint cellIdInLandblock, int verboseLevel = 6)
+        {
+            if (verboseLevel > 5)
+                Console.WriteLine("Searching landblock...");
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+
+            cDatFile ourDat = this; //just to make things less confusing
+
+            uint landblockId = cellIdInLandblock & 0xFFFF0000 | 0x0000FFFF;
+            uint landblockInfoId = cellIdInLandblock & 0xFFFF0000 | 0x0000FFFE;
+            cDatFileEntry ourLandblockInfoFile;
+            cLandblockInfo landblockInfoOurs;
+
+            if (ourDat.fileCache.TryGetValue(landblockInfoId, out ourLandblockInfoFile))
+            {
+                landblockInfoOurs = new cLandblockInfo(ourLandblockInfoFile);
+
+                List<cEnvCell> ourEnvCells = new List<cEnvCell>();
+
+                for (uint i = 0; i < 0xFFFE; i++)
+                {
+                    uint id = i | (landblockId & 0xFFFF0000);
+                    cDatFileEntry envCellFile;
+                    if (ourDat.fileCache.TryGetValue(id, out envCellFile))
+                        ourEnvCells.Add(new cEnvCell(envCellFile));
+                }
+
+                for (int i = 0; i < ourEnvCells.Count; i++)
+                {
+                    cEnvCell ourEnvCell = ourEnvCells[i];
+
+                    if(ourEnvCell.EnvironmentId == 0x05bc || ourEnvCell.EnvironmentId == 0x05bd || ourEnvCell.EnvironmentId == 0x05be || ourEnvCell.EnvironmentId == 0x05bf || ourEnvCell.EnvironmentId == 0x05c1 || ourEnvCell.EnvironmentId == 0x05c2)
+                    {
+                        Console.WriteLine("Found match in Landblock {0}", landblockId);
+                        return true;
+                    }
+                }
+
+            }
+
+            timer.Stop();
+            if (verboseLevel > 5)
+                Console.WriteLine("Landblock compared in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
+            return false;
+        }
+
+        public void fixAllLandblockCells(cDatFile todDat, int verboseLevel = 5)
+        {
+            if (verboseLevel > 1)
+                Console.WriteLine("Fixing Cells from all landblocks...");
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+
+            int landblocksCounter = 0;
+
+            List<uint> landblockIds = new List<uint>();
+            foreach (var file in fileCache)
+            {
+                if ((file.Key & 0x0000FFFF) == 0x0000FFFF)
+                    landblockIds.Add(file.Key);
+            }
+
+            foreach (var landblockId in landblockIds)
+            {
+                if (fixLandblockCells(landblockId, todDat, verboseLevel))
+                    landblocksCounter++;
+            }
+
+            timer.Stop();
+            if (verboseLevel > 1)
+                Console.WriteLine("{0} landblocks fixed in {1} seconds.", landblocksCounter, timer.ElapsedMilliseconds / 1000f);
+        }
+
+        public bool fixLandblockCells(uint cellIdInLandblock, cDatFile todDat, int verboseLevel = 6)
+        {
+            if (verboseLevel > 5)
+                Console.WriteLine("Fixing landblock cells...");
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+
+            cDatFile ourDat = this; //just to make things less confusing
+
+            uint landblockId = cellIdInLandblock & 0xFFFF0000 | 0x0000FFFF;
+            uint landblockInfoId = cellIdInLandblock & 0xFFFF0000 | 0x0000FFFE;
+            cDatFileEntry ourLandblockInfoFile;
+            cDatFileEntry otherLandblockInfoFile;
+
+            int counter = 0;
+            if (todDat.fileCache.TryGetValue(landblockInfoId, out otherLandblockInfoFile))
+            {
+                cLandblockInfo landblockInfoOther = new cLandblockInfo(otherLandblockInfoFile);
+                cLandblockInfo landblockInfoOurs;
+
+                if (ourDat.fileCache.TryGetValue(landblockInfoId, out ourLandblockInfoFile))
+                {
+                    landblockInfoOurs = new cLandblockInfo(ourLandblockInfoFile);
+
+                    if (landblockInfoOurs.Buildings.Count > 0) // We're only fixing buildings cells atm so skip if there are no buildings.
+                    {
+                        List<cDatFileEntry> ourEnvCells = new List<cDatFileEntry>();
+                        List<cDatFileEntry> otherEnvCells = new List<cDatFileEntry>();
+
+                        for (uint i = 0; i < 0xFFFE; i++)
+                        {
+                            uint id = i | (landblockId & 0xFFFF0000);
+                            cDatFileEntry envCellFile;
+                            if (ourDat.fileCache.TryGetValue(id, out envCellFile))
+                                ourEnvCells.Add(envCellFile);
+                            if (todDat.fileCache.TryGetValue(id, out envCellFile))
+                                otherEnvCells.Add(envCellFile);
+                        }
+
+                        if (ourEnvCells.Count == otherEnvCells.Count) // We can only fix if we're the same between versions.
+                        {
+                            for (int i = 0; i < ourEnvCells.Count; i++)
+                            {
+                                cEnvCell ourEnvCell = new cEnvCell(ourEnvCells[i]);
+                                cEnvCell otherEnvCell = new cEnvCell(otherEnvCells[i]);
+                                if (ourEnvCell.EnvironmentId == 0x0574 || ourEnvCell.EnvironmentId == 0x0575)
+                                {
+                                    ourEnvCell.Portals = otherEnvCell.Portals;
+                                    ourEnvCell.updateFileContent(ourEnvCells[i]);
+                                    counter++;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            timer.Stop();
+            if (verboseLevel > 5 || (verboseLevel >= 4 && counter > 0))
+                Console.WriteLine("Fixed {0} entries in {1} seconds.", counter, timer.ElapsedMilliseconds / 1000f);
             return true;
         }
 
@@ -1127,6 +1380,58 @@ namespace Melt
             }
         }
 
+        public bool addBuildingFrom(uint idToCellInBuilding, cDatFile fromDat, int verboseLevel = 6)
+        {
+            if (verboseLevel > 5)
+                Console.WriteLine("Adding Building...");
+
+            uint landblockId = idToCellInBuilding & 0xFFFF0000 | 0x0000FFFE;
+            uint cellId = idToCellInBuilding & 0x0000FFFF;
+
+            cDatFileEntry fromFile;
+            if (fromDat.fileCache.TryGetValue(landblockId, out fromFile))
+            {
+                cLandblockInfo landblockInfoFrom = new cLandblockInfo(fromFile);
+
+                for (int i = 0; i < landblockInfoFrom.Buildings.Count; i++)
+                {
+                    cBuildInfo building = landblockInfoFrom.Buildings[i];
+                    foreach (cCBldPortal portal in building.Portals)
+                    {
+                        if (portal.visibleCells.Contains((ushort)cellId))
+                        {
+                            // We found our building.
+
+                            cDatFileEntry toFile;
+                            if (fileCache.TryGetValue(landblockId, out toFile))
+                            {
+                                cLandblockInfo landblockInfoTo = new cLandblockInfo(toFile);
+
+                                uint lowestCellId;
+                                uint cellInBuilding = building.Portals[0].OtherCellId | (landblockId & 0xFFFF0000);
+                                int cellsNeeded = countCell(cellInBuilding, fromDat, out lowestCellId);
+                                uint newCellId = getNextAvailableCellIdBlock(0x0100 | (landblockId & 0xFFFF0000), cellsNeeded);
+
+                                List<uint> copiedList = new List<uint>();
+                                //replaceCellNewId(newCellId, fromDat, lowestCellId, true, false, building, replacedList, landblockId, verboseLevel);
+                                copyBuildingCellsNewId(landblockId, building, fromDat, newCellId, copiedList);
+
+                                landblockInfoTo.NumCells += (uint)copiedList.Count;
+                                landblockInfoTo.Buildings.Add(building);
+
+                                landblockInfoTo.updateFileContent(toFile);
+                            }
+
+                            return true;
+                        }
+                    }
+                }
+            }
+            if (verboseLevel > 1)
+                Console.WriteLine("Couldn't find building containing cell id: {0:x}.", idToCellInBuilding);
+            return false;
+        }
+
         public bool removeBuilding(uint idToCellInBuilding, bool removeCells = false, int verboseLevel = 6)
         {
             if (verboseLevel > 5)
@@ -1508,7 +1813,7 @@ namespace Melt
         public void replaceLandblockArea(uint baseLandblock, cDatFile fromDat, bool heightmap = true, bool textures = true, bool cells = true, bool objects = true, int verboseLevel = 5)
         {
             uint startLandblockId = baseLandblock & 0xFF000000 | 0x0000FFFF;
-            int gridSize = 3;
+            int gridSize = 9;
 
             byte startX = (byte)((baseLandblock & 0xFF000000) >> 24);
             byte startY = (byte)((baseLandblock & 0x00FF0000) >> 16);
@@ -1698,6 +2003,95 @@ namespace Melt
             removeRoadsFromLandblocks(listOfSettlementsPreserveTexture);
 
             replaceLandblocks(listOfSettlementsPreserveSurface, datFileWithoutSettlements, false, false, false);
+        }
+
+        //public cDatFileEntry GetFile(uint fileId)
+        //{
+        //    cDatFileEntry file;
+        //    if (fileCache.TryGetValue(fileId, out file))
+        //        return file;
+        //    return null;
+        //}
+
+        //public bool ReplaceFile(int fileId, string filename)
+        //{
+        //    StreamReader inputFile = new StreamReader(new FileStream(filename, FileMode.Open, FileAccess.Read));
+        //    if (inputFile == null)
+        //    {
+        //        Console.WriteLine("Unable to open {0}", filename);
+        //        return false;
+        //    }
+
+        //    cDatFileEntry file = GetFile(0x0E00000E);
+
+        //    file.fileContent = (MemoryStream)inputFile.BaseStream;
+        //    file.listOfBlocks = new List<cDatFileBlock>();
+
+        //    //cDatFileEntry file = new cDatFileEntry(inputFile, eDatFormat.ToD, true);
+
+        //    return true;
+        //}
+
+        public void addGridToAllLandblocks(int verboseLevel = 5)
+        {
+            if (verboseLevel > 1)
+                Console.WriteLine("Adding grid to all landblocks...");
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+
+            int landblocksCounter = 0;
+
+            List<uint> landblockIds = new List<uint>();
+            foreach (var file in fileCache)
+            {
+                if ((file.Key & 0x0000FFFF) == 0x0000FFFF)
+                    landblockIds.Add(file.Key);
+            }
+
+            foreach (var landblockId in landblockIds)
+            {
+                if (addGridToLandblock(landblockId, verboseLevel))
+                    landblocksCounter++;
+            }
+
+            timer.Stop();
+            if (verboseLevel > 1)
+                Console.WriteLine("Added grid to {0} landblocks in {1} seconds.", landblocksCounter, timer.ElapsedMilliseconds / 1000f);
+        }
+
+        public bool addGridToLandblock(uint cellIdInLandblock,int verboseLevel = 6)
+        {
+            if (verboseLevel > 5)
+                Console.WriteLine($"Adding grid to landblock...");
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+
+            cDatFile toDat = this; //just to make things less confusing
+
+            uint landblockId = cellIdInLandblock & 0xFFFF0000 | 0x0000FFFF;
+
+            cDatFileEntry landBlockFile;
+            cCellLandblock landblock;
+
+            bool existsOnDestination = toDat.fileCache.TryGetValue(landblockId, out landBlockFile);
+
+            if (existsOnDestination)
+            {
+                landblock = new cCellLandblock(landBlockFile);
+
+                for (int i = 0; i < landblock.Terrain.Count; i++)
+                {
+                    if (i < 9 || i % 9 == 0)
+                        landblock.Terrain[i] = 27;
+                }
+
+                landblock.updateFileContent(landBlockFile);
+            }
+
+            timer.Stop();
+            if (verboseLevel > 5)
+                Console.WriteLine("Added grid to landblock in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
+            return true;
         }
     }
 }

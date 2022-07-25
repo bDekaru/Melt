@@ -156,7 +156,7 @@ namespace Melt
 
             Skills[(uint)eSkills.Sword].TrainedCost = 6;
             Skills[(uint)eSkills.Sword].SpecializedCost = 12;
-            Skills[(uint)eSkills.Sword].Description = $"Bonus damage source: Strength\n{Skills[(uint)eSkills.Sword].Description}";
+            Skills[(uint)eSkills.Sword].Description = $"Bonus damage source: Coordination\n{Skills[(uint)eSkills.Sword].Description}";
 
             Skills[(uint)eSkills.Dagger].Description = $"Bonus damage source: Coordination\n{Skills[(uint)eSkills.Dagger].Description}";
 
@@ -171,7 +171,7 @@ namespace Melt
 
             Skills[(uint)eSkills.UnarmedCombat].TrainedCost = 4;
             Skills[(uint)eSkills.UnarmedCombat].SpecializedCost = 8;
-            Skills[(uint)eSkills.UnarmedCombat].Description = $"Bonus damage source: Unarmed Combat\n{Skills[(uint)eSkills.UnarmedCombat].Description}";
+            Skills[(uint)eSkills.UnarmedCombat].Description = $"Bonus damage source: Unarmed Combat Skill\n{Skills[(uint)eSkills.UnarmedCombat].Description}";
 
             Skills[(uint)eSkills.Bow].Name = "Bow and Crossbow";
             Skills[(uint)eSkills.Bow].Description = "Bonus damage source: Coordination\nHelps you fire bows, crossbows and similar weapons.";

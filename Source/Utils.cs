@@ -262,18 +262,18 @@ namespace Melt
         static public string readEncodedString(StreamReader data)
         {
             int startIndex = (int)data.BaseStream.Position;
-            string text = "";
             int letterCount = readInt16(data);
 
             byte[] buffer = new byte[letterCount];
+            byte[] result = new byte[letterCount];
             data.BaseStream.Read(buffer, 0, letterCount);
             for (int i = 0; i < letterCount; i++)
             {
-                text += (char)((buffer[i] >> 4) ^ (buffer[i] << 4));
+                result[i] = (byte)((buffer[i] >> 4) ^ (buffer[i] << 4));
             }
 
             align(data);
-            return text;
+            return System.Text.Encoding.Default.GetString(result);
         }
 
         static public uint getHash(string value, uint seed)

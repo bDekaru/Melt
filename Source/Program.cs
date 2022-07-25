@@ -13,10 +13,10 @@ namespace Melt
         {
             //GeneratePhatACLootFiles(args);
             //MapManipulationForCustomDM(args);
-            MapManipulation(args);
-            //Workbench(args);
+            //MapManipulationForInfiltration(args);
+            //MapManipulation(args);
+            Workbench(args);
         }
-
 
         //public static cCache4Converter cache4Converter = new cCache4Converter();
         public static cCache6Converter cache6Converter = new cCache6Converter();
@@ -24,13 +24,52 @@ namespace Melt
         public static cCache9Converter cache9Converter = new cCache9Converter();
         static void Workbench(string[] args)
         {
+            //int xp = AceDatabaseUtilities.GetCreatureXP(40, 150, 0);
+            //return;
+
+            //AceDatabaseUtilities.CreateFoodList();
+            //AceDatabaseUtilities.RedistributeSpellServicesToVendors();
+            //AceDatabaseUtilities.AddTethersToVendors();
+            //AceDatabaseUtilities.AddCombatTacticsAndTechniquesToVendors();
+            //AceDatabaseUtilities.AddLeyLineAmuletsToVendors();
+            //AceDatabaseUtilities.AddCombatManualToVendors();
+            //AceDatabaseUtilities.RemovePortalGemsFromAllSpellComponentVendorsAddToJewelers();
+            //AceDatabaseUtilities.RedistributeFoodIngredientsToGrocersAndFarmers();
+            //AceDatabaseUtilities.RemoveSalvageMerchandiseTypeFromVendors();
+            //AceDatabaseUtilities.BuildVendorSellList();
+            //AceDatabaseUtilities.RemoveNonMutatedItemsFromVendors();
+            //AceDatabaseUtilities.RemoveAmmoFromBlacksmithsAndWeaponsmiths();
+            //AceDatabaseUtilities.RemoveAmmoFromSpecificIDs();
+            //AceDatabaseUtilities.RedistributeVendorMerchandiseTypes();
+            //AceDatabaseUtilities.ChangeSpellScrollPrices();
+            //AceDatabaseUtilities.AddRumorColorCodesToVendors();
+            //AceDatabaseUtilities.RedistributeTradeNotesToVendors();
+            //AceDatabaseUtilities.FindScrollVendors();
+            //AceDatabaseUtilities.RemoveCowlsFromShopkeepers();
+
+            //cDatFile portalDatFile = new cDatFile();
+            //portalDatFile.loadFromDat("./input/client_portal - Infiltration.dat");
+            //portalDatFile.GetFileIteration();
+            //portalDatFile.SetFileIteration(10002);
+            //portalDatFile.writeToDat("client_portal_Infiltration.dat");
+
+            //portalDatFile.loadFromDat("./input/client_portal - CustomDM.dat");
+            //portalDatFile.SetFileIteration(20002);
+            //portalDatFile.writeToDat("client_portal_CustomDM.dat");
+
+            //XPTable xpConverter = new XPTable("./input/0E000018 latest.bin");
+            //xpConverter.capAtlLevel(126);
+            //xpConverter.save("0E000018 edited.bin");
+
+            //AceDatabaseUtilities.AddSkillReqToAtlanWeapons();
             //AceDatabaseUtilities.AddLevelReqToShadowArmor();
-            //AceDatabaseUtilities.UpdateXPRewardsFromList("./input/listOfXpRewards.txt");
 
             //AceDatabaseUtilities.CreateCreatureXPList();
+            //AceDatabaseUtilities.UpdateXPRewardsFromList("./input/listOfXpRewards.txt");
+
             //AceDatabaseUtilities.CreateXPRewardsList();
 
-            //AceDatabaseUtilities.AddThrownWeaponsToVendors();
+            //AceDatabaseUtilities.AddTethersToVendors();
             //AceDatabaseUtilities.IncreaseThrownWeaponsStackSizeTo250();
             //AceDatabaseUtilities.AddSpellComponentPouchToVendors();
 
@@ -42,10 +81,10 @@ namespace Melt
             //spawnMap.LoadRegionFromPng("./input/spawnMap/regionEncounterMap.png");
             //spawnMap.SaveRegionToJson("./region.json");
 
-            //GoArrowUtilities goArrow = new GoArrowUtilities("./CustomDM-GoArrow-Locations.xml");
-            ////goArrow.RemoveSettlements();
+            //GoArrowUtilities goArrow = new GoArrowUtilities("./input/CustomDM-GoArrow-Locations.xml");
+            //goArrow.AddApartmentHallConnections();
             //goArrow.ReIndex();
-            //goArrow.Save("./CustomDM-GoArrow-Locations2.xml");
+            //goArrow.Save("./CustomDM-GoArrow-Locations.xml");
 
             //AceDatabaseUtilities.RemoveAllNonApartmentHouses();
             //AceDatabaseUtilities.AddPortalGemsToAllSpellComponentVendors();
@@ -78,22 +117,46 @@ namespace Melt
             //skillTableClassicWeaponSkills.save("./0E000004 - Skills Table - CustomDM.bin");
 
             //CharGen charGen = new CharGen("./input/0E000002.bin");
-            //////charGen.modifyForDM();
+            ////charGen.modifyForDM();
             //charGen.modifyForCustomDM();
             //charGen.save("./0E000002 - CharGen - CustomDM.bin");
 
-            //SpellsConverter.MergeWeaponsSkillsForCustomDM("Spells/0E00000E - Reversed plus removed auras.txt", "./0E00000E - CustomDM.txt");
-            //SpellsConverter.toBin("./0E00000E - CustomDM.txt", "./0E00000E - Spells Table - CustomDM.bin");
+            //SpellsConverter.MergeWeaponsSkillsForCustomDM("Spells/0E00000E - Reversed plus removed auras and converted description from cache file.txt", "./0E00000E - CustomDM.txt");
+            //SpellsConverter.toBin("Spells/0E00000E - CustomDM.txt", "./0E00000E - Spells Table - CustomDM.bin");
+            //SpellsConverter.toBin("Spells/0E00000E - Reversed plus removed auras and converted description from cache file.txt", "./0E00000E - Reversed plus removed auras and converted description from cache file.bin");
 
             ////TextureConverter.folderToPNG("textures ToD");
             ////TextureConverter.folderBMPToPNG("C:/Users/Dekaru/Desktop/Research/Textures Retail");
             ////TextureConverter.toPNG("textures ToD/06003afb.bin");
             ////Console.ReadLine();
             ////return;
+            ///
+            //TextureConverter.toPNG("0600127D ToD.bin");
+            //TextureConverter.toBin("0600127D.png", 0x0600127D, 20);
+            //TextureConverter.toBin("./input/0600127D.png", 0x0600127D, 20); // Map
 
             ////TextureIdDictionary.folderExtractTextureFromHeader("./input/textureHeaders/");
             ////return;
 
+            //RegionManipulation regionLatest = new RegionManipulation("Region/13000000 - Latest.bin", eDatFormat.Latest);
+            ////RegionManipulation regionToD = new RegionManipulation("Region/13000000 - ToD - 2005-06-02 (Iteration 4).bin", eDatFormat.ToD);
+            //RegionManipulation regionDM = new RegionManipulation("Region/130F0000 - 2005-02-XX (Admin) (Iteration 2112).bin", eDatFormat.retail);
+
+            ////regionLatest.ExportSceneIds("sceneIdsLatest.txt");
+            ////regionDM.ExportSceneIds("sceneIdsDM.txt");
+
+            //regionDM.GenerateExtractAndReplaceBats();
+
+            //List<uint> ListEoR = regionLatest.GetSceneIds();
+            //List<uint> ListDM = regionDM.GetSceneIds();
+            //SceneUtilities.CompareObjectLists(ListEoR, ListDM);
+
+            //List<uint> ListEoR = regionLatest.GetObjects("./input/client_portal - Latest.dat");
+            //List<uint> ListDM = regionLatest.GetObjects("./input/portal - 2005-02-XX (Admin) (Iteration 2112).dat");
+            //regionLatest.CompareObjects("./input/client_portal - Latest.dat", "./input/client_portal - Infiltration.dat");
+
+            //RegionConverter regionInf = new RegionConverter("Region/13000000 - 2005-02-XX (Admin) (Iteration 2112).bin");
+            //regionConverter.WriteToBin("./13000000.bin");
             //RegionConverter.convert("Region/13000000.bin");
             //RegionConverterDM.convert("Region/130F0000 Bael.bin");
             //RegionConverterDM.convert("Region/130F0000 test.bin");
@@ -136,6 +199,17 @@ namespace Melt
             //SpellsConverter.toJson("Spells/0E00000E - Reversed plus removed auras.bin");
             //SpellsConverter.toJson("Spells/0E00000E - Latest.bin");
             //SpellsConverter.toJson("Spells/0002.raw", "Spells/0E00000E - Reversed plus removed auras.bin");
+            //SpellsConverter.transferSpellDescriptiuonsFromJsonToTxt("Spells/spells.json", "Spells/0E00000E - Reversed plus removed auras.txt");
+            //SpellManipulationTools spells = new SpellManipulationTools("Spells/0E00000E - latest.bin");
+            //SpellManipulationTools oldSpells = new SpellManipulationTools("Spells/0E00000E - 2010.bin");
+            //spells.LoadCache2Raw("Spells/0002.raw");
+            //spells.RevertWeaponMasteriesAndAuras(oldSpells);
+            //spells.ApplyCache2DataFixes();
+            //spells.TransferSpellDataFromCacheToSpellBase();
+            ////spells.MergeWeaponsSkillsForCustomDM();
+            ////spells.SpellTableToTxt();
+            //spells.SpellTableToBin();
+
             //Diff.FolderDiff("E:\\Downloads\\Asheron's Call\\AC Utilities\\Dat Patcher\\All\\Summer", "E:\\Downloads\\Asheron's Call\\AC Utilities\\Dat Patcher\\All\\Winter");
             //TextureConverter.toPNG("06006D40.bin");
             //TextureConverter.darkMajestyfolderToPNG("Landscape Texture Conversion/DM/Textures");
@@ -182,11 +256,19 @@ namespace Melt
 
         static void MapManipulation(string[] args)
         {
-            //cDatFile portalDatFile = new cDatFile();
-            //portalDatFile.loadFromDat("./input/client_portal.dat");
-            //int iteration = portalDatFile.GetFileIteration();
-            //portalDatFile.SetFileIteration(10000);
-            //portalDatFile.writeToDat("client_portal.dat");
+            cDatFile datFile = new cDatFile();
+
+            datFile.loadFromDat("./input/client_cell_1 - Infiltration - Converted to ToD format (Iteration 1593).dat"); // Same as above but already converted to ToD format to speed thing up.
+            datFile.SetFileIteration(20002);
+
+            datFile.addGridToAllLandblocks();
+
+            datFile.writeToDat("./client_cell_1.dat");
+
+            //cDatFile datFile = new cDatFile();
+            //datFile.loadFromDat("./input/client_cell_1.dat");
+            //datFile.SetFileIteration(20000);
+            //datFile.writeToDat("./client_cell_1.dat");
 
             //cDatFile datFile = new cDatFile();
             //datFile.loadFromDat("./input/client_cell_1.dat");
@@ -194,16 +276,16 @@ namespace Melt
             //datFile.loadFromDat("./input/cell - Late DM - 2004-09-01.dat");
             //datFile.loadFromDat("./client_cell_1.dat");
 
-            cDatFile datFileOld = new cDatFile();
-            datFileOld.loadFromDat("./input/cell - Release.dat");
+            //cDatFile datFileOld = new cDatFile();
+            //datFileOld.loadFromDat("./input/cell - Release.dat");
             //datFileOld.loadFromDat("./input/cell - 2000-12-31 - Obsidian Span.dat");
             //datFileOld.loadFromDat("./input/cell - DM - 2001-09-12.dat");
             //datFileOld.loadFromDat("./input/client_cell_1.dat");
             //datFileOld.loadFromDat("./input/cell - End of Beta Event.dat");
             //datFileOld.loadFromDat("./input/cell - 2005-01-05 (198656kb) (Admin) (Iteration 1583 - Complete).dat");
-            //datFileOld.loadFromDat("./input/cell - 2005-02-XX (202752kb) (Admin) (Iteration 1593 - Complete).dat");
-
-            datFileOld.convertRetailToToD(10000);
+            //int retailIteration = datFileOld.loadFromDat("./input/cell - 2005-02-XX (202752kb) (Admin) (Iteration 1593 - Complete).dat");
+            //datFileOld.convertRetailToToD(retailIteration);
+            //datFileOld.writeToDat("./client_cell_1 - Infiltration - Converted to ToD format (Iteration 1593).dat");
 
             //cDatFile replacementDataFile = null;
             //if (datFileOld.isMissingCells)
@@ -233,18 +315,12 @@ namespace Melt
 
             //datFile.replaceDungeon(0x017d, datFileOld, 0);
 
-            //datFile.replaceLandblock(0xC6A90013, datFileOld); //Arwic
+            //cCellDat cellDat = new cCellDat();
+            //cellDat.loadFromDat(datFileOld);
+            //cMapDrawer mapDrawer = new cMapDrawer(cellDat);
+            //mapDrawer.draw(false, 50);
 
-            //datFile.replaceLandblockArea(0xC98C0028, datFileOld); //Rithwic
-            //datFile.replaceLandblockArea(0x856D0040, datFileOld); //Tufa
-            //datFile.replaceLandblockArea(0xC6A90013, datFileArwic); //Arwic
-
-            cCellDat cellDat = new cCellDat();
-            cellDat.loadFromDat(datFileOld);
-            cMapDrawer mapDrawer = new cMapDrawer(cellDat);
-            mapDrawer.draw(false, 50);
-
-            datFileOld.writeToDat("./client_cell_1.dat");
+            //datFileOld.writeToDat("./client_cell_1.dat");
 
             Console.WriteLine("Done");
             Console.ReadLine();
@@ -252,71 +328,23 @@ namespace Melt
 
         static void MapManipulationForCustomDM(string[] args)
         {
-            //cDatFile portalDatFile = new cDatFile();
-            //portalDatFile.loadFromDat("./input/client_portal.dat");
-            //int iteration = portalDatFile.GetFileIteration();
-            //portalDatFile.SetFileIteration(10000);
-            //portalDatFile.writeToDat("client_portal.dat");
-
             cDatFile datFile = new cDatFile();
-            //datFile.loadFromDat("./input/client_cell_1.dat");
-            datFile.loadFromDat("./input/client_cell_1 - Infiltration.dat");
-            //datFile.loadFromDat("./input/cell - Late DM - 2004-09-01.dat");
-            //datFile.loadFromDat("./client_cell_1.dat");
+            //int retailIteration = datFile.loadFromDat("./input/cell - 2005-02-XX (202752kb) (Admin) (Iteration 1593 - Complete).dat");
+            //datFile.convertRetailToToD(retailIteration);
+            datFile.loadFromDat("./input/client_cell_1 - Infiltration - Converted to ToD format (Iteration 1593).dat"); // Same as above but already converted to ToD format to speed thing up.
+            datFile.SetFileIteration(20002);
 
-            cDatFile datFileOld = new cDatFile();
-            //datFileOld.loadFromDat("./input/cell - Release.dat");
-            datFileOld.loadFromDat("./input/cell - 2000-12-31 - Obsidian Span.dat");
-            //datFileOld.loadFromDat("./input/cell - DM - 2001-09-12.dat");
-            //datFileOld.loadFromDat("./input/client_cell_1.dat");
-            //datFileOld.loadFromDat("./input/cell - End of Beta Event.dat");
-            //datFileOld.loadFromDat("./input/cell - 2005-01-05 (198656kb) (Admin) (Iteration 1583 - Complete).dat");
-            //datFileOld.loadFromDat("./input/cell - 2005-02-XX (202752kb) (Admin) (Iteration 1593 - Complete).dat");
+            cDatFile datFileObsidianSpan = new cDatFile();
+            datFileObsidianSpan.loadFromDat("./input/cell - 2000-12-31 - Obsidian Span.dat");
 
             cDatFile datFileRelease = new cDatFile();
             datFileRelease.loadFromDat("./input/cell - Release.dat");
 
             cDatFile datFileArwic = new cDatFile();
-            datFileArwic.loadFromDat("./input/cell - 2000-08-22.dat");
+            datFileArwic.loadFromDat("./input/cell - 2000-08-22 (58368kb) (Complete,Ice Island, Shadow Spires) (Iteration 108 - Complete).dat");
 
             cDatFile datFileToD = new cDatFile();
             datFileToD.loadFromDat("./input/client_cell_1 - ToD.dat");
-
-            //datFileOld.convertRetailToToD(10000);
-
-            //cDatFile replacementDataFile = null;
-            //if (datFileOld.isMissingCells)
-            //{
-            //    Console.WriteLine($"Missing {datFileOld.getMissingCellsList().Count} cells...");
-            //    replacementDataFile = new cDatFile();
-            //    //replacementDataFile.loadFromDat("./input/cell - Release.dat");
-            //    replacementDataFile.loadFromDat("./input/client_cell_1.dat");
-            //    datFileOld.completeCellsFrom(replacementDataFile, true);
-            //    //datFileOld.truncateMissingCells();
-            //}
-
-            //int missingCount;
-            //if (datFileOld.isMissingLandblocks(out missingCount))
-            //{
-            //    Console.WriteLine($"Missing {missingCount} landblocks...");
-            //    if (replacementDataFile == null)
-            //    {
-            //        replacementDataFile = new cDatFile();
-            //        //replacementDataFile.loadFromDat("./input/cell - Release.dat");
-            //        replacementDataFile.loadFromDat("./input/client_cell_1.dat");
-            //    }
-            //    datFileOld.completeLandblocksFrom(replacementDataFile);
-            //}
-
-            //datFileOld.writeToDat("./client_cell_1.dat");
-
-            //datFile.replaceDungeon(0x017d, datFileOld, 0);
-
-            //datFile.replaceLandblock(0xC6A90013, datFileOld); //Arwic
-
-            //datFile.replaceLandblockArea(0xC98C0028, datFileOld); //Rithwic
-            //datFile.replaceLandblockArea(0x856D0040, datFileOld); //Tufa
-            //datFile.replaceLandblockArea(0xC6A90013, datFileArwic); //Arwic
 
             //Arwic
             datFile.replaceLandblock(0xC6A90013, datFileRelease);
@@ -325,20 +353,67 @@ namespace Melt
             datFile.replaceLandblock(0xC6AA0011, datFileRelease);
             datFile.replaceLandblock(0xC5AA0039, datFileRelease);
             datFile.replaceLandblock(0xC5A80028, datFileRelease);
-            datFile.replaceLandblock(0xC5A80028, datFileRelease);
 
             datFile.replaceLandblock(0xC5A90037, datFileArwic); // Meeting Hall with the correct fallen pillars around the road.
             datFile.replaceLandblock(0xC6A90013, datFileArwic, false, false, true, false); // use the surface objects from this file(lamp posts!) but not the buildings as they have fire lighting effects that bleed all over thru the walls on the new client.
 
-            datFile.replaceLandblock(0xC5A6003A, datFileRelease); //Get rid of Newic.
+            datFile.replaceLandblock(0xC5A6003A, datFileRelease); // Get rid of Newic.
 
-            datFile.replaceLandblockArea(0x2B110028, datFileToD); //Candeth Keep - todo: investigate why Candeth is causing crashes when using the one from infiltration data.
+            //Yanshi
+            datFile.replaceLandblock(0xB86E0038, datFileRelease);
+            datFile.replaceLandblock(0xB86F0032, datFileRelease);
+            datFile.replaceLandblock(0xB8700029, datFileRelease);
+            datFile.replaceLandblock(0xB9700024, datFileRelease);
+            datFile.replaceLandblock(0xB96F0040, datFileRelease);
+            datFile.replaceLandblock(0xB96E0018, datFileRelease);
+            datFile.replaceLandblock(0xBA6F0004, datFileRelease);
+            datFile.replaceLandblock(0xBA700001, datFileRelease);
 
-            datFile.removeHouseSettlements(datFileOld);
+            //Get rid of New Yanshi
+            datFile.replaceLandblock(0xB9720022, datFileRelease);
+            datFile.replaceLandblock(0xBA720005, datFileRelease);
+            datFile.replaceLandblock(0xB9710030, datFileRelease);            
+
+            datFile.replaceLandblock(0xB76F0034, datFileArwic); //Yanshi Meeting Hall
+
+            //Tufa
+            datFile.replaceLandblock(0x866D000B, datFileRelease);
+            datFile.replaceLandblock(0x866E0011, datFileRelease);
+            datFile.replaceLandblock(0x856D003C, datFileRelease);
+            datFile.replaceLandblock(0x856E0031, datFileRelease);
+            datFile.replaceLandblock(0x856C001C, datFileRelease);
+            datFile.replaceLandblock(0x876E0032, datFileRelease);
+            datFile.replaceLandblock(0x856F0015, datFileRelease);
+            datFile.replaceLandblock(0x846E0012, datFileRelease);
+            datFile.replaceLandblock(0x846D0018, datFileRelease);
+            datFile.replaceLandblock(0x836D0040, datFileRelease);
+            datFile.replaceLandblock(0x836E0039, datFileRelease);
+
+            datFile.addBuildingFrom(0x856E010E, datFileToD); //Undead Hunter Tent
+
+            datFile.replaceLandblock(0x846D003F, datFileArwic, false, false, true); //Tufa Meeting Hall, buildings only, terrain includes crater.
+
+            //Eastham Shadow Spire Crater
+            datFile.replaceLandblock(0xCD95002F, datFileRelease);
+            datFile.replaceLandblock(0xCE950006, datFileRelease, true, true, false, false);
+            datFile.replaceLandblock(0xCE960001, datFileRelease);
+            datFile.replaceLandblock(0xCD960039, datFileRelease);
+            datFile.removeBuilding(0xCE95016C);
+
+            //datFile.replaceLandblockArea(0x2B110028, datFileToD); // Candeth Keep crash
+            datFile.fixLandblockCells(0x2B110000, datFileToD); // Candeth Keep crash
+            datFile.fixLandblockCells(0x2B120000, datFileToD); // Candeth Keep crash
+            datFile.fixLandblockCells(0x2D5B002B, datFileToD); // Renegade Fortress crash
+            //datFile.fixAllLandblockCells(datFileToD);
+
+            datFile.replaceLandblock(0xEC0E0110, datFileToD); // Xi Ru's Chapel crash
+            //datFile.findEnvironmentIdInCells();
+
+            datFile.removeHouseSettlements(datFileObsidianSpan);
 
             datFile.removeNoobFence();
 
-            datFile.replaceLandblock(0x7D8F0013, datFileOld); // The Zaikhal settlement portals pillar is baked into this landblock for some reason, remove it.
+            datFile.replaceLandblock(0x7D8F0013, datFileObsidianSpan); // The Zaikhal settlement portals pillar is baked into this landblock for some reason, remove it.
 
             List<uint> LandblocksToReplace = new List<uint>()
             {
@@ -356,7 +431,7 @@ namespace Melt
                 0xB9730032, // North Yanshi Outpost
                 0xB96B001E, // South Yanshi Outpost
             };
-            datFile.replaceLandblocksSpecialForStarterOutposts(LandblocksToReplace, datFileOld);
+            datFile.replaceLandblocksSpecialForStarterOutposts(LandblocksToReplace, datFileObsidianSpan);
 
             List<uint> buildingsToRemove = new List<uint>()
             {
@@ -448,9 +523,11 @@ namespace Melt
             };
             datFile.removeBuildings(buildingsToRemove);
             //Since we're removing the bunkers might as well roll back Holtburg's heightmap that was flattened in areas to fit the bunkers.
-            datFile.replaceLandblockTerrain(0xA9B40024, datFileOld, true, true);
-            datFile.replaceLandblockTerrain(0xAAB4000A, datFileOld, true, true);
-            datFile.replaceLandblockTerrain(0xA8B4003B, datFileOld, true, true);
+            datFile.replaceLandblockTerrain(0xA9B40024, datFileObsidianSpan, true, true);
+            datFile.replaceLandblockTerrain(0xAAB4000A, datFileObsidianSpan, true, true);
+            datFile.replaceLandblockTerrain(0xA8B4003B, datFileObsidianSpan, true, true);
+
+            //datFile.addGridToAllLandblocks(); // Add grid for highlighting landblocks, for dev purposes. Disable for general use.
 
             //datFile.migrateDungeon(datFileOld, 0x017D, 0x017D); //original training academy
 
@@ -464,6 +541,38 @@ namespace Melt
             //    0x0368
             //};
             //datFile.replaceDungeonList(trainingAcademies, datFileOld);
+
+            cCellDat cellDat = new cCellDat();
+            cellDat.loadFromDat(datFile);
+            cMapDrawer mapDrawer = new cMapDrawer(cellDat);
+            mapDrawer.draw(false, 50);
+
+            datFile.writeToDat("./client_cell_1.dat");
+
+            Console.WriteLine("Done");
+            Console.ReadLine();
+            return;
+        }
+
+        static void MapManipulationForInfiltration(string[] args)
+        {
+            cDatFile datFile = new cDatFile();
+            //int retailIteration = datFile.loadFromDat("./input/cell - 2005-02-XX (202752kb) (Admin) (Iteration 1593 - Complete).dat");
+            //datFile.convertRetailToToD(retailIteration);
+            datFile.loadFromDat("./input/client_cell_1 - Infiltration - Converted to ToD format (Iteration 1593).dat"); // Same as above but already converted to ToD format to speed thing up.
+            datFile.SetFileIteration(10001);
+
+            cDatFile datFileToD = new cDatFile();
+            datFileToD.loadFromDat("./input/client_cell_1 - ToD.dat");
+
+            //datFile.replaceLandblockArea(0x2B110028, datFileToD); // Candeth Keep crash
+            datFile.fixLandblockCells(0x2B110000, datFileToD); // Candeth Keep crash
+            datFile.fixLandblockCells(0x2B120000, datFileToD); // Candeth Keep crash
+            datFile.fixLandblockCells(0x2D5B002B, datFileToD); // Renegade Fortress crash
+            //datFile.fixAllLandblockCells(datFileToD);
+
+            datFile.replaceLandblock(0xEC0E0110, datFileToD); // Xi Ru's Chapel crash
+            //datFile.findEnvironmentIdInCells();
 
             cCellDat cellDat = new cCellDat();
             cellDat.loadFromDat(datFile);

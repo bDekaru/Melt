@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Xml;
 
 namespace Melt
 {
     public class GoArrowUtilities
     {
-        public struct GoArrowLocation
+        public class GoArrowLocation
         {
             public int id;
             public string latitude;
@@ -22,7 +23,7 @@ namespace Melt
             public string tod_req;
         }
 
-        Dictionary<int, GoArrowLocation> Locations = new Dictionary<int, GoArrowLocation>();
+        List<GoArrowLocation> Locations = new List<GoArrowLocation>();
 
         public GoArrowUtilities(string filename)
         {
@@ -61,7 +62,8 @@ namespace Melt
                     else if (locNode.Name == "tod_req")
                         newLoc.tod_req = locNode.InnerText;
                 }
-                Locations.Add(newLoc.id, newLoc);
+
+                Locations.Add(newLoc);
             }
         }
 
@@ -109,463 +111,400 @@ namespace Melt
                 locationNode.AppendChild(retiredNode);
                 locationNode.AppendChild(tod_reqNode);
 
-                idNode.InnerText = entry.Key.ToString();
-                latitudeNode.InnerText = entry.Value.latitude;
-                logitudeNode.InnerText = entry.Value.longitude;
-                nameNode.InnerText = entry.Value.name;
-                typeNode.InnerText = entry.Value.type;
-                arrivalLatitudeNode.InnerText = entry.Value.arrival_latitude;
-                arrivalLogitudeNode.InnerText = entry.Value.arrival_longitude;
-                descriptionNode.InnerText = entry.Value.description;
-                date_addedNode.InnerText = entry.Value.date_added;
-                last_updateNode.InnerText = entry.Value.last_update;
-                dungeon_idNode.InnerText = entry.Value.dungeon_id;
-                retiredNode.InnerText = entry.Value.retired;
-                tod_reqNode.InnerText = entry.Value.tod_req;
+                idNode.InnerText = entry.id.ToString();
+                latitudeNode.InnerText = entry.latitude;
+                logitudeNode.InnerText = entry.longitude;
+                nameNode.InnerText = entry.name;
+                typeNode.InnerText = entry.type;
+                arrivalLatitudeNode.InnerText = entry.arrival_latitude;
+                arrivalLogitudeNode.InnerText = entry.arrival_longitude;
+                descriptionNode.InnerText = entry.description;
+                date_addedNode.InnerText = entry.date_added;
+                last_updateNode.InnerText = entry.last_update;
+                dungeon_idNode.InnerText = entry.dungeon_id;
+                retiredNode.InnerText = entry.retired;
+                tod_reqNode.InnerText = entry.tod_req;
             }
 
             xmlDoc.Save(filename);
         }
 
-        public string[] settlementPortals =
-        {
-            "Adam's Beach",
-            "Adept's Domain",
-            "Adventurer's Haven Cottages",
-            "Ahr-Zona",
-            "Aimaru Plains Cottages",
-            "Al-Arqis Cottages",
-            "Al-Hatar Settlement",
-            "Al-Kasan Settlement",
-            "Al-Mar Oasis",
-            "Al-Nosaj",
-            "Alfreth Ridge Cottages",
-            "Aloria",
-            "Alvador",
-            "Amarand Villas",
-            "Anadil",
-            "Aqalah",
-            "Ardent Realm",
-            "Ariake",
-            "Arida Butte",
-            "Arqasanti",
-            "Arrak",
-            "Arrowdale Cottages",
-            "Artifice Cottages",
-            "Asandra Cottages",
-            "Asbel Domain",
-            "Auralla Settlement",
-            "Auroch Pasture Estates",
-            "Avatania Cottages",
-            "Axefall Glen",
-            "Ayn Tayan",
-            "Azaroth Cottages",
-            "Bandit Road Villas",
-            "Baron's Domain",
-            "Bay of Sands",
-            "Beach Pass Villas",
-            "Bellig Mesa Cottages",
-            "Bhah Dhah Villas",
-            "Blackmire Edge Cottages",
-            "Blazing Wand Villas",
-            "Bleached Skull Wastes Settlement",
-            "Bleak Valley",
-            "Bluewater Cottages",
-            "Brazenn Domain",
-            "Bretslef Cottages",
-            "Brigand Sands Cottages",
-            "Brigands Bay Settlement",
-            "Bright Blade Cottages",
-            "Broadacre Cottages",
-            "Broken Haft Vale",
-            "Broken Sword Bethel Settlement",
-            "Bucolic Villas",
-            "Cactus Acres",
-            "Caerlin Cottages",
-            "Cape Feirgard Cottages",
-            "Celcynd Cottages",
-            "Celdiseth's Beach Settlement",
-            "Charbone Ridge",
-            "Charnhold",
-            "Chi Zou Cottages",
-            "Colier View Hill",
-            "Cragstone Farms",
-            "Crescent Lane Cottages",
-            "Dagger Vale",
-            "Dame Tolani Villas",
-            "Darasa Villas",
-            "Darawyll Village",
-            "Deepvale Cottages",
-            "Defiant Prey Cottages",
-            "Demonsbane Cottages",
-            "Desert Boundary Cottages",
-            "Desert Mirage Cottages",
-            "Desert Vanguard Cottages",
-            "Desolation Beach",
-            "Devana",
-            "Dillo Butte Settlement",
-            "Dire's Edge",
-            "Dires' Door Estates",
-            "Direvale Villas",
-            "Djebel al-Nar Cottages",
-            "Djinaya Wind Cottages",
-            "Dovetail Valley Villas",
-            "Dry Bone Manors",
-            "Dryreach Beach Cottages",
-            "Dryreach Beach Manors",
-            "Drytree Settlement",
-            "Dunes End Cottages",
-            "Durglen",
-            "East Al-Jalima Villas",
-            "East Danby",
-            "East Esper Valley",
-            "East Lytelthorpe Settlement",
-            "East Morntide Settlement",
-            "East Morntide Villas",
-            "East Rithwic Estates",
-            "East Sawato Settlement",
-            "East Span Way Settlement",
-            "Eaves of Tiofor Settlement",
-            "Ebbing Tide Villas",
-            "Embara",
-            "Empyrean Fields Cottages",
-            "Empyrean Shore Villas",
-            "Enchanter's Meadow",
-            "Eotensfang Cottages",
-            "Erevana Villas",
-            "Evensong Settlement",
-            "Explorer's Villas",
-            "Fadsahil Settlement",
-            "Far Claw Villas",
-            "Far Horizon Cottages",
-            "Faranar Foothills",
-            "Fearnot Valley Cottages",
-            "Filos' Font Cottages",
-            "Firedew",
-            "Firesong Cottages",
-            "Font Alpa",
-            "Forgotten Hills",
-            "Four Towers Settlement",
-            "Frosty Dale Cottages",
-            "Gaerwel Edge Settlement",
-            "Genem Causland",
-            "Gharu'n Victory Villas",
-            "Glenden Hills East Settlement",
-            "Glenden Hills North Settlement",
-            "Glystaene Cottages",
-            "Gredaline Villas",
-            "Greenswath",
-            "Greenvale Settlement",
-            "Haliana",
-            "Hamud Cottages",
-            "Hand-on-Sword Cottages",
-            "Harmonious Blade Cottages",
-            "Helms Villas",
-            "Hermit Hill Cottages",
-            "Hero's Vale",
-            "Hidden Valley",
-            "Highland Manors",
-            "Holtburg Wilderness Settlement",
-            "Hopevale",
-            "Howling Wolf Villas",
-            "Ianna",
-            "Ice's Edge Cottages",
-            "Iceea Hills Estates",
-            "Ijaniya",
-            "Ikama Cottages",
-            "Imuth Maer Cottages",
-            "Inquisitor's Dale Cottages",
-            "Ishilai Inlet Settlement",
-            "Ishilai Inlet Villas",
-            "Ispan Hill",
-            "Isparian Flame Estates",
-            "Jackcat Canyon",
-            "Jai-Tan Dale",
-            "Janaa Ridge Settlement",
-            "Jasmine Meadow",
-            "Jenshi Cottages",
-            "Jeweled Thorn Estates",
-            "Jin-Lai Stronghold",
-            "Jinianshi",
-            "Kanasa",
-            "Kelnen Village",
-            "King Pwyll Square",
-            "Kuyiza",
-            "Lady Maila Estates",
-            "Laiti's Villa",
-            "Lake Blessed Cottages",
-            "Lake Nemuel Settlement",
-            "Lake Thrasyl Cottages",
-            "Lanadryll Cottages",
-            "Land Bridge Villas",
-            "Last-Stop-Before-Dires Villas",
-            "Leafdawning Settlement",
-            "Li-Po Cottages",
-            "Liang Chi Settlement",
-            "Lightbringer Dale Cottages",
-            "Lilyglen Cottages",
-            "Lin Kiln Park",
-            "Linvak Tukal Foothills Settlement",
-            "Lithaenean Cottages",
-            "Lo-Han",
-            "Lord Cambarth Villas",
-            "Loredane Villas",
-            "Lost Realm Cottages",
-            "Lost Wish Cottages",
-            "Lugian Meadows Settlement",
-            "Maedew",
-            "Mage's Pass",
-            "Mahara Cottages",
-            "Maitland",
-            "Majestic Hill Cottages",
-            "Majestic Saddle Cottages",
-            "Mattekar Slopes Cottages",
-            "Maythen Geroyu Villas",
-            "Meditation Meadow",
-            "Meerthus Square",
-            "Merak",
-            "Meridian Cottages",
-            "Midhill Cottages",
-            "Midsong Cottages",
-            "Mimiana Villas",
-            "Mire Hill",
-            "Mirthless Dale",
-            "Mistdweller Villas",
-            "Monument Sands Settlement",
-            "Morntide Ascent Cottages",
-            "Mosswart Place Cottages",
-            "Mountain Keep Cottages",
-            "Mountain Retreat Cottages",
-            "Mountain Ridge Abodes",
-            "Musansayn",
-            "Nal Wadi Cottages",
-            "Nalib Cavana Settlement",
-            "Nan-Zari",
-            "Naqut Dreams Villas",
-            "Narsys",
-            "Narziz Cottages",
-            "Neu Gerz Villas",
-            "New Cannthalo",
-            "New Colier",
-            "New Nesortania",
-            "New Suntik",
-            "Neydisa Village",
-            "Nidal-Taraq Villas",
-            "Norstead",
-            "North Adjamaer Cottages",
-            "North Baishi Cottages",
-            "North Eastham Meadow",
-            "North Lytelthorpe Villas",
-            "North Pass Hollow Cottages",
-            "North Sawato Villas",
-            "North Uziz Settlement",
-            "North Yanshi Plains Settlement",
-            "North Yaraq Villas",
-            "Northfire Estates",
-            "Northreach",
-            "Northwater Cottages",
-            "Norvale",
-            "Oboro",
-            "Ong-Hau Village",
-            "Osric Cottages",
-            "P'rnelle Acres",
-            "Palm-of-Stone Villas",
-            "Patron's Honor Cottages",
-            "Pavanne Vale Freehold",
-            "Peril's Edge Cottages",
-            "Pillars-on-the-Sea Cottages",
-            "Pine Deep",
-            "Pine Hillock Settlement",
-            "Plainsview Cottages",
-            "Plateau Hollow Settlement",
-            "Point Tremblant",
-            "Prosper River Headwaters",
-            "Qalaba'r Seaside Villas",
-            "Qalabar Oasis Settlement",
-            "Rahvard Square",
-            "Redrock Cottages",
-            "Regina Cottages",
-            "Rending Talon Cottages",
-            "Rethux Vale",
-            "Return of Mumiyah Cottages",
-            "Reviled Maw Cottages",
-            "Rhynntal Cottages",
-            "Ring of Crystals Estates",
-            "Riverbend Cottages",
-            "Rivermouth Villas",
-            "Ro-Nan",
-            "Rytheran Dale",
-            "Sai-Nan",
-            "Samsur Butte Cottages",
-            "San-Chin",
-            "Sanai",
-            "Sanam Batal Villas",
-            "Sand Kings Cottages",
-            "Sand Shallow Cottages",
-            "Sand's Edge",
-            "Sands-of-the-Skull Cottages",
-            "Sawato Foothills Settlement",
-            "Scimitar Lake Cottages",
-            "Sclavavania",
-            "Seaview Ridge Cottages",
-            "Secluded Valley Cottages",
-            "Sennon Valley Retreat",
-            "Serpent Hills Settlement",
-            "Shaky Ledge Cottages",
-            "Shara",
-            "Sharvale",
-            "Shian-To Cottages",
-            "Shield of Ispar Villas",
-            "Shield of Valor Cottages",
-            "Shore Vista Cottages",
-            "Shou-Zin",
-            "Siege Road Settlement",
-            "Siege Road Villas",
-            "Simda'r Villas",
-            "Slinker Meadows",
-            "Sliver-of-BlueCottages",
-            "Snakehead",
-            "Snowy Valley",
-            "Solstice Hill",
-            "Soltan Villas",
-            "Sonel",
-            "Songview",
-            "Sonpay",
-            "South Adjamaer Cottages",
-            "South Beach Pass Villas",
-            "South Hebian-To Cottages",
-            "South Hebian-To Estates",
-            "South Khayyaban Cottages",
-            "South Lytelthorpe",
-            "South Shoushi Villas",
-            "South Siege Villas",
-            "South Uziz Villas",
-            "South Victory Harbor",
-            "South Yaraq Cottages",
-            "Southeast Arwic Settlement",
-            "Southern Park",
-            "Southwest Hebian-To Settlement",
-            "Spire Hills Settlement",
-            "Stone Face Oasis Villas",
-            "Stone Scar Settlement",
-            "Stone Scythe Stronghold",
-            "Stone Triad Dell",
-            "Stonebend Cottages",
-            "Stoneport Villas",
-            "Stonerune Cottages",
-            "Stormbrow",
-            "Stormtree Villas",
-            "Strathelar's Watch Cottages",
-            "Swamp Temple Place",
-            "Sweet Maple Cottages",
-            "Taklihuan Settlement",
-            "Tanshi",
-            "Taralla",
-            "Tarn Vinara Villas",
-            "Tattered Ridge",
-            "Tharesun",
-            "Thasali Cottages",
-            "Thyrinn Cant Cottages",
-            "Tia-Leh Homestead",
-            "Tinkelo Hold Villas",
-            "Tiofor Deeps",
-            "Tou-Tou Penninsula Cottages",
-            "Tou-Tou Road Villas",
-            "Tusker Notch",
-            "Two Hills Cottages",
-            "Tyrrin Cottages",
-            "Unified Heart Villas",
-            "Verena",
-            "Vesayan Overlook",
-            "Village Quan",
-            "Villalabar",
-            "Vulture's Eye Villas",
-            "West Baishi Settlement",
-            "West Holtburg Villas",
-            "West Mayoi Mountain Villas",
-            "West Norstead",
-            "West Rithwic Estates",
-            "West Sawato Cottages",
-            "West Uziz Settlement",
-            "West Yanshi Namoon",
-            "West Zaikhal Freehold",
-            "Westshore Cottages",
-            "Whispering Pines Cottages",
-            "Wi Badlands Settlement",
-            "Wilomine Villas",
-            "Windrune Cottages",
-            "Wisp Lake Cottages",
-            "Wolfenvale",
-            "Woodsbane Cottages",
-            "Woodshore Cottages",
-            "Xinh",
-            "Yanshi Namoon North",
-            "Yee Villas",
-            "Yinar",
-            "Yukikaze",
-            "Yushad Ridge Cottages",
-            "Zabool Overlook Settlement",
-            "Zatara",
-            "Zin-Dai",
-            "N Adjamaer Cottages",
-            "S Adjamaer Cottages",
-            "S Khayyaban Cottages",
-            "SE Arwic Settlement",
-            "Stone Face Villas Portal",
-            "Stonebend Settlement Portal",
-            "Tia-Leh Portal",
-            "Wisp Lake Portal",
-            "Woodsbane Settlement",
-        };
-
-        public void RemoveSettlements(bool removePortals = true)
-        {
-            Dictionary<int, GoArrowLocation> tempLocations = new Dictionary<int, GoArrowLocation>();
-            foreach (var entry in Locations)
-            {
-                if (entry.Value.type != "Village")
-                    tempLocations.Add(entry.Key, entry.Value);
-            }
-
-            List<string> names = new List<string>();
-            Dictionary<int, GoArrowLocation> tempLocations2 = new Dictionary<int, GoArrowLocation>();
-            foreach (var name in settlementPortals)
-            {
-                bool found = false;
-                foreach (var entry in tempLocations)
-                {
-                    if (entry.Value.type == "Portal" && entry.Value.name.Contains(name))
-                    {
-                        if (!tempLocations2.ContainsKey(entry.Key))
-                        {
-                            tempLocations2.Add(entry.Key, entry.Value);
-                            names.Add(entry.Value.name);
-                            found = true;
-                        }
-                    }
-                }
-                if (!found)
-                    found = true;
-            }
-
-            Locations.Clear();
-            int newKey = 1;
-            foreach (var entry in tempLocations)
-            {
-                if(!tempLocations2.ContainsKey(entry.Key))
-                    Locations.Add(newKey++, entry.Value);
-            }
-        }
-
         public void ReIndex()
         {
             int newKey = 1;
-            Dictionary<int, GoArrowLocation> tempLocations = new Dictionary<int, GoArrowLocation>();
-            foreach (var entry in Locations)
+            for(int i = 0; i < Locations.Count; i++)
             {
-                tempLocations.Add(newKey++, entry.Value);
+                Locations[i].id = newKey++;
             }
-            Locations = tempLocations;
+        }
+
+        public enum Town
+        {
+            Holtburg,
+            Cragstone,
+            Arwic,
+            Dryreach,
+            Eastham,
+            FortTethana,
+            GlendenWood,
+            Lytelthorpe,
+            PlateauVillage,
+            Rithwic,
+            Stonehold,
+            UndergroundCity,
+            Shoushi,
+            HebianTo,
+            Baishi,
+            Kara,
+            Kryst,
+            Lin,
+            Mayoi,
+            Nanto,
+            Sawato,
+            WaiJhou,
+            Yanshi,
+            TouTou,
+            Yaraq,
+            Zaikhal,
+            AlArqas,
+            AlJalima,
+            AyanBaqur,
+            Khayyaban,
+            Qalabar,
+            Samsur,
+            Tufa,
+            Uziz,
+            Xarabydun,
+            Greenspire,
+            Redspire,
+            Bluespire,
+            CandethKeep,
+            MacNiallsFreehold,
+            NeydisaCastle,
+            BanditCastle,
+            DanbysOutpost
+        }
+
+        public class Coords
+        {
+            public string latitude;
+            public string longitude;
+
+            public Coords(double NS, double WE)
+            {
+                latitude = NS.ToString();
+                longitude = WE.ToString();
+            }
+        }
+
+        public Dictionary<Town, Coords> TownDepartureCoords = new Dictionary<Town, Coords>()
+        {
+            { Town.Holtburg, new Coords(-42.1, 33.9) },
+            { Town.Cragstone, new Coords(-25.5, 48.7) },
+            { Town.Arwic, new Coords(-33.8, 56.7) },
+            { Town.Dryreach, new Coords(8.2, 72.9) },
+            { Town.Eastham, new Coords(-17.6, 63.2) },
+            { Town.FortTethana, new Coords(-1.7, -72.1) },
+            { Town.GlendenWood, new Coords(-29.7, 27.0) },
+            { Town.Lytelthorpe, new Coords(-0.6, 51.6) },
+            { Town.PlateauVillage, new Coords(-44.0, -43.1) },
+            { Town.Rithwic, new Coords(-10.8, 58.1) },
+            { Town.Stonehold, new Coords(-69.0, -21.7) },
+            { Town.UndergroundCity, new Coords(-21.3, 53.9) },
+            { Town.Shoushi, new Coords(33.9, 72.8) },
+            { Town.HebianTo, new Coords(39.6, 83.5) },
+            { Town.Baishi, new Coords(49.3, 62.4) },
+            { Town.Kara, new Coords(83.2, 47.1) },
+            { Town.Kryst, new Coords(74.3, 84.2) },
+            { Town.Lin, new Coords(54.3, 73.2) },
+            { Town.Mayoi, new Coords(61.8, 81.6) },
+            { Town.Nanto, new Coords(52.3, 82.0) },
+            { Town.Sawato, new Coords(28.8, 59.5) },
+            { Town.WaiJhou, new Coords(61.9, -51.5) },
+            { Town.Yanshi, new Coords(12.7, 46.4) },
+            { Town.TouTou, new Coords(28.2, 95.6) },
+            { Town.Yaraq, new Coords(21.5, -1.3) },
+            { Town.Zaikhal, new Coords(-13.4, 0.6) },
+            { Town.AlArqas, new Coords(31.1, 14.0) },
+            { Town.AlJalima, new Coords(-7.3, 4.6) },
+            { Town.AyanBaqur, new Coords(59.9, -88.2) },
+            { Town.Khayyaban, new Coords(47.4, 25.1) },
+            { Town.Qalabar, new Coords(74.1, 19.2) },
+            { Town.Samsur, new Coords(3.2, 19.1) },
+            { Town.Tufa, new Coords(14.2, 5.5) },
+            { Town.Uziz, new Coords(24.9, 28.3) },
+            { Town.Xarabydun, new Coords(41.9, 15.9) },
+            { Town.Greenspire, new Coords(-43.3, -66.8) },
+            { Town.Redspire, new Coords(-40.6, -82.9) },
+            { Town.Bluespire, new Coords(-39.4, -75.1) },
+            { Town.CandethKeep, new Coords(87.4, -66.9) },
+            { Town.MacNiallsFreehold, new Coords(74.1, 92.3) },
+            { Town.NeydisaCastle, new Coords(-69.5, 17.6) },
+            { Town.BanditCastle, new Coords(-66.4, 50.0) },
+            { Town.DanbysOutpost, new Coords(-23.5, -28.6) },
+        };
+
+        public Dictionary<Town, Coords> TownArrivalCoords = new Dictionary<Town, Coords>()
+        {
+            { Town.Holtburg, new Coords(-41.6, 33.7) },
+            { Town.Cragstone, new Coords(-26.1, 48.1) },
+            { Town.Arwic, new Coords(-33.6, 56.8) },
+            { Town.Dryreach, new Coords(8.1, 72.9) },
+            { Town.Eastham, new Coords(-16.9, 63.5) },
+            { Town.FortTethana, new Coords(-1.5, -72.1) },
+            { Town.GlendenWood, new Coords(-29.7, 26.5) },
+            { Town.Lytelthorpe, new Coords(-1.9, 51.9) },
+            { Town.PlateauVillage, new Coords(-44.5, -43.1) },
+            { Town.Rithwic, new Coords(-10.8, 59.3) },
+            { Town.Stonehold, new Coords(-68.8, -21.6) },
+            { Town.UndergroundCity, new Coords(-21.3, 53.9) },
+            { Town.Shoushi, new Coords(33.5, 72.8) },
+            { Town.HebianTo, new Coords(38.9, 82.6) },
+            { Town.Baishi, new Coords(53, 61.1) },
+            { Town.Kara, new Coords(83.3, 47.1) },
+            { Town.Kryst, new Coords(74.6, 84.2) },
+            { Town.Lin, new Coords(53.9, 74.3) },
+            { Town.Mayoi, new Coords(61.9, 82.5) },
+            { Town.Nanto, new Coords(52.2, 82.5) },
+            { Town.Sawato, new Coords(29.1, 58.9) },
+            { Town.WaiJhou, new Coords(62.1, -51.5) },
+            { Town.Yanshi, new Coords(12.5, 46.6) },
+            { Town.TouTou, new Coords(30.4, 94.7) },
+            { Town.Yaraq, new Coords(21.5, -1.8) },
+            { Town.Zaikhal, new Coords(-13.5, 0.7) },
+            { Town.AlArqas, new Coords(31.3, 13.1) },
+            { Town.AlJalima, new Coords(-6.4, 6.3) },
+            { Town.AyanBaqur, new Coords(60.5, -88.0) },
+            { Town.Khayyaban, new Coords(47.4, 25.6) },
+            { Town.Qalabar, new Coords(73.9, 18.9) },
+            { Town.Samsur, new Coords(2.7, 18.9) },
+            { Town.Tufa, new Coords(13.9, 5.4) },
+            { Town.Uziz, new Coords(24.8, 28.4) },
+            { Town.Xarabydun, new Coords(41.9, 16.2) },
+            { Town.Greenspire, new Coords(-43.2, -66.8) },
+            { Town.Redspire, new Coords(-40.7, -82.5) },
+            { Town.Bluespire, new Coords(-39.5, -75.3) },
+            { Town.CandethKeep, new Coords(87.5, -67.0) },
+            { Town.MacNiallsFreehold, new Coords(74, 92.3) },
+            { Town.NeydisaCastle, new Coords(-69.5, 17.9) },
+            { Town.BanditCastle, new Coords(-66.5, 50.0) },
+            { Town.DanbysOutpost, new Coords(-23.4, -28.8) },
+        };
+
+        public enum Halls
+        {
+            Atrium,
+            Haven,
+            Oriel,
+            Sanctum,
+            Victory
+        }
+
+        public Dictionary<Town, Halls> HallEntrances = new Dictionary<Town, Halls>()
+        {
+            { Town.Holtburg, Halls.Oriel },
+            { Town.Cragstone, Halls.Sanctum },
+            { Town.Arwic, Halls.Haven },
+            { Town.Dryreach, Halls.Sanctum },
+            { Town.Eastham, Halls.Oriel },
+            { Town.FortTethana, Halls.Victory },
+            { Town.GlendenWood, Halls.Atrium },
+            { Town.Lytelthorpe, Halls.Haven },
+            { Town.PlateauVillage, Halls.Oriel },
+            { Town.Rithwic, Halls.Haven },
+            { Town.Stonehold, Halls.Atrium },
+            { Town.UndergroundCity, Halls.Haven },
+            { Town.Shoushi, Halls.Haven },
+            { Town.HebianTo, Halls.Sanctum },
+            { Town.Baishi, Halls.Atrium },
+            { Town.Kara, Halls.Haven },
+            { Town.Kryst, Halls.Sanctum },
+            { Town.Lin, Halls.Atrium },
+            { Town.Mayoi, Halls.Oriel },
+            { Town.Nanto, Halls.Sanctum },
+            { Town.Sawato, Halls.Haven },
+            { Town.WaiJhou, Halls.Victory },
+            { Town.Yanshi, Halls.Oriel },
+            { Town.TouTou, Halls.Haven },
+            { Town.Yaraq, Halls.Atrium },
+            { Town.Zaikhal, Halls.Sanctum },
+            { Town.AlArqas, Halls.Haven },
+            { Town.AlJalima, Halls.Atrium },
+            { Town.AyanBaqur, Halls.Victory },
+            { Town.Khayyaban, Halls.Oriel },
+            { Town.Qalabar, Halls.Atrium },
+            { Town.Samsur, Halls.Oriel },
+            { Town.Tufa, Halls.Oriel },
+            { Town.Uziz, Halls.Haven },
+            { Town.Xarabydun, Halls.Oriel },
+            { Town.Greenspire, Halls.Sanctum },
+            { Town.Redspire, Halls.Atrium },
+            { Town.Bluespire, Halls.Sanctum },
+            { Town.CandethKeep, Halls.Victory },
+            { Town.MacNiallsFreehold, Halls.Sanctum },
+            { Town.NeydisaCastle, Halls.Atrium },
+            { Town.BanditCastle, Halls.Sanctum },
+            { Town.DanbysOutpost, Halls.Oriel },
+        };
+
+        public void AddApartmentHallConnections()
+        {
+            Dictionary<Town, string> Atrium = new Dictionary<Town, string>();
+            Atrium.Add(Town.GlendenWood, "Alphus Court"); // main hall portal
+            Atrium.Add(Town.Baishi, "Gajin Dwellings"); // main hall portal
+            Atrium.Add(Town.Yaraq, "Hasina Gardens");
+            Atrium.Add(Town.Lin, "Heartland Yard");
+            Atrium.Add(Town.Qalabar, "Ivory Gate"); // main hall portal
+            Atrium.Add(Town.Stonehold, "Larkspur Gardens");
+            //Atrium.Add(Town., "Mellas Court"); // not used
+            Atrium.Add(Town.AlJalima, "Valorya Gate");
+            Atrium.Add(Town.Redspire, "Vesper Gate");
+            Atrium.Add(Town.NeydisaCastle, "Winthur Gate");
+
+            Dictionary<Town, string> Haven = new Dictionary<Town, string>();
+            Haven.Add(Town.Kara, "Ben Ten Lodge");
+            Haven.Add(Town.Lytelthorpe, "Cedraic Court"); // main hall portal
+            Haven.Add(Town.Rithwic, "Celcynd Grotto");
+            Haven.Add(Town.Uziz, "Crescent Moon Veranda"); // main hall portal
+            Haven.Add(Town.AlArqas, "Dulok Court");
+            Haven.Add(Town.Arwic, "Ispar Yard");
+            Haven.Add(Town.Sawato, "Jade Gate");
+            Haven.Add(Town.Shoushi, "Jojii Gardens");
+            Haven.Add(Town.UndergroundCity, "Trothyr Hollow");
+            Haven.Add(Town.TouTou, "Xao Wu Gardens"); // main hall portal
+
+            Dictionary<Town, string> Oriel = new Dictionary<Town, string>();
+            Oriel.Add(Town.PlateauVillage, "Allain Court"); // main hall portal
+            Oriel.Add(Town.Eastham, "Autumn Moon Gardens");
+            Oriel.Add(Town.Xarabydun, "Endara Gate");
+            Oriel.Add(Town.Samsur, "Forsythian Gardens");
+            Oriel.Add(Town.Tufa, "Maru Veranda");
+            Oriel.Add(Town.Khayyaban, "Sorac Gate"); // main hall portal
+            Oriel.Add(Town.Mayoi, "Syrah Dwellings"); // main hall portal
+            Oriel.Add(Town.Holtburg, "Trellyn Gardens");
+            Oriel.Add(Town.DanbysOutpost, "Vindalan Dwellings");
+            Oriel.Add(Town.Yanshi, "White Lotus Gate");
+
+            Dictionary<Town, string> Sanctum = new Dictionary<Town, string>();
+            Sanctum.Add(Town.Cragstone, "Alvan Court"); // main hall portal
+            Sanctum.Add(Town.Greenspire, "Caerna Dwellings");
+            Sanctum.Add(Town.BanditCastle, "Illsin Veranda");
+            Sanctum.Add(Town.HebianTo, "Marin Court"); // main hall portal
+            Sanctum.Add(Town.Zaikhal, "Ruadnar Court"); // main hall portal
+            Sanctum.Add(Town.Kryst, "Senmai Court");
+            Sanctum.Add(Town.Dryreach, "Sigil Veranda");
+            Sanctum.Add(Town.Bluespire, "Sorveya Court");
+            Sanctum.Add(Town.MacNiallsFreehold, "Sylvan Dwellings");
+            Sanctum.Add(Town.Nanto, "Treyval Veranda");
+
+            Dictionary<Town, string> Victory = new Dictionary<Town, string>();
+            //Victory.Add(Town., "Accord Veranda"); // not used
+            Victory.Add(Town.CandethKeep, "Candeth Court");
+            Victory.Add(Town.FortTethana, "Celdiseth Court");
+            //Victory.Add(Town., "Festivus Court"); // not used
+            //Victory.Add(Town., "Hibiscus Gardens"); // not used
+            //Victory.Add(Town., "Meditation Gardens"); // not used
+            //Victory.Add(Town., "Setera Gardens"); // not used
+            Victory.Add(Town.WaiJhou, "Spirit Gate");
+            Victory.Add(Town.AyanBaqur, "Triumphal Gardens");
+            //Victory.Add(Town., "Wilamil Court"); // not used
+
+            foreach (var entry in HallEntrances)
+            {
+                switch(entry.Value)
+                {
+                    case Halls.Atrium:
+                        AddPortals(entry.Value, entry.Key, Atrium);
+                        break;
+                    case Halls.Haven:
+                        AddPortals(entry.Value, entry.Key, Haven);
+                        break;
+                    case Halls.Oriel:
+                        AddPortals(entry.Value, entry.Key, Oriel);
+                        break;
+                    case Halls.Sanctum:
+                        AddPortals(entry.Value, entry.Key, Sanctum);
+                        break;
+                    case Halls.Victory:
+                        AddPortals(entry.Value, entry.Key, Victory);
+                        break;
+                }
+            }
+        }
+
+        private void AddPortals(Halls hall, Town town, Dictionary<Town, string> portals)
+        {
+            foreach (var portal in portals)
+            {
+                if (town != portal.Key)
+                {
+                    GoArrowLocation newLocation = new GoArrowLocation();
+                    newLocation.id = 0; // we will fill this in later with a re-index.
+                    newLocation.name = $"{hall} Halls - {portal.Value} - {GetFriendlyTownName(portal.Key)}";
+                    newLocation.type = "Portal";
+                    newLocation.latitude = TownDepartureCoords[town].latitude;
+                    newLocation.longitude = TownDepartureCoords[town].longitude;
+                    newLocation.arrival_latitude = TownArrivalCoords[portal.Key].latitude;
+                    newLocation.arrival_longitude = TownArrivalCoords[portal.Key].longitude;
+                    newLocation.date_added = "2021-01-31T19:00:00.0000000-03:00";
+                    newLocation.last_update = "2021-01-31T19:00:00.0000000-03:00";
+                    newLocation.retired = "N";
+                    newLocation.tod_req = "0";
+
+                    Locations.Add(newLocation);
+                }
+            }
+        }
+
+        private string GetFriendlyTownName(Town town)
+        {
+            string friendlyTownName;
+            switch (town)
+            {
+                case Town.AlArqas:
+                    friendlyTownName = "Al-Arqas";
+                    break;
+                case Town.AlJalima:
+                    friendlyTownName = "Al-Jalima";
+                    break;
+                case Town.AyanBaqur:
+                    friendlyTownName = "Ayan Baqur";
+                    break;
+                case Town.BanditCastle:
+                    friendlyTownName = "Bandit Castle";
+                    break;
+                case Town.CandethKeep:
+                    friendlyTownName = "Candeth Keep";
+                    break;
+                case Town.DanbysOutpost:
+                    friendlyTownName = "Danby's Outpost";
+                    break;
+                case Town.FortTethana:
+                    friendlyTownName = "Fort Tethana";
+                    break;
+                case Town.GlendenWood:
+                    friendlyTownName = "Glenden Wood";
+                    break;
+                case Town.MacNiallsFreehold:
+                    friendlyTownName = "MacNiall's Freehold";
+                    break;
+                case Town.NeydisaCastle:
+                    friendlyTownName = "Neydisa Castle";
+                    break;
+                case Town.PlateauVillage:
+                    friendlyTownName = "Plateau Village";
+                    break;
+                case Town.TouTou:
+                    friendlyTownName = "Tou-Tou";
+                    break;
+                case Town.UndergroundCity:
+                    friendlyTownName = "Underground City";
+                    break;
+                default:
+                    friendlyTownName = town.ToString();
+                    break;
+            }
+            return friendlyTownName;
         }
     }
 }

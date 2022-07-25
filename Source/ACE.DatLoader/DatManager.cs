@@ -1,0 +1,154 @@
+using System.IO;
+
+using log4net;
+
+namespace ACE.DatLoader
+{
+    public static class DatManager
+    {
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+        private static string datFile;
+
+        private static int count;
+
+        // End of retail Iteration versions.
+        private static int ITERATION_CELL = 982;
+        private static int ITERATION_PORTAL = 2072;
+        private static int ITERATION_HIRES = 497;
+        private static int ITERATION_LANGUAGE = 994;
+
+        private static int INFILTRATION_ITERATION_CELL = 10001;
+        private static int INFILTRATION_ITERATION_PORTAL = 10001;
+        private static int INFILTRATION_ITERATION_HIRES = 497;
+        private static int INFILTRATION_ITERATION_LANGUAGE = 994;
+
+        private static int CUSTOMDM_ITERATION_CELL = 20002;
+        private static int CUSTOMDM_ITERATION_PORTAL = 20002;
+        private static int CUSTOMDM_ITERATION_HIRES = 497;
+        private static int CUSTOMDM_ITERATION_LANGUAGE = 994;
+        public static CellDatDatabase CellDat { get; private set; }
+
+        public static PortalDatDatabase PortalDat { get; private set; }
+        public static DatDatabase HighResDat { get; private set; }
+        public static LanguageDatDatabase LanguageDat { get; private set; }
+
+        public static void Initialize(string datFileDirectory, bool keepOpen = false, bool loadCell = true)
+        {
+            var datDir = Path.GetFullPath(Path.Combine(datFileDirectory));
+
+            if (loadCell)
+            {
+                try
+                {
+                    datFile = Path.Combine(datDir, "client_cell_1.dat");
+                    CellDat = new CellDatDatabase(datFile, keepOpen);
+                    count = CellDat.AllFiles.Count;
+                    log.Info($"Successfully opened {datFile} file, containing {count} records, iteration {CellDat.Iteration}");
+                    switch (Common.ConfigManager.Config.Server.WorldRuleset)
+                    {
+                        case Common.Ruleset.EoR:
+                            if (CellDat.Iteration != ITERATION_CELL)
+                                log.Warn($"{datFile} iteration {CellDat.Iteration} not match expected end-of-retail version of {ITERATION_CELL}.");
+                            break;
+                        case Common.Ruleset.Infiltration:
+                            if (CellDat.Iteration != INFILTRATION_ITERATION_CELL)
+                                log.Warn($"{datFile} iteration {CellDat.Iteration} does not match expected version of {INFILTRATION_ITERATION_CELL}.");
+                            break;
+                        case Common.Ruleset.CustomDM:
+                            if (CellDat.Iteration != CUSTOMDM_ITERATION_CELL)
+                                log.Warn($"{datFile} iteration {CellDat.Iteration} does not match expected version of {CUSTOMDM_ITERATION_CELL}.");
+                            break;
+                    }
+                }
+                catch (FileNotFoundException ex)
+                {
+                    log.Error($"An exception occured while attempting to open {datFile} file!  This needs to be corrected in order for Landblocks to load!");
+                    log.Error($"Exception: {ex.Message}");
+                }
+            }
+
+            try
+            {
+                datFile = Path.Combine(datDir, "client_portal.dat");
+                PortalDat = new PortalDatDatabase(datFile, keepOpen);
+                count = PortalDat.AllFiles.Count;
+                log.Info($"Successfully opened {datFile} file, containing {count} records, iteration {PortalDat.Iteration}");
+                switch (Common.ConfigManager.Config.Server.WorldRuleset)
+                {
+                    case Common.Ruleset.EoR:
+                        PortalDat.SkillTable.AddRetiredSkills();
+
+                        if (PortalDat.Iteration != ITERATION_PORTAL)
+                            log.Warn($"{datFile} iteration {PortalDat.Iteration} does not match expected end-of-retail version of {ITERATION_PORTAL}.");
+                        break;
+                    case Common.Ruleset.Infiltration:
+                        if (PortalDat.Iteration != INFILTRATION_ITERATION_PORTAL)
+                            log.Warn($"{datFile} iteration {PortalDat.Iteration} does not match expected version of {INFILTRATION_ITERATION_PORTAL}.");
+                        break;
+                    case Common.Ruleset.CustomDM:
+                        if (PortalDat.Iteration != CUSTOMDM_ITERATION_PORTAL)
+                            log.Warn($"{datFile} iteration {PortalDat.Iteration} does not match expected version of {CUSTOMDM_ITERATION_PORTAL}.");
+                        break;
+                }
+            }
+            catch (FileNotFoundException ex)
+            {
+                log.Error($"An exception occured while attempting to open {datFile} file!\n\n *** Please check your 'DatFilesDirectory' setting in the config.js file. ***\n *** ACE will not run properly without this properly configured! ***\n");
+                log.Error($"Exception: {ex.Message}");
+            }
+
+            // Load the client_highres.dat file. This is not required for ACE operation, so no exception needs to be generated.
+            datFile = Path.Combine(datDir, "client_highres.dat");
+            if (File.Exists(datFile))
+            {
+                HighResDat = new DatDatabase(datFile, keepOpen);
+                count = HighResDat.AllFiles.Count;
+                log.Info($"Successfully opened {datFile} file, containing {count} records, iteration {HighResDat.Iteration}");
+                switch (Common.ConfigManager.Config.Server.WorldRuleset)
+                {
+                    case Common.Ruleset.EoR:
+                        if (HighResDat.Iteration != ITERATION_HIRES)
+                            log.Warn($"{datFile} iteration does not match expected end-of-retail version of {ITERATION_HIRES}.");
+                        break;
+                    case Common.Ruleset.Infiltration:
+                        if (HighResDat.Iteration != INFILTRATION_ITERATION_HIRES)
+                            log.Warn($"{datFile} iteration does not match expected version of {INFILTRATION_ITERATION_HIRES}.");
+                        break;
+                    case Common.Ruleset.CustomDM:
+                        if (HighResDat.Iteration != CUSTOMDM_ITERATION_HIRES)
+                            log.Warn($"{datFile} iteration does not match expected version of {CUSTOMDM_ITERATION_HIRES}.");
+                        break;
+                }
+            }
+
+            try
+            {
+                datFile = Path.Combine(datDir, "client_local_English.dat");
+                LanguageDat = new LanguageDatDatabase(datFile, keepOpen);
+                count = LanguageDat.AllFiles.Count;
+                log.Info($"Successfully opened {datFile} file, containing {count} records, iteration {LanguageDat.Iteration}");
+                switch (Common.ConfigManager.Config.Server.WorldRuleset)
+                {
+                    case Common.Ruleset.EoR:
+                        if (LanguageDat.Iteration != ITERATION_LANGUAGE)
+                            log.Warn($"{datFile} iteration does not match expected end-of-retail version of {ITERATION_LANGUAGE}.");
+                        break;
+                    case Common.Ruleset.Infiltration:
+                        if (LanguageDat.Iteration != INFILTRATION_ITERATION_LANGUAGE)
+                            log.Warn($"{datFile} iteration does not match expected version of {INFILTRATION_ITERATION_LANGUAGE}.");
+                        break;
+                    case Common.Ruleset.CustomDM:
+                        if (LanguageDat.Iteration != CUSTOMDM_ITERATION_LANGUAGE)
+                            log.Warn($"{datFile} iteration does not match expected version of {CUSTOMDM_ITERATION_LANGUAGE}.");
+                        break;
+                }
+            }
+            catch (FileNotFoundException ex)
+            {
+                log.Error($"An exception occured while attempting to open {datFile} file!\n\n *** Please check your 'DatFilesDirectory' setting in the config.json file. ***\n *** ACE will not run properly without this properly configured! ***\n");
+                log.Error($"Exception: {ex.Message}");
+            }
+        }
+    }
+}

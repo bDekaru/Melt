@@ -549,6 +549,14 @@ namespace Melt
                 }
             }
 
+            {
+                for (int i = 0; i < thisEnvCell.Textures.Count; i++)
+                {
+                    if (thisEnvCell.Textures[i] != otherEnvCell.Textures[i])
+                        return false;
+                }
+            }
+
             return true;
         }
 

@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DouglasCrockford.JsMin</name>
+    </assembly>
+    <members>
+        <member name="T:DouglasCrockford.JsMin.JsMinificationException">
+            <summary>
+            The exception that is thrown when a minification of asset code by JSMin is failed
+            </summary>
+        </member>
+        <member name="M:DouglasCrockford.JsMin.JsMinificationException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DouglasCrockford.JsMin.JsMinificationException"/> class
+            with a specified error message
+            </summary>
+            <param name="message">The message that describes the error</param>
+        </member>
+        <member name="M:DouglasCrockford.JsMin.JsMinificationException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DouglasCrockford.JsMin.JsMinificationException"/> class
+            with a specified error message and a reference to the inner exception
+            that is the cause of this exception
+            </summary>
+            <param name="message">The error message that explains the reason for the exception</param>
+            <param name="innerException">The exception that is the cause of the current exception</param>
+        </member>
+        <member name="M:DouglasCrockford.JsMin.JsMinificationException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DouglasCrockford.JsMin.JsMinificationException"/> class with serialized data
+            </summary>
+            <param name="info">The object that holds the serialized data</param>
+            <param name="context">The contextual information about the source or destination</param>
+        </member>
+        <member name="T:DouglasCrockford.JsMin.JsMinifier">
+            <summary>
+            The JavaScript Minifier
+            </summary>
+        </member>
+        <member name="F:DouglasCrockford.JsMin.JsMinifier.AVERAGE_COMPRESSION_RATIO">
+            <summary>
+            Average compression ratio
+            </summary>
+        </member>
+        <member name="F:DouglasCrockford.JsMin.JsMinifier._minificationSynchronizer">
+            <summary>
+            Synchronizer of minification
+            </summary>
+        </member>
+        <member name="M:DouglasCrockford.JsMin.JsMinifier.GetEstimatedOutputLength(System.String)">
+            <summary>
+            Gets a estimated length of minififation output
+            </summary>
+            <param name="content">JavaScript content</param>
+            <returns>Estimated length of minififation output</returns>
+        </member>
+        <member name="M:DouglasCrockford.JsMin.JsMinifier.Minify(System.String)">
+            <summary>
+            Removes a comments and unnecessary whitespace from JavaScript code
+            </summary>
+            <param name="content">JavaScript content</param>
+            <returns>Minified JavaScript content</returns>
+        </member>
+        <member name="M:DouglasCrockford.JsMin.JsMinifier.Minify(System.String,System.Text.StringBuilder)">
+            <summary>
+            Removes a comments and unnecessary whitespace from JavaScript code
+            </summary>
+            <param name="content">JavaScript content</param>
+            <param name="outputBuilder">String builder to which to send minification output</param>
+        </member>
+        <member name="M:DouglasCrockford.JsMin.JsMinifier.IsAlphanum(System.Int32)">
+            <summary>
+            Returns a true if the character is a letter, digit, underscore, dollar sign, or non-ASCII character
+            </summary>
+            <param name="codeunit">The character</param>
+            <returns>Result of check</returns>
+        </member>
+        <member name="M:DouglasCrockford.JsMin.JsMinifier.Get">
+            <summary>
+            Returns a next character from input stream. Watch out for lookahead.
+            If the character is a control character, translate it to a space or linefeed.
+            </summary>
+            <returns>The character</returns>
+        </member>
+        <member name="M:DouglasCrockford.JsMin.JsMinifier.Peek">
+            <summary>
+            Gets a next character without advancing
+            </summary>
+            <returns>The character</returns>
+        </member>
+        <member name="M:DouglasCrockford.JsMin.JsMinifier.Next">
+            <summary>
+            Gets a next character, excluding comments.
+            <code>Peek()</code> is used to see if a '/' is followed by a '/' or '*'.
+            </summary>
+            <returns>The character</returns>
+        </member>
+        <member name="M:DouglasCrockford.JsMin.JsMinifier.Action(System.Int32)">
+            <summary>
+            Do something! What you do is determined by the argument:
+            	1 - Output A. Copy B to A. Get the next B.
+            	2 - Copy B to A. Get the next B. (Delete A).
+            	3 - Get the next B. (Delete B).
+            <code>Action</code> treats a string as a single character.
+            <code>Action</code> recognizes a regular expression if it is preceded by the likes of
+            <code>(</code> or <code>,</code> or <code>=</code>.
+            </summary>
+            <param name="determined">Action type</param>
+        </member>
+        <member name="M:DouglasCrockford.JsMin.JsMinifier.StartMinification">
+            <summary>
+            Copies a input to the output, deleting the characters which are insignificant to JavaScript.
+            Comments will be removed. Tabs will be replaced with spaces.
+            Carriage returns will be replaced with linefeeds. Most spaces and linefeeds will be removed.
+            </summary>
+        </member>
+        <member name="M:DouglasCrockford.JsMin.JsMinifier.Put(System.Int32)">
+            <summary>
+            Puts a character to output stream
+            </summary>
+            <param name="c">The character</param>
+        </member>
+        <member name="T:DouglasCrockford.JsMin.Utilities.CharExtensions">
+            <summary>
+            Extensions for Char
+            </summary>
+        </member>
+        <member name="T:DouglasCrockford.JsMin.Utilities.StringBuilderExtensions">
+            <summary>
+            Extensions for StringBuilder
+            </summary>
+        </member>
+        <member name="M:DouglasCrockford.JsMin.Utilities.StringBuilderExtensions.TrimStart(System.Text.StringBuilder)">
+            <summary>
+            Removes the all leading white-space characters from the current <see cref="T:System.Text.StringBuilder"/> instance
+            </summary>
+            <param name="source">Instance of <see cref="T:System.Text.StringBuilder"/></param>
+            <returns>Instance of <see cref="T:System.Text.StringBuilder"/> without leading white-space characters</returns>
+        </member>
+    </members>
+</doc>

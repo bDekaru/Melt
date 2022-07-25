@@ -21,6 +21,14 @@ namespace Melt
         //public bool ExactMatch => (Bitfield & 1) != 0;
         //public bool PortalSide => (Bitfield & 2) == 0;
 
+        public cCellPortal(ushort bitfield, ushort environmentId, ushort otherCellId, ushort otherPortalId)
+        {
+            Bitfield = bitfield;
+            EnvironmentId = environmentId;
+            OtherCellId = otherCellId;
+            OtherPortalId = otherPortalId;
+        }
+
         public cCellPortal(cDatFileEntry file) : this(new StreamReader(file.fileContent))
         {
         }
