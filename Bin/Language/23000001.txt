@@ -1,0 +1,1102 @@
+--- 0x86746391
+Low
+--- 0x231735155
+FPS: 
+\nDEG: 
+
+--- 0x86760851
+You earned the Frenzy of the Slayer augmentation. Your damage rating with weapons and spells is increased by 3.\n\n
+--- 0x251543225
+Accuracy
+--- 0x120250941
+Item
+--- 0x133775436
+4
+--- 0x160873886
+Tell to Selected
+--- 0x191963781
+Hide
+--- 0x40711228
+Status
+--- 0x199301346
+Power
+--- 0x103577440
+This is the title that all other players will see when they examine your character.
+--- 0x186315644
+XP Produced
+--- 0x230538876
+Skill Credits Available:
+--- 0x28684388
+Quit Game
+--- 0x181148455
+You have specialized Salvaging using the Ciandra's Essence Augmentation Gem.\n\n
+--- 0x73198325
+You have augmented your Piercing Resistance 
+ {time[1]|times}.\n\n
+--- 0x92306277
+Quickness
+--- 0x128202649
+You have died 
+ times.\n
+--- 0x205387836
+Character
+--- 0x190494306
+Armor vs. Pierce
+--- 0x244204926
+<
+--- 0x164267204
+Reset
+--- 0x184537202
+Gameplay Options
+--- 0x94782579
+\n\nThis means that your health, stamina, mana, and skills are temporarily reduced by 
+%.  A reduction of less than 15% will not hinder you much, but beware losing much more than that.
+--- 0x97250503
+Selling
+--- 0x8941020
+Remove
+--- 0x60641838
+Defaults
+--- 0x147889732
+
+ has invited you to join their fellowship. Do you accept?
+--- 0x42256085
+Aura of Retribution. Your Seer grants you an increase to Critical Damage Rating of 
+.\n\n
+--- 0x257717255
+Buying
+--- 0x3474766
+Trade
+--- 0x124288844
+Gen
+--- 0x141746946
+War
+--- 0x163452949
+Admin Panel
+--- 0x129889045
+You earned the Master of the Steel Circle augmentation. Your effective melee weapon skills are increased by 10.\n\n
+--- 0x72812524
+2
+--- 0x214593678
+Attach To Selected
+--- 0x147125705
+Buy
+--- 0x117533461
+Trade
+--- 0x237806467
+Aura of the Specialist. Your Seer grants you an increase to all Specialized skills of 
+.\n\n
+--- 0x6543900
+Online
+--- 0x51418549
+Damage Variance
+--- 0x224587907
+Brightness:
+--- 0x189211301
+Urgent Assistance
+--- 0x28358732
+Apply
+--- 0x35277746
+Armor vs. Fire
+--- 0x157213539
+
+/
+
+--- 0x128210309
+You have never died!\n
+--- 0x10232479
+Mono
+--- 0x104776836
+You have augmented your Cold Resistance 
+ {time[1]|times}.\n\n
+--- 0x5308048
+That person is already in your fellowship
+--- 0x37892549
+Aura of Destruction. Your Seer grants you an increase to Damage Rating of 
+.\n\n
+--- 0x118410915
+Sound Effects
+--- 0x232022128
+That person is not in your fellowship
+--- 0x78881532
+Specialized Skills
+--- 0x17640819
+SCARABS
+--- 0x190852030
+Dismiss
+--- 0x154570594
+Report Abuse
+--- 0x161092364
+Cancel
+--- 0x226860
+Send Tell
+--- 0x257711212
+Buy All
+--- 0x20685589
+You have augmented your ability to avoid critical hits. With this augmentation, 25% of critical hits from creatures and 5% of critical hits from players will strike you for normal damage.\n\n
+--- 0x138015812
+Configure Keyboard
+--- 0x2410942
+Refresh
+--- 0x79829758
+Send
+--- 0x71451909
+(Offline)
+--- 0x232840988
+Chat to All
+--- 0x247341083
+Repeat Attack
+--- 0x212550450
+You are already the leader
+--- 0x84714627
+Items
+--- 0x133331113
+Tell to Roleplay Chat
+--- 0x119798261
+You have augmented your Innate Endurance 
+ {time[1]|times}.\n\n
+--- 0x62539860
+VIII
+--- 0x164112052
+Speed
+--- 0x124479173
+You have augmented your ability to perform imbues. You now have a 5% better chance to succeed on imbue craft interactions.\n\n
+--- 0x5801986
+Vitae
+--- 0x40985299
+Natural Resistances: 
+\nDrain Resistances: 
+\nRegeneration Bonus: 
+\n
+--- 0x105328610
+Squelch
+--- 0x59482931
+You have augmented your Innate Quickness 
+ {time[1]|times}.\n\n
+--- 0x161459975
+You have specialized Item Tinkering using the Yoshi's Essence Augmentation Gem.\n\n
+--- 0x204321781
+Mana
+--- 0x120885742
+Create Fellowship
+--- 0x10323097
+Texture Quality:
+--- 0x77823797
+Aura of Mana Flow. The mana consumption of your items is decreased by a rating of 
+.\n\n
+--- 0x98424830
+New
+--- 0x171574434
+Emotes
+--- 0x244418115
+You earned the Infused Void Magic augmentation. You no longer need foci to cast Void Magic spells.\n\n
+--- 0x213730029
+Sell Item
+--- 0x224910643
+Interface Sounds
+--- 0x8775989
+Aura of Glory. Your Critical Damage Rating is increased by 
+.\n\n
+--- 0x164591501
+This will exit your character from the game world and close the application.\n\nAre you sure?
+--- 0x95886900
+Use this option ONLY if you are stuck in a situation which prevents you from playing the game.\n\nTo file a report of a less urgent nature, such as a general question, suggestion, or observation, please contact Customer Service via this link:\n\nhttp://ac.turbinegames.com/index.php?page_id=177
+--- 0x135300613
+Your melee mastery is 
+.\n
+--- 0x164224702
+First
+--- 0x72446581
+Stalemate
+--- 0x262207260
+Player Killer Lite
+--- 0x183569327
+No
+--- 0x78313134
+Aura of Hardening. Your Seer grants you an increase to Critical Damage Reduction Rating of 
+.\n\n
+--- 0x241687660
+Online
+--- 0x122241100
+1
+--- 0x129838163
+You earned the Master of the Five Fold Path augmentation. Your effective magic skills are increased by 10.\n\n
+--- 0x96915021
+Buy Item
+--- 0x30373182
+Report Abuse
+--- 0x240826971
+OK
+--- 0x183554116
+00.0S, 00.0W
+--- 0x171306583
+Use Mouse Turning Settings
+--- 0x227743108
+Cast
+--- 0x128977486
+You have augmented your Innate Coordination 
+ {time[1]|times}.\n\n
+--- 0x189550044
+Label:
+--- 0x184248158
+Tell to Patron
+--- 0x194905964
+Cancel
+--- 0x56939710
+Send
+--- 0x107979219
+Fell
+--- 0x198965902
+Aura of Invulnerability. Your Seer grants you an increase to Damage Reduction Rating of 
+.\n\n
+--- 0x116081589
+Self
+--- 0x63469854
+VII
+--- 0x194803235
+You have augmented your Innate Focus 
+ {time[1]|times}.\n\n
+--- 0x29286496
+You have augmented your ability to learn from your experiences. You earn 5% extra experience for each creature you kill. This does not affect experience received from quests or killing other players. This extra experience is shared with Fellowships and Allegiances as normal.\n\n
+--- 0x186772403
+You earned the Infused Item Magic augmentation. You no longer need foci to cast Item Magic spells.\n\n
+--- 0x156489932
+Add
+--- 0x262987316
+Squelch (ignore) 
+
+--- 0x200023700
+Speed
+--- 0x160382449
+FORMULA
+--- 0x173247916
+Environment Detail Textures
+--- 0x236977100
+Break
+--- 0x110120684
+Title:
+--- 0x205803500
+MONARCH
+--- 0x210638895
+Stereo
+--- 0x209341391
+You have died twice.\n
+--- 0x237617108
+Suppress Levitation
+--- 0x57002130
+Buy
+--- 0x164868556
+Delete
+--- 0x94619125
+I
+--- 0x140852158
+Cancel
+--- 0x245922668
+All Available Titles:
+--- 0x129762868
+Your ranged mastery is 
+.\n\n
+--- 0x267605843
+Ambient Sounds
+--- 0x8506652
+LVL/XP%
+--- 0x234627150
+Search:
+--- 0x3889667
+
+/
+%
+--- 0x160935717
+Chat Window 1: Speech
+--- 0x61394636
+Swear
+--- 0x163410492
+Send Tell
+--- 0x104598132
+You have augmented your Bludgeoning Resistance 
+ {time[1]|times}.\n\n
+--- 0x148800818
+Map
+--- 0x224604031
+The Link Indicator shows the current status of your connection to the game servers.
+--- 0x7567598
+Cancel
+--- 0x26939614
+Continue
+--- 0x84764201
+Olt
+--- 0x1799220
+m
+--- 0x163745349
+Health
+--- 0x30709614
+Recruit
+--- 0x163347349
+Close
+--- 0x260684578
+Armor vs. Electric
+--- 0x193492844
+Detail
+--- 0x61402270
+Leader
+--- 0x29311662
+Clear All
+--- 0x54781572
+Clear List
+--- 0x163666214
+You can't dismiss yourself
+--- 0x57928310
+You can't recruit yourself
+--- 0x133852519
+Aura of Purity. Healing effects upon you are increased by a rating of 
+.\n\n
+--- 0x135484867
+Chess Rank: 
+\n
+--- 0x253627074
+Combat
+--- 0x228714979
+You earned the Infused Life Magic augmentation. You no longer need foci to cast Life Magic spells.\n\n
+--- 0x216474297
+RP
+--- 0x226922068
+ 
+--- 0x169251968
+When this option is chosen, you will always appear as offline on everyone else's squelch list.
+--- 0x231869333
+
+
+--- 0x11737907
+Aura of the World. The base values of all your skills are increased by 
+.\n\n
+--- 0x2067884
+Contact Location:
+--- 0x168019916
+Total Experience (XP):
+--- 0x99914987
+OK
+--- 0x192304199
+Show
+--- 0x63632036
+You should only click the 'Report Abuse' button to report behavior which is threatening or offensive. Misuse of this function violates the Code of Conduct.\n\nIf you have a less urgent or milder complaint, please contact Customer Service via this link:\n\nhttp://ac.turbinegames.com/index.php?page_id=177
+--- 0x95234844
+(total)
+--- 0x32454629
+You earned the Eye of the Remorseless augmentation. Your chance to deliver a critical strike with weapons and spells is increased by 1%.\n\n
+--- 0x11315573
+Alg
+--- 0x76273774
+Resign
+--- 0x247392998
+You have augmented your Innate Self 
+ {time[1]|times}.\n\n
+--- 0x111078114
+You earned the Hand of the Remorseless augmentation. The damage rating of your critical strikes with weapons and spells is increased by 3.\n\n
+--- 0x249282565
+Done
+--- 0x94426675
+Tell to Fellows
+--- 0x45713544
+High
+--- 0x117639460
+Download: 
+ / 
+
+--- 0x189013650
+Character Information
+--- 0x228229507
+OK
+--- 0x227814001
+I
+--- 0x227814002
+II
+--- 0x167847964
+Appear Offline
+--- 0x227814003
+III
+--- 0x49478981
+Report Abuse
+--- 0x227814004
+IV
+--- 0x227814005
+V
+--- 0x227814006
+VI
+--- 0x227814007
+VII
+--- 0x31751490
+Armor vs. Slash
+--- 0x227814008
+VIII
+--- 0x49867858
+Spellbook
+--- 0x1900508
+Landscape Detail Textures
+--- 0x20065580
+FELLOW
+--- 0x235366940
+Appear Offline
+--- 0x204926940
+Kick
+--- 0x5624846
+OK
+--- 0x68324398
+Label
+--- 0x196563556
+Exit Game
+--- 0x55904883
+You earned the Jack of All Trades augmentation. All your effective skills are increased by 5.\n\n
+--- 0x239434492
+Set as Display Title
+--- 0x209339989
+You have died only once!\n
+--- 0x28495952
+Open In Game Help
+--- 0x246684546
+Contracts
+--- 0x3828901
+Beneficial Spells in Effect
+--- 0x120143948
+3
+--- 0x79103980
+4
+--- 0x170978750
+Aura of Mana Infusion. The mana provide by Mana Stones is increased by a rating of 
+.\n\n
+--- 0x115694386
+Page List
+--- 0x249332076
+Unassigned Experience:
+--- 0x176056908
+Account
+--- 0x32132783
+If you require assistance, please do not log off the character which submitted the request. Envoys will help you as soon as they can. Calls are answered in order of urgency.\n\nPlease submit one call per issue, and please wait 30 minutes before resubmitting the request. Abuse of this feature can result in your being removed from the game.
+--- 0x171003868
+Squelch Account
+--- 0x6162899
+Use High Resolution Textures
+--- 0x250780261
+
+
+--- 0x118492588
+Level
+--- 0x119380676
+Exit to Character Selection
+--- 0x21363877
+Urgent Assistance
+--- 0x20261950
+Squelch (ignore) Selected
+--- 0x40061652
+You have augmented your Acid Resistance 
+ {time[1]|times}.\n\n
+--- 0x101368574
+#
+--- 0x149931032
+You have augmented your ability to maintain spells through death. Spells that were cast on you prior to death will remain in effect when you resurrect at your Lifestone. Spells will still expire on death if you are killed in a PK battle. Spells will remain if you are killed in PKLite.\n\n
+--- 0x223939806
+OK
+--- 0x230818485
+Suppress Flames
+--- 0x53381444
+Location:
+--- 0x130562064
+When this option is chosen, you will see explicit equipment slots instead of a portrait.
+--- 0x210467827
+NO SPELLS
+--- 0x173867533
+Medium
+--- 0x198864862
+Are you sure you wish to break from 
+?
+--- 0x88608900
+\n\nIf approximately forty seconds pass without receiving a packet, you will be disconnected from the server.
+--- 0x95244060
+Squelch
+--- 0x26891043
+Enlightenment Tiers: 
+\n
+--- 0x1502562
+House
+--- 0x46564419
+Camera Stiffness:
+--- 0x129555276
+Total Items: 
+
+--- 0x10586626
+Fellowship
+--- 0x222413260
+Mapping 2
+--- 0x252760419
+Yes
+--- 0x84558114
+Armor vs. Acid
+--- 0x258651324
+(init)
+--- 0x4756612
+Rank: 
+ \[
+ (+
+)\]
+--- 0x73892702
+Disband
+--- 0x171726101
+IX
+--- 0x224691703
+\n\nRoundtrip Ping time to Server: 
+ ms\n(Includes Internet latency)
+--- 0x253794626
+Void
+--- 0x192505976
+Tell to Monarch
+--- 0x182087886
+Reset
+--- 0x215830627
+Configuration Options
+--- 0x153744444
+PATRON
+--- 0x214216549
+
+
+--- 0x111553845
+Aura of Aetheric Vision. Your Aetheria's chance to surge is increased by a rating of 
+.\n\n
+--- 0x10525769
+Apply
+--- 0x220162244
+Exit to Character Selection
+--- 0x13005870
+Pat
+--- 0x266145671
+You have augmented your Electric Resistance 
+ {time[1]|times}.\n\n
+--- 0x144944252
+Offline
+--- 0x251040590
+Status
+--- 0x117380834
+UI
+--- 0x105585336
+You have augmented your Slashing Resistance 
+ {time[1]|times}.\n\n
+--- 0x107519038
+Cancel
+--- 0x94620088
+VI
+--- 0x119095372
+2
+--- 0x167092404
+Tell to 
+
+--- 0x117878534
+It's no use complaining about yourself. You have only yourself to blame.
+--- 0x5131058
+No character by that name exists. Please check your spelling and try again.
+--- 0x24701700
+Add to List
+--- 0x263386307
+Character Options
+--- 0x261968564
+Power
+--- 0x212712083
+\n\n\nPacket loss for the last 10 sec: 
+%
+--- 0x9706964
+Target In View
+--- 0x58579907
+...
+--- 0x226400956
+Slots
+--- 0x145546228
+h
+--- 0x50597781
+Automatic Degrades
+--- 0x80773714
+Config
+--- 0x81435024
+
+
+--- 0x91137774
+
+ would like to swear allegiance to you. Do you accept?
+--- 0x97240236
+Sell All
+--- 0x256913260
+Contact:
+--- 0x23338009
+Tell to Society Chat
+--- 0x101802436
+Auto-Target
+--- 0x201910465
+FORMULA
+--- 0x27600372
+You earned the Iron Skin of the Invincible augmentation. Your damage resistance rating is increased by 3.\n\n
+--- 0x175085980
+Experience To Raise:
+--- 0x77232035
+You do not belong to a fellowship.\nTo create a fellowship, enter a name in the box below, then click Create Fellowship.\nOnce you've created a fellowship, you can start recruiting members.
+--- 0x221364684
+Mapping 3
+--- 0x206482569
+Infinity!
+--- 0x153985746
+Luminance Augmentations:\n\n
+--- 0x59747315
+\n\nGREEN = your link is good.\nYELLOW = no packets for at least 5 sec.\nRED = no packets for at least 20 sec.
+--- 0x95910035
+Tell to Vassals
+--- 0x212914547
+High
+--- 0x257877474
+Camera
+--- 0x123040450
+Attributes
+--- 0x261543212
+~ 1 ~
+--- 0x261416126
+Timer
+--- 0x178798162
+Character
+--- 0x248541529
+Tell to Olthoi Chat
+--- 0x184899861
+
+
+--- 0x103871628
+Timed:
+--- 0x261199246
+Done
+--- 0x40108965
+You have augmented your Fire Resistance 
+ {time[1]|times}.\n\n
+--- 0x261461036
+PATRON/MONARCH
+--- 0x157873716
+Aura of the Craftsman. The skill level of your tinkering skills when crafting is increased by 
+.\n\n
+--- 0x128484658
+Chat
+--- 0x69857980
+ALCHEMICAL SUBSTANCES
+--- 0x129009751
+Fishing Skill: 
+\n
+--- 0x194519676
+Quest Location:
+--- 0x48249388
+Friend Name:
+--- 0x155446135
+You have specialized Magic Item Tinkering using the Celdiseth's Essence Augmentation Gem.\n\n
+--- 0x160934469
+Chat Window 3: Fellowship
+--- 0x186964476
+Trained Skills
+--- 0x202512467
+Low
+--- 0x110422340
+Configure Keyboard
+--- 0x215419036
+Account
+--- 0x206992483
+Graphic Resolution:
+--- 0x170872380
+Current Display Title:
+--- 0x199991285
+Damage
+--- 0x251268987
+Player Killer
+--- 0x263359758
+Buy
+--- 0x179233491
+PEAS
+--- 0x160934485
+Chat Window 4: Channels
+--- 0x187694290
+Link Status
+--- 0x32137525
+Please describe the situation in the following box. Please be as descriptive as possible.
+--- 0x42758044
+Remove
+--- 0x171699602
+IV
+--- 0x155644024
+You have augmented your Innate Strength 
+ {time[1]|times}.\n\n
+--- 0x115399300
+Tell
+--- 0x144586695
+Your summoning mastery is 
+.\n\n
+--- 0x232843671
+Tell to LFG Chat
+--- 0x185882366
+Start
+--- 0x174059476
+d
+--- 0x183011123
+Schools:
+--- 0x176535774
+Contract
+--- 0x136010243
+Levels:
+--- 0x177659015
+WARNING: Items in this panel will be destroyed!
+--- 0x4495749
+Focus
+--- 0x254100709
+Please enter the exact name of the character that you are reporting in the following box.
+--- 0x178869011
+POWDERED GEMS
+--- 0x184927332
+Open
+--- 0x15429045
+Chat
+--- 0x81426770
+Urgent Assistance
+--- 0x218797164
+Skill Credits To Train
+--- 0x59821982
+Apply
+--- 0x115934318
+Load File...
+--- 0x90436252
+Character
+--- 0x11422387
+You have been augmented 
+ times with the Might of the Seventh Mule. This has increased your carrying capacity by 
+%.\n
+--- 0x234625971
+
+/
+
+--- 0x95477886
+Chess Information
+--- 0x243159829
+Salvage
+--- 0x30203877
+Endurance
+--- 0x29181854
+Done
+--- 0x202231733
+Select an Attribute to Improve
+--- 0x262181035
+Non-Player Killer
+--- 0x5806224
+When this option is chosen, you will always appear as offline on everyone else's friends list.
+--- 0x54787229
+Clear Item
+--- 0x93554092
+
+/
+
+--- 0x208220812
+Type
+--- 0x164376558
+Delete
+--- 0x75958252
+1
+--- 0x21159404
+Your Vitae, or life force, is at full strength.
+--- 0x210375966
+Last
+--- 0x63136164
+\nUsing this gem will drain 
+ points of your available experience.\n
+--- 0x263234268
+You
+--- 0x163200057
+Apply
+--- 0x91034430
+Continue
+--- 0x48045541
+Report Abuse
+--- 0x220682197
+Select a Skill to Improve
+--- 0x224554165
+Harmful Spells in Effect
+--- 0x210399566
+>
+--- 0x94620271
+II
+--- 0x179239666
+Maintenance
+--- 0x84538547
+You earned the Infused Creature Magic augmentation. You no longer need foci to cast Creature Magic spells.\n\n
+--- 0x73677558
+Graphics Performance:
+--- 0x52721141
+Degrade Distance:
+--- 0x63655189
+III
+--- 0x160934581
+Chat Window 2: Allegiance
+--- 0x174326659
+Enable Mouse Turning Settings
+--- 0x125812910
+Revert
+--- 0x246531101
+This will exit your character from the game world.\n\nAre you sure?
+--- 0x54059742
+Abandon
+--- 0x141863164
+Notes:
+--- 0x118350547
+Innate Strength: 
+\nInnate Endurance: 
+\nInnate Coordination: 
+\nInnate Quickness: 
+\nInnate Focus: 
+\nInnate Self: 
+\n
+--- 0x133508146
+Game Center
+--- 0x265508923
+Rank: 
+ \[
+\]
+--- 0x196096592
+In-Game Help Files
+--- 0x117264604
+Unusable Skills
+--- 0x166583493
+
+
+--- 0x195719900
+Cancel
+--- 0x179227509
+Chat
+--- 0x211030462
+Maintenance
+--- 0x25245252
+You have specialized Gearcraft using the Tristra's Essence Augmentation Gem.\n\n
+--- 0x63190996
+Accuracy
+--- 0x71816172
+Character Name:
+--- 0x219267532
+Mapping 1
+--- 0x107181367
+You have specialized Weapon Tinkering using the Koga's Essence Augmentation Gem.\n\n
+--- 0x76234542
+Do you wish to swear to 
+?
+--- 0x263670364
+Status:
+--- 0x114891060
+You have played for 
+.\n
+--- 0x145020579
+TALISMANS
+--- 0x167723492
+Close
+--- 0x97687141
+Tell to Allegiance
+--- 0x41429461
+You have augmented your ability to salvage items 
+ {time[1]|times}. You now receive more material each time you salvage an item.\n\n
+--- 0x223440115
+Chat Options
+--- 0x164374340
+Sound:
+--- 0x254094719
+Please enter a description of the abuse in the following box. Please be as specific as possible in the space provided.
+--- 0x10462852
+Please wait while we register your report.
+--- 0x10664517
+Tell to Trade Chat
+--- 0x109269571
+You earned the Infused War Magic augmentation. You no longer need foci to cast War Magic spells.\n\n
+--- 0x218742466
+Far
+--- 0x252476837
+You are not overburdened at this time.\n
+--- 0x223593845
+
+
+--- 0x245375188
+Height
+--- 0x71954706
+Allegiance
+--- 0x4167109
+Creature
+--- 0x93110508
+(init)
+--- 0x100269998
+Aura of Protection. Your Damage Reduction Rating is increased by 
+.\n\n
+--- 0x147524293
+Strength
+--- 0x58191266
+Qualities
+--- 0x197229772
+Fellowship Name:
+--- 0x58086252
+Character\nLevel
+--- 0x177626419
+HERBS
+--- 0x85969299
+Defaults
+--- 0x129265635
+Pass
+--- 0x2976924
+Friend
+--- 0x97095884
+Squelch Character
+--- 0x87231042
+Movement
+--- 0x101313347
+Repeat Attacks
+--- 0x121922750
+Burden
+--- 0x180276994
+Character
+--- 0x106223326
+Aura of Temperance. Your Critical Damage Reduction Rating is increased by 
+.\n\n
+--- 0x54441842
+Journal
+--- 0x58086274
+CharacterSettings
+--- 0x94589922
+Skills
+--- 0x148162803
+You drop fewer items on death than normal. You have augmented yourself in this way 
+ {time[1]|times}.\n\n
+--- 0x106681454
+Record
+--- 0x11161495
+You have specialized Armor Tinkering using the Jibril's Essence Augmentation Gem.\n\n
+--- 0x41495716
+Timer:
+--- 0x77146284
+Tell to General Chat
+--- 0x136766068
+Your message has been sent.\nAn Envoy may be contacting you shortly. However, a response cannot always be guaranteed.
+--- 0x253245491
+Defaults
+--- 0x266175644
+Command
+--- 0x125386078
+Title
+--- 0x107356467
+Vas
+--- 0x258601413
+Your House
+--- 0x60837300
+You have augmented your pack-carrying capacity.\n\n
+--- 0x117760100
+Power
+--- 0x180895704
+Mon
+--- 0x154548364
+Add
+--- 0x26644053
+Coordination
+--- 0x66110274
+Titles
+--- 0x232779932
+XP for next level:
+--- 0x118999022
+Suppress Crown
+--- 0x175542084
+Accuracy
+--- 0x215085166
+You have augmented the duration of the spells you cast 
+ {time[1]|times}.\n\n
+--- 0x79360818
+Components
+--- 0x81815804
+Untrained Skills
+--- 0x143893621
+(raw)
+--- 0x116104947
+Followers: 
+
+--- 0x166456515
+Your complaint has been received.\nCommunication from the implicated party is being logged for later review by admins.\n\nThank you.
+--- 0x174170773
+
+
+--- 0x135508168
+You were born on 
+.\n
+--- 0x73234021
+Due to your recent death, you have temporarily lost 
+% of your Vitae, or life force.
+--- 0x120244037
+Life
+--- 0x102895522
+Friends
+--- 0x145646981
+Drag clothing and armor here to wear them
+--- 0x80530494
+You have augmented your Health, Stamina, and Mana regeneration rate 
+ {time[1]|times}. Your secondary attributes regenerate much faster while lying down.\n\n
+--- 0x214231348
+Please wait ...
+--- 0x213338695
+LFG
+--- 0x62700268
+Title:
+--- 0x60764286
+Quit
+--- 0x9498761
+You have augmented your burden-bearing ability 
+ {time[1]|times}.\n\n
+--- 0x76038318
+Save As...
+--- 0x13640884
+Reset
+--- 0x134893298
+Armor vs. Cold
+--- 0x73861100
+3
+--- 0x157887678
+Are you sure you wish to kick 
+ from your allegiance?
+--- 0x263175836
+Level
+--- 0x267480053
+Damage Type
+--- 0x149146076
+Offline
+--- 0x86621556
+Height
+--- 0x90558212
+You are currently overburdened by 
+ burden units. This is reducing your Run, Jump, Melee Defense and Missile Defense skills by 
+%.\n
+--- 0x237649621
+
+
+--- 0x160473570
+Character
+--- 0x8039948
+VASSALS
+--- 0x37016549
+Aura of Valor. Your Damage Rating is increased by 
+.\n\n
+--- 0x78990265
+Soc
+--- 0x252780597
+Stamina
+--- 0x164216178
+Armor vs. Bludgeon
+--- 0x220435054
+Character Information
+--- 0x171699093
+V
+--- 0x135163484
+SELECT A SPELL
+--- 0x17457333
+Done
+--- 0x229614243
+
+/
+
+--- 0x240859541
+You earned the Master of the Focused Eye augmentation. Your effective missile weapon skills are increased by 10.\n\n
+--- 0x231574581
+\n\nYou will regain 1% of your Vitae once you earn 
+ more experience.
+--- 0x237057587
+TAPERS

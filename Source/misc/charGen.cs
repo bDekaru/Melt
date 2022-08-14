@@ -517,6 +517,7 @@ namespace Melt
 
         public void modifyForCustomDM()
         {
+            StarterAreas[3].Name = "Random";
             foreach (KeyValuePair<uint, HeritageGroupCG> entry in HeritageGroups)
             {
                 HeritageGroupCG heritage = entry.Value;
@@ -573,17 +574,12 @@ namespace Melt
                             template.PrimarySkillsList.Add((uint)eSkills.ArcaneLore);
                             template.PrimarySkillsList.Add((uint)eSkills.CreatureAppraisal);
                             template.PrimarySkillsList.Add((uint)eSkills.Lockpick);
+                            template.PrimarySkillsList.Add((uint)eSkills.Dagger);
                             template.NormalSkillsList = new List<uint>();
                             if (heritage.Name == "Sho")
-                            {
-                                template.PrimarySkillsList.Add((uint)eSkills.UnarmedCombat);
                                 template.PrimarySkillsList.Add((uint)eSkills.PersonalAppraisal);
-                            }
                             else
-                            {
-                                template.PrimarySkillsList.Add((uint)eSkills.Dagger);
                                 template.NormalSkillsList.Add((uint)eSkills.PersonalAppraisal);
-                            }
                             template.NormalSkillsList.Add((uint)eSkills.Healing);
                             template.NormalSkillsList.Add((uint)eSkills.MeleeDefense);
                             break;
@@ -623,7 +619,8 @@ namespace Melt
 
         public void modifyForDM()
         {
-            foreach(KeyValuePair<uint, HeritageGroupCG> entry in HeritageGroups)
+            StarterAreas[3].Name = "Random";
+            foreach (KeyValuePair<uint, HeritageGroupCG> entry in HeritageGroups)
             {
                 HeritageGroupCG heritage = entry.Value;
 

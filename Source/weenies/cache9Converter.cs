@@ -527,7 +527,7 @@ namespace Melt
             outputFile.Close();
         }
 
-        void generateChestTreasureList()
+        public void generateChestTreasureList()
         {
             SortedDictionary<int, List<cWeenie>> generatorTableTreasureMap = new SortedDictionary<int, List<cWeenie>>();
             SortedDictionary<int, List<cWeenie>> generatorTableMap = new SortedDictionary<int, List<cWeenie>>();
@@ -536,14 +536,20 @@ namespace Melt
             {
                 cWeenie weenie = entry.Value;
 
-                if (weenie.weenieType != eWeenieTypes.Chest)
+                if (weenie.weenieType != eWeenieTypes.Chest && weenie.weenieType != eWeenieTypes.Container && weenie.weenieType != eWeenieTypes.Generic)
                     continue;
 
                 if (weenie.generatorTable.entries != null && weenie.generatorTable.entries.Count > 0)
                 {
                     foreach (sGeneratorTableEntry genTableEntry in weenie.generatorTable.entries)
                     {
-                        if (genTableEntry.whereCreate == eRegenLocationType.ContainTreasure_RegenLocationType)
+                        if (genTableEntry.whereCreate == eRegenLocationType.ContainTreasure_RegenLocationType || 
+                            genTableEntry.whereCreate == eRegenLocationType.OnTopTreasure_RegenLocationType ||
+                            genTableEntry.whereCreate == eRegenLocationType.ScatterTreasure_RegenLocationType ||
+                            genTableEntry.whereCreate == eRegenLocationType.ShopTreasure_RegenLocationType ||
+                            genTableEntry.whereCreate == eRegenLocationType.SpecificTreasure_RegenLocationType ||
+                            genTableEntry.whereCreate == eRegenLocationType.WieldTreasure_RegenLocationType ||
+                            genTableEntry.whereCreate == eRegenLocationType.Treasure_RegenLocationType)
                         {
                             List<cWeenie> list;
                             if (!generatorTableTreasureMap.TryGetValue(genTableEntry.type, out list))
@@ -554,7 +560,7 @@ namespace Melt
                         else
                         {
                             List<cWeenie> list;
-                            if (!generatorTableTreasureMap.TryGetValue(genTableEntry.type, out list))
+                            if (!generatorTableMap.TryGetValue(genTableEntry.type, out list))
                                 list = new List<cWeenie>();
                             list.Add(weenie);
                             generatorTableMap[genTableEntry.type] = list;
@@ -563,10 +569,10 @@ namespace Melt
                 }
             }
 
-            StreamWriter outputFile = new StreamWriter(new FileStream("./output/chestTreasureList.txt", FileMode.Create, FileAccess.Write));
+            StreamWriter outputFile = new StreamWriter(new FileStream("./output/generatorTreasureList.txt", FileMode.Create, FileAccess.Write));
             foreach (KeyValuePair<int, List<cWeenie>> entry in generatorTableTreasureMap)
             {
-                outputFile.WriteLine($"---{entry.Key} {(eTreasureGeneratorType)entry.Key}---");
+                outputFile.WriteLine($"---{entry.Key} {(eTreasureGeneratorTypeOriginal)entry.Key}---");
 
                 foreach (cWeenie listEntry in entry.Value)
                 {
@@ -579,7 +585,7 @@ namespace Melt
             }
             outputFile.Close();
 
-            outputFile = new StreamWriter(new FileStream("./output/chestOtherList.txt", FileMode.Create, FileAccess.Write));
+            outputFile = new StreamWriter(new FileStream("./output/generatorOtherList.txt", FileMode.Create, FileAccess.Write));
             foreach (KeyValuePair<int, List<cWeenie>> entry in generatorTableMap)
             {
                 outputFile.WriteLine($"---{entry.Key} {WeenieClassNames.getWeenieClassName(entry.Key)}---");

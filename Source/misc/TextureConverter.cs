@@ -5,6 +5,7 @@ using System.Text;
 using System.IO;
 using System.Globalization;
 using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace Melt
 {   
@@ -38,6 +39,19 @@ namespace Melt
             Console.WriteLine("Done");
         }
 
+        static private ImageCodecInfo GetEncoder(ImageFormat format)
+        {
+            ImageCodecInfo[] codecs = ImageCodecInfo.GetImageDecoders();
+            foreach (ImageCodecInfo codec in codecs)
+            {
+                if (codec.FormatID == format.Guid)
+                {
+                    return codec;
+                }
+            }
+            return null;
+        }
+
         static public void toBin(string filename, uint fileid, uint format)
         {
             try
@@ -65,6 +79,27 @@ namespace Melt
 
                 switch (format)
                 {
+                    case 500:
+                        ImageCodecInfo jgpEncoder = GetEncoder(ImageFormat.Jpeg);
+
+                        var encoder = System.Drawing.Imaging.Encoder.Quality;
+                        var encoderParameters = new EncoderParameters(1);
+                        var qualityParameter = new EncoderParameter(encoder, 100L);
+                        encoderParameters.Param[0] = qualityParameter;
+
+                        MemoryStream testStream = new MemoryStream();
+                        inputBMP.Save(testStream, jgpEncoder, encoderParameters);
+                        lenght = (uint)testStream.Length;
+
+                        outputFile.BaseStream.Write(BitConverter.GetBytes((uint)fileid), 0, 4);
+                        outputFile.BaseStream.Write(BitConverter.GetBytes((uint)6), 0, 4);
+                        outputFile.BaseStream.Write(BitConverter.GetBytes(0), 0, 4);
+                        outputFile.BaseStream.Write(BitConverter.GetBytes(0), 0, 4);
+                        outputFile.BaseStream.Write(BitConverter.GetBytes(500), 0, 4);
+                        outputFile.BaseStream.Write(BitConverter.GetBytes(lenght), 0, 4);
+                        outputFile.Flush();
+                        inputBMP.Save(outputFile.BaseStream, jgpEncoder, encoderParameters);
+                        break;
                     case 20:
                         {
                             lenght = width * height * 3;
@@ -187,6 +222,15 @@ namespace Melt
 
             switch (format)
             {
+                case 500:
+                    {
+                        var stream = new MemoryStream();
+                        inputFile.BaseStream.CopyTo(stream);
+                        var image = Image.FromStream(stream);
+                        Bitmap bmp = new Bitmap(image);
+                        bmp.Save(fileHeader.ToString("x8") + ".png", System.Drawing.Imaging.ImageFormat.Png);
+                        break;
+                    }
                 case 20: //D3DFMT_R8G8B8
                     {
                         Bitmap bmp = new Bitmap((int)width, (int)height);

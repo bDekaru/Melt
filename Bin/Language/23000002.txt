@@ -1,0 +1,583 @@
+--- 0x111228179
+Clothes
+--- 0x105320788
+Quit Game
+--- 0x106748613
+Nose
+--- 0x91237502
+Profession
+--- 0x154178958
+Trim Color
+--- 0x95516382
+Eyes
+--- 0x103872676
+You gain mastery in Staff and Magic spells which gives you a damage rating bonus of 5 when using those types of attacks.\n\nYou start with the 'Jack of All Trades' augmentation which raises all of your skills by 5.\n\n
+--- 0x106506567
+Warning!\n\nYou are about to return to the Main Menu.\nAll character information will be lost.\nDo you wish to continue?
+--- 0x267178131
+Use the left and right arrows to change the eyes of your character. You can change the color of your eyes by using the color wheel below.
+--- 0x245382368
+Bring up the in-game help system.
+--- 0x163382451
+Eyes
+--- 0x13272496
+Specialized Skills receive a +10 bonus to skill over their base values and cost less experience to raise in skill level. Specialized Skills must be chosen during character creation. You may specialize skills in-game, but only after completing certain quests.
+--- 0x167121682
+Use the left and right arrows to change the style of footwear your character is wearing. You can change the color of your footwear by using the color wheel below.
+--- 0x183960661
+Rotate left.
+--- 0x2141752
+Complete your character and enter the world of Asheron's Call!
+--- 0x46058448
+Unuseable Untrained Skills are skills that cannot be used until Trained. As you increase in level, you can spend skill credits to train these skills.
+--- 0x60066675
+Male Gear Knights tend to take very short first names followed by surnames inspired by the materials their construction. Examples: Ulm Brassguard, Sor Ironstrider, Kor Redgear, and Vol Bolthammer.\n\n
+--- 0x7224932
+Olthoi Spitters fight by projecting acidic spit from natural glands in their bodies.\n\n
+--- 0x256976551
+You must have the Throne of Destiny expansion pack to choose this option
+--- 0x108048916
+You cannot enter the game with a stress creating character.
+--- 0x123275849
+Non-Envoy
+--- 0x77253038
+Select this option to set your heritage to Viamontian.
+--- 0x26339700
+
+--- 0x94253260
+Sorry, but the Asheron's Call server is full currently. Please try again later.
+--- 0x114607413
+Rotate left.
+--- 0x183867602
+Selects Life Caster as a profession and sets attributes and skills to predefined levels.
+--- 0x65707507
+Switch to Skills screen. From the Skill screen you can select or modify your skills.
+--- 0x225644867
+Female Gear Knights tend to take very short first names followed by surnames inspired by the energies of their construction. Examples: Bei Flamewalker, Loe Lightningborn, Mila Lightdancer, and Elt Steamrent.\n\n
+--- 0x161454450
+Selects Soldier as a profession and sets attributes and skills to predefined levels.
+--- 0x97298888
+Mouth
+--- 0x218450216
+FINISH
+--- 0x210457774
+Aluvian
+--- 0x19937108
+WAR MAGES are characters skilled in the arts of battle magics.  Few can match their destructive power.\n\nThe War Mage profession contains the War Magic, Mana Conversion and Life Magic skills.
+--- 0x57378806
+Self measures your character’s mental strength and willpower. The higher your Self, the more Mana you have.
+--- 0x68990983
+You must enter a name for this character!
+--- 0x163389760
+Help
+--- 0x48629556
+Health
+--- 0x20526932
+WAYFARERS are versatile adventurers, fighting their way through life with stealth and skill.\n\nThe Wayfarer gets the Dirty Fighting, Dual Wield, Finesse Weapons, Healing, Item Enchantment, Lockpick, Melee Defense, Healing and Missile Weapons skills.
+--- 0x110731092
+Your subscription to this game has expired.
+--- 0x59060946
+Wayfarer
+--- 0x114200690
+Selects Bow Hunter as a profession and sets attributes and skills to predefined levels.
+--- 0x165074580
+Sorry, but that name is not permitted. Please choose another.
+--- 0x127640927
+Sho
+--- 0x43214323
+Female Umbraen and Penumbraen tend to take names either along the lines of the other Isparian heritage groups, or names that epitomize their newly-embraced chaotic nature.  They are naming themselves anew, in celebration of what they have become, and are thus only restricted by their own creativity.  Examples: Leikny Shadowsworn, Leila, Kurayami Mika, Elda du Nerezza.\n\n
+--- 0x196412028
+L-click hold to adjust the shade of selected clothing or body part.
+--- 0x254429635
+Although Olthoi identify each other by both scent and series of clicks, the other races of Dereth quickly assign descriptive names to specific Olthoi so they can recognize their recurring threats. Your name represents the title you are given by the other races.\n\n
+--- 0x95720180
+\n\n
+--- 0x46989943
+A character name cannot exceed 32 characters
+--- 0x78844436
+LIFE CASTERS are experts in all matters of vital essence. They can both give life and take it away.\n\nThe Life Caster profession contains the Arcane Lore, Life Magic, Creature Enchantment, Mana Conversion and War Magic skills.
+--- 0x98252580
+BOW HUNTERS are specialists in the use of bows. Few characters can shoot arrows with such lethal precision as a highly trained hunter.\n\nThe Bow Hunter profession contains the Arcane Lore, Finesse Weapons, Item Enchantment, Melee Defense, Missile Weapons, and Shield skills.
+--- 0x182764212
+Updated!
+--- 0x143122564
+Mana
+--- 0x207356261
+Selects War Mage as a profession and sets attributes and skills to predefined levels.
+--- 0x35555867
+Aun Tumerok
+--- 0x5889070
+Zoom in.
+--- 0x232386846
+Sorry, that character can not be restored. Please try again later.
+--- 0x115807010
+Use the left and right arrows to change the style of headgear your character is wearing. You can change the color of your headgear by using the color wheel below.
+--- 0x252393236
+The LUGIANS are a race of giants from the world they call Tuu.  A stong people, with a great love of crafting and artifice, the Lugians are renowned for their strength of arms and their strict code of honor. Lugians live in rigidly defined clans, each serving under a Patriarch or Matriarch.  The Lugians who are now joining with the other citizens of Dereth are from Linvak Tukal, and serve under Lord Kresovous.\n\n
+--- 0x106831790
+Server could not access your account information. Please try again in a few minutes.
+--- 0x97643620
+
+--- 0x256057783
+Holtburg
+--- 0x252670531
+Select this button to change the clothes your character will start with.
+--- 0x255857092
+Holtburg is a picturesque Aluvian hill town that overlooks the northern arm of the River Prosper.  It was founded as a logging town two years after humans freed themselves from enslavement under the Olthoi.  The town is surrounded by menhir, rings of ancient standing stones that served as sites of some magical significance to the vanished Empyrean civilization.  Holtburg is also renowned for its signature sandwich, the Holtburger.  New characters may want to stop at the Helm and Shield tavern to speak with Flinrala Ryndmad, the local agent of the Explorer's Society.
+--- 0x37144559
+From this screen you can modify your profession and attributes.  Selecting a profession will automatically change your attributes to levels best suited for your chosen profession.  You may then adjust your attributes by adjusting the slider bars.
+--- 0x46519635
+There are three ways Gharu'ndim women's names are formed:\n\n'ism: A first name, with no surname. Examples: Jaidmala, Di'zarafa, Hajliya.\n\nHisba:  A first name, plus 'al-' and a surname. Examples: Qaysbah al-Halras, Nuhnaba al-Thudadh, Majqiya al-Ruz.\n\nNasab: A first name, plus 'bint' (meaning 'daughter of') and a surname. Examples: Ashrifa bint Yazman, Shulima bint Bashr, Khayla'ida bint Tiqiq.\n\n
+--- 0x213011651
+Although Olthoi identify each other by both scent and series of clicks, the other races of Dereth quickly assign descriptive names to specific Olthoi so they can recognize these recurring threats. Your name represents the title you are given by the other races.\n\n
+--- 0x173343959
+Umbraen
+--- 0x231244371
+Use the left and right arrows to change the eyes of your character. You can change the color of your eyes by using the color wheel below.
+--- 0x171998484
+Copyright 1996-2014 Turbine, Inc. All rights reserved.\nThis program is protected by U.S. and International copyright laws as described in Help/About Asheron's Call.
+--- 0x163382900
+Exit
+--- 0x1321429
+Sorry, another character already exists by that name. Your character can not be restored.
+--- 0x149147940
+Olthoi Spitter
+--- 0x10943923
+Although Olthoi identify each other by both scent and series of clicks, the other races of Dereth quickly assign descriptive names to specific Olthoi so they can recognize these recurring threats. Your name represents the title you are given by the other races.\n\n
+--- 0x110885092
+Unuseable Untrained Skills
+--- 0x169524309
+Server could not delete your character.
+--- 0x9297410
+Available Skill Credits
+--- 0x94231492
+Zoom out.
+--- 0x245946601
+Olthoi Soldier
+--- 0x4947682
+Bonus Racial Skills:\n
+--- 0x30457015
+Too many people patching.  We're #
+ in line...
+--- 0x106505496
+Strength measures your character’s muscular power. The higher your Strength, the more damage you do in combat, and the more encumbrance you can carry before you become overloaded.
+--- 0x127863492
+
+--- 0x116478819
+Use the left and right arrows to change the style of trousers your character is wearing. You can change the color of your trousers by using the color wheel below.
+--- 0x97777698
+Sanamar
+--- 0x7426468
+Please Wait
+--- 0x211334520
+Use the left and right arrows to change the mouth on your character.
+--- 0x231283461
+Use the left and right arrows to change the type of nose on your character.
+--- 0x88918149
+Switch to Appearance screen. From the Appearance screen you can customize your facial features as well as select clothing for your character.
+--- 0x217925956
+Use the left and right arrows to change the style of shirt your character is wearing. You can change the color of your shirt by using the color wheel below.
+--- 0x208789492
+\n\n
+--- 0x4274004
+The war-like VIAMONTIANS have a tendency to conquer other lands in an effort to broaden their borders. Disciplined and fiercely loyal to their leaders, the Viamontians have long been the scourge of the other heritage groups of Ispar.\n\nThe Viamontians are in the midst of a civil war led by the Duke of Bellenesse. This rebellion has spilled over into Dereth, where the loyalist Viamontians will continue to exercise their bloodlust by waging war against Queen Elysa and the Isparians under her rule.\n\n
+--- 0x95740915
+Available Skill Credits are the total amount of credits available to raise a skill from one training level to the next. You need not use all the credits during character creation. More credits may be earned during game play and may be used with the credits you don't spend during character creation.
+--- 0x192613105
+Stamina determines how long you can stay in pitched battle before becoming tired. High Stamina is recommended for combat intensive characters. Your Stamina is equal to your Endurance.
+--- 0x192670939
+Select this option to set your heritage to Aun Tumerok.
+--- 0x62928543
+A summary of the choices made so far are given here.  Use the scroll bar to review your stats.  If changes are needed use the left arrow at the bottom to return to previous screens.\n\nThe final and sometimes most difficult decision is to name your character.  Think carefully before choosing a name as it will be how the inhabitants of Dereth will know and interact with you.  Some examples of proper naming conventions for your chosen heritage are given below.  Feel free to follow these naming conventions or create a name suitable to you.  Please be considerate of others when choosing your name.\n\n
+--- 0x86776807
+Use the down arrow to decrease a skill into a lower category. A Skill Credit refund is listed to the right of the arrow.
+--- 0x61383143
+Patching data...
+--- 0x142187335
+Server unable to find player account. Please try again later.
+--- 0x74443828
+
+--- 0x106704302
+Skin
+--- 0x53530116
+You gain mastery in Spear and Thrown Weapons which gives you a damage rating bonus of 5 when using those types of weapons.\n\nYou start with the 'Hand of the Remorseless' augmentation which gives a Critical Damage Rating of 3.\n\n
+--- 0x68495075
+Trousers
+--- 0x123246077
+Randomize choices on this screen.
+--- 0x123012830
+Non-Admin
+--- 0x43066563
+You can customize the look of your character on this screen.  Everything from gender to clothes to facial features can be adjusted here.\n\nTo choose a gender, simply click the symbol for male or female. Aside from appearance and titles, there are no differences between male and female characters.\n\nTo change clothing, select the button next to Clothes and then use the left or right arrows next to the article of clothing you wish to change.  You may change the color of your clothing by highlighting the category of clothing and then selecting a color from the color swatches at the bottom of the screen.  You may then adjust the shade of the color by moving the shade selector up or down.  The shade selector is located in the large circle.\n\nTo change facial features, select the button next to Face and then use the left or right arrows next to the feature you wish to change.  If that feature's color can be adjusted, you may do so by manipulating the shade selector.
+--- 0x61543250
+This character couldn't be placed in the world right now. Please try again in a few minutes.
+--- 0x117362437
+Endurance measure how healthy your character is. The higher your Endurance, the more Health and Stamina you have.
+--- 0x219572116
+You gain mastery in Axe and Thrown Weapons which gives you a damage rating bonus of 5 when using those types of weapons.\n\nYou start with the 'Critical Protection' augmentation which reduces the chance that attacks score a critical hit against you.\n\n
+--- 0x52639652
+Olthoi Soldiers fight with natural claws and pincers.\n\n
+--- 0x18960164
+WARNING: The Olthoi are an advanced racial option. Olthoi must always be ready for player versus player combat. Although Olthoi do not gain experience, they start the game with resources to provide a threat to any player.\n\nThe OLTHOI are a race of insect-like creatures that form hives to infest and control any area they inhabit. As an Olthoi you serve a Queen who wishes nothing less than the entire realm of Dereth to be solely her domain. Not even the Olthoi born from different hives are safe from the wrath of your Queen. Go forth and destroy all who oppose you!\n\n
+--- 0x177197764
+Undead
+--- 0x231246341
+Select this button to change the facial features of your character.
+--- 0x38522276
+Shoushi was founded by the Sho, the third of the heritage groups to come to Dereth from Ispar.  An early warlord built a fortress on Shoushi's current site to protect his people from the creatures of Blackmire Swamp.  As humans pacified their lands, the fortress fell into disuse, and its walls were torn down to build homes.  From this modest beginning, the town of Shoushi grew into a center of trade and commerce, a hub between the capital city of Hebian-To and the western Sho settlements.  Newcomers starting out in Shoushi should speak with Oi Tong Ye, the local agent of the Explorer's Society.
+--- 0x105650304
+Useable Untrained Skills are skills that can still be used, even though you have not been Trained in their usage. As you increase in level, you can spend skill credits to train these skills.
+--- 0x18233236
+You gain mastery in Sword and Magic which gives you a damage rating bonus of 5 when using those types of weapons.\n\nYou start with the 'Infused Life Magic' augmentation and no longer need foci to cast Life Magic spells.\n\n
+--- 0x197392594
+DELETE
+--- 0x90764629
+Rotate right.
+--- 0x185463679
+Select this option to set your heritage to Sho.
+--- 0x198852211
+CREDITS
+--- 0x16991172
+You do not own this character.
+--- 0x105204116
+Sorry, that character can not be restored.
+--- 0x83872548
+If you choose CUSTOM, you can create your character completely from scratch.
+--- 0x50695556
+Entering World
+--- 0x198355464
+The server has disconnected. Please try again in a few minutes.
+--- 0x78730014
+Body Style
+--- 0x81885939
+Sho women's names have the surname first and the 'first name' last. Examples: Jyiigo Anming, Chueh Zho-Gau, Houlai Youh.\n\n
+--- 0x45675971
+Quickness measures how fast your character is. The higher your Quickness, the faster you run and the quicker you attack in combat.
+--- 0x216417374
+Select this option to set your heritage to Penumbraen.
+--- 0x207720210
+Bow Hunter
+--- 0x18811971
+This amount represents the remaining amount of Attribute Credits that can be applied to your Strength, Endurance, Coordination, Quickness, Focus and Self.
+--- 0x214476332
+Skill Level
+--- 0x20083534
+Looking for data to patch...
+--- 0x267217349
+Use the left and right arrows to change the type of nose on your character.
+--- 0x150878036
+The House Mhoire UNDEAD have chosen to join the alliance with the peoples of Dereth.  These Undead are refugees from an ancient curse laid upon House Mhoire by the Dericost.\n\nUsing alchemical potions and rituals, they have freed themselves from the curse, and also from the rigid castes and controls of the Dericost undead.  With this newfound freedom, many Undead have begun to adopt the cultures and practices of the living races on Dereth, hoping to find a home where they can live as equals.\n\n
+--- 0x3855444
+Sorry, but you do not have the privileges to make an administrator character.
+--- 0x144726291
+Commoners tend to have a given name followed by a surname. Examples: Anton Silezzi, Lorca Sammel, Daved Coppocilla.\n\nNoblemen have a given name followed by the article 'di' which precedes the name of their fief. Examples: Darren di Marden, Lorenzo di Ricci, Carlo di Cenza.\n\n
+--- 0x110127987
+Tumerok names are often Tumerok words that associate the male with some important deed or occasion. As such, most Tumeroks gain a new name when they reach adulthood. Tumeroks tend to use a tribal prefix only in formal occasions. Examples: Faranua, Amanua, Mireona, Taguauri.\n\n
+--- 0x172831981
+Random
+--- 0x236334148
+You gain mastery in Axe and Thrown Weapons which gives you a damage rating bonus of 5 when using those types of weapons.\n\nYou start with the 'Might of the Seventh Mule' augmentation which increases your burden limit.\n\n
+--- 0x31989477
+Patching Done!
+--- 0x63433012
+\[ Name \]
+--- 0x207882996
+
+--- 0x114198515
+Focus measures the acuteness of your character’s mind and senses. The higher your Focus, the better you are at magic and other mental skills, such as Appraisal.
+--- 0x176258307
+Many Aluvian women have only a first name, with no surname. Examples: Lissith, Ulewinn, Sothlal.\n\nOthers use a first name, plus 'the' and a word. Examples: Domlan the True, Arryn the Cat, Ethew the Fair.\n\nA few use a proper surname, with the suffix '-mad' (meaning 'daughter'). Examples: Dirnmod Blodmad, Hasbroc Grithmad, Cenhar Estmad.\n\n
+--- 0x245875454
+Select this option to set your heritage to Aluvian.
+--- 0x6457559
+Return to previous screen.
+--- 0x165449668
+Select this option to set your heritage to Gear Knight.
+--- 0x118662771
+Update progress
+--- 0x127652165
+Gharu'ndim
+--- 0x85920485
+Hair Style
+--- 0x188425840
+Trained Skills receive a +5 bonus to skill over their base values. Some skills are unuseable unless Trained.
+--- 0x16650724
+The GEAR KNIGHTS are a mechanized race of unknown origins.  While they are technically machines, they evidence all the personality of the other races of Dereth.\n\nThe Gear Knights usually operate in large Houses, which are organized somewhere between a feudal society and a standing army.  Each House is led by a Primus, and has a portion of the society for which they are responsible.\n\nOn Dereth, those Gear Knights which are allied with the peoples of Dereth come from the schism between the Gold Gear Primus, Atamarr, and the Iron Blade invasion forces which seek to wipe out both the ‘renegades’ and the Isparians on Dereth.  Their previous House ties behind them, and with the blessings and support of Atamarr, the new Gear Knights of Dereth have been given the freedom to build for themselves a new beginning.\n\n
+--- 0x212957757
+Selects Custom as a profession and allows the user to define the characters attributes and skills.
+--- 0x216531156
+Stamina
+--- 0x208669316
+
+--- 0x65073810
+Swashbuckler
+--- 0x39041300
+This is how your character will look in-game.
+--- 0x163384549
+Face
+--- 0x67513140
+Attribute\n Credits
+--- 0x120618772
+Trained Skills
+--- 0x230306142
+Cannot have two accounts logged on at the same time.
+--- 0x137412174
+Body Style
+--- 0x224908525
+Custom
+--- 0x92565941
+Use the left and right arrows to change the hairstyle of your character. You can change the color of your hair by using the color wheel below.
+--- 0x240704596
+Are you sure you want to leave?\n
+--- 0x149740564
+EXIT
+--- 0x106896270
+WARNING! 
+ will be deleted. Restoration can be attempted only within one hour of deletion, and may not be successful. Even if you restore, you will permanently lose all allegiance information AND any house you own.\nIf you wish to delete this character anyway, type 'DELETE' in the box below and press the Done button.
+--- 0x195389188
+Shirt
+--- 0x3318519
+Connecting...
+--- 0x163487205
+Nose
+--- 0x163216814
+Town
+--- 0x11934878
+Markings
+--- 0x258775315
+Many Aluvian men have only a first name, with no surname. Examples: Hundreng, Cuthstan, Wothgryn.\n\nOthers use a first name, plus 'the' and a word. Examples: Osgeld the Clever, Burwylf the Wary, Forstlan the Ox.\n\nA few use a proper surname, with the suffix '-sun' (meaning 'son'). Examples: Scingrim Emersun, Arbrim Rynesun, Rimgar Ethsun.\n\n
+--- 0x261521043
+Although Olthoi identify each other by both scent and series of clicks, the other races of Dereth quickly assign descriptive names to specific Olthoi so they can recognize their recurring threats. Your name represents the title you are given by the other races.\n\n
+--- 0x97480228
+Useable Untrained Skills
+--- 0x248748376
+Use the left and right arrows to change the mouth on your character.
+--- 0x60280205
+Select this option to set your heritage to Gharu’ndim.
+--- 0x267099822
+Base skin color is determined by your Heritage Group. You can change the shade of your skin by using the color wheel below.
+--- 0x69746436
+One of your characters is still in the world. Please try again in a few minutes.
+--- 0x57486225
+Mana is magical energy that is consumed when you cast a spell. The more Mana you have, the more spells you can cast. Mana is essential for magic-using characters. Your Mana is equal to your Self.
+--- 0x42203378
+Create Character
+--- 0x130514755
+Jump, Loyalty, Magic Defense, Run and Salvaging.\n\n
+--- 0x34232386
+Selects Swashbuckler as a profession and sets attributes and skills to predefined levels.
+--- 0x90264137
+Shoushi
+--- 0x128032151
+Use the up arrow to advance a skill into a higher category. The Skill Credit cost for advancing a skill is listed to the left of the arrow.
+--- 0x239874279
+Updating... 
+% done
+--- 0x4308980
+Viamontian
+--- 0x131361571
+Male Umbraen and Penumbraen tend to take names either along the lines of the other Isparian heritage groups, or names that epitomize their newly-embraced chaotic nature.  They are naming themselves anew, in celebration of what they have become, and are thus only restricted by their own creativity.  Examples: Uor Darkbound, Sariyah, Kurasa Fudo, Vittore di Nerezza.\n\n
+--- 0x196529023
+Choose a starting town by clicking on a location on the map of Dereth.  The selected town will be the location in which your character will start.
+--- 0x257923541
+DELETE
+--- 0x195247889
+Yaraq
+--- 0x184855186
+RESTORE
+--- 0x132214517
+Hair Style
+--- 0x168435593
+Select this option to playing an Olthoi designed for melee combat.
+--- 0x245374932
+Abandon this character and return to main menu.
+--- 0x42102661
+Your name can be 32 characters long and cannot contain numbers or symbols.
+--- 0x56488908
+Skill Level is based on your attributes plus any bonus received for training or specializing that skill. The higher the Skill Level the more competent your character will be when using that skill. Skill Levels for Specialized and Trained skills can be raised by spending experience on them. Some skills can also be raised through repeated use.
+--- 0x20098165
+War Mage
+--- 0x208976147
+Lugian names are usually descriptive of the Lugian's strength or skill.  Examples: Nimias, Arstuus, Riekal, Namlos.\n\n
+--- 0x200334136
+Mouth
+--- 0x21082094
+Admin
+--- 0x105311076
+The connection to the server has been lost!
+--- 0x136478468
+Sanamar is the royal town of the Viamontian domain.  It was founded by King Varicci II and his followers, who pursued the rebellious Duke of Bellenesse through a portal from their homeland in Ispar.  This proud, walled city is built on a seaside bluff on the southernmost of the Halaetan Islands.  From its walls and towers, Viamontians can gaze southeast over the land their King intends to conquer.  Busy as he is with war planning, Varicci himself is rarely seen in the town's ostentatious Royal Hall.  Newcomers who start in Sanamar may wish to speak with one of the Portal Guardians on the road just outside of town.
+--- 0x18863764
+The account name you specified was not valid.
+--- 0x57280580
+When you are finished naming and reviewing your character, click on the finish button at the bottom of the screen.
+--- 0x21913977
+Envoy
+--- 0x254614436
+Select this option to set your heritage to Undead.
+--- 0x147994899
+Sho men's names have the surname first and the 'first name' last. Examples: Ninwa Xaojhen, Fenping Banli-Zan, Shui Chon-Po.\n\n
+--- 0x236893796
+The name you have selected is already in use.
+--- 0x65212900
+Desert-dwellers who prefer knowledge and trade to war and bloodshed, the GHARU'NDIM are an eminently honorable, formal culture, but they also have a reputation for being somewhat distant and proud. Of all the peoples of Dereth, they are the most drawn to the mysteries of magic.\n\nPreferring to talk before fighting whenever possible, they speak with great politeness and formality, peppering their speech with honorifics and references to their national hero, the poet Yasif ibn Salayyar.\n\n
+--- 0x38109523
+ID_CHAR_ERROR_ENTER_GAME_OLD_CHARACTER
+--- 0x1470212
+You gain mastery in Sword and Crossbow which gives you a damage rating bonus of 5 when using those types of weapons.\n\nYou start with the 'Jack of All Trades' augmentation which raises all of your skills by 5.\n\n
+--- 0x53852740
+You gain mastery in Unarmed weaponry and Crossbow which gives you a damage rating bonus of 5 when using those types of weapons.\n\nYou start with the 'Eye of the Remorseless' augmentation which gives 1% increased chance of critical hits.\n\n
+--- 0x45739268
+Gear Knight
+--- 0x217493704
+Health is the amount of damage you can take before dying. High health is essential for melee type characters. Your Health is equal to half your Endurance.
+--- 0x253310718
+Empyrean
+--- 0x2510450
+Life Caster
+--- 0x252864146
+Footwear
+--- 0x33995732
+You gain mastery in Dagger and Bow which gives you a damage rating bonus of 5 when using those types of weapons.\n\nYou start with the 'Jack of All Trades' augmentation which raises all of your skills by 5.\n\n
+--- 0x24143443
+Use this screen to select and modify your character's skills. Find the skill you want to modify and then click the arrows next to its training level.\n\nClicking the up-arrow increases your training level (from Useable/Unuseable Untrained to Trained, or from Trained to Specialized); clicking the down-arrow decreases your training level. The numbers on the arrows represent the number of skill credits you spend when you upgrade or gain when you downgrade the skill.\n\nIn the game, you can spend experience points to raise your Trained and Specialized skills into the hundreds. You can also earn more skill credits to train new skills. Any skill credits not used on this screen are carried over into the game and can be used with earned skill credits to train additional skills.
+--- 0x225540547
+Female Undead, like their male counterparts, either maintain their formal names, like those Dericost they are fleeing from, or adopt new names in the manner of the Isparians who have given them a place in society.  Some choose to keep their House name, Mhoire.  Examples: Lady Aerfenye Mhoire, Tamara, Mhoire Atsuko.\n\n
+--- 0x160591790
+Select this option to set your heritage to Lugian.
+--- 0x91810
+Headgear
+--- 0x231756638
+Select this option to set your heritage to Empyrean.
+--- 0x87024386
+Selects Wayfarer as a profession and sets attributes and skills to predefined levels.
+--- 0x134262076
+Cancel
+--- 0x261918658
+Trained Starting Skills:\n
+--- 0x68293397
+The account you specified is already in use.
+--- 0x260535268
+Select this option to playing an Olthoi that can generate ranged acidic effects.
+--- 0x58926750
+Penumbraen
+--- 0x87380588
+Create As Normal
+--- 0x126682901
+Rotate right.
+--- 0x20976052
+The TUMEROK are a race of lizard folk who were largely known as war-like raiders, sacking human towns across the land. This is not the true nature of the Tumerok. In truth the Tumerok once enjoyed a peaceful and artistic existence, and the Aun Tumerok have aspired to return to those ways. The Aun Tumerok who have joined with the Isparians have forsaken the Hea Tumerok and the Virindi influence that has set the Hea against the Isparians. Although the name Tumerok is actually a name outsiders have given to the Tumerok, the Aun Tumerok have learned to accept that name.\n\n
+--- 0x189275445
+ENTER
+--- 0x196239154
+This character's data has been corrupted. Please delete it and create a new character.
+--- 0x187439348
+Select this option to set your heritage to Umbraen.
+--- 0x163211918
+Skin
+--- 0x184756820
+Connected!
+--- 0x34188414
+Switch to Profession screen. From the Profession screen you can select a Profession and customize your attributes.
+--- 0x110302387
+Tumerok names are often short Tumerok words or abbreviations that associate the female with some important deed or occasion. As such, most Tumeroks gain a new name when they reach adulthood. Female Tumeroks tend to favor short names. Tumeroks tend to use a tribal prefix only in formal occasions.  Examples: Noua, Aeu, Kuri, Faun.\n\n
+--- 0x161887893
+Use the left and right arrows to change the hairstyle of your character. You can change the color of your hair by using the color wheel below.
+--- 0x254494995
+Empyrean names vary considerably, as their culture is ancient, and a conglomeration of many empires.  Examples: Asheron, Harlune, Kellin, Atlan.\n\n
+--- 0x135563539
+Male Undead, like their female counterparts, either maintain their formal names, like those Dericost they are fleeing from, or adopt new names in the manner of the Isparians who have given them a place in society.  Some choose to keep their House name, Mhoire.  Examples: Lord Davarri Mhoire, Joseph, Mhoire Kuri.\n\n
+--- 0x195237238
+Server could not log off your character 
+--- 0x90388308
+The SHO are a people for whom duty and self-discipline are the highest virtues. Normally peaceful, they have nonetheless raised warfare to an art form.\n\nThe Sho view the world in terms of absolute, universal laws. Their guiding principles are represented by three Elder Spirits: the Unicorn of grace, the Firebird of splendor, and the Dragon of power. They speak succinctly and regard other peoples with suspicion, but a Sho friend is a friend for life.\n\n
+--- 0x39943763
+Lugian names are usually descriptive of the Lugian's strength or skill.  Examples: Kresovous, Turikas, Menloth, Kanteroth.\n\n
+--- 0x117017154
+One of your characters is currently in the world. Please try again later. This is likely an internal server error.
+--- 0x250652366
+Lugian
+--- 0x73246003
+Connect progress
+--- 0x106644371
+Eyes
+--- 0x247725486
+Switch to Town screen. Use the Town screen to select a starting town from which your character will begin their adventures on Dereth.
+--- 0x113343043
+Commoners tend to have a given name followed by a surname. Examples: Lurissa Falzohn, Dinala Roma, Sina Luchezzi.\n\nNoblewomen have a given name followed by the article 'du' which precedes the name of their fief. Examples: Eleonora du Bellenesse, Catlina du Cenza, Marena du Lotila.\n\n
+--- 0x196412679
+Warning!\n\nYou have not used up your entire available Attribute Credits.  If you do not use them now you will lose them.  Do you wish to continue?
+--- 0x83891876
+The UMBRAEN and PENUMBRAEN are a people born from the other Isparian heritages, who sought to join with the chaotic powers of the Shadow, and were then transformed into the Umbraen or Penumbraen.  Those who have undergone the transformation into Umbraen or Penumbraen have forgotten and released their pasts into the winds.  They are children of the Shadow, now and forever. Most Umbraen and Penumbraen come from the followers of the Shadow, Isin Dule.  Isin Dule only asks that his new children embrace the chaos and potential they have been given, and use it to raise themselves to greatness.  What follows is in Isin Dule’s own words to his children.\n\n'Folk remember the dark times, when destruction roamed the land. They think of war… death… torment. They blame those of us who walk in the shadow, call us evil. But we are not. We were deceived by the one who ruled us. To understand us, you must first understand him. Hopeslayer, they call him. Bael’Zharon, the fallen lord. He craved power, and gave himself to chaos. His obsession nearly destroyed the world. The shadow’s path runs along the sword’s edge. On One side, untold strength. On the other… madness. The Hopeslayer strayed - and fell.  Look on his face, and swear: I will not follow.'\n\n
+--- 0x125066675
+There are three ways Gharu'ndim men's names are formed:\n\n'ism: A first name, with no surname. Examples: Sunnuj, Tiqabar, Abham.\n\nHisba:  A first name, plus 'al-' and a surname. Examples: Ma'whar al-Qutuz, Uzik al-Zaraf, Fadlmar al-Tuwah.\n\nNasab: A first name, plus 'ibn' (meaning 'son of') and a surname. Examples: Abdiris ibn Mauki, Tashtal ibn Yufa, Dharilal ibn Qa'yam.\n\n
+--- 0x158536663
+Warning!\n\nRandomizing your character will reset all customizations you have made to appearance and abilities. Do you wish to continue?
+--- 0x148898852
+WARNING: The Olthoi are an advanced racial option. Olthoi must always be ready for player versus player combat. Although Olthoi do not gain experience, they start the game with resources to provide a threat to any player.\n\nThe OLTHOI are a race of insect-like creatures that form hives to infest and control any area they inhabit. As an Olthoi you serve a Queen who wishes nothing less than the entire realm of Dereth to be solely her domain. Not even the Olthoi born from different hives are safe from the wrath of your Queen. Go forth and destroy all who oppose you!\n\n
+--- 0x73488836
+SOLDIERS are the essential shield fighter, hewing hordes of enemies with a large weapon.\n\nThe Soldier profession contains the Dirty Fighting, Heavy Weapons, Melee Defense, Shield, Healing and Missile Weapons skills.
+--- 0x97849934
+This character's starting server is experiencing difficulties.  Please try again in a few minutes.
+--- 0x221314964
+You gain mastery in Mace and Crossbow which gives you a damage rating bonus of 5 when using those types of weapons.\n\nYou start with the 'Iron Skin of the Invincible' augmentation which gives a Damage Resistance Rating of 3.\n\n
+--- 0x102132260
+You gain mastery in Unarmed weaponry and Bow which gives you a damage rating bonus of 5 when using those types of weapons.\n\nYou start with the 'Jack of All Trades' augmentation which raises all of your skills by 5.\n\n
+--- 0x252054164
+SWASHBUCKLERS are specialists in the art of swordfighting.  Few compare to their daring or their skill.\n\nThe Swashbuckler profession contains the Arcane Lore, Dual Wield, Heavy Weapons, Melee Defense, Healing and Item Enchantment skills.
+--- 0x80811422
+Coordination measures your character’s reflexes. The higher your Coordination, the better you fight and perform other dexterous actions, such as picking locks.
+--- 0x236311721
+Switch to Summary screen. Review and name your character from the Summary screen.
+--- 0x56886563
+
+% of 
+K complete...
+--- 0x82177204
+Specialized Skills
+--- 0x231308213
+Select this button to change the gender of your character to male.
+--- 0x164902142
+The server cannot create your new character at this time. Please try again later.
+--- 0x229735619
+Empyrean names vary considerably, as their culture is ancient, and a conglomeration of many empires.  Examples: Adja, Nalicana, Malia, Aerfalle.\n\n
+--- 0x240857556
+The account you specified\ndoesn't exist.
+--- 0x194376676
+
+--- 0x102081337
+Summary
+--- 0x37046405
+Appearance
+--- 0x79636388
+ALUVIANS are a fiercely individualistic and warlike people, quick to anger but with a strong love of justice and fairness. Though often suspicious of things new and strange, they are friendly and always prepared with a little help if they can spare it. They are loyal to their feudal lords, but expect to be well-treated in return.\n\nThe first people to arrive on Dereth Island were Aluvians: they have settled in the fields and hills around Lake Blessed.\n\n
+--- 0x81070724
+
+--- 0x231730286
+Base skin color is determined by your Heritage Group. You can change the shade of your skin by using the color wheel below.
+--- 0x253562820
+Situated in a cove on the shore of Dereth's Inner Sea, Yaraq was founded by hardy Gharu'ndim who had dwelt in the deepest deserts of their homeland.  Even though it is located at the far end of the bitter A'mun Desert, Yaraq is a pleasant town, shaded by lush apple groves and cooled by breezes from the sea.  The dust storms of the A'mun quickly bury any conventional road, so the desert folk built the Desert Way, a path marked by tall hoops hung with cloth, that leads northeast from Yaraq to the other Gharu'ndim towns.  Newcomers who start out in Yaraq may wish to speak with Mara al-Luq, local agent of the Explorer's Society.
+--- 0x174759043
+Skills
+--- 0x213592564
+Changes color of selected clothing or body part.
+--- 0x170207474
+Specialized Bonus Skills:\n
+--- 0x137565156
+A save of this character is still in progress, please try again later.
+--- 0x222843554
+Locks and unlocks the attribute. While an attribute is locked, it will not change when you adjust other attributes.
+--- 0x150091556
+The indigenous race of Auberean, the EMPYREANS are a people only recently returned to their world.  During the cataclysmic Olthoi Invasion, the surviving Empyreans were cast into Portalspace in Asheron's last-ditch efforts to save his race from annihilation.  There they remained lost until Asheron was able to locate a small pocket of them trapped in a deep section of Portalspace.  These Empyreans were being drained and altered by the powers of the Virindi, and the rituals of the undead Emperor Geraine.  Weakened and forever altered by their imprisonment, these Empyreans have begun a new life. Now they are trying to understand both what has become of them and the massive changes that have enveloped their world.\n\n
+--- 0x134814453
+Heritage
+--- 0x204946350
+Gear Color
+--- 0x19908711
+Advance to next screen.
+--- 0x116733026
+Soldier
+--- 0x135160693
+Switch to Heritage screen. From here you can change your Heritage including your racial skills.
+--- 0x143109093
+Select this button to change the gender of your character to female.

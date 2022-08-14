@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 
 using ACE.DatLoader.Entity;
+using Melt;
 
 namespace ACE.DatLoader.FileTypes
 {
@@ -25,6 +26,17 @@ namespace ACE.DatLoader.FileTypes
             Unknown = reader.ReadByte();
 
             StringTableData.UnpackSmartArray(reader);
+        }
+
+        public void Pack(StreamWriter output)
+        {
+            Utils.writeUInt32(Id, output);
+            Utils.writeUInt32(Language, output);
+            Utils.writeByte(Unknown, output);
+
+            Utils.writeCompressedUInt32((uint)StringTableData.Count, output);
+            foreach (var entry in StringTableData)
+                entry.Pack(output);
         }
     }
 }

@@ -1,0 +1,20 @@
+--- 0x237041904
+Asheron's Call: Throne of Destiny Keymap File\n\nMost users will never want or need to edit this file by hand. To edit your \nkeymap, click the options button, select the Gameplay Options tab, and click \n'Configure Keyboard'.\n\nHowever it is possible to configure your keyboard by editing this file.\n\nImportant notes: AC:TD will generate a brand-new acclient.keymap in your\nMy Documents\Asheron's Call folder if it tries to use one and can't find one.\nSo if you do completely break your keymap, you can start over by deleting\nthis file.\n\nAC:TD writes to the keymap file on shutdown of the client. If you make changes \nin this file while the client is running, it will overwrite them on shutdown.\n\nIf you make changes in the Configure Keyboard options and save them to a new\nfile, that will be the default keymap file the next time AC:TD starts up.\n\nKey bindings can be edited under the 'Bindings' header. There are several key fields.\n\nThe first field is the Action. This is defined by the game. To find the name of a\nparticular Action, bind a key to it in the Configure Keyboard menu in the client.\nExit the client and you will see the name in the Bindings header. \n\nThe second field is the device. Devices are enumerated under the Devices header. \nGenerally device 0 is keyboard, device 1 is mouse, other devices follow.\n\nThe third field is the key or action. A full list of available actions for this field\ncan be found in Microsoft's DirectX documentation at http://msdn.microsoft.com.\n\nThe fourth field is the subcontrol. It can be used to define positive or negative axis\nfor an X, Y or Z input, as well as other options.\n\nThe fifth field is also optional, it defines which metakeys need to be depressed. The\nmetakeys are defined and enumerated under the Metakeys header. The number next to\nthe metakey is a bit, metakeys can be combined. \n\nFor example the default for Left Shift (DIK_LSHIFT) is 1, and Left Control \n(DIK_LCONTROL) is 2. I could bind a key to CTRL-SHIFT-M by using DIK_M 0x00000003.\n\nIt is possible to edit the Metakey enumeration but this is not recommended for any but\nthe most advanced computer users.\n\nThe sixth, optional field is the activation type. Generally this is only used for mouse\nbuttons and the most common type is MouseDblClick, but there are other options.\n\nAgain, more detailed documentation can be found at http://msdn.microsoft.com. \n\nTurbine cannot provide support for advanced keymap editing.\n\n\n
+--- 0x254070819
+Down
+--- 0x152672291
+Up
+--- 0x254062660
+Left
+--- 0x253971790
+Down
+--- 0x74869020
+
+ 
+
+--- 0x194978384
+Up
+--- 0x35734532
+Right
+--- 0x95382770
++

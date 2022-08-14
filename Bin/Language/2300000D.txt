@@ -1,0 +1,64 @@
+--- 0x179680485
+Allegiance
+--- 0x241731587
+Adjusts the opacity of the chat window when it is inactive from completely transparent to completely opaque
+--- 0x111118062
+Admin Channels
+--- 0x110382706
+Errors
+--- 0x159677779
+Filters messages to or from the role playing channel.
+--- 0x199072179
+Filters messages to or from the trade channel.
+--- 0x236517331
+Filters allegiance messages.  These include the allegiance channel and monarch, patron, vassal, and co-vassal messages.
+--- 0x131055224
+Area Chat
+--- 0x153709028
+Combat
+--- 0x196233705
+Inactive Opacity
+--- 0x128108051
+Filters messages to or from the Looking For Group channel.
+--- 0x91348716
+General Channel
+--- 0x50170643
+Filters direct tells.
+--- 0x129980275
+Filters area chat message.  These include sent and received say messages and emote text.
+--- 0x216483161
+Active Opacity
+--- 0x87939267
+Adjusts the opacity of the chat window when it is under the mouse cursor or currently being used for text input
+--- 0x115561141
+Trade Channel
+--- 0x67623552
+Fellowship
+--- 0x42789465
+Society Channel
+--- 0x191699929
+Gameplay
+--- 0x98263603
+Filters messages to or from the society channel.
+--- 0x85370999
+LFG Channel
+--- 0x257208691
+Filters messages to or from the general channel.
+--- 0x136565043
+Filters messages from your fellowship.
+--- 0x251205139
+Filters magic related messages.  These include spell casting power words, spell casting results, recall messages, and lifestone messages.
+--- 0x258626803
+Filters messages to admin channels.  These include Help, Abuse, and Advocate channels.
+--- 0x224754979
+Filters gameplay messages.  All messages that do not fit another category are considered gameplay messages.
+--- 0x115505187
+Tells
+--- 0x111913187
+Magic
+--- 0x159194265
+Roleplay Channel
+--- 0x236009987
+Filters combat related messages.  These include damage dealt and damage received messages.
+--- 0x120252531
+Filters error messages.  Error messages also display at the top of the screen.

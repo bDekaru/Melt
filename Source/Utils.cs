@@ -540,6 +540,17 @@ namespace Melt
             align(outputData);
         }
 
+        public static void writeUnicodeString(string value, StreamWriter outputData)
+        {
+            writeCompressedUInt32((uint)value.Length, outputData);
+
+            for(int i = 0; i < value.Length; i++)
+            {
+                ushort converted = Convert.ToUInt16(value[i]);
+                writeUInt16(converted, outputData);
+            }
+        }
+
         static public void writeEncodedString(string value, StreamWriter outputData)
         {
             outputData.BaseStream.Write(BitConverter.GetBytes((short)value.Length), 0, 2);

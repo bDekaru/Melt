@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
+using Melt;
 
 namespace ACE.DatLoader.Entity
 {
@@ -35,6 +36,29 @@ namespace ACE.DatLoader.Entity
                 Comments.Add(reader.ReadUInt32());
 
             Unknown = reader.ReadByte();
+        }
+
+        public void Pack(StreamWriter output)
+        {
+            Utils.writeUInt32(Id, output);
+
+            Utils.writeUInt16((ushort)VarNames.Count, output);
+            foreach (var entry in VarNames)
+                Utils.writeUnicodeString(entry, output);
+
+            Utils.writeUInt16((ushort)Vars.Count, output);
+            foreach (var entry in Vars)
+                Utils.writeUnicodeString(entry, output);
+
+            Utils.writeUInt32((uint)Strings.Count, output);
+            foreach (var entry in Strings)
+                Utils.writeUnicodeString(entry, output);
+
+            Utils.writeUInt32((uint)Comments.Count, output);
+            foreach (var entry in Comments)
+                Utils.writeUInt32(entry, output);
+
+            Utils.writeByte(Unknown, output);
         }
     }
 }

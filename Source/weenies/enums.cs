@@ -208,6 +208,157 @@ namespace Melt
         Tx_AdminChest = 2,
     }
 
+    public enum eTreasureGeneratorTypeOriginal
+    {
+        T1_NoobChest = 6,
+        T1_ChestGreenmire1 = 92,
+        T1_ChestGreenmire2 = 93,
+        T1_ChestGreenmireGems = 18,
+        T2_ChestColierMine = 313,
+        T2_Chest = 4,
+        T2_Money = 16,
+
+        T3_Chest = 3,
+        T3_Money = 15,
+
+        T4_Chest = 1,
+        T4_Money = 13,
+        T4_ScrollSteelChest = 338,
+        T4_MastersHolding = 340,
+
+        T4_HeaRaiderCache = 365,
+        T4_ReinforcedOakenChest = 422,
+        T5_DirectivesCache = 339,
+
+        T5_ReinforcedMahoganyChest = 421,
+        T5_Chest_Aerlinthe = 317,
+        T5_ChestFrore = 59,
+        T5_AluvianCasinoChest = 349,
+        T5_GharundimCasinoChest = 350,
+        T5_ShoCasinoChest = 351,
+        T5_SingularityTrove = 341,
+
+        T1_RunedChest = 414,
+        T2_RunedChest = 410,
+        T3_RunedChest = 411,
+        T4_RunedChest = 412,
+        T5_RunedChest = 413,
+
+        Tx_ChestTombLoot = 395, //unknown chest location and tier, not being used for now
+        Tx_TreasureOfTheOrderAndSactumOfTheHopeslayerChest = 334,
+
+        T1_General = 453,
+        T1_Warrior = 459,
+        T1_Magic = 465,
+
+        T2_General = 457,
+        T2_Warrior = 451,
+        T2_Magic = 463,
+
+        T3_General = 456,
+        T3_Warrior = 450,
+        T3_Magic = 462,
+
+        T4_General = 454,
+        T4_Warrior = 448,
+        T4_Magic = 460,
+
+        T5_General = 452,
+        T5_Warrior = 458,
+        T5_Magic = 464,
+
+        T6_General = 449,
+        T6_Warrior = 455,
+        T6_Magic = 461,
+
+        T1_CreatureLords = 24,
+        T2_CreatureLords = 22,
+        T4_CreatureLords = 21,
+        T5_CreatureLords = 19,
+
+        T2_Bosses = 28,
+        T3_Bosses = 27,
+
+        T4_BossesGeneral = 146,
+        T4_BossesMagic = 25,
+
+        T5_BossesGeneral = 29,
+        T5_BossesMagic = 31,
+
+        T6_BossesGeneral = 32,
+        T6_BossesMagic = 26,
+
+        T1_GolemKillTasks = 36,
+        T2_GolemKillTasks = 34,
+        T3_GolemKillTasks = 33,
+        T4_GolemKillTasks = 35,
+
+        T1_BanderlingCaptainAndRaider = 48,
+        T1_DrudgeSlaves = 69,
+        T1_HollowMinions = 72,
+        T1_DrudgeProwler = 77,
+        T1_DrudgeSkulker = 81,
+        T1_DrudgeSneaker = 83,
+        T1_IceGolem = 89,
+        T1_Gromnie = 94,
+        T1_AmplothRaider = 106,
+        T1_BarkerMosswart = 123,
+        T1_MosswartChief = 126,
+        T1_CreeperMosswart = 127,
+        T1_MosswartMucker = 132,
+        T1_MosswartMucker2 = 134,
+        T1_Mosswarts = 138,
+        T1_MosswartShaman = 140,
+        T1_InjuredOlthoi = 144,
+        T1_RedPhyntosWasp = 153,
+        T1_SwampRat = 164,
+        T1_AsteSclavus = 166,
+        T1_SmallShadowChild = 172,
+
+        T2_HollowMinions = 86,
+        T2_GraniteGolem = 88,
+        T2_RankMoarsman = 115,
+        T2_ShadowyWarrior = 154,
+        T2_SilverRat = 161,
+
+        T3_UnstableGlacialGolem = 90,
+        T3_SableGromnie = 95,
+        T3_FrostMattekar = 113,
+
+        T5_ReedsharkSlasherAndBlackmireTempleBosses = 23,
+
+        T6_OrphanageBosses = 20,
+        T6_SmallGoldPlatGeliditeGolems = 87,
+        T6_WhiteRabbit = 157,
+
+        Tx_BabeTheBlueAuroch = 38,
+        Tx_FullDeru = 62,
+        Tx_GreenDeru = 63,
+        Tx_OldDeru = 64,
+        Tx_TallDeru = 65,
+        Tx_StrawDrudge = 77,
+        Tx_CandyStick = 91,
+        Tx_MarriageQuestCreatures = 96,
+        Tx_ColossalMonougaAndPaul = 116,
+        Tx_GrievverSpawnAndMosswartKin = 142,
+        Tx_OlthoiCrawler = 143,
+        Tx_OlthoiGrubAndLarvae = 145,
+        Tx_OlthoiGardenerHarvesterAndNymph = 147,
+        Tx_OlthoiNobleQueenGardenerHarvester = 148,
+        Tx_OlthoiQueen = 149,
+        Tx_OlthoiSoldier = 150,
+        Tx_OlthoiWorm = 151,
+        Tx_StrawPhyntosWasp = 152,
+        Tx_BossRabbitsAndSparringGolem = 156,
+        Tx_StrawRat = 160,
+        Tx_AlfregaTheReedshark = 164,
+        Tx_SpireShadow = 171,
+        Tx_SmallShadowSpireChild = 173,
+        Tx_ShadowSpireChild = 174,
+        Tx_SpireShadow2 = 176,
+        Tx_AdminChest = 2,
+    }
+
     //regular: 3 to 5 items
     //special: 5 to 15 items
 
@@ -1441,13 +1592,13 @@ namespace Melt
 
     public enum eAttributes
     {
-        none = 0,
-        strength = 1,
-        endurance = 2,
-        quickness = 3,
-        coordination = 4,
-        focus = 5,
-        self = 6
+        None = 0,
+        Strength = 1,
+        Endurance = 2,
+        Quickness = 3,
+        Coordination = 4,
+        Focus = 5,
+        Self = 6
     }
 
     public enum eVitals

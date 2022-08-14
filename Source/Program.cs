@@ -24,9 +24,38 @@ namespace Melt
         public static cCache9Converter cache9Converter = new cCache9Converter();
         static void Workbench(string[] args)
         {
-            //int xp = AceDatabaseUtilities.GetCreatureXP(40, 150, 0);
-            //return;
+            //cache9Converter.loadWeeniesRaw("./input/0009.raw");
+            //cache9Converter.generateChestTreasureList();
 
+            //Ingame Map
+            //TextureConverter.toPNG("0600127D ToD.bin");
+            //TextureConverter.toBin("0600127D.png", 0x0600127D, 20);
+            //TextureConverter.toBin("./input/0600127D.png", 0x0600127D, 20);
+
+            //CharGen Map
+            //TextureConverter.toPNG("06004D5F Latest.bin");
+            //TextureConverter.toPNG("06004D5F.bin");
+            //TextureConverter.toBin("06004d5f.png", 0x06004d5f, 500);
+            //TextureConverter.toBin("./input/06004d5f.png", 0x06004d5f, 500);
+
+            //LanguageFileTools language = new LanguageFileTools("./input/client_local_English.dat");
+            //language.DumpStrings();
+            //language.ModifyForInfiltration();
+            //language.ModifyForCustomDM();
+
+            //SkillTable skillTableLatest = new SkillTable("./Skill Tables/0E000004 - Skills Table - Original.bin");
+            //SkillTable skillTableClassicWeaponSkills = new SkillTable("./Skill Tables/0E000004 - Skills Table - Classic weapon skills.bin");
+            ////SkillTable skillTableRelease = new SkillTable("./Skill Tables/0E000004 - Skills Table - Release.bin");
+            //skillTableClassicWeaponSkills.modifyForCustomDM(skillTableLatest);
+            //skillTableClassicWeaponSkills.save("./0E000004 - Skills Table - CustomDM.bin");
+
+            //CharGen charGen = new CharGen("./input/0E000002.bin");
+            //charGen.modifyForDM();
+            //charGen.save("./0E000002 - CharGen - Infiltration.bin");
+            //charGen.modifyForCustomDM();
+            //charGen.save("./0E000002 - CharGen - CustomDM.bin");
+
+            //AceDatabaseUtilities.ConvertSomeSoCStoTwoHanded();
             //AceDatabaseUtilities.CreateFoodList();
             //AceDatabaseUtilities.RedistributeSpellServicesToVendors();
             //AceDatabaseUtilities.AddTethersToVendors();
@@ -53,8 +82,7 @@ namespace Melt
             //portalDatFile.SetFileIteration(10002);
             //portalDatFile.writeToDat("client_portal_Infiltration.dat");
 
-            //portalDatFile.loadFromDat("./input/client_portal - CustomDM.dat");
-            //portalDatFile.SetFileIteration(20002);
+            //portalDatFile.SetFileIteration(20003);
             //portalDatFile.writeToDat("client_portal_CustomDM.dat");
 
             //XPTable xpConverter = new XPTable("./input/0E000018 latest.bin");
@@ -110,17 +138,6 @@ namespace Melt
             //    cache6Converter.writeJson("./output/landblocks");
             //    return;
 
-            //SkillTable skillTableLatest = new SkillTable("./Skill Tables/0E000004 - Skills Table - Original.bin");
-            //SkillTable skillTableClassicWeaponSkills = new SkillTable("./Skill Tables/0E000004 - Skills Table - Classic weapon skills.bin");
-            ////SkillTable skillTableRelease = new SkillTable("./Skill Tables/0E000004 - Skills Table - Release.bin");
-            //skillTableClassicWeaponSkills.modifyForCustomDM(skillTableLatest);
-            //skillTableClassicWeaponSkills.save("./0E000004 - Skills Table - CustomDM.bin");
-
-            //CharGen charGen = new CharGen("./input/0E000002.bin");
-            ////charGen.modifyForDM();
-            //charGen.modifyForCustomDM();
-            //charGen.save("./0E000002 - CharGen - CustomDM.bin");
-
             //SpellsConverter.MergeWeaponsSkillsForCustomDM("Spells/0E00000E - Reversed plus removed auras and converted description from cache file.txt", "./0E00000E - CustomDM.txt");
             //SpellsConverter.toBin("Spells/0E00000E - CustomDM.txt", "./0E00000E - Spells Table - CustomDM.bin");
             //SpellsConverter.toBin("Spells/0E00000E - Reversed plus removed auras and converted description from cache file.txt", "./0E00000E - Reversed plus removed auras and converted description from cache file.bin");
@@ -130,10 +147,6 @@ namespace Melt
             ////TextureConverter.toPNG("textures ToD/06003afb.bin");
             ////Console.ReadLine();
             ////return;
-            ///
-            //TextureConverter.toPNG("0600127D ToD.bin");
-            //TextureConverter.toBin("0600127D.png", 0x0600127D, 20);
-            //TextureConverter.toBin("./input/0600127D.png", 0x0600127D, 20); // Map
 
             ////TextureIdDictionary.folderExtractTextureFromHeader("./input/textureHeaders/");
             ////return;
@@ -151,9 +164,9 @@ namespace Melt
             //List<uint> ListDM = regionDM.GetSceneIds();
             //SceneUtilities.CompareObjectLists(ListEoR, ListDM);
 
-            //List<uint> ListEoR = regionLatest.GetObjects("./input/client_portal - Latest.dat");
+            //List<uint> ListEoR = regionLatest.GetObjects("./input/client_portal - EoR.dat");
             //List<uint> ListDM = regionLatest.GetObjects("./input/portal - 2005-02-XX (Admin) (Iteration 2112).dat");
-            //regionLatest.CompareObjects("./input/client_portal - Latest.dat", "./input/client_portal - Infiltration.dat");
+            //regionLatest.CompareObjects("./input/client_portal - EoR.dat", "./input/client_portal - Infiltration.dat");
 
             //RegionConverter regionInf = new RegionConverter("Region/13000000 - 2005-02-XX (Admin) (Iteration 2112).bin");
             //regionConverter.WriteToBin("./13000000.bin");
@@ -162,7 +175,7 @@ namespace Melt
             //RegionConverterDM.convert("Region/130F0000 test.bin");
 
             //cDatFile datFile = new cDatFile();
-            ////datFile.loadFromDat("./input/client_cell_1 - Latest.dat");
+            ////datFile.loadFromDat("./input/client_cell_1 - EoR.dat");
             ////datFile.loadFromDat("./input/client_cell_1 - Infiltration.dat");
             ////datFile.loadFromDat("./input/client_cell_1 - Release.dat");
             //datFile.loadFromDat("./input/client_cell_1 - DM.dat");
@@ -259,11 +272,8 @@ namespace Melt
             cDatFile datFile = new cDatFile();
 
             datFile.loadFromDat("./input/client_cell_1 - Infiltration - Converted to ToD format (Iteration 1593).dat"); // Same as above but already converted to ToD format to speed thing up.
-            datFile.SetFileIteration(20002);
 
-            datFile.addGridToAllLandblocks();
-
-            datFile.writeToDat("./client_cell_1.dat");
+            //datFile.convertLandblock(0x56510342);
 
             //cDatFile datFile = new cDatFile();
             //datFile.loadFromDat("./input/client_cell_1.dat");
@@ -547,7 +557,7 @@ namespace Melt
             cMapDrawer mapDrawer = new cMapDrawer(cellDat);
             mapDrawer.draw(false, 50);
 
-            datFile.writeToDat("./client_cell_1.dat");
+            datFile.writeToDat("./custDM_cell_1.dat");
 
             Console.WriteLine("Done");
             Console.ReadLine();
@@ -579,7 +589,7 @@ namespace Melt
             cMapDrawer mapDrawer = new cMapDrawer(cellDat);
             mapDrawer.draw(false, 50);
 
-            datFile.writeToDat("./client_cell_1.dat");
+            datFile.writeToDat("./infilt_cell_1.dat");
 
             Console.WriteLine("Done");
             Console.ReadLine();

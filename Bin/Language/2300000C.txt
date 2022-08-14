@@ -1,0 +1,21 @@
+--- 0x65476708
+
+ 
+
+--- 0x83787539
+Unknown Command\n
+--- 0x72733068
+Player Commands:\n  To use these commands, prefix the commands names with 
+\n
+
+--- 0x154355500
+
+tell 
+, 
+--- 0x228755256
+/
+--- 0x15060259
+Unrecognized Command \q
+\q!\n
+--- 0x37787736
+;

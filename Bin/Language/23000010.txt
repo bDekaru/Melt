@@ -1,0 +1,60 @@
+--- 0x126348798
+Connection prempted by another connection attempt
+--- 0x174555695
+Couldn't initialize crypto API. Error 
+
+--- 0x191505476
+Couldn't create local socket.  Make sure you have a working network.
+--- 0x5782340
+Access Denied.
+--- 0x234562926
+Server has closed this connection
+--- 0x9555651
+This world will be shutting down in #1:
+ #1:{minute[1]|minutes} and #2:
+ #2:{second[1]|seconds}. Please log out.\n
+--- 0x212718723
+Invalid server address
+--- 0x164627218
+There is no logon server available for your account.
+--- 0x52555188
+Logon was aborted by the server.\nPlease try again.
+--- 0x16357420
+Server Full
+--- 0x56713499
+Connection closed because use of a speed-altering program was detected
+--- 0x49633134
+This world will be shutting down in #1:
+ #1:{minute[1]|minutes}. Please log out.\n
+--- 0x263803982
+The currents of portal space cannot return you from whence you came. Your previous location forbids login.\n
+--- 0x266143429
+Connection attempt was aborted by the user
+--- 0x19861269
+Your account has insufficient priveleges to continue
+--- 0x88818628
+The server has detected that an item you are carrying, the 
+, is a duplicate of another object already in the game world. Your item has been removed.\n
+--- 0x76746759
+This world is shutting down NOW! Log out!\n
+--- 0x13437811
+There was an error with this connection
+--- 0x131034098
+Client timed out the connection
+--- 0x137246585
+Invalid or corrupted authentication
+--- 0x92946884
+Can't bind local socket.  Is another client running?
+--- 0x206936862
+Player already logged on
+--- 0x11004232
+You do not have the current version of the client installed.
+--- 0x49634595
+This world will be shutting down in #2:
+ #2:{second[1]|seconds}! Please log out!\n
+--- 0x213481076
+Server timed out the connection
+--- 0x81763412
+Client logon failed
+--- 0x177035829
+Your admin powers are stronger than the currents of portal space. You manage to log into a forbiden location.\n

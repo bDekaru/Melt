@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using ACE.DatLoader;
+using ACE.DatLoader.FileTypes;
+using System.Security.Cryptography;
 
 namespace Melt
 {
@@ -9,31 +12,41 @@ namespace Melt
     {
         public class SkillFormula
         {
-            public uint W;
-            public uint X;
-            public uint Y;
-            public uint Z;
-            public uint Attr1;
-            public uint Attr2;
+            public uint TotalAddition;
+            public uint Attribute1Multiplier;
+            public uint Attribute2Multiplier;
+            public uint TotalDivisor;
+            public uint Attribute1;
+            public uint Attribute2;
+
+            public SkillFormula(eAttributes attribute1, uint attribute1Multiplier, eAttributes attribute2, uint attribute2Multiplier, uint totalDivisor, uint totalAddition)
+            {
+                TotalAddition = totalAddition;
+                Attribute1Multiplier = attribute1Multiplier;
+                Attribute2Multiplier = attribute2Multiplier;
+                TotalDivisor = totalDivisor;
+                Attribute1 = (uint)attribute1;
+                Attribute2 = (uint)attribute2;
+            }
 
             public SkillFormula(StreamReader inputFile)
             {
-                W = Utils.readUInt32(inputFile);
-                X = Utils.readUInt32(inputFile);
-                Y = Utils.readUInt32(inputFile);
-                Z = Utils.readUInt32(inputFile);
-                Attr1 = Utils.readUInt32(inputFile);
-                Attr2 = Utils.readUInt32(inputFile);
+                TotalAddition = Utils.readUInt32(inputFile);
+                Attribute1Multiplier = Utils.readUInt32(inputFile);
+                Attribute2Multiplier = Utils.readUInt32(inputFile);
+                TotalDivisor = Utils.readUInt32(inputFile);
+                Attribute1 = Utils.readUInt32(inputFile);
+                Attribute2 = Utils.readUInt32(inputFile);
             }
 
             public void writeRaw(StreamWriter outputStream)
             {
-                Utils.writeUInt32(W, outputStream);
-                Utils.writeUInt32(X, outputStream);
-                Utils.writeUInt32(Y, outputStream);
-                Utils.writeUInt32(Z, outputStream);
-                Utils.writeUInt32(Attr1, outputStream);
-                Utils.writeUInt32(Attr2, outputStream);
+                Utils.writeUInt32(TotalAddition, outputStream);
+                Utils.writeUInt32(Attribute1Multiplier, outputStream);
+                Utils.writeUInt32(Attribute2Multiplier, outputStream);
+                Utils.writeUInt32(TotalDivisor, outputStream);
+                Utils.writeUInt32(Attribute1, outputStream);
+                Utils.writeUInt32(Attribute2, outputStream);
             }
         }
 
@@ -156,34 +169,105 @@ namespace Melt
 
             Skills[(uint)eSkills.Sword].TrainedCost = 6;
             Skills[(uint)eSkills.Sword].SpecializedCost = 12;
-            Skills[(uint)eSkills.Sword].Description = $"Bonus damage source: Coordination\n{Skills[(uint)eSkills.Sword].Description}";
-
-            Skills[(uint)eSkills.Dagger].Description = $"Bonus damage source: Coordination\n{Skills[(uint)eSkills.Dagger].Description}";
 
             Skills[(uint)eSkills.Axe].Name = "Axe and Mace";
-            Skills[(uint)eSkills.Axe].Description = "Bonus damage source: Strength\nHelps you wield axes, hammers, maces, clubs and similar weapons.";
+            Skills[(uint)eSkills.Axe].Formula = new SkillFormula(eAttributes.Strength, 4, eAttributes.Coordination, 2, 9, 0);
 
             Skills[(uint)eSkills.Spear].Name = "Spear and Staff";
-            Skills[(uint)eSkills.Spear].Description = "Bonus damage source: Coordination\nHelps you wield spears, staffs and similar weapons.";
             Skills[(uint)eSkills.Spear].TrainedCost = 6;
             Skills[(uint)eSkills.Spear].SpecializedCost = 12;
-            Skills[(uint)eSkills.Spear].Formula = Skills[(uint)eSkills.Dagger].Formula;
+            //Skills[(uint)eSkills.Spear].Formula = Skills[(uint)eSkills.Dagger].Formula;
+            Skills[(uint)eSkills.Spear].Formula = new SkillFormula(eAttributes.Coordination, 4, eAttributes.Quickness, 2, 9, 0);
 
             Skills[(uint)eSkills.UnarmedCombat].TrainedCost = 4;
             Skills[(uint)eSkills.UnarmedCombat].SpecializedCost = 8;
-            Skills[(uint)eSkills.UnarmedCombat].Description = $"Bonus damage source: Unarmed Combat Skill\n{Skills[(uint)eSkills.UnarmedCombat].Description}";
+            Skills[(uint)eSkills.UnarmedCombat].Formula = new SkillFormula(eAttributes.Coordination, 1, eAttributes.Focus, 1, 3, 0);
 
             Skills[(uint)eSkills.Bow].Name = "Bow and Crossbow";
-            Skills[(uint)eSkills.Bow].Description = "Bonus damage source: Coordination\nHelps you fire bows, crossbows and similar weapons.";
             Skills[(uint)eSkills.Bow].TrainedCost = 6;
             Skills[(uint)eSkills.Bow].SpecializedCost = 12;
 
-            Skills[(uint)eSkills.ThrownWeapon].Description = $"Bonus damage source: Strength\n{Skills[(uint)eSkills.ThrownWeapon].Description}";
+            Skills[(uint)eSkills.ThrownWeapon].Formula = new SkillFormula(eAttributes.Strength, 1, eAttributes.Coordination, 1, 4, 0);
 
             Skills[(uint)eSkills.Alchemy].TrainedCost = 8;
             Skills[(uint)eSkills.Alchemy].SpecializedCost = 16;
 
             Skills[(uint)eSkills.CreatureAppraisal].SpecializedCost = 8;
+
+            Skills[(uint)eSkills.Axe                ].Description = "Helps you wield axes, hammers, maces, clubs and similar weapons.";
+            Skills[(uint)eSkills.Bow                ].Description = "Helps you fire bows, crossbows and similar weapons.";
+            Skills[(uint)eSkills.CreatureAppraisal  ].Description = "Helps you figure out creatures' attributes and vulnerabilities.";
+            Skills[(uint)eSkills.Deception          ].Description = "Helps prevent others from seeing your attributes and vulnerabilities and to taunt opponents.";
+            Skills[(uint)eSkills.PersonalAppraisal  ].Description = "Helps you figure out humans' attributes and vulnerabilities.";
+            Skills[(uint)eSkills.Spear              ].Description = "Helps you wield spears, staffs and similar weapons.";
+
+            foreach(var entry in Skills)
+            {
+                entry.Value.Description += $"\n\nFormula : {buildFormulaString(entry.Value.Formula)}";
+            }
+
+            Skills[(uint)eSkills.Axe            ].Description += "\nDamage : Strength";
+            Skills[(uint)eSkills.Bow            ].Description += "\nDamage : Coordination";
+            Skills[(uint)eSkills.Dagger         ].Description += "\nDamage : Coordination";
+            Skills[(uint)eSkills.Spear          ].Description += "\nDamage : Coordination";
+            Skills[(uint)eSkills.Sword          ].Description += "\nDamage : Strength";
+            Skills[(uint)eSkills.ThrownWeapon   ].Description += "\nDamage : Strength";
+            Skills[(uint)eSkills.UnarmedCombat  ].Description += "\nDamage : Unarmed Combat";
+        }
+
+        public string buildFormulaString(SkillFormula formula)
+        {
+            string formulaString = "";
+            var attribute1Present = formula.Attribute1 != 0;
+            var attribute2Present = formula.Attribute2 != 0;
+
+            if (!attribute1Present && !attribute2Present)
+                return formulaString;
+
+            string attribute1String = "";
+            if (attribute1Present)
+            {
+                if (formula.Attribute1Multiplier > 1)
+                {
+                    attribute1String = $"{formula.Attribute1Multiplier} x {(eAttributes)formula.Attribute1}";
+                    if (attribute2Present)
+                        attribute1String = $"({attribute1String})";
+                }
+                else
+                    attribute1String = $"{(eAttributes)formula.Attribute1}";
+            }
+
+            string attribute2String = "";
+            if (attribute2Present)
+            {
+                if (formula.Attribute2Multiplier > 1)
+                {
+                    attribute2String = $"{formula.Attribute2Multiplier} x {(eAttributes)formula.Attribute2}";
+                    if (attribute1Present)
+                        attribute2String = $"({attribute2String})";
+                }
+                else
+                    attribute2String = $"{(eAttributes)formula.Attribute2}";
+            }
+
+            if (attribute1Present && attribute2Present)
+                formulaString = $"{attribute1String} + {attribute2String}";
+            else if (attribute1Present)
+                formulaString = attribute1String;
+            else
+                formulaString = attribute2String;
+
+            if (formula.TotalDivisor > 1)
+            {
+                if(attribute1Present && attribute2Present)
+                    formulaString = $"({formulaString})";
+                formulaString = $"{formulaString} / {formula.TotalDivisor}";
+            }
+
+            if (formula.TotalAddition > 0)
+                formulaString = $"({formulaString}) + {formula.TotalAddition}";
+
+            return formulaString;
         }
 
         public void copySkill(string skillName, SkillTable from)

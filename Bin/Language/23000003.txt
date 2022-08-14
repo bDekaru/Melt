@@ -1,0 +1,472 @@
+--- 0x97429072
+When this option is enabled, the landscape will no longer use distance fog.
+--- 0x38659637
+Align camera to slope
+--- 0x247000153
+Tooltip Delay
+--- 0x149937234
+Vivid Targeting Indicator
+--- 0x246931219
+Show Allegiance Logons
+--- 0x40112752
+When this option is enabled, you can hear and speak on the global Trade chat channel. This channel is for arranging in-game trades with other players.
+--- 0x82639541
+Extra Large
+--- 0x197994547
+Landscape Detail Textures
+--- 0x8032675
+Accept Corpse Looting Permissions
+--- 0x157066019
+Lead Missile Targets
+--- 0x224120128
+Automatically adjusts the aggressiveness of adaptive degrading based on the current rendering performance of your system. Checking this option overrides the adaptive degrade bias slider and can increase performance at the expense of visual quality.
+--- 0x204063568
+When checked tooltip messages will display.  Tooltips provide additional information about whatever is beneith your mouse cursor.
+--- 0x91650004
+Camera Adjustment Speed
+--- 0x119077019
+Repeat Attacks
+--- 0x133511907
+Anisotropic
+--- 0x227909918
+Graphics Options
+--- 0x243431381
+Adaptive Degrade
+--- 0x150571499
+Show Your Cloak
+--- 0x20308992
+Sharp
+--- 0x20027488
+Turns off most weather effects. Turning off weather effects can help improve game performance.
+--- 0x40101285
+Huge
+--- 0x159721760
+When this option is enabled, you can hear and speak on the global General chat channel. This channel is for general discussions about Asheron's Call.
+--- 0x75037397
+Opaque
+--- 0x13467088
+Adjusts how far away landscape geography will be rendered. Lower distances can increase performance and will significantly decrease load times.
+--- 0x203098048
+When this option is enabled, you will see the time remaining for all the spells in your spell effect panel.
+--- 0x160545984
+When this option is enabled, you can hear and speak on the global Roleplay chat channel. This channel is for in-character roleplaying and for discussions about roleplaying in Asheron's Call.
+--- 0x195204805
+Tooltip Enable
+--- 0x200016436
+Bright
+--- 0x901631
+Stereo
+--- 0x133022078
+Times New Roman
+--- 0x264332096
+This only affects the creation of new fellowships. When checked, experience earned while in a fellowship will be shared with other fellowship members.
+--- 0x32079365
+Landscape Draw Distance
+--- 0x94630544
+Adjusts the resolution of object textures rather than landscape. HIGH detail textures require more video memory but will greatly increase image quality. VERY HIGH detail requires the Throne of Destiny expansion.
+--- 0x214770756
+Speed
+--- 0x52257349
+Chat Font Size
+--- 0x165156176
+Check to enable sound effects
+--- 0x84878228
+Listen to Allegiance Chat
+--- 0x240416443
+Use Charge Attack
+--- 0x136366451
+Ignore Allegiance Requests
+--- 0x230930686
+Chat Window 2
+--- 0x16485159
+Turn your character with camera turning.
+--- 0x135599691
+Automatically Repeat Attacks
+--- 0x259254307
+Disable House Restriction Effects
+--- 0x85485296
+The tooltip delay is the amount of time you must hover over an area before a tooltip is displayed.
+--- 0x213561262
+Grouping
+--- 0x265089316
+Soft
+--- 0x140987742
+Character Behavior
+--- 0x143917312
+When this option is enabled, other players can see your fishing skill.
+--- 0x203697872
+When this option is enabled, you will automatically ignore invitations to join a fellowship, thus avoiding the display of the normal dialog box. Note that you always ignore fellowship requests from players you have squelched, regardless of this setting.
+--- 0x60977520
+When enabled, this option causes any one-use rare gem to trigger a confirmation dialog. This helps prevent the accidental use of one-use rare gems.
+--- 0x209456279
+Texture Filtering
+--- 0x115033376
+Multiple pass alpha will render alpha textures twice to provide a softer edge.  Enabling this option can significantly decrease performance.
+--- 0x79276113
+Tahoma
+--- 0x231164339
+Ignore All Trade Requests
+--- 0x125653968
+Determines how quickly the camera will adjust position in response to player movement.
+--- 0x61065614
+Run as Default Movement
+--- 0x175713600
+This allows the user to zoom the camera in or out. Zooming in narrows your field of vision and allows you to see less of your surroundings. While zooming out, the camera will give you a wider view. It is recommended that this be left at its default setting.
+--- 0x176877921
+Multiple Pass Alpha
+--- 0x116223363
+Environment Detail Textures
+--- 0x17196800
+When enabled your character will attempt to use the Deception skill to hide your player information from other players.
+--- 0x262182371
+Allow Others to See Your Number of Titles
+--- 0x219605411
+Listen to PK death messages.
+--- 0x152688800
+When this option is enabled, the forward command will cause your avatar to run instead of walk.
+--- 0x265018491
+Dark
+--- 0x206532477
+Medium
+--- 0x79657986
+Trilinear
+--- 0x93502288
+When in melee or missile combat modes, this option will automatically begin another attack when your previous attack finishes.
+--- 0x69909488
+This only affects the creation of new fellowships.  When checked anyone in your fellowship can loot things killed by a member of the fellowship.
+--- 0x159127424
+When enabled your craft attempts will first display a dialog with your percentage chance of succeeding.  Only after accepting this dialog will a crafting attempt be made.
+--- 0x28772608
+When checked (recommended), the game runs in full screen mode. If unchecked, the game runs in a window on your desktop.
+--- 0x19206036
+Listen to Roleplay Chat
+--- 0x216840933
+Simple
+--- 0x244343397
+Filter Language
+--- 0x145244830
+Camera Options
+--- 0x55524016
+Enabling this option improves the graphical quality of the terrain but can reduce performance.
+--- 0x99646003
+Volumetric
+--- 0x32116976
+Adjusts volume for ambient sounds like the background noises in towns.
+--- 0x11176837
+Interface Sound Volume
+--- 0x128315856
+Determines how quickly the camera will adjust position in response to mouse movement.
+--- 0x73947476
+Disabled
+--- 0x40647925
+Degrade Distance
+--- 0x61712160
+When this option is enabled, dragging an item to another player will open secure trade. When this option is disabled, dragging an item to another player will attempt to give away the item.
+--- 0x217492816
+When enabled you will do a short high-speed sprint when melee attacking at range.  If you do not reach the target during this sprint you will stop.  When disabled you will charge opponents at normal run speed but without the distance limit.
+--- 0x150814432
+Enabling this option improves the graphical quality of the buildings but can reduce performance.
+--- 0x117471984
+When enabled the camera will rotate to face the currently selected target when you are in combat.
+--- 0x105500940
+Small
+--- 0x205687996
+Normal
+--- 0x195643824
+Toggles the tooltip messages on and off. This affects only those tooltips displayed in the 3D view.
+--- 0x198727740
+Detail
+--- 0x116280480
+Adjusts the resolution of landscape textures. HIGH detail textures require more video memory but will greatly increase image quality. VERY HIGH detail requires the Throne of Destiny expansion.
+--- 0x26644692
+Play Sounds Only When Active
+--- 0x957648
+Manually adjusts aggressiveness of adaptive degrading. Moving the slider left will draw degrades at closer distances, resulting in better performance at the expense of lower-quality objects. This slider is disabled when the 'Adaptive Degrade' option is enabled.
+--- 0x9083760
+Select stereo or mono sound.  Stereo sound requires slightly more processing power and should only need to be turned off in cases of severe performance problems.
+--- 0x123846265
+Mouselook Sensitivity
+--- 0x167469966
+Sound Options
+--- 0x174229152
+When this option is enabled, you can hear the death messages when a PK player dies to another PK player.
+--- 0x268221182
+Fun
+--- 0x176483492
+Listen to Society Chat
+--- 0x136139808
+When this option is enabled, other players can see how many times you have died.
+--- 0x172730096
+When this option is enabled, you can hear and speak on the global Society chat channel. This channel is for coordinating Society based quests and for discussions about your Society affiliation in Asheron's Call.
+--- 0x12212116
+Auto Target
+--- 0x28833168
+Increases or decreases the brightness of the screen. This option only controls brightness in full screen mode.
+--- 0x105421678
+User Interface Behavior
+--- 0x237541360
+Share Fellowship Experience and Luminance
+--- 0x167615520
+When this option is enabled, you will automatically accept any fellowship requests. Note that Accept Fellowship Requests must be on before this will work.
+--- 0x194769072
+When this option is enabled, you can hear and speak on the global Looking For Group chat channel. This channel helps you find other players to adventure with.
+--- 0x115802515
+Automatically Accept Fellowship Requests
+--- 0x228731984
+Changes the font used for text added to the chat log.
+--- 0x141746174
+Other Players
+--- 0x264967616
+When this option is enabled, your helm or head gear is visible.
+--- 0x261559299
+Sound Features
+--- 0x215622664
+Sync with Refresh Rate
+--- 0x264962645
+Scenery Draw Distance
+--- 0x36053504
+When this option is enabled, you will lead your targets (aiming where you believe they will be shortly) when attacking with a missile weapon like a bow, crossbow, or atlatl. When this option is disabled, you will aim exactly where you target is when you fire the missile. This option does not affect magic projectiles.
+--- 0x60241488
+Causes the tilt of the camera to adjust based on the steepness of the terrain under the player.
+--- 0x213875045
+Close
+--- 0x52016181
+Confirm Use of Rare Gems
+--- 0x60560912
+Allows you to select from a list of supported display modes. Higher resolutions typically look better at the expense of performance. We recommend using at least 1024x768.
+--- 0x146359424
+Adjusts volume for interface sounds like alerts or button presses.
+--- 0x265002100
+Hard
+--- 0x21280816
+When this option is enabled, other players can see the date your character was created.
+--- 0x224204176
+Adjusts volume for sound effects like combat and creature noises.
+--- 0x263698756
+Auto Target
+--- 0x162025280
+When this option is enabled, in combat you will automatically target the next closest enemy once your current enemy dies.
+--- 0x230930430
+Chat Window 3
+--- 0x74065120
+When this option is enabled, items that you pick up will always try to fit into your main pack first. When not enabled, items will try to fit into whatever pack you have opened first.
+--- 0x93804558
+General Chat Options
+--- 0x265090967
+Slow
+--- 0x104410212
+Keep Combat Targets in View
+--- 0x170378515
+Disable Most Weather Effects
+--- 0x119541779
+Use Fast Missiles
+--- 0x265071445
+Wide
+--- 0x40049753
+Advanced Combat Interface
+--- 0x712592
+When this option is enabled, other players can see your chess ranking.
+--- 0x143989828
+Share Fellowship Loot
+--- 0x156119822
+Full Screen
+--- 0x182286384
+Check to enable interface sounds
+--- 0x27524517
+Refresh Rate
+--- 0x211666704
+Normally pressing return from chat mode will return you to gameplay mode.  With this option enabled it will leave you in chat mode ready to type your next message.
+--- 0x177981854
+User Interface Display
+--- 0x40465321
+Always Daylight Outdoors
+--- 0x252897038
+UI Options
+--- 0x205285543
+Narrow
+--- 0x118614176
+When this option is enabled, you will automatically ignore invitations to join an allegiance, thus avoiding the display of the normal dialog box. Note that you always ignore allegiance requests from players you have squelched, regardless of this setting.
+--- 0x261911712
+When this option is enabled, your cloak is visible.
+--- 0x110823957
+Palatino Linotype
+--- 0x140649320
+Very High
+--- 0x104425564
+Arial
+--- 0x226757300
+Ambient Sounds
+--- 0x265044661
+None
+--- 0x228229936
+When selected, this option will mute the sounds in Asheron's Call whenever it is not the currently active application.  This option is ideal for those who run the game in windowed mode or switch between other applications while the game is running.
+--- 0x265001768
+High
+--- 0x97103760
+When this option is enabled, your current coordinates are shown near the radar display.
+--- 0x154583636
+Keep in View
+--- 0x97901552
+Enabling Advanced Combat disables the combat panel, and only displays the Power/Accuracy bar when in combat mode.
+--- 0x99205284
+Interface Sounds
+--- 0x215615836
+Landscape Texture Detail
+--- 0x159149763
+Ignore Fellowship Requests
+--- 0x77741584
+ Changes the size of the font used for text added to the chat log.
+--- 0x24680384
+When enabled you will get messages when your Monarch, Patron, or Vassals log in or log out.
+--- 0x241971604
+Listen to General Chat
+--- 0x159472640
+When this option is checked, other players can give you items without your consent.
+--- 0x131534323
+Adaptive Degrade Bias
+--- 0x65327413
+Drag Item to Player Opens Trade
+--- 0x47993984
+When this option is enabled, your character turns as you turn with the camera turn button.
+--- 0x250322547
+Camera Stiffness
+--- 0x106622480
+When this option is enabled, vulgar language will display as *** in your chat windows.
+--- 0x212097618
+Show Coordinates By the Radar
+--- 0x179074983
+Field of View
+--- 0x91184144
+Adjusts how far away static landscape objects will be rendered. Lower distances can increase performance and will significantly decrease load times.
+--- 0x25184436
+Listen to LFG Chat
+--- 0x178261111
+Courier New
+--- 0x47216512
+This option reverses the up/down and left/right movements of the mouse in mouselook mode.
+--- 0x123466451
+Side By Side Vitals
+--- 0x190557328
+Check to enable ambient sounds
+--- 0x59695038
+Display Spell Durations
+--- 0x29025166
+Input Options
+--- 0x27932851
+Display 3D Tooltips
+--- 0x261315051
+Allow Others to See Your Chess Rank
+--- 0x48419525
+Stay in Chat Mode After Sending a Message
+--- 0x164829696
+When this option is enabled, you can hear the chat channel for your allegiance.
+--- 0x243917664
+When this option is enabled, other players can see how many character titles you possess.
+--- 0x193347495
+Very Low
+--- 0x69591773
+Medium
+--- 0x119711920
+Attaches a time stamp to all displayed text.
+--- 0x18824750
+Main Chat Window
+--- 0x127814677
+Ambient Sound Volume
+--- 0x159298428
+Allow Others to See Your Fishing Skill
+--- 0x160432109
+Show Your Helm or Head Gear
+--- 0x265010260
+Fast
+--- 0x40153641
+Tiny
+--- 0x33680176
+When this option is enabled, any missiles that you fire (like arrows, quarrels, and atlatl darts) will travel faster than normal, and with less arc than normal. Note that your rate of fire will remain unchanged.
+--- 0x146512743
+Self Shadow
+--- 0x42260144
+Disables the particle effects that are displayed when you collide with a house barrier. Turning off this option may improve game performance.
+--- 0x105082869
+Large
+--- 0x207147774
+Attempt to Deceive Other Players
+--- 0x129859909
+Salvage Multiple Materials at Once
+--- 0x184540055
+Use Crafting Chance of Success Dialog
+--- 0x211586372
+Use Main Pack as Default for Picking Up Items
+--- 0x70900515
+Invert mouselook axes
+--- 0x220572702
+UI Options
+--- 0x230930174
+Chat Window 4
+--- 0x25526510
+Rendering Quality Options
+--- 0x230930942
+Chat Window 1
+--- 0x232033600
+Determines how quickly the camera will adjust position in response to keyboard camera controls.
+--- 0x82326560
+When enabled you can drag items of multiple material types into the salvaging window at the same time.  Each material type will be separately salvaged.
+--- 0x268224039
+Low
+--- 0x220922773
+Let Other Players Give You Items
+--- 0x209691684
+Listen to Trade Chat
+--- 0x134326860
+Environment Texture Detail
+--- 0x250608341
+Sound Effects Volume
+--- 0x161503008
+When this option is enabled, other players can see how long your character has been in the world.
+--- 0x181763328
+Increases the ambient light when outside at night.
+--- 0x261433840
+Scales the distance for adaptive degrading. Lower settings draw degrades at closer distances, resulting in better performance at the expense of lower-quality objects. This slider is enabled whether you enable 'Adaptive Degrade' or use the Bias slider.
+--- 0x149651843
+Allow Others to See Your Number of Deaths
+--- 0x203615012
+Transparent
+--- 0x177488672
+When checked your character will accept permission to loot other peoples corpses.  The corpse owner must first grant permission using the @permit command.
+--- 0x152356979
+Display Timestamps
+--- 0x101521392
+Enable this option to apply a targeting indicator around selected objects and monsters for better visual reference.
+--- 0x235296016
+When this option is enabled, your vitals will be displayed side by side instead of stacked.
+--- 0x268221378
+Far
+--- 0x242597912
+Allow Others to See Your Date of Birth
+--- 0x155755343
+Mono
+--- 0x3033712
+When checked (recommended), eliminates horizontal 'tearing' artifacts that may be visible at the expense of some performance.
+--- 0x196376709
+Extreme
+--- 0x37878291
+Screen Brightness
+--- 0x54251925
+Allow Others to See Your Age
+--- 0x52168405
+Chat Font Face
+--- 0x180999648
+Use menus to change the monitor refresh rate. This can improve visual quality on many systems. It is recommended that this be set no lower than 70hz.
+--- 0x131393111
+Disable Distance Fog
+--- 0x152317168
+Quality of filter applied to 3D textures. Bilinear is faster but low quality.  Anisotropic is highest quality but can be quite slow on some graphics cards
+--- 0x96466580
+Sound Effects
+--- 0x201318958
+Resolution
+--- 0x159907470
+Chat
+--- 0x191864992
+When checked you will ignore attempts by other players to enter secure trade with you.
+--- 0x15163346
+Bilinear

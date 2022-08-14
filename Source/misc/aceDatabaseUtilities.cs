@@ -389,6 +389,34 @@ namespace Melt
             command = new MySqlCommand(sql, connection);
             count += command.ExecuteNonQuery();
 
+            sql = $"DELETE from `weenie_properties_bool` WHERE `type` = 23 AND `object_Id` IN ({string.Join(",", scrolls1)})";
+            command = new MySqlCommand(sql, connection);
+            count = command.ExecuteNonQuery();
+
+            sql = $"DELETE from `weenie_properties_bool` WHERE `type` = 23 AND `object_Id` IN ({string.Join(",", scrolls2)})";
+            command = new MySqlCommand(sql, connection);
+            count = command.ExecuteNonQuery();
+
+            sql = $"DELETE from `weenie_properties_bool` WHERE `type` = 23 AND `object_Id` IN ({string.Join(",", scrolls3)})";
+            command = new MySqlCommand(sql, connection);
+            count = command.ExecuteNonQuery();
+
+            sql = $"DELETE from `weenie_properties_bool` WHERE `type` = 23 AND `object_Id` IN ({string.Join(",", scrolls4)})";
+            command = new MySqlCommand(sql, connection);
+            count = command.ExecuteNonQuery();
+
+            sql = $"DELETE from `weenie_properties_bool` WHERE `type` = 23 AND `object_Id` IN ({string.Join(",", scrolls5)})";
+            command = new MySqlCommand(sql, connection);
+            count = command.ExecuteNonQuery();
+
+            sql = $"DELETE from `weenie_properties_bool` WHERE `type` = 23 AND `object_Id` IN ({string.Join(",", scrolls6)})";
+            command = new MySqlCommand(sql, connection);
+            count = command.ExecuteNonQuery();
+
+            sql = $"DELETE from `weenie_properties_bool` WHERE `type` = 23 AND `object_Id` IN ({string.Join(",", scrolls7)})";
+            command = new MySqlCommand(sql, connection);
+            count = command.ExecuteNonQuery();
+
             connection.Close();
 
             Console.WriteLine($"Updated {count} entries.");
@@ -540,7 +568,7 @@ namespace Melt
                         newValue = entry.Value.MerchandiseItemTypes & ~(int)(eItemType.Type_Weapon | eItemType.Type_Vestements | eItemType.Type_Jewelry | eItemType.Type_Gem | eItemType.Type_Caster);
                         break;
                     case "Shopkeeper":
-                        switch(entry.Key)
+                        switch (entry.Key)
                         {
                             case 4693:
                                 newValue = entry.Value.MerchandiseItemTypes & ~(int)(eItemType.Type_Weapon | eItemType.Type_Vestements | eItemType.Type_Caster);
@@ -574,6 +602,7 @@ namespace Melt
                                 newValue = entry.Value.MerchandiseItemTypes & ~(int)(eItemType.Type_Weapon | eItemType.Type_Vestements | eItemType.Type_Jewelry | eItemType.Type_Gem | eItemType.Type_Caster);
                                 break;
                         }
+                        newValue = newValue | (int)eItemType.Type_Craft_Alchemy_Base | (int)eItemType.Type_Craft_Alchemy_Intermediate | (int)eItemType.Type_Craft_Fletching_Base | (int)eItemType.Type_Craft_Fletching_Intermediate | (int)eItemType.Type_Craft_Cooking_Base;
                         break;
                     default:
                         newValue = -1;
@@ -2072,6 +2101,65 @@ namespace Melt
             connection.Close();
 
             Console.WriteLine($"Added {count} entries.");
+        }
+
+        public static void ConvertSomeSoCStoTwoHanded()
+        {
+            Console.WriteLine($"Converting some Silifi of Crimson Stars to Two Handed...");
+
+            var connection = new MySqlConnection($"server=127.0.0.1;port=3306;user=ACEmulator;password=password;DefaultCommandTimeout=120;database=ace_world_customDM");
+            connection.Open();
+
+            string sql = "";
+            MySqlCommand command;
+            MySqlDataReader reader;
+
+            List<int> socsList = new List<int>() { 6665, 6666, 6667, 6668, 6676, 6677, 6678, 6679, 6680, 6681, 6682, 6691, 6692, 6693, 6694, 6702, 6703, 6704, 6705, 6706, 6707, 6708, 6717, 6718, 6719, 6720, 6728, 6729, 6730, 6731, 6732, 6733, 6734, 6743, 6744, 6745, 6746, 6754, 6755, 6756, 6757, 6758, 6759, 6760, 22953, 22957, 22961, 22962, 22963, 22967, 22968, 22969, 22973, 22974, 22975, 22979, 22983, 22987, 22988, 22989, 22993, 22994, 22995, 22999, 23000, 23001, 23005, 23009, 23013, 23014, 23015, 23019, 23020, 23021, 23025, 23026, 23027 };
+
+            int count = 0;
+            sql = $"UPDATE weenie_properties_int SET value = 33554432 WHERE type = 9 AND object_Id IN ({string.Join(",", socsList)})";
+            command = new MySqlCommand(sql, connection); /* ValidLocations - TwoHanded */
+            count += command.ExecuteNonQuery();
+
+            sql = $"UPDATE weenie_properties_int SET value = 8 WHERE type = 46 AND object_Id IN ({string.Join(",", socsList)})";
+            command = new MySqlCommand(sql, connection);  /* DefaultCombatStyle - TwoHanded */
+            count += command.ExecuteNonQuery();
+
+            sql = $"UPDATE weenie_properties_int SET value = 5 WHERE type = 51 AND object_Id IN ({string.Join(",", socsList)})";
+            command = new MySqlCommand(sql, connection);  /* CombatUse - TwoHanded */
+            count += command.ExecuteNonQuery();
+
+            foreach (var entry in socsList)
+            {
+                sql = $"INSERT INTO `weenie_properties_int` (`object_Id`, `type`, `value`)" +
+                      $"VALUES({entry}, 292, 2) /* Cleaving */" +
+                      $"    , ({entry}, 353, 11) /* WeaponType - TwoHanded */;";
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+
+                sql = $"DELETE FROM weenie_properties_spell_book WHERE object_Id = {entry} AND spell IN (35,1612,1613,1614,1615,1616,2096)";
+                command = new MySqlCommand(sql, connection);  // Remove Blood Drinker
+                count += command.ExecuteNonQuery();
+
+                sql = $"SELECT value FROM weenie_properties_int WHERE object_Id = {entry} AND type = 44"; /* Damage */
+                command = new MySqlCommand(sql, connection);
+                reader = command.ExecuteReader();
+
+                if(reader.Read())
+                {
+                    int currentDamage = reader.GetInt32(0);
+                    int newDamage = (int)Math.Round(currentDamage / 3.0f);
+
+                    reader.Close();
+                    sql = $"UPDATE weenie_properties_int SET value = {newDamage} WHERE object_Id = {entry} AND type = 44";
+                    command = new MySqlCommand(sql, connection); /* Damage */
+                    count += command.ExecuteNonQuery();
+                }
+                else
+                    reader.Close();
+            }
+
+            Console.WriteLine($"Updated {count} entries.");
         }
 
         public static void IncreaseThrownWeaponsStackSizeTo250()

@@ -1,0 +1,142 @@
+--- 0x61737075
+This Options Panel
+--- 0x14930996
+Next Shortcut
+--- 0x112957020
+Quest Journal Panel
+--- 0x190688732
+Mouse
+--- 0x136793091
+The next key you press or mouse button that you click will be mapped to the '
+' action.  You may combine keys with SHIFT, CTRL or ALT to create new mappings.  Remapping joystick input or mouse buttons zero(0) or one(1) is not supported.\n\nPress the ESC key to cancel.
+--- 0x247670807
+'
+' ('
+')
+--- 0x3838932
+Turn Right
+--- 0x1565872
+When on, floating damage numbers appear over creatures in the game.
+--- 0x93101572
+Cancel.
+--- 0x67910124
+Graphics
+--- 0x190849829
+Walk Mode
+--- 0x201094620
+Audio
+--- 0x33754420
+Turn Left
+--- 0x256272580
+Default
+--- 0x140819292
+Default UI
+--- 0x119631063
+Left-Click to add a binding for this action.
+--- 0x65181932
+Revert Advanced
+--- 0x9588972
+Key Mapping
+--- 0x73725044
+Restore defaults?
+--- 0x236978012
+Enter a name to save your customized keymap:
+--- 0x182207059
+Previous Shortcut Bar
+--- 0x162667020
+Revert Keys
+--- 0x23310556
+Could not overwrite 
+. Keymap was not saved.
+--- 0x795427
+Previous Shortcut
+--- 0x179335303
+('
+') Left-Click to change this binding. Right-click to remove it.
+--- 0x115118867
+Skills Panel
+--- 0x114880348
+Social Panel
+--- 0x53290302
+Toggle 1st/3rd Person View
+--- 0x195212556
+UI Settings
+--- 0x124536679
+'
+' is currently bound to '
+'. Do you wish to erase that binding?
+--- 0x12889828
+Next Shortcut Bar
+--- 0x151195836
+Revert UI
+--- 0x247960196
+Strafe Right
+--- 0x107093132
+Overwrite 
+?
+--- 0x149777444
+Save all changes?
+--- 0x226831241
+Zoom camera out
+--- 0x251809715
+Show Character/Object Names
+--- 0x155224068
+See Damage Numbers
+--- 0x55841420
+Default Keys
+--- 0x202303292
+Revert Mouse
+--- 0x133225764
+Strafe Left
+--- 0x243774533
+You are activating or de-activating high-resolution textures. Please press Apply to confirm this change. You must re-start the game to load the new textures properly. You will only be able to see the new textures if you have an account enabled with Asheron's Call: Throne of Destiny.
+--- 0x106705100
+Default Advanced
+--- 0x161100476
+Adv Graphics
+--- 0x256795412
+Move Forward
+--- 0x140068887
+'
+' is currently bound to a non user-bindable action. Please select a different binding.
+--- 0x101766404
+Zoom in Camera
+--- 0x244184204
+
+
+--- 0x175406340
+Reset Camera Position
+--- 0x138017708
+Default Audio
+--- 0x180383756
+
+
+--- 0x245643362
+Toggle Mouse Cursor
+--- 0x241089589
+You are attempting to change the gameplay resolution.  The game will revert to previous settings if the 'Yes' button is not selected within 
+ seconds.
+--- 0x113538707
+'
+' conflicts with the following bindings:\n
+\nDo you wish to erase those bindings?
+--- 0x117598533
+Use
+--- 0x176552044
+Revert Graphics
+--- 0x201639100
+Revert Audio
+--- 0x230842404
+Add
+--- 0x4860012
+Default Graphics
+--- 0x144425900
+Default Mouse
+--- 0x52409068
+Select a keymap from the list. WARNING: Any changes you have made to the current keymap will be lost!
+--- 0x261493475
+Move Backwards
+--- 0x197643545
+Inventory Panel
+--- 0x2246448
+Jump

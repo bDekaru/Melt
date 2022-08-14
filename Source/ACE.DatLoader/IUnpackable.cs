@@ -6,4 +6,9 @@ namespace ACE.DatLoader
     {
         void Unpack(BinaryReader reader);
     }
+
+    public interface IPackable
+    {
+        void Pack(StreamWriter output);
+    }
 }

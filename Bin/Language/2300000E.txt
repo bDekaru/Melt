@@ -1,0 +1,1746 @@
+--- 0x265856620
+Wandering Fool
+--- 0x107096514
+Blood Shreth Butcher
+--- 0x103515506
+Eviscerator Decimator
+--- 0x105694119
+Vitae King
+--- 0x188458450
+Blood Seeker
+--- 0x16795076
+Darktides Finest
+--- 0x138237060
+Queen's Pack Rat
+--- 0x74876626
+Champion of Sanamar
+--- 0x19636617
+Pink Lady
+--- 0x46883828
+Lore Master - Quiz Night
+--- 0x201834807
+Fashion King
+--- 0x4859410
+Rage Quitter
+--- 0x160480969
+Nice Blue Lady
+--- 0x162583033
+Samurai
+--- 0x165954300
+Night Owl
+--- 0x42874148
+Hope of the Past
+--- 0x189517922
+Bugstomper
+--- 0x119241964
+Sentinal
+--- 0x37893810
+Epic Warrior
+--- 0x113875810
+Carraida's Avenger
+--- 0x214281857
+Defender of the Sea
+--- 0x68755714
+Level Master
+--- 0x89788594
+Wily Warrior
+--- 0x213459714
+K'nath An'dras Assassinator
+--- 0x91950370
+Reanimator
+--- 0x262976853
+Servant Of The Vile
+--- 0x136621892
+Idolized
+--- 0x159403173
+Mudmouth's Bane
+--- 0x173078068
+Teh Saint
+--- 0x179858867
+Harbinger of Madness
+--- 0x228131298
+Great Pookie Slayer
+--- 0x267409108
+The Nightmare Lord
+--- 0x83931010
+Pet Savior
+--- 0x237516338
+Gaerlan Slayer
+--- 0x30300082
+Purifier
+--- 0x96263218
+Viridian Dreamer
+--- 0x88227001
+Mommy Pengy
+--- 0x89177753
+Bloodthirsty
+--- 0x38331716
+The Gimped
+--- 0x7292226
+Super Gimped Adventurer
+--- 0x192238562
+Secret Keeper
+--- 0x110063668
+Drudge Dread
+--- 0x26053106
+Portal Stormer
+--- 0x263183573
+British Tootsie
+--- 0x176111010
+Ecto Cooler
+--- 0x93080293
+Crown Of the Deru
+--- 0x12098050
+Chain Breaker
+--- 0x38688462
+Pretty Pumpkin
+--- 0x136808722
+Sorcerer Slayer
+--- 0x74559794
+Axe Warrior
+--- 0x177614468
+Vagabond
+--- 0x248211940
+Bathed in Blood
+--- 0x57231940
+Guiding Light
+--- 0x70514898
+Kiree Killer
+--- 0x56748146
+Ghostbuster
+--- 0x216515651
+Ally of the Gold Primus
+--- 0x41329452
+Champion of Daemal
+--- 0x68813965
+Mom
+--- 0x47741282
+Elemental Eradicator
+--- 0x158195278
+Follower of Asheron
+--- 0x249373985
+Fire of the Tanada
+--- 0x237969573
+Warrior of the Seventh Circle
+--- 0x149921764
+Healer Ritualist
+--- 0x190027842
+Tracker
+--- 0x242538082
+Husbands Healer
+--- 0x231776684
+Annoying Furry Talking Animal
+--- 0x104106594
+Browerk Killer
+--- 0x159550229
+Soldier of Fortune
+--- 0x99937682
+Voracious Hunter
+--- 0x224218139
+Warlock
+--- 0x120226495
+Holiday Hero
+--- 0x209460834
+Master Fletcher
+--- 0x99689666
+Crystalline Adventurer
+--- 0x116143333
+Kazyk Ri's Bane
+--- 0x220978561
+Asheron's #1 Fan
+--- 0x28553298
+Contender
+--- 0x75357500
+Tactical Fantastical
+--- 0x20631906
+Reef Builder
+--- 0x26552284
+Uberest Noob on Frostfell
+--- 0x154591346
+Thrungus Reaper
+--- 0x14400741
+Warrior of the Crater Lake
+--- 0x103645794
+Cragstone Firefighter
+--- 0x156523474
+Viamontian Slayer
+--- 0x104126530
+Iron-Spined Chittick Immolator
+--- 0x223328660
+Shadow Puppet
+--- 0x100046418
+Sezzherei Slayer
+--- 0x181192482
+Frozen Fighter
+--- 0x11432142
+Fiendish Huntsman
+--- 0x85047218
+Road Warrior
+--- 0x192835746
+Broodu Killer
+--- 0x173822258
+Baby Bunny Master
+--- 0x207764530
+Live Event Coordinator
+--- 0x219155170
+Plate Armoredillo Punisher
+--- 0x9323970
+Vile Betrayer
+--- 0x58854882
+Peacebear
+--- 0x232865284
+Deadly Eggburt
+--- 0x133511041
+Paragon of the Rossu Morta
+--- 0x190136611
+Icy Veins
+--- 0x206613236
+Assistant's Assistant
+--- 0x219631330
+Altered Hunter
+--- 0x141711090
+Dire Drudge Decapitator
+--- 0x221568052
+Diplomat
+--- 0x248573362
+Arctic Adventurer
+--- 0x26792704
+Wimp
+--- 0x76090910
+Avatar of Kain
+--- 0x53967961
+Purple Pengy
+--- 0x127599878
+Royal Chef
+--- 0x101461115
+Ranger Ruuk
+--- 0x191189964
+Burning Soul
+--- 0x170322434
+Worker Obliterator
+--- 0x251535861
+Friend of the Frostglaive
+--- 0x229512431
+Ecto-Cooler
+--- 0x36301762
+Ultimate Warrior
+--- 0x128608818
+Polar Ursuin Pounder
+--- 0x97278436
+Warrior of the Past
+--- 0x171320658
+Gold Farmer
+--- 0x91541780
+Corruptor Of The Root
+--- 0x249589972
+Dedicated
+--- 0x227309330
+Expert Fallen Hunter
+--- 0x70064914
+Scary Pumpkin Slayer
+--- 0x136265355
+Guardian of the Dark
+--- 0x267409285
+The Nightmare Mage
+--- 0x126603218
+Blood Warrior
+--- 0x174298466
+Flower Sniffer
+--- 0x101559126
+Silver Serf
+--- 0x157068593
+Novice of the Sea
+--- 0x14927492
+{{keepspaces}}Lore Master  Quiz Night
+--- 0x63568893
+Zharalim
+--- 0x10605490
+Knight of the Northeast Tower
+--- 0x130740002
+Golden Gear Crafter
+--- 0x190285187
+Likes Getting Titles
+--- 0x186673559
+Crystal Lord King
+--- 0x50824869
+The Knowledgeable
+--- 0x66185397
+Champion of the Esper Node
+--- 0x243351188
+Seeker of the Hunt
+--- 0x186943026
+Sky Diver
+--- 0x37330646
+Iron Chef
+--- 0x91443842
+Burun Liberator
+--- 0x168488355
+Creature of Chaos
+--- 0x101879138
+Bone Breaker
+--- 0x9637921
+Cragstone Militia
+--- 0x133264643
+Cosmic Conscious
+--- 0x17880829
+Fashion Victim
+--- 0x83690866
+Grave Stalker
+--- 0x67048898
+Morale Smasher
+--- 0x44561572
+Rock Hound
+--- 0x9031656
+The Half-Fox
+--- 0x24364627
+Bearer of Darkness
+--- 0x91890914
+Pit Fighter
+--- 0x130490489
+Testing Guy
+--- 0x58822850
+Dev Killer
+--- 0x26772898
+Rawr!
+--- 0x247608931
+Queen of Brats
+--- 0x209338526
+Bane of the Remoran
+--- 0x153284027
+Big Block
+--- 0x136351168
+Guardian of the Keep
+--- 0x225896297
+Dead Eye for the Colossi
+--- 0x264615289
+Tough Guy
+--- 0x184893058
+Monster Killer
+--- 0x189346739
+Pwner of Newbs
+--- 0x46608548
+Darktides Most Wanted
+--- 0x218924130
+Honorary Shadow Hunter
+--- 0x174116354
+Riddle Ravager
+--- 0x117049860
+Lore Champion - Quiz Night
+--- 0x256360144
+Honorary Pink Eep
+--- 0x82605426
+Marble Wrangler
+--- 0x81131075
+Illuminating the Shadows
+--- 0x264414741
+Out of Tune
+--- 0x105891940
+Disciple of the Hunt
+--- 0x23380226
+Paradox Slayer
+--- 0x159749458
+Shadow Sunderer
+--- 0x161793347
+Shallows Shark Nemesis
+--- 0x191502402
+Envoy Slayer
+--- 0x16928597
+Aerbax's Bane
+--- 0x32302900
+Azure Assailant
+--- 0x230731218
+Scarecrow Slayer
+--- 0x205774389
+Marked by Fame
+--- 0x233735044
+Darkened Heart
+--- 0x232084626
+Harvester
+--- 0x188305682
+Asheron's Collect Caller
+--- 0x101701605
+Queller of Rage
+--- 0x244519410
+Nexus Crawler
+--- 0x86246162
+Spitter of the Queen
+--- 0x110374722
+Hungry for Moar
+--- 0x263494626
+Wabbit Killer
+--- 0x261789093
+Paragon of the Whispering Blade
+--- 0x13718102
+Champion of Sickles
+--- 0x108548242
+Wolfpack Crafter
+--- 0x130674258
+Scrapper
+--- 0x64858100
+Darkness in the Light
+--- 0x118231826
+Zombie Incursion Survivor
+--- 0x27999282
+Bloodstone Hunter
+--- 0x258067246
+Honorary Snowman
+--- 0x27235318
+Chef
+--- 0x248599554
+Small Mukkir Squasher
+--- 0x15599726
+Springs Into Action
+--- 0x177189122
+Gauntlet Gladiator
+--- 0x117910334
+Shield of Glenden
+--- 0x109751636
+The Come Back Kid
+--- 0x134723778
+TM Killer
+--- 0x202230162
+Death Dealer
+--- 0x162101122
+Fowl Follower
+--- 0x190790532
+Bright Knight
+--- 0x57592002
+Meddler
+--- 0x48187074
+Dire Mattekar Dispatcher
+--- 0x124939168
+Defender of Mr. P
+--- 0x156617090
+Hive Queenslayer
+--- 0x233265074
+Holly Jolly Helper
+--- 0x145736274
+Slimer
+--- 0x73281700
+Hostile Combatant
+--- 0x58758638
+Gear Knight Assassin
+--- 0x109309196
+Acidic Soul
+--- 0x191908180
+Duelist
+--- 0x58616258
+Player Slayer
+--- 0x265382403
+Lady of the Four Towers
+--- 0x217999486
+Death by Pumpkin
+--- 0x25666082
+Sharpshooter
+--- 0x255764665
+Flag Boy
+--- 0x183431042
+Mayoi Protector
+--- 0x127344389
+King of Darktide
+--- 0x229621314
+Bunny Master
+--- 0x235961186
+Life Preserver
+--- 0x264733269
+The Inquisitive
+--- 0x234258724
+Bane of the Blessed
+--- 0x160161390
+Titan
+--- 0x141030021
+Ring ring ring.....Bananaphone
+--- 0x196426195
+Nivinizk's Nemesis
+--- 0x265460516
+Gifted
+--- 0x41655874
+Lothus Servitor
+--- 0x255721826
+Ebon Gromnie Eradicator
+--- 0x201440222
+Soul Man
+--- 0x44904660
+Death Specialist
+--- 0x199754594
+Coin Collector
+--- 0x46492309
+No Cage Can Hold Me
+--- 0x167827122
+Moar Hunter
+--- 0x184400197
+Hamster Vitae
+--- 0x120664668
+Champion Immemorial
+--- 0x88799966
+Hero of Silyun
+--- 0x205771429
+Marked by Fate
+--- 0x31610996
+Chicken Nugget
+--- 0x186235874
+Gear Knight Recruiter
+--- 0x258875701
+Lore Master 2nd Place
+--- 0x219559621
+Slayer of the Great Pookie
+--- 0x10663858
+Knight of the Northwest Tower
+--- 0x260768018
+Fletcher
+--- 0x198254226
+Supreme Soldier
+--- 0x67387416
+Ulgrim's Happy Hundredth
+--- 0x160579388
+Jester's Fool
+--- 0x212440488
+Warlord of Dereth
+--- 0x57615052
+The Thought Spiral
+--- 0x95081684
+Shadow Child
+--- 0x61474706
+Pumpkin Slayer
+--- 0x205482098
+Titan Slayer
+--- 0x73989101
+Drudge Doom
+--- 0x157107092
+Ya got served
+--- 0x87997752
+Minty Fresh
+--- 0x227093701
+Husband of Lynnie
+--- 0x60528556
+Road Kill
+--- 0x116710133
+Knight of the Mhoire Throne
+--- 0x110670338
+Reeshan Killer
+--- 0x257288085
+Champion of the Linvak Node
+--- 0x148839701
+Lore- 2nd Place
+--- 0x57393074
+Knight Of Corrupted Amber
+--- 0x136776958
+Colosseum Champion
+--- 0x194786549
+Minik Ra's Bane
+--- 0x227082994
+Marked by Glamour
+--- 0x82591808
+Heats Things Up
+--- 0x205952133
+Society Savage
+--- 0x197168786
+The Dreamslayer
+--- 0x47845764
+Projectilist
+--- 0x90969444
+An Auberean Legend
+--- 0x144251307
+The Unknown Pk
+--- 0x245432041
+Ulgrim's Drinking Buddy
+--- 0x226443054
+Chimaera's Champion
+--- 0x170964210
+Pumpkin Stalker
+--- 0x134647362
+Seasonal Seeker
+--- 0x242602770
+Shellfish Hater
+--- 0x162098197
+Archmage of House Mhoire
+--- 0x38737875
+Hero of the Patriarch Raids
+--- 0x175352069
+Cold as Ice
+--- 0x115578772
+Master of the Hunt
+--- 0x192829970
+Shadow Soldier
+--- 0x78424466
+Dereth's Gladiator
+--- 0x177608770
+Tukora Lieutenant Trouncer
+--- 0x250271569
+Asheron's Militia
+--- 0x41790712
+Champion of Dereth
+--- 0x196123170
+Ring Master
+--- 0x212452818
+Deathcap Defeater
+--- 0x94340761
+Mr. Nice Guy
+--- 0x194243106
+Windreave Stalker
+--- 0x125095492
+Defender of Kryst
+--- 0x96470385
+Minister of the Sea
+--- 0x166746350
+Bringer of Pain
+--- 0x38032124
+Pest Control
+--- 0x241189700
+Haunted
+--- 0x47172194
+Thriller
+--- 0x76656194
+Viridian Stalker
+--- 0x207478613
+Defender of the Deru
+--- 0x119553284
+Jessica <3
+--- 0x197677154
+Sorcerer
+--- 0x234313986
+Golem Killer
+--- 0x174147218
+Knight Rider
+--- 0x60539364
+Dead Meat
+--- 0x62289298
+Gladiator
+--- 0x157119442
+Torgluuk's Liberator
+--- 0x62110175
+Hungry Hungry Hippo
+--- 0x39661138
+Snazzy Dresser
+--- 0x70653173
+Protector of the Cheese
+--- 0x267959267
+Hunter Of Thorns
+--- 0x232752393
+Baron Oddity
+--- 0x52057650
+Soldier Slaughterer
+--- 0x260400723
+Master of the Elements
+--- 0x131675774
+Assassin
+--- 0x98609237
+Archmage
+--- 0x257133571
+Runs Through Sprinklers
+--- 0x23679042
+Carenzi Slayer
+--- 0x259883253
+Derethian Newbie
+--- 0x224486535
+Wardens Thug
+--- 0x94572003
+King of Pierce Diggys
+--- 0x251116754
+Scary Pumkpkin Dominator
+--- 0x179727758
+Gauntlet Champion
+--- 0x33728537
+Misunderstood Pengy
+--- 0x143106239
+Murderer !
+--- 0x222701401
+Cold Turkey
+--- 0x31611170
+Spiketooth Slayer
+--- 0x180983186
+Shadow Hunter
+--- 0x10840094
+Wonder Woman
+--- 0x103087438
+Mushroom Man
+--- 0x223822098
+Harvester Harvester
+--- 0x44364403
+Lore Master of Staves
+--- 0x44463922
+Frelorn Slayer
+--- 0x256100178
+Crater Crasher
+--- 0x23937810
+Rift Shifter
+--- 0x82380674
+Slithis Slayer
+--- 0x40223058
+Bow Hunter
+--- 0x223714942
+AC Veteran
+--- 0x109978484
+Gimpy Mage of Might
+--- 0x218918322
+Tomb Raider
+--- 0x143960564
+Ender of Torment
+--- 0x238276291
+Mage Of Thorns
+--- 0x33823490
+Thornstalker
+--- 0x19096802
+Stonebreaker
+--- 0x232490645
+Champion of the A'mun Node
+--- 0x10296621
+Pond Scum
+--- 0x5646981
+Legionnaire
+--- 0x258765682
+Thunder Chicken Slayer
+--- 0x72322034
+Prodigal Tusker Slayer
+--- 0x121235954
+Elite Head Hunter
+--- 0x232365122
+Guppy Master
+--- 0x234084436
+Alchemist
+--- 0x144870004
+Hero of the Night
+--- 0x30107778
+Murderer
+--- 0x181759454
+Arena Custodian
+--- 0x232651429
+Knight of the Golden Flame
+--- 0x1938916
+Mages Assitant
+--- 0x73511636
+Crypt Rat
+--- 0x211998242
+Ravenous Killer
+--- 0x167949842
+Pink Bunny Killer
+--- 0x47478514
+Gear Knight Defender
+--- 0x171613525
+Historian of the Mhoire Throne
+--- 0x32300180
+Tactical Aid
+--- 0x204136562
+Queenslayer
+--- 0x25424466
+Royal Investigator
+--- 0x212070210
+The Nightmare Stalker
+--- 0x174306565
+Deadeye
+--- 0x101810658
+Warrior Vanquisher
+--- 0x201264421
+Swordbearer of House Mhoire
+--- 0x101336051
+Supercalifragilisticexpialidocious
+--- 0x257539388
+Auberean's Sentinel
+--- 0x198834725
+Ain't afraid of no ghost..mwahaha!
+--- 0x88181701
+Master of the Oubliette
+--- 0x116468457
+Evil Toothfairy
+--- 0x256487598
+Friend of Silyun
+--- 0x203129186
+Guruk Hunter
+--- 0x173028196
+Hide and Seek Specialist
+--- 0x257501121
+Friend of Rheaga
+--- 0x246963250
+Fungal Farmer
+--- 0x33004469
+Has way too much time
+--- 0x115753492
+Mender of the Rift
+--- 0x230350373
+Seeker of Castle Mhoire
+--- 0x50995256
+Guardian of Dereth
+--- 0x230884699
+Proton Pack
+--- 0x145543698
+Stone Cold Killer
+--- 0x70569100
+Clouded Soul
+--- 0x222156473
+Mosswart Ally
+--- 0x145554420
+Tusker Blight
+--- 0x113182956
+Knight of the Windmill
+--- 0x168057058
+Mana Field Finder
+--- 0x41472452
+Beginning's End
+--- 0x165201749
+Initiate of the Blade
+--- 0x220440229
+Guardian of Cragstone
+--- 0x211460914
+Rehir Killer
+--- 0x243321026
+Mad Cow Slayer
+--- 0x55612772
+Well Trained
+--- 0x242987269
+Champion Of The Viridian Tree
+--- 0x130400592
+Ulgrim's Eep
+--- 0x190607170
+Trapper
+--- 0x19395442
+Naughty Skeleton Snuffer
+--- 0x143662120
+Warden of Dereth
+--- 0x258462626
+The True Emperor
+--- 0x117407004
+Guardian Angel
+--- 0x256023746
+Kingslayer
+--- 0x250320771
+Jack-O'-All Trades
+--- 0x4209460
+Awakened
+--- 0x22174217
+Champion of the Hive
+--- 0x205791643
+Marked by Luck
+--- 0x167135426
+Expert Banished Hunter
+--- 0x64021045
+Honorary Windreave
+--- 0x553443
+Minik Ra's Nemesis
+--- 0x207991698
+Double Golem Killer
+--- 0x633059
+Kazyk Ri's Nemesis
+--- 0x159422259
+Searching the Shadows
+--- 0x267945666
+Resistance Fighter
+--- 0x21834354
+Wanga Fighter
+--- 0x13625134
+Honorary Rea of the Aun
+--- 0x144521042
+Soldier of the Queen
+--- 0x218890898
+Dereth's Master Dodger
+--- 0x220544382
+Game Warden
+--- 0x69084085
+Have Trike Will Babble
+--- 0x239661982
+Holtburg's Survivor Champion
+--- 0x56666146
+Renegade Hunter
+--- 0x2075282
+The Dark Dreamwalker
+--- 0x67528594
+Polardillo Pummeler
+--- 0x206182079
+I Can Haz Title Nao
+--- 0x38859090
+Pig Farmer
+--- 0x82642628
+Accursed
+--- 0x261336356
+Champion of the Hunt
+--- 0x197443138
+Adventurer
+--- 0x217730421
+Gangsta Style
+--- 0x142734386
+Viridian Slayer
+--- 0x72009842
+Puzzlemaster
+--- 0x132514964
+Warden of the Burning Wood
+--- 0x242595399
+Likes Where This Is Going
+--- 0x49912926
+The Forgotten
+--- 0x78562530
+Dojiro Sangi's Savior
+--- 0x77706701
+Likes Ulgrim
+--- 0x41572040
+Hero of Dereth
+--- 0x96654360
+Tough Tough
+--- 0x107062098
+Dagger Fighter
+--- 0x133848482
+Staff Warrior
+--- 0x21391939
+Master of Puppets
+--- 0x66199716
+The Bait
+--- 0x141036530
+Gardener Weeder
+--- 0x85132066
+Rat Reaper
+--- 0x63002994
+Blademaster
+--- 0x176930834
+Party-Goer
+--- 0x183261524
+Apprentice of the Hunt
+--- 0x18541234
+Swashbuckler
+--- 0x133677027
+Xenophobic
+--- 0x188601652
+Golden God
+--- 0x197126260
+Resistance Recruit
+--- 0x60694258
+Aerbax Slayer
+--- 0x177927522
+Third Eye Blinder
+--- 0x69042802
+Friend of Sanamar
+--- 0x149845922
+Twins of Terror
+--- 0x147469813
+Life Mage
+--- 0x221761589
+Champion of the Halaetan Node
+--- 0x121115182
+Survivor Champion
+--- 0x137218241
+99 Problems, Olthoi Ate 1
+--- 0x29328675
+Thrungamandius
+--- 0x260238692
+Brought to Light
+--- 0x10033488
+Friend to Mr. P
+--- 0x190025505
+Certified Ganksta
+--- 0x59108165
+Reggae Renegade
+--- 0x3405794
+Bug Butcher
+--- 0x214071394
+Storm Rider
+--- 0x260878658
+Siraluun Slasher
+--- 0x122448702
+King of all that is Pumpkin
+--- 0x148163380
+Unwitting Participant
+--- 0x77046900
+Item Adept
+--- 0x111100933
+All for One
+--- 0x184953314
+Gift Gopher
+--- 0x206941540
+Philanthropist
+--- 0x220901198
+Soul Siphon
+--- 0x11106738
+Novice Wanderer
+--- 0x253523749
+Nivinizk's Bane
+--- 0x93056579
+Ravenous
+--- 0x210834878
+Memorial Champion
+--- 0x227100226
+Bunny Killer
+--- 0x146258837
+Fancy Title
+--- 0x250642418
+Stalker Stalker
+--- 0x115491865
+Red Fury
+--- 0x27630837
+Follower of the Vine
+--- 0x61138306
+Glowing Archer
+--- 0x145733714
+Slicer
+--- 0x86271207
+The Chosen King
+--- 0x45463934
+Lakeman
+--- 0x212022956
+Daredevil
+--- 0x244573550
+Seeker of Asheron
+--- 0x212898691
+Killer Among Shadows
+--- 0x83440395
+Emotional Wreck
+--- 0x154021028
+Wabbit Bait
+--- 0x545934
+I am Big \[\]D \[\] \[\]\\/\[\] \[\]D \[\] \[\]\\\[\]
+--- 0x139804164
+Pumpkin Lord
+--- 0x162179730
+Colier Miner
+--- 0x236770051
+Heretic
+--- 0x240462823
+Double Fashion King
+--- 0x168015906
+Ring Bearer
+--- 0x232337810
+Pokemon Slayer
+--- 0x8644932
+Queen's Packrat
+--- 0x146955474
+Master of the Porcelain Altar
+--- 0x209460082
+Queens Crafter
+--- 0x71787970
+Amateur Explorer
+--- 0x114189016
+Defender of Dereth
+--- 0x211748930
+Timeless Adventurer
+--- 0x119155586
+Annihilator
+--- 0x257287001
+Chosen of Varicci
+--- 0x121880771
+Guardian in the Patriarch Raids
+--- 0x133669474
+Mosswart Worshipper Whipper
+--- 0x148357890
+Harvester Harvester Harvester
+--- 0x221654516
+Artisan of the Flame and Light
+--- 0x38827090
+Doomsayer
+--- 0x119826177
+Glenden Wood Militia
+--- 0x140754948
+Protector of the Past
+--- 0x232111253
+Jester's Accomplice
+--- 0x193790325
+Forever Alone
+--- 0x124596782
+Archer Assassin
+--- 0x260431698
+Archer
+--- 0x191907202
+Grave Robber
+--- 0x171644418
+Lore Master
+--- 0x249301332
+Anthropologist
+--- 0x132691189
+Vixen of Vitae
+--- 0x55841113
+Lucky Lady
+--- 0x195583138
+Knight of the Southeast Tower
+--- 0x219489705
+Champion of the Wild
+--- 0x190930433
+Lord of the Arena
+--- 0x196250658
+Pumpkin Throne Usurper
+--- 0x154371684
+Strategist
+--- 0x41890645
+Hero of House Mhoire
+--- 0x180897794
+Leviathan Slayer
+--- 0x58825042
+Cow Killer
+--- 0x111373556
+Curmudgeon's Friend
+--- 0x263185988
+Defeater of the Blight
+--- 0x243609092
+Possessed
+--- 0x17668706
+Reef Breaker
+--- 0x65558388
+Exploring Archaeologist
+--- 0x222514978
+Floeshark Flogger
+--- 0x220604290
+Live Op Coordinator
+--- 0x214402210
+Master Gladiator
+--- 0x240340414
+True Tactician
+--- 0x261566199
+Fashion Penguin King
+--- 0x247294217
+Jive Turkey
+--- 0x178546193
+Paragon of New Aluvia
+--- 0x127606763
+Royal Cook
+--- 0x79876318
+Vitae Vixen
+--- 0x112711676
+Hard to Kill
+--- 0x58246354
+Keerik Killer
+--- 0x192681935
+Queen's Crafter
+--- 0x150303858
+Adept Explorer
+--- 0x233080436
+Tower Guardian Architect
+--- 0x249880099
+Controller of Emotions
+--- 0x29889180
+The Great and Powerful
+--- 0x198115460
+Hollywood Bud
+--- 0x145377106
+Sniper
+--- 0x82084036
+Best Melee in DT
+--- 0x81629331
+Can't Follow Directions
+--- 0x123886462
+Lady Tairla's Champion
+--- 0x158831538
+Asheron's Defender
+--- 0x128574386
+Dereth Recruiter
+--- 0x140585081
+Banderling Bully
+--- 0x85824274
+Wisp Whipper
+--- 0x16013737
+Hot in the City
+--- 0x195705676
+Epic Fail
+--- 0x241490232
+Paragon of Death
+--- 0x77278238
+God of the Swordsman
+--- 0x220466546
+Prodigal Harbinger Slayer
+--- 0x14657282
+Crypt Creeper
+--- 0x177107102
+Cuddly Kitten >\^..\^<
+--- 0x53019557
+Dereth's Elite
+--- 0x211259124
+Life Adept
+--- 0x198556421
+Expendable
+--- 0x87661500
+Old School
+--- 0x183483729
+Slayer of Rheaga
+--- 0x137221503
+Death by Sappho
+--- 0x166067074
+Experienced Explorer
+--- 0x261949012
+Initiate of the Hunt
+--- 0x147318450
+Escapee Killer
+--- 0x41079298
+The Twisted Weaver
+--- 0x202968770
+Live Events Manager
+--- 0x35575355
+Duleing with the Dark
+--- 0x235857714
+Zefir Zapper
+--- 0x132591765
+Spooky Title
+--- 0x154335027
+Guardian of Arwic
+--- 0x2821145
+Ruuk Ally
+--- 0x38796583
+Mushroom King
+--- 0x255652018
+Rynthid Wrecker
+--- 0x188871330
+Bridge Jumper
+--- 0x171675139
+Plucker of Eyes
+--- 0x192156857
+Apothecary
+--- 0x264436899
+Master of Staves
+--- 0x185546002
+Gangster
+--- 0x123906412
+One for All
+--- 0x119778836
+Chicken Select
+--- 0x50318898
+Moarsman Defiler
+--- 0x152823941
+Invader's Bane
+--- 0x29521794
+Augmented Hunter
+--- 0x774208
+Servant of The Deep
+--- 0x155007150
+Gladiator Champion
+--- 0x68782761
+Spy
+--- 0x161564424
+Immortal Champion
+--- 0x139363394
+Mukkir Masher
+--- 0x81180802
+Bloodletter
+--- 0x152978578
+Intrepid Explorer
+--- 0x175750674
+Wicked Skeleton Walloper
+--- 0x127211854
+Timberman
+--- 0x34372014
+Tracker Guardian
+--- 0x234130770
+Abhorrent Warrior
+--- 0x91534962
+Present Protector
+--- 0x149073006
+Leviathan
+--- 0x221510740
+Cragstone Knight
+--- 0x59353347
+Gimp Goddess
+--- 0x162452418
+Lightbringer
+--- 0x220875380
+Perforated Knight
+--- 0x238088418
+Skullsplitter
+--- 0x109847268
+Double Agent
+--- 0x67276284
+Selfless Soul
+--- 0x185786403
+Haunts Your Dreams
+--- 0x139681870
+Double Survival Champion
+--- 0x86259157
+Harbinger's Bane
+--- 0x17269236
+Viridian Knight
+--- 0x239674549
+Patron Saint of the Lifestone
+--- 0x90960866
+Turbine Slayer
+--- 0x96276498
+Wayfarer
+--- 0x170274322
+Pink Bunny Master
+--- 0x144088100
+Rugged
+--- 0x78862907
+In the Dark
+--- 0x1395838
+Fashion Queen
+--- 0x85798338
+Dev Slayer
+--- 0x58768533
+Carebear Stare
+--- 0x112935316
+Always Picked First
+--- 0x159615506
+Hilltop Defender
+--- 0x183182193
+Dryreach Militia
+--- 0x62063252
+Ain't afraid of no ghost!
+--- 0x215913442
+Triple Golem Killer
+--- 0x154864818
+Rynthid Ravager
+--- 0x156483086
+Captain
+--- 0x10226658
+Merciful Killer
+--- 0x126092738
+Avalanche Avoider
+--- 0x202636615
+Lange Gang
+--- 0x239760306
+Asheron's Savior
+--- 0x267852626
+Hunter
+--- 0x234196654
+Fisherman
+--- 0x14971235
+Warden in the Patriarch Raids
+--- 0x63568241
+Staff Masta
+--- 0x237627634
+Mountain Climber
+--- 0x126775580
+Corrosive Soul
+--- 0x263685256
+Bosh Bosh Kibosh
+--- 0x214044114
+Queen's Tinker
+--- 0x257239748
+Master of the Twisted Word
+--- 0x192331474
+Heart Ripper
+--- 0x234858066
+Enchanter
+--- 0x104447491
+Pink Goddess
+--- 0x165633908
+Bane of the Blight
+--- 0x182797954
+Paradox-touched Queenslayer
+--- 0x197396041
+Killcrane's Ally
+--- 0x7668398
+Co-Monarch of TheChosen
+--- 0x18876850
+Jester's Emancipator
+--- 0x200862229
+Steward of Castle Mhoire
+--- 0x224237538
+Warrior
+--- 0x102777186
+Prodigal Shadow Slayer
+--- 0x207791538
+Tremendous Monouga Master
+--- 0x43766323
+Grounded Morals
+--- 0x206866818
+Desert Warrior
+--- 0x159972290
+Minion Marauder
+--- 0x234342146
+Basher Slasher
+--- 0x177649218
+Soldier
+--- 0x150291779
+Knight Of Thorns
+--- 0x31844434
+Master Explorer
+--- 0x185771177
+Gear Knight Emissary
+--- 0x70001554
+Mud Slinger
+--- 0x111134932
+Pugilist
+--- 0x144120329
+Sentry
+--- 0x60443525
+Beacon of Hope
+--- 0x25375973
+Warrior of Woe
+--- 0x80011240
+Keeper of Dereth
+--- 0x105503922
+Prisoner
+--- 0x118829746
+Deliverer
+--- 0x143886094
+Holtburg Survival Champion
+--- 0x185246060
+Ally of the Council
+--- 0x82096466
+Spring Cleaner
+--- 0x112059668
+Asheron's Call God
+--- 0x229003573
+Hero of Woe
+--- 0x27251456
+Gimp
+--- 0x186965378
+Virindi Informer
+--- 0x59056452
+Chosen of the Rift
+--- 0x137988690
+Mottled Carenzi Mauler
+--- 0x214769872
+Sure Step
+--- 0x31896516
+Death by Default
+--- 0x7470946
+Hopebringer
+--- 0x122527130
+Liberator of Uziz
+--- 0x191201668
+Fiery Spirit
+--- 0x131252306
+Thane of Colier
+--- 0x25651582
+Dire Huntsman
+--- 0x3819522
+Apprentice Shadow Hunter
+--- 0x185653330
+Cruel Summer
+--- 0x169902403
+Ally of the Lothus
+--- 0x143884595
+\$imiu\$
+--- 0x242153362
+The Pwnerer
+--- 0x196792894
+Epic Win
+--- 0x195508386
+Knight of the Southwest Tower
+--- 0x57429028
+Always Picked Last
+--- 0x106718051
+GIMP
+--- 0x46157817
+Snowbunny
+--- 0x130191346
+Olthoi Ripper Reducer
+--- 0x255068892
+Staypuffed Mallow Girl
+--- 0x12831012
+Squire of New Viamont
+--- 0x229856386
+Mace Warrior
+--- 0x113736162
+Mayor of Ayan Baqur
+--- 0x175907022
+Tradesman of Auberean
+--- 0x244168190
+Pro Fisherman
+--- 0x67819955
+The Restless
+--- 0x215913586
+Arctic Mattekar Annihilator
+--- 0x252457025
+Acolyte of the Sea
+--- 0x262904569
+Cowboy
+--- 0x208099364
+Honorary Burun Scout
+--- 0x89068709
+Newby Title
+--- 0x39049410
+Dev Evader
+--- 0x74813570
+Insatiable Slayer
+--- 0x22174729
+Champion of Assassins
+--- 0x43330088
+Big Rocx
+--- 0x239584386
+Adept Adventurer
+--- 0x211689570
+Man-At-Arms Thrasher
+--- 0x167604425
+Fungi
+--- 0x240614754
+Jester's Little Helper
+--- 0x176877695
+Hoogan's Hero
+--- 0x69854674
+Hero of Sanamar
+--- 0x66318066
+The Noob
+--- 0x258665252
+Glenden Wood Knight
+--- 0x2349826
+Spelunker
+--- 0x79801586
+Ankle Biter
+--- 0x156126532
+Survivalist
+--- 0x208215746
+Treasure Hunter
+--- 0x225828370
+Repugnant Eater Ripper
+--- 0x201381364
+Viridian Lord
+--- 0x249911003
+Number one draft pick
+--- 0x167033381
+Lots of Vitae
+--- 0x142773156
+Beginning of the End
+--- 0x58502325
+Penguin Plunge
+--- 0x215728370
+Slayer of the Black Spear
+--- 0x113947491
+Fearless
+--- 0x120983970
+Spear Warrior
+--- 0x15867042
+Conspirator
+--- 0x8943860
+Unknown
+--- 0x224401490
+Rift Walker
+--- 0x52235950
+Fan of Asheron
+--- 0x88889623
+Underworld-Thugg
+--- 0x264380498
+Evoker
+--- 0x180363811
+Follows Directions
+--- 0x105813298
+Fearless Fighter
+--- 0x171186999
+Shutterbug
+--- 0x85007010
+Penguin Killer
+--- 0x264515230
+Shocking Disposition
+--- 0x4993890
+The Tou-Tou Terror
+--- 0x76566610
+The Cool Kids Club
+--- 0x70900382
+Marked by Bacon
+--- 0x46088997
+Champion of the Aerlinthe Node
+--- 0x163802996
+Volcanologist
+--- 0x224225447
+Master of the Mystical Mug
+--- 0x115398906
+The Purple Fez
+--- 0x242256037
+Gumshoe
+--- 0x229720210
+Shadow Slayer
+--- 0x263912034
+Master of Slaughter
+--- 0x181694274
+Skipper
+--- 0x97484681
+Dark Sword Lady
+--- 0x237839106
+Rock Star
+--- 0x98187410
+Voracious Flayer
+--- 0x199017540
+Warden's Assistant
+--- 0x118476226
+Negotiator
+--- 0x62894802
+Contract Killer
+--- 0x58139518
+Brutal Barbarian
+--- 0x257552270
+Cathedrals Champion
+--- 0x201356917
+Hero of the Golden Flame
+--- 0x169181421
+Dude of DOOM!
+--- 0x64880516
+Lore Champion Quiz Night
+--- 0x177303378
+Dagger Master
+--- 0x77463806
+Arwician
+--- 0x30214084
+Sureshot
+--- 0x9599170
+Impaler
+--- 0x130393540
+Obviously Bored
+--- 0x43768031
+Ain't afraid of no ghost
+--- 0x89071854
+Champion of Silyun
+--- 0x41601669
+Champion of House Mhoire
+--- 0x258147845
+Oolutanga's Bane
+--- 0x1122036
+Transcended
+--- 0x253593124
+Lore 2nd Place Quiz Night
+--- 0x243810036
+Archaeologist
+--- 0x193717250
+Golem Slayer
+--- 0x179961217
+Chosen of Elysa
+--- 0x141180990
+Notable Citizen
+--- 0x231889678
+Myrmidon
+--- 0x96555404
+Guardian of Linvak Tukal
+--- 0x158807395
+Colossus
+--- 0x233639618
+Libe Events Manager
+--- 0x114916692
+2nd Place Lore- Quiz Night
+--- 0x37025538
+Explorer
+--- 0x149404002
+Hamster Herder
+--- 0x133778625
+Champion of the Sea
+--- 0x50810674
+Master Tinkerer
+--- 0x230831780
+Death Knight
+--- 0x139388216
+Artifex
+--- 0x171710690
+Bounty Hunter
+--- 0x46805586
+Shredder
+--- 0x117510229
+
+--- 0x161120770
+Life Caster
+--- 0x244727150
+Vanquisher of the Titan
+--- 0x114357908
+The Focused
+--- 0x194498108
+Have Bunnie's Will Travel
+--- 0x205940802
+Exterminator
+--- 0x76882098
+Ballisteer
+--- 0x161276946
+Shadow Stalker
+--- 0x149469874
+Fuzzy Bunny Slayer
+--- 0x95459260
+King of Caul
+--- 0x43722178
+Supreme Bunny Master
+--- 0x226525111
+Playa Killa King
+--- 0x97908866
+Rolling Death Destroyer
+--- 0x167379524
+Blood
+--- 0x125232629
+I Am Darktide
+--- 0x67510868
+Enlightened
+--- 0x176913068
+April's Fool
+--- 0x149837333
+Champion of the Obsidian Node
+--- 0x154271111
+Captivating
+--- 0x111400050
+Teh Newb
+--- 0x203466739
+Marked by the Patriarchs
+--- 0x134109378
+Coolest Title Ever!
+--- 0x69253157
+Squire of the Golden Flame
+--- 0x243621812
+Containment Unit
+--- 0x57502741
+Knight of the Whispering Blade
+--- 0x130877447
+I liked dying!
+--- 0x194009764
+Rayne's Mage Pet
+--- 0x48042693
+Arwic Noble
+--- 0x19737566
+Superman
+--- 0x107018347
+Seeker of Torgluuk
+--- 0x73192434
+Swordfighter
+--- 0x267216066
+Arcanum Adventurer
+--- 0x25431362
+Guardian of the Tower
+--- 0x65497635
+Undercover of Darkness
+--- 0x5428855
+Last Man Standing
+--- 0x6336740
+Arena Rat
+--- 0x73746675
+Nymph Maniac
+--- 0x88321797
+War Mage
+--- 0x86176866
+Unarmed Brawler
+--- 0x132827970
+Menhir Seeker
+--- 0x22162697
+Champion of Stone
+--- 0x5121140
+Portal Ritualist
+--- 0x178986094
+Likes Asheron
+--- 0x167981266
+Miner
+--- 0x171876131
+Lord of Dark Dreams
+--- 0x36477554
+Skullcrusher
+--- 0x170045058
+Cursed Adventurer
+--- 0x25108354
+Stone Collector
+--- 0x83652265
+Master of Ceremony
+--- 0x70132004
+War Adept
+--- 0x126581506
+Sanitation Engineer
+--- 0x69285364
+War Beast
+--- 0x37053221
+Likable
+--- 0x71546655
+Wardens Assistant
+--- 0x6866498
+The Black Spear
+--- 0x247187570
+Amelia's Caretaker
+--- 0x255468754
+Elite Explorer
+--- 0x36427054
+Loss Prevention
+--- 0x147942036
+Theurgist
+--- 0x110238100
+Bug Bait
+--- 0x59626306
+Sword Scholar
+--- 0x218831938
+Platinum Prowler
+--- 0x267663186
+Viridian Purifier
+--- 0x168135940
+Illuminated
+--- 0x13537092
+Creature Adept
+--- 0x208555873
+Master of the Sea
+--- 0x244627765
+Engorged Scourge
+--- 0x33484494
+Defender of Silyun
+--- 0x84886290
+Mushroom Collector
+--- 0x144999474
+Violator Grievver Vetoer
+--- 0x235480046
+PK Queen

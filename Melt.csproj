@@ -281,6 +281,10 @@
     <Compile Include="Source\ACE.DatLoader\Entity\Sphere.cs" />
     <Compile Include="Source\ACE.DatLoader\Entity\Stab.cs" />
     <Compile Include="Source\ACE.DatLoader\Entity\StarterArea.cs" />
+    <Compile Include="Source\ACE.DatLoader\Entity\UiState.cs" />
+    <Compile Include="Source\ACE.DatLoader\Entity\UiHashProperty.cs" />
+    <Compile Include="Source\ACE.DatLoader\Entity\UiMedia.cs" />
+    <Compile Include="Source\ACE.DatLoader\Entity\UiElement.cs" />
     <Compile Include="Source\ACE.DatLoader\Entity\StringTableData.cs" />
     <Compile Include="Source\ACE.DatLoader\Entity\SubPalette.cs" />
     <Compile Include="Source\ACE.DatLoader\Entity\SWVertex.cs" />
@@ -334,6 +338,7 @@
     <Compile Include="Source\ACE.DatLoader\FileTypes\SoundTable.cs" />
     <Compile Include="Source\ACE.DatLoader\FileTypes\SpellComponentsTable.cs" />
     <Compile Include="Source\ACE.DatLoader\FileTypes\SpellTable.cs" />
+    <Compile Include="Source\ACE.DatLoader\FileTypes\UiLayout.cs" />
     <Compile Include="Source\ACE.DatLoader\FileTypes\StringTable.cs" />
     <Compile Include="Source\ACE.DatLoader\FileTypes\Surface.cs" />
     <Compile Include="Source\ACE.DatLoader\FileTypes\SurfaceTexture.cs" />
@@ -652,6 +657,7 @@
     <Compile Include="Source\misc\charGen.cs" />
     <Compile Include="Source\misc\skillTable.cs" />
     <Compile Include="Source\misc\TextureHeader.cs" />
+    <Compile Include="Source\misc\LanguageFileTools.cs" />
     <Compile Include="Source\weenies\cache4Converter.cs" />
     <Compile Include="Source\weenies\cache8Converter.cs" />
     <Compile Include="Source\weenies\cache6Converter.cs" />

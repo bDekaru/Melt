@@ -1,3 +1,5 @@
+using ACE.DatLoader.Entity;
+using Melt;
 using System.Collections.Generic;
 using System.IO;
 
@@ -33,6 +35,16 @@ namespace ACE.DatLoader
             }
         }
 
+        public static void PackSmartArray(this List<uint> value, StreamWriter output)
+        {
+            Utils.writeCompressedUInt32((uint)value.Count, output);
+
+            foreach (var entry in value)
+            {
+                Utils.writeUInt32(entry, output);
+            }
+        }
+
         /// <summary>
         /// A SmartArray uses a Compressed UInt32 for the length.
         /// </summary>
@@ -48,6 +60,15 @@ namespace ACE.DatLoader
             }
         }
 
+        public static void PackSmartArray<T>(this List<T> value, StreamWriter output) where T : IPackable, new()
+        {
+            Utils.writeCompressedUInt32((uint)value.Count, output);
+
+            foreach(var entry in value)
+            {
+                entry.Pack(output);
+            }
+        }
 
         /// <summary>
         /// A SmartArray uses a Compressed UInt32 for the length.
@@ -118,7 +139,7 @@ namespace ACE.DatLoader
         /// A PackedHashTable uses a UInt16 for length, and a UInt16 for bucket size.
         /// We don't need to worry about the bucket size with C#.
         /// </summary>
-        public static void UnpackPackedHashTable<T>(this Dictionary<uint, T> value, BinaryReader reader) where T : IUnpackable, new()
+        public static ushort UnpackPackedHashTable<T>(this Dictionary<uint, T> value, BinaryReader reader) where T : IUnpackable, new()
         {
             var totalObjects = reader.ReadUInt16();
             var bucketSize = reader.ReadUInt16();
@@ -126,6 +147,81 @@ namespace ACE.DatLoader
             for (int i = 0; i < totalObjects; i++)
             {
                 var key = reader.ReadUInt32();
+
+                var item = new T();
+                item.Unpack(reader);
+                value.Add(key, item);
+            }
+
+            return bucketSize;
+        }
+
+        /// <summary>
+        /// A PackedHashTable uses a byte for length, and a byte for bucket size.
+        /// We don't need to worry about the bucket size with C#.
+        /// </summary>
+        public static byte UnpackBytePackedHashTable<T>(this Dictionary<uint, T> value, BinaryReader reader) where T : IUnpackable, new()
+        {
+            var bucketSize = reader.ReadByte();
+            var totalObjects = reader.ReadByte();
+
+            for (int i = 0; i < totalObjects; i++)
+            {
+                var key = reader.ReadUInt32();
+
+                var item = new T();
+                item.Unpack(reader);
+                value.Add(key, item);
+            }
+
+            return bucketSize;
+        }
+
+        public static byte UnpackBytePackedHashTable(this Dictionary<uint, UiHashProperty> value, BinaryReader reader)
+        {
+            var bucketSize = reader.ReadByte();
+            var totalObjects = reader.ReadByte();
+
+            for (int i = 0; i < totalObjects; i++)
+            {
+                var key = reader.ReadUInt32();
+
+                var item = new UiHashProperty();
+                item.Unpack(reader);
+                value.Add(key, item);
+
+                if (item.ValueArrayCount != 0)
+                    i += (int)item.ValueArrayCount;
+            }
+
+            return bucketSize;
+        }
+
+        public static void PackBytePackedHashTable<T>(this Dictionary<uint, T> value, byte bucketSize, StreamWriter output) where T : IPackable, new()
+        {
+            Utils.writeByte(bucketSize, output);
+            Utils.writeByte((byte)value.Count, output);
+
+            foreach(var entry in value)
+            {
+                Utils.writeUInt32(entry.Key, output);
+
+                entry.Value.Pack(output);
+            }
+        }
+
+        /// <summary>
+        /// A PackedHashTable uses a byte for length, and a byte for bucket size.
+        /// We don't need to worry about the bucket size with C#.
+        /// </summary>
+        public static void UnpackBytePackedHashTable<T>(this Dictionary<byte, T> value, BinaryReader reader) where T : IUnpackable, new()
+        {
+            var bucketSize = reader.ReadByte();
+            var totalObjects = reader.ReadByte();
+
+            for (int i = 0; i < totalObjects; i++)
+            {
+                var key = reader.ReadByte();
 
                 var item = new T();
                 item.Unpack(reader);
@@ -181,6 +277,55 @@ namespace ACE.DatLoader
             }
         }
 
+        public static void Unpack2<T>(this List<T> value, BinaryReader reader) where T : IUnpackable, new()
+        {
+            var totalObjects = reader.ReadByte();
+
+            for (int i = 0; i < totalObjects; i++)
+            {
+                var item = new T();
+                item.Unpack(reader);
+                value.Add(item);
+            }
+        }
+
+        /// <summary>
+        /// A list that uses a Byte for the length.
+        /// </summary>
+        public static void UnpackByte<T>(this List<T> value, BinaryReader reader) where T : IUnpackable, new()
+        {
+            var totalObjects = reader.ReadByte();
+
+            for (int i = 0; i < totalObjects; i++)
+            {
+                var item = new T();
+                item.Unpack(reader);
+                value.Add(item);
+            }
+        }
+
+        public static void Unpack(this List<uint> value, BinaryReader reader, uint fixedQuantity)
+        {
+            for (int i = 0; i < fixedQuantity; i++)
+            {
+                var item = reader.ReadUInt32();
+                value.Add(item);
+            }
+        }
+
+        public static void Pack(this List<uint> value, StreamWriter output, uint fixedQuantity)
+        {
+            int count = 0;
+            foreach(var entry in value)
+            {
+                if (count == fixedQuantity)
+                    break;
+
+                Utils.writeUInt32(entry, output);
+                count++;
+            }
+        }
+
         public static void Unpack<T>(this List<T> value, BinaryReader reader, uint fixedQuantity) where T : IUnpackable, new()
         {
             for (int i = 0; i < fixedQuantity; i++)
@@ -190,7 +335,6 @@ namespace ACE.DatLoader
                 value.Add(item);
             }
         }
-
 
         public static void Unpack<T>(this Dictionary<ushort, T> value, BinaryReader reader, uint fixedQuantity) where T : IUnpackable, new()
         {
