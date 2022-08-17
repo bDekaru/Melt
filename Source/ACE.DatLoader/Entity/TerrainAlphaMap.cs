@@ -7,7 +7,7 @@ namespace ACE.DatLoader.Entity
         public uint TCode { get; private set; }
         public uint TexGID { get; private set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             TCode   = reader.ReadUInt32();
             TexGID  = reader.ReadUInt32();

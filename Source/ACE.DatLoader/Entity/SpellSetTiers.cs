@@ -10,7 +10,7 @@ namespace ACE.DatLoader.FileTypes
         /// </summary>
         public List<uint> Spells = new List<uint>();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Spells.Unpack(reader);
         }

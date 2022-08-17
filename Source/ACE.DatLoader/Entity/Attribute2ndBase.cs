@@ -9,7 +9,7 @@ namespace ACE.DatLoader.Entity
     {
         public SkillFormula Formula { get; private set; } = new SkillFormula();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Formula.Unpack(reader);
         }

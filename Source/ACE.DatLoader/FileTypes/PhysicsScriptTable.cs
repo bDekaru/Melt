@@ -13,7 +13,7 @@ namespace ACE.DatLoader.FileTypes
     {
         public Dictionary<uint, PhysicsScriptTableData> ScriptTable { get; set; } = new Dictionary<uint, PhysicsScriptTableData>();
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
 

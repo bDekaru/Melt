@@ -7,7 +7,7 @@ namespace ACE.DatLoader.Entity
     {
         public List<AmbientSTBDesc> STBDesc { get; } = new List<AmbientSTBDesc>();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             STBDesc.Unpack(reader);
         }

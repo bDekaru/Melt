@@ -42,7 +42,7 @@ namespace ACE.DatLoader.FileTypes
         /// </summary>
         public List<byte> Height { get; } = new List<byte>();
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
 

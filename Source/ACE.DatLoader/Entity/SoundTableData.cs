@@ -12,7 +12,7 @@ namespace ACE.DatLoader.Entity
         public float Probability;
         public float Volume;
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             SoundId = reader.ReadUInt32();
             Priority = reader.ReadSingle();

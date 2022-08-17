@@ -19,7 +19,7 @@ namespace ACE.DatLoader.FileTypes
         public List<Frame> PosFrames { get; } = new List<Frame>();
         public List<AnimationFrame> PartFrames { get; } = new List<AnimationFrame>();
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id          = reader.ReadUInt32();
             Flags       = (AnimationFlags)reader.ReadUInt32();

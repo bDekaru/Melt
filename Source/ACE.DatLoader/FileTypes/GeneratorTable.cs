@@ -26,7 +26,7 @@ namespace ACE.DatLoader.FileTypes
         /// </summary>
         public List<Generator> WeenieObjectsItems { get; private set; } = new List<Generator>();
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
 

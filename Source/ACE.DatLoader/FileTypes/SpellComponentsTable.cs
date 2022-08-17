@@ -24,7 +24,7 @@ namespace ACE.DatLoader.FileTypes
 
         public Dictionary<uint, SpellComponentBase> SpellComponents { get; } = new Dictionary<uint, SpellComponentBase>();
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
 

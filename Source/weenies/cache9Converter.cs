@@ -426,7 +426,7 @@ namespace Melt
             outputFile.Close();
         }
 
-        void generateTreasureList()
+        public void generateTreasureList()
         {
             SortedDictionary<int, List<cWeenie>> deathTreasureMap = new SortedDictionary<int, List<cWeenie>>();
             SortedDictionary<int, List<cWeenie>> wieldedTreasureMap = new SortedDictionary<int, List<cWeenie>>();
@@ -460,7 +460,7 @@ namespace Melt
             StreamWriter outputFile = new StreamWriter(new FileStream("./output/deathTreasureList.txt", FileMode.Create, FileAccess.Write));
             foreach (KeyValuePair<int, List<cWeenie>> entry in deathTreasureMap)
             {
-                outputFile.WriteLine($"---{entry.Key} {(eTreasureGeneratorType)entry.Key}---");
+                outputFile.WriteLine($"---{entry.Key} {(eTreasureGeneratorTypeOriginal)entry.Key}---");
 
                 SortedDictionary<int, int> levelStats = new SortedDictionary<int, int>();
                 foreach (cWeenie listEntry in entry.Value)
@@ -482,7 +482,7 @@ namespace Melt
 
                 foreach (cWeenie listEntry in entry.Value)
                 {
-                    outputFile.WriteLine($"{listEntry.getStat(eStringStat.Name)}({listEntry.wcid}) - level: {listEntry.getStat(eIntStat.Level)}");
+                    outputFile.WriteLine($"{listEntry.getStat(eStringStat.Name)}({listEntry.wcid}) - class: {WeenieClassNames.getWeenieClassName(listEntry.wcid)} - level: {listEntry.getStat(eIntStat.Level)}");
                 }
                 outputFile.WriteLine("");
                 outputFile.WriteLine("");
@@ -517,7 +517,7 @@ namespace Melt
 
                 foreach (cWeenie listEntry in entry.Value)
                 {
-                    outputFile.WriteLine($"{listEntry.getStat(eStringStat.Name)}({listEntry.wcid}) - level: {listEntry.getStat(eIntStat.Level)}");
+                    outputFile.WriteLine($"{listEntry.getStat(eStringStat.Name)}({listEntry.wcid}) - class: {WeenieClassNames.getWeenieClassName(listEntry.wcid)} - level: {listEntry.getStat(eIntStat.Level)}");
                 }
                 outputFile.WriteLine("");
                 outputFile.WriteLine("");

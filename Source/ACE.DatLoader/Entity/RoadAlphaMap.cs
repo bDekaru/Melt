@@ -7,7 +7,7 @@ namespace ACE.DatLoader.Entity
         public uint RCode { get; private set; }
         public uint RoadTexGID { get; private set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             RCode       = reader.ReadUInt32();
             RoadTexGID  = reader.ReadUInt32();

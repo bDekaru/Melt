@@ -9,7 +9,7 @@ namespace ACE.DatLoader.Entity
         public double LightTickSize { get; private set; }
         public List<DayGroup> DayGroups { get; } = new List<DayGroup>();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             TickSize        = reader.ReadDouble();
             LightTickSize   = reader.ReadDouble();

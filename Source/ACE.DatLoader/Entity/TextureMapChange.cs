@@ -9,7 +9,7 @@ namespace ACE.DatLoader.Entity
         public uint OldTexture { get; set; }
         public uint NewTexture { get; set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             PartIndex   = reader.ReadByte();
             OldTexture  = reader.ReadAsDataIDOfKnownType(0x05000000);

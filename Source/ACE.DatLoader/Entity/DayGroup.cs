@@ -10,7 +10,7 @@ namespace ACE.DatLoader.Entity
         public List<SkyObject> SkyObjects { get; } = new List<SkyObject>();
         public List<SkyTimeOfDay> SkyTime { get; } = new List<SkyTimeOfDay>();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             ChanceOfOccur   = reader.ReadSingle();
             DayName         = reader.ReadPString();

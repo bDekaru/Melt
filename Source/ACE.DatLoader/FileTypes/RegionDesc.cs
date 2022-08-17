@@ -27,7 +27,7 @@ namespace ACE.DatLoader.FileTypes
         public TerrainDesc TerrainInfo { get; } = new TerrainDesc();
         public RegionMisc RegionMisc { get; } = new RegionMisc();
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
 

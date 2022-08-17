@@ -16,7 +16,7 @@ namespace ACE.DatLoader.Entity
         public float Radius { get; private set; }
         public float Height { get; private set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             PartIndex   = reader.ReadUInt32();
 

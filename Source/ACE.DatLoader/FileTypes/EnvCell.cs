@@ -33,7 +33,7 @@ namespace ACE.DatLoader.FileTypes
 
         public bool SeenOutside => Flags.HasFlag(EnvCellFlags.SeenOutside);
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
 

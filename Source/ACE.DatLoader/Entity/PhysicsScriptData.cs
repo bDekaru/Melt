@@ -7,7 +7,7 @@ namespace ACE.DatLoader.Entity
         public double StartTime { get; private set; }
         public AnimationHook Hook { get; private set; } = new AnimationHook();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             StartTime = reader.ReadDouble();
 

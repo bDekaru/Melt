@@ -21,7 +21,7 @@ namespace ACE.DatLoader.Entity
         /// </summary>
         public List<ushort> StabList { get; } = new List<ushort>();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Flags = (PortalFlags)reader.ReadUInt16();
 

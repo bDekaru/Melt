@@ -13,7 +13,7 @@ namespace ACE.DatLoader.FileTypes
     {
         public List<ObjectDesc> Objects { get; } = new List<ObjectDesc>();
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
 

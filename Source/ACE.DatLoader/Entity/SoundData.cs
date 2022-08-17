@@ -11,7 +11,7 @@ namespace ACE.DatLoader.Entity
         public List<SoundTableData> Data = new List<SoundTableData>();
         public uint Unknown;
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Data.Unpack(reader);
             Unknown = reader.ReadUInt32();

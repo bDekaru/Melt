@@ -13,7 +13,7 @@ namespace ACE.DatLoader.FileTypes
     {
         public List<uint> PaletteList { get; } = new List<uint>();
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
 

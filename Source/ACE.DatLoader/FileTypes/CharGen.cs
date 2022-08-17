@@ -13,7 +13,7 @@ namespace ACE.DatLoader.FileTypes
         public List<StarterArea> StarterAreas { get; } = new List<StarterArea>();
         public Dictionary<uint, HeritageGroupCG> HeritageGroups { get; } = new Dictionary<uint, HeritageGroupCG>();
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
             reader.BaseStream.Position += 4;

@@ -11,7 +11,7 @@ namespace ACE.DatLoader.Entity
         public List<RoadAlphaMap> RoadMaps { get; } = new List<RoadAlphaMap>();
         public List<TMTerrainDesc> TerrainDesc { get; } = new List<TMTerrainDesc>();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             BaseTexSize = reader.ReadUInt32();
 

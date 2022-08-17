@@ -16,7 +16,7 @@ namespace ACE.DatLoader.Entity
 
         public List<float> LandHeightTable { get; } = new List<float>();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             NumBlockLength  = reader.ReadInt32();
             NumBlockWidth   = reader.ReadInt32();

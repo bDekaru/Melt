@@ -7,7 +7,7 @@ namespace ACE.DatLoader.Entity.AnimationHooks
         public uint PES { get; private set; }
         public float Pause { get; private set; }
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             base.Unpack(reader);
 

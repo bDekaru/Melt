@@ -11,7 +11,7 @@ namespace ACE.DatLoader.Entity
         public float Luminosity { get; private set; }
         public float MaxBright { get; private set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             ObjectIndex = reader.ReadUInt32();
             GFXObjId    = reader.ReadUInt32();

@@ -15,7 +15,7 @@ namespace ACE.DatLoader.Entity
         public uint DetailTexTiling { get; private set; }
         public uint DetailTexGID { get; private set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             TexGID          = reader.ReadUInt32();
             TexTiling       = reader.ReadUInt32();

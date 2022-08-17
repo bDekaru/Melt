@@ -14,7 +14,7 @@ namespace ACE.DatLoader.Entity
         public Dictionary<uint, UiHashProperty> HashProperties;
         public List<UiMedia> Media;
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             StateId = reader.ReadUInt32();
             PassToChildren = reader.ReadByte();

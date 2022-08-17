@@ -16,7 +16,7 @@ namespace ACE.DatLoader.FileTypes
         // public int TextureCount { get; private set; }
         public List<uint> Textures { get; private set; } = new List<uint>(); // These values correspond to a Surface (0x06) entry
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
             Unknown = reader.ReadInt32();

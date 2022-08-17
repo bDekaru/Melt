@@ -11,7 +11,7 @@ namespace ACE.DatLoader.FileTypes
         public NumberingType NumberingType { get; private set; }
         public Dictionary<uint, string> IdToStringMap { get; private set; } = new Dictionary<uint, string>();    // m_id_to_string_map
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
             BaseEnumMap = reader.ReadUInt32();

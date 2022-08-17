@@ -29,7 +29,7 @@ namespace ACE.DatLoader
         public byte[] VersionMajor { get; private set; } = new byte[16];
         public uint VersionMinor { get; private set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             FileType    = reader.ReadUInt32();
             BlockSize   = reader.ReadUInt32();

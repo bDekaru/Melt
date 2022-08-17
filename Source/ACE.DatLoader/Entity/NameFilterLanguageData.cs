@@ -13,7 +13,7 @@ namespace ACE.DatLoader.Entity
 
         public List<string> CompoundLetterGroups = new List<string>();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             MaximumVowelsInARow = reader.ReadUInt32();
             FirstNCharactersMustHaveAVowel = reader.ReadUInt32();

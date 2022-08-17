@@ -43,7 +43,7 @@ namespace ACE.DatLoader.FileTypes
 
         public bool HasMissileFlightPlacement { get; private set; } = false;
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
 

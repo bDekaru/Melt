@@ -14,7 +14,7 @@ namespace ACE.DatLoader.FileTypes
         public byte ElementsBucketSize;
         public Dictionary<uint, UiElement> Elements;
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
             DisplayWidth = reader.ReadInt32();

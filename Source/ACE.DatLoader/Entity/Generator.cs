@@ -9,7 +9,7 @@ namespace ACE.DatLoader.Entity
         public uint Id { get; private set; }
         public List<Generator> Items { get; } = new List<Generator>();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Name = reader.ReadObfuscatedString();
             reader.AlignBoundary();

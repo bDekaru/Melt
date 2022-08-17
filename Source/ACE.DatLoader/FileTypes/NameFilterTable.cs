@@ -13,7 +13,7 @@ namespace ACE.DatLoader.FileTypes
         // Key is a list of a WCIDs that are "bad" and should not exist. The value is always 1 (could be a bool?)
         public Dictionary<uint, NameFilterLanguageData> LanguageData = new Dictionary<uint, NameFilterLanguageData>();
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
 

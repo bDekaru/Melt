@@ -10,7 +10,7 @@ namespace ACE.DatLoader.Entity
         public uint Type;
         public UiMediaType Data;
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Type = reader.ReadUInt32();
 
@@ -54,7 +54,7 @@ namespace ACE.DatLoader.Entity
 
     public interface UiMediaType
     {
-        void Unpack(BinaryReader reader);
+        void Unpack(BinaryReader reader, bool isToD = true);
         void Pack(StreamWriter output);
     }
 
@@ -64,7 +64,7 @@ namespace ACE.DatLoader.Entity
         public uint File;
         public uint DrawMode;
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Type = reader.ReadUInt32();
             File = reader.ReadUInt32();
@@ -85,7 +85,7 @@ namespace ACE.DatLoader.Entity
         public uint File;
         public uint SType;
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Type = reader.ReadUInt32();
             File = reader.ReadUInt32();
@@ -106,7 +106,7 @@ namespace ACE.DatLoader.Entity
         public string Filename;
         public bool Stretch;
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Type = reader.ReadUInt32();
             Filename = reader.ReadString();
@@ -127,7 +127,7 @@ namespace ACE.DatLoader.Entity
         public uint MessageId;
         public float Probability;
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Type = reader.ReadUInt32();
             MessageId = reader.ReadUInt32();

@@ -25,7 +25,7 @@ namespace ACE.DatLoader.Entity
         public Position LocationNPCEnd { get; } = new Position();
         public Position LocationQuestArea { get; } = new Position();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Version = reader.ReadUInt32();
             ContractId = reader.ReadUInt32();

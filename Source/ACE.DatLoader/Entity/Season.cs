@@ -7,7 +7,7 @@ namespace ACE.DatLoader.Entity
         public uint StartDate { get; private set; }
         public string Name { get; private set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             StartDate = reader.ReadUInt32();
             Name = reader.ReadPString();

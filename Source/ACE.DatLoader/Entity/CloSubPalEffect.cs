@@ -11,7 +11,7 @@ namespace ACE.DatLoader.Entity
         public uint Icon { get; private set; }
         public List<CloSubPalette> CloSubPalettes { get; } = new List<CloSubPalette>();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Icon = reader.ReadUInt32();
 

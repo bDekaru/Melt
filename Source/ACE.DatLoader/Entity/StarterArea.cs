@@ -8,7 +8,7 @@ namespace ACE.DatLoader.Entity
         public string Name { get; private set; }
         public List<Position> Locations { get; } = new List<Position>();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Name = reader.ReadString();
 

@@ -13,7 +13,7 @@ namespace ACE.DatLoader.Entity
         public string Text { get; private set; }
         public float CDM { get; private set; } // Unsure what this is
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Name        = reader.ReadObfuscatedString();
             reader.AlignBoundary();

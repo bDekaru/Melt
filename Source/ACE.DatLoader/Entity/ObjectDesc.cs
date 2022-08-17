@@ -18,7 +18,7 @@ namespace ACE.DatLoader.Entity
         public uint Orient { get; private set; }
         public uint WeenieObj { get; private set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             ObjId       = reader.ReadUInt32();
 

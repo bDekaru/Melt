@@ -11,7 +11,7 @@ namespace ACE.DatLoader.FileTypes
     {
         public string CharBuffer;
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
             uint strLen = reader.ReadCompressedUInt32();

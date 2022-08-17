@@ -8,7 +8,7 @@ namespace ACE.DatLoader.Entity
         public uint ClothingTable { get; private set; }
         public uint WeenieDefault { get; private set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Name            = reader.ReadString();
             ClothingTable   = reader.ReadUInt32();

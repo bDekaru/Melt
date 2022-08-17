@@ -7,7 +7,7 @@ namespace ACE.DatLoader.Entity
         public int PartId { get; private set; }
         public Frame Frame { get; } = new Frame();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             PartId = reader.ReadInt32();
             Frame.Unpack(reader);

@@ -20,7 +20,7 @@ namespace ACE.DatLoader.Entity
         /// </summary>
         public List<string> BannedPatterns { get; } = new List<string>();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Unknown1 = reader.ReadUInt32();
             Unknown2 = reader.ReadUInt16();

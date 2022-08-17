@@ -4,6 +4,7 @@ using System.IO;
 using System.Text;
 
 using ACE.Entity.Enum;
+using Melt;
 
 namespace ACE.DatLoader.Entity
 {
@@ -18,7 +19,7 @@ namespace ACE.DatLoader.Entity
         private const uint BpnN = 1114664526; // 0x42706E4E
         private const uint BPIN = 1112557902; // 0x4250494E
         private const uint BPnN = 1112567374; // 0x42506E4E
-        
+
         public string Type { get; protected set; }
 
         public Plane SplittingPlane { get; protected set; }
@@ -34,15 +35,15 @@ namespace ACE.DatLoader.Entity
         /// You must use the Unpack(BinaryReader reader, BSPType treeType) method.
         /// </summary>
         /// <exception cref="NotSupportedException">You must use the Unpack(BinaryReader reader, BSPType treeType) method.</exception>
-        public virtual void Unpack(BinaryReader reader)
+        public virtual void Unpack(BinaryReader reader, bool isToD = true)
         {
             throw new NotSupportedException();
         }
 
-        public virtual void Unpack(BinaryReader reader, BSPType treeType)
+        public virtual void Unpack(BinaryReader reader, BSPType treeType, bool isToD = true)
         {
             Type = Encoding.ASCII.GetString(reader.ReadBytes(4)).Reverse();
-            
+
             switch (Type)
             {
                 // These types will unpack the data completely, in their own classes
@@ -58,16 +59,16 @@ namespace ACE.DatLoader.Entity
             {
                 case "BPnn":
                 case "BPIn":
-                    PosNode = BSPNode.ReadNode(reader, treeType);
+                    PosNode = BSPNode.ReadNode(reader, treeType, isToD);
                     break;
                 case "BpIN":
                 case "BpnN":
-                    NegNode = BSPNode.ReadNode(reader, treeType);
+                    NegNode = BSPNode.ReadNode(reader, treeType, isToD);
                     break;
                 case "BPIN":
                 case "BPnN":
-                    PosNode = BSPNode.ReadNode(reader, treeType);
-                    NegNode = BSPNode.ReadNode(reader, treeType);
+                    PosNode = BSPNode.ReadNode(reader, treeType, isToD);
+                    NegNode = BSPNode.ReadNode(reader, treeType, isToD);
                     break;
             }
 
@@ -84,9 +85,61 @@ namespace ACE.DatLoader.Entity
             uint numPolys = reader.ReadUInt32();
             for (uint i = 0; i < numPolys; i++)
                 InPolys.Add(reader.ReadUInt16());
+
+            if (!isToD)
+                reader.AlignBoundary();
         }
 
-        public static BSPNode ReadNode(BinaryReader reader, BSPType treeType)
+        public virtual void Pack(StreamWriter output, BSPType treeType)
+        {
+            for (int i = 3; i >= 0; i--)
+            {
+                Utils.writeByte((byte)Type[i],output);
+            }
+
+            switch (Type)
+            {
+                // These types will pack the data completely, in their own classes
+                case "PORT":
+                case "LEAF":
+                    throw new Exception();
+            }
+
+            SplittingPlane.Pack(output);
+
+            switch (Type)
+            {
+                case "BPnn":
+                case "BPIn":
+                    PosNode.Pack(output, treeType);
+                    break;
+                case "BpIN":
+                case "BpnN":
+                    NegNode.Pack(output, treeType);
+                    break;
+                case "BPIN":
+                case "BPnN":
+                    PosNode.Pack(output, treeType);
+                    NegNode.Pack(output, treeType);
+                    break;
+            }
+
+            if (treeType == BSPType.Cell)
+                return;
+
+            Sphere.Pack(output);
+
+            if (treeType == BSPType.Physics)
+                return;
+
+            Utils.writeUInt32((uint)InPolys.Count, output);
+            foreach (var entry in InPolys)
+            {
+                Utils.writeUInt16(entry, output);
+            }
+        }
+
+        public static BSPNode ReadNode(BinaryReader reader, BSPType treeType, bool isToD = true)
         {
             // We peek forward to get the type, then revert our position.
             var type = Encoding.ASCII.GetString(reader.ReadBytes(4)).Reverse();
@@ -115,7 +168,7 @@ namespace ACE.DatLoader.Entity
                     break;
             }
 
-            node.Unpack(reader, treeType);
+            node.Unpack(reader, treeType, isToD);
 
             return node;
         }

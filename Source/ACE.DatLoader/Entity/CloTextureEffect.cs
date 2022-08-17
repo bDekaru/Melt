@@ -14,7 +14,7 @@ namespace ACE.DatLoader.Entity
         /// </summary>
         public uint NewTexture { get; private set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             OldTexture = reader.ReadUInt32();
             NewTexture = reader.ReadUInt32();

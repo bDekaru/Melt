@@ -14,7 +14,7 @@ namespace ACE.DatLoader.FileTypes
     {
         public List<GfxObjInfo> Degrades { get; } = new List<GfxObjInfo>();
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
 

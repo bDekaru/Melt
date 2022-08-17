@@ -13,7 +13,7 @@ namespace ACE.DatLoader.Entity
         public byte HorizontalOffsetAfter;
         public byte VerticalOffsetBefore;
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Unicode = reader.ReadUInt16();
             OffsetX = reader.ReadUInt16();

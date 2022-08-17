@@ -21,7 +21,7 @@ namespace ACE.DatLoader.FileTypes
         public uint ForegroundSurfaceDataID; // This is a DataID to a Texture (0x06) type, if set
         public uint BackgroundSurfaceDataID; // This is a DataID to a Texture (0x06) type, if set
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
             MaxCharHeight = reader.ReadUInt32();

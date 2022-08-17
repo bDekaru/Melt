@@ -34,7 +34,7 @@ namespace ACE.DatLoader.Entity
         }
 
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Origin = reader.ReadVector3();
 

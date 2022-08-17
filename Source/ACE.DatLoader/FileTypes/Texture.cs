@@ -29,7 +29,7 @@ namespace ACE.DatLoader.FileTypes
         // This is used if you want to apply a non-default Palette to the image prior to extraction
         public Dictionary<int, uint> CustomPaletteColors = new Dictionary<int, uint>();
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
             Unknown = reader.ReadInt32();

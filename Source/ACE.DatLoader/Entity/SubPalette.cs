@@ -9,7 +9,7 @@ namespace ACE.DatLoader.Entity
         public uint Offset { get; set; }
         public uint NumColors { get; set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             SubID       = reader.ReadAsDataIDOfKnownType(0x04000000);
             Offset      = (uint)(reader.ReadByte() * 8);

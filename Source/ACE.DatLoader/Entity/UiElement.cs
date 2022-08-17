@@ -33,7 +33,7 @@ namespace ACE.DatLoader.Entity
         public byte ChildrenBucketSize;
         public Dictionary<uint, UiElement> Children;
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             StateId = reader.ReadUInt32();
             PassToChildren = reader.ReadByte();
@@ -112,7 +112,7 @@ namespace ACE.DatLoader.Entity
     //    public uint BaseLayout;
     //    public uint DefaultState;
 
-    //    public void Unpack(BinaryReader reader)
+    //    public void Unpack(BinaryReader reader, bool isToD = true)
     //    {
     //        BaseElement = reader.ReadUInt32();
     //        BaseLayout = reader.ReadUInt32();
@@ -133,7 +133,7 @@ namespace ACE.DatLoader.Entity
     //    public uint BaseLayout;
     //    public uint DefaultState;
 
-    //    public void Unpack(BinaryReader reader)
+    //    public void Unpack(BinaryReader reader, bool isToD = true)
     //    {
     //        BaseElement = reader.ReadUInt32();
     //        BaseLayout = reader.ReadUInt32();

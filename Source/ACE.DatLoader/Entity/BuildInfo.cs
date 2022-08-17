@@ -25,7 +25,7 @@ namespace ACE.DatLoader.Entity
         /// </summary>
         public List<CBldPortal> Portals { get; } = new List<CBldPortal>();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             ModelId = reader.ReadUInt32();
 

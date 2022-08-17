@@ -17,7 +17,7 @@ namespace ACE.DatLoader.Entity
         public List<uint> NormalSkillsList { get; } = new List<uint>();
         public List<uint> PrimarySkillsList { get; } = new List<uint>();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Name            = reader.ReadString();
             IconImage       = reader.ReadUInt32();

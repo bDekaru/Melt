@@ -18,7 +18,7 @@ namespace ACE.DatLoader.FileTypes
         public List<int> Ints { get; private set; }
         public bool Sorted { get; private set; }
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Ints = new List<int>();
             Ints.Add(reader.ReadInt32());

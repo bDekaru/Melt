@@ -9,7 +9,7 @@ namespace ACE.DatLoader.Entity
         public float Radius { get; private set; }
         public float Height { get; private set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             var x = reader.ReadSingle();
             var y = reader.ReadSingle();

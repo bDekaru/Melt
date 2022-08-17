@@ -146,7 +146,7 @@ namespace ACE.DatLoader.Entity
             return FootwearList[Convert.ToInt32(footwearStyle)].ClothingTable;
         }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Name            = reader.ReadString();
             Scale           = reader.ReadUInt32();

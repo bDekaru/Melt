@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 
 namespace Melt
 {
@@ -562,6 +563,13 @@ namespace Melt
             }
             align(outputData);
         }
+        static public void writeVector3(Vector3 value, StreamWriter outputData)
+        {
+            outputData.BaseStream.Write(BitConverter.GetBytes(value.X), 0, 4);
+            outputData.BaseStream.Write(BitConverter.GetBytes(value.Y), 0, 4);
+            outputData.BaseStream.Write(BitConverter.GetBytes(value.Z), 0, 4);
+        }
+
 
         static public void writeJson(StreamWriter outputStream, string key, string value, string tab = "", bool isFirst = false, bool lineBreak = true, int padAmount = 0)
         {

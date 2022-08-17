@@ -15,7 +15,7 @@ namespace ACE.DatLoader.Entity
 
         public byte Unknown { get; private set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
 

@@ -13,7 +13,7 @@ namespace ACE.DatLoader.Entity
         public bool ExactMatch => (Flags & PortalFlags.ExactMatch) != 0;
         public bool PortalSide => (Flags & PortalFlags.PortalSide) == 0;
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Flags           = (PortalFlags)reader.ReadUInt16();
             PolygonId       = reader.ReadUInt16();

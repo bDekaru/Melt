@@ -9,7 +9,7 @@ namespace ACE.DatLoader.Entity
         //public PalShift PalShift { get; } = new PalShift(); // This is used if Type == 1 (which we haven't seen yet)
         public TexMerge TexMerge { get; } = new TexMerge();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Type = reader.ReadUInt32(); // This is always 0
 

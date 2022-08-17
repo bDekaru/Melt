@@ -20,7 +20,7 @@ namespace ACE.DatLoader.FileTypes
         // The uint key corresponds to an Enum.Sound
         public Dictionary<uint, SoundData> Data { get; } = new Dictionary<uint, SoundData>();
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
             Unknown = reader.ReadUInt32();

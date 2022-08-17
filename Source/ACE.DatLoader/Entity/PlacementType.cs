@@ -11,7 +11,7 @@ namespace ACE.DatLoader.Entity
         /// You must use the Unpack(BinaryReader reader, int numParts) method.
         /// </summary>
         /// <exception cref="NotSupportedException">You must use the Unpack(BinaryReader reader, int numParts) method.</exception>
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             throw new NotSupportedException();
         }

@@ -7,7 +7,7 @@ namespace ACE.DatLoader.Entity
     {
         public List<SceneType> SceneTypes { get; } = new List<SceneType>();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             SceneTypes.Unpack(reader);
         }

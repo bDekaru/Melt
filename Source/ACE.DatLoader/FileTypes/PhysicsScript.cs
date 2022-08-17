@@ -13,7 +13,7 @@ namespace ACE.DatLoader.FileTypes
     {
         public List<PhysicsScriptData> ScriptData { get; } = new List<PhysicsScriptData>();
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
 

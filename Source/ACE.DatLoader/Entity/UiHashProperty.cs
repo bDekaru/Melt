@@ -25,7 +25,7 @@ namespace ACE.DatLoader.Entity
         public Dictionary<uint, uint> ValueArray;
         public uint ValueArrayCount;
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Key = reader.ReadUInt32();
             switch (Key)
@@ -93,7 +93,7 @@ namespace ACE.DatLoader.Entity
                     Utils.writeUInt32(ValueData, output);
                     break;
                 case UiHashType.StringInfo:
-                    ValueStringInfo.Pack(output, 3);
+                    ValueStringInfo.Pack(output);
                     break;
                 case UiHashType.Array:
                     ValueArrayCount = (uint)ValueArray.Count;

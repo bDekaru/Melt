@@ -8,7 +8,7 @@ namespace ACE.DatLoader.Entity
         public bool IsNight { get; private set; }
         public string Name { get; private set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Start   = reader.ReadSingle();
             IsNight = (reader.ReadUInt32() == 1);

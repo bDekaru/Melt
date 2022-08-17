@@ -14,7 +14,7 @@ namespace ACE.DatLoader.Entity
         /// </summary>
         public uint PaletteSet { get; set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Ranges.Unpack(reader);
 

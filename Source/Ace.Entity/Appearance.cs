@@ -25,7 +25,7 @@ namespace ACE.Entity
         public double PantsHue { get; set; }
         public double FootwearHue { get; set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Eyes            = reader.ReadUInt32();
             Nose            = reader.ReadUInt32();

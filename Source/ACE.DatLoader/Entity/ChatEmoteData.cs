@@ -7,7 +7,7 @@ namespace ACE.DatLoader.Entity
         public string MyEmote; // What the emote string is to the character doing the emote
         public string OtherEmote; // What the emote string is to other characters
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             MyEmote = reader.ReadPString(); reader.AlignBoundary();
             OtherEmote = reader.ReadPString(); reader.AlignBoundary();

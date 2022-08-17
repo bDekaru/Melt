@@ -14,7 +14,7 @@ namespace ACE.DatLoader.FileTypes
         public byte[] Header { get; private set; }
         public byte[] Data { get; private set; }
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             int objectId   = reader.ReadInt32();
             int headerSize = reader.ReadInt32();

@@ -22,7 +22,7 @@ namespace ACE.DatLoader.Entity
 
         public List<SkyObjectReplace> SkyObjReplace { get; } = new List<SkyObjectReplace>();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Begin       = reader.ReadSingle();
 

@@ -14,7 +14,7 @@ namespace ACE.DatLoader.Entity
         public Vector3 Velocity { get; private set; }
         public Vector3 Omega { get; private set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             var numAnims    = reader.ReadByte();
             Bitfield        = reader.ReadByte();

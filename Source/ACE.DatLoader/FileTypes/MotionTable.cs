@@ -21,7 +21,7 @@ namespace ACE.DatLoader.FileTypes
         public Dictionary<uint, MotionData> Modifiers { get; } = new Dictionary<uint, MotionData>();
         public Dictionary<uint, Dictionary<uint, MotionData>> Links { get; } = new Dictionary<uint, Dictionary<uint, MotionData>>();
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
 

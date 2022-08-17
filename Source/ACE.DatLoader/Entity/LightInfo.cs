@@ -10,7 +10,7 @@ namespace ACE.DatLoader.Entity
         public float Falloff { get; private set; }
         public float ConeAngle { get; private set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             ViewerSpaceLocation.Unpack(reader);
 

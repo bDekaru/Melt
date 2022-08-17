@@ -9,7 +9,7 @@ namespace ACE.DatLoader.Entity
         public uint TerrainColor { get; private set; }
         public List<uint> SceneTypes { get; } = new List<uint>();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             TerrainName = reader.ReadPString();
             reader.AlignBoundary();

@@ -11,7 +11,7 @@ namespace ACE.DatLoader.Entity
 
         public Frame Frame = new Frame();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             ObjCellID = reader.ReadUInt32();
 

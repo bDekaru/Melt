@@ -7,7 +7,7 @@ namespace ACE.DatLoader.Entity
         public uint Offset { get; set; }
         public uint NumColors { get; set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Offset      = reader.ReadUInt32();
             NumColors   = reader.ReadUInt32();

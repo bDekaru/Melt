@@ -15,7 +15,7 @@ namespace ACE.DatLoader.FileTypes
 
         public Dictionary<uint, Contract> Contracts { get; } = new Dictionary<uint, Contract>();
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
 

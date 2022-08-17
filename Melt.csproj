@@ -658,6 +658,7 @@
     <Compile Include="Source\misc\skillTable.cs" />
     <Compile Include="Source\misc\TextureHeader.cs" />
     <Compile Include="Source\misc\LanguageFileTools.cs" />
+    <Compile Include="Source\misc\GfxObjTools.cs" />
     <Compile Include="Source\weenies\cache4Converter.cs" />
     <Compile Include="Source\weenies\cache8Converter.cs" />
     <Compile Include="Source\weenies\cache6Converter.cs" />

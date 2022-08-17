@@ -10,7 +10,7 @@ namespace ACE.DatLoader
         public uint EntryCount { get; private set; }
         public DatFile[] Entries { get; private set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             for (int i = 0; i < Branches.Length; i++)
                 Branches[i] = reader.ReadUInt32();

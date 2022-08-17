@@ -43,7 +43,7 @@ namespace ACE.DatLoader.FileTypes
         public float TransRand { get; private set; }
         public int IsParentLocal { get; private set; }
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
 

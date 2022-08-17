@@ -10,7 +10,7 @@ namespace ACE.DatLoader.Entity
         public float MinRate { get; private set; }
         public float MaxRate { get; private set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             SType       = reader.ReadUInt32();
             Volume      = reader.ReadSingle();

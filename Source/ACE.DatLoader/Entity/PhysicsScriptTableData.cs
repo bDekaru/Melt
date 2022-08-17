@@ -7,7 +7,7 @@ namespace ACE.DatLoader.Entity
     {
         public List<ScriptAndModData> Scripts { get; } = new List<ScriptAndModData>();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Scripts.Unpack(reader);
         }

@@ -9,7 +9,7 @@ namespace ACE.DatLoader.Entity
         public ObjDesc ObjDesc { get; } = new ObjDesc();
         public ObjDesc ObjDescBald { get; } = new ObjDesc();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             IconImage = reader.ReadUInt32();
             IconImageBald = reader.ReadUInt32();

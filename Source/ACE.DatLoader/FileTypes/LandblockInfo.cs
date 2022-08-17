@@ -42,7 +42,7 @@ namespace ACE.DatLoader.FileTypes
         /// </summary>
         public Dictionary<uint, uint> RestrictionTables { get; } = new Dictionary<uint, uint>();
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
 

@@ -11,7 +11,7 @@ namespace ACE.DatLoader.Entity
         public uint ClearCellId { get; private set; }
         public uint ClearMonsterId { get; private set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Version         = reader.ReadUInt32();
             GameMapID       = reader.ReadUInt32();

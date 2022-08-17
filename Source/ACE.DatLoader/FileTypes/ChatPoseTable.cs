@@ -16,7 +16,7 @@ namespace ACE.DatLoader.FileTypes
         // Key is the state, value are the strings that players see during the emote
         public Dictionary<string, ChatEmoteData> ChatEmoteHash = new Dictionary<string, ChatEmoteData>();
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
 

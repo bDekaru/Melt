@@ -19,7 +19,7 @@ namespace ACE.DatLoader.FileTypes
         public List<uint> Attribute2ndStatFilter { get; private set; } = new List<uint>();
         public List<uint> SkillStatFilter { get; private set; } = new List<uint>();
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
             uint numInt = reader.ReadUInt32();

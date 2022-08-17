@@ -8,7 +8,7 @@ namespace ACE.DatLoader.Entity
         public List<TerrainType> TerrainTypes { get; } = new List<TerrainType>();
         public LandSurf LandSurfaces { get; } = new LandSurf();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             TerrainTypes.Unpack(reader);
             LandSurfaces.Unpack(reader);

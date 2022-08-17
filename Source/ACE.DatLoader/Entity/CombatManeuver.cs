@@ -11,7 +11,7 @@ namespace ACE.DatLoader.Entity
         public uint MinSkillLevel { get; private set; }
         public MotionCommand Motion { get; private set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Style           = (MotionStance)reader.ReadUInt32();
             AttackHeight    = (AttackHeight)reader.ReadUInt32();

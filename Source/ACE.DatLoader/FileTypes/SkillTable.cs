@@ -16,7 +16,7 @@ namespace ACE.DatLoader.FileTypes
         // Key is the SkillId
         public Dictionary<uint, SkillBase> SkillBaseHash = new Dictionary<uint, SkillBase>();
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
             SkillBaseHash.UnpackPackedHashTable(reader);

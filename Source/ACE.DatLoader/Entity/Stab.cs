@@ -12,7 +12,7 @@ namespace ACE.DatLoader.Entity
         public uint Id { get; private set; }
         public Frame Frame { get; } = new Frame();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
             Frame.Unpack(reader);

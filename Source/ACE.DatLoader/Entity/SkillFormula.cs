@@ -12,7 +12,7 @@ namespace ACE.DatLoader.Entity
         public uint Attr1;
         public uint Attr2;
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             W = reader.ReadUInt32();
             X = reader.ReadUInt32();

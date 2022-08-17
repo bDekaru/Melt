@@ -14,7 +14,7 @@ namespace ACE.DatLoader.Entity
         public List<string> DaysOfTheWeek { get; } = new List<string>();
         public List<Season> Seasons { get; } = new List<Season>();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             ZeroTimeOfYear  = reader.ReadDouble();
             ZeroYear        = reader.ReadUInt32();

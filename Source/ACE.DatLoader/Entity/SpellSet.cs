@@ -16,7 +16,7 @@ namespace ACE.DatLoader.Entity
 
         public SortedDictionary<uint, SpellSetTiers> SpellSetTiersNoGaps = new SortedDictionary<uint, SpellSetTiers>();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             SpellSetTiers.UnpackPackedHashTable(reader);
 

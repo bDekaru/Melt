@@ -10,7 +10,7 @@ namespace ACE.DatLoader.Entity
         public float IdealDist { get; private set; }
         public float MaxDist { get; private set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id          = reader.ReadUInt32();
             DegradeMode = reader.ReadUInt32();

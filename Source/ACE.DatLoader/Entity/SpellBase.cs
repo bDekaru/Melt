@@ -98,7 +98,7 @@ namespace ACE.DatLoader.Entity
             ManaMod = other.ManaMod;
         }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Name = reader.ReadObfuscatedString();
             reader.AlignBoundary();

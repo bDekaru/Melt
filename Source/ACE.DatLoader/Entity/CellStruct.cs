@@ -15,7 +15,7 @@ namespace ACE.DatLoader.Entity
         public BSPTree PhysicsBSP { get; } = new BSPTree();
         public BSPTree DrawingBSP { get; set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             var numPolygons        = reader.ReadUInt32();
             var numPhysicsPolygons = reader.ReadUInt32();

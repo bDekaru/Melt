@@ -15,7 +15,7 @@ namespace ACE.DatLoader.Entity
         public uint DefaultPESObjectId { get; private set; }
         public uint Properties { get; private set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             BeginTime           = reader.ReadSingle();
             EndTime             = reader.ReadSingle();

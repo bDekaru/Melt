@@ -12,7 +12,7 @@ namespace ACE.DatLoader.Entity
         /// </summary>
         public float Framerate { get; private set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             AnimId      = reader.ReadUInt32();
             LowFrame    = reader.ReadInt32();

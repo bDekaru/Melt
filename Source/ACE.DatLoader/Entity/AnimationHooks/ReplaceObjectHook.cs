@@ -7,7 +7,7 @@ namespace ACE.DatLoader.Entity.AnimationHooks
     {
         public AnimationPartChange APChange { get; } = new AnimationPartChange();
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             base.Unpack(reader);
 

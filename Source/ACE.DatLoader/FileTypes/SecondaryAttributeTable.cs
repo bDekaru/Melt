@@ -14,7 +14,7 @@ namespace ACE.DatLoader.FileTypes
         public Attribute2ndBase MaxStamina { get; private set; } = new Attribute2ndBase();
         public Attribute2ndBase MaxMana { get; private set; } = new Attribute2ndBase();
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
             MaxHealth.Unpack(reader);

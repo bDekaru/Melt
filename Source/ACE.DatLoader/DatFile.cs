@@ -22,7 +22,7 @@ namespace ACE.DatLoader
 
         //public uint Iteration { get; private set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             /*BitFlags    =*/ reader.ReadUInt32();
             ObjectId    = reader.ReadUInt32();

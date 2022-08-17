@@ -17,7 +17,7 @@ namespace ACE.DatLoader.FileTypes
         /// </summary>
         public Dictionary<uint, TabooTableEntry> TabooTableEntries { get; } = new Dictionary<uint, TabooTableEntry>();
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
 

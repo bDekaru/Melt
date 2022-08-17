@@ -7,7 +7,7 @@ namespace ACE.DatLoader.Entity
         public byte PartIndex { get; set; }
         public uint PartID { get; set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             PartIndex = reader.ReadByte();
             PartID    = reader.ReadAsDataIDOfKnownType(0x01000000);

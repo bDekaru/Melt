@@ -9,7 +9,7 @@ namespace ACE.DatLoader.Entity
         public uint AlternateSetup { get; private set; }
         public ObjDesc ObjDesc { get; } = new ObjDesc();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             IconImage       = reader.ReadUInt32();
             Bald            = (reader.ReadByte() == 1);

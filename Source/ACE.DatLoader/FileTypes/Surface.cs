@@ -18,7 +18,7 @@ namespace ACE.DatLoader.FileTypes
         public float Luminosity { get; private set; }
         public float Diffuse { get; private set; }
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Type = (SurfaceType)reader.ReadUInt32();
 

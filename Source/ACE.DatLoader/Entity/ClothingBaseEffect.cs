@@ -7,7 +7,7 @@ namespace ACE.DatLoader.Entity
     {
         public List<CloObjectEffect> CloObjectEffects { get; } = new List<CloObjectEffect>();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             CloObjectEffects.Unpack(reader);
         }

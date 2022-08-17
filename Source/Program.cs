@@ -4,6 +4,8 @@ using System.Text;
 using System.IO;
 using Newtonsoft.Json;
 using System.Diagnostics;
+using ACE.DatLoader;
+using ACE.DatLoader.FileTypes;
 
 namespace Melt
 {
@@ -24,8 +26,24 @@ namespace Melt
         public static cCache9Converter cache9Converter = new cCache9Converter();
         static void Workbench(string[] args)
         {
+            //GfxObjTools.BuildTranslationTable("./input/client_portal - EoR.dat", "./input/Surface Infiltration/");
+            //GfxObjTools.FindUsedBy("./input/client_portal - EoR.dat", "./080008ed.bin");
+            //GfxObjTools.FindTranslation("./input/client_portal - EoR.dat", "./08000aa2.bin");
+            //GfxObjTools.FindTranslation("./input/client_portal - EoR.dat", "./08000aa3.bin");
+            //GfxObjTools.FindTranslation("./input/client_portal - EoR.dat", "./080008ed.bin");
+
+            //GfxObjTools gfxObj = new GfxObjTools("./input/01000CFA.bin", false);
+            //gfxObj.SaveToBin("./01000CFA.bin");
+            //gfxObj = new GfxObjTools("./input/01000D00.bin", false);
+            //gfxObj.SaveToBin("./01000D00.bin");
+            //gfxObj = new GfxObjTools("./input/01000D02.bin", false);
+            //gfxObj.SaveToBin("./01000D02.bin");
+            //gfxObj = new GfxObjTools("./input/01000D06.bin", false);
+            //gfxObj.SaveToBin("./01000D06.bin");
+
             //cache9Converter.loadWeeniesRaw("./input/0009.raw");
             //cache9Converter.generateChestTreasureList();
+            //cache9Converter.generateTreasureList();
 
             //Ingame Map
             //TextureConverter.toPNG("0600127D ToD.bin");

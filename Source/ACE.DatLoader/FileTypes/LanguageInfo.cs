@@ -57,7 +57,7 @@ namespace ACE.DatLoader.FileTypes
         public List<char> AdditionalSettings;
         public uint AdditionalFlags;
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Version = reader.ReadInt32();
             Base = reader.ReadInt16();

@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using System.IO;
 using ACE.Entity.Enum;
+using Melt;
 
 namespace ACE.DatLoader.Entity
 {
-    public class Polygon : IUnpackable
+    public class Polygon : IUnpackable, IPackable
     {
         public byte NumPts { get; private set; }
         public StipplingType Stippling { get; private set; } // Whether it has that textured/bumpiness to it
@@ -20,7 +21,7 @@ namespace ACE.DatLoader.Entity
 
         public List<SWVertex> Vertices;
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             NumPts      = reader.ReadByte();
             Stippling   = (StipplingType)reader.ReadByte();
@@ -48,6 +49,41 @@ namespace ACE.DatLoader.Entity
             {
                 NegSurface = PosSurface;
                 NegUVIndices = PosUVIndices;
+            }
+
+            if (!isToD)
+                reader.AlignBoundary();
+        }
+
+        public void Pack(StreamWriter output)
+        {
+            Utils.writeByte(NumPts, output);
+
+            Utils.writeByte((byte)Stippling, output);
+
+            Utils.writeInt32((int)SidesType, output);
+            Utils.writeInt16(PosSurface, output);
+            Utils.writeInt16(NegSurface, output);
+
+            foreach(var entry in VertexIds)
+            {
+                Utils.writeInt16(entry, output);
+            }
+
+            if (!Stippling.HasFlag(StipplingType.NoPos))
+            {
+                foreach (var entry in PosUVIndices)
+                {
+                    Utils.writeByte(entry, output);
+                }
+            }
+
+            if (SidesType == CullMode.Clockwise && !Stippling.HasFlag(StipplingType.NoNeg))
+            {
+                foreach (var entry in NegUVIndices)
+                {
+                    Utils.writeByte(entry, output);
+                }
             }
         }
 

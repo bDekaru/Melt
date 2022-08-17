@@ -8,7 +8,7 @@ namespace ACE.DatLoader.Entity
         public uint StbIndex { get; private set; }
         public List<uint> Scenes { get; } = new List<uint>();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             StbIndex = reader.ReadUInt32();
 

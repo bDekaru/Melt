@@ -17,7 +17,7 @@ namespace ACE.DatLoader.FileTypes
 
         public List<StringTableData> StringTableData { get; } = new List<StringTableData>();
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
 

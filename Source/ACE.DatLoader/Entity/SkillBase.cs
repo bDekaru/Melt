@@ -30,7 +30,7 @@ namespace ACE.DatLoader.Entity
 
         public int UpgradeCostFromTrainedToSpecialized => SpecializedCost - TrainedCost;
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Description = reader.ReadPString(); reader.AlignBoundary();
             Name = reader.ReadPString(); reader.AlignBoundary();

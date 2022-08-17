@@ -17,7 +17,7 @@ namespace ACE.DatLoader.Entity
         public List<TemplateCG> Templates { get; } = new List<TemplateCG>();
         public Dictionary<int, SexCG> Genders { get; } = new Dictionary<int, SexCG>();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Name                = reader.ReadString();
             IconImage           = reader.ReadUInt32();

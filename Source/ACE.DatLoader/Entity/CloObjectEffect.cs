@@ -9,7 +9,7 @@ namespace ACE.DatLoader.Entity
         public uint ModelId { get; private set; }
         public List<CloTextureEffect> CloTextureEffects { get; } = new List<CloTextureEffect>();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             Index   = reader.ReadUInt32();
             ModelId = reader.ReadUInt32();

@@ -10,7 +10,7 @@ namespace ACE.DatLoader.Entity
         public List<TextureMapChange> TextureChanges { get; } = new List<TextureMapChange>();
         public List<AnimationPartChange> AnimPartChanges { get; } = new List<AnimationPartChange>();
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             reader.AlignBoundary();
 

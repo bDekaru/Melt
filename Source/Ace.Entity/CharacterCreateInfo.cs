@@ -34,7 +34,7 @@ namespace ACE.Entity
         public bool IsAdmin { get; private set; }
         public bool IsSentinel { get; private set; }
 
-        public void Unpack(BinaryReader reader)
+        public void Unpack(BinaryReader reader, bool isToD = true)
         {
             reader.BaseStream.Position += 4;   /* Unknown constant (1) */
 

@@ -31,7 +31,7 @@ namespace ACE.DatLoader.FileTypes
         public NumberingType ServerNameNumberingType; // bitfield designating how the numbering is organized. Not really needed for our usage.
         public Dictionary<uint, string> ServerEnumToName = new Dictionary<uint, string>(); // m_EnumToName
 
-        public override void Unpack(BinaryReader reader)
+        public override void Unpack(BinaryReader reader, bool isToD = true)
         {
             Id = reader.ReadUInt32();
 
