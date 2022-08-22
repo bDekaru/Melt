@@ -370,7 +370,11 @@ namespace Melt
             uint fileHeader = Utils.readUInt32(inputFile);
             uint textureType = Utils.readUInt32(inputFile);
             uint width = Utils.readUInt32(inputFile);
-            uint height = Utils.readUInt32(inputFile);
+            uint height;
+            if (textureType == 20 && width == 20)
+                height = width;
+            else
+                height = Utils.readUInt32(inputFile);
 
             switch (textureType)
             {
@@ -445,6 +449,25 @@ namespace Melt
                             {
                                 bmp.SetPixel(x, y, Color.FromArgb(a[count],r[count], g[count], b[count]));
                                 count++;
+                            }
+                        }
+
+                        bmp.Save(fileHeader.ToString("x8") + ".png", System.Drawing.Imaging.ImageFormat.Png);
+                        break;
+                    }
+                case 20:
+                    {
+                        Bitmap bmp = new Bitmap((int)width, (int)height);
+
+                        for (int y = 0; y < height; y++)
+                        {
+                            for (int x = 0; x < width; x++)
+                            {
+                                byte r = Utils.readByte(inputFile);
+                                byte g = Utils.readByte(inputFile);
+                                byte b = Utils.readByte(inputFile);
+
+                                bmp.SetPixel(x, y, Color.FromArgb(255, r, g, b));
                             }
                         }
 

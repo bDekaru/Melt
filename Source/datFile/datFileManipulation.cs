@@ -2005,33 +2005,6 @@ namespace Melt
             replaceLandblocks(listOfSettlementsPreserveSurface, datFileWithoutSettlements, false, false, false);
         }
 
-        //public cDatFileEntry GetFile(uint fileId)
-        //{
-        //    cDatFileEntry file;
-        //    if (fileCache.TryGetValue(fileId, out file))
-        //        return file;
-        //    return null;
-        //}
-
-        //public bool ReplaceFile(int fileId, string filename)
-        //{
-        //    StreamReader inputFile = new StreamReader(new FileStream(filename, FileMode.Open, FileAccess.Read));
-        //    if (inputFile == null)
-        //    {
-        //        Console.WriteLine("Unable to open {0}", filename);
-        //        return false;
-        //    }
-
-        //    cDatFileEntry file = GetFile(0x0E00000E);
-
-        //    file.fileContent = (MemoryStream)inputFile.BaseStream;
-        //    file.listOfBlocks = new List<cDatFileBlock>();
-
-        //    //cDatFileEntry file = new cDatFileEntry(inputFile, eDatFormat.ToD, true);
-
-        //    return true;
-        //}
-
         public void addGridToAllLandblocks(int verboseLevel = 5)
         {
             if (verboseLevel > 1)
@@ -2093,5 +2066,60 @@ namespace Melt
                 Console.WriteLine("Added grid to landblock in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
             return true;
         }
+
+        //public cDatFileEntry getFile(uint fileId)
+        //{
+        //    cDatFileEntry file;
+        //    if (fileCache.TryGetValue(fileId, out file))
+        //        return file;
+        //    return null;
+        //}
+
+        //public bool replaceFile(int fileId, string filename)
+        //{
+        //    StreamReader inputFile = new StreamReader(new FileStream(filename, FileMode.Open, FileAccess.Read));
+        //    if (inputFile == null)
+        //    {
+        //        Console.WriteLine("Unable to open {0}", filename);
+        //        return false;
+        //    }
+
+        //    cDatFileEntry file = GetFile(0x0E00000E);
+
+        //    file.fileContent = (MemoryStream)inputFile.BaseStream;
+        //    file.listOfBlocks = new List<cDatFileBlock>();
+
+        //    //cDatFileEntry file = new cDatFileEntry(inputFile, eDatFormat.ToD, true);
+
+        //    return true;
+        //}
+
+        //public bool addFile(string filename, eDatFormat fileFormat = eDatFormat.ToD, int verboseLevel = 6)
+        //{
+        //    if (verboseLevel > 5)
+        //        Console.WriteLine("Adding File...");
+        //    Stopwatch timer = new Stopwatch();
+        //    timer.Start();
+
+        //    StreamReader inputFile = new StreamReader(new FileStream(filename, FileMode.Open, FileAccess.Read));
+        //    if (inputFile == null)
+        //    {
+        //        Console.WriteLine("Unable to open {0}", filename);
+        //        return false;
+        //    }
+
+        //    var fileId = Utils.readUInt32(inputFile);
+        //    inputFile.BaseStream.Position = 0;
+
+        //    cDatFileEntry file = new cDatFileEntry(fileId, fileFormat);
+        //    file.updateFileContentFromStream(inputFile);
+
+        //    fileCache.Add(file.fileId, file);
+
+        //    timer.Stop();
+        //    if (verboseLevel > 5)
+        //        Console.WriteLine("Added file in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
+        //    return true;
+        //}
     }
 }

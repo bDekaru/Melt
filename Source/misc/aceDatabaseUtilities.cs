@@ -906,12 +906,13 @@ namespace Melt
             foreach (var vendor in vendors)
             {
                 // Remove all existing ones so we can readd them in the correct order.
-                sql = $"DELETE FROM weenie_properties_create_list WHERE object_Id = {vendor} AND destination_Type = 4 AND weenie_Class_Id IN (50045,50046,50047,50048,50049,50050)";
+                sql = $"DELETE FROM weenie_properties_create_list WHERE object_Id = {vendor} AND destination_Type = 4 AND weenie_Class_Id IN (50045,50078,50046,50047,50048,50049,50050)";
                 command = new MySqlCommand(sql, connection);
                 command.ExecuteNonQuery();
 
                 sql = $"INSERT INTO weenie_properties_create_list (object_Id, destination_Type, weenie_Class_Id, stack_Size, palette, shade, try_To_Bond)" +
                       $"VALUES ({vendor}, 4, 50046, -1, 0, 0.0, 0)" +
+                      $"     , ({vendor}, 4, 50078, -1, 0, 0.0, 0)" +
                       $"     , ({vendor}, 4, 50047, -1, 0, 0.0, 0)" +
                       $"     , ({vendor}, 4, 50048, -1, 0, 0.0, 0)" +
                       $"     , ({vendor}, 4, 50049, -1, 0, 0.0, 0)" +

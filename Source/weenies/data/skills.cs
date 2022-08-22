@@ -4,6 +4,21 @@ using System.IO;
 
 namespace Melt
 {
+    public enum eSkillMinLevel
+    {
+        Undefined = 0,
+        Untrained = 1,
+        Unusable = 2,
+    }
+
+    public enum eSkillCategory
+    {
+        Undefined = 0,
+        Weapon = 1,
+        NonWeapon = 2,
+        Magic = 3,
+    };
+
     public enum eSkills
     {
         None = 0,

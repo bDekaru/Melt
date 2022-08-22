@@ -107,5 +107,21 @@ namespace Melt
             Utils.writeUInt32(timeStamp, outputFile);
             Utils.writeUInt32(version, outputFile);
         }
+
+        public void updateFileContentFromStream(StreamReader inputFile)
+        {
+            listOfBlocks.Clear();
+            startBlockOffset = 0;
+            timeStamp = (uint)DateTimeOffset.Now.ToUnixTimeSeconds();
+
+            while(inputFile.BaseStream.Position < inputFile.BaseStream.Length)
+            {
+                fileContent.WriteByte((byte)inputFile.BaseStream.ReadByte());
+            }
+
+            fileContent.Seek(0, SeekOrigin.Begin);
+            fileSize = (int)fileContent.Length;
+            fileFormat = eDatFormat.ToD; //we only write int ToD format
+        }
     }
 }

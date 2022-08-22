@@ -26,6 +26,11 @@ namespace Melt
         public static cCache9Converter cache9Converter = new cCache9Converter();
         static void Workbench(string[] args)
         {
+            //cDatFile portalDatFile = new cDatFile();
+            //portalDatFile.loadFromDat("./input/client_portal - EoR.dat");
+            //portalDatFile.addFile("./0600015e.bin");
+            //portalDatFile.writeToDat("client_portal.dat");
+
             //GfxObjTools.BuildTranslationTable("./input/client_portal - EoR.dat", "./input/Surface Infiltration/");
             //GfxObjTools.FindUsedBy("./input/client_portal - EoR.dat", "./080008ed.bin");
             //GfxObjTools.FindTranslation("./input/client_portal - EoR.dat", "./08000aa2.bin");
@@ -61,10 +66,22 @@ namespace Melt
             //language.ModifyForInfiltration();
             //language.ModifyForCustomDM();
 
+            //TextureConverter.darkMajestyToPNG("./0600015E - Arms and Armor.bin");
+            //TextureConverter.darkMajestyToPNG("./06000166 - Awareness.bin");
+            //TextureConverter.darkMajestyToPNG("./06000174 - Armor.bin");
+            //TextureConverter.darkMajestyToPNG("./06000176 - Sneak.bin");
+            //TextureConverter.darkMajestyToPNG("./06000177 - Spellcraft.bin");
+            //TextureConverter.toBin("./input/0600015e - Arms and Armor.png", 0x060004c6, 20);
+            //TextureConverter.toBin("./input/06000166 - Awareness.png", 0x060004c8, 20);
+            //TextureConverter.toBin("./input/06000174 - Armor.png", 0x060004ca, 20);
+            //TextureConverter.toBin("./input/06000176 - Sneak.png", 0x060004da, 20);
+            //TextureConverter.toBin("./input/06000177 - Spellcraft.png", 0x060004db, 20);
+
             //SkillTable skillTableLatest = new SkillTable("./Skill Tables/0E000004 - Skills Table - Original.bin");
             //SkillTable skillTableClassicWeaponSkills = new SkillTable("./Skill Tables/0E000004 - Skills Table - Classic weapon skills.bin");
+            //SkillTable skillTableAssessSkills = new SkillTable("./Skill Tables/0E000004 - Skills Table - Classic weapon skills with assess.bin");
             ////SkillTable skillTableRelease = new SkillTable("./Skill Tables/0E000004 - Skills Table - Release.bin");
-            //skillTableClassicWeaponSkills.modifyForCustomDM(skillTableLatest);
+            //skillTableClassicWeaponSkills.modifyForCustomDM(skillTableLatest, skillTableAssessSkills);
             //skillTableClassicWeaponSkills.save("./0E000004 - Skills Table - CustomDM.bin");
 
             //CharGen charGen = new CharGen("./input/0E000002.bin");

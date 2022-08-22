@@ -5,6 +5,8 @@ using System.IO;
 using ACE.DatLoader;
 using ACE.DatLoader.FileTypes;
 using System.Security.Cryptography;
+using ACE.DatLoader.Entity;
+using ACE.Entity.Enum;
 
 namespace Melt
 {
@@ -64,6 +66,11 @@ namespace Melt
             public Double UpperBound;
             public Double LowerBound;
             public Double LearnMod;
+
+            public Skill()
+            {
+
+            }
 
             public Skill(StreamReader inputFile)
             {
@@ -142,26 +149,97 @@ namespace Melt
                 {
                     key = entry.Key;
                     found = true;
+                    break;
                 }
             }
             if (found)
             {
                 Skills.Remove(key);
-                Console.WriteLine("Skill removed.");
+                Console.WriteLine($"Skill {skillName} removed.");
             }
             else
                 Console.WriteLine($"Couldn't find {skillName} skill to remove.");
         }
 
-        public void modifyForCustomDM(SkillTable skillTableLatest)
+        public void copySkill(string skillName, SkillTable from, uint newId = 0)
+        {
+            foreach (KeyValuePair<uint, Skill> entry in from.Skills)
+            {
+                Skill skill = entry.Value;
+                if (skill.Name.Replace("\0", "") == skillName)
+                {
+                    skill.Name = skill.Name.Replace("\0", "");
+                    skill.Description = skill.Description.Replace("\0", "");
+                    if (newId == 0)
+                        Skills.Add(entry.Key, skill);
+                    else
+                        Skills.Add(newId, skill);
+                    Console.WriteLine($"Skill {skillName} copied.");
+                    return;
+                }
+            }
+            Console.WriteLine($"Couldn't find {skillName} skill to copy.");
+        }
+
+        public bool addSkill(uint id, uint iconId, string name, string description, eSkillCategory category, eSkillMinLevel minLevel, uint trainedCost, uint specializedCost, SkillFormula formula)
+        {
+            if (Skills.ContainsKey(id))
+            {
+                Console.WriteLine($"Skill id {id} already exists.");
+                return false;
+            }
+
+            var newSkill = new Skill();
+            newSkill.IconId = iconId;
+            newSkill.Name = name;
+            newSkill.Description = description;
+            newSkill.Category = (int)category;
+            newSkill.MinLevel = (int)minLevel;
+            newSkill.TrainedCost = trainedCost;
+            newSkill.SpecializedCost = specializedCost;
+            newSkill.Formula = formula;
+
+            newSkill.CharGenUse = 1;
+            newSkill.LearnMod = 1;
+            newSkill.LowerBound = 120;
+            newSkill.UpperBound = 900;
+
+            Skills.Add(id, newSkill);
+            Console.WriteLine($"Skill {name} added.");
+            return true;
+        }
+
+        public void modifyForCustomDM(SkillTable skillTableLatest, SkillTable skillTableAssess)
         {
             copySkill("Salvaging", skillTableLatest);
             copySkill("Shield", skillTableLatest);
+            copySkill("Dual Wield", skillTableLatest);
+
+            //copySkill("Appraise Item", skillTableAssess, 55);
+            //copySkill("Appraise Weapon", skillTableAssess, 56);
+            //copySkill("Appraise Armor", skillTableAssess, 57);
+            //copySkill("Appraise Magic Item", skillTableAssess, 58);
+
             removeSkill("Item Enchantment");
             removeSkill("Creature Enchantment");
             removeSkill("Mace");
             removeSkill("Staff");
             removeSkill("Crossbow");
+
+            //addSkill((uint)eSkills.SpellCraft, 0x060004db, "Spellcraft", "Lets you transfer spells between items.", eSkillCategory.Magic, eSkillMinLevel.Unusable, 4, 8, new SkillFormula(eAttributes.Coordination, 1, eAttributes.Focus, 1, 3, 0));
+            addSkill((uint)eSkills.SpellCraft, 0x060004db, "Spellcraft", "Lets you transfer spells between items.", eSkillCategory.Magic, eSkillMinLevel.Unusable, 999, 999, new SkillFormula(eAttributes.Coordination, 1, eAttributes.Focus, 1, 3, 0));
+            addSkill((uint)eSkills.Awareness, 0x060004c8, "Awareness", "Helps you see traps and other hidden objects.", eSkillCategory.NonWeapon, eSkillMinLevel.Untrained, 4, 8, new SkillFormula(eAttributes.Coordination, 1, eAttributes.Focus, 1, 3, 0));
+            //addSkill((uint)eSkills.ArmsAndArmorRepair, 0x060004c6, "Arms and Armor Repair", "Lets you improve arms and armor condition.", eSkillCategory.NonWeapon, eSkillMinLevel.Unusable, 4, 8, new SkillFormula(eAttributes.Coordination, 1, eAttributes.Focus, 1, 3, 0));
+            addSkill((uint)eSkills.ArmsAndArmorRepair, 0x060004c6, "Arms and Armor Repair", "Lets you improve arms and armor condition.", eSkillCategory.NonWeapon, eSkillMinLevel.Unusable, 999, 999, new SkillFormula(eAttributes.Coordination, 1, eAttributes.Focus, 1, 3, 0));
+            addSkill(55, 0x0600209b, "Appraise Missile Item", "Helps you evaluate the value of ranged weapons.", eSkillCategory.NonWeapon, eSkillMinLevel.Unusable, 2, 4, new SkillFormula(eAttributes.Focus, 1, eAttributes.None, 0, 1, 0));
+            addSkill(56, 0x0600209d, "Appraise Melee Item", "Helps you evaluate the value of close-quarters weapons.", eSkillCategory.NonWeapon, eSkillMinLevel.Unusable, 2, 4, new SkillFormula(eAttributes.Focus, 1, eAttributes.None, 0, 1, 0));
+            addSkill(57, 0x0600209a, "Appraise Armor", "Helps you evaluate the value of armor and clothing.", eSkillCategory.NonWeapon, eSkillMinLevel.Unusable, 2, 4, new SkillFormula(eAttributes.Focus, 1, eAttributes.None, 0, 1, 0));
+            addSkill(58, 0x0600209c, "Appraise Caster Item", "Helps you evaluate the value of casting implements, gems and jewelry.", eSkillCategory.NonWeapon, eSkillMinLevel.Unusable, 2, 4, new SkillFormula(eAttributes.Focus, 1, eAttributes.None, 0, 1, 0));
+            addSkill(59, 0x060004ca, "Armor", "Helps you wield armor.", eSkillCategory.NonWeapon, eSkillMinLevel.Untrained, 2, 4, new SkillFormula(eAttributes.Strength, 1, eAttributes.Coordination, 1, 2, 0));
+            addSkill(60, 0x060004da, "Sneaking", "Helps you walk past enemies without being noticed and past traps without triggering them.", eSkillCategory.NonWeapon, eSkillMinLevel.Untrained, 4, 8, new SkillFormula(eAttributes.Coordination, 1, eAttributes.Focus, 1, 3, 0));
+
+            Skills[(uint)eSkills.Shield].MinLevel = (int)eSkillMinLevel.Unusable;
+            Skills[(uint)eSkills.DualWield].MinLevel = (int)eSkillMinLevel.Unusable;
 
             Skills[(uint)eSkills.Salvaging].TrainedCost = 2;
             Skills[(uint)eSkills.Salvaging].SpecializedCost = 1001;
@@ -176,7 +254,6 @@ namespace Melt
             Skills[(uint)eSkills.Spear].Name = "Spear and Staff";
             Skills[(uint)eSkills.Spear].TrainedCost = 6;
             Skills[(uint)eSkills.Spear].SpecializedCost = 12;
-            //Skills[(uint)eSkills.Spear].Formula = Skills[(uint)eSkills.Dagger].Formula;
             Skills[(uint)eSkills.Spear].Formula = new SkillFormula(eAttributes.Coordination, 4, eAttributes.Quickness, 2, 9, 0);
 
             Skills[(uint)eSkills.UnarmedCombat].TrainedCost = 4;
@@ -268,21 +345,6 @@ namespace Melt
                 formulaString = $"({formulaString}) + {formula.TotalAddition}";
 
             return formulaString;
-        }
-
-        public void copySkill(string skillName, SkillTable from)
-        {
-            foreach (KeyValuePair<uint, Skill> entry in from.Skills)
-            {
-                Skill skill = entry.Value;
-                if (skill.Name == skillName)
-                {
-                    Skills.Add(entry.Key, skill);
-                    Console.WriteLine("Skill copied.");
-                    return;
-                }
-            }
-            Console.WriteLine($"Couldn't find {skillName} skill to copy.");
         }
 
         public void save(string filename)
