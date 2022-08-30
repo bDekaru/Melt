@@ -1,3 +1,4 @@
+using Melt;
 using System.IO;
 
 namespace ACE.DatLoader.Entity.AnimationHooks
@@ -11,6 +12,13 @@ namespace ACE.DatLoader.Entity.AnimationHooks
             base.Unpack(reader);
 
             Id = reader.ReadUInt32();
+        }
+
+        public override void Pack(StreamWriter output)
+        {
+            base.Pack(output);
+
+            Utils.writeUInt32(Id, output);
         }
     }
 }

@@ -226,17 +226,17 @@ namespace Melt
             removeSkill("Staff");
             removeSkill("Crossbow");
 
-            //addSkill((uint)eSkills.SpellCraft, 0x060004db, "Spellcraft", "Lets you transfer spells between items.", eSkillCategory.Magic, eSkillMinLevel.Unusable, 4, 8, new SkillFormula(eAttributes.Coordination, 1, eAttributes.Focus, 1, 3, 0));
-            addSkill((uint)eSkills.SpellCraft, 0x060004db, "Spellcraft", "Lets you transfer spells between items.", eSkillCategory.Magic, eSkillMinLevel.Unusable, 999, 999, new SkillFormula(eAttributes.Coordination, 1, eAttributes.Focus, 1, 3, 0));
-            addSkill((uint)eSkills.Awareness, 0x060004c8, "Awareness", "Helps you see traps and other hidden objects.", eSkillCategory.NonWeapon, eSkillMinLevel.Untrained, 4, 8, new SkillFormula(eAttributes.Coordination, 1, eAttributes.Focus, 1, 3, 0));
-            //addSkill((uint)eSkills.ArmsAndArmorRepair, 0x060004c6, "Arms and Armor Repair", "Lets you improve arms and armor condition.", eSkillCategory.NonWeapon, eSkillMinLevel.Unusable, 4, 8, new SkillFormula(eAttributes.Coordination, 1, eAttributes.Focus, 1, 3, 0));
-            addSkill((uint)eSkills.ArmsAndArmorRepair, 0x060004c6, "Arms and Armor Repair", "Lets you improve arms and armor condition.", eSkillCategory.NonWeapon, eSkillMinLevel.Unusable, 999, 999, new SkillFormula(eAttributes.Coordination, 1, eAttributes.Focus, 1, 3, 0));
+            //addSkill((uint)eSkills.SpellCraft, 0x06000177, "Spellcraft", "Lets you transfer spells between items.", eSkillCategory.Magic, eSkillMinLevel.Unusable, 4, 8, new SkillFormula(eAttributes.Coordination, 1, eAttributes.Focus, 1, 3, 0));
+            //addSkill((uint)eSkills.SpellCraft, 0x06000177, "Spellcraft", "Lets you transfer spells between items.", eSkillCategory.Magic, eSkillMinLevel.Unusable, 999, 999, new SkillFormula(eAttributes.Coordination, 1, eAttributes.Focus, 1, 3, 0));
+            addSkill((uint)eSkills.Awareness, 0x06000166, "Awareness", "Helps you see traps and other hidden objects.", eSkillCategory.NonWeapon, eSkillMinLevel.Untrained, 4, 8, new SkillFormula(eAttributes.Coordination, 1, eAttributes.Focus, 1, 3, 0));
+            //addSkill((uint)eSkills.ArmsAndArmorRepair, 0x0600015e, "Arms and Armor Repair", "Lets you improve arms and armor condition.", eSkillCategory.NonWeapon, eSkillMinLevel.Unusable, 4, 8, new SkillFormula(eAttributes.Coordination, 1, eAttributes.Focus, 1, 3, 0));
+            //addSkill((uint)eSkills.ArmsAndArmorRepair, 0x0600015e, "Arms and Armor Repair", "Lets you improve arms and armor condition.", eSkillCategory.NonWeapon, eSkillMinLevel.Unusable, 999, 999, new SkillFormula(eAttributes.Coordination, 1, eAttributes.Focus, 1, 3, 0));
             addSkill(55, 0x0600209b, "Appraise Missile Item", "Helps you evaluate the value of ranged weapons.", eSkillCategory.NonWeapon, eSkillMinLevel.Unusable, 2, 4, new SkillFormula(eAttributes.Focus, 1, eAttributes.None, 0, 1, 0));
             addSkill(56, 0x0600209d, "Appraise Melee Item", "Helps you evaluate the value of close-quarters weapons.", eSkillCategory.NonWeapon, eSkillMinLevel.Unusable, 2, 4, new SkillFormula(eAttributes.Focus, 1, eAttributes.None, 0, 1, 0));
             addSkill(57, 0x0600209a, "Appraise Armor", "Helps you evaluate the value of armor and clothing.", eSkillCategory.NonWeapon, eSkillMinLevel.Unusable, 2, 4, new SkillFormula(eAttributes.Focus, 1, eAttributes.None, 0, 1, 0));
             addSkill(58, 0x0600209c, "Appraise Caster Item", "Helps you evaluate the value of casting implements, gems and jewelry.", eSkillCategory.NonWeapon, eSkillMinLevel.Unusable, 2, 4, new SkillFormula(eAttributes.Focus, 1, eAttributes.None, 0, 1, 0));
-            addSkill(59, 0x060004ca, "Armor", "Helps you wield armor.", eSkillCategory.NonWeapon, eSkillMinLevel.Untrained, 2, 4, new SkillFormula(eAttributes.Strength, 1, eAttributes.Coordination, 1, 2, 0));
-            addSkill(60, 0x060004da, "Sneaking", "Helps you walk past enemies without being noticed and past traps without triggering them.", eSkillCategory.NonWeapon, eSkillMinLevel.Untrained, 4, 8, new SkillFormula(eAttributes.Coordination, 1, eAttributes.Focus, 1, 3, 0));
+            addSkill(59, 0x06000174, "Armor", "Helps you wield armor.", eSkillCategory.NonWeapon, eSkillMinLevel.Untrained, 2, 4, new SkillFormula(eAttributes.Strength, 1, eAttributes.Coordination, 1, 2, 0));
+            addSkill(60, 0x06000176, "Sneaking", "Helps you walk past enemies without being noticed and past traps without triggering them.", eSkillCategory.NonWeapon, eSkillMinLevel.Unusable, 4, 8, new SkillFormula(eAttributes.Coordination, 1, eAttributes.Focus, 1, 3, 0));
 
             Skills[(uint)eSkills.Shield].MinLevel = (int)eSkillMinLevel.Unusable;
             Skills[(uint)eSkills.DualWield].MinLevel = (int)eSkillMinLevel.Unusable;

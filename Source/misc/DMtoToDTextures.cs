@@ -52,7 +52,9 @@ namespace Melt
             //Since we fixed the client to actually use the ground detail texture we had to revisit this.
             //Moss will now have an id of 0x06006d32 which was the Celebration Event splash screen.
             //Remember to manually edit 05001c3a.bin to point to it
-            TextureConverter.toBin("Landscape Texture Conversion/DM Upscaled/Textures/05001c3a.png", 0x06006d32, 21);//Moss
+            //addendum 3:
+            //And finally after bug fixes we can add this texture to it's own previously unused id: 0x06006d3b
+            TextureConverter.toBin("Landscape Texture Conversion/DM Upscaled/Textures/05001c3a.png", 0x06006d3b, 21);//Moss
 
             TextureConverter.toBin("Landscape Texture Conversion/DM Upscaled/Textures/05001c3b.png", 0x06006d3d, 21);//DarkMoss
             TextureConverter.toBin("Landscape Texture Conversion/DM Upscaled/Textures/05001c3c.png", 0x06006d3e, 21);//olthoi

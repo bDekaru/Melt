@@ -114,10 +114,14 @@ namespace Melt
             startBlockOffset = 0;
             timeStamp = (uint)DateTimeOffset.Now.ToUnixTimeSeconds();
 
-            while(inputFile.BaseStream.Position < inputFile.BaseStream.Length)
-            {
-                fileContent.WriteByte((byte)inputFile.BaseStream.ReadByte());
-            }
+            //while (inputFile.BaseStream.Position < inputFile.BaseStream.Length)
+            //{
+            //    fileContent.WriteByte((byte)inputFile.BaseStream.ReadByte());
+            //}
+            var size = (int)(inputFile.BaseStream.Length - inputFile.BaseStream.Position);
+            var buffer = new byte[size];
+            var readSize = inputFile.BaseStream.Read(buffer, 0, size);
+            fileContent.Write(buffer, 0, readSize);
 
             fileContent.Seek(0, SeekOrigin.Begin);
             fileSize = (int)fileContent.Length;

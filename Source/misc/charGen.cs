@@ -545,12 +545,12 @@ namespace Melt
                     {
                         case "Bow Hunter":
                             template.PrimarySkillsList = new List<uint>();
+                            template.PrimarySkillsList.Add((uint)eSkills.Armor);
                             template.PrimarySkillsList.Add((uint)eSkills.Bow);
                             template.PrimarySkillsList.Add((uint)eSkills.MeleeDefense);
                             template.NormalSkillsList = new List<uint>();
                             template.NormalSkillsList.Add((uint)eSkills.ArcaneLore);
                             template.NormalSkillsList.Add((uint)eSkills.CreatureAppraisal);
-                            template.NormalSkillsList.Add((uint)eSkills.Fletching);
                             template.NormalSkillsList.Add((uint)eSkills.Healing);
                             break;
                         case "Life Caster":
@@ -571,33 +571,36 @@ namespace Melt
                             break;
                         case "Wayfarer":
                             template.PrimarySkillsList = new List<uint>();
-                            template.PrimarySkillsList.Add((uint)eSkills.ArcaneLore);
-                            template.PrimarySkillsList.Add((uint)eSkills.CreatureAppraisal);
-                            template.PrimarySkillsList.Add((uint)eSkills.Lockpick);
                             template.PrimarySkillsList.Add((uint)eSkills.Dagger);
                             template.NormalSkillsList = new List<uint>();
+                            template.NormalSkillsList.Add((uint)eSkills.ArcaneLore);
+                            template.NormalSkillsList.Add((uint)eSkills.Armor);
+                            template.NormalSkillsList.Add((uint)eSkills.Awareness);
+                            template.NormalSkillsList.Add((uint)eSkills.CreatureAppraisal);
+                            template.NormalSkillsList.Add((uint)eSkills.Healing);
+                            template.NormalSkillsList.Add((uint)eSkills.Lockpick);
+                            template.NormalSkillsList.Add((uint)eSkills.MeleeDefense);
                             if (heritage.Name == "Sho")
                                 template.PrimarySkillsList.Add((uint)eSkills.PersonalAppraisal);
                             else
                                 template.NormalSkillsList.Add((uint)eSkills.PersonalAppraisal);
-                            template.NormalSkillsList.Add((uint)eSkills.Healing);
-                            template.NormalSkillsList.Add((uint)eSkills.MeleeDefense);
+                            template.NormalSkillsList.Add((uint)eSkills.Sneaking);
                             break;
                         case "Soldier":
                             template.PrimarySkillsList = new List<uint>();
-                            template.PrimarySkillsList.Add((uint)eSkills.ArcaneLore);
+                            template.PrimarySkillsList.Add((uint)eSkills.Armor);
                             template.PrimarySkillsList.Add((uint)eSkills.Axe);
-                            template.PrimarySkillsList.Add((uint)eSkills.Healing);
                             template.PrimarySkillsList.Add((uint)eSkills.MeleeDefense);
+                            template.PrimarySkillsList.Add((uint)eSkills.Shield);
                             template.NormalSkillsList = new List<uint>();
                             if (heritage.Name == "Aluvian")
-                                template.PrimarySkillsList.Add((uint)eSkills.Shield);
+                                template.PrimarySkillsList.Add((uint)eSkills.ArcaneLore);
                             else
-                                template.NormalSkillsList.Add((uint)eSkills.Shield);
+                                template.NormalSkillsList.Add((uint)eSkills.ArcaneLore);
+                            template.NormalSkillsList.Add((uint)eSkills.Healing);
                             break;
                         case "Swashbuckler":
                             template.PrimarySkillsList = new List<uint>();
-                            template.PrimarySkillsList.Add((uint)eSkills.ArcaneLore);
                             template.PrimarySkillsList.Add((uint)eSkills.MeleeDefense);
                             template.PrimarySkillsList.Add((uint)eSkills.Sword);
                             template.NormalSkillsList = new List<uint>();
@@ -605,6 +608,8 @@ namespace Melt
                                 template.PrimarySkillsList.Add((uint)eSkills.Shield);
                             else
                                 template.NormalSkillsList.Add((uint)eSkills.Shield);
+                            template.NormalSkillsList.Add((uint)eSkills.ArcaneLore);
+                            template.NormalSkillsList.Add((uint)eSkills.Armor);
                             template.NormalSkillsList.Add((uint)eSkills.CreatureAppraisal);
                             template.NormalSkillsList.Add((uint)eSkills.Healing);
                             template.Endurance = 50;

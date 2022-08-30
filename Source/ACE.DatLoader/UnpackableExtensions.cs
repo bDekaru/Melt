@@ -403,6 +403,8 @@ namespace ACE.DatLoader
 
         public static void Pack<T>(this List<T> value, StreamWriter output) where T : IPackable, new()
         {
+            Utils.writeUInt32((uint)value.Count, output);
+
             foreach (var entry in value)
             {
                 entry.Pack(output);
@@ -414,6 +416,17 @@ namespace ACE.DatLoader
             foreach (var entry in value)
             {
                 Utils.writeUInt16(entry.Key, output);
+                entry.Value.Pack(output);
+            }
+        }
+
+        public static void Pack<T>(this Dictionary<uint, T> value, StreamWriter output) where T : IPackable, new()
+        {
+            Utils.writeUInt32((uint)value.Count, output);
+
+            foreach (var entry in value)
+            {
+                Utils.writeUInt32(entry.Key, output);
                 entry.Value.Pack(output);
             }
         }

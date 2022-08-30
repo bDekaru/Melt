@@ -1,8 +1,9 @@
+using Melt;
 using System.IO;
 
 namespace ACE.DatLoader.Entity
 {
-    public class AttackCone : IUnpackable
+    public class AttackCone : IUnpackable, IPackable
     {
         public uint PartIndex { get; set; }
         
@@ -28,6 +29,20 @@ namespace ACE.DatLoader.Entity
             
             Radius      = reader.ReadSingle();
             Height      = reader.ReadSingle();
+        }
+
+        public void Pack(StreamWriter output)
+        {
+            Utils.writeUInt32(PartIndex, output);
+
+            Utils.writeSingle(LeftX, output);
+            Utils.writeSingle(LeftY, output);
+
+            Utils.writeSingle(RightX, output);
+            Utils.writeSingle(RightY, output);
+
+            Utils.writeSingle(Radius, output);
+            Utils.writeSingle(Height, output);
         }
     }
 }

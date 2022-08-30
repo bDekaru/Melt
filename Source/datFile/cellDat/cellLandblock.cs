@@ -89,7 +89,7 @@ namespace Melt
 
             file.fileContent.Seek(0, SeekOrigin.Begin);
             file.fileSize = (int)file.fileContent.Length;
-            file.fileFormat = eDatFormat.ToD; //we only write int ToD format
+            file.fileFormat = eDatFormat.ToD; //we only write in ToD format
         }
 
         public void writeToDat(StreamWriter outputFile)

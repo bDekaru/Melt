@@ -173,32 +173,32 @@ namespace Melt
                     case 0x0C618F12: // Bow Hunter
                         break;
                     case 0x05DB3724: // BOW HUNTERS are specialists in the use of bows. Few characters can shoot arrows with such lethal precision as a highly trained hunter.\n\nThe Bow Hunter profession contains the Arcane Lore, Finesse Weapons, Item Enchantment, Melee Defense, Missile Weapons, and Shield skills.
-                        stringTableEntry.Strings[0] = "BOW HUNTERS are specialists in the use of bows. Few characters can shoot arrows with such lethal precision as a highly trained hunter.\n\nThe Bow Hunter profession contains the Arcane Lore, Assess Creature, Bow, Healing, Fletching and Melee Defense skills";
+                        stringTableEntry.Strings[0] = "BOW HUNTERS are specialists in the use of bows. Few characters can shoot arrows with such lethal precision as a highly trained hunter.";
                         break;
                     case 0x00264E72: // Life Caster
                         break;
                     case 0x04B31214: // LIFE CASTERS are experts in all matters of vital essence.They can both give life and take it away.\n\nThe Life Caster profession contains the Arcane Lore, Life Magic, Creature Enchantment, Mana Conversion and War Magic skills.
-                        stringTableEntry.Strings[0] = "LIFE CASTERS are experts in all matters of vital essence.They can both give life and take it away.\n\nThe Life Caster profession contains the Alchemy, Life Magic, Mana Conversion and War Magic skills.";
+                        stringTableEntry.Strings[0] = "LIFE CASTERS are experts in all matters of vital essence.They can both give life and take it away.";
                         break;
                     case 0x0132AC75: // War Mage
                         break;
                     case 0x01303754: // WAR MAGES are characters skilled in the arts of battle magics.Few can match their destructive power.\n\nThe War Mage profession contains the War Magic, Mana Conversion and Life Magic skills.
-                        stringTableEntry.Strings[0] = "WAR MAGES are characters skilled in the arts of battle magics.Few can match their destructive power.\n\nThe War Mage profession contains the Arcane Lore, Healing, Mana Conversion and War Magic skills.";
+                        stringTableEntry.Strings[0] = "WAR MAGES are characters skilled in the arts of battle magics.Few can match their destructive power.";
                         break;
                     case 0x038532D2: // Wayfarer
                         break;
                     case 0x01393754: // WAYFARERS are versatile adventurers, fighting their way through life with stealth and skill.\n\nThe Wayfarer gets the Dirty Fighting, Dual Wield, Finesse Weapons, Healing, Item Enchantment, Lockpick, Melee Defense, Healing and Missile Weapons skills.
-                        stringTableEntry.Strings[0] = "WAYFARERS are versatile adventurers, fighting their way through life with stealth and skill.\n\nThe Wayfarer gets the Arcane Lore, Assess Creature, Assess Person, Dagger, Lockpick, Healing and Melee Defense skills.";
+                        stringTableEntry.Strings[0] = "WAYFARERS are versatile adventurers, fighting their way through life with stealth and skill.";
                         break;
                     case 0x06F53462: // Soldier
                         break;
                     case 0x046159C4: // SOLDIERS are the essential shield fighter, hewing hordes of enemies with a large weapon.\n\nThe Soldier profession contains the Dirty Fighting, Heavy Weapons, Melee Defense, Shield, Healing and Missile Weapons skills.
-                        stringTableEntry.Strings[0] = "SOLDIERS are the essential shield fighter, hewing hordes of enemies with a large weapon.\n\nThe Soldier profession contains the Arcane Lore, Axe, Healing and Melee Defense and Shield skills.";
+                        stringTableEntry.Strings[0] = "SOLDIERS are the essential shield fighter, hewing hordes of enemies with a large weapon.";
                         break;
                     case 0x03E0F292: // Swashbuckler
                         break;
                     case 0x0F060A94: // SWASHBUCKLERS are specialists in the art of swordfighting.  Few compare to their daring or their skill.\n\nThe Swashbuckler profession contains the Arcane Lore, Dual Wield, Heavy Weapons, Melee Defense, Healing and Item Enchantment skills.
-                        stringTableEntry.Strings[0] = "SWASHBUCKLERS are specialists in the art of swordfighting.  Few compare to their daring or their skill.\n\nThe Swashbuckler profession contains the Arcane Lore, Creature Appraisal, Healing, Melee Defense and Sword and Shield skills.";
+                        stringTableEntry.Strings[0] = "SWASHBUCKLERS are specialists in the art of swordfighting.  Few compare to their daring or their skill.";
                         break;
                     case 0x05D3F822: // Sanamar
                         stringTableEntry.Strings[0] = "Random";

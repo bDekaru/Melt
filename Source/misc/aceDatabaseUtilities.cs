@@ -869,6 +869,37 @@ namespace Melt
             Console.WriteLine($"Added {count} entries.");
         }
 
+        public static void AddMagnifyingGlassToVendors()
+        {
+            //Add magnifying tools to everyone that sells usts.
+            var connection = new MySqlConnection($"server=127.0.0.1;port=3306;user=ACEmulator;password=password;DefaultCommandTimeout=120;database=ace_world_customDM");
+            connection.Open();
+
+            string sql = "SELECT object_Id FROM weenie_properties_create_list WHERE weenie_Class_Id = 20646 AND destination_Type = 4"; // Pack
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            MySqlDataReader reader = command.ExecuteReader();
+
+            List<int> vendors = new List<int>();
+
+            while (reader.Read())
+            {
+                vendors.Add(reader.GetInt32(0));
+            }
+            reader.Close();
+
+            int count = 0;
+            foreach (var vendor in vendors)
+            {
+                sql = $"INSERT INTO weenie_properties_create_list (object_Id, destination_Type, weenie_Class_Id, stack_Size, palette, shade, try_To_Bond)" +
+                      $"VALUES ({vendor}, 4, 50077, -1, 0, 0.0, 0)";
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+            }
+            connection.Close();
+
+            Console.WriteLine($"Added {count} entries.");
+        }
+
         public static void AddCombatTacticsAndTechniquesToVendors()
         {
             var connection = new MySqlConnection($"server=127.0.0.1;port=3306;user=ACEmulator;password=password;DefaultCommandTimeout=120;database=ace_world_customDM");

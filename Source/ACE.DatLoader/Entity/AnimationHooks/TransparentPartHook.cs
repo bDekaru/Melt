@@ -4,10 +4,10 @@ namespace ACE.DatLoader.Entity.AnimationHooks
 {
     public class TransparentPartHook : AnimationHook
     {
-        public uint Part { get; private set; }
-        public float Start { get; private set; }
-        public float End { get; private set; }
-        public float Time { get; private set; }
+        public uint Part { get; set; }
+        public float Start { get; set; }
+        public float End { get; set; }
+        public float Time { get; set; }
 
         public override void Unpack(BinaryReader reader, bool isToD = true)
         {

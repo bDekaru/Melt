@@ -628,6 +628,8 @@
     <Compile Include="Source\Ace.Entity\SWVertex.cs" />
     <Compile Include="Source\Ace.Entity\TextureMapChange.cs" />
     <Compile Include="Source\Ace.Entity\Vec2Duv.cs" />
+    <Compile Include="Source\misc\PlayScriptTools.cs" />
+    <Compile Include="Source\misc\SetupModelTools.cs" />
     <Compile Include="Source\misc\LandscapeSpawnMap.cs" />
     <Compile Include="Source\misc\GoArrowUtilities.cs" />
     <Compile Include="Source\misc\aceDatabaseUtilities.cs" />
@@ -690,7 +692,7 @@
     <Compile Include="Source\weenies\weenieClassNameList.cs" />
     <Compile Include="Source\weenies\spellInfoList.cs" />
     <Compile Include="Source\weenies\enums.cs" />
-    <Compile Include="Source\misc\DMtoToD.cs" />
+    <Compile Include="Source\misc\DMtoToDTextures.cs" />
     <Compile Include="Source\misc\RegionComparer.cs" />
     <Compile Include="Source\misc\TextureIdDictionary.cs" />
     <Compile Include="Source\misc\RegionConverter DM.cs" />

@@ -75,7 +75,14 @@ namespace Melt
         SneakAttack = 51,
         DirtyFighting = 52,
         Challenge = 53,
-        Summoning = 54
+        Summoning = 54,
+        // CustomDM
+        AppraiseMissileItem = 55,
+        AppraiseMeleeItem = 56,
+        AppraiseArmor = 57,
+        AppraiseCasterItem = 58,
+        Armor = 59,
+        Sneaking = 60
     }
 
     public enum eSkillAdvancementClass

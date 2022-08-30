@@ -4,15 +4,16 @@ using System.IO;
 using ACE.DatLoader.Entity.AnimationHooks;
 using ACE.Entity.Enum;
 using log4net;
+using Melt;
 
 namespace ACE.DatLoader.Entity
 {
-    public class AnimationHook : IUnpackable
+    public class AnimationHook : IUnpackable, IPackable
     {
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-        public AnimationHookType HookType { get; private set; }
-        public AnimationHookDir Direction { get; private set; }
+        public AnimationHookType HookType { get; set; }
+        public AnimationHookDir Direction { get; set; }
 
         public static AnimationHook AnimDoneHook;
 
@@ -30,6 +31,13 @@ namespace ACE.DatLoader.Entity
         {
             HookType = (AnimationHookType)reader.ReadUInt32();
             Direction = (AnimationHookDir)reader.ReadInt32();
+        }
+
+        public virtual void Pack(StreamWriter output)
+        {
+            //TODO: not all animationHookTypes have implemented packers
+            Utils.writeUInt32((uint)HookType, output);
+            Utils.writeUInt32((uint)Direction, output);
         }
 
         public static AnimationHook ReadHook(BinaryReader reader)

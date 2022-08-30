@@ -203,9 +203,9 @@ namespace Melt
             //}
 
             //fileSize = inputBlockCache.fileSize;
-            //freeHead = inputBlockCache.fileSize;
-            //freeTail = inputBlockCache.fileSize;
-            //freeCount = inputBlockCache.fileSize;
+            //freeHead = inputBlockCache.freeHead;
+            //freeTail = inputBlockCache.freeTail;
+            //freeCount = inputBlockCache.freeCount;
 
             bTree = new cBTree(31);
 
@@ -224,14 +224,14 @@ namespace Melt
                 entry.Value.writeToDat(outputFile, blockSize);
             }
 
-            if (outputBlockCache.freeCount < 1000)
-                outputBlockCache.addNewFreeBlocks(1000 - (int)outputBlockCache.freeCount);
+            //if (outputBlockCache.freeCount < 1000)
+            //    outputBlockCache.addNewFreeBlocks(1000 - (int)outputBlockCache.freeCount);
 
             rootDirectoryOffset = rootDirectory.startBlockOffset;
             fileSize = outputBlockCache.fileSize;
-            freeHead = outputBlockCache.fileSize;
-            freeTail = outputBlockCache.fileSize;
-            freeCount = outputBlockCache.fileSize;
+            freeHead = outputBlockCache.freeHead;
+            freeTail = outputBlockCache.freeTail;
+            freeCount = outputBlockCache.freeCount;
 
             outputFile.BaseStream.Seek(256, SeekOrigin.Begin); //skip acVersionStr which is empty
             Utils.writeBytes(acTransactionRecord, outputFile);

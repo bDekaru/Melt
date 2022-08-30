@@ -2067,59 +2067,96 @@ namespace Melt
             return true;
         }
 
-        //public cDatFileEntry getFile(uint fileId)
-        //{
-        //    cDatFileEntry file;
-        //    if (fileCache.TryGetValue(fileId, out file))
-        //        return file;
-        //    return null;
-        //}
+        public cDatFileEntry getFile(uint fileId)
+        {
+            cDatFileEntry file;
+            if (fileCache.TryGetValue(fileId, out file))
+                return file;
+            return null;
+        }
 
-        //public bool replaceFile(int fileId, string filename)
-        //{
-        //    StreamReader inputFile = new StreamReader(new FileStream(filename, FileMode.Open, FileAccess.Read));
-        //    if (inputFile == null)
-        //    {
-        //        Console.WriteLine("Unable to open {0}", filename);
-        //        return false;
-        //    }
+        public bool copyFile(uint fileId, uint destinationFileId, int verboseLevel = 6)
+        {
+            if (verboseLevel > 5)
+                Console.WriteLine("Copying File...");
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+            cDatFileEntry file = getFile(fileId);
 
-        //    cDatFileEntry file = GetFile(0x0E00000E);
+            cDatFileEntry newFile = new cDatFileEntry(destinationFileId, eDatFormat.ToD);
 
-        //    file.fileContent = (MemoryStream)inputFile.BaseStream;
-        //    file.listOfBlocks = new List<cDatFileBlock>();
+            newFile.copyFrom(file);
+            newFile.fileId = destinationFileId;
 
-        //    //cDatFileEntry file = new cDatFileEntry(inputFile, eDatFormat.ToD, true);
+            if (fileCache.ContainsKey(destinationFileId))
+                fileCache.Remove(destinationFileId);
+            fileCache.Add(destinationFileId, newFile);
 
-        //    return true;
-        //}
+            timer.Stop();
+            if (verboseLevel > 5)
+                Console.WriteLine("Copied file in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
+            return true;
+        }
 
-        //public bool addFile(string filename, eDatFormat fileFormat = eDatFormat.ToD, int verboseLevel = 6)
-        //{
-        //    if (verboseLevel > 5)
-        //        Console.WriteLine("Adding File...");
-        //    Stopwatch timer = new Stopwatch();
-        //    timer.Start();
+        public bool addFilesFromFolder(string folderName, eDatFormat fileFormat = eDatFormat.ToD, int verboseLevel = 6)
+        {
+            if (verboseLevel > 5)
+                Console.WriteLine($"Adding files from folder: {folderName}...");
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
 
-        //    StreamReader inputFile = new StreamReader(new FileStream(filename, FileMode.Open, FileAccess.Read));
-        //    if (inputFile == null)
-        //    {
-        //        Console.WriteLine("Unable to open {0}", filename);
-        //        return false;
-        //    }
+            var di = new DirectoryInfo(folderName);
 
-        //    var fileId = Utils.readUInt32(inputFile);
-        //    inputFile.BaseStream.Position = 0;
+            if (di == null)
+            {
+                Console.WriteLine($"Unable to open {folderName}");
+                return false;
+            }
 
-        //    cDatFileEntry file = new cDatFileEntry(fileId, fileFormat);
-        //    file.updateFileContentFromStream(inputFile);
+            var fileList = di.GetFiles("*.bin");
 
-        //    fileCache.Add(file.fileId, file);
+            var successCount = 0;
+            foreach(var entry in fileList)
+            {
+                if (addFile(entry.FullName, fileFormat, verboseLevel))
+                    successCount++;
+            }
 
-        //    timer.Stop();
-        //    if (verboseLevel > 5)
-        //        Console.WriteLine("Added file in {0} seconds.", timer.ElapsedMilliseconds / 1000f);
-        //    return true;
-        //}
+            timer.Stop();
+            if (verboseLevel > 5)
+                Console.WriteLine($"Added {successCount}/{fileList.Length} files in {timer.ElapsedMilliseconds / 1000f} seconds.");
+
+            return successCount == fileList.Length;
+        }
+
+        public bool addFile(string filename, eDatFormat fileFormat = eDatFormat.ToD, int verboseLevel = 6)
+        {
+            if (verboseLevel > 5)
+                Console.WriteLine($"Adding file {filename}...");
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+
+            StreamReader inputFile = new StreamReader(new FileStream(filename, FileMode.Open, FileAccess.Read));
+            if (inputFile == null)
+            {
+                Console.WriteLine($"Unable to open {filename}");
+                return false;
+            }
+
+            var fileId = Utils.readUInt32(inputFile);
+            inputFile.BaseStream.Position = 0;
+
+            cDatFileEntry file = new cDatFileEntry(fileId, fileFormat);
+            file.updateFileContentFromStream(inputFile);
+
+            if (fileCache.ContainsKey(file.fileId))
+                fileCache.Remove(file.fileId);
+            fileCache.Add(file.fileId, file);
+
+            timer.Stop();
+            if (verboseLevel > 5)
+                Console.WriteLine($"Added file in {timer.ElapsedMilliseconds / 1000f} seconds.");
+            return true;
+        }
     }
 }

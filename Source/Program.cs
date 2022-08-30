@@ -15,9 +15,16 @@ namespace Melt
         {
             //GeneratePhatACLootFiles(args);
             //MapManipulationForCustomDM(args);
+            //PortalManipulationForCustomDM(args);
+            //LanguageManipulationForCustomDM(args);
+            //PortalManipulationForInfiltration(args);
             //MapManipulationForInfiltration(args);
+            //LanguageManipulationForInfiltration(args);
             //MapManipulation(args);
-            Workbench(args);
+            //Workbench(args);
+
+            Console.WriteLine("Done");
+            Console.ReadLine();
         }
 
         //public static cCache4Converter cache4Converter = new cCache4Converter();
@@ -26,16 +33,32 @@ namespace Melt
         public static cCache9Converter cache9Converter = new cCache9Converter();
         static void Workbench(string[] args)
         {
+            //PlayScriptTools playScript = new PlayScriptTools();
+            //playScript.LoadTableFromBin("./34000004 Original.bin");
+            ////playScript.LoadScriptFromBin("./33000233 Original.bin");
+            //playScript.AddSneakScripts();
+
+            //playScript.SaveTableToBin("./34000004.bin");
+            //playScript.SaveScriptToBin("./330013A0.bin");
+            //playScript.SaveScript2ToBin("./330013A1.bin");
+
+            //playScript.LoadScriptFromBin("./330013A0.bin");
+
             //cDatFile portalDatFile = new cDatFile();
             //portalDatFile.loadFromDat("./input/client_portal - EoR.dat");
-            //portalDatFile.addFile("./0600015e.bin");
-            //portalDatFile.writeToDat("client_portal.dat");
+            ////portalDatFile.copyFile(0x06006d3c, 0x06006d32);
+            ////portalDatFile.copyFile(0x33000233, 0x330013A0);
+            ////portalDatFile.copyFile(0x33000233, 0x330013A1);
+            //portalDatFile.addFile("./330013A0.bin");
+            //portalDatFile.writeToDat("./client_portal.dat");
 
             //GfxObjTools.BuildTranslationTable("./input/client_portal - EoR.dat", "./input/Surface Infiltration/");
             //GfxObjTools.FindUsedBy("./input/client_portal - EoR.dat", "./080008ed.bin");
             //GfxObjTools.FindTranslation("./input/client_portal - EoR.dat", "./08000aa2.bin");
             //GfxObjTools.FindTranslation("./input/client_portal - EoR.dat", "./08000aa3.bin");
             //GfxObjTools.FindTranslation("./input/client_portal - EoR.dat", "./080008ed.bin");
+
+            //SetupModelTools.CompareObjects("./Scene/Objects/DM");
 
             //GfxObjTools gfxObj = new GfxObjTools("./input/01000CFA.bin", false);
             //gfxObj.SaveToBin("./01000CFA.bin");
@@ -62,8 +85,8 @@ namespace Melt
             //TextureConverter.toBin("./input/06004d5f.png", 0x06004d5f, 500);
 
             //LanguageFileTools language = new LanguageFileTools("./input/client_local_English.dat");
-            //language.DumpStrings();
-            //language.ModifyForInfiltration();
+            ////language.DumpStrings();
+            ////language.ModifyForInfiltration();
             //language.ModifyForCustomDM();
 
             //TextureConverter.darkMajestyToPNG("./0600015E - Arms and Armor.bin");
@@ -71,11 +94,11 @@ namespace Melt
             //TextureConverter.darkMajestyToPNG("./06000174 - Armor.bin");
             //TextureConverter.darkMajestyToPNG("./06000176 - Sneak.bin");
             //TextureConverter.darkMajestyToPNG("./06000177 - Spellcraft.bin");
-            //TextureConverter.toBin("./input/0600015e - Arms and Armor.png", 0x060004c6, 20);
-            //TextureConverter.toBin("./input/06000166 - Awareness.png", 0x060004c8, 20);
-            //TextureConverter.toBin("./input/06000174 - Armor.png", 0x060004ca, 20);
-            //TextureConverter.toBin("./input/06000176 - Sneak.png", 0x060004da, 20);
-            //TextureConverter.toBin("./input/06000177 - Spellcraft.png", 0x060004db, 20);
+            //TextureConverter.toBin("./input/0600015e - Arms and Armor.png", 0x0600015e, 20);
+            //TextureConverter.toBin("./input/06000166 - Awareness.png", 0x06000166, 20);
+            //TextureConverter.toBin("./input/06000174 - Armor.png", 0x06000174, 20);
+            //TextureConverter.toBin("./input/06000176 - Sneak.png", 0x06000176, 20);
+            //TextureConverter.toBin("./input/06000177 - Spellcraft.png", 0x06000177, 20);
 
             //SkillTable skillTableLatest = new SkillTable("./Skill Tables/0E000004 - Skills Table - Original.bin");
             //SkillTable skillTableClassicWeaponSkills = new SkillTable("./Skill Tables/0E000004 - Skills Table - Classic weapon skills.bin");
@@ -85,8 +108,8 @@ namespace Melt
             //skillTableClassicWeaponSkills.save("./0E000004 - Skills Table - CustomDM.bin");
 
             //CharGen charGen = new CharGen("./input/0E000002.bin");
-            //charGen.modifyForDM();
-            //charGen.save("./0E000002 - CharGen - Infiltration.bin");
+            ////charGen.modifyForDM();
+            ////charGen.save("./0E000002 - CharGen - Infiltration.bin");
             //charGen.modifyForCustomDM();
             //charGen.save("./0E000002 - CharGen - CustomDM.bin");
 
@@ -94,6 +117,7 @@ namespace Melt
             //AceDatabaseUtilities.CreateFoodList();
             //AceDatabaseUtilities.RedistributeSpellServicesToVendors();
             //AceDatabaseUtilities.AddTethersToVendors();
+            //AceDatabaseUtilities.AddMagnifyingGlassToVendors();
             //AceDatabaseUtilities.AddCombatTacticsAndTechniquesToVendors();
             //AceDatabaseUtilities.AddLeyLineAmuletsToVendors();
             //AceDatabaseUtilities.AddCombatManualToVendors();
@@ -110,15 +134,6 @@ namespace Melt
             //AceDatabaseUtilities.RedistributeTradeNotesToVendors();
             //AceDatabaseUtilities.FindScrollVendors();
             //AceDatabaseUtilities.RemoveCowlsFromShopkeepers();
-
-            //cDatFile portalDatFile = new cDatFile();
-            //portalDatFile.loadFromDat("./input/client_portal - Infiltration.dat");
-            //portalDatFile.GetFileIteration();
-            //portalDatFile.SetFileIteration(10002);
-            //portalDatFile.writeToDat("client_portal_Infiltration.dat");
-
-            //portalDatFile.SetFileIteration(20003);
-            //portalDatFile.writeToDat("client_portal_CustomDM.dat");
 
             //XPTable xpConverter = new XPTable("./input/0E000018 latest.bin");
             //xpConverter.capAtlLevel(126);
@@ -177,12 +192,6 @@ namespace Melt
             //SpellsConverter.toBin("Spells/0E00000E - CustomDM.txt", "./0E00000E - Spells Table - CustomDM.bin");
             //SpellsConverter.toBin("Spells/0E00000E - Reversed plus removed auras and converted description from cache file.txt", "./0E00000E - Reversed plus removed auras and converted description from cache file.bin");
 
-            ////TextureConverter.folderToPNG("textures ToD");
-            ////TextureConverter.folderBMPToPNG("C:/Users/Dekaru/Desktop/Research/Textures Retail");
-            ////TextureConverter.toPNG("textures ToD/06003afb.bin");
-            ////Console.ReadLine();
-            ////return;
-
             ////TextureIdDictionary.folderExtractTextureFromHeader("./input/textureHeaders/");
             ////return;
 
@@ -197,7 +206,8 @@ namespace Melt
 
             //List<uint> ListEoR = regionLatest.GetSceneIds();
             //List<uint> ListDM = regionDM.GetSceneIds();
-            //SceneUtilities.CompareObjectLists(ListEoR, ListDM);
+            ////SceneUtilities.CompareObjectLists(ListEoR, ListDM);
+            //SceneUtilities.CompareObjects(ListEoR, ListDM);
 
             //List<uint> ListEoR = regionLatest.GetObjects("./input/client_portal - EoR.dat");
             //List<uint> ListDM = regionLatest.GetObjects("./input/portal - 2005-02-XX (Admin) (Iteration 2112).dat");
@@ -296,79 +306,48 @@ namespace Melt
             //cCache9Converter.writeJson("./input/0009.raw", false);
             //cCache9Converter.writeExtendedJson("./input/0009.raw", false);
             //cCache9Converter.writeRawFromExtendedJson("./input/extended weenies/");
-
-            Console.WriteLine("Done");
-            Console.ReadLine();
-            return;
         }
 
-        static void MapManipulation(string[] args)
+        static void LanguageManipulationForCustomDM(string[] args)
         {
-            cDatFile datFile = new cDatFile();
+            //TODO: these files cause the client to crash, for now using Kenneth Gober's dat writing tools for these
+            cDatFile languageDatFile = new cDatFile();
+            languageDatFile.loadFromDat("./Dat Builder/Language/client_local_English_EoR.dat");
+            languageDatFile.SetFileIteration(20004);
+            languageDatFile.addFilesFromFolder("./Dat Builder/Language/CustomDM/");
+            languageDatFile.writeToDat("./Dat Builder/client_local_English.dat");
+        }
 
-            datFile.loadFromDat("./input/client_cell_1 - Infiltration - Converted to ToD format (Iteration 1593).dat"); // Same as above but already converted to ToD format to speed thing up.
+        static void LanguageManipulationForInfiltration(string[] args)
+        {
+            //TODO: these files cause the client to crash, for now using Kenneth Gober's dat writing tools for these
+            cDatFile languageDatFile = new cDatFile();
+            languageDatFile.loadFromDat("./Dat Builder/Language/client_local_English_EoR.dat");
+            languageDatFile.SetFileIteration(10002);
+            languageDatFile.addFilesFromFolder("./Dat Builder/Language/Infiltration/");
+            languageDatFile.writeToDat("./Dat Builder/client_local_English.dat");
+        }
 
-            //datFile.convertLandblock(0x56510342);
+        static void PortalManipulationForCustomDM(string[] args)
+        {
+            cDatFile portalDatFile = new cDatFile();
+            portalDatFile.loadFromDat("./Dat Builder/Portal/client_portal_EoR.dat");
+            portalDatFile.SetFileIteration(20009);
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/CustomDM/");
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Textures");
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Trees");
+            portalDatFile.writeToDat("./Dat Builder/client_portal.dat");
+        }
 
-            //cDatFile datFile = new cDatFile();
-            //datFile.loadFromDat("./input/client_cell_1.dat");
-            //datFile.SetFileIteration(20000);
-            //datFile.writeToDat("./client_cell_1.dat");
-
-            //cDatFile datFile = new cDatFile();
-            //datFile.loadFromDat("./input/client_cell_1.dat");
-            //datFile.loadFromDat("./input/client_cell_1 - Infiltration.dat");
-            //datFile.loadFromDat("./input/cell - Late DM - 2004-09-01.dat");
-            //datFile.loadFromDat("./client_cell_1.dat");
-
-            //cDatFile datFileOld = new cDatFile();
-            //datFileOld.loadFromDat("./input/cell - Release.dat");
-            //datFileOld.loadFromDat("./input/cell - 2000-12-31 - Obsidian Span.dat");
-            //datFileOld.loadFromDat("./input/cell - DM - 2001-09-12.dat");
-            //datFileOld.loadFromDat("./input/client_cell_1.dat");
-            //datFileOld.loadFromDat("./input/cell - End of Beta Event.dat");
-            //datFileOld.loadFromDat("./input/cell - 2005-01-05 (198656kb) (Admin) (Iteration 1583 - Complete).dat");
-            //int retailIteration = datFileOld.loadFromDat("./input/cell - 2005-02-XX (202752kb) (Admin) (Iteration 1593 - Complete).dat");
-            //datFileOld.convertRetailToToD(retailIteration);
-            //datFileOld.writeToDat("./client_cell_1 - Infiltration - Converted to ToD format (Iteration 1593).dat");
-
-            //cDatFile replacementDataFile = null;
-            //if (datFileOld.isMissingCells)
-            //{
-            //    Console.WriteLine($"Missing {datFileOld.getMissingCellsList().Count} cells...");
-            //    replacementDataFile = new cDatFile();
-            //    //replacementDataFile.loadFromDat("./input/cell - Release.dat");
-            //    replacementDataFile.loadFromDat("./input/client_cell_1.dat");
-            //    datFileOld.completeCellsFrom(replacementDataFile, true);
-            //    //datFileOld.truncateMissingCells();
-            //}
-
-            //int missingCount;
-            //if (datFileOld.isMissingLandblocks(out missingCount))
-            //{
-            //    Console.WriteLine($"Missing {missingCount} landblocks...");
-            //    if (replacementDataFile == null)
-            //    {
-            //        replacementDataFile = new cDatFile();
-            //        //replacementDataFile.loadFromDat("./input/cell - Release.dat");
-            //        replacementDataFile.loadFromDat("./input/client_cell_1.dat");
-            //    }
-            //    datFileOld.completeLandblocksFrom(replacementDataFile);
-            //}
-
-            //datFileOld.writeToDat("./client_cell_1.dat");
-
-            //datFile.replaceDungeon(0x017d, datFileOld, 0);
-
-            //cCellDat cellDat = new cCellDat();
-            //cellDat.loadFromDat(datFileOld);
-            //cMapDrawer mapDrawer = new cMapDrawer(cellDat);
-            //mapDrawer.draw(false, 50);
-
-            //datFileOld.writeToDat("./client_cell_1.dat");
-
-            Console.WriteLine("Done");
-            Console.ReadLine();
+        static void PortalManipulationForInfiltration(string[] args)
+        {
+            cDatFile portalDatFile = new cDatFile();
+            portalDatFile.loadFromDat("./Dat Builder/Portal/client_portal_EoR.dat");
+            portalDatFile.SetFileIteration(10005);
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Infiltration/");
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Textures");
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Trees");
+            portalDatFile.writeToDat("./Dat Builder/client_portal.dat");
         }
 
         static void MapManipulationForCustomDM(string[] args)
@@ -592,11 +571,7 @@ namespace Melt
             cMapDrawer mapDrawer = new cMapDrawer(cellDat);
             mapDrawer.draw(false, 50);
 
-            datFile.writeToDat("./custDM_cell_1.dat");
-
-            Console.WriteLine("Done");
-            Console.ReadLine();
-            return;
+            datFile.writeToDat("./client_cell_1.dat");
         }
 
         static void MapManipulationForInfiltration(string[] args)
@@ -624,11 +599,7 @@ namespace Melt
             cMapDrawer mapDrawer = new cMapDrawer(cellDat);
             mapDrawer.draw(false, 50);
 
-            datFile.writeToDat("./infilt_cell_1.dat");
-
-            Console.WriteLine("Done");
-            Console.ReadLine();
-            return;
+            datFile.writeToDat("./client_cell_1.dat");
         }
 
         static void GeneratePhatACLootFiles(string[] args)

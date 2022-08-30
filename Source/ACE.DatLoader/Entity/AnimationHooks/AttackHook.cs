@@ -1,3 +1,4 @@
+using Melt;
 using System.IO;
 
 namespace ACE.DatLoader.Entity.AnimationHooks
@@ -11,6 +12,13 @@ namespace ACE.DatLoader.Entity.AnimationHooks
             base.Unpack(reader);
 
             AttackCone.Unpack(reader);
+        }
+
+        public override void Pack(StreamWriter output)
+        {
+            base.Pack(output);
+
+            AttackCone.Pack(output);
         }
     }
 }
