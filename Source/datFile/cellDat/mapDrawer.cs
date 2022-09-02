@@ -137,7 +137,7 @@ namespace Melt
                             int finalX = landBlockX + x;
                             int finalY = landSize - (landBlockY + y) - 1;
 
-                            land[finalX, finalY].cellAmount = entryY.Value.NumCells;
+                            land[finalX, finalY].cellAmount = entryY.Value.numCells;
                         }
                     }
                 }

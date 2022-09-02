@@ -139,13 +139,13 @@ namespace Melt
                         stringTableEntry.Strings[0] = "Trained Starting Skills:\n";
                         break;
                     case 0x0206BBD4: // You gain mastery in Dagger and Bow which gives you a damage rating bonus of 5 when using those types of weapons.\n\nYou start with the 'Jack of All Trades' augmentation which raises all of your skills by 5.\n\n
-                        stringTableEntry.Strings[0] = "Shield\n";
+                        stringTableEntry.Strings[0] = "Armor\n";
                         break;
                     case 0x0630F8A4: // You gain mastery in Staff and Magic spells which gives you a damage rating bonus of 5 when using those types of attacks.\n\nYou start with the 'Jack of All Trades' augmentation which raises all of your skills by 5.\n\n
-                        stringTableEntry.Strings[0] = "Salvaging\n";
+                        stringTableEntry.Strings[0] = "Appraise\n";
                         break;
                     case 0x06166A24: // You gain mastery in Unarmed weaponry and Bow which gives you a damage rating bonus of 5 when using those types of weapons.\n\nYou start with the 'Jack of All Trades' augmentation which raises all of your skills by 5.\n\n
-                        stringTableEntry.Strings[0] = "Assess Person\n";
+                        stringTableEntry.Strings[0] = "Assess\n";
                         break;
                     case 0x00166F04: // You gain mastery in Sword and Crossbow which gives you a damage rating bonus of 5 when using those types of weapons.\n\nYou start with the 'Jack of All Trades' augmentation which raises all of your skills by 5.\n\n
                     case 0x0335BA44: // You gain mastery in Unarmed weaponry and Crossbow which gives you a damage rating bonus of 5 when using those types of weapons.\n\nYou start with the 'Eye of the Remorseless' augmentation which gives 1% increased chance of critical hits.\n\n

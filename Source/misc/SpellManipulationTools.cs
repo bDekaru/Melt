@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using ACE.DatLoader.FileTypes;
 using ACE.Entity.Enum;
 using ACE.DatLoader.Entity;
+using System.Threading;
 
 namespace Melt
 {
@@ -828,6 +829,13 @@ namespace Melt
             {
                 SpellBase spell = spellEntry.Value;
                 SpellBase oldSpell;
+
+                if (spell.Name.Contains("Monster") || spell.Name.Contains("Topheron's") || spell.Name == "Ignorance's Bliss" || spell.Name == "Fauna Perlustration")
+                {
+                    spell.Name = spell.Name.Replace("Monster", "Assess");
+                    spell.Desc = spell.Desc.Replace("Monster ", "");
+                    spell.Desc = spell.Desc.Replace("Creature ", "");
+                }
 
                 // Revert Item Enchantment
                 if (OldSpells.TryGetValue(spell.MetaSpellId, out oldSpell))

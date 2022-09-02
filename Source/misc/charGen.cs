@@ -528,90 +528,89 @@ namespace Melt
                 {
                     case "Aluvian":
                         heritage.Skills = new List<SkillCG>();
-                        heritage.Skills.Add(new SkillCG((uint)eSkills.Shield, 0, 2));
+                        heritage.Skills.Add(new SkillCG((uint)eSkills.Armor, 0, 2));
                         break;
                     case "Gharu'ndim":
                         heritage.Skills = new List<SkillCG>();
-                        heritage.Skills.Add(new SkillCG((uint)eSkills.Salvaging, 0, 999));
+                        heritage.Skills.Add(new SkillCG((uint)eSkills.Appraise, 0, 2));
                         break;
                     case "Sho":
                         heritage.Skills = new List<SkillCG>();
-                        heritage.Skills.Add(new SkillCG((uint)eSkills.PersonalAppraisal, 0, 2));
+                        heritage.Skills.Add(new SkillCG((uint)eSkills.AssessCreature, 0, 2));
                         break;
                 }
                 foreach (TemplateCG template in heritage.Templates)
                 {
+                    template.PrimarySkillsList = new List<uint>();
+                    template.NormalSkillsList = new List<uint>();
                     switch (template.Name)
                     {
                         case "Bow Hunter":
-                            template.PrimarySkillsList = new List<uint>();
-                            template.PrimarySkillsList.Add((uint)eSkills.Armor);
                             template.PrimarySkillsList.Add((uint)eSkills.Bow);
                             template.PrimarySkillsList.Add((uint)eSkills.MeleeDefense);
-                            template.NormalSkillsList = new List<uint>();
+
                             template.NormalSkillsList.Add((uint)eSkills.ArcaneLore);
-                            template.NormalSkillsList.Add((uint)eSkills.CreatureAppraisal);
+                            template.NormalSkillsList.Add((uint)eSkills.Fletching);
                             template.NormalSkillsList.Add((uint)eSkills.Healing);
+                            template.NormalSkillsList.Add((uint)eSkills.Armor);
+                            if (heritage.Name != "Gharu'ndim")
+                                template.NormalSkillsList.Add((uint)eSkills.AssessCreature);
                             break;
                         case "Life Caster":
-                            template.PrimarySkillsList = new List<uint>();
                             template.PrimarySkillsList.Add((uint)eSkills.LifeMagic);
-                            template.NormalSkillsList = new List<uint>();
+
                             template.NormalSkillsList.Add((uint)eSkills.ManaConversion);
                             template.NormalSkillsList.Add((uint)eSkills.WarMagic);
                             template.NormalSkillsList.Add((uint)eSkills.Alchemy);
                             break;
                         case "War Mage":
-                            template.PrimarySkillsList = new List<uint>();
                             template.PrimarySkillsList.Add((uint)eSkills.WarMagic);
                             template.PrimarySkillsList.Add((uint)eSkills.ManaConversion);
-                            template.NormalSkillsList = new List<uint>();
+
                             template.NormalSkillsList.Add((uint)eSkills.ArcaneLore);
                             template.NormalSkillsList.Add((uint)eSkills.Healing);
                             break;
                         case "Wayfarer":
-                            template.PrimarySkillsList = new List<uint>();
+                            template.PrimarySkillsList.Add((uint)eSkills.Armor);
                             template.PrimarySkillsList.Add((uint)eSkills.Dagger);
-                            template.NormalSkillsList = new List<uint>();
+                            template.PrimarySkillsList.Add((uint)eSkills.DualWield);
+
+                            template.NormalSkillsList.Add((uint)eSkills.Appraise);
                             template.NormalSkillsList.Add((uint)eSkills.ArcaneLore);
-                            template.NormalSkillsList.Add((uint)eSkills.Armor);
+                            template.NormalSkillsList.Add((uint)eSkills.AssessCreature);
                             template.NormalSkillsList.Add((uint)eSkills.Awareness);
-                            template.NormalSkillsList.Add((uint)eSkills.CreatureAppraisal);
                             template.NormalSkillsList.Add((uint)eSkills.Healing);
-                            template.NormalSkillsList.Add((uint)eSkills.Lockpick);
                             template.NormalSkillsList.Add((uint)eSkills.MeleeDefense);
-                            if (heritage.Name == "Sho")
-                                template.PrimarySkillsList.Add((uint)eSkills.PersonalAppraisal);
-                            else
-                                template.NormalSkillsList.Add((uint)eSkills.PersonalAppraisal);
-                            template.NormalSkillsList.Add((uint)eSkills.Sneaking);
+                            template.NormalSkillsList.Add((uint)eSkills.Sneaking);                            
                             break;
                         case "Soldier":
-                            template.PrimarySkillsList = new List<uint>();
                             template.PrimarySkillsList.Add((uint)eSkills.Armor);
                             template.PrimarySkillsList.Add((uint)eSkills.Axe);
-                            template.PrimarySkillsList.Add((uint)eSkills.MeleeDefense);
                             template.PrimarySkillsList.Add((uint)eSkills.Shield);
-                            template.NormalSkillsList = new List<uint>();
-                            if (heritage.Name == "Aluvian")
-                                template.PrimarySkillsList.Add((uint)eSkills.ArcaneLore);
-                            else
-                                template.NormalSkillsList.Add((uint)eSkills.ArcaneLore);
+
+                            template.NormalSkillsList.Add((uint)eSkills.ArcaneLore);
                             template.NormalSkillsList.Add((uint)eSkills.Healing);
+                            template.NormalSkillsList.Add((uint)eSkills.MeleeDefense);
+                            template.NormalSkillsList.Add((uint)eSkills.MissileDefense);
+                            if (heritage.Name == "Aluvian")
+                                template.NormalSkillsList.Add((uint)eSkills.AssessCreature);
                             break;
                         case "Swashbuckler":
-                            template.PrimarySkillsList = new List<uint>();
                             template.PrimarySkillsList.Add((uint)eSkills.MeleeDefense);
                             template.PrimarySkillsList.Add((uint)eSkills.Sword);
-                            template.NormalSkillsList = new List<uint>();
-                            if (heritage.Name == "Aluvian")
-                                template.PrimarySkillsList.Add((uint)eSkills.Shield);
-                            else
-                                template.NormalSkillsList.Add((uint)eSkills.Shield);
+
                             template.NormalSkillsList.Add((uint)eSkills.ArcaneLore);
-                            template.NormalSkillsList.Add((uint)eSkills.Armor);
-                            template.NormalSkillsList.Add((uint)eSkills.CreatureAppraisal);
                             template.NormalSkillsList.Add((uint)eSkills.Healing);
+                            if (heritage.Name == "Aluvian")
+                            {
+                                template.PrimarySkillsList.Add((uint)eSkills.Armor);
+                                template.PrimarySkillsList.Add((uint)eSkills.Shield);
+                            }
+                            else
+                            {
+                                template.NormalSkillsList.Add((uint)eSkills.Armor);
+                                template.NormalSkillsList.Add((uint)eSkills.Shield);
+                            }
                             template.Endurance = 50;
                             template.Quickness = 60;
                             template.Focus = 10;
@@ -636,7 +635,7 @@ namespace Melt
                     case "Aluvian":
                         heritage.Skills = new List<SkillCG>();
                         heritage.Skills.Add(new SkillCG((uint)eSkills.Dagger, 0, 4));
-                        heritage.Skills.Add(new SkillCG((uint)eSkills.PersonalAppraisal, 0, 2));
+                        heritage.Skills.Add(new SkillCG((uint)eSkills.AssessPerson, 0, 2));
                         break;
                     case "Gharu'ndim":
                         heritage.Skills = new List<SkillCG>();

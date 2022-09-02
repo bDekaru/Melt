@@ -350,3 +350,4 @@ Bin/filename-with-time-*
 /Bin/Data/json/spawnMaps
 /Bin/bin
 /Bin/input/clothingTables
+*.wav

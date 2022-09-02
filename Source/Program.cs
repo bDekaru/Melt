@@ -14,13 +14,16 @@ namespace Melt
         static void Main(string[] args)
         {
             //GeneratePhatACLootFiles(args);
+
+            //MapManipulationMergeIslands(args);
             //MapManipulationForCustomDM(args);
-            //PortalManipulationForCustomDM(args);
+            PortalManipulationForCustomDM(args);
             //LanguageManipulationForCustomDM(args);
+
             //PortalManipulationForInfiltration(args);
             //MapManipulationForInfiltration(args);
             //LanguageManipulationForInfiltration(args);
-            //MapManipulation(args);
+
             //Workbench(args);
 
             Console.WriteLine("Done");
@@ -82,29 +85,33 @@ namespace Melt
             //TextureConverter.toPNG("06004D5F Latest.bin");
             //TextureConverter.toPNG("06004D5F.bin");
             //TextureConverter.toBin("06004d5f.png", 0x06004d5f, 500);
-            //TextureConverter.toBin("./input/06004d5f.png", 0x06004d5f, 500);
+            //TextureConverter.toBin("./input/06004D5F - Chargen Map.png", 0x06004d5f, 500);
 
             //LanguageFileTools language = new LanguageFileTools("./input/client_local_English.dat");
             ////language.DumpStrings();
             ////language.ModifyForInfiltration();
             //language.ModifyForCustomDM();
 
+            //TextureConverter.toPNG("./0600377F.bin");
+            //TextureConverter.toBin("./input/06020000 - Magnifying Glass.png", 0x06020000, 21);
             //TextureConverter.darkMajestyToPNG("./0600015E - Arms and Armor.bin");
             //TextureConverter.darkMajestyToPNG("./06000166 - Awareness.bin");
             //TextureConverter.darkMajestyToPNG("./06000174 - Armor.bin");
             //TextureConverter.darkMajestyToPNG("./06000176 - Sneak.bin");
             //TextureConverter.darkMajestyToPNG("./06000177 - Spellcraft.bin");
+            //TextureConverter.darkMajestyToPNG("./06000172 - Appraise.bin");
             //TextureConverter.toBin("./input/0600015e - Arms and Armor.png", 0x0600015e, 20);
             //TextureConverter.toBin("./input/06000166 - Awareness.png", 0x06000166, 20);
             //TextureConverter.toBin("./input/06000174 - Armor.png", 0x06000174, 20);
+            //TextureConverter.toBin("./input/06000172 - Appraise.png", 0x06000172, 20);
             //TextureConverter.toBin("./input/06000176 - Sneak.png", 0x06000176, 20);
             //TextureConverter.toBin("./input/06000177 - Spellcraft.png", 0x06000177, 20);
 
             //SkillTable skillTableLatest = new SkillTable("./Skill Tables/0E000004 - Skills Table - Original.bin");
             //SkillTable skillTableClassicWeaponSkills = new SkillTable("./Skill Tables/0E000004 - Skills Table - Classic weapon skills.bin");
-            //SkillTable skillTableAssessSkills = new SkillTable("./Skill Tables/0E000004 - Skills Table - Classic weapon skills with assess.bin");
+            ////SkillTable skillTableAssessSkills = new SkillTable("./Skill Tables/0E000004 - Skills Table - Classic weapon skills with assess.bin");
             ////SkillTable skillTableRelease = new SkillTable("./Skill Tables/0E000004 - Skills Table - Release.bin");
-            //skillTableClassicWeaponSkills.modifyForCustomDM(skillTableLatest, skillTableAssessSkills);
+            //skillTableClassicWeaponSkills.modifyForCustomDM(skillTableLatest);
             //skillTableClassicWeaponSkills.save("./0E000004 - Skills Table - CustomDM.bin");
 
             //CharGen charGen = new CharGen("./input/0E000002.bin");
@@ -258,14 +265,15 @@ namespace Melt
             //SpellsConverter.toJson("Spells/0E00000E - Latest.bin");
             //SpellsConverter.toJson("Spells/0002.raw", "Spells/0E00000E - Reversed plus removed auras.bin");
             //SpellsConverter.transferSpellDescriptiuonsFromJsonToTxt("Spells/spells.json", "Spells/0E00000E - Reversed plus removed auras.txt");
+
             //SpellManipulationTools spells = new SpellManipulationTools("Spells/0E00000E - latest.bin");
             //SpellManipulationTools oldSpells = new SpellManipulationTools("Spells/0E00000E - 2010.bin");
             //spells.LoadCache2Raw("Spells/0002.raw");
             //spells.RevertWeaponMasteriesAndAuras(oldSpells);
             //spells.ApplyCache2DataFixes();
             //spells.TransferSpellDataFromCacheToSpellBase();
-            ////spells.MergeWeaponsSkillsForCustomDM();
-            ////spells.SpellTableToTxt();
+            //spells.MergeWeaponsSkillsForCustomDM();
+            //spells.SpellTableToTxt();
             //spells.SpellTableToBin();
 
             //Diff.FolderDiff("E:\\Downloads\\Asheron's Call\\AC Utilities\\Dat Patcher\\All\\Summer", "E:\\Downloads\\Asheron's Call\\AC Utilities\\Dat Patcher\\All\\Winter");
@@ -332,10 +340,11 @@ namespace Melt
         {
             cDatFile portalDatFile = new cDatFile();
             portalDatFile.loadFromDat("./Dat Builder/Portal/client_portal_EoR.dat");
-            portalDatFile.SetFileIteration(20009);
+            portalDatFile.SetFileIteration(20011);
             portalDatFile.addFilesFromFolder("./Dat Builder/Portal/CustomDM/");
             portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Textures");
-            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Trees");
+            //portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Trees");
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Test");
             portalDatFile.writeToDat("./Dat Builder/client_portal.dat");
         }
 
@@ -350,13 +359,115 @@ namespace Melt
             portalDatFile.writeToDat("./Dat Builder/client_portal.dat");
         }
 
+        static void MapManipulationMergeIslands(string[] args)
+        {
+            //EoR
+            //cDatFile datFile = new cDatFile();
+            //datFile.loadFromDat("./input/client_cell_1 - EoR.dat");
+
+            //cDatFile datFileArwic = new cDatFile();
+            //datFileArwic.loadFromDat("./input/cell - 2000-08-22 (58368kb) (Complete,Ice Island, Shadow Spires) (Iteration 108 - Complete).dat");
+
+            //datFile.replaceLandblockRect(0x0011, 0x1100, datFileArwic, 0x0423); // Old Caul
+            //datFile.replaceLandblockRect(0x653E, 0x7B28, datFileArwic); // White Island
+            //datFile.replaceLandblockRect(0x5C80, 0x6F57, datFileArwic); // Brown Islands
+
+            //datFile.replaceLandblockRect(0x54FB, 0x61EB, datFileArwic); // Ice Island
+            //datFile.replaceLandblockRect(0x61FB, 0x6CEE, datFileArwic); // Ice Island
+            //datFile.replaceLandblockRect(0x6CFB, 0x72F2, datFileArwic); // Ice Island
+
+            //datFile.replaceLandblockRect(0xD1ED, 0xE2E2, datFileArwic, 0xD1F9); // 3 Craters Island
+            //datFile.replaceLandblockRect(0xE2C6, 0xFD6D, datFileArwic, 0xE2FD); // 3 Craters Island
+            //datFile.replaceLandblockRect(0xE96D, 0xF061, datFileArwic, 0xE9A4); // 3 Craters Island
+            //datFile.replaceLandblockRect(0xDBBB, 0xE29E, datFileArwic, 0xDBF2); // 3 Craters Island
+            //datFile.replaceLandblockRect(0xD6E8, 0xDADF, datFileArwic, 0xD6DF); // 3 Craters Island
+
+            //datFile.replaceLandblockRect(0x0EB3, 0x259F, datFileArwic, 0x05E5); // Old Marae Lassel
+            //datFile.replaceLandblockRect(0x119F, 0x229F, datFileArwic, 0x08D1); // Old Marae Lassel
+            //datFile.replaceLandblockRect(0x119E, 0x219E, datFileArwic, 0x08D0); // Old Marae Lassel
+            //datFile.replaceLandblockRect(0x119D, 0x1F9B, datFileArwic, 0x08CF); // Old Marae Lassel
+            //datFile.replaceLandblockRect(0x139A, 0x1E99, datFileArwic, 0x0ACC); // Old Marae Lassel
+            //datFile.replaceLandblockRect(0x1798, 0x1C97, datFileArwic, 0x0ECA); // Old Marae Lassel
+            //datFile.replaceLandblockRect(0x1896, 0x1A96, datFileArwic, 0x0FC8); // Old Marae Lassel
+
+            //cDatFile datFileEoR = new cDatFile();
+            //datFileEoR.loadFromDat("./input/client_cell_1 - EoR.dat");
+            //datFile.replaceLandblockRect(0xC0F9, 0xD9E0, datFileEoR); // Dark Isle and Vissidal
+            //datFile.replaceLandblockRect(0xCBE0, 0xD9DD, datFileEoR); // Dark Isle and Vissidal
+            //datFile.replaceLandblockRect(0xD2DD, 0xD9D9, datFileEoR); // Dark Isle and Vissidal
+            //datFile.replaceLandblockRect(0xE2D8, 0xEBCC, datFileEoR, 0xCEF3); // Olthoi Island
+
+            //cCellDat cellDat = new cCellDat();
+            //cellDat.loadFromDat(datFile);
+            //cMapDrawer mapDrawer = new cMapDrawer(cellDat);
+            //mapDrawer.draw(false, 50);
+
+            //datFile.writeToDat("./client_cell_1.dat");
+
+            //CustomDM
+            cDatFile datFile = new cDatFile();
+            //int retailIteration = datFile.loadFromDat("./input/cell - 2005-02-XX (202752kb) (Admin) (Iteration 1593 - Complete).dat");
+            //datFile.convertRetailToToD(retailIteration);
+            datFile.loadFromDat("./input/client_cell_1 - Infiltration - Converted to ToD format (Iteration 1593).dat"); // Same as above but already converted to ToD format to speed thing up.
+            datFile.SetFileIteration(20003);
+
+            cDatFile datFileArwic = new cDatFile();
+            datFileArwic.loadFromDat("./input/cell - 2000-08-22 (58368kb) (Complete,Ice Island, Shadow Spires) (Iteration 108 - Complete).dat");
+
+            datFile.replaceLandblockRect(0x0011, 0x1100, datFileArwic, 0x0423); // Old Caul
+            datFile.replaceLandblockRect(0x653E, 0x7B28, datFileArwic); // White Island
+            datFile.replaceLandblockRect(0x5C80, 0x6F57, datFileArwic); // Brown Islands
+
+            datFile.replaceLandblockRect(0x54FB, 0x61EB, datFileArwic); // Ice Island
+            datFile.replaceLandblockRect(0x61FB, 0x6CEE, datFileArwic); // Ice Island
+            datFile.replaceLandblockRect(0x6CFB, 0x72F2, datFileArwic); // Ice Island
+
+            datFile.replaceLandblockRect(0xD1ED, 0xE2E2, datFileArwic, 0xD1F9); // 3 Craters Island
+            datFile.replaceLandblockRect(0xE2C6, 0xFD6D, datFileArwic, 0xE2FD); // 3 Craters Island
+            datFile.replaceLandblockRect(0xE96D, 0xF061, datFileArwic, 0xE9A4); // 3 Craters Island
+            datFile.replaceLandblockRect(0xDBBB, 0xE29E, datFileArwic, 0xDBF2); // 3 Craters Island
+            datFile.replaceLandblockRect(0xD6E8, 0xDADF, datFileArwic, 0xD6DF); // 3 Craters Island
+
+            datFile.replaceLandblockRect(0x0EB3, 0x259F, datFileArwic, 0x05E5); // Old Marae Lassel
+            datFile.replaceLandblockRect(0x119F, 0x229F, datFileArwic, 0x08D1); // Old Marae Lassel
+            datFile.replaceLandblockRect(0x119E, 0x219E, datFileArwic, 0x08D0); // Old Marae Lassel
+            datFile.replaceLandblockRect(0x119D, 0x1F9B, datFileArwic, 0x08CF); // Old Marae Lassel
+            datFile.replaceLandblockRect(0x139A, 0x1E99, datFileArwic, 0x0ACC); // Old Marae Lassel
+            datFile.replaceLandblockRect(0x1798, 0x1C97, datFileArwic, 0x0ECA); // Old Marae Lassel
+            datFile.replaceLandblockRect(0x1896, 0x1A96, datFileArwic, 0x0FC8); // Old Marae Lassel
+
+            cDatFile datFileEoR = new cDatFile();
+            datFileEoR.loadFromDat("./input/client_cell_1 - EoR.dat");
+            datFile.replaceLandblockRect(0x3B0F, 0x400D, datFileEoR); // Moarsman Island - Nyr'leha
+            datFile.replaceLandblockRect(0x370D, 0x4409, datFileEoR); // Moarsman Island - Nyr'leha
+
+            datFile.replaceLandblockRect(0xC0F9, 0xD9E0, datFileEoR); // Dark Isle and Vissidal
+            datFile.replaceLandblockRect(0xCBE0, 0xD9DD, datFileEoR); // Dark Isle and Vissidal
+            datFile.replaceLandblockRect(0xD2DD, 0xD9D9, datFileEoR); // Dark Isle and Vissidal
+
+            datFile.replaceLandblockRect(0xE2D8, 0xEBCC, datFileEoR, 0xCEF3); // Olthoi Island
+
+            datFile.replaceLandblockRect(0xF43F, 0xFD2C, datFileEoR); // Freebooter Isle
+
+            datFile.replaceLandblockRect(0x1EF9, 0x3DD5, datFileEoR); //Halaetan Isles
+            datFile.replaceLandblockRect(0x3DFA, 0x45E6, datFileEoR); //Halaetan Isles
+            datFile.replaceLandblockRect(0x45FA, 0x51EC, datFileEoR); //Halaetan Isles
+
+            cCellDat cellDat = new cCellDat();
+            cellDat.loadFromDat(datFile);
+            cMapDrawer mapDrawer = new cMapDrawer(cellDat);
+            mapDrawer.draw(true, 50);
+
+            datFile.writeToDat("./client_cell_1.dat");
+        }
+
         static void MapManipulationForCustomDM(string[] args)
         {
             cDatFile datFile = new cDatFile();
             //int retailIteration = datFile.loadFromDat("./input/cell - 2005-02-XX (202752kb) (Admin) (Iteration 1593 - Complete).dat");
             //datFile.convertRetailToToD(retailIteration);
             datFile.loadFromDat("./input/client_cell_1 - Infiltration - Converted to ToD format (Iteration 1593).dat"); // Same as above but already converted to ToD format to speed thing up.
-            datFile.SetFileIteration(20002);
+            datFile.SetFileIteration(20003);
 
             cDatFile datFileObsidianSpan = new cDatFile();
             datFileObsidianSpan.loadFromDat("./input/cell - 2000-12-31 - Obsidian Span.dat");
@@ -369,6 +480,9 @@ namespace Melt
 
             cDatFile datFileToD = new cDatFile();
             datFileToD.loadFromDat("./input/client_cell_1 - ToD.dat");
+
+            cDatFile datFileEoR = new cDatFile();
+            datFileEoR.loadFromDat("./input/client_cell_1 - EoR.dat");
 
             //Arwic
             datFile.replaceLandblock(0xC6A90013, datFileRelease);
@@ -415,7 +529,7 @@ namespace Melt
 
             datFile.addBuildingFrom(0x856E010E, datFileToD); //Undead Hunter Tent
 
-            datFile.replaceLandblock(0x846D003F, datFileArwic, false, false, true); //Tufa Meeting Hall, buildings only, terrain includes crater.
+            datFile.replaceLandblock(0x846D003F, datFileArwic, false, false, true, true); //Tufa Meeting Hall, buildings only, terrain includes crater.
 
             //Eastham Shadow Spire Crater
             datFile.replaceLandblock(0xCD95002F, datFileRelease);
@@ -551,6 +665,43 @@ namespace Melt
             datFile.replaceLandblockTerrain(0xAAB4000A, datFileObsidianSpan, true, true);
             datFile.replaceLandblockTerrain(0xA8B4003B, datFileObsidianSpan, true, true);
 
+            datFile.replaceLandblockRect(0x0011, 0x1100, datFileArwic, 0x0423); // Old Caul
+            datFile.replaceLandblockRect(0x653E, 0x7B28, datFileArwic); // White Island
+            datFile.replaceLandblockRect(0x5C80, 0x6F57, datFileArwic); // Brown Islands
+
+            datFile.replaceLandblockRect(0x54FB, 0x61EB, datFileArwic); // Ice Island
+            datFile.replaceLandblockRect(0x61FB, 0x6CEE, datFileArwic); // Ice Island
+            datFile.replaceLandblockRect(0x6CFB, 0x72F2, datFileArwic); // Ice Island
+
+            datFile.replaceLandblockRect(0xD1ED, 0xE2E2, datFileArwic, 0xD1F9); // 3 Craters Island
+            datFile.replaceLandblockRect(0xE2C6, 0xFD6D, datFileArwic, 0xE2FD); // 3 Craters Island
+            datFile.replaceLandblockRect(0xE96D, 0xF061, datFileArwic, 0xE9A4); // 3 Craters Island
+            datFile.replaceLandblockRect(0xDBBB, 0xE29E, datFileArwic, 0xDBF2); // 3 Craters Island
+            datFile.replaceLandblockRect(0xD6E8, 0xDADF, datFileArwic, 0xD6DF); // 3 Craters Island
+
+            datFile.replaceLandblockRect(0x0EB3, 0x259F, datFileArwic, 0x05E5); // Old Marae Lassel
+            datFile.replaceLandblockRect(0x119F, 0x229F, datFileArwic, 0x08D1); // Old Marae Lassel
+            datFile.replaceLandblockRect(0x119E, 0x219E, datFileArwic, 0x08D0); // Old Marae Lassel
+            datFile.replaceLandblockRect(0x119D, 0x1F9B, datFileArwic, 0x08CF); // Old Marae Lassel
+            datFile.replaceLandblockRect(0x139A, 0x1E99, datFileArwic, 0x0ACC); // Old Marae Lassel
+            datFile.replaceLandblockRect(0x1798, 0x1C97, datFileArwic, 0x0ECA); // Old Marae Lassel
+            datFile.replaceLandblockRect(0x1896, 0x1A96, datFileArwic, 0x0FC8); // Old Marae Lassel
+
+            datFile.replaceLandblockRect(0x3B0F, 0x400D, datFileEoR); // Moarsman Island - Nyr'leha
+            datFile.replaceLandblockRect(0x370D, 0x4409, datFileEoR); // Moarsman Island - Nyr'leha
+
+            datFile.replaceLandblockRect(0xC0F9, 0xD9E0, datFileEoR); // Dark Isle and Vissidal
+            datFile.replaceLandblockRect(0xCBE0, 0xD9DD, datFileEoR); // Dark Isle and Vissidal
+            datFile.replaceLandblockRect(0xD2DD, 0xD9D9, datFileEoR); // Dark Isle and Vissidal
+
+            datFile.replaceLandblockRect(0xE2D8, 0xEBCC, datFileEoR, 0xCEF3); // Olthoi Island
+
+            datFile.replaceLandblockRect(0xF43F, 0xFD2C, datFileEoR); // Freebooter Isle
+
+            datFile.replaceLandblockRect(0x1EF9, 0x3DD5, datFileEoR); //Halaetan Isles
+            datFile.replaceLandblockRect(0x3DFA, 0x45E6, datFileEoR); //Halaetan Isles
+            datFile.replaceLandblockRect(0x45FA, 0x51EC, datFileEoR); //Halaetan Isles
+
             //datFile.addGridToAllLandblocks(); // Add grid for highlighting landblocks, for dev purposes. Disable for general use.
 
             //datFile.migrateDungeon(datFileOld, 0x017D, 0x017D); //original training academy
@@ -565,6 +716,8 @@ namespace Melt
             //    0x0368
             //};
             //datFile.replaceDungeonList(trainingAcademies, datFileOld);
+
+            //datFile.replaceLandblockRect(0x0011, 0x1100, datFileArwic, true, 0x3456);
 
             cCellDat cellDat = new cCellDat();
             cellDat.loadFromDat(datFile);

@@ -40,7 +40,7 @@ namespace Melt
         ManaConversion = 16,
         SpellCraft = 17,
         ItemAppraisal = 18,
-        PersonalAppraisal = 19,
+        AssessPerson = 19,
         Deception = 20,
         Healing = 21,
         Jump = 22,
@@ -48,7 +48,7 @@ namespace Melt
         Run = 24,
         Awareness = 25,
         ArmsAndArmorRepair = 26,
-        CreatureAppraisal = 27,
+        AssessCreature = 27,
         WeaponAppraisal = 28,
         ArmorAppraisal = 29,
         MagicItemAppraisal = 30,
@@ -77,12 +77,9 @@ namespace Melt
         Challenge = 53,
         Summoning = 54,
         // CustomDM
-        AppraiseMissileItem = 55,
-        AppraiseMeleeItem = 56,
-        AppraiseArmor = 57,
-        AppraiseCasterItem = 58,
-        Armor = 59,
-        Sneaking = 60
+        Appraise = 55,
+        Armor = 56,
+        Sneaking = 57
     }
 
     public enum eSkillAdvancementClass

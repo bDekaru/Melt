@@ -187,12 +187,12 @@ namespace Melt
         /// <summary>
         /// number of EnvCells in the landblock. This should match up to the unique items in the building stab lists.
         /// </summary>
-        public uint NumCells;
+        public uint numCells;
 
         /// <summary>
         /// list of model numbers. 0x01 and 0x01 types and their specific locations
         /// </summary>
-        public List<cStab> Objects;
+        public List<cStab> objects;
 
         /// <summary>
         /// As best as I can tell, this only affects whether there is a restriction table or not
@@ -202,14 +202,14 @@ namespace Melt
         /// <summary>
         /// Buildings and other classures with interior locations in the landblock
         /// </summary>
-        public List<cBuildInfo> Buildings;
+        public List<cBuildInfo> buildings;
 
         /// <summary>
         /// The specicic landblock/cell controlled by a specific guid that controls access (e.g. housing barrier)
         /// </summary>
-        public Dictionary<uint, uint> RestrictionTables;
-        public ushort totalObjects;
-        public ushort bucketSize;
+        public Dictionary<uint, uint> restrictionTables;
+        public ushort restrictionTableCount;
+        public ushort restrictionTableBucketSize;
 
         public cLandblockInfo(cDatFileEntry file) : this(new StreamReader(file.fileContent), file.fileFormat)
         {
@@ -220,37 +220,37 @@ namespace Melt
         {
             Id = Utils.readUInt32(inputFile);
 
-            NumCells = Utils.readUInt32(inputFile);
+            numCells = Utils.readUInt32(inputFile);
 
-            Objects = new List<cStab>();
+            objects = new List<cStab>();
             int objectsCount = Utils.readInt32(inputFile);
             for (int i = 0; i < objectsCount; i++)
             {
                 cStab newObject = new cStab(inputFile);
-                Objects.Add(newObject);
+                objects.Add(newObject);
             }
 
             ushort numBuildings = Utils.readUInt16(inputFile);
             buildingFlags = Utils.readUInt16(inputFile);
 
-            Buildings = new List<cBuildInfo>();
+            buildings = new List<cBuildInfo>();
             for (int i = 0; i < numBuildings; i++)
             {
                 cBuildInfo newBuilding = new cBuildInfo(inputFile, fileFormat);
-                Buildings.Add(newBuilding);
+                buildings.Add(newBuilding);
             }
 
             if (fileFormat == eDatFormat.retail)
                 Utils.align(inputFile);
 
-            RestrictionTables = new Dictionary<uint, uint>();
+            restrictionTables = new Dictionary<uint, uint>();
             if ((buildingFlags & 1) == 1)
             {
-                totalObjects = Utils.readUInt16(inputFile);
-                bucketSize = Utils.readUInt16(inputFile);
+                restrictionTableCount = Utils.readUInt16(inputFile);
+                restrictionTableBucketSize = Utils.readUInt16(inputFile);
 
-                for (int i = 0; i < totalObjects; i++)
-                    RestrictionTables.Add(Utils.readUInt32(inputFile), Utils.readUInt32(inputFile));
+                for (int i = 0; i < restrictionTableCount; i++)
+                    restrictionTables.Add(Utils.readUInt32(inputFile), Utils.readUInt32(inputFile));
             }
 
             if (fileFormat == eDatFormat.retail)
@@ -282,28 +282,28 @@ namespace Melt
         public void writeToDat(StreamWriter outputFile)
         {
             Utils.writeUInt32(Id, outputFile);
-            Utils.writeUInt32(NumCells, outputFile);
+            Utils.writeUInt32(numCells, outputFile);
 
-            Utils.writeInt32(Objects.Count, outputFile);
-            foreach (cStab stab in Objects)
+            Utils.writeInt32(objects.Count, outputFile);
+            foreach (cStab stab in objects)
             {
                 stab.writeToDat(outputFile);
             }
 
-            Utils.writeUInt16((ushort)Buildings.Count, outputFile);
+            Utils.writeUInt16((ushort)buildings.Count, outputFile);
             Utils.writeUInt16(buildingFlags, outputFile);
 
-            foreach (cBuildInfo building in Buildings)
+            foreach (cBuildInfo building in buildings)
             {
                 building.writeToDat(outputFile);
             }
 
             if ((buildingFlags & 1) == 1)
             {
-                Utils.writeUInt16(totalObjects, outputFile);
-                Utils.writeUInt16(bucketSize, outputFile);
+                Utils.writeUInt16(restrictionTableCount, outputFile);
+                Utils.writeUInt16(restrictionTableBucketSize, outputFile);
 
-                foreach(KeyValuePair<uint, uint> entry in RestrictionTables)
+                foreach(KeyValuePair<uint, uint> entry in restrictionTables)
                 {
                     Utils.writeUInt32(entry.Key, outputFile);
                     Utils.writeUInt32(entry.Value, outputFile);

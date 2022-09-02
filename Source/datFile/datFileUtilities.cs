@@ -224,19 +224,19 @@ namespace Melt
                 if (!thisLandblockInfoMap.TryGetValue(otherLandblockInfo.Id, out thisLandblockInfo))
                     continue;
 
-                for (int i = 0; i < otherLandblockInfo.Objects.Count; i++)
+                for (int i = 0; i < otherLandblockInfo.objects.Count; i++)
                 {
-                    uint oldId = otherLandblockInfo.Objects[i].id;
+                    uint oldId = otherLandblockInfo.objects[i].id;
                     if (!allOldIds.Contains(oldId))
                         allOldIds.Add(oldId);
                 }
 
                 if (compareLandblockInfo(thisLandblockInfo, otherLandblockInfo))
                 {
-                    for (int i = 0; i < otherLandblockInfo.Objects.Count; i++)
+                    for (int i = 0; i < otherLandblockInfo.objects.Count; i++)
                     {
-                        uint oldId = otherLandblockInfo.Objects[i].id;
-                        uint newId = thisLandblockInfo.Objects[i].id;
+                        uint oldId = otherLandblockInfo.objects[i].id;
+                        uint newId = thisLandblockInfo.objects[i].id;
 
                         uint currentId = 0;
 
@@ -406,15 +406,15 @@ namespace Melt
         {
             if (thisLandblockInfo.Id != otherLandblockInfo.Id)
                 return false;
-            if (thisLandblockInfo.NumCells != otherLandblockInfo.NumCells)
+            if (thisLandblockInfo.numCells != otherLandblockInfo.numCells)
                 return false;
 
-            if (thisLandblockInfo.Objects.Count != otherLandblockInfo.Objects.Count)
+            if (thisLandblockInfo.objects.Count != otherLandblockInfo.objects.Count)
                 return false;
-            for (int i = 0; i < thisLandblockInfo.Objects.Count; i++)
+            for (int i = 0; i < thisLandblockInfo.objects.Count; i++)
             {
-                cStab thisStab = thisLandblockInfo.Objects[i];
-                cStab otherStab = otherLandblockInfo.Objects[i];
+                cStab thisStab = thisLandblockInfo.objects[i];
+                cStab otherStab = otherLandblockInfo.objects[i];
                 //if (thisStab.id == otherStab.id) // this is what we're migrating
                 //    return false;
 
@@ -437,22 +437,22 @@ namespace Melt
             if (thisLandblockInfo.buildingFlags != otherLandblockInfo.buildingFlags)
                 return false;
 
-            if (thisLandblockInfo.Buildings.Count != otherLandblockInfo.Buildings.Count)
+            if (thisLandblockInfo.buildings.Count != otherLandblockInfo.buildings.Count)
                 return false;
-            for (int i = 0; i < thisLandblockInfo.Buildings.Count; i++)
+            for (int i = 0; i < thisLandblockInfo.buildings.Count; i++)
             {
                 //ignoring for now
             }
 
-            if (thisLandblockInfo.RestrictionTables.Count != otherLandblockInfo.RestrictionTables.Count)
+            if (thisLandblockInfo.restrictionTables.Count != otherLandblockInfo.restrictionTables.Count)
                 return false;
-            for (int i = 0; i < thisLandblockInfo.RestrictionTables.Count; i++)
+            for (int i = 0; i < thisLandblockInfo.restrictionTables.Count; i++)
             {
                 ///ignoring for now
             }
-            if (thisLandblockInfo.totalObjects != otherLandblockInfo.totalObjects)
+            if (thisLandblockInfo.restrictionTableCount != otherLandblockInfo.restrictionTableCount)
                 return false;
-            if (thisLandblockInfo.bucketSize != otherLandblockInfo.bucketSize)
+            if (thisLandblockInfo.restrictionTableBucketSize != otherLandblockInfo.restrictionTableBucketSize)
                 return false;
             return true;
         }
