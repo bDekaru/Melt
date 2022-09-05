@@ -694,7 +694,7 @@ namespace Melt
             }
         }
 
-        public void MergeWeaponsSkillsForCustomDM()
+        public void ModifyForCustomDM()
         {
             if (SpellTable == null)
             {
@@ -702,11 +702,14 @@ namespace Melt
                 return;
             }
 
-            Console.WriteLine("Merging weapon skills spells...");
+            Console.WriteLine("Modifying spells...");
 
             foreach (var spellEntry in SpellTable.Spells)
             {
                 SpellBase spell = spellEntry.Value;
+
+                if (spell.ComponentLoss == 0.0f && spell.Power == 1)
+                    spell.ComponentLoss = 0.01f; // All level 1 spells now have a chance to burn components
 
                 switch (spell.Category)
                 {

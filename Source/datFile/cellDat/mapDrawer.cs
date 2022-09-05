@@ -87,6 +87,7 @@ namespace Melt
             public byte z;
             public bool used;
             public uint cellAmount;
+            public int objectAmount;
         }
 
         landData[,] land;
@@ -138,6 +139,7 @@ namespace Melt
                             int finalY = landSize - (landBlockY + y) - 1;
 
                             land[finalX, finalY].cellAmount = entryY.Value.numCells;
+                            land[finalX, finalY].objectAmount = entryY.Value.objects.Count();
                         }
                     }
                 }
@@ -163,12 +165,26 @@ namespace Melt
                 {
                     if (land[y, x].used)
                     {
-                        if (overlayCells && land[y, x].cellAmount > overlayThreshold)
+                        if (overlayCells && land[y, x].cellAmount > overlayThreshold && overlayCells && land[y, x].objectAmount > overlayThreshold)
+                        {
+                            // If we have cells and objects the resultant pixel is purple
+                            topo[y, x, 0] = 0xFF;
+                            topo[y, x, 1] = 0;
+                            topo[y, x, 2] = 0xFF;
+                        }
+                        else if (overlayCells && land[y, x].cellAmount > overlayThreshold)
                         {
                             // If we have cells the resultant pixel is red
                             topo[y, x, 0] = 0xFF;
                             topo[y, x, 1] = 0;
                             topo[y, x, 2] = 0;
+                        }
+                        else if (overlayCells && land[y, x].objectAmount > overlayThreshold)
+                        {
+                            // If we have objects the resultant pixel is blue
+                            topo[y, x, 0] = 0;
+                            topo[y, x, 1] = 0;
+                            topo[y, x, 2] = 0xFF;
                         }
                         else
                         {

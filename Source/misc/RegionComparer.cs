@@ -36,7 +36,7 @@ namespace Melt
                     return true;
                 else if (this == null || other == null)
                 {
-                    outputFile.WriteLine("Error comparing, one of the values is NULL");
+                    outputFile.WriteLine("\tError comparing, one of the values is NULL");
                     return false;
                 }
 
@@ -44,37 +44,37 @@ namespace Melt
 
                 if (Version != other.Version)
                 {
-                    outputFile.WriteLine("Version is different: {0} {1}", Version, other.Version);
+                    outputFile.WriteLine("\tVersion is different: {0} {1}", Version, other.Version);
                     comparisonResult = false;
                 }
 
                 if (GameMapID != other.GameMapID)
                 {
-                    outputFile.WriteLine("GameMapID is different: {0} {1}", GameMapID, other.GameMapID);
+                    outputFile.WriteLine("\tGameMapID is different: {0} {1}", GameMapID, other.GameMapID);
                     comparisonResult = false;
                 }
 
                 if (AutotestMapId != other.AutotestMapId)
                 {
-                    outputFile.WriteLine("AutotestMapId is different: {0} {1}", AutotestMapId, other.AutotestMapId);
+                    outputFile.WriteLine("\tAutotestMapId is different: {0} {1}", AutotestMapId, other.AutotestMapId);
                     comparisonResult = false;
                 }
 
                 if (AutotestMapSize != other.AutotestMapSize)
                 {
-                    outputFile.WriteLine("AutotestMapSize is different: {0} {1}", AutotestMapSize, other.AutotestMapSize);
+                    outputFile.WriteLine("\tAutotestMapSize is different: {0} {1}", AutotestMapSize, other.AutotestMapSize);
                     comparisonResult = false;
                 }
 
                 if (ClearCellId != other.ClearCellId)
                 {
-                    outputFile.WriteLine("ClearCellId is different: {0} {1}", ClearCellId, other.ClearCellId);
+                    outputFile.WriteLine("\tClearCellId is different: {0} {1}", ClearCellId, other.ClearCellId);
                     comparisonResult = false;
                 }
 
                 if (ClearMonsterId != other.ClearMonsterId)
                 {
-                    outputFile.WriteLine("ClearMonsterId is different: {0} {1}", ClearMonsterId, other.ClearMonsterId);
+                    outputFile.WriteLine("\tClearMonsterId is different: {0} {1}", ClearMonsterId, other.ClearMonsterId);
                     comparisonResult = false;
                 }
 
@@ -132,7 +132,7 @@ namespace Melt
                     return true;
                 else if (this == null || other == null)
                 {
-                    outputFile.WriteLine("Error comparing, one of the values is NULL");
+                    outputFile.WriteLine("\tError comparing, one of the values is NULL");
                     return false;
                 }
 
@@ -140,37 +140,37 @@ namespace Melt
 
                 if (TexGID != other.TexGID)
                 {
-                    outputFile.WriteLine("TexGID is different: {0} {1}", TexGID, other.TexGID);
+                    outputFile.WriteLine("\tTexGID is different: {0} {1}", TexGID, other.TexGID);
                     comparisonResult = false;
                 }
 
                 if (MaxVertBright != other.MaxVertBright)
                 {
-                    outputFile.WriteLine("MaxVertBright is different: {0} {1}", MaxVertBright, other.MaxVertBright);
+                    outputFile.WriteLine("\tMaxVertBright is different: {0} {1}", MaxVertBright, other.MaxVertBright);
                     comparisonResult = false;
                 }
 
                 if (MinVertBright != other.MinVertBright)
                 {
-                    outputFile.WriteLine("MinVertBright is different: {0} {1}", MinVertBright, other.MinVertBright);
+                    outputFile.WriteLine("\tMinVertBright is different: {0} {1}", MinVertBright, other.MinVertBright);
                     comparisonResult = false;
                 }
 
                 if (MaxVertSaturate != other.MaxVertSaturate)
                 {
-                    outputFile.WriteLine("MaxVertSaturate is different: {0} {1}", MaxVertSaturate, other.MaxVertSaturate);
+                    outputFile.WriteLine("\tMaxVertSaturate is different: {0} {1}", MaxVertSaturate, other.MaxVertSaturate);
                     comparisonResult = false;
                 }
 
                 if (MinVertSaturate != other.MinVertSaturate)
                 {
-                    outputFile.WriteLine("MinVertSaturate is different: {0} {1}", MinVertSaturate, other.MinVertSaturate);
+                    outputFile.WriteLine("\tMinVertSaturate is different: {0} {1}", MinVertSaturate, other.MinVertSaturate);
                     comparisonResult = false;
                 }
 
                 if (MaxVertHue != other.MaxVertHue)
                 {
-                    outputFile.WriteLine("MaxVertHue is different: {0} {1}", MaxVertHue, other.MaxVertHue);
+                    outputFile.WriteLine("\tMaxVertHue is different: {0} {1}", MaxVertHue, other.MaxVertHue);
                     comparisonResult = false;
                 }
 
@@ -182,13 +182,13 @@ namespace Melt
 
                 if (DetailTexTiling != other.DetailTexTiling)
                 {
-                    outputFile.WriteLine("DetailTexTiling is different: {0} {1}", DetailTexTiling, other.DetailTexTiling);
+                    outputFile.WriteLine("\tDetailTexTiling is different: {0} {1}", DetailTexTiling, other.DetailTexTiling);
                     comparisonResult = false;
                 }
 
                 if (DetailTexGID != other.DetailTexGID)
                 {
-                    outputFile.WriteLine("DetailTexGID is different: {0} {1}", DetailTexGID, other.DetailTexGID);
+                    outputFile.WriteLine("\tDetailTexGID is different: {0} {1}", DetailTexGID, other.DetailTexGID);
                     comparisonResult = false;
                 }
 
@@ -222,7 +222,7 @@ namespace Melt
                     return true;
                 else if (this == null || other == null)
                 {
-                    outputFile.WriteLine("Error comparing, one of the values is NULL");
+                    outputFile.WriteLine("\tError comparing, one of the values is NULL");
                     return false;
                 }
 
@@ -257,7 +257,7 @@ namespace Melt
                     return true;
                 else if (this == null || other == null)
                 {
-                    outputFile.WriteLine("Error comparing, one of the values is NULL");
+                    outputFile.WriteLine("\tError comparing, one of the values is NULL");
                     return false;
                 }
 
@@ -265,13 +265,13 @@ namespace Melt
 
                 if (RCode != other.RCode)
                 {
-                    outputFile.WriteLine("RCode is different: {0} {1}", RCode, other.RCode);
+                    outputFile.WriteLine("\tRCode is different: {0} {1}", RCode, other.RCode);
                     comparisonResult = false;
                 }
 
                 if (RoadTexGID != other.RoadTexGID)
                 {
-                    outputFile.WriteLine("RoadTexGID is different: {0} {1}", RoadTexGID, other.RoadTexGID);
+                    outputFile.WriteLine("\tRoadTexGID is different: {0} {1}", RoadTexGID, other.RoadTexGID);
                     comparisonResult = false;
                 }
 
@@ -298,7 +298,7 @@ namespace Melt
                     return true;
                 else if (this == null || other == null)
                 {
-                    outputFile.WriteLine("Error comparing, one of the values is NULL");
+                    outputFile.WriteLine("\tError comparing, one of the values is NULL");
                     return false;
                 }
 
@@ -306,13 +306,13 @@ namespace Melt
 
                 if (TCode != other.TCode)
                 {
-                    outputFile.WriteLine("TCode is different: {0} {1}", TCode, other.TCode);
+                    outputFile.WriteLine("\tTCode is different: {0} {1}", TCode, other.TCode);
                     comparisonResult = false;
                 }
 
                 if (TexGID != other.TexGID)
                 {
-                    outputFile.WriteLine("TexGID is different: {0} {1}", TexGID, other.TexGID);
+                    outputFile.WriteLine("\tTexGID is different: {0} {1}", TexGID, other.TexGID);
                     comparisonResult = false;
                 }
 
@@ -456,7 +456,7 @@ namespace Melt
                     return true;
                 else if (this == null || other == null)
                 {
-                    outputFile.WriteLine("Error comparing, one of the values is NULL");
+                    outputFile.WriteLine("\tError comparing, one of the values is NULL");
                     return false;
                 }
 
@@ -464,62 +464,62 @@ namespace Melt
 
                 if (BaseTexSize != other.BaseTexSize)
                 {
-                    outputFile.WriteLine("BaseTexSize is different: {0} {1}", BaseTexSize, other.BaseTexSize);
+                    outputFile.WriteLine("\tBaseTexSize is different: {0} {1}", BaseTexSize, other.BaseTexSize);
                     comparisonResult = false;
                 }
 
                 if (CornerTerrainMaps.Count != other.CornerTerrainMaps.Count)
                 {
-                    outputFile.WriteLine("CornerTerrainMaps.Count is different: {0} {1}", CornerTerrainMaps.Count, other.CornerTerrainMaps.Count);
+                    outputFile.WriteLine("\tCornerTerrainMaps.Count is different: {0} {1}", CornerTerrainMaps.Count, other.CornerTerrainMaps.Count);
                     comparisonResult = false;
                 }
                 for (int i = 0; i < CornerTerrainMaps.Count && i < other.CornerTerrainMaps.Count; i++)
                 {
                     if (!CornerTerrainMaps[i].Compare(other.CornerTerrainMaps[i], outputFile))
                     {
-                        outputFile.WriteLine("CornerTerrainMaps[{0}] is different", i);
+                        outputFile.WriteLine("\tCornerTerrainMaps[{0}] is different", i);
                         comparisonResult = false;
                     }
                 }
 
                 if (SideTerrainMaps.Count != other.SideTerrainMaps.Count)
                 {
-                    outputFile.WriteLine("SideTerrainMaps.Count is different: {0} {1}", SideTerrainMaps.Count, other.SideTerrainMaps.Count);
+                    outputFile.WriteLine("\tSideTerrainMaps.Count is different: {0} {1}", SideTerrainMaps.Count, other.SideTerrainMaps.Count);
                     comparisonResult = false;
                 }
                 for (int i = 0; i < SideTerrainMaps.Count && i < other.SideTerrainMaps.Count; i++)
                 {
                     if (!SideTerrainMaps[i].Compare(other.SideTerrainMaps[i], outputFile))
                     {
-                        outputFile.WriteLine("SideTerrainMaps[{0}] is different", i, SideTerrainMaps[i], other.SideTerrainMaps[i]);
+                        outputFile.WriteLine("\tSideTerrainMaps[{0}] is different", i, SideTerrainMaps[i], other.SideTerrainMaps[i]);
                         comparisonResult = false;
                     }
                 }
 
                 if (RoadMaps.Count != other.RoadMaps.Count)
                 {
-                    outputFile.WriteLine("RoadMaps.Count is different: {0} {1}", RoadMaps.Count, other.RoadMaps.Count);
+                    outputFile.WriteLine("\tRoadMaps.Count is different: {0} {1}", RoadMaps.Count, other.RoadMaps.Count);
                     comparisonResult = false;
                 }
                 for (int i = 0; i < RoadMaps.Count && i < other.RoadMaps.Count; i++)
                 {
                     if (!RoadMaps[i].Compare(other.RoadMaps[i],outputFile))
                     {
-                        outputFile.WriteLine("RoadMaps[{0}] is different", i, RoadMaps[i], other.RoadMaps[i]);
+                        outputFile.WriteLine("\tRoadMaps[{0}] is different", i, RoadMaps[i], other.RoadMaps[i]);
                         comparisonResult = false;
                     }
                 }
 
                 if (TerrainDescription.Count != other.TerrainDescription.Count)
                 {
-                    outputFile.WriteLine("TerrainDescription.Count is different: {0} {1}", TerrainDescription.Count, other.TerrainDescription.Count);
+                    outputFile.WriteLine("\tTerrainDescription.Count is different: {0} {1}", TerrainDescription.Count, other.TerrainDescription.Count);
                     comparisonResult = false;
                 }
                 for (int i = 0; i < TerrainDescription.Count && i < other.TerrainDescription.Count; i++)
                 {
                     if (!TerrainDescription[i].Compare(other.TerrainDescription[i],outputFile))
                     {
-                        outputFile.WriteLine("TerrainDescription[{0}] is different", i, TerrainDescription[i], other.TerrainDescription[i]);
+                        outputFile.WriteLine("\tTerrainDescription[{0}] is different", i, TerrainDescription[i], other.TerrainDescription[i]);
                         comparisonResult = false;
                     }
                 }
@@ -556,7 +556,7 @@ namespace Melt
                     return true;
                 else if (this == null || other == null)
                 {
-                    outputFile.WriteLine("Error comparing, one of the values is NULL");
+                    outputFile.WriteLine("\tError comparing, one of the values is NULL");
                     return false;
                 }
 
@@ -564,12 +564,12 @@ namespace Melt
 
                 if (HasPalShift != other.HasPalShift)
                 {
-                    outputFile.WriteLine("HasPalShift is different: {0} {1}", HasPalShift, other.HasPalShift);
+                    outputFile.WriteLine("\tHasPalShift is different: {0} {1}", HasPalShift, other.HasPalShift);
                     comparisonResult = false;
                 }
                 if (!texMerge.Compare(other.texMerge, outputFile))
                 {
-                    outputFile.WriteLine("texMerge is different: {0} {1}", texMerge, other.texMerge);
+                    outputFile.WriteLine("\ttexMerge is different: {0} {1}", texMerge, other.texMerge);
                     comparisonResult = false;
                 }
 
@@ -623,33 +623,33 @@ namespace Melt
                     return true;
                 else if (this == null || other == null)
                 {
-                    outputFile.WriteLine("Error comparing, one of the values is NULL");
+                    outputFile.WriteLine("\tError comparing, one of the values is NULL");
                     return false;
                 }
 
                 bool comparisonResult = true;
 
-                if (TerrainName != other.TerrainName)
+                if (TerrainName.Replace("\0","") != other.TerrainName)
                 {
-                    outputFile.WriteLine("TerrainName is different: {0} {1}", TerrainName, other.TerrainName);
+                    outputFile.WriteLine("\tTerrainName is different: {0} {1}", TerrainName, other.TerrainName);
                     comparisonResult = false;
                 }
                 if (TerrainColor != other.TerrainColor)
                 {
-                    outputFile.WriteLine("TerrainColor is different: {0} {1}", TerrainColor, other.TerrainColor);
+                    outputFile.WriteLine("\tTerrainColor is different: {0} {1}", TerrainColor, other.TerrainColor);
                     comparisonResult = false;
                 }
 
                 if (SceneTypes.Count != other.SceneTypes.Count)
                 {
-                    outputFile.WriteLine("SceneTypes.Count is different: {0} {1}", SceneTypes.Count, other.SceneTypes.Count);
+                    outputFile.WriteLine("\tSceneTypes.Count is different: {0} {1}", SceneTypes.Count, other.SceneTypes.Count);
                     comparisonResult = false;
                 }
                 for (int i = 0; i < SceneTypes.Count && i < other.SceneTypes.Count; i++)
                 {
                     if (SceneTypes[i] != other.SceneTypes[i])
                     {
-                        outputFile.WriteLine("SceneTypes[{0}] is different", i, SceneTypes[i], other.SceneTypes[i]);
+                        outputFile.WriteLine("\tSceneTypes[{0}] is different", i, SceneTypes[i], other.SceneTypes[i]);
                         comparisonResult = false;
                     }
                 }
@@ -772,7 +772,7 @@ namespace Melt
                     return true;
                 else if (this == null || other == null)
                 {
-                    outputFile.WriteLine("Error comparing, one of the values is NULL");
+                    outputFile.WriteLine("\tError comparing, one of the values is NULL");
                     return false;
                 }
 
@@ -780,14 +780,14 @@ namespace Melt
 
                 if (TerrainTypes.Count != other.TerrainTypes.Count)
                 {
-                    outputFile.WriteLine("TerrainTypes.Count is different: {0} {1}", TerrainTypes.Count, other.TerrainTypes.Count);
+                    outputFile.WriteLine("\tTerrainTypes.Count is different: {0} {1}", TerrainTypes.Count, other.TerrainTypes.Count);
                     comparisonResult = false;
                 }
                 for (int i = 0; i < TerrainTypes.Count && i < other.TerrainTypes.Count; i++)
                 {
                     if (!TerrainTypes[i].Compare(other.TerrainTypes[i], outputFile))
                     {
-                        outputFile.WriteLine("TerrainTypes[{0}] is different", i, TerrainTypes[i], other.TerrainTypes[i]);
+                        outputFile.WriteLine("\tTerrainTypes[{0}] is different", i, TerrainTypes[i], other.TerrainTypes[i]);
                         comparisonResult = false;
                     }
                 }
@@ -824,7 +824,7 @@ namespace Melt
                     return true;
                 else if (this == null || other == null)
                 {
-                    outputFile.WriteLine("Error comparing, one of the values is NULL");
+                    outputFile.WriteLine("\tError comparing, one of the values is NULL");
                     return false;
                 }
 
@@ -832,14 +832,14 @@ namespace Melt
 
                 if (Scenes.Count != other.Scenes.Count)
                 {
-                    outputFile.WriteLine("Scenes.Count is different: {0} {1}", Scenes.Count, other.Scenes.Count);
+                    outputFile.WriteLine("\tScenes.Count is different: {0} {1}", Scenes.Count, other.Scenes.Count);
                     comparisonResult = false;
                 }
                 for (int i = 0; i < Scenes.Count && i < other.Scenes.Count; i++)
                 {
                     if (Scenes[i] != other.Scenes[i])
                     {
-                        outputFile.WriteLine("Scenes[{0}] is different: {1} {2}", i, Scenes[i], other.Scenes[i]);
+                        outputFile.WriteLine("\tScenes[{0}] is different: {1} {2}", i, Scenes[i], other.Scenes[i]);
                         comparisonResult = false;
                     }
                 }
@@ -869,7 +869,7 @@ namespace Melt
                     return true;
                 else if (this == null || other == null)
                 {
-                    outputFile.WriteLine("Error comparing, one of the values is NULL");
+                    outputFile.WriteLine("\tError comparing, one of the values is NULL");
                     return false;
                 }
 
@@ -877,14 +877,14 @@ namespace Melt
 
                 if (SceneTypes.Count != other.SceneTypes.Count)
                 {
-                    outputFile.WriteLine("StartDate is different: {0} {1}", SceneTypes.Count, other.SceneTypes.Count);
+                    outputFile.WriteLine("\tSceneTypes.Count is different: {0} {1}", SceneTypes.Count, other.SceneTypes.Count);
                     comparisonResult = false;
                 }
                 for (int i = 0; i < SceneTypes.Count && i < other.SceneTypes.Count; i++)
                 {
                     if (!SceneTypes[i].Compare(other.SceneTypes[i], outputFile))
                     {
-                        outputFile.WriteLine("SceneTypes[{0}] is different: {1} {2}", i, SceneTypes[i], other.SceneTypes[i]);
+                        outputFile.WriteLine("\tSceneTypes[{0}] is different: {1} {2}", i, SceneTypes[i], other.SceneTypes[i]);
                         comparisonResult = false;
                     }
                 }
@@ -917,7 +917,7 @@ namespace Melt
                     return true;
                 else if (this == null || other == null)
                 {
-                    outputFile.WriteLine("Error comparing, one of the values is NULL");
+                    outputFile.WriteLine("\tError comparing, one of the values is NULL");
                     return false;
                 }
 
@@ -925,27 +925,27 @@ namespace Melt
 
                 if (SType != other.SType)
                 {
-                    outputFile.WriteLine("SType is different: {0} {1}", SType, other.SType);
+                    outputFile.WriteLine("\tSType is different: {0} {1}", SType, other.SType);
                     comparisonResult = false;
                 }
                 if (Volume != other.Volume)
                 {
-                    outputFile.WriteLine("Volume is different: {0} {1}", Volume, other.Volume);
+                    outputFile.WriteLine("\tVolume is different: {0} {1}", Volume, other.Volume);
                     comparisonResult = false;
                 }
                 if (BaseChance != other.BaseChance)
                 {
-                    outputFile.WriteLine("BaseChance is different: {0} {1}", BaseChance, other.BaseChance);
+                    outputFile.WriteLine("\tBaseChance is different: {0} {1}", BaseChance, other.BaseChance);
                     comparisonResult = false;
                 }
                 if (MinRate != other.MinRate)
                 {
-                    outputFile.WriteLine("MinRate is different: {0} {1}", MinRate, other.MinRate);
+                    outputFile.WriteLine("\tMinRate is different: {0} {1}", MinRate, other.MinRate);
                     comparisonResult = false;
                 }
                 if (MaxRate != other.MaxRate)
                 {
-                    outputFile.WriteLine("MaxRate is different: {0} {1}", MaxRate, other.MaxRate);
+                    outputFile.WriteLine("\tMaxRate is different: {0} {1}", MaxRate, other.MaxRate);
                     comparisonResult = false;
                 }
 
@@ -976,7 +976,7 @@ namespace Melt
                     return true;
                 else if (this == null || other == null)
                 {
-                    outputFile.WriteLine("Error comparing, one of the values is NULL");
+                    outputFile.WriteLine("\tError comparing, one of the values is NULL");
                     return false;
                 }
 
@@ -984,20 +984,20 @@ namespace Melt
 
                 if (STBId != other.STBId)
                 {
-                    outputFile.WriteLine("STBId is different: {0} {1}", STBId, other.STBId);
+                    outputFile.WriteLine("\tSTBId is different: {0} {1}", STBId, other.STBId);
                     comparisonResult = false;
                 }
 
                 if (AmbientSounds.Count != other.AmbientSounds.Count)
                 {
-                    outputFile.WriteLine("AmbientSounds.Count is different: {0} {1}", AmbientSounds.Count, other.AmbientSounds.Count);
+                    outputFile.WriteLine("\tAmbientSounds.Count is different: {0} {1}", AmbientSounds.Count, other.AmbientSounds.Count);
                     comparisonResult = false;
                 }
                 for (int i = 0; i < AmbientSounds.Count && i < other.AmbientSounds.Count; i++)
                 {
                     if (!AmbientSounds[i].Compare(other.AmbientSounds[i], outputFile))
                     {
-                        outputFile.WriteLine("AmbientSounds[{0}] is different", i, AmbientSounds[i], other.AmbientSounds[i]);
+                        outputFile.WriteLine("\tAmbientSounds[{0}] is different", i, AmbientSounds[i], other.AmbientSounds[i]);
                         comparisonResult = false;
                     }
                 }
@@ -1027,7 +1027,7 @@ namespace Melt
                     return true;
                 else if (this == null || other == null)
                 {
-                    outputFile.WriteLine("Error comparing, one of the values is NULL");
+                    outputFile.WriteLine("\tError comparing, one of the values is NULL");
                     return false;
                 }
 
@@ -1035,14 +1035,14 @@ namespace Melt
 
                 if (STBDesc.Count != other.STBDesc.Count)
                 {
-                    outputFile.WriteLine("STBDesc is different: {0} {1}", STBDesc, other.STBDesc);
+                    outputFile.WriteLine("\tSTBDesc is different: {0} {1}", STBDesc, other.STBDesc);
                     comparisonResult = false;
                 }
                 for (int i = 0; i < STBDesc.Count && i < other.STBDesc.Count; i++)
                 {
                     if (!STBDesc[i].Compare(other.STBDesc[i],outputFile))
                     {
-                        outputFile.WriteLine("STBDesc[{0}] is different: {1} {2}", i, STBDesc[i], other.STBDesc[i]);
+                        outputFile.WriteLine("\tSTBDesc[{0}] is different: {1} {2}", i, STBDesc[i], other.STBDesc[i]);
                         comparisonResult = false;
                     }
                 }
@@ -1078,7 +1078,7 @@ namespace Melt
                     return true;
                 else if (this == null || other == null)
                 {
-                    outputFile.WriteLine("Error comparing, one of the values is NULL");
+                    outputFile.WriteLine("\tError comparing, one of the values is NULL");
                     return false;
                 }
 
@@ -1086,37 +1086,37 @@ namespace Melt
 
                 if (ObjectIndex != other.ObjectIndex)
                 {
-                    outputFile.WriteLine("ObjectIndex is different: {0} {1}", ObjectIndex, other.ObjectIndex);
+                    outputFile.WriteLine("\tObjectIndex is different: {0} {1}", ObjectIndex, other.ObjectIndex);
                     comparisonResult = false;
                 }
 
                 if (GFXObjId != other.GFXObjId)
                 {
-                    outputFile.WriteLine("GFXObjId is different: {0} {1}", GFXObjId, other.GFXObjId);
+                    outputFile.WriteLine("\tGFXObjId is different: {0} {1}", GFXObjId, other.GFXObjId);
                     comparisonResult = false;
                 }
 
                 if (Rotate != other.Rotate)
                 {
-                    outputFile.WriteLine("Rotate is different: {0} {1}", Rotate, other.Rotate);
+                    outputFile.WriteLine("\tRotate is different: {0} {1}", Rotate, other.Rotate);
                     comparisonResult = false;
                 }
 
                 if (Transparent != other.Transparent)
                 {
-                    outputFile.WriteLine("Transparent is different: {0} {1}", Transparent, other.Transparent);
+                    outputFile.WriteLine("\tTransparent is different: {0} {1}", Transparent, other.Transparent);
                     comparisonResult = false;
                 }
 
                 if (Luminosity != other.Luminosity)
                 {
-                    outputFile.WriteLine("Luminosity is different: {0} {1}", Luminosity, other.Luminosity);
+                    outputFile.WriteLine("\tLuminosity is different: {0} {1}", Luminosity, other.Luminosity);
                     comparisonResult = false;
                 }
 
                 if (MaxBright != other.MaxBright)
                 {
-                    outputFile.WriteLine("MaxBright is different: {0} {1}", MaxBright, other.MaxBright);
+                    outputFile.WriteLine("\tMaxBright is different: {0} {1}", MaxBright, other.MaxBright);
                     comparisonResult = false;
                 }
 
@@ -1171,7 +1171,7 @@ namespace Melt
                     return true;
                 else if (this == null || other == null)
                 {
-                    outputFile.WriteLine("Error comparing, one of the values is NULL");
+                    outputFile.WriteLine("\tError comparing, one of the values is NULL");
                     return false;
                 }
 
@@ -1179,70 +1179,70 @@ namespace Melt
 
                 if (Begin != other.Begin)
                 {
-                    outputFile.WriteLine("Begin is different: {0} {1}", Begin, other.Begin);
+                    outputFile.WriteLine("\tBegin is different: {0} {1}", Begin, other.Begin);
                     comparisonResult = false;
                 }
                 if (DirBright != other.DirBright)
                 {
-                    outputFile.WriteLine("DirBright is different: {0} {1}", DirBright, other.DirBright);
+                    outputFile.WriteLine("\tDirBright is different: {0} {1}", DirBright, other.DirBright);
                     comparisonResult = false;
                 }
                 if (DirHeading != other.DirHeading)
                 {
-                    outputFile.WriteLine("DirHeading is different: {0} {1}", DirHeading, other.DirHeading);
+                    outputFile.WriteLine("\tDirHeading is different: {0} {1}", DirHeading, other.DirHeading);
                     comparisonResult = false;
                 }
                 if (DirPitch != other.DirPitch)
                 {
-                    outputFile.WriteLine("DirPitch is different: {0} {1}", DirPitch, other.DirPitch);
+                    outputFile.WriteLine("\tDirPitch is different: {0} {1}", DirPitch, other.DirPitch);
                     comparisonResult = false;
                 }
                 if (DirColor != other.DirColor)
                 {
-                    outputFile.WriteLine("DirColor is different: {0} {1}", DirColor, other.DirColor);
+                    outputFile.WriteLine("\tDirColor is different: {0} {1}", DirColor, other.DirColor);
                     comparisonResult = false;
                 }
                 if (AmbBright != other.AmbBright)
                 {
-                    outputFile.WriteLine("AmbBright is different: {0} {1}", AmbBright, other.AmbBright);
+                    outputFile.WriteLine("\tAmbBright is different: {0} {1}", AmbBright, other.AmbBright);
                     comparisonResult = false;
                 }
                 if (AmbColor != other.AmbColor)
                 {
-                    outputFile.WriteLine("AmbColor is different: {0} {1}", AmbColor, other.AmbColor);
+                    outputFile.WriteLine("\tAmbColor is different: {0} {1}", AmbColor, other.AmbColor);
                     comparisonResult = false;
                 }
                 if (MinWorldFog != other.MinWorldFog)
                 {
-                    outputFile.WriteLine("MinWorldFog is different: {0} {1}", MinWorldFog, other.MinWorldFog);
+                    outputFile.WriteLine("\tMinWorldFog is different: {0} {1}", MinWorldFog, other.MinWorldFog);
                     comparisonResult = false;
                 }
                 if (MaxWorldFog != other.MaxWorldFog)
                 {
-                    outputFile.WriteLine("MaxWorldFog is different: {0} {1}", MaxWorldFog, other.MaxWorldFog);
+                    outputFile.WriteLine("\tMaxWorldFog is different: {0} {1}", MaxWorldFog, other.MaxWorldFog);
                     comparisonResult = false;
                 }
                 if (WorldFogColor != other.WorldFogColor)
                 {
-                    outputFile.WriteLine("WorldFogColor is different: {0} {1}", WorldFogColor, other.WorldFogColor);
+                    outputFile.WriteLine("\tWorldFogColor is different: {0} {1}", WorldFogColor, other.WorldFogColor);
                     comparisonResult = false;
                 }
                 if (WorldFog != other.WorldFog)
                 {
-                    outputFile.WriteLine("WorldFog is different: {0} {1}", WorldFog, other.WorldFog);
+                    outputFile.WriteLine("\tWorldFog is different: {0} {1}", WorldFog, other.WorldFog);
                     comparisonResult = false;
                 }
 
                 if (SkyObjReplace.Count != other.SkyObjReplace.Count)
                 {
-                    outputFile.WriteLine("SkyObjReplace.Count is different: {0} {1}", SkyObjReplace.Count, other.SkyObjReplace.Count);
+                    outputFile.WriteLine("\tSkyObjReplace.Count is different: {0} {1}", SkyObjReplace.Count, other.SkyObjReplace.Count);
                     comparisonResult = false;
                 }
                 for (int i = 0; i < SkyObjReplace.Count && i < other.SkyObjReplace.Count; i++)
                 {
                     if (!SkyObjReplace[i].Compare(other.SkyObjReplace[i], outputFile))
                     {
-                        outputFile.WriteLine("SkyObjReplace[{0}] is different", i, SkyObjReplace[i], other.SkyObjReplace[i]);
+                        outputFile.WriteLine("\tSkyObjReplace[{0}] is different", i, SkyObjReplace[i], other.SkyObjReplace[i]);
                         comparisonResult = false;
                     }
                 }
@@ -1287,7 +1287,7 @@ namespace Melt
                     return true;
                 else if (this == null || other == null)
                 {
-                    outputFile.WriteLine("Error comparing, one of the values is NULL");
+                    outputFile.WriteLine("\tError comparing, one of the values is NULL");
                     return false;
                 }
 
@@ -1295,52 +1295,52 @@ namespace Melt
 
                 if (BeginTime != other.BeginTime)
                 {
-                    outputFile.WriteLine("BeginTime is different: {0} {1}", BeginTime, other.BeginTime);
+                    outputFile.WriteLine("\tBeginTime is different: {0} {1}", BeginTime, other.BeginTime);
                     comparisonResult = false;
                 }
                 if (EndTime != other.EndTime)
                 {
-                    outputFile.WriteLine("EndTime is different: {0} {1}", EndTime, other.EndTime);
+                    outputFile.WriteLine("\tEndTime is different: {0} {1}", EndTime, other.EndTime);
                     comparisonResult = false;
                 }
                 if (BeginAngle != other.BeginAngle)
                 {
-                    outputFile.WriteLine("BeginAngle is different: {0} {1}", BeginAngle, other.BeginAngle);
+                    outputFile.WriteLine("\tBeginAngle is different: {0} {1}", BeginAngle, other.BeginAngle);
                     comparisonResult = false;
                 }
                 if (TexVelocityX != other.TexVelocityX)
                 {
-                    outputFile.WriteLine("TexVelocityX is different: {0} {1}", TexVelocityX, other.TexVelocityX);
+                    outputFile.WriteLine("\tTexVelocityX is different: {0} {1}", TexVelocityX, other.TexVelocityX);
                     comparisonResult = false;
                 }
                 if (TexVelocityY != other.TexVelocityY)
                 {
-                    outputFile.WriteLine("TexVelocityY is different: {0} {1}", TexVelocityY, other.TexVelocityY);
+                    outputFile.WriteLine("\tTexVelocityY is different: {0} {1}", TexVelocityY, other.TexVelocityY);
                     comparisonResult = false;
                 }
                 if (TexVelocityZ != other.TexVelocityZ)
                 {
-                    outputFile.WriteLine("TexVelocityZ is different: {0} {1}", TexVelocityZ, other.TexVelocityZ);
+                    outputFile.WriteLine("\tTexVelocityZ is different: {0} {1}", TexVelocityZ, other.TexVelocityZ);
                     comparisonResult = false;
                 }
                 if (TexVelocityZ != other.TexVelocityZ)
                 {
-                    outputFile.WriteLine("TexVelocityZ is different: {0} {1}", TexVelocityZ, other.TexVelocityZ);
+                    outputFile.WriteLine("\tTexVelocityZ is different: {0} {1}", TexVelocityZ, other.TexVelocityZ);
                     comparisonResult = false;
                 }
                 if (DefaultGFXObjectId != other.DefaultGFXObjectId)
                 {
-                    outputFile.WriteLine("DefaultGFXObjectId is different: {0} {1}", DefaultGFXObjectId.ToString("x8"), other.DefaultGFXObjectId.ToString("x8"));
+                    outputFile.WriteLine("\tDefaultGFXObjectId is different: {0} {1}", DefaultGFXObjectId.ToString("x8"), other.DefaultGFXObjectId.ToString("x8"));
                     comparisonResult = false;
                 }
                 if (DefaultPESObjectId != other.DefaultPESObjectId)
                 {
-                    outputFile.WriteLine("DefaultPESObjectId is different: {0} {1}", DefaultPESObjectId.ToString("x8"), other.DefaultPESObjectId.ToString("x8"));
+                    outputFile.WriteLine("\tDefaultPESObjectId is different: {0} {1}", DefaultPESObjectId.ToString("x8"), other.DefaultPESObjectId.ToString("x8"));
                     comparisonResult = false;
                 }
                 if (Properties != other.Properties)
                 {
-                    outputFile.WriteLine("Properties is different: {0} {1}", Properties, other.Properties);
+                    outputFile.WriteLine("\tProperties is different: {0} {1}", Properties, other.Properties);
                     comparisonResult = false;
                 }
                 return comparisonResult;
@@ -1379,7 +1379,7 @@ namespace Melt
                     return true;
                 else if (this == null || other == null)
                 {
-                    outputFile.WriteLine("Error comparing, one of the values is NULL");
+                    outputFile.WriteLine("\tError comparing, one of the values is NULL");
                     return false;
                 }
 
@@ -1387,40 +1387,40 @@ namespace Melt
 
                 if (ChanceOfOccur != other.ChanceOfOccur)
                 {
-                    outputFile.WriteLine("ChanceOfOccur is different: {0} {1}", ChanceOfOccur, other.ChanceOfOccur);
+                    outputFile.WriteLine("\tChanceOfOccur is different: {0} {1}", ChanceOfOccur, other.ChanceOfOccur);
                     comparisonResult = false;
                 }
 
                 if (DayName != other.DayName)
                 {
-                    outputFile.WriteLine("DayName is different: {0} {1}", DayName, other.DayName);
+                    outputFile.WriteLine("\tDayName is different: {0} {1}", DayName, other.DayName);
                     comparisonResult = false;
                 }
 
                 if (SkyObjects.Count != other.SkyObjects.Count)
                 {
-                    outputFile.WriteLine("SkyObjects.Count is different: {0} {1}", SkyObjects.Count, other.SkyObjects.Count);
+                    outputFile.WriteLine("\tSkyObjects.Count is different: {0} {1}", SkyObjects.Count, other.SkyObjects.Count);
                     comparisonResult = false;
                 }
                 for (int i = 0; i < SkyObjects.Count && i < other.SkyObjects.Count; i++)
                 {
                     if (!SkyObjects[i].Compare(other.SkyObjects[i], outputFile))
                     {
-                        outputFile.WriteLine("SkyObjects[{0}] is different", i, SkyObjects[i], other.SkyObjects[i]);
+                        outputFile.WriteLine("\tSkyObjects[{0}] is different", i, SkyObjects[i], other.SkyObjects[i]);
                         comparisonResult = false;
                     }
                 }
 
                 if (SkyTime.Count != other.SkyTime.Count)
                 {
-                    outputFile.WriteLine("SkyTime.Count is different: {0} {1}", SkyTime.Count, other.SkyTime.Count);
+                    outputFile.WriteLine("\tSkyTime.Count is different: {0} {1}", SkyTime.Count, other.SkyTime.Count);
                     comparisonResult = false;
                 }
                 for (int i = 0; i < SkyTime.Count && i < other.SkyTime.Count; i++)
                 {
                     if (!SkyTime[i].Compare(other.SkyTime[i], outputFile))
                     {
-                        outputFile.WriteLine("SkyTime[{0}] is different", i, SkyTime[i], other.SkyTime[i]);
+                        outputFile.WriteLine("\tSkyTime[{0}] is different", i, SkyTime[i], other.SkyTime[i]);
                         comparisonResult = false;
                     }
                 }
@@ -1454,7 +1454,7 @@ namespace Melt
                     return true;
                 else if (this == null || other == null)
                 {
-                    outputFile.WriteLine("Error comparing, one of the values is NULL");
+                    outputFile.WriteLine("\tError comparing, one of the values is NULL");
                     return false;
                 }
 
@@ -1462,19 +1462,19 @@ namespace Melt
 
                 if (TickSize != other.TickSize)
                 {
-                    outputFile.WriteLine("TickSize is different: {0} {1}", TickSize, other.TickSize);
+                    outputFile.WriteLine("\tTickSize is different: {0} {1}", TickSize, other.TickSize);
                     comparisonResult = false;
                 }
 
                 if (LightTickSize != other.LightTickSize)
                 {
-                    outputFile.WriteLine("LightTickSize is different: {0} {1}", LightTickSize, other.LightTickSize);
+                    outputFile.WriteLine("\tLightTickSize is different: {0} {1}", LightTickSize, other.LightTickSize);
                     comparisonResult = false;
                 }
 
                 if (DayGroups.Count != other.DayGroups.Count)
                 {
-                    outputFile.WriteLine("DayGroups.Count is different: {0} {1}", DayGroups.Count, other.DayGroups.Count);
+                    outputFile.WriteLine("\tDayGroups.Count is different: {0} {1}", DayGroups.Count, other.DayGroups.Count);
                     comparisonResult = false;
                 }
 
@@ -1482,7 +1482,7 @@ namespace Melt
                 {
                     if (!DayGroups[i].Compare(other.DayGroups[i], outputFile))
                     {
-                        outputFile.WriteLine("DayGroups[{0}] is different", i, DayGroups[i], other.DayGroups[i]);
+                        outputFile.WriteLine("\tDayGroups[{0}] is different", i, DayGroups[i], other.DayGroups[i]);
                         comparisonResult = false;
                     }
                 }
@@ -1512,7 +1512,7 @@ namespace Melt
                     return true;
                 else if (this == null || other == null)
                 {
-                    outputFile.WriteLine("Error comparing, one of the values is NULL");
+                    outputFile.WriteLine("\tError comparing, one of the values is NULL");
                     return false;
                 }
 
@@ -1520,7 +1520,7 @@ namespace Melt
 
                 if (LandHeightTable.Count != other.LandHeightTable.Count)
                 {
-                    outputFile.WriteLine("LandHeightTable.Count is different: {0} {1}", LandHeightTable.Count, other.LandHeightTable.Count);
+                    outputFile.WriteLine("\tLandHeightTable.Count is different: {0} {1}", LandHeightTable.Count, other.LandHeightTable.Count);
                     comparisonResult = false;
                 }
 
@@ -1528,7 +1528,7 @@ namespace Melt
                 {
                     if (LandHeightTable[i] != other.LandHeightTable[i])
                     {
-                        outputFile.WriteLine("LandHeightTable[{0}] is different", i, LandHeightTable[i], other.LandHeightTable[i]);
+                        outputFile.WriteLine("\tLandHeightTable[{0}] is different", i, LandHeightTable[i], other.LandHeightTable[i]);
                         comparisonResult = false;
                     }
                 }
@@ -1556,7 +1556,7 @@ namespace Melt
                     return true;
                 else if (this == null || other == null)
                 {
-                    outputFile.WriteLine("Error comparing, one of the values is NULL");
+                    outputFile.WriteLine("\tError comparing, one of the values is NULL");
                     return false;
                 }
 
@@ -1564,12 +1564,12 @@ namespace Melt
 
                 if (StartDate != other.StartDate)
                 {
-                    outputFile.WriteLine("StartDate is different: {0} {1}", StartDate, other.StartDate);
+                    outputFile.WriteLine("\tStartDate is different: {0} {1}", StartDate, other.StartDate);
                     comparisonResult = false;
                 }
                 if (Name != other.Name)
                 {
-                    outputFile.WriteLine("StartDate is different: {0} {1}", StartDate, other.StartDate);
+                    outputFile.WriteLine("\tStartDate is different: {0} {1}", StartDate, other.StartDate);
                     comparisonResult = false;
                 }
                 return comparisonResult;
@@ -1597,7 +1597,7 @@ namespace Melt
                     return true;
                 else if (this == null || other == null)
                 {
-                    outputFile.WriteLine("Error comparing, one of the values is NULL");
+                    outputFile.WriteLine("\tError comparing, one of the values is NULL");
                     return false;
                 }
 
@@ -1605,17 +1605,17 @@ namespace Melt
 
                 if (Start != other.Start)
                 {
-                    outputFile.WriteLine("Start is different: {0} {1}", Start, other.Start);
+                    outputFile.WriteLine("\tStart is different: {0} {1}", Start, other.Start);
                     comparisonResult = false;
                 }
                 if (IsNight != other.IsNight)
                 {
-                    outputFile.WriteLine("IsNight is different: {0} {1}", IsNight, other.IsNight);
+                    outputFile.WriteLine("\tIsNight is different: {0} {1}", IsNight, other.IsNight);
                     comparisonResult = false;
                 }
                 if (Name != other.Name)
                 {
-                    outputFile.WriteLine("Name is different: {0} {1}", Name, other.Name);
+                    outputFile.WriteLine("\tName is different: {0} {1}", Name, other.Name);
                     comparisonResult = false;
                 }
                 return comparisonResult;
@@ -1672,7 +1672,7 @@ namespace Melt
                     return true;
                 else if (this == null || other == null)
                 {
-                    outputFile.WriteLine("Error comparing, one of the values is NULL");
+                    outputFile.WriteLine("\tError comparing, one of the values is NULL");
                     return false;
                 }
 
@@ -1680,68 +1680,68 @@ namespace Melt
 
                 if (ZeroTimeOfYear != other.ZeroTimeOfYear)
                 {
-                    outputFile.WriteLine("ZeroTimeOfYear is different: {0} {1}", ZeroTimeOfYear, other.ZeroTimeOfYear);
+                    outputFile.WriteLine("\tZeroTimeOfYear is different: {0} {1}", ZeroTimeOfYear, other.ZeroTimeOfYear);
                     comparisonResult = false;
                 }
                 if (ZeroYear != other.ZeroYear)
                 {
-                    outputFile.WriteLine("ZeroYear is different: {0} {1}", ZeroYear, other.ZeroYear);
+                    outputFile.WriteLine("\tZeroYear is different: {0} {1}", ZeroYear, other.ZeroYear);
                     comparisonResult = false;
                 }
                 if (DayLength != other.DayLength)
                 {
-                    outputFile.WriteLine("DayLength is different: {0} {1}", DayLength, other.DayLength);
+                    outputFile.WriteLine("\tDayLength is different: {0} {1}", DayLength, other.DayLength);
                     comparisonResult = false;
                 }
                 if (DaysPerYear != other.DaysPerYear)
                 {
-                    outputFile.WriteLine("DaysPerYear is different: {0} {1}", DaysPerYear, other.DaysPerYear);
+                    outputFile.WriteLine("\tDaysPerYear is different: {0} {1}", DaysPerYear, other.DaysPerYear);
                     comparisonResult = false;
                 }
                 if (YearSpec != other.YearSpec)
                 {
-                    outputFile.WriteLine("YearSpec is different: {0} {1}", YearSpec, other.YearSpec);
+                    outputFile.WriteLine("\tYearSpec is different: {0} {1}", YearSpec, other.YearSpec);
                     comparisonResult = false;
                 }
 
                 if (TimesOfDay.Count != other.TimesOfDay.Count)
                 {
-                    outputFile.WriteLine("TimesOfDay.Count is different: {0} {1}", TimesOfDay.Count, other.TimesOfDay.Count);
+                    outputFile.WriteLine("\tTimesOfDay.Count is different: {0} {1}", TimesOfDay.Count, other.TimesOfDay.Count);
                     comparisonResult = false;
                 }
                 for (int i = 0; i < TimesOfDay.Count && i < other.TimesOfDay.Count; i++)
                 {
                     if (!TimesOfDay[i].Compare(other.TimesOfDay[i], outputFile))
                     {
-                        outputFile.WriteLine("TimesOfDay[{0}] is different", i, TimesOfDay[i], other.TimesOfDay[i]);
+                        outputFile.WriteLine("\tTimesOfDay[{0}] is different", i, TimesOfDay[i], other.TimesOfDay[i]);
                         comparisonResult = false;
                     }
                 }
 
                 if (DaysOfTheWeek.Count != other.DaysOfTheWeek.Count)
                 {
-                    outputFile.WriteLine("DaysOfTheWeek.Count is different: {0} {1}", DaysOfTheWeek.Count, other.DaysOfTheWeek.Count);
+                    outputFile.WriteLine("\tDaysOfTheWeek.Count is different: {0} {1}", DaysOfTheWeek.Count, other.DaysOfTheWeek.Count);
                     comparisonResult = false;
                 }
                 for (int i = 0; i < DaysOfTheWeek.Count && i < other.DaysOfTheWeek.Count; i++)
                 {
                     if (DaysOfTheWeek[i] != other.DaysOfTheWeek[i])
                     {
-                        outputFile.WriteLine("DaysOfTheWeek[{0}] is different: {1} {2}", i, DaysOfTheWeek[i], other.DaysOfTheWeek[i]);
+                        outputFile.WriteLine("\tDaysOfTheWeek[{0}] is different: {1} {2}", i, DaysOfTheWeek[i], other.DaysOfTheWeek[i]);
                         comparisonResult = false;
                     }
                 }
 
                 if (Seasons.Count != other.Seasons.Count)
                 {
-                    outputFile.WriteLine("Seasons.Count is different: {0} {1}", Seasons.Count, other.Seasons.Count);
+                    outputFile.WriteLine("\tSeasons.Count is different: {0} {1}", Seasons.Count, other.Seasons.Count);
                     comparisonResult = false;
                 }
                 for (int i = 0; i < Seasons.Count && i < other.Seasons.Count; i++)
                 {
                     if (!Seasons[i].Compare(other.Seasons[i], outputFile))
                     {
-                        outputFile.WriteLine("Seasons[{0}] is different", i, Seasons[i], other.Seasons[i]);
+                        outputFile.WriteLine("\tSeasons[{0}] is different", i, Seasons[i], other.Seasons[i]);
                         comparisonResult = false;
                     }
                 }

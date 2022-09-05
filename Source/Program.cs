@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using System.Diagnostics;
 using ACE.DatLoader;
 using ACE.DatLoader.FileTypes;
+using System.Linq;
 
 namespace Melt
 {
@@ -15,14 +16,19 @@ namespace Melt
         {
             //GeneratePhatACLootFiles(args);
 
-            //MapManipulationMergeIslands(args);
+            MapManipulationForEoR(args);
+            PortalManipulationForEoR(args);
+
             //MapManipulationForCustomDM(args);
-            PortalManipulationForCustomDM(args);
+            //PortalManipulationForCustomDM(args);
             //LanguageManipulationForCustomDM(args);
 
-            //PortalManipulationForInfiltration(args);
             //MapManipulationForInfiltration(args);
+            //PortalManipulationForInfiltration(args);
             //LanguageManipulationForInfiltration(args);
+
+            //MapManipulationForEvensong(args);
+            //PortalManipulationForEvensong(args);
 
             //Workbench(args);
 
@@ -36,6 +42,17 @@ namespace Melt
         public static cCache9Converter cache9Converter = new cCache9Converter();
         static void Workbench(string[] args)
         {
+            //var di = new DirectoryInfo("./Scene/DM");
+            //var files = di.GetFiles("*.bin");
+            //var output = new List<string>();
+
+            //foreach(var file in files)
+            //{
+            //    output.Add($"Export.ExportPortalFile(0x{file.Name.Replace(".bin", "")}, path);");
+            //}
+
+            //File.WriteAllLines("./scenes.txt", output);
+
             //PlayScriptTools playScript = new PlayScriptTools();
             //playScript.LoadTableFromBin("./34000004 Original.bin");
             ////playScript.LoadScriptFromBin("./33000233 Original.bin");
@@ -218,6 +235,7 @@ namespace Melt
 
             //List<uint> ListEoR = regionLatest.GetObjects("./input/client_portal - EoR.dat");
             //List<uint> ListDM = regionLatest.GetObjects("./input/portal - 2005-02-XX (Admin) (Iteration 2112).dat");
+            //List<uint> ListDM = regionLatest.GetObjects("./input/portal - 2000-08-22 (Ice Island, Shadow Spires) (Iteration 124).dat");
             //regionLatest.CompareObjects("./input/client_portal - EoR.dat", "./input/client_portal - Infiltration.dat");
 
             //RegionConverter regionInf = new RegionConverter("Region/13000000 - 2005-02-XX (Admin) (Iteration 2112).bin");
@@ -225,6 +243,7 @@ namespace Melt
             //RegionConverter.convert("Region/13000000.bin");
             //RegionConverterDM.convert("Region/130F0000 Bael.bin");
             //RegionConverterDM.convert("Region/130F0000 test.bin");
+            //RegionComparer.compare("Region/130F0000 Ice.bin", false, "Region/13000000 - EoR.bin", true);
 
             //cDatFile datFile = new cDatFile();
             ////datFile.loadFromDat("./input/client_cell_1 - EoR.dat");
@@ -272,7 +291,7 @@ namespace Melt
             //spells.RevertWeaponMasteriesAndAuras(oldSpells);
             //spells.ApplyCache2DataFixes();
             //spells.TransferSpellDataFromCacheToSpellBase();
-            //spells.MergeWeaponsSkillsForCustomDM();
+            //spells.ModifyForCustomDM();
             //spells.SpellTableToTxt();
             //spells.SpellTableToBin();
 
@@ -320,7 +339,7 @@ namespace Melt
         {
             //TODO: these files cause the client to crash, for now using Kenneth Gober's dat writing tools for these
             cDatFile languageDatFile = new cDatFile();
-            languageDatFile.loadFromDat("./Dat Builder/Language/client_local_English_EoR.dat");
+            languageDatFile.loadFromDat("./input/client_local_English - EoR.dat");
             languageDatFile.SetFileIteration(20004);
             languageDatFile.addFilesFromFolder("./Dat Builder/Language/CustomDM/");
             languageDatFile.writeToDat("./Dat Builder/client_local_English.dat");
@@ -330,7 +349,7 @@ namespace Melt
         {
             //TODO: these files cause the client to crash, for now using Kenneth Gober's dat writing tools for these
             cDatFile languageDatFile = new cDatFile();
-            languageDatFile.loadFromDat("./Dat Builder/Language/client_local_English_EoR.dat");
+            languageDatFile.loadFromDat("./input/client_local_English - EoR.dat");
             languageDatFile.SetFileIteration(10002);
             languageDatFile.addFilesFromFolder("./Dat Builder/Language/Infiltration/");
             languageDatFile.writeToDat("./Dat Builder/client_local_English.dat");
@@ -339,124 +358,132 @@ namespace Melt
         static void PortalManipulationForCustomDM(string[] args)
         {
             cDatFile portalDatFile = new cDatFile();
-            portalDatFile.loadFromDat("./Dat Builder/Portal/client_portal_EoR.dat");
-            portalDatFile.SetFileIteration(20011);
+            portalDatFile.loadFromDat("./input/client_portal - EoR.dat");
+            portalDatFile.SetFileIteration(20013);
             portalDatFile.addFilesFromFolder("./Dat Builder/Portal/CustomDM/");
             portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Textures");
-            //portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Trees");
-            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Test");
+            //portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Resized EoR Trees");
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Trees");
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Frozen Fields");
             portalDatFile.writeToDat("./Dat Builder/client_portal.dat");
         }
 
         static void PortalManipulationForInfiltration(string[] args)
         {
             cDatFile portalDatFile = new cDatFile();
-            portalDatFile.loadFromDat("./Dat Builder/Portal/client_portal_EoR.dat");
-            portalDatFile.SetFileIteration(10005);
+            portalDatFile.loadFromDat("./input/client_portal - EoR.dat");
+            portalDatFile.SetFileIteration(10006);
             portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Infiltration/");
             portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Textures");
+            //portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Resized EoR Trees");
             portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Trees");
             portalDatFile.writeToDat("./Dat Builder/client_portal.dat");
         }
 
-        static void MapManipulationMergeIslands(string[] args)
+        static void PortalManipulationForEoR(string[] args)
         {
-            //EoR
-            //cDatFile datFile = new cDatFile();
-            //datFile.loadFromDat("./input/client_cell_1 - EoR.dat");
+            cDatFile portalDatFile = new cDatFile();
+            portalDatFile.SetFileIteration(4016);
+            portalDatFile.loadFromDat("./input/client_portal - EoR.dat");
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/EoR/");
+            portalDatFile.writeToDat("./Dat Builder/client_portal.dat");
+        }
 
-            //cDatFile datFileArwic = new cDatFile();
-            //datFileArwic.loadFromDat("./input/cell - 2000-08-22 (58368kb) (Complete,Ice Island, Shadow Spires) (Iteration 108 - Complete).dat");
-
-            //datFile.replaceLandblockRect(0x0011, 0x1100, datFileArwic, 0x0423); // Old Caul
-            //datFile.replaceLandblockRect(0x653E, 0x7B28, datFileArwic); // White Island
-            //datFile.replaceLandblockRect(0x5C80, 0x6F57, datFileArwic); // Brown Islands
-
-            //datFile.replaceLandblockRect(0x54FB, 0x61EB, datFileArwic); // Ice Island
-            //datFile.replaceLandblockRect(0x61FB, 0x6CEE, datFileArwic); // Ice Island
-            //datFile.replaceLandblockRect(0x6CFB, 0x72F2, datFileArwic); // Ice Island
-
-            //datFile.replaceLandblockRect(0xD1ED, 0xE2E2, datFileArwic, 0xD1F9); // 3 Craters Island
-            //datFile.replaceLandblockRect(0xE2C6, 0xFD6D, datFileArwic, 0xE2FD); // 3 Craters Island
-            //datFile.replaceLandblockRect(0xE96D, 0xF061, datFileArwic, 0xE9A4); // 3 Craters Island
-            //datFile.replaceLandblockRect(0xDBBB, 0xE29E, datFileArwic, 0xDBF2); // 3 Craters Island
-            //datFile.replaceLandblockRect(0xD6E8, 0xDADF, datFileArwic, 0xD6DF); // 3 Craters Island
-
-            //datFile.replaceLandblockRect(0x0EB3, 0x259F, datFileArwic, 0x05E5); // Old Marae Lassel
-            //datFile.replaceLandblockRect(0x119F, 0x229F, datFileArwic, 0x08D1); // Old Marae Lassel
-            //datFile.replaceLandblockRect(0x119E, 0x219E, datFileArwic, 0x08D0); // Old Marae Lassel
-            //datFile.replaceLandblockRect(0x119D, 0x1F9B, datFileArwic, 0x08CF); // Old Marae Lassel
-            //datFile.replaceLandblockRect(0x139A, 0x1E99, datFileArwic, 0x0ACC); // Old Marae Lassel
-            //datFile.replaceLandblockRect(0x1798, 0x1C97, datFileArwic, 0x0ECA); // Old Marae Lassel
-            //datFile.replaceLandblockRect(0x1896, 0x1A96, datFileArwic, 0x0FC8); // Old Marae Lassel
-
-            //cDatFile datFileEoR = new cDatFile();
-            //datFileEoR.loadFromDat("./input/client_cell_1 - EoR.dat");
-            //datFile.replaceLandblockRect(0xC0F9, 0xD9E0, datFileEoR); // Dark Isle and Vissidal
-            //datFile.replaceLandblockRect(0xCBE0, 0xD9DD, datFileEoR); // Dark Isle and Vissidal
-            //datFile.replaceLandblockRect(0xD2DD, 0xD9D9, datFileEoR); // Dark Isle and Vissidal
-            //datFile.replaceLandblockRect(0xE2D8, 0xEBCC, datFileEoR, 0xCEF3); // Olthoi Island
-
-            //cCellDat cellDat = new cCellDat();
-            //cellDat.loadFromDat(datFile);
-            //cMapDrawer mapDrawer = new cMapDrawer(cellDat);
-            //mapDrawer.draw(false, 50);
-
-            //datFile.writeToDat("./client_cell_1.dat");
-
-            //CustomDM
+        static void MapManipulationForEoR(string[] args)
+        {
             cDatFile datFile = new cDatFile();
-            //int retailIteration = datFile.loadFromDat("./input/cell - 2005-02-XX (202752kb) (Admin) (Iteration 1593 - Complete).dat");
-            //datFile.convertRetailToToD(retailIteration);
-            datFile.loadFromDat("./input/client_cell_1 - Infiltration - Converted to ToD format (Iteration 1593).dat"); // Same as above but already converted to ToD format to speed thing up.
-            datFile.SetFileIteration(20003);
+            datFile.loadFromDat("./input/client_cell_1 - EoR.dat");
+            datFile.SetFileIteration(4016);
 
-            cDatFile datFileArwic = new cDatFile();
-            datFileArwic.loadFromDat("./input/cell - 2000-08-22 (58368kb) (Complete,Ice Island, Shadow Spires) (Iteration 108 - Complete).dat");
+            cDatFile datFileRelease = new cDatFile(); // 1999-10-09
+            datFileRelease.loadFromDat("./input/cell - Release.dat");
 
-            datFile.replaceLandblockRect(0x0011, 0x1100, datFileArwic, 0x0423); // Old Caul
-            datFile.replaceLandblockRect(0x653E, 0x7B28, datFileArwic); // White Island
-            datFile.replaceLandblockRect(0x5C80, 0x6F57, datFileArwic); // Brown Islands
+            datFile.replaceLandblockRect(0xD0F9, 0xDEEE, datFileRelease); // Northeast Mud Island (leftmost of trio)
 
-            datFile.replaceLandblockRect(0x54FB, 0x61EB, datFileArwic); // Ice Island
-            datFile.replaceLandblockRect(0x61FB, 0x6CEE, datFileArwic); // Ice Island
-            datFile.replaceLandblockRect(0x6CFB, 0x72F2, datFileArwic); // Ice Island
+            datFile.replaceLandblockRect(0xE109, 0xEA05, datFileRelease); // One Mile Island
 
-            datFile.replaceLandblockRect(0xD1ED, 0xE2E2, datFileArwic, 0xD1F9); // 3 Craters Island
-            datFile.replaceLandblockRect(0xE2C6, 0xFD6D, datFileArwic, 0xE2FD); // 3 Craters Island
-            datFile.replaceLandblockRect(0xE96D, 0xF061, datFileArwic, 0xE9A4); // 3 Craters Island
-            datFile.replaceLandblockRect(0xDBBB, 0xE29E, datFileArwic, 0xDBF2); // 3 Craters Island
-            datFile.replaceLandblockRect(0xD6E8, 0xDADF, datFileArwic, 0xD6DF); // 3 Craters Island
+            datFile.replaceLandblockRect(0x6F0D, 0x7906, datFileRelease, 0x7B0D); // Ulgrim's Island Original
 
-            datFile.replaceLandblockRect(0x0EB3, 0x259F, datFileArwic, 0x05E5); // Old Marae Lassel
-            datFile.replaceLandblockRect(0x119F, 0x229F, datFileArwic, 0x08D1); // Old Marae Lassel
-            datFile.replaceLandblockRect(0x119E, 0x219E, datFileArwic, 0x08D0); // Old Marae Lassel
-            datFile.replaceLandblockRect(0x119D, 0x1F9B, datFileArwic, 0x08CF); // Old Marae Lassel
-            datFile.replaceLandblockRect(0x139A, 0x1E99, datFileArwic, 0x0ACC); // Old Marae Lassel
-            datFile.replaceLandblockRect(0x1798, 0x1C97, datFileArwic, 0x0ECA); // Old Marae Lassel
-            datFile.replaceLandblockRect(0x1896, 0x1A96, datFileArwic, 0x0FC8); // Old Marae Lassel
+            cDatFile datFileIceIsland = new cDatFile(); // 2000-08-22
+            datFileIceIsland.loadFromDat("./input/cell - 2000-08-22 (58368kb) (Complete,Ice Island, Shadow Spires) (Iteration 108 - Complete).dat");
+
+            var iceIsland = new List<uint>();
+            iceIsland.AddRange(datFileIceIsland.getListOfLandblocksInRect(0x54FB, 0x61EB));
+            iceIsland.AddRange(datFileIceIsland.getListOfLandblocksInRect(0x61FB, 0x6CEE));
+            iceIsland.AddRange(datFileIceIsland.getListOfLandblocksInRect(0x6CFB, 0x72F2));
+            datFile.replaceLandblockList(iceIsland, datFileIceIsland); // Ice Island
+
+            var easternIsland = new List<uint>();
+            easternIsland.AddRange(datFileIceIsland.getListOfLandblocksInRect(0xE2C6, 0xFD6D));
+            easternIsland.AddRange(datFileIceIsland.getListOfLandblocksInRect(0xE96D, 0xF061));
+            easternIsland.AddRange(datFileIceIsland.getListOfLandblocksInRect(0xDBBB, 0xE29E));
+            easternIsland = easternIsland.Except(datFileIceIsland.getListOfLandblocksInRect(0xFAC7, 0xFEC3)).ToList();
+            //datFile.landblockBucketFill(easternIsland, 0x001B);
+            datFile.replaceLandblockList(0x4791, easternIsland, datFileIceIsland); // Eastern Island
+
+            datFile.replaceLandblockRect(0x5C80, 0x6F57, datFileIceIsland, 0x6E53); // ! Island
+
+            datFile.replaceLandblockRect(0x653E, 0x7B28, datFileIceIsland, 0x0AFD); // White Island
+
+            var oldMarae = new List<uint>();
+            oldMarae.AddRange(datFileIceIsland.getListOfLandblocksInRect(0x0EB3, 0x259F));
+            oldMarae.AddRange(datFileIceIsland.getListOfLandblocksInRect(0x119F, 0x229F));
+            oldMarae.AddRange(datFileIceIsland.getListOfLandblocksInRect(0x119E, 0x219E));
+            oldMarae.AddRange(datFileIceIsland.getListOfLandblocksInRect(0x119D, 0x1F9B));
+            oldMarae.AddRange(datFileIceIsland.getListOfLandblocksInRect(0x139A, 0x1E99));
+            oldMarae.AddRange(datFileIceIsland.getListOfLandblocksInRect(0x1798, 0x1C97));
+            oldMarae.AddRange(datFileIceIsland.getListOfLandblocksInRect(0x1896, 0x1A96));
+            oldMarae = oldMarae.Except(datFileIceIsland.getListOfLandblocksInRect(0x1EB4, 0x26B1)).ToList();
+            oldMarae = oldMarae.Except(datFileIceIsland.getListOfLandblocksInRect(0x23B1, 0x38AB)).ToList();
+
+            // Add scene objects to old Marae, this was extrapolated from what is used in similar biomes.
+            datFileIceIsland.replaceLandblocksSpecificTexture(oldMarae, 0x0000, 0x5000);
+            datFileIceIsland.replaceLandblocksSpecificTexture(oldMarae, 0x0024, 0x5024);
+            datFileIceIsland.replaceLandblocksSpecificTexture(oldMarae, 0x000C, 0x100C);
+            datFileIceIsland.replaceLandblocksSpecificTexture(oldMarae, 0x0034, 0x5034);
+            datFileIceIsland.replaceLandblocksSpecificTexture(oldMarae, 0x003C, 0x603C);
+            datFileIceIsland.replaceLandblocksSpecificTexture(oldMarae, 0x0038, 0x5038);
+            datFileIceIsland.replaceLandblocksSpecificTexture(oldMarae, 0x0040, 0x4840);
+            datFileIceIsland.replaceLandblocksSpecificTexture(oldMarae, 0x0054, 0x6054);
+
+            //datFile.landblockBucketFill(oldMarae, 0x001B);
+            datFile.replaceLandblockList(0x03B2, oldMarae, datFileIceIsland); // Old Marae Lassel
+
+            datFile.replaceLandblockRect(0x0011, 0x1100, datFileIceIsland, 0xEBC7); // Shadow Gauntlet (Caul) (Feb 2000)
+
+            cDatFile datFileDM = new cDatFile(); // 2001-09-12
+            datFileDM.loadFromDat("./input/cell - DM - 2001-09-12.dat");
+
+            datFile.replaceLandblockRect(0x0011, 0x1100, datFileDM, 0xEBB2); // Singularity Caul Original (July 2001)
+
+            var oldAsheronsIsland = new List<uint>();
+            oldAsheronsIsland.AddRange(datFileIceIsland.getListOfLandblocksInRect(0xD29E, 0xDD97));
+            oldAsheronsIsland.AddRange(datFileIceIsland.getListOfLandblocksInRect(0xD697, 0xDD91));
+            oldAsheronsIsland.AddRange(datFileIceIsland.getListOfLandblocksInRect(0xD497, 0xD694));
+            //datFile.landblockBucketFill(oldAsheronsIsland, 0x001B);
+            datFile.replaceLandblockList(0xEE9C, oldAsheronsIsland, datFileIceIsland); // Asheron's Island Original
 
             cDatFile datFileEoR = new cDatFile();
             datFileEoR.loadFromDat("./input/client_cell_1 - EoR.dat");
-            datFile.replaceLandblockRect(0x3B0F, 0x400D, datFileEoR); // Moarsman Island - Nyr'leha
-            datFile.replaceLandblockRect(0x370D, 0x4409, datFileEoR); // Moarsman Island - Nyr'leha
 
-            datFile.replaceLandblockRect(0xC0F9, 0xD9E0, datFileEoR); // Dark Isle and Vissidal
-            datFile.replaceLandblockRect(0xCBE0, 0xD9DD, datFileEoR); // Dark Isle and Vissidal
-            datFile.replaceLandblockRect(0xD2DD, 0xD9D9, datFileEoR); // Dark Isle and Vissidal
+            var innerSeaDungeons = new List<uint>();
+            innerSeaDungeons.AddRange(datFileEoR.getListOfLandblocksInRect(0x507B, 0x6843));
+            //datFile.landblockBucketFill(innerSeaDungeons, 0x001B);
+            datFile.replaceLandblockList(innerSeaDungeons, datFileEoR, false, false, true, true, true);
 
-            datFile.replaceLandblockRect(0xE2D8, 0xEBCC, datFileEoR, 0xCEF3); // Olthoi Island
+            var dungeonsUnderOldMarae = new List<uint>();
+            dungeonsUnderOldMarae.AddRange(datFileEoR.getListOfLandblocksInRect(0x03B3, 0x039E));
+            //datFile.landblockBucketFill(dungeonsUnderOldMarae, 0x001B);
+            datFile.replaceLandblockList(dungeonsUnderOldMarae, datFileEoR, false, false, true, true, true);
 
-            datFile.replaceLandblockRect(0xF43F, 0xFD2C, datFileEoR); // Freebooter Isle
-
-            datFile.replaceLandblockRect(0x1EF9, 0x3DD5, datFileEoR); //Halaetan Isles
-            datFile.replaceLandblockRect(0x3DFA, 0x45E6, datFileEoR); //Halaetan Isles
-            datFile.replaceLandblockRect(0x45FA, 0x51EC, datFileEoR); //Halaetan Isles
+            var dungeonsUnderMovedCauls = new List<uint>();
+            dungeonsUnderMovedCauls.AddRange(datFileEoR.getListOfLandblocksInRect(0xECC8, 0xEDA1));
+            datFile.clearLandblockCellsList(dungeonsUnderMovedCauls);
 
             cCellDat cellDat = new cCellDat();
             cellDat.loadFromDat(datFile);
             cMapDrawer mapDrawer = new cMapDrawer(cellDat);
-            mapDrawer.draw(true, 50);
+            mapDrawer.draw(true, 0);
 
             datFile.writeToDat("./client_cell_1.dat");
         }
@@ -667,17 +694,36 @@ namespace Melt
 
             datFile.replaceLandblockRect(0x0011, 0x1100, datFileArwic, 0x0423); // Old Caul
             datFile.replaceLandblockRect(0x653E, 0x7B28, datFileArwic); // White Island
-            datFile.replaceLandblockRect(0x5C80, 0x6F57, datFileArwic); // Brown Islands
+            datFile.replaceLandblockRect(0x5C80, 0x6F57, datFileArwic); // ! Island
 
             datFile.replaceLandblockRect(0x54FB, 0x61EB, datFileArwic); // Ice Island
             datFile.replaceLandblockRect(0x61FB, 0x6CEE, datFileArwic); // Ice Island
             datFile.replaceLandblockRect(0x6CFB, 0x72F2, datFileArwic); // Ice Island
 
-            datFile.replaceLandblockRect(0xD1ED, 0xE2E2, datFileArwic, 0xD1F9); // 3 Craters Island
-            datFile.replaceLandblockRect(0xE2C6, 0xFD6D, datFileArwic, 0xE2FD); // 3 Craters Island
-            datFile.replaceLandblockRect(0xE96D, 0xF061, datFileArwic, 0xE9A4); // 3 Craters Island
-            datFile.replaceLandblockRect(0xDBBB, 0xE29E, datFileArwic, 0xDBF2); // 3 Craters Island
-            datFile.replaceLandblockRect(0xD6E8, 0xDADF, datFileArwic, 0xD6DF); // 3 Craters Island
+            datFile.replaceLandblockRect(0xD1ED, 0xE2E2, datFileArwic, 0xD1F9); // Eastern Island
+            datFile.replaceLandblockRect(0xE2C6, 0xFD6D, datFileArwic, 0xE2FD); // Eastern Island
+            datFile.replaceLandblockRect(0xE96D, 0xF061, datFileArwic, 0xE9A4); // Eastern Island
+            datFile.replaceLandblockRect(0xDBBB, 0xE29E, datFileArwic, 0xDBF2); // Eastern Island
+            datFile.replaceLandblockRect(0xD6E8, 0xDADF, datFileArwic, 0xD6DF); // Eastern Island
+            //datFile.replaceLandblockList(0xDBFD, easternIsland, datFileArwic); // Eastern Island
+
+            var oldMarae = new List<uint>();
+            oldMarae.AddRange(datFileArwic.getListOfLandblocksInRect(0x0EB3, 0x259F));
+            oldMarae.AddRange(datFileArwic.getListOfLandblocksInRect(0x119F, 0x229F));
+            oldMarae.AddRange(datFileArwic.getListOfLandblocksInRect(0x119E, 0x219E));
+            oldMarae.AddRange(datFileArwic.getListOfLandblocksInRect(0x119D, 0x1F9B));
+            oldMarae.AddRange(datFileArwic.getListOfLandblocksInRect(0x139A, 0x1E99));
+            oldMarae.AddRange(datFileArwic.getListOfLandblocksInRect(0x1798, 0x1C97));
+            oldMarae.AddRange(datFileArwic.getListOfLandblocksInRect(0x1896, 0x1A96));
+
+            datFileArwic.replaceLandblocksSpecificTexture(oldMarae, 0x0000, 0x5000);
+            datFileArwic.replaceLandblocksSpecificTexture(oldMarae, 0x0024, 0x5024);
+            datFileArwic.replaceLandblocksSpecificTexture(oldMarae, 0x000C, 0x100C);
+            datFileArwic.replaceLandblocksSpecificTexture(oldMarae, 0x0034, 0x5034);
+            datFileArwic.replaceLandblocksSpecificTexture(oldMarae, 0x003C, 0x603C);
+            datFileArwic.replaceLandblocksSpecificTexture(oldMarae, 0x0038, 0x5038);
+            datFileArwic.replaceLandblocksSpecificTexture(oldMarae, 0x0040, 0x4840);
+            datFileArwic.replaceLandblocksSpecificTexture(oldMarae, 0x0054, 0x6054);
 
             datFile.replaceLandblockRect(0x0EB3, 0x259F, datFileArwic, 0x05E5); // Old Marae Lassel
             datFile.replaceLandblockRect(0x119F, 0x229F, datFileArwic, 0x08D1); // Old Marae Lassel
@@ -698,9 +744,9 @@ namespace Melt
 
             datFile.replaceLandblockRect(0xF43F, 0xFD2C, datFileEoR); // Freebooter Isle
 
-            datFile.replaceLandblockRect(0x1EF9, 0x3DD5, datFileEoR); //Halaetan Isles
-            datFile.replaceLandblockRect(0x3DFA, 0x45E6, datFileEoR); //Halaetan Isles
-            datFile.replaceLandblockRect(0x45FA, 0x51EC, datFileEoR); //Halaetan Isles
+            datFile.replaceLandblockRect(0x1EF9, 0x3DD5, datFileEoR); // Halaetan Isles
+            datFile.replaceLandblockRect(0x3DFA, 0x45E6, datFileEoR); // Halaetan Isles
+            datFile.replaceLandblockRect(0x45FA, 0x51EC, datFileEoR); // Halaetan Isles
 
             //datFile.addGridToAllLandblocks(); // Add grid for highlighting landblocks, for dev purposes. Disable for general use.
 
@@ -746,6 +792,165 @@ namespace Melt
 
             datFile.replaceLandblock(0xEC0E0110, datFileToD); // Xi Ru's Chapel crash
             //datFile.findEnvironmentIdInCells();
+
+            cCellDat cellDat = new cCellDat();
+            cellDat.loadFromDat(datFile);
+            cMapDrawer mapDrawer = new cMapDrawer(cellDat);
+            mapDrawer.draw(false, 50);
+
+            datFile.writeToDat("./client_cell_1.dat");
+        }
+
+        static void PortalManipulationForEvensong(string[] args)
+        {
+            cDatFile portalDatFile = new cDatFile();
+            portalDatFile.loadFromDat("./input/client_portal - Evensong.dat");
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Infiltration/");
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Textures");
+            portalDatFile.addFile("./Dat Builder/Portal/CustomDM/01000CFA - Lifestone.bin");
+            portalDatFile.addFile("./Dat Builder/Portal/CustomDM/01000D00 - Lifestone.bin");
+            portalDatFile.addFile("./Dat Builder/Portal/CustomDM/01000D02 - Lifestone.bin");
+            portalDatFile.addFile("./Dat Builder/Portal/CustomDM/01000D06 - Lifestone.bin");
+            //portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Resized EoR Trees");
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Trees");
+            portalDatFile.writeToDat("./client_portal.dat");
+        }
+
+        static void MapManipulationForEvensong(string[] args)
+        {
+            cDatFile datFile = new cDatFile();
+            //int retailIteration = datFile.loadFromDat("./input/cell - 2005-02-XX (202752kb) (Admin) (Iteration 1593 - Complete).dat");
+            //datFile.convertRetailToToD(retailIteration);
+            //datFile.loadFromDat("./input/client_cell_1 - Infiltration - Converted to ToD format (Iteration 1593).dat"); // Same as above but already converted to ToD format to speed thing up.
+            datFile.loadFromDat("./input/client_cell_1 - Evensong.dat");
+
+            cDatFile datFileObsidianSpan = new cDatFile();
+            datFileObsidianSpan.loadFromDat("./input/cell - 2000-12-31 - Obsidian Span.dat");
+
+            cDatFile datFileToD = new cDatFile();
+            datFileToD.loadFromDat("./input/client_cell_1 - ToD.dat");
+
+            //datFile.replaceLandblockArea(0x2B110028, datFileToD); // Candeth Keep crash
+            datFile.fixLandblockCells(0x2B110000, datFileToD); // Candeth Keep crash
+            datFile.fixLandblockCells(0x2B120000, datFileToD); // Candeth Keep crash
+            datFile.fixLandblockCells(0x2D5B002B, datFileToD); // Renegade Fortress crash
+            //datFile.fixAllLandblockCells(datFileToD);
+
+            datFile.replaceLandblock(0xEC0E0110, datFileToD); // Xi Ru's Chapel crash
+
+            datFile.removeNoobFence();
+
+            List<uint> LandblocksToReplace = new List<uint>()
+            {
+                0x905C003B, // North Al-Arqas Outpost
+                0x915C0003, // North Al-Arqas Outpost part 2
+                0x8C58002B, // West Al-Arqas Outpost
+                0xC380000C, // East Lytelthorpe Outpost
+                0xBB80002E, // West Lytelthorpe Outpost
+                0xEA3D000E, // East Nanto Outpost
+                0xE542002B, // North Nanto Outpost
+                0xCC8C0014, // East Rithwic Outpost
+                0xC8880016, // South Rithwic Outpost
+                0x9B7B0015, // East Samsur Outpost
+                0x937F002D, // Northwest Samsur Outpost
+                0xB9730032, // North Yanshi Outpost
+                0xB96B001E, // South Yanshi Outpost
+            };
+            datFile.replaceLandblocksSpecialForStarterOutposts(LandblocksToReplace, datFileObsidianSpan);
+
+            List<uint> buildingsToRemove = new List<uint>()
+            {
+                0xA9B30114, // Holtburg->Neydisa Castle Portal Bunker
+                0xA9B40183, // Holtburg->Shoushi Portal Bunker
+                0xA9B40188, // Holtburg->Rithwic Portal Bunker
+                0xA9B4017E, // Holtburg->Cragstone Portal Bunker
+                0xAAB40108, // Holtburg->Arwic Portal Bunker
+                0xAAB40103, // Holtburg->Dryreach Portal Bunker
+
+                0x7D64018B, // Yaraq->Holtburg Portal Bunker
+                0x7D64017C, // Yaraq->Al-Arqas Portal Bunker
+                0x7D640181, // Yaraq->Samsur Portal Bunker
+                0x7E640122, // Yaraq->Zaikhal Portal Bunker
+                0x7E640127, // Yaraq->Linvak Tukal Portal Bunker
+                0x7D640177, // Yaraq->Khayyaban Portal Bunker
+                0x7D640186, // Yaraq->Xarabydum Portal Bunker
+
+                0xDA560116, // Shoushi->Kryst Portal Bunker
+                0xDA5501F9, // Shoushi->Nanto Portal Bunker
+                0xDA56011B, // Shoushi->Kara Portal Bunker
+                0xDA5501F4, // Shoushi->Yanshi Portal Bunker
+                0xDA540103, // Shoushi->Tou-Tou Portal Bunker
+                0xDA5501EF, // Shoushi->Yaraq Portal Bunker
+                0xD955010D, // Shoushi->Hebian-To Portal Bunker
+
+                ////Statues
+                //0x90580141, // Al-Arqas
+                //0xA9B40177, // Holtburg
+                //0xBF80017D, // Lytelthorpe
+                //0xE63D0154, // Nanto
+                //0xC88C0171, // Rithwic
+                //0x977B015F, // Samsur
+                //0xDA5501E8, // Shoushi
+                //0x7D640151, // Yaraq
+                //0xBC9F0166, // Cragstone
+                //0x85880129, // Al-Jalima
+                //0xCE95016A, // Eastham
+                //0xA1A40162, // Glenden Wood
+                //0xE74E01A7, // Hebian-To
+                //0x9E430132, // Khayyaban
+                //0xE9220141, // Kryst
+                //0xDA3B013C, // Lin
+                //0xA2600122, // Uziz
+                //0x80900139, // Zhaikal
+                //0xF75C0155, // Tou-Tou
+                //0xCD41018B, // Baishi
+                //0xF2220122, // MacNiall's Freehold
+                //0xE5320136, // Mayoi
+                //0x49B6012D, // Plateau Village
+                //0x9722015F, // Qalaba'r
+                //0xC95B0169, // Sawato
+                //0x64D50131, // Stonehold
+                //0x866C010B, // Tufa
+                //0x1134014A, // Ayan Baqur
+                //0xBA170143, // Kara
+                //0x3F310101, // Wai Jhou
+                //0x2581016B, // Fort Tethana
+
+                ////Arcanum Buildings
+                //0x90570102, // Al-Arqas
+                //0xA9B40171, // Holtburg
+                //0xBE800109, // Lytelthorpe
+                //0xE63D014E, // Nanto
+                //0xC88B0102, // Rithwic
+                //0x977B0159, // Samsur
+                //0xDA56010E, // Shoushi
+                //0x7D64014B, // Yaraq
+                //0xBA9E0105, // Cragstone
+                //0x85880123, // Al-Jalima
+                //0xCE950163, // Eastham
+                //0xA2A40100, // Glenden Wood
+                //0xE64E0104, // Hebian-To
+                //0x9E43012D, // Khayyaban
+                //0xE8210104, // Kryst
+                //0xDB3B011D, // Lin
+                //0xA260011C, // Uziz
+                //0x7F8F011C, // Zhaikal
+                //0xF75C014F, // Tou-Tou
+                //0xCD410183, // Baishi
+                //0xF2230104, // MacNiall's Freehold
+                //0xE532012E, // Mayoi
+                //0x49B60126, // Plateau Village
+                //0x97220159, // Qalaba'r
+                //0xC95B0161, // Sawato
+                //0x64D50129, // Stonehold
+                //0x11340144, // Ayan Baqur
+                //0xBA17013B, // Kara
+            };
+            datFile.removeBuildings(buildingsToRemove);
+            //Since we're removing the bunkers might as well roll back Holtburg's heightmap that was flattened in areas to fit the bunkers.
+            datFile.replaceLandblockTerrain(0xA9B40024, datFileObsidianSpan, true, true);
+            datFile.replaceLandblockTerrain(0xAAB4000A, datFileObsidianSpan, true, true);
+            datFile.replaceLandblockTerrain(0xA8B4003B, datFileObsidianSpan, true, true);
 
             cCellDat cellDat = new cCellDat();
             cellDat.loadFromDat(datFile);
