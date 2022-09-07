@@ -1983,6 +1983,13 @@ namespace Melt
                 Console.WriteLine("{0} landblocks replaced in {1} seconds. {2} landblocks unchanged", landblocksAddedCounter, timer.ElapsedMilliseconds / 1000f, landblocksNotFoundCounter);
         }
 
+        public void replaceLandblock(ushort landblockId, cDatFile fromDat, ushort newLandblockId = 0, bool heightmap = true, bool textures = true, bool cells = true, bool objects = true, int verboseLevel = 5)
+        {
+            var fullLandblockId = (uint)(landblockId << 16 | 0x0000FFFF);
+            var fullNewLandblockId = (uint)(newLandblockId << 16 | 0x0000FFFF);
+            replaceLandblock(fullLandblockId, fromDat, heightmap, textures, objects, cells, false, newLandblockId == 0 ? 0 : fullNewLandblockId, verboseLevel);
+        }
+
         public void replaceLandblockRect(ushort topLeftLandblock, ushort bottomRightLandblock, cDatFile fromDat, ushort newTopLeft = 0, bool heightmap = true, bool textures = true, bool cells = true, bool objects = true, int verboseLevel = 5)
         {
             byte topLeftX = (byte)((topLeftLandblock & 0xFF00) >> 8);

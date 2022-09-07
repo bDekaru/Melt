@@ -342,7 +342,7 @@ namespace Melt
             languageDatFile.loadFromDat("./input/client_local_English - EoR.dat");
             languageDatFile.SetFileIteration(20004);
             languageDatFile.addFilesFromFolder("./Dat Builder/Language/CustomDM/");
-            languageDatFile.writeToDat("./Dat Builder/client_local_English.dat");
+            languageDatFile.writeToDat("./client_local_English.dat");
         }
 
         static void LanguageManipulationForInfiltration(string[] args)
@@ -352,7 +352,7 @@ namespace Melt
             languageDatFile.loadFromDat("./input/client_local_English - EoR.dat");
             languageDatFile.SetFileIteration(10002);
             languageDatFile.addFilesFromFolder("./Dat Builder/Language/Infiltration/");
-            languageDatFile.writeToDat("./Dat Builder/client_local_English.dat");
+            languageDatFile.writeToDat("./client_local_English.dat");
         }
 
         static void PortalManipulationForCustomDM(string[] args)
@@ -365,7 +365,8 @@ namespace Melt
             //portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Resized EoR Trees");
             portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Trees");
             portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Frozen Fields");
-            portalDatFile.writeToDat("./Dat Builder/client_portal.dat");
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Police Box");
+            portalDatFile.writeToDat("./client_portal.dat");
         }
 
         static void PortalManipulationForInfiltration(string[] args)
@@ -377,7 +378,7 @@ namespace Melt
             portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Textures");
             //portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Resized EoR Trees");
             portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Trees");
-            portalDatFile.writeToDat("./Dat Builder/client_portal.dat");
+            portalDatFile.writeToDat("./client_portal.dat");
         }
 
         static void PortalManipulationForEoR(string[] args)
@@ -386,7 +387,8 @@ namespace Melt
             portalDatFile.SetFileIteration(4016);
             portalDatFile.loadFromDat("./input/client_portal - EoR.dat");
             portalDatFile.addFilesFromFolder("./Dat Builder/Portal/EoR/");
-            portalDatFile.writeToDat("./Dat Builder/client_portal.dat");
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Police Box");
+            portalDatFile.writeToDat("./client_portal.dat");
         }
 
         static void MapManipulationForEoR(string[] args)
@@ -397,15 +399,24 @@ namespace Melt
 
             cDatFile datFileRelease = new cDatFile(); // 1999-10-09
             datFileRelease.loadFromDat("./input/cell - Release.dat");
+            cDatFile datFileIceIsland = new cDatFile(); // 2000-08-22
+            datFileIceIsland.loadFromDat("./input/cell - 2000-08-22 (58368kb) (Complete,Ice Island, Shadow Spires) (Iteration 108 - Complete).dat");
+            cDatFile datFile279 = new cDatFile(); // 2000-12-31
+            datFile279.loadFromDat("./input/cell - 2000-12-31 (Iteration 279 - Complete).dat");
+            cDatFile datFile266 = new cDatFile(); // 2001-02-11
+            datFile266.loadFromDat("./input/cell - 2001-02-11 (Iteraton 266 - Kelderam's Ward - 14.49%).dat");
+            cDatFile datFileDM = new cDatFile(); // 2001-09-12
+            datFileDM.loadFromDat("./input/cell - DM - 2001-09-12.dat");
+            cDatFile datFile1593 = new cDatFile(); // 2005-02-XX
+            datFile1593.loadFromDat("./input/cell - 2005-02-XX (202752kb) (Admin) (Iteration 1593 - Complete).dat");
+            cDatFile datFile369 = new cDatFile(); // 2010-06-09
+            datFile369.loadFromDat("./input/client_cell_1 - 2010-06-09 (Iteration 369 - Complete).dat");
 
             datFile.replaceLandblockRect(0xD0F9, 0xDEEE, datFileRelease); // Northeast Mud Island (leftmost of trio)
 
             datFile.replaceLandblockRect(0xE109, 0xEA05, datFileRelease); // One Mile Island
 
             datFile.replaceLandblockRect(0x6F0D, 0x7906, datFileRelease, 0x7B0D); // Ulgrim's Island Original
-
-            cDatFile datFileIceIsland = new cDatFile(); // 2000-08-22
-            datFileIceIsland.loadFromDat("./input/cell - 2000-08-22 (58368kb) (Complete,Ice Island, Shadow Spires) (Iteration 108 - Complete).dat");
 
             var iceIsland = new List<uint>();
             iceIsland.AddRange(datFileIceIsland.getListOfLandblocksInRect(0x54FB, 0x61EB));
@@ -451,9 +462,6 @@ namespace Melt
 
             datFile.replaceLandblockRect(0x0011, 0x1100, datFileIceIsland, 0xEBC7); // Shadow Gauntlet (Caul) (Feb 2000)
 
-            cDatFile datFileDM = new cDatFile(); // 2001-09-12
-            datFileDM.loadFromDat("./input/cell - DM - 2001-09-12.dat");
-
             datFile.replaceLandblockRect(0x0011, 0x1100, datFileDM, 0xEBB2); // Singularity Caul Original (July 2001)
 
             var oldAsheronsIsland = new List<uint>();
@@ -479,6 +487,33 @@ namespace Melt
             var dungeonsUnderMovedCauls = new List<uint>();
             dungeonsUnderMovedCauls.AddRange(datFileEoR.getListOfLandblocksInRect(0xECC8, 0xEDA1));
             datFile.clearLandblockCellsList(dungeonsUnderMovedCauls);
+
+            datFile.replaceLandblock(0x01D1, datFileRelease, 0x2c00); // Mayoi Shrine - 1999-10-09 - @teleloc 0x2C000247 [40.299999 -19.900000 6.000000] 0.009599 0.000000 0.000000 -0.999954
+
+            datFile.replaceLandblock(0x0160, datFileIceIsland, 0x2d00); // Fort Tununska - 2000-08-22 - @teleloc 0x2D000143 [40.000000 -100.000000 0.000000] 1.000000 0.000000 0.000000 0.000000
+            datFile.replaceLandblock(0x016A, datFileIceIsland, 0x2e00); // Guardian Crypt - 2000-08-22 - @teleloc 0x2E00010D [30.000000 -20.000000 -6.000000] 0.000000 0.000000 0.000000 -1.000000
+            datFile.replaceLandblock(0x016B, datFileIceIsland, 0x2f00); // Creepy Chambers - 2000-08-22 - @teleloc 0x2F0001F3 [40.000000 -50.000000 6.000000] 0.000000 0.000000 0.000000 -1.000000
+            datFile.replaceLandblock(0x02EA, datFileIceIsland, 0x3000); // Domino's Lodge - 2000-08-22 - @teleloc 0x30000133 [40.000000 0.000000 0.000000] 1.000000 0.000000 0.000000 0.000000
+            datFile.replaceLandblock(0x02EB, datFileIceIsland, 0x3100); // Domino's Lodge - 2000-08-22 - @teleloc 0x31000133 [40.000000 0.000000 0.000000] 1.000000 0.000000 0.000000 0.000000
+            datFile.replaceLandblock(0x02EC, datFileIceIsland, 0x3200); // Domino's Lodge - 2000-08-22 - @teleloc 0x32000133 [40.000000 0.000000 0.000000] 1.000000 0.000000 0.000000 0.000000
+            datFile.replaceLandblock(0x0174, datFileIceIsland, 0x3300); // Training Hall Release - 2000-08-22 - @teleloc 0x3300016E [30.000000 -130.000000 0.000000] -1.000000 0.000000 0.000000 0.000000
+
+            datFile.replaceLandblock(0x02B0, datFile279, 0x3400); // Sepulcher of the Hopeslayer - 2000-12-31 - @teleloc 0x340002A8 [276.622009 -67.712997 72.004997] -0.707107 0.000000 0.000000 -0.707107
+            datFile.replaceLandblock(0x02B9, datFile279, 0x3500); // Shard of the Herald BOX Dungeon - 2000-12-31 - @teleloc 0x35000100 [0.000000 -5.000000 0.000000] 1.000000 0.000000 0.000000 0.000000
+
+            datFile.replaceLandblock(0x02B7, datFile266, 0x3600); // Catacombs of Ithaenc Original - 2001-02-11 - @teleloc 0x360002F1 [70.000000 -60.000000 0.000000] 1.000000 0.000000 0.000000 0.000000
+            datFile.replaceLandblock(0x02B9, datFile266, 0x3700); // Shard of the Herald Dungeon - 2001-02-11 - @teleloc 0x3700018A [80.000000 -20.000000 -12.000000] -0.707107 0.000000 0.000000 -0.707107
+
+            datFile.replaceLandblock(0x018A, datFileDM, 0x3800); // Advocate Dungeon (Includes Swank v1) - 2001-09-12 - @teleloc 0x3800017F [180.000000 -90.000000 0.000000] 1.000000 0.000000 0.000000 0.000000
+                                                                                                              // Swank: @teleloc 0x38000141 [70.000000 -110.000000 0.005000] -0.716461 0.000000 0.000000 0.697627
+            datFile.replaceLandblock(0x0272, datFileDM, 0x3900); // Ogham Dungeon - 2001-09-12 - @teleloc 0x3900029A [160.000000 -60.000000 -6.000000] -0.707107 0.000000 0.000000 -0.707107
+            datFile.replaceLandblock(0x03A5, datFileDM, 0x3a00); // Weeping Pit - 2001-09-12 - @teleloc 0x3A00010A [35.000000 -10.000000 0.005000] 0.708498 0.000000 0.000000 0.705713
+            datFile.replaceLandblock(0x0114, datFileDM, 0x3b00); // Sub-Terranean Vault - 2001-09-12 - @teleloc 0x3B000104 [0.000000 -60.000000 0.000000] 0.707107 0.000000 0.000000 -0.707107
+
+            datFile.replaceLandblock(0x0363, datFile1593, 0x3c00); // Training Academy Original (Dec 2001) - 2005-02-XX - @teleloc 0x3C00012F [2.500000 -29.000000 0.000000] -0.369747 0.000000 0.000000 -0.929133
+                                                                                                              // Part 2 - @teleloc 0x3C0002EF [100.000000 -190.000000 0.005000] 0.902585 0.000000 0.000000 -0.430511
+
+            datFile.replaceLandblock(0x8A04, datFile369, 0x3d00); // Town Network Original - 2010-06-09 - @teleloc 0x3D000145 [70.000000 -80.000000 0.005000] 1.000000 0.000000 0.000000 0.000000
 
             cCellDat cellDat = new cCellDat();
             cellDat.loadFromDat(datFile);
@@ -804,7 +839,9 @@ namespace Melt
         static void PortalManipulationForEvensong(string[] args)
         {
             cDatFile portalDatFile = new cDatFile();
+            //portalDatFile.loadFromDat("./input/client_portal - EoR.dat");
             portalDatFile.loadFromDat("./input/client_portal - Evensong.dat");
+            portalDatFile.SetFileIteration(30000);
             portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Infiltration/");
             portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Textures");
             portalDatFile.addFile("./Dat Builder/Portal/CustomDM/01000CFA - Lifestone.bin");
@@ -823,12 +860,73 @@ namespace Melt
             //datFile.convertRetailToToD(retailIteration);
             //datFile.loadFromDat("./input/client_cell_1 - Infiltration - Converted to ToD format (Iteration 1593).dat"); // Same as above but already converted to ToD format to speed thing up.
             datFile.loadFromDat("./input/client_cell_1 - Evensong.dat");
+            datFile.SetFileIteration(30000);
+
+            cDatFile datFileRelease = new cDatFile();
+            datFileRelease.loadFromDat("./input/cell - Release.dat");
+
+            cDatFile datFileArwic = new cDatFile();
+            datFileArwic.loadFromDat("./input/cell - 2000-08-22 (58368kb) (Complete,Ice Island, Shadow Spires) (Iteration 108 - Complete).dat");
 
             cDatFile datFileObsidianSpan = new cDatFile();
             datFileObsidianSpan.loadFromDat("./input/cell - 2000-12-31 - Obsidian Span.dat");
 
             cDatFile datFileToD = new cDatFile();
             datFileToD.loadFromDat("./input/client_cell_1 - ToD.dat");
+
+            //Arwic
+            datFile.replaceLandblock(0xC6A90013, datFileRelease);
+            datFile.replaceLandblock(0xC6A90008, datFileRelease);
+            datFile.replaceLandblock(0xC6A80038, datFileRelease);
+            datFile.replaceLandblock(0xC6AA0011, datFileRelease);
+            datFile.replaceLandblock(0xC5AA0039, datFileRelease);
+            datFile.replaceLandblock(0xC5A80028, datFileRelease);
+
+            datFile.replaceLandblock(0xC5A90037, datFileArwic); // Meeting Hall with the correct fallen pillars around the road.
+            datFile.replaceLandblock(0xC6A90013, datFileArwic, false, false, true, false); // use the surface objects from this file(lamp posts!) but not the buildings as they have fire lighting effects that bleed all over thru the walls on the new client.
+
+            datFile.replaceLandblock(0xC5A6003A, datFileRelease); // Get rid of Newic.
+
+            ////Yanshi
+            //datFile.replaceLandblock(0xB86E0038, datFileRelease);
+            //datFile.replaceLandblock(0xB86F0032, datFileRelease);
+            //datFile.replaceLandblock(0xB8700029, datFileRelease);
+            //datFile.replaceLandblock(0xB9700024, datFileRelease);
+            //datFile.replaceLandblock(0xB96F0040, datFileRelease);
+            //datFile.replaceLandblock(0xB96E0018, datFileRelease);
+            //datFile.replaceLandblock(0xBA6F0004, datFileRelease);
+            //datFile.replaceLandblock(0xBA700001, datFileRelease);
+
+            ////Get rid of New Yanshi
+            //datFile.replaceLandblock(0xB9720022, datFileRelease);
+            //datFile.replaceLandblock(0xBA720005, datFileRelease);
+            //datFile.replaceLandblock(0xB9710030, datFileRelease);
+
+            //datFile.replaceLandblock(0xB76F0034, datFileArwic); //Yanshi Meeting Hall
+
+            ////Tufa
+            //datFile.replaceLandblock(0x866D000B, datFileRelease);
+            //datFile.replaceLandblock(0x866E0011, datFileRelease);
+            //datFile.replaceLandblock(0x856D003C, datFileRelease);
+            //datFile.replaceLandblock(0x856E0031, datFileRelease);
+            //datFile.replaceLandblock(0x856C001C, datFileRelease);
+            //datFile.replaceLandblock(0x876E0032, datFileRelease);
+            //datFile.replaceLandblock(0x856F0015, datFileRelease);
+            //datFile.replaceLandblock(0x846E0012, datFileRelease);
+            //datFile.replaceLandblock(0x846D0018, datFileRelease);
+            //datFile.replaceLandblock(0x836D0040, datFileRelease);
+            //datFile.replaceLandblock(0x836E0039, datFileRelease);
+
+            //datFile.addBuildingFrom(0x856E010E, datFileToD); //Undead Hunter Tent
+
+            //datFile.replaceLandblock(0x846D003F, datFileArwic, false, false, true, true); //Tufa Meeting Hall, buildings only, terrain includes crater.
+
+            ////Eastham Shadow Spire Crater
+            //datFile.replaceLandblock(0xCD95002F, datFileRelease);
+            //datFile.replaceLandblock(0xCE950006, datFileRelease, true, true, false, false);
+            //datFile.replaceLandblock(0xCE960001, datFileRelease);
+            //datFile.replaceLandblock(0xCD960039, datFileRelease);
+            //datFile.removeBuilding(0xCE95016C);
 
             //datFile.replaceLandblockArea(0x2B110028, datFileToD); // Candeth Keep crash
             datFile.fixLandblockCells(0x2B110000, datFileToD); // Candeth Keep crash
