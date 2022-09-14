@@ -562,7 +562,7 @@ namespace Melt
                         newValue = entry.Value.MerchandiseItemTypes | (int)eItemType.Type_Vestements | (int)eItemType.Type_Missile_Weapon;
                         break;
                     case "Weaponsmith":
-                        newValue = entry.Value.MerchandiseItemTypes & ~(int)(eItemType.Type_Vestements | eItemType.Type_Missile_Weapon);
+                        newValue = entry.Value.MerchandiseItemTypes & ~(int)(eItemType.Type_Armor | eItemType.Type_Vestements | eItemType.Type_Missile_Weapon);
                         break;
                     case "Barkeeper":
                         newValue = entry.Value.MerchandiseItemTypes & ~(int)(eItemType.Type_Weapon | eItemType.Type_Vestements | eItemType.Type_Jewelry | eItemType.Type_Gem | eItemType.Type_Caster);
@@ -1257,12 +1257,113 @@ namespace Melt
             public int BoosterEnum;
             public int BoostValue;
             public int NewBoostValue;
+            public int Value;
+            public int NewValue;
 
             public FoodEntry(int weenieId, string weenieClassName)
             {
                 WeenieId = weenieId;
                 WeenieClassName = weenieClassName;
             }
+        }
+
+        public static void CreateFoodValueList()
+        {
+            var connection = new MySqlConnection($"server=127.0.0.1;port=3306;user=ACEmulator;password=password;DefaultCommandTimeout=120;database=ace_world_CustomDM");
+            connection.Open();
+
+            string sql = "SELECT `class_Id`,`class_Name` FROM `weenie` WHERE `type` = 18";
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            MySqlDataReader reader = command.ExecuteReader();
+
+            List<FoodEntry> foodEntries = new List<FoodEntry>();
+
+            while (reader.Read())
+            {
+                int id = reader.GetInt32(0);
+                if (id != 3722 && (id < 29104 || id > 29216))
+                    foodEntries.Add(new FoodEntry(id, reader.GetString(1)));
+            }
+            reader.Close();
+
+            foreach (var entry in foodEntries)
+            {
+                sql = $"SELECT `value` FROM `weenie_properties_string` WHERE `type` = 1 AND `object_Id` = {entry.WeenieId}";
+                command = new MySqlCommand(sql, connection);
+                reader = command.ExecuteReader();
+
+                if (reader.Read())
+                    entry.Name = reader.GetString(0);
+                reader.Close();
+
+                sql = $"SELECT `value` FROM `weenie_properties_int` WHERE `type` = 1 AND `object_Id` = {entry.WeenieId}";
+                command = new MySqlCommand(sql, connection);
+                reader = command.ExecuteReader();
+
+                if (reader.Read())
+                    entry.Type = reader.GetInt32(0);
+                else
+                    entry.Type = 0;
+                reader.Close();
+
+                sql = $"SELECT `value` FROM `weenie_properties_int` WHERE `type` = 89 AND `object_Id` = {entry.WeenieId}";
+                command = new MySqlCommand(sql, connection);
+                reader = command.ExecuteReader();
+
+                if (reader.Read())
+                    entry.BoosterEnum = reader.GetInt32(0);
+                reader.Close();
+
+                sql = $"SELECT `value` FROM `weenie_properties_int` WHERE `type` = 90 AND `object_Id` = {entry.WeenieId}";
+                command = new MySqlCommand(sql, connection);
+                reader = command.ExecuteReader();
+
+                if (reader.Read())
+                    entry.BoostValue = reader.GetInt32(0);
+                reader.Close();
+
+                sql = $"SELECT `value` FROM `weenie_properties_int` WHERE `type` = 19 AND `object_Id` = {entry.WeenieId}";
+                command = new MySqlCommand(sql, connection);
+                reader = command.ExecuteReader();
+
+                if (reader.Read())
+                    entry.Value = reader.GetInt32(0);
+                reader.Close();
+            }
+
+            StreamWriter outputFile = new StreamWriter(new FileStream("./foodList.txt", FileMode.Create, FileAccess.Write));
+            outputFile.WriteLine($"WeenieId\tName(WeenieClassName)\tBoosterEnum\tBoostValue\tValue\tNewValue");
+            foreach (var entry in foodEntries)
+            {
+                if (entry.Type != 128)
+                {
+                    if (entry.Value != 0)
+                    {
+                        if (entry.Value < 1000)
+                            entry.NewValue = 20 + (entry.Value * 2);
+                        else
+                            entry.NewValue = entry.Value;
+                    }
+                    outputFile.WriteLine($"{entry.WeenieId}\t{entry.Name}({entry.WeenieClassName})\t{entry.BoosterEnum}\t{entry.BoostValue}\t{entry.Value}\t{entry.NewValue}");
+                }
+                outputFile.Flush();
+            }
+            outputFile.Close();
+
+            outputFile = new StreamWriter(new FileStream("./foodList.sql", FileMode.Create, FileAccess.Write));
+            foreach (var entry in foodEntries)
+            {
+                if (entry.Type != 128 && entry.NewValue != 0)
+                {
+                    outputFile.WriteLine($"UPDATE `weenie_properties_int`");
+                    outputFile.WriteLine($"SET");
+                    outputFile.WriteLine($"`value` = {entry.NewValue}");
+                    outputFile.WriteLine($"WHERE (`type` = 19 OR `type` = 15) AND `object_Id` = {entry.WeenieId};");
+                    outputFile.WriteLine($"");
+                    outputFile.Flush();
+                }
+            }
+            outputFile.Close();
         }
 
         public static void CreateFoodList()
@@ -1319,6 +1420,14 @@ namespace Melt
                 if (reader.Read())
                     entry.BoostValue = reader.GetInt32(0);
                 reader.Close();
+
+                sql = $"SELECT `value` FROM `weenie_properties_int` WHERE `type` = 19 AND `object_Id` = {entry.WeenieId}";
+                command = new MySqlCommand(sql, connection);
+                reader = command.ExecuteReader();
+
+                if (reader.Read())
+                    entry.Value = reader.GetInt32(0);
+                reader.Close();
             }
 
             StreamWriter outputFile = new StreamWriter(new FileStream("./foodList.txt", FileMode.Create, FileAccess.Write));
@@ -1368,12 +1477,15 @@ namespace Melt
             outputFile = new StreamWriter(new FileStream("./foodList.sql", FileMode.Create, FileAccess.Write));
             foreach (var entry in foodEntries)
             {
-                outputFile.WriteLine($"UPDATE `weenie_properties_int`");
-                outputFile.WriteLine($"SET");
-                outputFile.WriteLine($"`value` = {entry.NewBoostValue}");
-                outputFile.WriteLine($"WHERE `type` = 90 AND `object_Id` = {entry.WeenieId};");
-                outputFile.WriteLine($"");
-                outputFile.Flush();
+                if (entry.Type != 128)
+                {
+                    outputFile.WriteLine($"UPDATE `weenie_properties_int`");
+                    outputFile.WriteLine($"SET");
+                    outputFile.WriteLine($"`value` = {entry.NewBoostValue}");
+                    outputFile.WriteLine($"WHERE `type` = 90 AND `object_Id` = {entry.WeenieId};");
+                    outputFile.WriteLine($"");
+                    outputFile.Flush();
+                }
             }
             outputFile.Close();
         }

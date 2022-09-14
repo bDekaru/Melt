@@ -16,8 +16,8 @@ namespace Melt
         {
             //GeneratePhatACLootFiles(args);
 
-            MapManipulationForEoR(args);
-            PortalManipulationForEoR(args);
+            //MapManipulationForEoR(args);
+            //PortalManipulationForEoR(args);
 
             //MapManipulationForCustomDM(args);
             //PortalManipulationForCustomDM(args);
@@ -30,7 +30,7 @@ namespace Melt
             //MapManipulationForEvensong(args);
             //PortalManipulationForEvensong(args);
 
-            //Workbench(args);
+            Workbench(args);
 
             Console.WriteLine("Done");
             Console.ReadLine();
@@ -42,6 +42,8 @@ namespace Melt
         public static cCache9Converter cache9Converter = new cCache9Converter();
         static void Workbench(string[] args)
         {
+            //AceDatabaseUtilities.CreateFoodValueList();
+
             //var di = new DirectoryInfo("./Scene/DM");
             //var files = di.GetFiles("*.bin");
             //var output = new List<string>();
@@ -359,7 +361,7 @@ namespace Melt
         {
             cDatFile portalDatFile = new cDatFile();
             portalDatFile.loadFromDat("./input/client_portal - EoR.dat");
-            portalDatFile.SetFileIteration(20013);
+            portalDatFile.SetFileIteration(20016);
             portalDatFile.addFilesFromFolder("./Dat Builder/Portal/CustomDM/");
             portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Textures");
             //portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Resized EoR Trees");
@@ -384,8 +386,8 @@ namespace Melt
         static void PortalManipulationForEoR(string[] args)
         {
             cDatFile portalDatFile = new cDatFile();
-            portalDatFile.SetFileIteration(4016);
             portalDatFile.loadFromDat("./input/client_portal - EoR.dat");
+            portalDatFile.SetFileIteration(4016);
             portalDatFile.addFilesFromFolder("./Dat Builder/Portal/EoR/");
             portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Police Box");
             portalDatFile.writeToDat("./client_portal.dat");
@@ -529,7 +531,7 @@ namespace Melt
             //int retailIteration = datFile.loadFromDat("./input/cell - 2005-02-XX (202752kb) (Admin) (Iteration 1593 - Complete).dat");
             //datFile.convertRetailToToD(retailIteration);
             datFile.loadFromDat("./input/client_cell_1 - Infiltration - Converted to ToD format (Iteration 1593).dat"); // Same as above but already converted to ToD format to speed thing up.
-            datFile.SetFileIteration(20003);
+            datFile.SetFileIteration(20004);
 
             cDatFile datFileObsidianSpan = new cDatFile();
             datFileObsidianSpan.loadFromDat("./input/cell - 2000-12-31 - Obsidian Span.dat");
@@ -539,6 +541,9 @@ namespace Melt
 
             cDatFile datFileArwic = new cDatFile();
             datFileArwic.loadFromDat("./input/cell - 2000-08-22 (58368kb) (Complete,Ice Island, Shadow Spires) (Iteration 108 - Complete).dat");
+
+            cDatFile datFileTufa = new cDatFile();
+            datFileTufa.loadFromDat("./input/cell - 2000-07-26 (Iteration 91 - 98.57%).dat");
 
             cDatFile datFileToD = new cDatFile();
             datFileToD.loadFromDat("./input/client_cell_1 - ToD.dat");
@@ -560,30 +565,30 @@ namespace Melt
             datFile.replaceLandblock(0xC5A6003A, datFileRelease); // Get rid of Newic.
 
             //Yanshi
-            datFile.replaceLandblock(0xB86E0038, datFileRelease);
-            datFile.replaceLandblock(0xB86F0032, datFileRelease);
-            datFile.replaceLandblock(0xB8700029, datFileRelease);
-            datFile.replaceLandblock(0xB9700024, datFileRelease);
-            datFile.replaceLandblock(0xB96F0040, datFileRelease);
-            datFile.replaceLandblock(0xB96E0018, datFileRelease);
-            datFile.replaceLandblock(0xBA6F0004, datFileRelease);
-            datFile.replaceLandblock(0xBA700001, datFileRelease);
+            datFile.replaceLandblock(0xB86E0038, datFileArwic);
+            datFile.replaceLandblock(0xB86F0032, datFileArwic);
+            datFile.replaceLandblock(0xB8700029, datFileArwic);
+            datFile.replaceLandblock(0xB9700024, datFileArwic);
+            datFile.replaceLandblock(0xB96F0040, datFileArwic);
+            datFile.replaceLandblock(0xB96E0018, datFileArwic);
+            datFile.replaceLandblock(0xBA6F0004, datFileArwic);
+            datFile.replaceLandblock(0xBA700001, datFileArwic);
 
             //Get rid of New Yanshi
-            datFile.replaceLandblock(0xB9720022, datFileRelease);
-            datFile.replaceLandblock(0xBA720005, datFileRelease);
-            datFile.replaceLandblock(0xB9710030, datFileRelease);            
+            datFile.replaceLandblock(0xB9720022, datFileArwic);
+            datFile.replaceLandblock(0xBA720005, datFileArwic);
+            datFile.replaceLandblock(0xB9710030, datFileArwic);            
 
             datFile.replaceLandblock(0xB76F0034, datFileArwic); //Yanshi Meeting Hall
 
             //Tufa
-            datFile.replaceLandblock(0x866D000B, datFileRelease);
-            datFile.replaceLandblock(0x866E0011, datFileRelease);
-            datFile.replaceLandblock(0x856D003C, datFileRelease);
-            datFile.replaceLandblock(0x856E0031, datFileRelease);
-            datFile.replaceLandblock(0x856C001C, datFileRelease);
-            datFile.replaceLandblock(0x876E0032, datFileRelease);
-            datFile.replaceLandblock(0x856F0015, datFileRelease);
+            datFile.replaceLandblock(0x866D000B, datFileTufa);
+            datFile.replaceLandblock(0x866E0011, datFileTufa);
+            datFile.replaceLandblock(0x856D003C, datFileTufa);
+            datFile.replaceLandblock(0x856E0031, datFileTufa);
+            datFile.replaceLandblock(0x856C001C, datFileTufa);
+            datFile.replaceLandblock(0x876E0032, datFileTufa);
+            datFile.replaceLandblock(0x856F0015, datFileTufa);
             datFile.replaceLandblock(0x846E0012, datFileRelease);
             datFile.replaceLandblock(0x846D0018, datFileRelease);
             datFile.replaceLandblock(0x836D0040, datFileRelease);

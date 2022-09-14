@@ -232,10 +232,11 @@ namespace Melt
             //addSkill((uint)eSkills.AppraiseMeleeItem, 0x0600209d, "Appraise Melee Item", "Helps you evaluate the value of close-quarters weapons.", eSkillCategory.NonWeapon, eSkillMinLevel.Unusable, 2, 4, new SkillFormula(eAttributes.Focus, 1, eAttributes.None, 0, 1, 0));
             //addSkill((uint)eSkills.AppraiseArmor, 0x0600209a, "Appraise Armor", "Helps you evaluate the value of armor and clothing.", eSkillCategory.NonWeapon, eSkillMinLevel.Unusable, 2, 4, new SkillFormula(eAttributes.Focus, 1, eAttributes.None, 0, 1, 0));
             //addSkill((uint)eSkills.AppraiseCasterItem, 0x0600209c, "Appraise Caster Item", "Helps you evaluate the value of casting implements, gems and jewelry.", eSkillCategory.NonWeapon, eSkillMinLevel.Unusable, 2, 4, new SkillFormula(eAttributes.Focus, 1, eAttributes.None, 0, 1, 0));
-            addSkill((uint)eSkills.Armor, 0x06000174, "Armor", "Helps you wield armor.", eSkillCategory.NonWeapon, eSkillMinLevel.Untrained, 4, 6, new SkillFormula(eAttributes.Strength, 1, eAttributes.Coordination, 1, 2, 0));
+            addSkill((uint)eSkills.Armor, 0x06000174, "Armor", "Helps you wield armor.", eSkillCategory.NonWeapon, eSkillMinLevel.Untrained, 4, 6, new SkillFormula(eAttributes.Strength, 1, eAttributes.None, 1, 2, 0));
             addSkill((uint)eSkills.Sneaking, 0x06000176, "Sneaking", "Helps you walk past enemies without being noticed and past traps without triggering them.", eSkillCategory.NonWeapon, eSkillMinLevel.Unusable, 4, 8, new SkillFormula(eAttributes.Coordination, 1, eAttributes.Focus, 1, 3, 0));
 
             Skills[(uint)eSkills.Shield].MinLevel = (int)eSkillMinLevel.Unusable;
+            Skills[(uint)eSkills.Shield].Formula = new SkillFormula(eAttributes.Strength, 1, eAttributes.Coordination, 1, 4, 0);
             Skills[(uint)eSkills.Shield].TrainedCost = 4;
             Skills[(uint)eSkills.Shield].SpecializedCost = 6;
 
