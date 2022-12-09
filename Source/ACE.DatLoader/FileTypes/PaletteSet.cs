@@ -20,6 +20,11 @@ namespace ACE.DatLoader.FileTypes
             PaletteList.Unpack(reader);
         }
 
+        public void Pack(StreamWriter output)
+        {
+
+        }
+
         /// <summary>
         /// Returns the palette ID (uint, 0x04 file) from the Palette list based on the corresponding hue
         /// Hue is mostly (only?) used in Character Creation data.

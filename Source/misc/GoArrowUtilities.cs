@@ -260,10 +260,10 @@ namespace Melt
             { Town.UndergroundCity, new Coords(-21.3, 53.9) },
             { Town.Shoushi, new Coords(33.5, 72.8) },
             { Town.HebianTo, new Coords(38.9, 82.6) },
-            { Town.Baishi, new Coords(53, 61.1) },
+            { Town.Baishi, new Coords(49.3, 62.9) },
             { Town.Kara, new Coords(83.3, 47.1) },
             { Town.Kryst, new Coords(74.6, 84.2) },
-            { Town.Lin, new Coords(53.9, 74.3) },
+            { Town.Lin, new Coords(54.1, 73.3) },
             { Town.Mayoi, new Coords(61.9, 82.5) },
             { Town.Nanto, new Coords(52.2, 82.5) },
             { Town.Sawato, new Coords(29.1, 58.9) },
@@ -312,7 +312,7 @@ namespace Melt
             { Town.Lytelthorpe, Halls.Haven },
             { Town.PlateauVillage, Halls.Oriel },
             { Town.Rithwic, Halls.Haven },
-            { Town.Stonehold, Halls.Atrium },
+            { Town.Stonehold, Halls.Victory },
             { Town.UndergroundCity, Halls.Haven },
             { Town.Shoushi, Halls.Haven },
             { Town.HebianTo, Halls.Sanctum },
@@ -355,7 +355,7 @@ namespace Melt
             Atrium.Add(Town.Yaraq, "Hasina Gardens");
             Atrium.Add(Town.Lin, "Heartland Yard");
             Atrium.Add(Town.Qalabar, "Ivory Gate"); // main hall portal
-            Atrium.Add(Town.Stonehold, "Larkspur Gardens");
+            //Atrium.Add(Town., "Larkspur Gardens"); // not used
             //Atrium.Add(Town., "Mellas Court"); // not used
             Atrium.Add(Town.AlJalima, "Valorya Gate");
             Atrium.Add(Town.Redspire, "Vesper Gate");
@@ -398,7 +398,7 @@ namespace Melt
             Sanctum.Add(Town.Nanto, "Treyval Veranda");
 
             Dictionary<Town, string> Victory = new Dictionary<Town, string>();
-            //Victory.Add(Town., "Accord Veranda"); // not used
+            Victory.Add(Town.Stonehold, "Accord Veranda");
             Victory.Add(Town.CandethKeep, "Candeth Court");
             Victory.Add(Town.FortTethana, "Celdiseth Court");
             //Victory.Add(Town., "Festivus Court"); // not used

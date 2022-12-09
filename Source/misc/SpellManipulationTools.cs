@@ -7,6 +7,9 @@ using ACE.DatLoader.FileTypes;
 using ACE.Entity.Enum;
 using ACE.DatLoader.Entity;
 using System.Threading;
+using System.Diagnostics;
+using System.Security.Cryptography;
+using System.Linq;
 
 namespace Melt
 {
@@ -15,12 +18,12 @@ namespace Melt
         public SpellTable SpellTable = null;
         public Dictionary<uint, Cache2Spell> Cache2SpellTable = new Dictionary<uint, Cache2Spell>();
 
-        public SpellManipulationTools(string filename)
+        public SpellManipulationTools(string filename, bool isToD = true)
         {
-            LoadSpellTableFromBin(filename);
+            LoadSpellTableFromBin(filename, isToD);
         }
 
-        public bool LoadSpellTableFromBin(string filename)
+        public bool LoadSpellTableFromBin(string filename, bool isToD = true)
         {
             StreamReader inputFile = new StreamReader(new FileStream(filename, FileMode.Open, FileAccess.Read));
             if (inputFile == null)
@@ -33,7 +36,7 @@ namespace Melt
             {
                 Console.WriteLine("Loading spells from binary...");
                 SpellTable = new SpellTable();
-                SpellTable.Unpack(reader);
+                SpellTable.Unpack(reader, isToD);
                 Console.WriteLine("Done");
                 return true;
             }
@@ -133,7 +136,7 @@ namespace Melt
 
         public void SpellTableToBin(string outputFilename = "./0E00000E.bin")
         {
-            if(SpellTable == null)
+            if (SpellTable == null)
             {
                 Console.WriteLine("SpellTable is empty");
                 return;
@@ -298,7 +301,7 @@ namespace Melt
             }
         }
 
-       
+
         public class Cache2Spell
         {
             public uint spellId;
@@ -430,7 +433,7 @@ namespace Melt
                 peturbation = new float[3];
             }
         }
-            
+
         public void LoadCache2Raw(string cache2Filename)
         {
             StreamReader cache2rawFile = new StreamReader(new FileStream(cache2Filename, FileMode.Open, FileAccess.Read));
@@ -694,6 +697,81 @@ namespace Melt
             }
         }
 
+        public void UpdateDamageFromServerData(string serverSpellDamageList)
+        {
+            var input = File.ReadAllLines(serverSpellDamageList);
+
+            foreach (var entry in input)
+            {
+                var values = entry.Split('\t');
+                var spellIdString = values[0];
+                var minDamage = values[1];
+                var maxDamage = values[2];
+
+                if (uint.TryParse(spellIdString, out var spellId) && SpellTable.Spells.TryGetValue(spellId, out var spell))
+                {
+                    if (spell.Desc.Contains('-'))
+                    {
+                        var dashPos = spell.Desc.IndexOf('-');
+                        var minDamageStartPos = spell.Desc.Substring(0, dashPos).LastIndexOf(' ') + 1;
+                        var maxDamageEndPos = dashPos + spell.Desc.Substring(dashPos, spell.Desc.Length - dashPos).IndexOf(' ');
+
+                        var preDamageString = spell.Desc.Substring(0, minDamageStartPos);
+                        var postDamageString = spell.Desc.Substring(maxDamageEndPos, spell.Desc.Length - maxDamageEndPos);
+
+                        var newDesc = $"{preDamageString}{minDamage}-{maxDamage}{postDamageString}";
+                        spell.Desc = newDesc;
+                    }
+                }
+                else
+                    Debug.Assert(false);
+            }
+        }
+
+        public uint GetHighestSpellId()
+        {
+            uint highestId = 0;
+            foreach (var spellEntry in SpellTable.Spells)
+            {
+                if (spellEntry.Value.MetaSpellId > highestId)
+                    highestId = spellEntry.Value.MetaSpellId;
+            }
+
+            return highestId;
+        }
+
+        public SpellBase NewSpell(SpellBase baseSpell, SpellId id, string name, string desc, uint icon, SpellCategory category)
+        {
+            var newSpell = new SpellBase(baseSpell);
+            newSpell.MetaSpellId = (uint)id;
+            newSpell.Name = name;
+            newSpell.Desc = desc;
+            newSpell.Icon = icon;
+            newSpell.Category = category;
+
+            return newSpell;
+        }
+
+        public void AddSpell(SpellId spellId, uint icon, SpellCategory category, SpellId baseSpellId, string replaceNameFrom, string replaceNameTo, uint replaceCompFrom = 0, uint replaceCompTo = 0)
+        {
+            if (SpellTable.Spells.TryGetValue((uint)baseSpellId, out var baseSpell))
+            {
+                var newSpell = NewSpell(baseSpell, spellId, baseSpell.Name.Replace(replaceNameFrom, replaceNameTo), baseSpell.Desc.Replace(replaceNameFrom, replaceNameTo), icon, category);
+                if(replaceCompFrom != 0)
+                    ReplaceComponent(newSpell.Formula, replaceCompFrom, replaceCompTo);
+                SpellTable.Spells.Add((uint)spellId, newSpell);
+            }
+        }
+
+        public void ReplaceComponent(List<uint> formula, uint from, uint to)
+        {
+            for (int i = 0; i < formula.Count; i++)
+            {
+                if (formula[i] == from)
+                    formula[i] = to;
+            }
+        }
+
         public void ModifyForCustomDM()
         {
             if (SpellTable == null)
@@ -704,6 +782,38 @@ namespace Melt
 
             Console.WriteLine("Modifying spells...");
 
+            AddSpell(SpellId.ArmorMasterySelf1, 0x06020001, SpellCategory.ArmorSkillRaising, SpellId.ShieldMasterySelf1, "Shield", "Armor", 37, 40);
+            AddSpell(SpellId.ArmorMasterySelf2, 0x06020001, SpellCategory.ArmorSkillRaising, SpellId.ShieldMasterySelf2, "Shield", "Armor", 37, 40);
+            AddSpell(SpellId.ArmorMasterySelf3, 0x06020001, SpellCategory.ArmorSkillRaising, SpellId.ShieldMasterySelf3, "Shield", "Armor", 37, 40);
+            AddSpell(SpellId.ArmorMasterySelf4, 0x06020001, SpellCategory.ArmorSkillRaising, SpellId.ShieldMasterySelf4, "Shield", "Armor", 37, 40);
+            AddSpell(SpellId.ArmorMasterySelf5, 0x06020001, SpellCategory.ArmorSkillRaising, SpellId.ShieldMasterySelf5, "Shield", "Armor", 37, 40);
+            AddSpell(SpellId.ArmorMasterySelf6, 0x06020001, SpellCategory.ArmorSkillRaising, SpellId.ShieldMasterySelf6, "Shield", "Armor", 37, 40);
+            AddSpell(SpellId.ArmorMasterySelf7, 0x06020001, SpellCategory.ArmorSkillRaising, SpellId.ShieldMasterySelf7, "Shield", "Armor", 37, 40);
+            AddSpell(SpellId.ArmorMasterySelf8, 0x06020001, SpellCategory.ArmorSkillRaising, SpellId.ShieldMasterySelf8, "Shield", "Armor", 37, 40);
+
+            AddSpell(SpellId.ArmorMasteryOther1, 0x06020001, SpellCategory.ArmorSkillRaising, SpellId.ShieldMasteryOther1, "Shield", "Armor", 37, 40);
+            AddSpell(SpellId.ArmorMasteryOther2, 0x06020001, SpellCategory.ArmorSkillRaising, SpellId.ShieldMasteryOther2, "Shield", "Armor", 37, 40);
+            AddSpell(SpellId.ArmorMasteryOther3, 0x06020001, SpellCategory.ArmorSkillRaising, SpellId.ShieldMasteryOther3, "Shield", "Armor", 37, 40);
+            AddSpell(SpellId.ArmorMasteryOther4, 0x06020001, SpellCategory.ArmorSkillRaising, SpellId.ShieldMasteryOther4, "Shield", "Armor", 37, 40);
+            AddSpell(SpellId.ArmorMasteryOther5, 0x06020001, SpellCategory.ArmorSkillRaising, SpellId.ShieldMasteryOther5, "Shield", "Armor", 37, 40);
+            AddSpell(SpellId.ArmorMasteryOther6, 0x06020001, SpellCategory.ArmorSkillRaising, SpellId.ShieldMasteryOther6, "Shield", "Armor", 37, 40);
+            AddSpell(SpellId.ArmorMasteryOther7, 0x06020001, SpellCategory.ArmorSkillRaising, SpellId.ShieldMasteryOther7, "Shield", "Armor", 37, 40);
+            AddSpell(SpellId.ArmorMasteryOther8, 0x06020001, SpellCategory.ArmorSkillRaising, SpellId.ShieldMasteryOther8, "Shield", "Armor", 37, 40);
+
+            AddSpell(SpellId.ArmorIneptitudeOther1, 0x06020001, SpellCategory.ArmorSkillLowering, SpellId.ShieldIneptitudeOther1, "Shield", "Armor", 37, 40);
+            AddSpell(SpellId.ArmorIneptitudeOther2, 0x06020001, SpellCategory.ArmorSkillLowering, SpellId.ShieldIneptitudeOther2, "Shield", "Armor", 37, 40);
+            AddSpell(SpellId.ArmorIneptitudeOther3, 0x06020001, SpellCategory.ArmorSkillLowering, SpellId.ShieldIneptitudeOther3, "Shield", "Armor", 37, 40);
+            AddSpell(SpellId.ArmorIneptitudeOther4, 0x06020001, SpellCategory.ArmorSkillLowering, SpellId.ShieldIneptitudeOther4, "Shield", "Armor", 37, 40);
+            AddSpell(SpellId.ArmorIneptitudeOther5, 0x06020001, SpellCategory.ArmorSkillLowering, SpellId.ShieldIneptitudeOther5, "Shield", "Armor", 37, 40);
+            AddSpell(SpellId.ArmorIneptitudeOther6, 0x06020001, SpellCategory.ArmorSkillLowering, SpellId.ShieldIneptitudeOther6, "Shield", "Armor", 37, 40);
+            AddSpell(SpellId.ArmorIneptitudeOther7, 0x06020001, SpellCategory.ArmorSkillLowering, SpellId.ShieldIneptitudeOther7, "Shield", "Armor", 37, 40);
+            AddSpell(SpellId.ArmorIneptitudeOther8, 0x06020001, SpellCategory.ArmorSkillLowering, SpellId.ShieldIneptitudeOther8, "Shield", "Armor", 37, 40);
+
+            AddSpell(SpellId.CantripArmorAptitude1, 0x06020001, SpellCategory.ExtraArmorSkillRaising, SpellId.CantripShieldAptitude1, "Shield", "Armor");
+            AddSpell(SpellId.CantripArmorAptitude2, 0x06020001, SpellCategory.ExtraArmorSkillRaising, SpellId.CantripShieldAptitude2, "Shield", "Armor");
+            AddSpell(SpellId.CantripArmorAptitude3, 0x06020001, SpellCategory.ExtraArmorSkillRaising, SpellId.CantripShieldAptitude3, "Shield", "Armor");
+            AddSpell(SpellId.CantripArmorAptitude4, 0x06020001, SpellCategory.ExtraArmorSkillRaising, SpellId.CantripShieldAptitude4, "Shield", "Armor");
+
             foreach (var spellEntry in SpellTable.Spells)
             {
                 SpellBase spell = spellEntry.Value;
@@ -713,6 +823,10 @@ namespace Melt
 
                 switch (spell.Category)
                 {
+                    case SpellCategory.ArmorRaising:
+                    case SpellCategory.ArmorIncrease:
+                        spell.Desc += " Natural armor does not stack with equipment armor. The highest of the two will be used.";
+                        break;
                     case SpellCategory.AxeRaising: // Axe mastery
                     case SpellCategory.AxeRaisingRare:
                     case SpellCategory.CascadeAxeRaising: // Axe cantrip
@@ -902,6 +1016,12 @@ namespace Melt
             }
 
             Cache2Spell cacheSpell;
+
+            if (Cache2SpellTable.TryGetValue(7, out cacheSpell)) // Harm Other I
+                cacheSpell.desc = "Drains 4-10 points of the target's Health.";
+
+            if (Cache2SpellTable.TryGetValue(8, out cacheSpell)) // Harm Self I
+                cacheSpell.desc = "Drains 4-10 points of the caster's Health.";
 
             if (Cache2SpellTable.TryGetValue(2549, out cacheSpell)) // Minor Impregnability
                 cacheSpell.category = (int)SpellCategory.ExtraMissileDefenseSkillRaising;

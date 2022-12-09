@@ -151,6 +151,32 @@ namespace Melt
                             }
                             break;
                         }
+                    case 101:
+                        {
+                            lenght = width * height;
+                            outputFile.BaseStream.Write(BitConverter.GetBytes((uint)fileid), 0, 4);
+                            outputFile.BaseStream.Write(BitConverter.GetBytes((uint)2), 0, 4);
+                            outputFile.BaseStream.Write(BitConverter.GetBytes(width), 0, 4);
+                            outputFile.BaseStream.Write(BitConverter.GetBytes(height), 0, 4);
+                            outputFile.BaseStream.Write(BitConverter.GetBytes(format), 0, 4);
+                            outputFile.BaseStream.Write(BitConverter.GetBytes(lenght), 0, 4);
+                            outputFile.Flush();
+
+                            for (int y = 0; y < height; y++)
+                            {
+                                for (int x = 0; x < width; x++)
+                                {
+                                    Color pixel = inputBMP.GetPixel(x, y);
+
+                                    outputFile.BaseStream.Write(BitConverter.GetBytes(pixel.A), 0, 1);
+                                    outputFile.BaseStream.Write(BitConverter.GetBytes(pixel.R), 0, 1);
+                                    outputFile.BaseStream.Write(BitConverter.GetBytes(pixel.G), 0, 1);
+                                    outputFile.BaseStream.Write(BitConverter.GetBytes(pixel.B), 0, 1);
+                                    outputFile.Flush();
+                                }
+                            }
+                            break;
+                        }
                     case 244:
                         {
                             lenght = width * height;
@@ -271,6 +297,31 @@ namespace Melt
                                 g = Utils.readByte(inputFile);
                                 r = Utils.readByte(inputFile);
                                 a = Utils.readByte(inputFile);
+
+                                bmp.SetPixel(x, y, Color.FromArgb(a, r, g, b));
+                            }
+                        }
+
+                        bmp.Save(fileHeader.ToString("x8") + ".png", System.Drawing.Imaging.ImageFormat.Png);
+                        break;
+                    }
+                case 101: //PFID_INDEX16
+                    {
+                        Bitmap bmp = new Bitmap((int)width, (int)height);
+
+                        byte a;
+                        byte r;
+                        byte g;
+                        byte b;
+
+                        for (int y = 0; y < height; y++)
+                        {
+                            for (int x = 0; x < width; x++)
+                            {
+                                a = Utils.readByte(inputFile);
+                                r = Utils.readByte(inputFile);
+                                g = Utils.readByte(inputFile);
+                                b = Utils.readByte(inputFile);
 
                                 bmp.SetPixel(x, y, Color.FromArgb(a, r, g, b));
                             }

@@ -27,6 +27,9 @@ namespace Melt
             //PortalManipulationForInfiltration(args);
             //LanguageManipulationForInfiltration(args);
 
+            //MapManipulationForInfiltrationAceClassicCustom(args);
+            //PortalManipulationForInfiltrationAceClassicCustom(args);
+
             //MapManipulationForEvensong(args);
             //PortalManipulationForEvensong(args);
 
@@ -95,10 +98,16 @@ namespace Melt
             //cache9Converter.generateChestTreasureList();
             //cache9Converter.generateTreasureList();
 
+            //Armor Buff
+            //TextureConverter.toPNG("06001385.bin");
+            //TextureConverter.toBin("06001385.png", 0x06020001, 21);
+            //TextureConverter.toPNG("06007105.bin");
+
             //Ingame Map
             //TextureConverter.toPNG("0600127D ToD.bin");
             //TextureConverter.toBin("0600127D.png", 0x0600127D, 20);
             //TextureConverter.toBin("./input/0600127D.png", 0x0600127D, 20);
+            //TextureConverter.toBin("./input/0600127D - Ingame Map ClassicAce.png", 0x0600127D, 20);
 
             //CharGen Map
             //TextureConverter.toPNG("06004D5F Latest.bin");
@@ -139,12 +148,25 @@ namespace Melt
             //charGen.modifyForCustomDM();
             //charGen.save("./0E000002 - CharGen - CustomDM.bin");
 
+            //AceDatabaseUtilities.AddSpellTransferScrollsToVendors();
+            //AceDatabaseUtilities.AddSalvageBarrelToVendors();
+            //AceDatabaseUtilities.ChangeArmorBurdens();
+            //AceDatabaseUtilities.ChangeShieldBurdens();
+            //AceDatabaseUtilities.AllowTeakEbonyPorcelainSilkOnGems();
+            //AceDatabaseUtilities.AddCooldownToCasters();
+            //AceDatabaseUtilities.ChangeArrows();
+            //AceDatabaseUtilities.ChangeCompositeWeapons();
+            //AceDatabaseUtilities.CreateSpellDamageListForPortalDat();
+            //AceDatabaseUtilities.ModifySpellDamage();
+            //AceDatabaseUtilities.AddSpellConduitToVendors();
+            //AceDatabaseUtilities.SoCSDisassemble();
             //AceDatabaseUtilities.ConvertSomeSoCStoTwoHanded();
             //AceDatabaseUtilities.CreateFoodList();
             //AceDatabaseUtilities.RedistributeSpellServicesToVendors();
             //AceDatabaseUtilities.AddTethersToVendors();
             //AceDatabaseUtilities.AddMagnifyingGlassToVendors();
             //AceDatabaseUtilities.AddCombatTacticsAndTechniquesToVendors();
+            //AceDatabaseUtilities.AddAlchemySuppliesToVendors();
             //AceDatabaseUtilities.AddLeyLineAmuletsToVendors();
             //AceDatabaseUtilities.AddCombatManualToVendors();
             //AceDatabaseUtilities.RemovePortalGemsFromAllSpellComponentVendorsAddToJewelers();
@@ -185,7 +207,7 @@ namespace Melt
             //spawnMap.LoadRegionFromPng("./input/spawnMap/regionEncounterMap.png");
             //spawnMap.SaveRegionToJson("./region.json");
 
-            //GoArrowUtilities goArrow = new GoArrowUtilities("./input/CustomDM-GoArrow-Locations.xml");
+            //GoArrowUtilities goArrow = new GoArrowUtilities("./input/CustomDM-GoArrow-Locations - No APN.xml");
             //goArrow.AddApartmentHallConnections();
             //goArrow.ReIndex();
             //goArrow.Save("./CustomDM-GoArrow-Locations.xml");
@@ -287,6 +309,10 @@ namespace Melt
             //SpellsConverter.toJson("Spells/0002.raw", "Spells/0E00000E - Reversed plus removed auras.bin");
             //SpellsConverter.transferSpellDescriptiuonsFromJsonToTxt("Spells/spells.json", "Spells/0E00000E - Reversed plus removed auras.txt");
 
+            //SpellManipulationTools oldSpells = new SpellManipulationTools("Spells/0E00000E - DM.bin", false);
+            //oldSpells.SpellTableToTxt();
+            //SpellsConverter.toTxt("Spells/0E00000E - DM.bin");
+
             //SpellManipulationTools spells = new SpellManipulationTools("Spells/0E00000E - latest.bin");
             //SpellManipulationTools oldSpells = new SpellManipulationTools("Spells/0E00000E - 2010.bin");
             //spells.LoadCache2Raw("Spells/0002.raw");
@@ -294,6 +320,7 @@ namespace Melt
             //spells.ApplyCache2DataFixes();
             //spells.TransferSpellDataFromCacheToSpellBase();
             //spells.ModifyForCustomDM();
+            //spells.UpdateDamageFromServerData("./spells/ServerSpellDamageList.txt");
             //spells.SpellTableToTxt();
             //spells.SpellTableToBin();
 
@@ -357,39 +384,12 @@ namespace Melt
             languageDatFile.writeToDat("./client_local_English.dat");
         }
 
-        static void PortalManipulationForCustomDM(string[] args)
-        {
-            cDatFile portalDatFile = new cDatFile();
-            portalDatFile.loadFromDat("./input/client_portal - EoR.dat");
-            portalDatFile.SetFileIteration(20016);
-            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/CustomDM/");
-            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Textures");
-            //portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Resized EoR Trees");
-            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Trees");
-            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Frozen Fields");
-            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Police Box");
-            portalDatFile.writeToDat("./client_portal.dat");
-        }
-
-        static void PortalManipulationForInfiltration(string[] args)
-        {
-            cDatFile portalDatFile = new cDatFile();
-            portalDatFile.loadFromDat("./input/client_portal - EoR.dat");
-            portalDatFile.SetFileIteration(10006);
-            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Infiltration/");
-            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Textures");
-            //portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Resized EoR Trees");
-            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Trees");
-            portalDatFile.writeToDat("./client_portal.dat");
-        }
-
         static void PortalManipulationForEoR(string[] args)
         {
             cDatFile portalDatFile = new cDatFile();
             portalDatFile.loadFromDat("./input/client_portal - EoR.dat");
             portalDatFile.SetFileIteration(4016);
             portalDatFile.addFilesFromFolder("./Dat Builder/Portal/EoR/");
-            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Police Box");
             portalDatFile.writeToDat("./client_portal.dat");
         }
 
@@ -525,13 +525,27 @@ namespace Melt
             datFile.writeToDat("./client_cell_1.dat");
         }
 
+        static void PortalManipulationForCustomDM(string[] args)
+        {
+            cDatFile portalDatFile = new cDatFile();
+            portalDatFile.loadFromDat("./input/client_portal - EoR.dat");
+            portalDatFile.SetFileIteration(20021);
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/CustomDM/");
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Textures");
+            //portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Resized EoR Trees");
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Trees");
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Frozen Fields");
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Police Box");
+            portalDatFile.writeToDat("./client_portal.dat");
+        }
+
         static void MapManipulationForCustomDM(string[] args)
         {
             cDatFile datFile = new cDatFile();
             //int retailIteration = datFile.loadFromDat("./input/cell - 2005-02-XX (202752kb) (Admin) (Iteration 1593 - Complete).dat");
             //datFile.convertRetailToToD(retailIteration);
             datFile.loadFromDat("./input/client_cell_1 - Infiltration - Converted to ToD format (Iteration 1593).dat"); // Same as above but already converted to ToD format to speed thing up.
-            datFile.SetFileIteration(20004);
+            datFile.SetFileIteration(20005);
 
             cDatFile datFileObsidianSpan = new cDatFile();
             datFileObsidianSpan.loadFromDat("./input/cell - 2000-12-31 - Obsidian Span.dat");
@@ -813,6 +827,18 @@ namespace Melt
             datFile.writeToDat("./client_cell_1.dat");
         }
 
+        static void PortalManipulationForInfiltration(string[] args)
+        {
+            cDatFile portalDatFile = new cDatFile();
+            portalDatFile.loadFromDat("./input/client_portal - EoR.dat");
+            portalDatFile.SetFileIteration(10006);
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Infiltration/");
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Textures");
+            //portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Resized EoR Trees");
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Trees");
+            portalDatFile.writeToDat("./client_portal.dat");
+        }
+
         static void MapManipulationForInfiltration(string[] args)
         {
             cDatFile datFile = new cDatFile();
@@ -841,14 +867,73 @@ namespace Melt
             datFile.writeToDat("./client_cell_1.dat");
         }
 
+        static void PortalManipulationForInfiltrationAceClassicCustom(string[] args)
+        {
+            cDatFile portalDatFile = new cDatFile();
+            portalDatFile.loadFromDat("./input/client_portal - EoR.dat");
+            portalDatFile.SetFileIteration(40000);
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Infiltration/");
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/AceClassic Custom/");
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Textures");
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Resized EoR Trees");
+            //portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Trees");
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Frozen Fields");
+            portalDatFile.writeToDat("./client_portal.dat");
+        }
+
+        static void MapManipulationForInfiltrationAceClassicCustom(string[] args)
+        {
+            cDatFile datFile = new cDatFile();
+            //int retailIteration = datFile.loadFromDat("./input/cell - 2005-02-XX (202752kb) (Admin) (Iteration 1593 - Complete).dat");
+            //datFile.convertRetailToToD(retailIteration);
+            datFile.loadFromDat("./input/client_cell_1 - Infiltration - Converted to ToD format (Iteration 1593).dat"); // Same as above but already converted to ToD format to speed thing up.
+            datFile.SetFileIteration(40001);
+
+            cDatFile datFileToD = new cDatFile();
+            datFileToD.loadFromDat("./input/client_cell_1 - ToD.dat");
+
+            //datFile.replaceLandblockArea(0x2B110028, datFileToD); // Candeth Keep crash
+            datFile.fixLandblockCells(0x2B110000, datFileToD); // Candeth Keep crash
+            datFile.fixLandblockCells(0x2B120000, datFileToD); // Candeth Keep crash
+            datFile.fixLandblockCells(0x2D5B002B, datFileToD); // Renegade Fortress crash
+            //datFile.fixAllLandblockCells(datFileToD);
+
+            datFile.replaceLandblock(0xEC0E0110, datFileToD); // Xi Ru's Chapel crash
+            //datFile.findEnvironmentIdInCells();
+
+            cDatFile datFileIceIsland = new cDatFile();
+            datFileIceIsland.loadFromDat("./input/cell - 2000-08-22 (58368kb) (Complete,Ice Island, Shadow Spires) (Iteration 108 - Complete).dat");
+
+            var iceIsland = new List<uint>();
+            iceIsland.AddRange(datFileIceIsland.getListOfLandblocksInRect(0x54FB, 0x73EC));
+            iceIsland = iceIsland.Except(datFileIceIsland.getListOfLandblocksInRect(0x6BF2, 0x74EC)).ToList();
+            iceIsland = iceIsland.Except(datFileIceIsland.getListOfLandblocksInRect(0x62F0, 0x74EC)).ToList();
+            datFile.replaceLandblockList(0xC711, iceIsland, datFileIceIsland); // Ice Island
+
+            cDatFile datFileEoR = new cDatFile();
+            datFileEoR.loadFromDat("./input/client_cell_1 - EoR.dat");
+
+            datFile.replaceLandblock(0x0066, datFileEoR, 0xC700); // PK Arena 1: @teleloc 0xC7000115 [33.252853 -25.985340 0.005000] 0.983027 0.000000 0.000000 -0.183464
+            datFile.replaceLandblock(0x0066, datFileEoR, 0xC800); // PK Arena 2: @teleloc 0xC8000115 [33.252853 -25.985340 0.005000] 0.983027 0.000000 0.000000 -0.183464
+            datFile.replaceLandblock(0x0066, datFileEoR, 0xC900); // PK Arena 3: @teleloc 0xC9000115 [33.252853 -25.985340 0.005000] 0.983027 0.000000 0.000000 -0.183464
+            datFile.replaceLandblock(0x0066, datFileEoR, 0xCA00); // PK Arena 4: @teleloc 0xCA000115 [33.252853 -25.985340 0.005000] 0.983027 0.000000 0.000000 -0.183464
+
+            cCellDat cellDat = new cCellDat();
+            cellDat.loadFromDat(datFile);
+            cMapDrawer mapDrawer = new cMapDrawer(cellDat);
+            mapDrawer.draw(true, 50);
+
+            datFile.writeToDat("./client_cell_1.dat");
+        }
         static void PortalManipulationForEvensong(string[] args)
         {
             cDatFile portalDatFile = new cDatFile();
             //portalDatFile.loadFromDat("./input/client_portal - EoR.dat");
             portalDatFile.loadFromDat("./input/client_portal - Evensong.dat");
-            portalDatFile.SetFileIteration(30000);
+            portalDatFile.SetFileIteration(30001);
             portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Infiltration/");
             portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Textures");
+            portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Evensong/");
             portalDatFile.addFile("./Dat Builder/Portal/CustomDM/01000CFA - Lifestone.bin");
             portalDatFile.addFile("./Dat Builder/Portal/CustomDM/01000D00 - Lifestone.bin");
             portalDatFile.addFile("./Dat Builder/Portal/CustomDM/01000D02 - Lifestone.bin");
@@ -865,7 +950,7 @@ namespace Melt
             //datFile.convertRetailToToD(retailIteration);
             //datFile.loadFromDat("./input/client_cell_1 - Infiltration - Converted to ToD format (Iteration 1593).dat"); // Same as above but already converted to ToD format to speed thing up.
             datFile.loadFromDat("./input/client_cell_1 - Evensong.dat");
-            datFile.SetFileIteration(30000);
+            datFile.SetFileIteration(30001);
 
             cDatFile datFileRelease = new cDatFile();
             datFileRelease.loadFromDat("./input/cell - Release.dat");
@@ -875,6 +960,9 @@ namespace Melt
 
             cDatFile datFileObsidianSpan = new cDatFile();
             datFileObsidianSpan.loadFromDat("./input/cell - 2000-12-31 - Obsidian Span.dat");
+
+            cDatFile datFileTufa = new cDatFile();
+            datFileTufa.loadFromDat("./input/cell - 2000-07-26 (Iteration 91 - 98.57%).dat");
 
             cDatFile datFileToD = new cDatFile();
             datFileToD.loadFromDat("./input/client_cell_1 - ToD.dat");
@@ -892,39 +980,39 @@ namespace Melt
 
             datFile.replaceLandblock(0xC5A6003A, datFileRelease); // Get rid of Newic.
 
-            ////Yanshi
-            //datFile.replaceLandblock(0xB86E0038, datFileRelease);
-            //datFile.replaceLandblock(0xB86F0032, datFileRelease);
-            //datFile.replaceLandblock(0xB8700029, datFileRelease);
-            //datFile.replaceLandblock(0xB9700024, datFileRelease);
-            //datFile.replaceLandblock(0xB96F0040, datFileRelease);
-            //datFile.replaceLandblock(0xB96E0018, datFileRelease);
-            //datFile.replaceLandblock(0xBA6F0004, datFileRelease);
-            //datFile.replaceLandblock(0xBA700001, datFileRelease);
+            //Yanshi
+            datFile.replaceLandblock(0xB86E0038, datFileRelease);
+            datFile.replaceLandblock(0xB86F0032, datFileRelease);
+            datFile.replaceLandblock(0xB8700029, datFileRelease);
+            datFile.replaceLandblock(0xB9700024, datFileRelease);
+            datFile.replaceLandblock(0xB96F0040, datFileRelease);
+            datFile.replaceLandblock(0xB96E0018, datFileRelease);
+            datFile.replaceLandblock(0xBA6F0004, datFileRelease);
+            datFile.replaceLandblock(0xBA700001, datFileRelease);
 
-            ////Get rid of New Yanshi
-            //datFile.replaceLandblock(0xB9720022, datFileRelease);
-            //datFile.replaceLandblock(0xBA720005, datFileRelease);
-            //datFile.replaceLandblock(0xB9710030, datFileRelease);
+            //Get rid of New Yanshi
+            datFile.replaceLandblock(0xB9720022, datFileRelease);
+            datFile.replaceLandblock(0xBA720005, datFileRelease);
+            datFile.replaceLandblock(0xB9710030, datFileRelease);
 
-            //datFile.replaceLandblock(0xB76F0034, datFileArwic); //Yanshi Meeting Hall
+            datFile.replaceLandblock(0xB76F0034, datFileArwic); //Yanshi Meeting Hall
 
-            ////Tufa
-            //datFile.replaceLandblock(0x866D000B, datFileRelease);
-            //datFile.replaceLandblock(0x866E0011, datFileRelease);
-            //datFile.replaceLandblock(0x856D003C, datFileRelease);
-            //datFile.replaceLandblock(0x856E0031, datFileRelease);
-            //datFile.replaceLandblock(0x856C001C, datFileRelease);
-            //datFile.replaceLandblock(0x876E0032, datFileRelease);
-            //datFile.replaceLandblock(0x856F0015, datFileRelease);
-            //datFile.replaceLandblock(0x846E0012, datFileRelease);
-            //datFile.replaceLandblock(0x846D0018, datFileRelease);
-            //datFile.replaceLandblock(0x836D0040, datFileRelease);
-            //datFile.replaceLandblock(0x836E0039, datFileRelease);
+            //Tufa
+            datFile.replaceLandblock(0x866D000B, datFileTufa);
+            datFile.replaceLandblock(0x866E0011, datFileTufa);
+            datFile.replaceLandblock(0x856D003C, datFileTufa);
+            datFile.replaceLandblock(0x856E0031, datFileTufa);
+            datFile.replaceLandblock(0x856C001C, datFileTufa);
+            datFile.replaceLandblock(0x876E0032, datFileTufa);
+            datFile.replaceLandblock(0x856F0015, datFileTufa);
+            datFile.replaceLandblock(0x846E0012, datFileRelease);
+            datFile.replaceLandblock(0x846D0018, datFileRelease);
+            datFile.replaceLandblock(0x836D0040, datFileRelease);
+            datFile.replaceLandblock(0x836E0039, datFileRelease);
 
-            //datFile.addBuildingFrom(0x856E010E, datFileToD); //Undead Hunter Tent
+            datFile.addBuildingFrom(0x856E010E, datFileToD); //Undead Hunter Tent
 
-            //datFile.replaceLandblock(0x846D003F, datFileArwic, false, false, true, true); //Tufa Meeting Hall, buildings only, terrain includes crater.
+            datFile.replaceLandblock(0x846D003F, datFileArwic, false, false, true, true); //Tufa Meeting Hall, buildings only, terrain includes crater.
 
             ////Eastham Shadow Spire Crater
             //datFile.replaceLandblock(0xCD95002F, datFileRelease);

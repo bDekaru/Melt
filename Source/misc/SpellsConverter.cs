@@ -136,9 +136,13 @@ namespace Melt
                 unknown8 = Utils.readInt32(inputFile);
                 unknown9 = Utils.readInt32(inputFile);
 
-                sortOrder = Utils.readInt32(inputFile);
-                targetMask = Utils.readInt32(inputFile);
-                unknown10 = Utils.readInt32(inputFile);
+                //These 3 fields are only present on post-ToD files.
+                //sortOrder = Utils.readInt32(inputFile);
+                //targetMask = Utils.readInt32(inputFile);
+                //unknown10 = Utils.readInt32(inputFile);
+                sortOrder = 0;
+                targetMask = 0;
+                unknown10 = 0;
 
                 outputFile.WriteLine("{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}",
                     spellId, spellName, spellDescription, schoolId, iconId, familyId, flags,

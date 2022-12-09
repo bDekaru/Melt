@@ -1,0 +1,51 @@
+id	classname	curr	new	AL	category
+44	buckler	420	300	10	Light
+91	shieldkite	690	600	20	Light
+92	shieldkitelarge	1380	800	40	Medium
+93	shieldround	690	600	20	Light
+94	shieldroundlarge	1380	800	40	Medium
+95	shieldtower	2040	2000	60	Heavy
+1270	shieldroundfancy	600	600	60	Light
+1313	shieldroundmetal	690	600	50	Light
+1455	shieldcold	2040	2000	50	Heavy
+1456	shieldfire	690	600	20	Light
+1457	shieldsuperior	450	450	120	Light
+1517	shieldfiery	650	600	50	Light
+2019	trothyrshield	800	800	60	Light
+3942	shieldblack	690	600	20	Light
+8028	shieldcrystalcaul	690	700	140	Medium
+8029	shieldcrystalfen	690	700	90	Medium
+8030	shieldcrystalshen	690	700	180	Medium
+8031	shieldsoulcrystalcaul	690	700	150	Medium
+8032	shieldsoulcrystalfen	690	700	100	Medium
+8033	shieldsoulcrystalshen	690	700	200	Medium
+8689	bucklernewbiequest	300	300	40	Light
+8690	bucklerrarenewbiequest	300	300	40	Light
+9391	crestlugian	1380	800	80	Medium
+9395	shieldcrest	1100	800	80	Medium
+10702	shieldniffis	420	420	50	Light
+12024	shielddiamond	690	700	180	Medium
+12154	shieldsimulacraimbued	1000	1000	125	Medium
+12155	shieldsimulacra	1000	1000	100	Medium
+15866	shieldcragstonebronze	6900	6900	20	Very Heavy
+15867	shieldkitelargestatuebronze	5000	5000	40	Very Heavy
+15868	shieldroundstatuebronze	6900	6900	20	Very Heavy
+15869	shieldtowerstatuebronze	5000	5000	60	Very Heavy
+21158	shieldcovenant	2040	2500	200	Very Heavy
+21377	shieldgaerlan	750	750	200	Medium
+22885	shieldbanditnew	500	600	150	Light
+23135	shieldkitevod	690	700	300	Light
+23615	shielddiamondnew	690	700	180	Medium
+25547	shieldolthoiextremerot2	1880	2500	475	Very Heavy
+25548	shieldolthoihighrot2	1660	2500	425	Very Heavy
+25549	shieldolthoilowrot2	1440	2500	275	Very Heavy
+25550	shieldolthoimidrot2	1550	2500	375	Very Heavy
+25811	shieldpower	800	800	160	Medium
+25843	shieldnefane	1125	1000	280	Light
+27089	shieldcrestnew	800	800	110	Medium
+27653	shieldrenegade	1250	2000	310	Heavy
+28163	shieldgromniehide	690	700	20	Light
+28321	shieldcrystalcaulnew	690	700	110	Medium
+28322	shieldcrystalfennew	690	700	90	Medium
+28323	shieldcrystalshennew	690	700	130	Medium
+30833	shieldinfiltration	1000	1000	425	Heavy

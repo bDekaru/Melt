@@ -315,6 +315,160 @@ namespace Melt
             Console.WriteLine($"Updated {count} entries.");
         }
 
+        struct armorData
+        {
+            public int id;
+            public int newBurden;
+            public string category;
+            public int coverage;
+            public float capBonus;
+        }
+
+        public static void ChangeShieldBurdens()
+        {
+            StreamReader inputFile = new StreamReader(new FileStream("./input/ShieldBurden.txt", FileMode.Open, FileAccess.Read));
+
+            Dictionary<int, armorData> armors = new Dictionary<int, armorData>();
+
+            inputFile.ReadLine(); // header
+
+            while (!inputFile.EndOfStream)
+            {
+                string line = inputFile.ReadLine();
+                string[] splitLine = line.Split('\t');
+
+                if (int.TryParse(splitLine[0], out var id) && int.TryParse(splitLine[3], out var newBurden))
+                {
+                    var newArmor = new armorData();
+                    newArmor.id = id;
+                    newArmor.newBurden = newBurden;
+                    newArmor.category = splitLine[5];
+
+                    switch (newArmor.category)
+                    {
+                        default:
+                        case "Light":
+                            newArmor.capBonus = -5;
+                            break;
+                        case "Medium":
+                            newArmor.capBonus = -6;
+                            break;
+                        case "Heavy":
+                            newArmor.capBonus = -7;
+                            break;
+                        case "Very Heavy":
+                            newArmor.capBonus = -8;
+                            break;
+                    }
+
+                    armors.Add(id, newArmor);
+                }
+            }
+            inputFile.Close();
+
+            var connection = new MySqlConnection($"server=127.0.0.1;port=3306;user=ACEmulator;password=password;DefaultCommandTimeout=120;database=ace_world_customDM");
+            connection.Open();
+
+            string sql = "";
+            MySqlCommand command;
+            int count = 0;
+
+            foreach (var entry in armors)
+            {
+                sql = $"UPDATE `weenie_properties_int` SET `value` = {entry.Value.newBurden} WHERE `type` = 5 AND `object_Id` = {entry.Value.id}";
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+
+                sql = $"INSERT INTO `weenie_properties_float` (`object_Id`, `type`, `value`)" +
+                      $"VALUES ({entry.Value.id}, 10003, {entry.Value.capBonus})" + // MeleeDefenseCap
+                            $",({entry.Value.id}, 10004, {entry.Value.capBonus})";  // MissileDefenseCap
+
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+            }
+
+            connection.Close();
+
+            Console.WriteLine($"Updated {count} entries.");
+        }
+
+        public static void ChangeArmorBurdens()
+        {
+            StreamReader inputFile = new StreamReader(new FileStream("./input/ArmorBurden.txt", FileMode.Open, FileAccess.Read));
+
+            Dictionary<int, armorData> armors = new Dictionary<int, armorData>();
+
+            inputFile.ReadLine(); // header
+
+            while (!inputFile.EndOfStream)
+            {
+                string line = inputFile.ReadLine();
+                string[] splitLine = line.Split('\t');
+
+                if (int.TryParse(splitLine[0], out var id) && int.TryParse(splitLine[3], out var newBurden) && int.TryParse(splitLine[6], out var coverage))
+                {
+                    var newArmor = new armorData();
+                    newArmor.id = id;
+                    newArmor.newBurden = newBurden;
+                    newArmor.category = splitLine[5];
+                    newArmor.coverage = coverage;
+
+                    switch (newArmor.category)
+                    {
+                        default:
+                        case "Light":
+                            newArmor.capBonus = 0;
+                            break;
+                        case "Medium":
+                            newArmor.capBonus = -1 * newArmor.coverage;
+                            break;
+                        case "Heavy":
+                            newArmor.capBonus = -2 * newArmor.coverage;
+                            break;
+                        case "Very Heavy":
+                            newArmor.capBonus = -3 * newArmor.coverage;
+                            break;
+                    }
+
+                    armors.Add(id, newArmor);
+                }
+            }
+            inputFile.Close();
+
+            var connection = new MySqlConnection($"server=127.0.0.1;port=3306;user=ACEmulator;password=password;DefaultCommandTimeout=120;database=ace_world_customDM");
+            connection.Open();
+
+            string sql = "";
+            MySqlCommand command;
+            int count = 0;
+
+            foreach (var entry in armors)
+            {
+                sql = $"UPDATE `weenie_properties_int` SET `value` = {entry.Value.newBurden} WHERE `type` = 5 AND `object_Id` = {entry.Value.id}";
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+
+                sql = $"UPDATE `weenie_properties_float` SET `value` = {entry.Value.capBonus} WHERE `type` = 10003 AND `object_Id` = {entry.Value.id}"; // MeleeDefenseCap
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+
+                sql = $"UPDATE `weenie_properties_float` SET `value` = {entry.Value.capBonus} WHERE `type` = 10004 AND `object_Id` = {entry.Value.id}"; // MissileDefenseCap
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+
+                //sql = $"INSERT INTO `weenie_properties_float` (`object_Id`, `type`, `value`)" +
+                //      $"VALUES ({entry.Value.id}, 10003, {entry.Value.capBonus})" + // MeleeDefenseCap
+                //            $",({entry.Value.id}, 10004, {entry.Value.capBonus})";  // MissileDefenseCap
+
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+            }
+
+            connection.Close();
+
+            Console.WriteLine($"Updated {count} entries.");
+        }
+
         public static void ChangeSpellScrollPrices()
         {
             StreamReader inputFile = new StreamReader(new FileStream("./input/ListOfSpellScrollIds.txt", FileMode.Open, FileAccess.Read));
@@ -514,7 +668,7 @@ namespace Melt
             var connection = new MySqlConnection($"server=127.0.0.1;port=3306;user=ACEmulator;password=password;DefaultCommandTimeout=120;database=ace_world_customDM");
             connection.Open();
 
-            string sql = "SELECT object_Id, value FROM weenie_properties_string WHERE `type` = 5 AND `value` IN (\"Blacksmith\",\"Bowyer\",\"Weaponsmith\",\"Armorer\",\"Peddler\",\"Shopkeeper\",\"Barkeeper\")";
+            string sql = "SELECT object_Id, value FROM weenie_properties_string WHERE `type` = 5 AND `value` IN (\"Blacksmith\",\"Bowyer\",\"Weaponsmith\",\"Armorer\",\"Peddler\",\"Shopkeeper\",\"Barkeeper\",\"Archmage\")";
             MySqlCommand command = new MySqlCommand(sql, connection);
             MySqlDataReader reader = command.ExecuteReader();
 
@@ -549,6 +703,9 @@ namespace Melt
                 int newValue = 0;
                 switch (entry.Value.Template)
                 {
+                    case "Archmage":
+                        newValue = entry.Value.MerchandiseItemTypes & ~(int)(eItemType.Type_Clothing | eItemType.Type_Gem);
+                        break;
                     case "Armorer":
                         newValue = entry.Value.MerchandiseItemTypes & ~(int)(eItemType.Type_Clothing | eItemType.Type_Weapon);
                         break;
@@ -766,6 +923,96 @@ namespace Melt
             Console.WriteLine($"Added {count} entries.");
         }
 
+        public static void AddAlchemySuppliesToVendors()
+        {
+            var connection = new MySqlConnection($"server=127.0.0.1;port=3306;user=ACEmulator;password=password;DefaultCommandTimeout=120;database=ace_world_customDM");
+            connection.Open();
+
+            string sql = "SELECT object_Id FROM weenie_properties_string WHERE `type` = 5 AND `value` IN (\"Archmage\",\"Master Archmage\",\"Wandering Archmage\")";
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            MySqlDataReader reader = command.ExecuteReader();
+
+            List<int> npcs = new List<int>();
+            List<int> vendors = new List<int>();
+
+            while (reader.Read())
+            {
+                npcs.Add(reader.GetInt32(0));
+            }
+            reader.Close();
+
+            foreach (var npc in npcs)
+            {
+                sql = $"SELECT value FROM weenie_properties_int WHERE `type` = 76 and object_id = {npc}";
+                command = new MySqlCommand(sql, connection);
+                reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    int value = reader.GetInt32(0);
+                    if (value != 0)
+                        vendors.Add(npc);
+                }
+                reader.Close();
+            }
+
+            int count = 0;
+            foreach (var vendor in vendors)
+            {
+                bool hasAlembic = false;
+                bool hasAquaIncanta = false;
+                bool hasNeutralBalm = false;
+
+                sql = $"SELECT * FROM weenie_properties_create_list WHERE object_Id = {vendor} AND destination_Type = 4 AND weenie_Class_Id IN (4747)";
+                command = new MySqlCommand(sql, connection);
+                reader = command.ExecuteReader();
+                if (reader.Read())
+                    hasAlembic = true;
+                reader.Close();
+
+                sql = $"SELECT * FROM weenie_properties_create_list WHERE object_Id = {vendor} AND destination_Type = 4 AND weenie_Class_Id IN (4748, 9342)";
+                command = new MySqlCommand(sql, connection);
+                reader = command.ExecuteReader();
+                if (reader.Read())
+                    hasAquaIncanta = true;
+                reader.Close();
+
+                sql = $"SELECT * FROM weenie_properties_create_list WHERE object_Id = {vendor} AND destination_Type = 4 AND weenie_Class_Id IN (5338)";
+                command = new MySqlCommand(sql, connection);
+                reader = command.ExecuteReader();
+                if (reader.Read())
+                    hasNeutralBalm = true;
+                reader.Close();
+
+                if (!hasAlembic && (!hasAquaIncanta || !hasNeutralBalm))
+                {
+                    sql = $"INSERT INTO weenie_properties_create_list (object_Id, destination_Type, weenie_Class_Id, stack_Size, palette, shade, try_To_Bond)" +
+                          $"VALUES ({vendor}, 4, 4747, -1, 0, 0.0, 0)";
+                    command = new MySqlCommand(sql, connection);
+                    count += command.ExecuteNonQuery();
+                }
+
+                if (!hasAquaIncanta)
+                {
+                    sql = $"INSERT INTO weenie_properties_create_list (object_Id, destination_Type, weenie_Class_Id, stack_Size, palette, shade, try_To_Bond)" +
+                          $"VALUES ({vendor}, 4, 4748, -1, 0, 0.0, 0)";
+                    command = new MySqlCommand(sql, connection);
+                    count += command.ExecuteNonQuery();
+                }
+
+                if (!hasNeutralBalm)
+                {
+                    sql = $"INSERT INTO weenie_properties_create_list (object_Id, destination_Type, weenie_Class_Id, stack_Size, palette, shade, try_To_Bond)" +
+                          $"VALUES ({vendor}, 4, 5338, -1, 0, 0.0, 0)";
+                    command = new MySqlCommand(sql, connection);
+                    count += command.ExecuteNonQuery();
+                }
+            }
+            connection.Close();
+
+            Console.WriteLine($"Added {count} entries.");
+        }
+
         public static void AddLeyLineAmuletsToVendors()
         {
             var connection = new MySqlConnection($"server=127.0.0.1;port=3306;user=ACEmulator;password=password;DefaultCommandTimeout=120;database=ace_world_customDM");
@@ -937,7 +1184,7 @@ namespace Melt
             foreach (var vendor in vendors)
             {
                 // Remove all existing ones so we can readd them in the correct order.
-                sql = $"DELETE FROM weenie_properties_create_list WHERE object_Id = {vendor} AND destination_Type = 4 AND weenie_Class_Id IN (50045,50078,50046,50047,50048,50049,50050)";
+                sql = $"DELETE FROM weenie_properties_create_list WHERE object_Id = {vendor} AND destination_Type = 4 AND weenie_Class_Id IN (50045,50078,50046,50047,50048,50049,50050,50111)";
                 command = new MySqlCommand(sql, connection);
                 command.ExecuteNonQuery();
 
@@ -947,7 +1194,8 @@ namespace Melt
                       $"     , ({vendor}, 4, 50047, -1, 0, 0.0, 0)" +
                       $"     , ({vendor}, 4, 50048, -1, 0, 0.0, 0)" +
                       $"     , ({vendor}, 4, 50049, -1, 0, 0.0, 0)" +
-                      $"     , ({vendor}, 4, 50050, -1, 0, 0.0, 0)";
+                      $"     , ({vendor}, 4, 50050, -1, 0, 0.0, 0)" +
+                      $"     , ({vendor}, 4, 50111, -1, 0, 0.0, 0)";
                 command = new MySqlCommand(sql, connection);
                 count += command.ExecuteNonQuery();
             }
@@ -2247,6 +2495,95 @@ namespace Melt
             Console.WriteLine($"Added {count} entries.");
         }
 
+        public static void SoCSDisassemble()
+        {
+            Console.WriteLine($"Creating Silifi of Crimson Stars disassembly script...");
+
+            var di = new DirectoryInfo("D:/Programming/Asheron's Call/ACEmulator/Content/sql/weenies/0.69/MeleeWeapon/MeleeWeapon");
+
+            if (di == null)
+            {
+                Console.WriteLine($"Unable to open folder.");
+                return;
+            }
+
+            var output = new List<string>();
+
+            var haftId = 6778;
+            var haftClassName = "repairedhaft";
+
+            var socsMap = new Dictionary<string, ushort>();
+
+            var fileList = di.GetFiles("*silificrimsonstars*.sql", SearchOption.AllDirectories);
+
+            foreach(var file in fileList)
+            {
+                string id = file.Name.Substring(0, 5);
+                string className = file.Name.Substring(32).Replace(".sql", "");
+                string gem1 = file.Name.Substring(50, 1);
+                string gem2 = file.Name.Substring(51, 1);
+                string gem3 = file.Name.Substring(52, 1);
+                string spine = file.Name.Substring(53).Replace(".sql", "");
+
+                output.Add($"Give: {className} ({id})");
+                output.Add($"    - TurnToTarget");
+                output.Add($"    - Tell: Let me disassemble that for you.");
+
+                BuildSoCSGemOutput(gem1, ref output);
+                BuildSoCSGemOutput(gem2, ref output);
+                BuildSoCSGemOutput(gem3, ref output);
+
+                output.Add($"    - Motion: ClapHands");
+                output.Add($"    - Delay: 1, Give: {haftClassName}({haftId})");
+
+                output.Add($"    - Tell: And that's it, unfortunately the blade is unrecoverable, you will need to find a new one.");
+                output.Add("");
+            }
+
+
+            File.WriteAllLines("./socsDisassemblyScript.txt", output);
+
+            Console.WriteLine($"Done");
+        }
+
+        private static void BuildSoCSGemOutput(string gemId, ref List<string> output)
+        {
+            var ruby1Id = 6660;
+            var ruby1ClassName = "crimsonruby1";
+            var ruby2Id = 6661;
+            var ruby2ClassName = "crimsonruby2";
+            var ruby3Id = 6662;
+            var ruby3ClassName = "crimsonruby3";
+            var ruby4Id = 6663;
+            var ruby4ClassName = "crimsonruby4";
+            var ruby5Id = 6664;
+            var ruby5ClassName = "crimsonruby5";
+
+            switch (gemId)
+            {
+                case "1":
+                    output.Add($"    - Motion: ClapHands");
+                    output.Add($"    - Delay: 1, Give: {ruby1ClassName}({ruby1Id})");
+                    break;
+                case "2":
+                    output.Add($"    - Motion: ClapHands");
+                    output.Add($"    - Delay: 1, Give: {ruby2ClassName}({ruby2Id})");
+                    break;
+                case "3":
+                    output.Add($"    - Motion: ClapHands");
+                    output.Add($"    - Delay: 1, Give: {ruby3ClassName}({ruby3Id})");
+                    break;
+                case "4":
+                    output.Add($"    - Motion: ClapHands");
+                    output.Add($"    - Delay: 1, Give: {ruby4ClassName}({ruby4Id})");
+                    break;
+                case "5":
+                    output.Add($"    - Motion: ClapHands");
+                    output.Add($"    - Delay: 1, Give: {ruby5ClassName}({ruby5Id})");
+                    break;
+            }
+        }
+
         public static void ConvertSomeSoCStoTwoHanded()
         {
             Console.WriteLine($"Converting some Silifi of Crimson Stars to Two Handed...");
@@ -2335,9 +2672,38 @@ namespace Melt
             Console.WriteLine($"Updated {count} entries.");
         }
 
+        public static void AddSalvageBarrelToVendors()
+        {
+            var connection = new MySqlConnection($"server=127.0.0.1;port=3306;user=ACEmulator;password=password;DefaultCommandTimeout=120;database=ace_world_customdm");
+            connection.Open();
+
+            string sql = "SELECT object_Id FROM weenie_properties_create_list WHERE weenie_Class_Id = 136 AND destination_Type = 4"; // Pack
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            MySqlDataReader reader = command.ExecuteReader();
+
+            List<int> vendors = new List<int>();
+
+            while (reader.Read())
+            {
+                vendors.Add(reader.GetInt32(0));
+            }
+            reader.Close();
+
+            int count = 0;
+            foreach (var vendor in vendors)
+            {
+                sql = $"INSERT INTO weenie_properties_create_list (object_Id, destination_Type, weenie_Class_Id, stack_Size, palette, shade, try_To_Bond)" +
+                      $"VALUES ({vendor}, 4, 50119, -1, 0, 0, 0)";
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+            }
+            connection.Close();
+
+            Console.WriteLine($"Added {count} entries.");
+        }
+
         public static void AddSpellComponentPouchToVendors()
         {
-            //Add portal gems to everyone that sells lead scarabs.
             var connection = new MySqlConnection($"server=127.0.0.1;port=3306;user=root;password=;DefaultCommandTimeout=120;database=ace_world_test");
             connection.Open();
 
@@ -2501,6 +2867,755 @@ namespace Melt
                             $",({vendor}, 4,  8976, -1, 0, 0, 0)" + // Holtburg Portal Gem
                             $",({vendor}, 4,  8977, -1, 0, 0, 0)" + // Lytelthorpe Portal Gem
                             $",({vendor}, 4,  8979, -1, 0, 0, 0)";  // Rithwic Portal Gem
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+            }
+            connection.Close();
+
+            Console.WriteLine($"Added {count} entries.");
+        }
+
+        public class spellInfo
+        {
+            public uint Id;
+            public string Name;
+            public int BaseIntensity;
+            public int IntensityVariance;
+            public uint ScrollId;
+            public string ScrollShortDesc = "";
+            public string ScrollLongDesc = "";
+            public int NewIntensity;
+            public int NewVariance;
+        }
+        public static void CreateSpellDamageListForPortalDat()
+        {
+            var connection = new MySqlConnection($"server=127.0.0.1;port=3306;user=ACEmulator;password=password;DefaultCommandTimeout=120;database=ace_world_customDM");
+            connection.Open();
+
+            var spells = new Dictionary<uint, spellInfo>();
+
+            string sql = "SELECT id, `name`, `base_Intensity`, `variance` FROM`spell`WHERE`base_Intensity`>0";
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            MySqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                var newEntry = new spellInfo();
+                newEntry.Id = reader.GetUInt32(0);
+                newEntry.Name = reader.GetString(1);
+                newEntry.BaseIntensity = reader.GetInt32(2);
+                newEntry.IntensityVariance = reader.GetInt32(3);
+
+                spells.Add(newEntry.Id, newEntry);
+            }
+            reader.Close();
+
+            var output = new List<string>();
+            foreach (var entry in spells)
+            {
+                var spell = entry.Value;
+                var minDamage = spell.BaseIntensity;
+                var maxDamage = spell.BaseIntensity + spell.IntensityVariance;
+
+                output.Add($"{spell.Id}\t{minDamage}\t{maxDamage}");
+            }
+
+            File.WriteAllLines("./ServerSpellDamageList.txt", output);
+            Console.WriteLine($"Done");
+        }
+
+        public static void ModifySpellDamage()
+        {
+            var connection = new MySqlConnection($"server=127.0.0.1;port=3306;user=ACEmulator;password=password;DefaultCommandTimeout=120;database=ace_world_customDM");
+            connection.Open();
+
+            var spells = new Dictionary<uint, spellInfo>();
+
+            string sql = "SELECT id, `name`, `base_Intensity`, `variance` FROM`spell`WHERE`base_Intensity`>0 AND (`name` LIKE \"% I\" OR `name` LIKE \"% II\" OR `name` LIKE \"% III\")";
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            MySqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                var newEntry = new spellInfo();
+                newEntry.Id = reader.GetUInt32(0);
+                newEntry.Name = reader.GetString(1);
+                newEntry.BaseIntensity = reader.GetInt32(2);
+                newEntry.IntensityVariance = reader.GetInt32(3);
+
+                if (newEntry.Id > 3000)
+                    continue;
+
+                //if ((newEntry.Name.Contains("Volley") || newEntry.Name.Contains("Blast")) && (newEntry.Name.EndsWith(" I") || newEntry.Name.EndsWith(" II"))) // No level 1 or 2 volleys and blasts
+                if (newEntry.Name.Contains("Volley") || newEntry.Name.Contains("Blast")) // No volleys and blasts
+                    continue;
+                spells.Add(newEntry.Id, newEntry);
+            }
+            reader.Close();
+
+            foreach (var entry in spells)
+            {
+                var scrollName = $"Scroll of {entry.Value.Name}";
+                if (scrollName.EndsWith(" I") && !scrollName.Contains(" Arc "))
+                    scrollName = scrollName.Replace(" I", "");
+                sql = $"SELECT `object_Id` FROM `weenie_properties_string` WHERE `type` = 1 AND `value` LIKE \"{scrollName}\"";
+                command = new MySqlCommand(sql, connection);
+                reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    entry.Value.ScrollId = reader.GetUInt32(0);
+                }
+                reader.Close();
+            }
+
+            //foreach (var entry in spells)
+            //{
+            //    Debug.Assert(entry.Value.ScrollId != 0, "Missing scroll Id!");
+
+            //    sql = $"SELECT type,value FROM `weenie_properties_string` WHERE (`type` = 15 or `type` = 16) AND `object_Id` = {entry.Value.ScrollId}";
+            //    command = new MySqlCommand(sql, connection);
+            //    reader = command.ExecuteReader();
+
+            //    while (reader.Read())
+            //    {
+            //        var type = reader.GetUInt32(0);
+            //        if(type == 15)
+            //            entry.Value.ScrollShortDesc = reader.GetString(1);
+            //        else
+            //            entry.Value.ScrollLongDesc = reader.GetString(1);
+            //    }
+            //    reader.Close();
+            //}
+
+            foreach (var entry in spells)
+            {
+                var spell = entry.Value;
+
+                //if (spell.Name.EndsWith(" I") || spell.Name.EndsWith(" II"))
+                //{
+                //    Debug.Assert(spell.ScrollShortDesc.Length != 0 || spell.ScrollLongDesc.Length != 0, "Missing scroll description!");
+
+                //    var desc = spell.ScrollLongDesc;
+                //    if (spell.ScrollShortDesc.Length > desc.Length) // Some scrolls have the description on the shortDesc and some on the longDesc...
+                //        desc = spell.ScrollShortDesc;
+
+                //    //When learned, this spell shoots a bolt of flame at the target.The bolt does 13 - 25 points of piercing damage to the first thing it hits.
+                //    var dashPos = desc.IndexOf('-');
+                //    var minDamageStartPos = desc.Substring(0, dashPos).LastIndexOf(' ');
+                //    var maxDamageEndPos = desc.Substring(dashPos, desc.Length - dashPos).IndexOf(' ');
+
+                //    var minDamageString = desc.Substring(minDamageStartPos, dashPos - minDamageStartPos);
+                //    var maxDamageString = desc.Substring(dashPos, desc.Length - dashPos).Substring(1, maxDamageEndPos);
+
+                //    if (int.TryParse(minDamageString, out var minDamage) && int.TryParse(maxDamageString, out var maxDamage))
+                //    {
+                //        spell.NewIntensity = minDamage;
+                //        spell.NewVarianace = maxDamage - minDamage;
+                //    }
+                //    else
+                //        Debug.Assert(false, "Failed converting damage values to integer!");
+                //}
+
+                float mult = 1.0f;
+                int newIntensity;
+                int newVariance;
+                if (spell.Name.EndsWith(" I"))
+                    mult = 0.65f;
+                else if (spell.Name.EndsWith(" II"))
+                    mult = 0.80f;
+                else if(spell.Name.EndsWith(" III"))
+                    mult = 0.88f;
+
+                var newTotal = (int)((spell.BaseIntensity + spell.IntensityVariance) * mult);
+                newIntensity = (int)Math.Round(newTotal / 2.0f);
+                newVariance = newIntensity;
+                //if (newTotal % 2 != 0)
+                //    newIntensity += 1;
+
+                spell.NewIntensity = newIntensity;
+                spell.NewVariance = newVariance;
+            }
+
+            var count = 0;
+            foreach (var entry in spells)
+            {
+                var spell = entry.Value;
+                sql = $"UPDATE `spell` SET `base_Intensity` = {spell.NewIntensity}, `variance` = {spell.NewVariance} WHERE `id` = {spell.Id}";
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+            }
+
+            Console.WriteLine($"Modified {count} entries.");
+        }
+
+        public static void AddSpellTransferScrollsToVendors()
+        {
+            var connection = new MySqlConnection($"server=127.0.0.1;port=3306;user=ACEmulator;password=password;DefaultCommandTimeout=120;database=ace_world_customDM");
+            connection.Open();
+
+            List<int> vendorsAll = new List<int>();
+            List<int> vendorsLead = new List<int>();
+            List<int> vendorsIron = new List<int>();
+            List<int> vendorsCopper = new List<int>();
+            List<int> vendorsSilver = new List<int>();
+            List<int> vendorsGold = new List<int>();
+            List<int> vendorsPyreal = new List<int>();
+            List<int> vendorsPlatinum = new List<int>();
+
+            string sql = "SELECT object_Id FROM weenie_properties_create_list WHERE weenie_Class_Id = 691 AND destination_Type = 4"; // Lead Scarab
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            MySqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                var id = reader.GetInt32(0);
+                vendorsAll.Add(id);
+                vendorsLead.Add(id);
+            }
+            reader.Close();
+
+            sql = "SELECT object_Id FROM weenie_properties_create_list WHERE weenie_Class_Id = 689 AND destination_Type = 4"; // Iron Scarab
+            command = new MySqlCommand(sql, connection);
+            reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                var id = reader.GetInt32(0);
+                vendorsAll.Add(id);
+                vendorsIron.Add(id);
+            }
+            reader.Close();
+
+            sql = "SELECT object_Id FROM weenie_properties_create_list WHERE weenie_Class_Id = 686 AND destination_Type = 4"; // Copper Scarab
+            command = new MySqlCommand(sql, connection);
+            reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                var id = reader.GetInt32(0);
+                vendorsAll.Add(id);
+                vendorsCopper.Add(id);
+            }
+            reader.Close();
+
+            sql = "SELECT object_Id FROM weenie_properties_create_list WHERE weenie_Class_Id = 688 AND destination_Type = 4"; // Silver Scarab
+            command = new MySqlCommand(sql, connection);
+            reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                var id = reader.GetInt32(0);
+                vendorsAll.Add(id);
+                vendorsSilver.Add(id);
+            }
+            reader.Close();
+
+            sql = "SELECT object_Id FROM weenie_properties_create_list WHERE weenie_Class_Id = 687 AND destination_Type = 4"; // Gold Scarab
+            command = new MySqlCommand(sql, connection);
+            reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                var id = reader.GetInt32(0);
+                vendorsAll.Add(id);
+                vendorsGold.Add(id);
+            }
+            reader.Close();
+
+            sql = "SELECT object_Id FROM weenie_properties_create_list WHERE weenie_Class_Id = 690 AND destination_Type = 4"; // Pyreal Scarab
+            command = new MySqlCommand(sql, connection);
+            reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                var id = reader.GetInt32(0);
+                vendorsAll.Add(id);
+                vendorsPyreal.Add(id);
+            }
+            reader.Close();
+
+            sql = "SELECT object_Id FROM weenie_properties_create_list WHERE weenie_Class_Id = 8897 AND destination_Type = 4"; // Platinum Scarab
+            command = new MySqlCommand(sql, connection);
+            reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                var id = reader.GetInt32(0);
+                vendorsAll.Add(id);
+                vendorsPlatinum.Add(id);
+            }
+            reader.Close();
+
+            int count = 0;
+            foreach (var vendor in vendorsAll)
+            {
+                // Remove all existing ones so we can readd them in the correct order.
+                sql = $"DELETE FROM weenie_properties_create_list WHERE object_Id = {vendor} AND destination_Type = 4 AND weenie_Class_Id IN (50123,50124,50125,50126,50127,50128,50129)";
+                command = new MySqlCommand(sql, connection);
+                command.ExecuteNonQuery();
+            }
+
+            foreach (var vendor in vendorsLead)
+            {
+                sql = $"INSERT INTO weenie_properties_create_list (object_Id, destination_Type, weenie_Class_Id, stack_Size, palette, shade, try_To_Bond)" +
+                $"VALUES ({vendor}, 4, 50123, -1, 0, 0, 0)";  //spellextractionscroll1
+
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+            }
+
+            foreach (var vendor in vendorsIron)
+            {
+                sql = $"INSERT INTO weenie_properties_create_list (object_Id, destination_Type, weenie_Class_Id, stack_Size, palette, shade, try_To_Bond)" +
+                $"VALUES ({vendor}, 4, 50124, -1, 0, 0, 0)";  //spellextractionscroll2
+
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+            }
+
+            foreach (var vendor in vendorsCopper)
+            {
+                sql = $"INSERT INTO weenie_properties_create_list (object_Id, destination_Type, weenie_Class_Id, stack_Size, palette, shade, try_To_Bond)" +
+                $"VALUES ({vendor}, 4, 50125, -1, 0, 0, 0)";  //spellextractionscroll3
+
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+            }
+
+            foreach (var vendor in vendorsSilver)
+            {
+                sql = $"INSERT INTO weenie_properties_create_list (object_Id, destination_Type, weenie_Class_Id, stack_Size, palette, shade, try_To_Bond)" +
+                $"VALUES ({vendor}, 4, 50126, -1, 0, 0, 0)";  //spellextractionscroll4
+
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+            }
+
+            foreach (var vendor in vendorsGold)
+            {
+                sql = $"INSERT INTO weenie_properties_create_list (object_Id, destination_Type, weenie_Class_Id, stack_Size, palette, shade, try_To_Bond)" +
+                $"VALUES ({vendor}, 4, 50127, -1, 0, 0, 0)";  //spellextractionscroll5
+
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+            }
+
+            foreach (var vendor in vendorsPyreal)
+            {
+                sql = $"INSERT INTO weenie_properties_create_list (object_Id, destination_Type, weenie_Class_Id, stack_Size, palette, shade, try_To_Bond)" +
+                $"VALUES ({vendor}, 4, 50128, -1, 0, 0, 0)";  //spellextractionscroll6
+
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+            }
+
+            foreach (var vendor in vendorsPlatinum)
+            {
+                sql = $"INSERT INTO weenie_properties_create_list (object_Id, destination_Type, weenie_Class_Id, stack_Size, palette, shade, try_To_Bond)" +
+                $"VALUES ({vendor}, 4, 50129, -1, 0, 0, 0)";  //spellextractionscroll7
+
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+            }
+
+            Console.WriteLine($"Added {count} entries.");
+        }
+
+        public static void AddSpellConduitToVendors()
+        {
+            var connection = new MySqlConnection($"server=127.0.0.1;port=3306;user=ACEmulator;password=password;DefaultCommandTimeout=120;database=ace_world_customDM");
+            connection.Open();
+
+            List<int> vendorsAll = new List<int>();
+            List<int> vendorsLead = new List<int>();
+            List<int> vendorsIron = new List<int>();
+            List<int> vendorsCopper = new List<int>();
+            List<int> vendorsSilver = new List<int>();
+            List<int> vendorsGold = new List<int>();
+            List<int> vendorsPyreal = new List<int>();
+            List<int> vendorsPlatinum = new List<int>();
+
+            string sql = "SELECT object_Id FROM weenie_properties_create_list WHERE weenie_Class_Id = 691 AND destination_Type = 4"; // Lead Scarab
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            MySqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                var id = reader.GetInt32(0);
+                vendorsAll.Add(id);
+                vendorsLead.Add(id);
+            }
+            reader.Close();
+
+            sql = "SELECT object_Id FROM weenie_properties_create_list WHERE weenie_Class_Id = 689 AND destination_Type = 4"; // Iron Scarab
+            command = new MySqlCommand(sql, connection);
+            reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                var id = reader.GetInt32(0);
+                vendorsAll.Add(id);
+                vendorsIron.Add(id);
+            }
+            reader.Close();
+
+            sql = "SELECT object_Id FROM weenie_properties_create_list WHERE weenie_Class_Id = 686 AND destination_Type = 4"; // Copper Scarab
+            command = new MySqlCommand(sql, connection);
+            reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                var id = reader.GetInt32(0);
+                vendorsAll.Add(id);
+                vendorsCopper.Add(id);
+            }
+            reader.Close();
+
+            sql = "SELECT object_Id FROM weenie_properties_create_list WHERE weenie_Class_Id = 688 AND destination_Type = 4"; // Silver Scarab
+            command = new MySqlCommand(sql, connection);
+            reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                var id = reader.GetInt32(0);
+                vendorsAll.Add(id);
+                vendorsSilver.Add(id);
+            }
+            reader.Close();
+
+            sql = "SELECT object_Id FROM weenie_properties_create_list WHERE weenie_Class_Id = 687 AND destination_Type = 4"; // Gold Scarab
+            command = new MySqlCommand(sql, connection);
+            reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                var id = reader.GetInt32(0);
+                vendorsAll.Add(id);
+                vendorsGold.Add(id);
+            }
+            reader.Close();
+
+            sql = "SELECT object_Id FROM weenie_properties_create_list WHERE weenie_Class_Id = 690 AND destination_Type = 4"; // Pyreal Scarab
+            command = new MySqlCommand(sql, connection);
+            reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                var id = reader.GetInt32(0);
+                vendorsAll.Add(id);
+                vendorsPyreal.Add(id);
+            }
+            reader.Close();
+
+            sql = "SELECT object_Id FROM weenie_properties_create_list WHERE weenie_Class_Id = 8897 AND destination_Type = 4"; // Platinum Scarab
+            command = new MySqlCommand(sql, connection);
+            reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                var id = reader.GetInt32(0);
+                vendorsAll.Add(id);
+                vendorsPlatinum.Add(id);
+            }
+            reader.Close();
+
+            int count = 0;
+            foreach (var vendor in vendorsAll)
+            {
+                // Remove all existing ones so we can readd them in the correct order.
+                sql = $"DELETE FROM weenie_properties_create_list WHERE object_Id = {vendor} AND destination_Type = 4 AND weenie_Class_Id IN (50104,50105,50106,50107,50108,50109,50110)";
+                command = new MySqlCommand(sql, connection);
+                command.ExecuteNonQuery();
+            }
+
+            foreach (var vendor in vendorsLead)
+            {
+                sql = $"INSERT INTO weenie_properties_create_list (object_Id, destination_Type, weenie_Class_Id, stack_Size, palette, shade, try_To_Bond)" +
+                $"VALUES ({vendor}, 4, 50104, -1, 0, 0, 0)";  //spellconduit1
+
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+            }
+
+            foreach (var vendor in vendorsIron)
+            {
+                sql = $"INSERT INTO weenie_properties_create_list (object_Id, destination_Type, weenie_Class_Id, stack_Size, palette, shade, try_To_Bond)" +
+                $"VALUES ({vendor}, 4, 50105, -1, 0, 0, 0)";  //spellconduit2
+
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+            }
+
+            foreach (var vendor in vendorsCopper)
+            {
+                sql = $"INSERT INTO weenie_properties_create_list (object_Id, destination_Type, weenie_Class_Id, stack_Size, palette, shade, try_To_Bond)" +
+                $"VALUES ({vendor}, 4, 50106, -1, 0, 0, 0)";  //spellconduit3
+
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+            }
+
+            foreach (var vendor in vendorsSilver)
+            {
+                sql = $"INSERT INTO weenie_properties_create_list (object_Id, destination_Type, weenie_Class_Id, stack_Size, palette, shade, try_To_Bond)" +
+                $"VALUES ({vendor}, 4, 50107, -1, 0, 0, 0)";  //spellconduit4
+
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+            }
+
+            foreach (var vendor in vendorsGold)
+            {
+                sql = $"INSERT INTO weenie_properties_create_list (object_Id, destination_Type, weenie_Class_Id, stack_Size, palette, shade, try_To_Bond)" +
+                $"VALUES ({vendor}, 4, 50108, -1, 0, 0, 0)";  //spellconduit5
+
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+            }
+
+            foreach (var vendor in vendorsPyreal)
+            {
+                sql = $"INSERT INTO weenie_properties_create_list (object_Id, destination_Type, weenie_Class_Id, stack_Size, palette, shade, try_To_Bond)" +
+                $"VALUES ({vendor}, 4, 50109, -1, 0, 0, 0)";  //spellconduit6
+
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+            }
+
+            foreach (var vendor in vendorsPlatinum)
+            {
+                sql = $"INSERT INTO weenie_properties_create_list (object_Id, destination_Type, weenie_Class_Id, stack_Size, palette, shade, try_To_Bond)" +
+                $"VALUES ({vendor}, 4, 50110, -1, 0, 0, 0)";  //spellconduit7
+
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+            }
+
+            Console.WriteLine($"Added {count} entries.");
+        }
+
+        public static void ChangeArrows()
+        {
+            var connection = new MySqlConnection($"server=127.0.0.1;port=3306;user=ACEmulator;password=password;DefaultCommandTimeout=120;database=ace_world_customDM");
+            connection.Open();
+
+            List<int> greaterArrows = new List<int>()
+            {
+                5304,
+                5305,
+                5306,
+                5307,
+                5308,
+                5309,
+                5310,
+                5312,
+                5357,
+                8827
+            };
+
+            List<int> greaterQuarrels = new List<int>()
+            {
+                5313,
+                5314,
+                5315,
+                5316,
+                5317,
+                5318,
+                5319,
+                5320,
+                5321,
+                8829
+            };
+
+            List<int> greaterDarts = new List<int>()
+            {
+                15287,
+                15288,
+                15289,
+                15290,
+                15291,
+                15292,
+                15293,
+                15294,
+                15295,
+                24550
+            };
+
+            string sql;
+            MySqlCommand command;
+
+            int count = 0;
+            foreach (var id in greaterArrows)
+            {
+                sql = $"INSERT INTO `weenie_properties_int` (`object_Id`, `type`, `value`) " +
+                    $"VALUES ({id}, 158, 2)" +
+                    $", ({id}, 159, 2)" +
+                    $", ({id}, 160, 225);";
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+            }
+            foreach (var id in greaterQuarrels)
+            {
+                sql = $"INSERT INTO `weenie_properties_int` (`object_Id`, `type`, `value`) " +
+                    $"VALUES ({id}, 158, 2)" +
+                    $", ({id}, 159, 3)" +
+                    $", ({id}, 160, 225);";
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+            }
+            foreach (var id in greaterDarts)
+            {
+                sql = $"INSERT INTO `weenie_properties_int` (`object_Id`, `type`, `value`) " +
+                    $"VALUES ({id}, 158, 2)" +
+                    $", ({id}, 159, 12)" +
+                    $", ({id}, 160, 225);";
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+            }
+            connection.Close();
+
+            Console.WriteLine($"Added {count} entries.");
+        }
+
+        public static void ChangeCompositeWeapons()
+        {
+            var connection = new MySqlConnection($"server=127.0.0.1;port=3306;user=ACEmulator;password=password;DefaultCommandTimeout=120;database=ace_world_customDM");
+            connection.Open();
+
+            string sql = "SELECT * FROM `weenie` WHERE `class_Name` LIKE \"%compositedmg%\"";
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            MySqlDataReader reader = command.ExecuteReader();
+
+            List<int> weapons = new List<int>();
+
+            while (reader.Read())
+            {
+                weapons.Add(reader.GetInt32(0));
+            }
+            reader.Close();
+
+            //Atlatls
+            weapons.Add(71181);
+            weapons.Add(71182);
+            weapons.Add(71183);
+            weapons.Add(71184);
+
+            int count = 0;
+            foreach (var weaponId in weapons)
+            {
+                sql = $"INSERT INTO `weenie_properties_float` (`object_Id`, `type`, `value`) VALUES ({weaponId}, 136, 2);";
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+
+                sql = $"INSERT INTO `weenie_properties_int` (`object_Id`, `type`, `value`) " +
+                    $"VALUES ({weaponId}, 158, 2)" +
+                    $", ({weaponId}, 159, 2)" +
+                    $", ({weaponId}, 160, 250);";
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+            }
+            connection.Close();
+
+            Console.WriteLine($"Added {count} entries.");
+        }
+
+        public static void AllowTeakEbonyPorcelainSilkOnGems()
+        {
+            var connection = new MySqlConnection($"server=127.0.0.1;port=3306;user=ACEmulator;password=password;DefaultCommandTimeout=120;database=ace_world_customDM");
+            connection.Open();
+
+            string sql;
+            MySqlCommand command;
+
+            Dictionary<int, int> materialRecipeMap = new Dictionary<int, int>();
+            //materialRecipeMap.Add(21047, 4429); // Ebony
+            //materialRecipeMap.Add(21067, 4430); // Porcelain
+            //materialRecipeMap.Add(21080, 4432); // Teak
+            materialRecipeMap.Add(21076, 4431); // Silk
+
+            List<int> gems = new List<int>();
+            gems.Add(2393); // gemamethyst
+            gems.Add(2394); // gemblackgarnet
+            gems.Add(2395); // gemgreenjade
+            gems.Add(2396); // gemjet
+            gems.Add(2397); // gemredgarnet
+            gems.Add(2398); // gemtourmaline
+            gems.Add(2399); // gemwhitejade
+            gems.Add(2400); // gemyellowgarnet
+            gems.Add(2401); // gemzircon
+            gems.Add(2402); // gemblackopal
+            gems.Add(2403); // gemfireopal
+            gems.Add(2404); // gemimperialtopaz
+            gems.Add(2405); // gemlavenderjade
+            gems.Add(2406); // gemredjade
+            gems.Add(2407); // gemsunstone
+            gems.Add(2408); // gemwhitesapphire
+            gems.Add(2413); // gemagate
+            gems.Add(2414); // gemazurite
+            gems.Add(2415); // gemlapislazuli
+            gems.Add(2416); // gemmalachite
+            gems.Add(2417); // gemsmokeyquartz
+            gems.Add(2418); // gemtigereye
+            gems.Add(2419); // gemturquoise
+            gems.Add(2420); // gemwhitequartz
+            gems.Add(2421); // gemaquamarine
+            gems.Add(2422); // gemgreengarnet
+            gems.Add(2423); // gemopal
+            gems.Add(2424); // gemperidot
+            gems.Add(2425); // gemyellowtopaz
+            gems.Add(2426); // gemamber
+            gems.Add(2427); // gembloodstone
+            gems.Add(2428); // gemcarnelian
+            gems.Add(2429); // gemcitrine
+            gems.Add(2430); // gemhematite
+            gems.Add(2431); // gemmoonstone
+            gems.Add(2432); // gemonyx
+            gems.Add(2433); // gemrosequartz
+
+            int count = 0;
+            foreach (var entry in materialRecipeMap)
+            {
+                foreach (var gemId in gems)
+                {
+                    sql = $"INSERT INTO `cook_book` (`recipe_Id`, `source_W_C_I_D`, `target_W_C_I_D`) " +
+                    $"VALUES ({entry.Value}, {entry.Key}, {gemId});";
+                    command = new MySqlCommand(sql, connection);
+                    count += command.ExecuteNonQuery();
+                }
+            }
+            connection.Close();
+
+            Console.WriteLine($"Added {count} entries.");
+        }
+
+        public static void AddCooldownToCasters()
+        {
+            var connection = new MySqlConnection($"server=127.0.0.1;port=3306;user=ACEmulator;password=password;DefaultCommandTimeout=120;database=ace_world_customDM");
+            connection.Open();
+
+            string sql = "SELECT `object_Id` FROM `weenie_properties_d_i_d` JOIN `weenie` ON `weenie_properties_d_i_d`.`object_Id`=`weenie`.`class_Id` WHERE `weenie_properties_d_i_d`.`type`=28 AND `weenie`.`type`=35";
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            MySqlDataReader reader = command.ExecuteReader();
+
+            List<int> weapons = new List<int>();
+
+            while (reader.Read())
+            {
+                weapons.Add(reader.GetInt32(0));
+            }
+            reader.Close();
+
+            int count = 0;
+            foreach (var weaponId in weapons)
+            {
+                sql = $"INSERT INTO `weenie_properties_float` (`object_Id`, `type`, `value`) " +
+                    $"VALUES ({weaponId}, 167, 10);";
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+
+                sql = $"INSERT INTO `weenie_properties_int` (`object_Id`, `type`, `value`) " +
+                    $"VALUES ({weaponId}, 280, 1001);";
                 command = new MySqlCommand(sql, connection);
                 count += command.ExecuteNonQuery();
             }
