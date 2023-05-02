@@ -1,0 +1,10 @@
+id	classname	curr	new	AL	category	coverage
+24890	bracersoltholow	200	2000	300	Very Heavy	1
+24892	breastplateolthoilow	1500	5000	300	Very Heavy	1
+24894	gauntletsolthoilow	550	1000	300	Very Heavy	1
+24896	girtholthoilow	600	2000	300	Very Heavy	1
+24898	greavesolthoilow	700	2000	300	Very Heavy	1
+24900	helmolthoibroodqueenlow	250	3000	300	Very Heavy	1
+24902	pauldronsolthoilow	400	2000	300	Very Heavy	1
+24904	solleretsolthoilow	400	2000	300	Very Heavy	1
+24906	tassetsolthoilow	250	2000	300	Very Heavy	1

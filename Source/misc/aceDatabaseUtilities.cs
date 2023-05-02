@@ -1,4 +1,8 @@
-﻿using MySql.Data.MySqlClient;
+﻿using ACE.Entity;
+using ACE.Entity.Enum;
+using Google.Protobuf.WellKnownTypes;
+using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Utilities.Collections;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -318,6 +322,7 @@ namespace Melt
         struct armorData
         {
             public int id;
+            public int oldBurden;
             public int newBurden;
             public string category;
             public int coverage;
@@ -388,6 +393,88 @@ namespace Melt
             }
 
             connection.Close();
+
+            Console.WriteLine($"Updated {count} entries.");
+        }
+
+        public static void ChangeOlthoiArmorBurdensShard()
+        {
+            StreamReader inputFile = new StreamReader(new FileStream("./input/OlthoiArmorBurden.txt", FileMode.Open, FileAccess.Read));
+
+            Dictionary<int, armorData> armors = new Dictionary<int, armorData>();
+
+            inputFile.ReadLine(); // header
+
+            while (!inputFile.EndOfStream)
+            {
+                string line = inputFile.ReadLine();
+                string[] splitLine = line.Split('\t');
+
+                if (int.TryParse(splitLine[0], out var id) && int.TryParse(splitLine[2], out var oldBurden) && int.TryParse(splitLine[3], out var newBurden) && int.TryParse(splitLine[6], out var coverage))
+                {
+                    var newArmor = new armorData();
+                    newArmor.id = id;
+                    newArmor.oldBurden = oldBurden;
+                    newArmor.newBurden = newBurden;
+                    newArmor.category = splitLine[5];
+                    newArmor.coverage = coverage;
+
+                    switch (newArmor.category)
+                    {
+                        default:
+                        case "Light":
+                            newArmor.capBonus = 0;
+                            break;
+                        case "Medium":
+                            newArmor.capBonus = -1 * newArmor.coverage;
+                            break;
+                        case "Heavy":
+                            newArmor.capBonus = -2 * newArmor.coverage;
+                            break;
+                        case "Very Heavy":
+                            newArmor.capBonus = -3 * newArmor.coverage;
+                            break;
+                    }
+
+                    armors.Add(id, newArmor);
+                }
+            }
+            inputFile.Close();
+
+            var connection = new MySqlConnection($"server=127.0.0.1;port=3306;user=ACEmulator;password=password;DefaultCommandTimeout=120;database=ace_shard_customDM");
+            var connection2 = new MySqlConnection($"server=127.0.0.1;port=3306;user=ACEmulator;password=password;DefaultCommandTimeout=120;database=ace_shard_customDM");
+            connection.Open();
+            connection2.Open();
+
+            int count = 0;
+            foreach (var entry in armors)
+            {
+
+                string sql = $"SELECT `object_Id` FROM `biota_properties_int`\r\nJOIN `biota` ON `biota_properties_int`.`object_Id`=`biota`.`id`\r\nWHERE `biota_properties_int`.`type`=5 AND `biota`.`weenie_Class_Id`={entry.Value.id} AND `biota_properties_int`.`value`={entry.Value.oldBurden}";
+                MySqlCommand command = new MySqlCommand(sql, connection);
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    var id = reader.GetUInt32(0);
+
+                    sql = $"UPDATE `biota_properties_int` SET `value` = {entry.Value.newBurden} WHERE `type` = 5 AND `object_Id` = {id}";
+                    var command2 = new MySqlCommand(sql, connection2);
+                    count += command2.ExecuteNonQuery();
+
+                    sql = $"INSERT INTO `biota_properties_float` (`object_Id`, `type`, `value`)" +
+                          $"VALUES ({id}, 10003, {entry.Value.capBonus})" + // MeleeDefenseCap
+                                $",({id}, 10004, {entry.Value.capBonus})";  // MissileDefenseCap
+
+                    command2 = new MySqlCommand(sql, connection2);
+                    count += command2.ExecuteNonQuery();
+                }
+
+                reader.Close();
+            }
+
+            connection.Close();
+            connection2.Close();
 
             Console.WriteLine($"Updated {count} entries.");
         }
@@ -661,6 +748,51 @@ namespace Melt
                 MerchandiseItemTypes = merchandiseItemTypes;
                 Template = template;
             }
+        }
+
+        public static void AddSalvageToShopkeepers()
+        {
+            var connection = new MySqlConnection($"server=127.0.0.1;port=3306;user=ACEmulator;password=password;DefaultCommandTimeout=120;database=ace_world_customDM");
+            connection.Open();
+
+            string sql = "SELECT object_Id, value FROM weenie_properties_string WHERE `type` = 5 AND `value` IN (\"Peddler\",\"Shopkeeper\",\"Merchant\")";
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            MySqlDataReader reader = command.ExecuteReader();
+
+            Dictionary<int, MerchandiseItemTypeData> vendors = new Dictionary<int, MerchandiseItemTypeData>();
+
+            while (reader.Read())
+            {
+                vendors.Add(reader.GetInt32(0), new MerchandiseItemTypeData(0, reader.GetString(1)));
+            }
+            reader.Close();
+
+            sql = $"SELECT `object_Id`,`value` FROM `weenie_properties_int` WHERE `type` = 74 and object_Id IN({string.Join(",", vendors.Keys)})";
+            command = new MySqlCommand(sql, connection);
+            reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                int id = reader.GetInt32(0);
+                if (vendors.TryGetValue(id, out _))
+                {
+                    vendors[id].MerchandiseItemTypes = reader.GetInt32(1);
+                }
+            }
+            reader.Close();
+
+            int count = 0;
+            foreach (var entry in vendors)
+            {
+                if (entry.Value.MerchandiseItemTypes == 0)
+                    continue; // We're not a vendor.
+                sql = $"INSERT INTO `weenie_properties_bool` (`object_Id`, `type`, `value`) VALUES({entry.Key}, 9013, True);"; // VendorSellsSalvage
+                command = new MySqlCommand(sql, connection);
+                count += command.ExecuteNonQuery();
+            }
+            connection.Close();
+
+            Console.WriteLine($"Updated {count} entries.");
         }
 
         public static void RedistributeVendorMerchandiseTypes()
@@ -3520,7 +3652,7 @@ namespace Melt
             Console.WriteLine($"Added {count} entries.");
         }
 
-        public static void AllowTeakEbonyPorcelainSilkOnGems()
+        public static void AddItemsToCookbook()
         {
             var connection = new MySqlConnection($"server=127.0.0.1;port=3306;user=ACEmulator;password=password;DefaultCommandTimeout=120;database=ace_world_customDM");
             connection.Open();
@@ -3529,57 +3661,93 @@ namespace Melt
             MySqlCommand command;
 
             Dictionary<int, int> materialRecipeMap = new Dictionary<int, int>();
-            //materialRecipeMap.Add(21047, 4429); // Ebony
-            //materialRecipeMap.Add(21067, 4430); // Porcelain
-            //materialRecipeMap.Add(21080, 4432); // Teak
+            materialRecipeMap.Add(21047, 4429); // Ebony
+            materialRecipeMap.Add(21067, 4430); // Porcelain
+            materialRecipeMap.Add(21080, 4432); // Teak
             materialRecipeMap.Add(21076, 4431); // Silk
 
-            List<int> gems = new List<int>();
-            gems.Add(2393); // gemamethyst
-            gems.Add(2394); // gemblackgarnet
-            gems.Add(2395); // gemgreenjade
-            gems.Add(2396); // gemjet
-            gems.Add(2397); // gemredgarnet
-            gems.Add(2398); // gemtourmaline
-            gems.Add(2399); // gemwhitejade
-            gems.Add(2400); // gemyellowgarnet
-            gems.Add(2401); // gemzircon
-            gems.Add(2402); // gemblackopal
-            gems.Add(2403); // gemfireopal
-            gems.Add(2404); // gemimperialtopaz
-            gems.Add(2405); // gemlavenderjade
-            gems.Add(2406); // gemredjade
-            gems.Add(2407); // gemsunstone
-            gems.Add(2408); // gemwhitesapphire
-            gems.Add(2413); // gemagate
-            gems.Add(2414); // gemazurite
-            gems.Add(2415); // gemlapislazuli
-            gems.Add(2416); // gemmalachite
-            gems.Add(2417); // gemsmokeyquartz
-            gems.Add(2418); // gemtigereye
-            gems.Add(2419); // gemturquoise
-            gems.Add(2420); // gemwhitequartz
-            gems.Add(2421); // gemaquamarine
-            gems.Add(2422); // gemgreengarnet
-            gems.Add(2423); // gemopal
-            gems.Add(2424); // gemperidot
-            gems.Add(2425); // gemyellowtopaz
-            gems.Add(2426); // gemamber
-            gems.Add(2427); // gembloodstone
-            gems.Add(2428); // gemcarnelian
-            gems.Add(2429); // gemcitrine
-            gems.Add(2430); // gemhematite
-            gems.Add(2431); // gemmoonstone
-            gems.Add(2432); // gemonyx
-            gems.Add(2433); // gemrosequartz
+            List<int> itemsToAdd = new List<int>();
+            itemsToAdd.Add(316); // dart
+            itemsToAdd.Add(3786); // dartacid
+            itemsToAdd.Add(3788); // dartflame
+            itemsToAdd.Add(3789); // dartfrost
+            itemsToAdd.Add(3787); // dartelectric
+            itemsToAdd.Add(304); // axethrowing
+            itemsToAdd.Add(3758); // axethrowingacid
+            itemsToAdd.Add(3760); // axethrowingfire
+            itemsToAdd.Add(3761); // axethrowingfrost
+            itemsToAdd.Add(3759); // axethrowingelectric
+            itemsToAdd.Add(310); // clubthrowing
+            itemsToAdd.Add(3770); // clubthrowingacid
+            itemsToAdd.Add(3772); // clubthrowingfire
+            itemsToAdd.Add(3773); // clubthrowingfrost
+            itemsToAdd.Add(3771); // clubthrowingelectric
+            itemsToAdd.Add(315); // daggerthrowing
+            itemsToAdd.Add(3782); // daggerthrowingacid
+            itemsToAdd.Add(3784); // daggerthrowingfire
+            itemsToAdd.Add(3785); // daggerthrowingfrost
+            itemsToAdd.Add(3783); // daggerthrowingelectric
+            itemsToAdd.Add(320); // javelin
+            itemsToAdd.Add(3798); // javelinacid
+            itemsToAdd.Add(3800); // javelinfire
+            itemsToAdd.Add(3801); // javelinfrost
+            itemsToAdd.Add(3799); // javelinelectric
+            itemsToAdd.Add(343); // shuriken
+            itemsToAdd.Add(3861); // shurikenacid
+            itemsToAdd.Add(3863); // shurikenfire
+            itemsToAdd.Add(3864); // shurikenfrost
+            itemsToAdd.Add(3862); // shurikenelectric
+            itemsToAdd.Add(317); // djarid
+            itemsToAdd.Add(3790); // djaridacid
+            itemsToAdd.Add(3792); // djaridfire
+            itemsToAdd.Add(3793); // djaridfrost
+            itemsToAdd.Add(3791); // djaridelectric
+
+            //itemsToAdd.Add(2393); // gemamethyst
+            //itemsToAdd.Add(2394); // gemblackgarnet
+            //itemsToAdd.Add(2395); // gemgreenjade
+            //itemsToAdd.Add(2396); // gemjet
+            //itemsToAdd.Add(2397); // gemredgarnet
+            //itemsToAdd.Add(2398); // gemtourmaline
+            //itemsToAdd.Add(2399); // gemwhitejade
+            //itemsToAdd.Add(2400); // gemyellowgarnet
+            //itemsToAdd.Add(2401); // gemzircon
+            //itemsToAdd.Add(2402); // gemblackopal
+            //itemsToAdd.Add(2403); // gemfireopal
+            //itemsToAdd.Add(2404); // gemimperialtopaz
+            //itemsToAdd.Add(2405); // gemlavenderjade
+            //itemsToAdd.Add(2406); // gemredjade
+            //itemsToAdd.Add(2407); // gemsunstone
+            //itemsToAdd.Add(2408); // gemwhitesapphire
+            //itemsToAdd.Add(2413); // gemagate
+            //itemsToAdd.Add(2414); // gemazurite
+            //itemsToAdd.Add(2415); // gemlapislazuli
+            //itemsToAdd.Add(2416); // gemmalachite
+            //itemsToAdd.Add(2417); // gemsmokeyquartz
+            //itemsToAdd.Add(2418); // gemtigereye
+            //itemsToAdd.Add(2419); // gemturquoise
+            //itemsToAdd.Add(2420); // gemwhitequartz
+            //itemsToAdd.Add(2421); // gemaquamarine
+            //itemsToAdd.Add(2422); // gemgreengarnet
+            //itemsToAdd.Add(2423); // gemopal
+            //itemsToAdd.Add(2424); // gemperidot
+            //itemsToAdd.Add(2425); // gemyellowtopaz
+            //itemsToAdd.Add(2426); // gemamber
+            //itemsToAdd.Add(2427); // gembloodstone
+            //itemsToAdd.Add(2428); // gemcarnelian
+            //itemsToAdd.Add(2429); // gemcitrine
+            //itemsToAdd.Add(2430); // gemhematite
+            //itemsToAdd.Add(2431); // gemmoonstone
+            //itemsToAdd.Add(2432); // gemonyx
+            //itemsToAdd.Add(2433); // gemrosequartz
 
             int count = 0;
             foreach (var entry in materialRecipeMap)
             {
-                foreach (var gemId in gems)
+                foreach (var itemId in itemsToAdd)
                 {
                     sql = $"INSERT INTO `cook_book` (`recipe_Id`, `source_W_C_I_D`, `target_W_C_I_D`) " +
-                    $"VALUES ({entry.Value}, {entry.Key}, {gemId});";
+                    $"VALUES ({entry.Value}, {entry.Key}, {itemId});";
                     command = new MySqlCommand(sql, connection);
                     count += command.ExecuteNonQuery();
                 }

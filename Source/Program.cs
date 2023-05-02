@@ -20,7 +20,7 @@ namespace Melt
             //PortalManipulationForEoR(args);
 
             //MapManipulationForCustomDM(args);
-            //PortalManipulationForCustomDM(args);
+            PortalManipulationForCustomDM(args);
             //LanguageManipulationForCustomDM(args);
 
             //MapManipulationForInfiltration(args);
@@ -33,7 +33,7 @@ namespace Melt
             //MapManipulationForEvensong(args);
             //PortalManipulationForEvensong(args);
 
-            Workbench(args);
+            //Workbench(args);
 
             Console.WriteLine("Done");
             Console.ReadLine();
@@ -103,6 +103,11 @@ namespace Melt
             //TextureConverter.toBin("06001385.png", 0x06020001, 21);
             //TextureConverter.toPNG("06007105.bin");
 
+            //TextureConverter.toBin("06020002 - Appraise Buff Icon.png", 0x06020002, 21);
+            //TextureConverter.toBin("06020003 - Awareness Buff Icon.png", 0x06020003, 21);
+            //TextureConverter.toBin("06020004 - Sneak Buff Icon.png", 0x06020004, 21);
+            //TextureConverter.toBin("06020005 - Sneak Speed Debuff Icon.png", 0x06020005, 21);
+
             //Ingame Map
             //TextureConverter.toPNG("0600127D ToD.bin");
             //TextureConverter.toBin("0600127D.png", 0x0600127D, 20);
@@ -148,11 +153,12 @@ namespace Melt
             //charGen.modifyForCustomDM();
             //charGen.save("./0E000002 - CharGen - CustomDM.bin");
 
+            //AceDatabaseUtilities.AddSalvageToShopkeepers();
             //AceDatabaseUtilities.AddSpellTransferScrollsToVendors();
             //AceDatabaseUtilities.AddSalvageBarrelToVendors();
-            //AceDatabaseUtilities.ChangeArmorBurdens();
+            //AceDatabaseUtilities.ChangeOlthoiArmorBurdensShard();
             //AceDatabaseUtilities.ChangeShieldBurdens();
-            //AceDatabaseUtilities.AllowTeakEbonyPorcelainSilkOnGems();
+            //AceDatabaseUtilities.AddItemsToCookbook();
             //AceDatabaseUtilities.AddCooldownToCasters();
             //AceDatabaseUtilities.ChangeArrows();
             //AceDatabaseUtilities.ChangeCompositeWeapons();
@@ -529,7 +535,7 @@ namespace Melt
         {
             cDatFile portalDatFile = new cDatFile();
             portalDatFile.loadFromDat("./input/client_portal - EoR.dat");
-            portalDatFile.SetFileIteration(20021);
+            portalDatFile.SetFileIteration(20022);
             portalDatFile.addFilesFromFolder("./Dat Builder/Portal/CustomDM/");
             portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Textures");
             //portalDatFile.addFilesFromFolder("./Dat Builder/Portal/Shared/Resized EoR Trees");
@@ -545,7 +551,7 @@ namespace Melt
             //int retailIteration = datFile.loadFromDat("./input/cell - 2005-02-XX (202752kb) (Admin) (Iteration 1593 - Complete).dat");
             //datFile.convertRetailToToD(retailIteration);
             datFile.loadFromDat("./input/client_cell_1 - Infiltration - Converted to ToD format (Iteration 1593).dat"); // Same as above but already converted to ToD format to speed thing up.
-            datFile.SetFileIteration(20005);
+            datFile.SetFileIteration(20006);
 
             cDatFile datFileObsidianSpan = new cDatFile();
             datFileObsidianSpan.loadFromDat("./input/cell - 2000-12-31 - Obsidian Span.dat");

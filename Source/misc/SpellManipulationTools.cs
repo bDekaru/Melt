@@ -814,6 +814,104 @@ namespace Melt
             AddSpell(SpellId.CantripArmorAptitude3, 0x06020001, SpellCategory.ExtraArmorSkillRaising, SpellId.CantripShieldAptitude3, "Shield", "Armor");
             AddSpell(SpellId.CantripArmorAptitude4, 0x06020001, SpellCategory.ExtraArmorSkillRaising, SpellId.CantripShieldAptitude4, "Shield", "Armor");
 
+            AddSpell(SpellId.AwarenessMasterySelf1, 0x06020002, SpellCategory.AwarenessSkillRaising, SpellId.ArmorMasterySelf1, "Armor", "Awareness", 40, 41);
+            AddSpell(SpellId.AwarenessMasterySelf2, 0x06020002, SpellCategory.AwarenessSkillRaising, SpellId.ArmorMasterySelf2, "Armor", "Awareness", 40, 41);
+            AddSpell(SpellId.AwarenessMasterySelf3, 0x06020002, SpellCategory.AwarenessSkillRaising, SpellId.ArmorMasterySelf3, "Armor", "Awareness", 40, 41);
+            AddSpell(SpellId.AwarenessMasterySelf4, 0x06020002, SpellCategory.AwarenessSkillRaising, SpellId.ArmorMasterySelf4, "Armor", "Awareness", 40, 41);
+            AddSpell(SpellId.AwarenessMasterySelf5, 0x06020002, SpellCategory.AwarenessSkillRaising, SpellId.ArmorMasterySelf5, "Armor", "Awareness", 40, 41);
+            AddSpell(SpellId.AwarenessMasterySelf6, 0x06020002, SpellCategory.AwarenessSkillRaising, SpellId.ArmorMasterySelf6, "Armor", "Awareness", 40, 41);
+            AddSpell(SpellId.AwarenessMasterySelf7, 0x06020002, SpellCategory.AwarenessSkillRaising, SpellId.ArmorMasterySelf7, "Armor", "Awareness", 40, 41);
+            AddSpell(SpellId.AwarenessMasterySelf8, 0x06020002, SpellCategory.AwarenessSkillRaising, SpellId.ArmorMasterySelf8, "Armor", "Awareness", 40, 41);
+
+            AddSpell(SpellId.AwarenessMasteryOther1, 0x06020002, SpellCategory.AwarenessSkillRaising, SpellId.ArmorMasteryOther1, "Armor", "Awareness", 40, 41);
+            AddSpell(SpellId.AwarenessMasteryOther2, 0x06020002, SpellCategory.AwarenessSkillRaising, SpellId.ArmorMasteryOther2, "Armor", "Awareness", 40, 41);
+            AddSpell(SpellId.AwarenessMasteryOther3, 0x06020002, SpellCategory.AwarenessSkillRaising, SpellId.ArmorMasteryOther3, "Armor", "Awareness", 40, 41);
+            AddSpell(SpellId.AwarenessMasteryOther4, 0x06020002, SpellCategory.AwarenessSkillRaising, SpellId.ArmorMasteryOther4, "Armor", "Awareness", 40, 41);
+            AddSpell(SpellId.AwarenessMasteryOther5, 0x06020002, SpellCategory.AwarenessSkillRaising, SpellId.ArmorMasteryOther5, "Armor", "Awareness", 40, 41);
+            AddSpell(SpellId.AwarenessMasteryOther6, 0x06020002, SpellCategory.AwarenessSkillRaising, SpellId.ArmorMasteryOther6, "Armor", "Awareness", 40, 41);
+            AddSpell(SpellId.AwarenessMasteryOther7, 0x06020002, SpellCategory.AwarenessSkillRaising, SpellId.ArmorMasteryOther7, "Armor", "Awareness", 40, 41);
+            AddSpell(SpellId.AwarenessMasteryOther8, 0x06020002, SpellCategory.AwarenessSkillRaising, SpellId.ArmorMasteryOther8, "Armor", "Awareness", 40, 41);
+
+            AddSpell(SpellId.AwarenessIneptitudeOther1, 0x06020002, SpellCategory.AwarenessSkillLowering, SpellId.ArmorIneptitudeOther1, "Armor", "Awareness", 40, 41);
+            AddSpell(SpellId.AwarenessIneptitudeOther2, 0x06020002, SpellCategory.AwarenessSkillLowering, SpellId.ArmorIneptitudeOther2, "Armor", "Awareness", 40, 41);
+            AddSpell(SpellId.AwarenessIneptitudeOther3, 0x06020002, SpellCategory.AwarenessSkillLowering, SpellId.ArmorIneptitudeOther3, "Armor", "Awareness", 40, 41);
+            AddSpell(SpellId.AwarenessIneptitudeOther4, 0x06020002, SpellCategory.AwarenessSkillLowering, SpellId.ArmorIneptitudeOther4, "Armor", "Awareness", 40, 41);
+            AddSpell(SpellId.AwarenessIneptitudeOther5, 0x06020002, SpellCategory.AwarenessSkillLowering, SpellId.ArmorIneptitudeOther5, "Armor", "Awareness", 40, 41);
+            AddSpell(SpellId.AwarenessIneptitudeOther6, 0x06020002, SpellCategory.AwarenessSkillLowering, SpellId.ArmorIneptitudeOther6, "Armor", "Awareness", 40, 41);
+            AddSpell(SpellId.AwarenessIneptitudeOther7, 0x06020002, SpellCategory.AwarenessSkillLowering, SpellId.ArmorIneptitudeOther7, "Armor", "Awareness", 40, 41);
+            AddSpell(SpellId.AwarenessIneptitudeOther8, 0x06020002, SpellCategory.AwarenessSkillLowering, SpellId.ArmorIneptitudeOther8, "Armor", "Awareness", 40, 41);
+
+            AddSpell(SpellId.CantripAwarenessAptitude1, 0x06020002, SpellCategory.ExtraAwarenessSkillRaising, SpellId.CantripArmorAptitude1, "Armor", "Awareness");
+            AddSpell(SpellId.CantripAwarenessAptitude2, 0x06020002, SpellCategory.ExtraAwarenessSkillRaising, SpellId.CantripArmorAptitude2, "Armor", "Awareness");
+            AddSpell(SpellId.CantripAwarenessAptitude3, 0x06020002, SpellCategory.ExtraAwarenessSkillRaising, SpellId.CantripArmorAptitude3, "Armor", "Awareness");
+            AddSpell(SpellId.CantripAwarenessAptitude4, 0x06020002, SpellCategory.ExtraAwarenessSkillRaising, SpellId.CantripArmorAptitude4, "Armor", "Awareness");
+
+            AddSpell(SpellId.AppraiseMasterySelf1, 0x06020003, SpellCategory.AppraiseSkillRaising, SpellId.ArmorMasterySelf1, "Armor", "Appraise", 40, 42);
+            AddSpell(SpellId.AppraiseMasterySelf2, 0x06020003, SpellCategory.AppraiseSkillRaising, SpellId.ArmorMasterySelf2, "Armor", "Appraise", 40, 42);
+            AddSpell(SpellId.AppraiseMasterySelf3, 0x06020003, SpellCategory.AppraiseSkillRaising, SpellId.ArmorMasterySelf3, "Armor", "Appraise", 40, 42);
+            AddSpell(SpellId.AppraiseMasterySelf4, 0x06020003, SpellCategory.AppraiseSkillRaising, SpellId.ArmorMasterySelf4, "Armor", "Appraise", 40, 42);
+            AddSpell(SpellId.AppraiseMasterySelf5, 0x06020003, SpellCategory.AppraiseSkillRaising, SpellId.ArmorMasterySelf5, "Armor", "Appraise", 40, 42);
+            AddSpell(SpellId.AppraiseMasterySelf6, 0x06020003, SpellCategory.AppraiseSkillRaising, SpellId.ArmorMasterySelf6, "Armor", "Appraise", 40, 42);
+            AddSpell(SpellId.AppraiseMasterySelf7, 0x06020003, SpellCategory.AppraiseSkillRaising, SpellId.ArmorMasterySelf7, "Armor", "Appraise", 40, 42);
+            AddSpell(SpellId.AppraiseMasterySelf8, 0x06020003, SpellCategory.AppraiseSkillRaising, SpellId.ArmorMasterySelf8, "Armor", "Appraise", 40, 42);
+
+            AddSpell(SpellId.AppraiseMasteryOther1, 0x06020003, SpellCategory.AppraiseSkillRaising, SpellId.ArmorMasteryOther1, "Armor", "Appraise", 40, 42);
+            AddSpell(SpellId.AppraiseMasteryOther2, 0x06020003, SpellCategory.AppraiseSkillRaising, SpellId.ArmorMasteryOther2, "Armor", "Appraise", 40, 42);
+            AddSpell(SpellId.AppraiseMasteryOther3, 0x06020003, SpellCategory.AppraiseSkillRaising, SpellId.ArmorMasteryOther3, "Armor", "Appraise", 40, 42);
+            AddSpell(SpellId.AppraiseMasteryOther4, 0x06020003, SpellCategory.AppraiseSkillRaising, SpellId.ArmorMasteryOther4, "Armor", "Appraise", 40, 42);
+            AddSpell(SpellId.AppraiseMasteryOther5, 0x06020003, SpellCategory.AppraiseSkillRaising, SpellId.ArmorMasteryOther5, "Armor", "Appraise", 40, 42);
+            AddSpell(SpellId.AppraiseMasteryOther6, 0x06020003, SpellCategory.AppraiseSkillRaising, SpellId.ArmorMasteryOther6, "Armor", "Appraise", 40, 42);
+            AddSpell(SpellId.AppraiseMasteryOther7, 0x06020003, SpellCategory.AppraiseSkillRaising, SpellId.ArmorMasteryOther7, "Armor", "Appraise", 40, 42);
+            AddSpell(SpellId.AppraiseMasteryOther8, 0x06020003, SpellCategory.AppraiseSkillRaising, SpellId.ArmorMasteryOther8, "Armor", "Appraise", 40, 42);
+
+            AddSpell(SpellId.AppraiseIneptitudeOther1, 0x06020003, SpellCategory.AppraiseSkillLowering, SpellId.ArmorIneptitudeOther1, "Armor", "Appraise", 40, 42);
+            AddSpell(SpellId.AppraiseIneptitudeOther2, 0x06020003, SpellCategory.AppraiseSkillLowering, SpellId.ArmorIneptitudeOther2, "Armor", "Appraise", 40, 42);
+            AddSpell(SpellId.AppraiseIneptitudeOther3, 0x06020003, SpellCategory.AppraiseSkillLowering, SpellId.ArmorIneptitudeOther3, "Armor", "Appraise", 40, 42);
+            AddSpell(SpellId.AppraiseIneptitudeOther4, 0x06020003, SpellCategory.AppraiseSkillLowering, SpellId.ArmorIneptitudeOther4, "Armor", "Appraise", 40, 42);
+            AddSpell(SpellId.AppraiseIneptitudeOther5, 0x06020003, SpellCategory.AppraiseSkillLowering, SpellId.ArmorIneptitudeOther5, "Armor", "Appraise", 40, 42);
+            AddSpell(SpellId.AppraiseIneptitudeOther6, 0x06020003, SpellCategory.AppraiseSkillLowering, SpellId.ArmorIneptitudeOther6, "Armor", "Appraise", 40, 42);
+            AddSpell(SpellId.AppraiseIneptitudeOther7, 0x06020003, SpellCategory.AppraiseSkillLowering, SpellId.ArmorIneptitudeOther7, "Armor", "Appraise", 40, 42);
+            AddSpell(SpellId.AppraiseIneptitudeOther8, 0x06020003, SpellCategory.AppraiseSkillLowering, SpellId.ArmorIneptitudeOther8, "Armor", "Appraise", 40, 42);
+
+            AddSpell(SpellId.CantripAppraiseAptitude1, 0x06020003, SpellCategory.ExtraAppraiseSkillRaising, SpellId.CantripArmorAptitude1, "Armor", "Appraise");
+            AddSpell(SpellId.CantripAppraiseAptitude2, 0x06020003, SpellCategory.ExtraAppraiseSkillRaising, SpellId.CantripArmorAptitude2, "Armor", "Appraise");
+            AddSpell(SpellId.CantripAppraiseAptitude3, 0x06020003, SpellCategory.ExtraAppraiseSkillRaising, SpellId.CantripArmorAptitude3, "Armor", "Appraise");
+            AddSpell(SpellId.CantripAppraiseAptitude4, 0x06020003, SpellCategory.ExtraAppraiseSkillRaising, SpellId.CantripArmorAptitude4, "Armor", "Appraise");
+
+            AddSpell(SpellId.SneakingMasterySelf1, 0x06020004, SpellCategory.SneakingSkillRaising, SpellId.ArmorMasterySelf1, "Armor", "Sneaking", 40, 43);
+            AddSpell(SpellId.SneakingMasterySelf2, 0x06020004, SpellCategory.SneakingSkillRaising, SpellId.ArmorMasterySelf2, "Armor", "Sneaking", 40, 43);
+            AddSpell(SpellId.SneakingMasterySelf3, 0x06020004, SpellCategory.SneakingSkillRaising, SpellId.ArmorMasterySelf3, "Armor", "Sneaking", 40, 43);
+            AddSpell(SpellId.SneakingMasterySelf4, 0x06020004, SpellCategory.SneakingSkillRaising, SpellId.ArmorMasterySelf4, "Armor", "Sneaking", 40, 43);
+            AddSpell(SpellId.SneakingMasterySelf5, 0x06020004, SpellCategory.SneakingSkillRaising, SpellId.ArmorMasterySelf5, "Armor", "Sneaking", 40, 43);
+            AddSpell(SpellId.SneakingMasterySelf6, 0x06020004, SpellCategory.SneakingSkillRaising, SpellId.ArmorMasterySelf6, "Armor", "Sneaking", 40, 43);
+            AddSpell(SpellId.SneakingMasterySelf7, 0x06020004, SpellCategory.SneakingSkillRaising, SpellId.ArmorMasterySelf7, "Armor", "Sneaking", 40, 43);
+            AddSpell(SpellId.SneakingMasterySelf8, 0x06020004, SpellCategory.SneakingSkillRaising, SpellId.ArmorMasterySelf8, "Armor", "Sneaking", 40, 43);
+
+            AddSpell(SpellId.SneakingMasteryOther1, 0x06020004, SpellCategory.SneakingSkillRaising, SpellId.ArmorMasteryOther1, "Armor", "Sneaking", 40, 43);
+            AddSpell(SpellId.SneakingMasteryOther2, 0x06020004, SpellCategory.SneakingSkillRaising, SpellId.ArmorMasteryOther2, "Armor", "Sneaking", 40, 43);
+            AddSpell(SpellId.SneakingMasteryOther3, 0x06020004, SpellCategory.SneakingSkillRaising, SpellId.ArmorMasteryOther3, "Armor", "Sneaking", 40, 43);
+            AddSpell(SpellId.SneakingMasteryOther4, 0x06020004, SpellCategory.SneakingSkillRaising, SpellId.ArmorMasteryOther4, "Armor", "Sneaking", 40, 43);
+            AddSpell(SpellId.SneakingMasteryOther5, 0x06020004, SpellCategory.SneakingSkillRaising, SpellId.ArmorMasteryOther5, "Armor", "Sneaking", 40, 43);
+            AddSpell(SpellId.SneakingMasteryOther6, 0x06020004, SpellCategory.SneakingSkillRaising, SpellId.ArmorMasteryOther6, "Armor", "Sneaking", 40, 43);
+            AddSpell(SpellId.SneakingMasteryOther7, 0x06020004, SpellCategory.SneakingSkillRaising, SpellId.ArmorMasteryOther7, "Armor", "Sneaking", 40, 43);
+            AddSpell(SpellId.SneakingMasteryOther8, 0x06020004, SpellCategory.SneakingSkillRaising, SpellId.ArmorMasteryOther8, "Armor", "Sneaking", 40, 43);
+
+            AddSpell(SpellId.SneakingIneptitudeOther1, 0x06020004, SpellCategory.SneakingSkillLowering, SpellId.ArmorIneptitudeOther1, "Armor", "Sneaking", 40, 43);
+            AddSpell(SpellId.SneakingIneptitudeOther2, 0x06020004, SpellCategory.SneakingSkillLowering, SpellId.ArmorIneptitudeOther2, "Armor", "Sneaking", 40, 43);
+            AddSpell(SpellId.SneakingIneptitudeOther3, 0x06020004, SpellCategory.SneakingSkillLowering, SpellId.ArmorIneptitudeOther3, "Armor", "Sneaking", 40, 43);
+            AddSpell(SpellId.SneakingIneptitudeOther4, 0x06020004, SpellCategory.SneakingSkillLowering, SpellId.ArmorIneptitudeOther4, "Armor", "Sneaking", 40, 43);
+            AddSpell(SpellId.SneakingIneptitudeOther5, 0x06020004, SpellCategory.SneakingSkillLowering, SpellId.ArmorIneptitudeOther5, "Armor", "Sneaking", 40, 43);
+            AddSpell(SpellId.SneakingIneptitudeOther6, 0x06020004, SpellCategory.SneakingSkillLowering, SpellId.ArmorIneptitudeOther6, "Armor", "Sneaking", 40, 43);
+            AddSpell(SpellId.SneakingIneptitudeOther7, 0x06020004, SpellCategory.SneakingSkillLowering, SpellId.ArmorIneptitudeOther7, "Armor", "Sneaking", 40, 43);
+            AddSpell(SpellId.SneakingIneptitudeOther8, 0x06020004, SpellCategory.SneakingSkillLowering, SpellId.ArmorIneptitudeOther8, "Armor", "Sneaking", 40, 43);
+
+            AddSpell(SpellId.CantripSneakingAptitude1, 0x06020004, SpellCategory.ExtraSneakingSkillRaising, SpellId.CantripArmorAptitude1, "Armor", "Sneaking");
+            AddSpell(SpellId.CantripSneakingAptitude2, 0x06020004, SpellCategory.ExtraSneakingSkillRaising, SpellId.CantripArmorAptitude2, "Armor", "Sneaking");
+            AddSpell(SpellId.CantripSneakingAptitude3, 0x06020004, SpellCategory.ExtraSneakingSkillRaising, SpellId.CantripArmorAptitude3, "Armor", "Sneaking");
+            AddSpell(SpellId.CantripSneakingAptitude4, 0x06020004, SpellCategory.ExtraSneakingSkillRaising, SpellId.CantripArmorAptitude4, "Armor", "Sneaking");
+
+            AddSpell(SpellId.Sneaking, 0x06020005, SpellCategory.RunLowering, SpellId.MireFoot, "Mire Foot", "Sneaking");
+
             foreach (var spellEntry in SpellTable.Spells)
             {
                 SpellBase spell = spellEntry.Value;
@@ -1040,6 +1138,9 @@ namespace Melt
 
             if (Cache2SpellTable.TryGetValue(2358, out cacheSpell)) // Lyceum Recall
                 cacheSpell.desc = "Transports the caster to the Ishilai Lyceum.";
+
+            if (Cache2SpellTable.TryGetValue(3051, out cacheSpell)) // Mire Foot
+                cacheSpell.desc = "Target's run skill is reduced by 95%";
 
             if (Cache2SpellTable.TryGetValue(3060, out cacheSpell)) // Poison Blood
                 cacheSpell.desc = "Lowers the total health of a target by 30% for 45 seconds.";

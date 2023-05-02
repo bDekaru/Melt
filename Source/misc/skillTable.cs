@@ -260,6 +260,7 @@ namespace Melt
 
             Skills[(uint)eSkills.Deception].TrainedCost = 2;
             Skills[(uint)eSkills.Deception].SpecializedCost = 4;
+            Skills[(uint)eSkills.Deception].Formula = new SkillFormula(eAttributes.Coordination, 1, eAttributes.Self, 1, 4, 0);
 
             Skills[(uint)eSkills.Axe].Name = "Axe and Mace";
             Skills[(uint)eSkills.Axe].Formula = new SkillFormula(eAttributes.Strength, 4, eAttributes.Coordination, 2, 9, 0);
