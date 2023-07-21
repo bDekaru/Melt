@@ -392,18 +392,25 @@ namespace Melt
 
         static void PortalManipulationForEoR(string[] args)
         {
+            var timeStamp = (uint)DateTimeOffset.Now.ToUnixTimeSeconds();
+            var iteration = 4016;
+
             cDatFile portalDatFile = new cDatFile();
             portalDatFile.loadFromDat("./input/client_portal - EoR.dat");
-            portalDatFile.SetFileIteration(4016);
+            portalDatFile.SetFileIteration(iteration);
             portalDatFile.addFilesFromFolder("./Dat Builder/Portal/EoR/");
+            portalDatFile.UpdateIterationForChangedFiles(iteration, timeStamp);
             portalDatFile.writeToDat("./client_portal.dat");
         }
 
         static void MapManipulationForEoR(string[] args)
         {
+            var timeStamp = (uint)DateTimeOffset.Now.ToUnixTimeSeconds();
+            var iteration = 4016;
+
             cDatFile datFile = new cDatFile();
             datFile.loadFromDat("./input/client_cell_1 - EoR.dat");
-            datFile.SetFileIteration(4016);
+            datFile.SetFileIteration(iteration);
 
             cDatFile datFileRelease = new cDatFile(); // 1999-10-09
             datFileRelease.loadFromDat("./input/cell - Release.dat");
@@ -527,6 +534,8 @@ namespace Melt
             cellDat.loadFromDat(datFile);
             cMapDrawer mapDrawer = new cMapDrawer(cellDat);
             mapDrawer.draw(true, 0);
+
+            datFile.UpdateIterationForChangedFiles(iteration, timeStamp);
 
             datFile.writeToDat("./client_cell_1.dat");
         }

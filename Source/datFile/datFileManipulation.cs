@@ -962,6 +962,18 @@ namespace Melt
                                 cellsAdded += replaceCell(id, newId, fromDat, true, false, null, replacedList, newLandblockId, verboseLevel);
                             }
                         }
+
+                        if (cellsAdded > 0)
+                        {
+                            cCellLandblock landblockFrom = new cCellLandblock(fromLandblockFile);
+                            cCellLandblock landblockTo;
+                            toDat.fileCache.TryGetValue(newLandblockId, out toLandBlockFile);
+
+                            landblockTo = new cCellLandblock(toLandBlockFile);
+
+                            landblockTo.HasObjects = landblockFrom.HasObjects;
+                            landblockTo.updateFileContent(toLandBlockFile);
+                        }
                     }
 
                     landblockInfoTo.Id = newLandblockInfoId;
@@ -2430,6 +2442,29 @@ namespace Melt
             if (verboseLevel > 5)
                 Console.WriteLine($"Added file in {timer.ElapsedMilliseconds / 1000f} seconds.");
             return true;
+        }
+
+        public void UpdateIterationForChangedFiles(int iteration, uint timestamp)
+        {
+            Console.WriteLine($"Updating file iteration to {iteration} for files with timestamp equal to or newer than {timestamp}...");
+
+            var counter = 0;
+
+            foreach (var file in fileCache.Values)
+            {
+                if (file.fileId == 0xFFFF0001) continue;
+                
+                if (file.timeStamp >= timestamp)
+                {
+                    //Console.WriteLine($"0x{file.fileId:X8}.version == {file.version} | now {iteration}");
+                    file.version = (uint)iteration;
+                    counter++;
+                }
+                //else
+                    //Console.WriteLine($"0x{file.fileId:X8}.version == {file.version}");
+            }
+
+            Console.WriteLine($"{counter} files updated.");
         }
     }
 }
